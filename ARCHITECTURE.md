@@ -19,3 +19,6 @@ Visual indexing is a separate explicit job. A cached Transformers CLIP dual enco
 
 ## Phase 4 architecture
 GET /videos/{id}/search accepts visual, speech or hybrid mode. BM25 ranks local transcript segments. Hybrid merges at most 50 candidates per modality through reciprocal-rank fusion in nearest-frame neighborhoods. Results expose evidence ranks/raw scores and use transcript-start navigation when speech contributes. Missing completed modalities are explicitly reported; speech mode needs no visual model. The ranking formula and tradeoffs are documented in learning/05-hybrid-retrieval.md.
+
+## Phase 5 validation
+Playwright starts isolated API/frontend instances and generates a small synthetic MP4. Desktop and mobile tests upload real files, seek the player, verify missing-index feedback, and optionally exercise real CLIP retrieval. SCENEMIND_MODEL_E2E=1 enables model-dependent tests. Default browser tests require no weights. Screenshots use synthetic red/blue scenes, not a real-video quality demo.
