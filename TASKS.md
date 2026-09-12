@@ -1,4 +1,4 @@
-# Tasks
+﻿# Tasks
 
 ## Phase 0
 - [x] Initialize git and origin
@@ -7,9 +7,9 @@
 - [x] Commit foundation
 
 ## Phase 1
-- [ ] Resolve FFmpeg availability
-- [ ] Validate/store videos and extract metadata/frames/thumbnails
-- [ ] Report processing state and test failure paths
+- [x] Resolve FFmpeg availability
+- [x] Validate/store videos and extract metadata/frames/thumbnails
+- [x] Report processing state and test failure paths
 
 ## Subsequent phases
 - [ ] 2: Timestamped local speech and persistence
@@ -21,4 +21,5 @@
 - [ ] 8: Grounded Q&A
 - [ ] 9: Specialization proposal
 - [ ] 10: Production hardening
+
 

@@ -1,9 +1,20 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
+from app.video import recover_interrupted, router
 
-app = FastAPI(title="SceneMind", version="0.1.0")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    recover_interrupted()
+    yield
+
+
+app = FastAPI(title="SceneMind", version="0.1.0", lifespan=lifespan)
+app.include_router(router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
