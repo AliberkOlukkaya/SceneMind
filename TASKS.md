@@ -13,7 +13,7 @@
 
 ## Subsequent phases
 - [x] 2: Timestamped local speech and persistence
-- [ ] 3: Visual embeddings and semantic retrieval
+- [x] 3: Visual embeddings and semantic retrieval
 - [ ] 4: Explainable hybrid ranking
 - [ ] 5: Complete product workspace
 - [ ] 6: Reproducible benchmark
@@ -21,6 +21,7 @@
 - [ ] 8: Grounded Q&A
 - [ ] 9: Specialization proposal
 - [ ] 10: Production hardening
+
 
 
 

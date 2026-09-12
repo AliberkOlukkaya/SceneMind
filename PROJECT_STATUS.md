@@ -1,11 +1,11 @@
 ﻿# Project status
 
-Current phase: 2 complete; Phase 3 next.
+Current phase: 3 complete; Phase 4 next.
 
-Implemented: Phase 0 foundation; Phase 1 video upload, metadata, timestamped frames, local library/player; Phase 2 optional faster-whisper tiny CPU transcription, SQLAlchemy/Alembic SQLite transcript storage, literal text search, transcript panel and timestamp navigation. First model load is cached; no paid API.
+Implemented: foundation, bounded video ingestion and timestamp browsing, local speech and literal search, pinned CLIP ViT-B/32 frame/text embeddings, exact FAISS cosine retrieval, explicit indexing and search UI. Models run locally and are optional installs.
 
-Verified 2026-09-12: 13 pytest tests passed; Ruff passed; frontend lint, TypeScript and production build passed. Real local speech smoke test on Windows-generated speech returned the phrase 'The learning rate controls how quickly the model learns.' at 0.0–3.7 seconds. Initial inference/setup took 13.494 seconds; this is a smoke check, not a benchmark. Model data is ignored under data/models.
+Verified 2026-09-12: 15 pytest tests passed; Ruff, frontend ESLint/TypeScript/build passed. Real Whisper speech smoke passed. Real CLIP synthetic smoke retrieved red at 0 s and blue at 5 s; first indexing including download took 64.311 s. These are smoke tests, not real-video quality benchmarks. Evaluation protocol exists in ml/evaluation/PROTOCOL.md.
 
-Known limitations: browser QA remains unverified because no browser automation surface is available. Single-process, local-only server without authentication or durable jobs. OpenCV duration is approximate on VFR media; browser codec support varies. Speech tiny has accuracy limits; transcription has no hard model-inference cancellation. Two upstream test deprecation warnings remain. Video metadata stays in atomic manifests; relational tables store speech only.
+Known limitations: browser visual/interaction QA outstanding; local single-process service, no auth/durable queue, approximate VFR metadata; CLIP static-frame limitations; no calibrated no-match threshold; no held-out real-video quality results. Optional models reside under ignored data/models. Two upstream test deprecation warnings remain.
 
-Blockers: none. Next: Phase 3 dual encoder, normalized frame/text embeddings, FAISS retrieval and an independent relevance protocol; verify actual inference before claiming semantic search.
+Blockers: none for Phase 4. Next: token-based transcript relevance and reciprocal-rank fusion, modality-aware evidence tests; then browser end-to-end product validation and evaluation scripts.

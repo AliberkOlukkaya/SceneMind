@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Transcript from "./transcript";
+import Search from "./search";
 import { useEffect, useRef, useState } from "react";
 
 type Video = { id: string; filename: string; status: string; error?: string; metadata?: { duration: number; width: number; height: number; fps: number }; frames: { timestamp: number; thumbnail: string }[] };
@@ -58,7 +59,7 @@ export default function Home() {
     <div className="workspace"><nav className="library" aria-label="Video library">{videos.map(video => <button className={`video-row ${selectedId === video.id ? "selected" : ""}`} key={video.id} onClick={() => setSelectedId(video.id)}><span>{video.filename}</span><small>{video.status} {video.metadata && `· ${timestamp(video.metadata.duration)}`}</small></button>)}</nav>
       <section className="viewer">{!selected ? <div className="empty"><h2>Select a video</h2><p>Open a video from your library to browse its moments.</p></div> : <><h2 className="video-title">{selected.filename}</h2><p aria-live="polite">{selected.status === "ready" ? `${selected.metadata?.width} × ${selected.metadata?.height} · ${selected.frames.length} sampled frames` : selected.error || `Video ${selected.status}…`}</p>
       {selected.status === "ready" && <><video key={selected.id} ref={player} controls preload="metadata" src={`${API}/videos/${selected.id}/media`} /><div className="timeline-heading"><h3>Sampled moments</h3><span>Click a frame to seek</span></div><div className="frames">{selected.frames.map(frame => <button key={frame.thumbnail} className="frame" onClick={() => { if (player.current) player.current.currentTime = frame.timestamp; }} aria-label={`Seek to ${timestamp(frame.timestamp)}`}><Image unoptimized width={240} height={135} src={`${API}${frame.thumbnail}`} alt={`Video frame at ${timestamp(frame.timestamp)}`} /><span>{timestamp(frame.timestamp)}</span></button>)}</div></>}
-      {selected.status === "ready" && <Transcript key={selected.id} videoId={selected.id} api={API} seek={seconds => { if (player.current) player.current.currentTime = seconds; }} />}
+      {selected.status === "ready" && <><Search key={`search-${selected.id}`} videoId={selected.id} api={API} seek={seconds => { if (player.current) player.current.currentTime = seconds; }} /><Transcript key={selected.id} videoId={selected.id} api={API} seek={seconds => { if (player.current) player.current.currentTime = seconds; }} /></>}
       </>}</section>
     </div>}
     <footer>SCENEMIND <span>Video processing runs locally.</span></footer>
