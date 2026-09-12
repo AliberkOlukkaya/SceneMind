@@ -13,3 +13,7 @@
 10. Hardening: durable jobs, deployment, PostgreSQL, security, recovery and observability after core works.
 
 V1 requires phases 0–6. Later phases are optional extensions, not prerequisites. Every phase ends with tests, updated status and a stable commit.
+
+## Current milestone
+
+Phases 0-6 completed locally on 2026-09-12. Synthetic benchmarks and real-model browser/speech smoke checks are executed; real-video quality evaluation remains a follow-up. Phases 7-9 are deferred until a concrete use case/dataset justifies them. Phase 10 is not complete; public deployment is outside the verified local V1 boundary.

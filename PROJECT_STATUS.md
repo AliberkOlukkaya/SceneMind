@@ -1,4 +1,4 @@
-﻿# Project status
+# Project status
 
 Current milestone: core V1 (phases 0-6) implemented and validated locally.
 
@@ -12,4 +12,4 @@ Limitations: local single-process service only; no auth, durable queue, model-in
 
 No human blocker for core V1. Advanced phases 7-9 remain deliberately deferred: no demonstrated OCR/action/Q&A need or labeled specialization dataset yet. Production hardening is not complete; do not expose the local service publicly.
 
-Next safe work: curate a licensed held-out real-video benchmark, measure negative-query calibration, add durable isolated workers and authentication before public deployment. Validate PostgreSQL and Linux packaging as deployment requirements become concrete. Git milestones exist locally; final remote synchronization follows repository checks.
+Next safe work: curate a licensed held-out real-video benchmark, measure negative-query calibration, add durable isolated workers and authentication before public deployment. Validate PostgreSQL and Linux packaging as deployment requirements become concrete. All implementation milestones are committed and pushed to origin/main. The tracked tree was audited: no media, model weights, embeddings, database files or .env secrets are committed. The final production frontend build passed including the SceneMind icon route.
