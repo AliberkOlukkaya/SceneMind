@@ -92,7 +92,9 @@ def test_busy_pipeline(client):
 
     ingestion_lock.acquire()
     try:
-        assert client.post("/videos?filename=test.mp4", content=b"123").status_code == 429
+        assert (
+            client.post("/videos?filename=test.mp4", content=b"123").status_code == 429
+        )
     finally:
         ingestion_lock.release()
 

@@ -42,4 +42,10 @@ video { width: 100%; max-height: 480px; background: #080a08; border-radius: 4px;
 .frame img { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; }
 .frame span { display: block; padding-top: 7px; font-size: 12px; color: #bbc5b3; }
 button:disabled { opacity: .55; cursor: wait; }
+.transcript { border-top: 1px solid #30352f; margin-top: 30px; }
+.search-label { display: flex; flex-direction: column; gap: 12px; color: #a0a69d; font-size: 13px; }
+.search-label input { border: 1px solid #424b3c; border-radius: 4px; padding: 13px; color: #eeeee8; background: #191f17; font-size: 15px; }
+.segments { max-height: 340px; overflow: auto; margin-top: 20px; }
+.segments button { display: flex; width: 100%; padding: 16px 0; gap: 20px; text-align: left; border-bottom: 1px solid #30352f; cursor: pointer; line-height: 1.6; }
+.segments time { color: var(--accent); font-size: 13px; }
 @media(max-width: 800px) { .workspace { grid-template-columns: 1fr; } .library { border-right: 0; border-bottom: 1px solid #30352f; display: flex; overflow-x: auto; } .video-row { min-width: 180px; max-width: 240px; } .viewer { padding-left: 0; } .toolbar { align-items: flex-start; flex-direction: column; } }

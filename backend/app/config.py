@@ -12,6 +12,11 @@ class Settings(BaseSettings):
     sampling_interval: float = Field(default=5, ge=1, le=60)
     max_duration: float = Field(default=1800, gt=0)
     processing_timeout: int = Field(default=300, gt=0)
+    database_url: str = "sqlite:///data/scenemind.db"
+    speech_model: str = "tiny"
+    model_cache: str = "data/models"
+    model_device: str = "cpu"
+    speech_compute_type: str = "int8"
 
 
 settings = Settings()

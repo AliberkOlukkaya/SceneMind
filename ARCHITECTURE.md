@@ -8,3 +8,8 @@ No database, model or retrieval pipeline exists yet. Local runtime data belongs 
 POST /videos accepts raw bytes and a filename query parameter. A single ingestion slot bounds local processing. UUID directories contain source media, atomic JSON manifests and thumbnails. FastAPI BackgroundTasks executes FFmpeg after the 202 response. GET /videos and /videos/{id} expose status; /media supports range requests; /frames/{name} serves validated JPEG paths. Startup marks interrupted jobs failed. Use one worker only.
 
 The client polls the library, uploads File bodies, and seeks the HTML video element using FFmpeg timestamps. NEXT_PUBLIC_API_URL configures its backend origin. No model has been added yet.
+
+## Phase 2 architecture
+Speech is explicit and independent of ingestion. POST /videos/{id}/transcript extracts a temporary mono 16 kHz WAV and runs the cached faster-whisper model. A separate single-job lock bounds speech inference. SQLAlchemy stores transcript status and segments in SQLite; Alembic upgrades schema at startup. GET transcript supports literal substring queries. PostgreSQL URLs can be configured with an appropriate driver, but PostgreSQL has not been tested.
+
+Video manifests remain authoritative for media assets; only transcript records are relational. There is no cross-store transaction requirement for the current read-only video lifetime. Temporary audio is removed after processing. Interrupted speech jobs become failed on restart.

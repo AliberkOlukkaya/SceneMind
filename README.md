@@ -43,3 +43,10 @@ Upload a supported video in the library, wait for processing, select it and clic
 Implemented: upload, metadata, frames, thumbnails, processing states and video workspace. Speech and semantic search are not implemented yet. Run one backend worker; this local app has no authentication and should not be exposed publicly.
 
 For reproducible Python dependencies, install `-r backend/requirements.lock` before `-e "backend[dev]"`. The lock records this Windows/Python 3.13 environment. Run `./scripts/check.ps1` for all checks; it uses isolated workspace test directories to avoid Windows temporary-directory permission issues.
+
+## Local speech
+Install `.venv\Scripts\python -m pip install -e "backend[speech]"`, restart the backend and select **Transcribe video** in a video workspace. First use downloads Whisper tiny into data/models. Transcripts can be searched by literal text and selected to seek. No API key is needed. See docs/learning/02-speech-transcription.md for model parameters and limitations.
+
+SQLite transcript tables are migrated automatically at backend startup. SCENEMIND_DATABASE_URL changes the database location. Current core metadata remains in per-video manifests. The dependency lock currently includes the optional speech stack installed for verification.
+
+A real model smoke check is available as `python scripts/smoke_speech.py path/to/short-reference.wav`; supply a short recording containing 'learning rate'. This downloads the model if uncached. Unit tests mock inference and do not download weights.

@@ -1,11 +1,11 @@
 ﻿# Project status
 
-Current phase: 1 complete; Phase 2 next.
+Current phase: 2 complete; Phase 3 next.
 
-Implemented: local bounded raw-body video upload; OpenCV metadata; portable FFmpeg extraction with actual presentation timestamps; JPEG thumbnails; atomic per-video manifests; queued/processing/ready/failed states; restart interruption detection; library, player and thumbnail seek controls.
+Implemented: Phase 0 foundation; Phase 1 video upload, metadata, timestamped frames, local library/player; Phase 2 optional faster-whisper tiny CPU transcription, SQLAlchemy/Alembic SQLite transcript storage, literal text search, transcript panel and timestamp navigation. First model load is cached; no paid API.
 
-Verified 2026-09-12: 10 pytest tests passed, Ruff passed, frontend ESLint/TypeScript/production build passed. Live upload returned 202; frontend returned 200. Tests cover real synthetic video decoding, byte-range playback, corrupt/empty/oversized uploads, concurrency, timeout and interrupted jobs. Upstream test dependencies emit two deprecation warnings.
+Verified 2026-09-12: 13 pytest tests passed; Ruff passed; frontend lint, TypeScript and production build passed. Real local speech smoke test on Windows-generated speech returned the phrase 'The learning rate controls how quickly the model learns.' at 0.0–3.7 seconds. Initial inference/setup took 13.494 seconds; this is a smoke check, not a benchmark. Model data is ignored under data/models.
 
-Limitations: browser automation unavailable, so visual and interactive browser QA remains outstanding. Single backend process only, no authentication or durable queue. OpenCV duration is approximate for VFR files. Some accepted codecs cannot play in every browser. No speech or visual AI yet. Local manifests will move to relational persistence with speech.
+Known limitations: browser QA remains unverified because no browser automation surface is available. Single-process, local-only server without authentication or durable jobs. OpenCV duration is approximate on VFR media; browser codec support varies. Speech tiny has accuracy limits; transcription has no hard model-inference cancellation. Two upstream test deprecation warnings remain. Video metadata stays in atomic manifests; relational tables store speech only.
 
-Blockers: none for backend development. Next: add SQLAlchemy/Alembic persistence and optional local speech model, timestamp transcripts and text search; keep real model tests separate from unit tests.
+Blockers: none. Next: Phase 3 dual encoder, normalized frame/text embeddings, FAISS retrieval and an independent relevance protocol; verify actual inference before claiming semantic search.
