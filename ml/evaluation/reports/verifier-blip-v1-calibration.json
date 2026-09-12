@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "Salesforce/blip-itm-base-coco",
+  "model_revision": "bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c",
+  "model_license": "BSD-3-Clause",
+  "preprocessing": {
+    "image_size": 384,
+    "max_text_tokens": 35,
+    "processor": "BlipProcessor pinned with model revision"
+  },
+  "match_label_index": 1,
+  "threshold": 0.43383792042732244,
+  "threshold_rule": "lowest threshold allowing at most 10% calibration negative query accepts",
+  "calibration_dataset": "scenemind-verifier-calibration-v1",
+  "calibration_manifest_sha256": "b5c43f977be3e51427f25143294d8edfb79e51f761eb26a6f1e415736af64c4c",
+  "parent_benchmark": "scenemind-natural-video-v2",
+  "benchmark_schema_version": "2.0.0",
+  "created_at": "2026-09-12T11:02:22.609665+00:00",
+  "promotable": false
+}

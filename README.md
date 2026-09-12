@@ -58,6 +58,8 @@ On Linux/macOS, create the environment with `python3 -m venv .venv` and use `.ve
 
 The [Natural V2 protocol](ml/evaluation/NATURAL_V2_PROTOCOL.md), [measured results](ml/evaluation/NATURAL_V2_RESULTS.md), and [failure analysis](ml/evaluation/FAILURE_ANALYSIS.md) cover the current natural-video benchmark. The earlier [evaluation/hardening guide](docs/learning/06-calibration-and-durable-workers.md) and [animated pilot](ml/evaluation/PILOT_RESULTS.md) remain as historical baselines.
 
+The follow-up [image-text verifier experiment](ml/experiments/image_text_verifier/README.md) tested BLIP ITM over CLIP's top five using an expanded calibration pool. It failed promotion: calibrated R@5 was 26.2%, positive false abstention 52.4%, and added CPU median latency 3.352 seconds. [Results](ml/evaluation/VERIFIER_RESULTS.md) and [reviewed failures](ml/evaluation/VERIFIER_FAILURE_ANALYSIS.md) document why production remains unchanged.
+
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
 
 Optional settings: `SCENEMIND_JOB_TIMEOUT=900`, `SCENEMIND_JOB_ATTEMPTS=2`, `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.

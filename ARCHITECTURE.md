@@ -38,6 +38,8 @@ Optional Basic/Bearer operator authentication protects APIs, docs and media. Hea
 
 Evaluation records scores, intervals, hashes, split metadata and environment. Natural V2 adds versioned query IDs/types/modalities, source/license/checksum provenance, frozen calibration and source-disjoint held-out groups, Precision/Recall/MRR at 1/3/5, negative FAR, abstention, latency, path/category slices, and per-failure evidence. Calibration fits only calibration visual negatives. An opt-in artifact gates visual evidence before fusion, bound to model revision and sampling. It is not a probability estimate or a calibrated hybrid score.
 
+The image-text verifier lives only under `ml/experiments/image_text_verifier/`. It reuses the API and CLIP top-five candidates, batches pair scoring through a pinned BLIP ITM head, and emits ignored reports plus a model-bound calibration artifact. The experiment failed promotion gates, so the runtime architecture remains CLIP/BM25/RRF without verifier dependencies or fallback behavior.
+
 ## Boundaries
 
 This is not a public multi-tenant service. Account lifecycle, tenant ownership, object storage, cross-user quotas, distributed worker leases and high availability are outside scope. Use consistent configuration on one host with local storage. API query inference remains in-process without the worker deadline. Inline mode retains V1 single-process limitations. Worker delivery is at-least-once; a crash before enqueue can leave an unqueued upload asset. OpenCV duration is approximate for VFR. Natural V2 is small and diagnostic; it does not establish population accuracy. No OCR, action recognition, identity recognition, generated Q&A or training was added.

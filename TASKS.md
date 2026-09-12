@@ -40,6 +40,8 @@
 - [x] Documentation and measured result artifacts
 - [x] Natural Video Benchmark V2 with source-disjoint held-out footage and speech/hybrid paths
 - [x] Versioned annotations, machine/human reports, failure analysis and stable regression gate
-- [ ] Expand calibration sources, then test the recommended compact image-text verifier in isolation
+- [x] Expand calibration sources and test BLIP ITM as an isolated image-text verifier
+- [x] Reject verifier production promotion after false-abstention and latency gate failures
+- [ ] Expand relation/small-object held-out evidence and research a sub-250 ms pair scorer
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

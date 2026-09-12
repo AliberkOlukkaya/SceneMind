@@ -1,5 +1,9 @@
 # Decisions
 
+## 013 — Reject BLIP ITM production promotion
+
+Expand verifier calibration with three source-disjoint Commons videos and 30 frozen relation/context annotations, then test pinned `Salesforce/blip-itm-base-coco` only over CLIP's top five. The calibration-only 0.433838 threshold reaches 10% held-out negative FAR but causes 52.4% positive false abstention and 26.2% R@5. Verifier-only reranking preserves R@5 but reduces R@1 and MRR. Batched CPU latency is 3.352 seconds and peak working set is about 1.49 GB. This fails the accuracy and 250 ms resource gates. Keep the experiment isolated, skip a second held-out run, and leave production unchanged. BridgeTower is larger; SigLIP lacks the joint ITM architecture being tested. Seek a materially smaller non-generative pair scorer only after expanding frozen held-out evidence.
+
 ## 012 — High-recall candidates before an open-set verifier
 
 Natural V2 freezes 47 annotations over five independently sourced natural videos and evaluates visual, speech and hybrid paths without held-out tuning. Raw CLIP finds a relevant K=5 candidate for every held-out non-speech positive, while the calibration-only scalar cutoff causes 52.4% visual positive false abstention to reach 10% negative FAR. A calibration-only score-margin experiment rejects every held-out positive. Preserve CLIP as the candidate generator. Expand calibration sources, then test a compact pretrained image-text matching reranker with an explicit no-match score over the top five. Action Recognition, OCR, RAG, fine-tuning and a larger speech model remain unjustified by this evidence.
