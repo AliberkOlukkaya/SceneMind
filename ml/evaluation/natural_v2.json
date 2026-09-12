@@ -1,0 +1,162 @@
+{
+  "schema_version": "2.0.0",
+  "benchmark_id": "scenemind-natural-video-v2",
+  "name": "SceneMind Natural Video Benchmark V2",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-12T09:00:00+03:00",
+  "annotation_policy": "Queries and intervals were written after manual contact-sheet review and before SceneMind retrieval. Intervals are half-open and relative to the complete source file. Held-out sources are not used for threshold fitting.",
+  "videos": [
+    {
+      "video_id": "phone-throwing",
+      "path": "data/natural-v2/source/phone-throwing.webm",
+      "domain": "everyday",
+      "split": "calibration",
+      "source_group": "commons-gameplay-send-me-to-heaven",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Gameplay_of_Send_Me_To_Heaven.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Gameplay_of_Send_Me_To_Heaven.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "petrsvar / Carrotpop; S.M.T.H. (Send Me To Heaven)",
+        "source_sha1": "563ec27bb97409f251e688af15bfdbfa5f949453",
+        "source_sha256": "8d682ff80b87acf16c8b2e7eb25cc30b812ade8469bc4f921a25cbd7724819d9",
+        "segment_start": 0,
+        "segment_end": 21.267,
+        "preparation": "Complete original Commons file; no transformation."
+      },
+      "queries": [
+        {"query_id":"phone-object-smartphone","query_text":"Find a smartphone.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[6,21.267]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Phone is small while airborne and large in closing shots.","annotation_version":"2.0.0"},
+        {"query_id":"phone-object-woman","query_text":"Find the woman outdoors.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[5,15]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Single woman centered in a plaza.","annotation_version":"2.0.0"},
+        {"query_id":"phone-scene-title","query_text":"Find the yellow title screen.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0,5]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Flat yellow title card at opening.","annotation_version":"2.0.0"},
+        {"query_id":"phone-compositional-holding","query_text":"Find a woman holding a phone.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[6,14]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Relationship is visible but phone is small.","annotation_version":"2.0.0"},
+        {"query_id":"phone-action-throw","query_text":"Find when the woman throws the phone upward.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[9,13.5]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Brief action; a sampled frame may show only preparation or aftermath.","annotation_version":"2.0.0"},
+        {"query_id":"phone-negative-bicycle","query_text":"Find a bicycle.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No bicycle is visible.","annotation_version":"2.0.0"},
+        {"query_id":"phone-negative-car","query_text":"Find a red car.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No car is visible.","annotation_version":"2.0.0"},
+        {"query_id":"phone-negative-classroom","query_text":"Find a classroom lecture.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No classroom or lecture is present.","annotation_version":"2.0.0"}
+      ]
+    },
+    {
+      "video_id": "base-jump",
+      "path": "data/natural-v2/source/base-jump.webm",
+      "domain": "sports",
+      "split": "calibration",
+      "source_group": "commons-quest-films-base-jump",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Base_jump.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Base_jump.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Quest Films",
+        "source_sha1": "36dbc7756892e11fabfdc1d25609e802e6f22ead",
+        "source_sha256": "4eff2d9c0d62cea6f2f806754bd1fea9ca7a5daefbd6208ee2201f67cd6509e5",
+        "segment_start": 0,
+        "segment_end": 37.004,
+        "preparation": "Complete original Commons file; no transformation."
+      },
+      "queries": [
+        {"query_id":"jump-object-backpack","query_text":"Find a person wearing a backpack.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[8,27]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Backpack fills a significant portion of the frame.","annotation_version":"2.0.0"},
+        {"query_id":"jump-scene-rocks","query_text":"Find the rocky desert landscape.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0,37.004]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Rock formation remains visible throughout.","annotation_version":"2.0.0"},
+        {"query_id":"jump-object-hole","query_text":"Find the large dark hole in the rocks.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0,8],[17,26],[29,37.004]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Opening is absent or mostly off-screen in some preparation shots.","annotation_version":"2.0.0"},
+        {"query_id":"jump-compositional-edge","query_text":"Find a person standing beside a deep hole.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0,4],[17,24],[29,33]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Requires person-hole spatial relationship.","annotation_version":"2.0.0"},
+        {"query_id":"jump-action-leap","query_text":"Find when a person jumps into the hole.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[0,7],[29,37.004]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Two jump sequences; action is temporally extended by descent.","annotation_version":"2.0.0"},
+        {"query_id":"jump-negative-bicycle","query_text":"Find a bicycle beside the rocks.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No bicycle is visible.","annotation_version":"2.0.0"},
+        {"query_id":"jump-negative-car","query_text":"Find a red car near the jumper.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Vehicles are distant and none is a clearly visible red car.","annotation_version":"2.0.0"},
+        {"query_id":"jump-negative-classroom","query_text":"Find a classroom presentation.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No indoor presentation is present.","annotation_version":"2.0.0"}
+      ]
+    },
+    {
+      "video_id": "street-traffic",
+      "path": "data/natural-v2/source/street-traffic.webm",
+      "domain": "street",
+      "split": "heldout",
+      "source_group": "commons-san-francisco-street-traffic",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Street_traffic.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Street_traffic.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "YouTube user Editor; Street traffic",
+        "source_sha1": "7f916030f14d84a65aa92077339f472897915fef",
+        "source_sha256": "e5facb24baf755f0c1193999d823e99f6032661ad2bdef5cc28cc1cbbfde03e2",
+        "segment_start": 0,
+        "segment_end": 35.004,
+        "preparation": "Complete original Commons file; no transformation."
+      },
+      "queries": [
+        {"query_id":"street-object-bus","query_text":"Find a city bus.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0,35.004]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Multiple large buses are visible throughout.","annotation_version":"2.0.0"},
+        {"query_id":"street-object-bicycle","query_text":"Find a bicycle.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[12,18],[25,31]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Cyclists are small relative to buses and cars.","annotation_version":"2.0.0"},
+        {"query_id":"street-scene-intersection","query_text":"Find the busy street intersection.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0,35.004]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Urban multi-lane street context is persistent.","annotation_version":"2.0.0"},
+        {"query_id":"street-compositional-cyclist-bus","query_text":"Find a cyclist riding beside a bus.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[12,18],[25,31]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Requires small cyclist and bus relationship.","annotation_version":"2.0.0"},
+        {"query_id":"street-action-crossing","query_text":"Find when pedestrians cross the street.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[27,35.004]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Pedestrians enter near the end and move across lanes.","annotation_version":"2.0.0"},
+        {"query_id":"street-action-traffic","query_text":"Find moving city traffic.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[0,35.004]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Motion is continuous but static frames only imply it.","annotation_version":"2.0.0"},
+        {"query_id":"street-negative-dog","query_text":"Find a dog crossing the street.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No dog is visible.","annotation_version":"2.0.0"},
+        {"query_id":"street-negative-classroom","query_text":"Find a classroom with a projector.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No indoor scene is present.","annotation_version":"2.0.0"},
+        {"query_id":"street-negative-swimming","query_text":"Find a person swimming.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No water or swimming is present.","annotation_version":"2.0.0"},
+        {"query_id":"street-negative-airplane","query_text":"Find an airplane in the sky.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No airplane is visible.","annotation_version":"2.0.0"}
+      ]
+    },
+    {
+      "video_id": "ball-throwing",
+      "path": "data/natural-v2/source/throwing.webm",
+      "domain": "sports",
+      "split": "heldout",
+      "source_group": "commons-nesnad-throwing",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Throwing-slowmotion-man2013-stabilized.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Throwing-slowmotion-man2013-stabilized.webm",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Nesnad; Throwing-slowmotion-man2013-stabilized",
+        "source_sha1": "d2bf304d4b7208ed09b30414249defe319728325",
+        "source_sha256": "bcb20541112226cccd9f4e123ba7af69dcdb2333b4d5ac8b018f6cc4639e639c",
+        "segment_start": 0,
+        "segment_end": 13.733,
+        "preparation": "Complete original Commons file; no transformation."
+      },
+      "queries": [
+        {"query_id":"throw-object-man","query_text":"Find the man in a black shirt.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0,13.733]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Adult man remains visible throughout.","annotation_version":"2.0.0"},
+        {"query_id":"throw-object-ball","query_text":"Find the yellow ball.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[4.5,9]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Ball is very small except near the hand.","annotation_version":"2.0.0"},
+        {"query_id":"throw-scene-park","query_text":"Find the outdoor park path.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0,13.733]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Path, grass, trees and playground equipment persist.","annotation_version":"2.0.0"},
+        {"query_id":"throw-compositional-holding","query_text":"Find the man holding a yellow ball.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[4.5,8]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Small object-person relation.","annotation_version":"2.0.0"},
+        {"query_id":"throw-compositional-children","query_text":"Find children standing near the man.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0,13.733]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"At least two children appear below the man.","annotation_version":"2.0.0"},
+        {"query_id":"throw-action-ball","query_text":"Find when the man throws the ball.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[5,11]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Slow-motion action spans preparation, release and follow-through.","annotation_version":"2.0.0"},
+        {"query_id":"throw-negative-bicycle","query_text":"Find a person riding a bicycle.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No bicycle is visible.","annotation_version":"2.0.0"},
+        {"query_id":"throw-negative-car","query_text":"Find a city bus.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No vehicles are visible.","annotation_version":"2.0.0"},
+        {"query_id":"throw-negative-swimming","query_text":"Find someone swimming in water.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"No water or swimmer is visible.","annotation_version":"2.0.0"}
+      ]
+    },
+    {
+      "video_id": "find-link-talk",
+      "path": "data/natural-v2/source/find-link-talk.webm",
+      "domain": "education",
+      "split": "heldout",
+      "source_group": "commons-wikimania-find-link-talk",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Find_link_-_lightning_talk.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Find_link_-_lightning_talk.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Magnus Sälgö; Find link lightning talk",
+        "source_sha1": "8e8d2dd804dea5d027664615a3f58271e2bf9951",
+        "source_sha256": "530ffecb380b3a36165c7918ac191eca4a06b90546025f6d49cf9b6956c285f7",
+        "segment_start": 0,
+        "segment_end": 219.443,
+        "preparation": "Complete original Commons file; no transformation."
+      },
+      "queries": [
+        {"query_id":"talk-object-speaker","query_text":"Find the speaker at the podium.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0,219.443]],"modality_requirement":"visual","evaluation_modes":["visual","hybrid"],"notes":"Speaker and podium persist for the whole fixed-camera talk.","annotation_version":"2.0.0"},
+        {"query_id":"talk-object-screen","query_text":"Find the large projection screen.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0,219.443]],"modality_requirement":"visual","evaluation_modes":["visual","hybrid"],"notes":"Screen occupies most of the upper frame.","annotation_version":"2.0.0"},
+        {"query_id":"talk-scene-presentation","query_text":"Find the conference presentation room.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0,219.443]],"modality_requirement":"visual","evaluation_modes":["visual","hybrid"],"notes":"Fixed presentation-room view throughout.","annotation_version":"2.0.0"},
+        {"query_id":"talk-compositional-speaker-screen","query_text":"Find a speaker standing next to a projected slide.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0,219.443]],"modality_requirement":"visual","evaluation_modes":["visual","hybrid"],"notes":"Person-screen spatial relationship persists.","annotation_version":"2.0.0"},
+        {"query_id":"talk-speech-kansas-city","query_text":"Where does the speaker discuss Kansas City?","query_type":"SPEECH","expected_presence":true,"relevant_intervals":[[37,74],[175,205]],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"Topic recurs; ASR repeatedly emits Kansas City.","annotation_version":"2.0.0"},
+        {"query_id":"talk-speech-changing-link","query_text":"Where does the speaker explain changing a link?","query_type":"SPEECH","expected_presence":true,"relevant_intervals":[[76,115],[197,205]],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"Speech describes clicking and changing to a more precise link.","annotation_version":"2.0.0"},
+        {"query_id":"talk-speech-bug","query_text":"Where does the speaker mention a bug that only works with source text?","query_type":"SPEECH","expected_presence":true,"relevant_intervals":[[139,153]],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"ASR captures bug, editing Wiki text and visual editor contrast.","annotation_version":"2.0.0"},
+        {"query_id":"talk-speech-languages","query_text":"Where does the speaker say the tool works with different languages?","query_type":"SPEECH","expected_presence":true,"relevant_intervals":[[164,175]],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"Distinct short spoken passage about languages.","annotation_version":"2.0.0"},
+        {"query_id":"talk-speech-airport","query_text":"Where does the speaker discuss an airport?","query_type":"SPEECH","expected_presence":true,"relevant_intervals":[[57,74],[175,197]],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"Airport appears in ASR at both demonstrations.","annotation_version":"2.0.0"},
+        {"query_id":"talk-negative-gradient","query_text":"Where does the speaker explain gradient descent?","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"speech","evaluation_modes":["visual","speech","hybrid"],"notes":"No machine-learning discussion occurs.","annotation_version":"2.0.0"},
+        {"query_id":"talk-negative-bicycle","query_text":"Find a bicycle beside the speaker.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual","speech","hybrid"],"notes":"No bicycle is present or discussed.","annotation_version":"2.0.0"},
+        {"query_id":"talk-negative-cooking","query_text":"Where does the speaker demonstrate cooking?","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"hybrid","evaluation_modes":["visual","speech","hybrid"],"notes":"No cooking imagery or speech occurs.","annotation_version":"2.0.0"}
+      ]
+    }
+  ]
+}
