@@ -1,4 +1,5 @@
 "use client";
+import { apiFetch } from "./api";
 
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
@@ -33,7 +34,7 @@ export default function Search({
     let active = true;
     async function refresh() {
       try {
-        const response = await fetch(`${api}/videos/${videoId}/index`);
+        const response = await apiFetch(`${api}/videos/${videoId}/index`);
         if (!response.ok) throw new Error("Could not retrieve index status.");
         const data = await response.json();
         if (active) {
@@ -59,7 +60,7 @@ export default function Search({
     setBusy(true);
     setError("");
     try {
-      const response = await fetch(`${api}/videos/${videoId}/index`, {
+      const response = await apiFetch(`${api}/videos/${videoId}/index`, {
         method: "POST",
       });
       const data = await response.json();
@@ -81,7 +82,7 @@ export default function Search({
     setError("");
     setResults([]);
     try {
-      const response = await fetch(
+      const response = await apiFetch(
         `${api}/videos/${videoId}/search?q=${encodeURIComponent(query)}&k=8&mode=${mode}`,
       );
       const data = await response.json();

@@ -80,17 +80,19 @@ def inspect_video(path: Path) -> dict:
 def process_video(folder: Path, record: dict) -> None:
     try:
         record["status"] = "processing"
+        record.pop("error", None)
         save_manifest(folder, record)
         source = folder / record["source"]
         record["metadata"] = inspect_video(source)
         interval = record["sampling_interval"]
         frames = folder / "frames"
-        frames.mkdir()
+        frames.mkdir(exist_ok=True)
         # Select first frame, then the first frame at least interval seconds later.
         result = subprocess.run(
             [
                 imageio_ffmpeg.get_ffmpeg_exe(),
                 "-nostdin",
+                "-y",
                 "-v",
                 "info",
                 "-i",
@@ -174,7 +176,13 @@ async def upload(
             "sampling_interval": settings.sampling_interval,
         }
         save_manifest(folder, record)
-        background.add_task(process_video, folder, record.copy())
+        if settings.durable_jobs:
+            from app.jobs import enqueue
+
+            enqueue(folder.name, "ingest")
+            ingestion_lock.release()
+        else:
+            background.add_task(process_video, folder, record.copy())
         handed_off = True
         return record
     finally:
@@ -186,7 +194,7 @@ async def upload(
 @router.get("")
 def list_videos():
     return [
-        read_manifest(path.parent)
+        get_video(path.parent.name)
         for path in sorted(
             settings.data_dir.glob("*/manifest.json"),
             key=lambda path: path.stat().st_mtime,
@@ -197,7 +205,10 @@ def list_videos():
 
 @router.get("/{video_id}")
 def get_video(video_id: str):
-    return read_manifest(folder_for(video_id))
+    from app.jobs import pending
+
+    record = read_manifest(folder_for(video_id))
+    return {**record, **(pending(video_id, "ingest") or {})}
 
 
 @router.get("/{video_id}/media")

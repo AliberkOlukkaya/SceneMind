@@ -1,5 +1,17 @@
 # Decisions
 
+## 009 — Licensed, frozen scene-disjoint calibration pilot
+
+Two disjoint scenes from CC BY 3.0 Big Buck Bunny have checksum-verified media and reviewed sampled-frame labels written before inference. Raw scores and environment are recorded; calibration refuses cross-split content/group leakage. The threshold is just above the largest calibration-negative cosine score and remains opt-in. It reduces held-out false accepts from four to two but is not probability calibration or broad accuracy. Natural-footage/source-disjoint and speech/hybrid labels remain future data work. Existing evidence does not justify OCR/action/RAG.
+
+## 010 — One durable supervisor and reusable inference child
+
+Keep FastAPI, local asset manifests and SQLAlchemy/SQLite or PostgreSQL. A SQL queue provides unique active stage keys, serialized capacity checks, compare-and-set claims, persisted retries/backoff and explicit failed-job retry. OS locks enforce a single-host supervisor and file writer. A reusable spawned child caches models; deadlines and parent-death monitoring terminate its process tree. Redis/Celery, modality services and Kubernetes are unnecessary at this scale. At-least-once replay is explicit; no distributed/HA claim. Inline mode remains for V1 compatibility.
+
+## 011 — Operator auth and portable validation
+
+Optional Basic/Bearer authentication protects APIs and media; Origin checks reject unexpected cross-origin writes. Browser-managed credentials keep passwords out of frontend storage. This is one operator, not RBAC or tenant ownership. Linux backend tests and disposable PostgreSQL migration/queue checks are executed through Docker. Compose binds loopback and requires passwords; public deployment and container ML remain outside verified scope.
+
 ## 001 — Local development first
 Use Python 3.13, FastAPI and Next.js, with no external services in the foundation. Python 3.14 is installed but ML wheel support favors 3.13. Alternatives: container-only setup or mandatory PostgreSQL. Consequence: fewer initial dependencies; persistence and deployment arrive with concrete requirements.
 

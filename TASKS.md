@@ -20,7 +20,8 @@
 - [ ] 7: Justified advanced understanding
 - [ ] 8: Grounded Q&A
 - [ ] 9: Specialization proposal
-- [ ] 10: Production hardening
+- [x] 10a: Safe local production-hardening foundation
+- [ ] 10b: Full public production readiness
 
 
 
@@ -30,8 +31,13 @@
 
 
 ## V1 follow-up
-- [ ] Curate licensed held-out real-video queries and relevance intervals
-- [ ] Evaluate negative-query abstention/calibration
-- [ ] Add durable isolated workers and authentication before public deployment
-- [ ] Validate PostgreSQL and Linux deployment
+- [x] Licensed scene-disjoint animated video pilot with reviewed query intervals
+- [x] Frozen calibration/held-out reporting, Recall@1/3/5, MRR, negative behavior
+- [x] Opt-in model-bound abstention artifact and regression/leakage checks
+- [x] Durable isolated worker, retries, deadlines, persistent job status and local locks
+- [x] Shared operator authentication and authenticated browser validation
+- [x] Linux backend and PostgreSQL migration/queue validation paths
+- [x] Documentation and measured result artifacts
+- [ ] Broad source-disjoint natural-video and speech/hybrid quality evaluation
+- [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

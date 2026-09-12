@@ -1,4 +1,5 @@
 "use client";
+import { apiFetch } from "./api";
 
 import { useEffect, useState } from "react";
 
@@ -28,7 +29,7 @@ export default function Transcript({
     let active = true;
     async function refresh() {
       try {
-        const response = await fetch(
+        const response = await apiFetch(
           `${api}/videos/${videoId}/transcript?q=${encodeURIComponent(query)}`,
         );
         if (!response.ok) throw new Error("Could not retrieve transcript.");
@@ -55,7 +56,7 @@ export default function Transcript({
     setStarting(true);
     setError("");
     try {
-      const response = await fetch(`${api}/videos/${videoId}/transcript`, {
+      const response = await apiFetch(`${api}/videos/${videoId}/transcript`, {
         method: "POST",
       });
       const result = await response.json();

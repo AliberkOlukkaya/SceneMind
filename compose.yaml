@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: scenemind
+      POSTGRES_DB: scenemind
+      POSTGRES_PASSWORD: ${SCENEMIND_DB_PASSWORD:?Set a local database password}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scenemind"]
+      interval: 5s
+      retries: 10
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    environment: &runtime
+      SCENEMIND_DATABASE_URL: postgresql+psycopg://scenemind:${SCENEMIND_DB_PASSWORD}@postgres/scenemind
+      SCENEMIND_AUTH_TOKEN: ${SCENEMIND_AUTH_TOKEN:?Set an operator password}
+      SCENEMIND_DURABLE_JOBS: "true"
+    volumes: ["media:/app/data"]
+    depends_on:
+      postgres: {condition: service_healthy}
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    environment: *runtime
+    volumes: ["media:/app/data"]
+    depends_on:
+      api: {condition: service_started}
+volumes:
+  postgres-data:
+  media:

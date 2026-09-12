@@ -110,6 +110,11 @@ def start_transcript(video_id: str, background: BackgroundTasks):
     video_id = folder.name
     if read_manifest(folder)["status"] != "ready":
         raise HTTPException(409, "Wait for video processing to finish.")
+    if settings.durable_jobs:
+        from app.jobs import enqueue
+
+        job_id = enqueue(folder.name, "speech")
+        return {"status": "queued", "job_id": job_id}
     try:
         import faster_whisper  # noqa: F401
     except ImportError:
@@ -140,6 +145,11 @@ def start_transcript(video_id: str, background: BackgroundTasks):
 def get_transcript(video_id: str, q: str = Query(default="", max_length=500)):
     folder = folder_for(video_id)
     read_manifest(folder)
+    from app.jobs import pending
+
+    queued = pending(folder.name, "speech")
+    if queued:
+        return {**queued, "segments": []}
     with Session(engine()) as session:
         job = session.get(Transcript, folder.name)
         if job is None:

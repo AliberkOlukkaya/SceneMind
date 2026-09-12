@@ -1,0 +1,188 @@
+{
+  "name": "Big Buck Bunny scene-disjoint pilot v1",
+  "license": "CC-BY-3.0",
+  "attribution": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+  "source": "https://peach.blender.org/about/",
+  "source_sha256": "f78f39603e6774907f2faafabf26a667f4a6fc31769ec304a8a8f7c62d280508",
+  "limitations": "Animated single-film pilot, not source-disjoint. Labels cover reviewed 5-second frames only. No speech labels. CLIP pretraining overlap unknown.",
+  "videos": [
+    {
+      "path": "data/benchmark-source/calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "queries": [
+        {
+          "text": "A rabbit standing outside its burrow",
+          "intervals": [
+            [
+              15,
+              15.1
+            ],
+            [
+              20,
+              20.1
+            ],
+            [
+              25,
+              25.1
+            ],
+            [
+              30,
+              30.1
+            ],
+            [
+              35,
+              35.1
+            ]
+          ]
+        },
+        {
+          "text": "A dark hole beneath a tree",
+          "intervals": [
+            [
+              0,
+              0.1
+            ],
+            [
+              5,
+              5.1
+            ],
+            [
+              10,
+              10.1
+            ],
+            [
+              15,
+              15.1
+            ],
+            [
+              20,
+              20.1
+            ],
+            [
+              25,
+              25.1
+            ]
+          ]
+        },
+        {
+          "text": "White flowers in the foreground",
+          "intervals": [
+            [
+              35,
+              35.1
+            ]
+          ]
+        },
+        {
+          "text": "A rabbit with its arms raised",
+          "intervals": [
+            [
+              20,
+              20.1
+            ]
+          ]
+        },
+        {
+          "text": "A red car on a road",
+          "intervals": []
+        },
+        {
+          "text": "A person cooking in a kitchen",
+          "intervals": []
+        },
+        {
+          "text": "An airplane flying over a city",
+          "intervals": []
+        },
+        {
+          "text": "A dog swimming in water",
+          "intervals": []
+        }
+      ]
+    },
+    {
+      "path": "data/benchmark-source/heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "queries": [
+        {
+          "text": "A large rabbit in a grassy meadow",
+          "intervals": [
+            [
+              0,
+              0.1
+            ],
+            [
+              10,
+              10.1
+            ],
+            [
+              15,
+              15.1
+            ],
+            [
+              25,
+              25.1
+            ]
+          ]
+        },
+        {
+          "text": "Small animals beside a tree trunk",
+          "intervals": [
+            [
+              5,
+              5.1
+            ],
+            [
+              20,
+              20.1
+            ],
+            [
+              30,
+              30.1
+            ],
+            [
+              35,
+              35.1
+            ]
+          ]
+        },
+        {
+          "text": "A rabbit holding its hands together",
+          "intervals": [
+            [
+              25,
+              25.1
+            ]
+          ]
+        },
+        {
+          "text": "A red squirrel holding a purple butterfly",
+          "intervals": [
+            [
+              30,
+              30.1
+            ]
+          ]
+        },
+        {
+          "text": "A train arriving at a station",
+          "intervals": []
+        },
+        {
+          "text": "A person playing a piano",
+          "intervals": []
+        },
+        {
+          "text": "A white rabbit swimming underwater",
+          "intervals": []
+        },
+        {
+          "text": "A squirrel driving a car",
+          "intervals": []
+        }
+      ]
+    }
+  ]
+}

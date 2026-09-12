@@ -14,7 +14,12 @@ visual_lock = Lock()
 logger = logging.getLogger(__name__)
 
 
-def index_status(folder):
+def index_status(folder, include_jobs=True):
+    from app.jobs import pending
+
+    queued = pending(folder.name, "visual") if include_jobs else None
+    if queued:
+        return queued
     path = folder / "index.json"
     if not path.exists():
         return {"status": "not_started"}
@@ -69,6 +74,11 @@ def start_index(video_id: str, background: BackgroundTasks):
     folder = folder_for(video_id)
     if read_manifest(folder)["status"] != "ready":
         raise HTTPException(409, "Wait for video processing to finish.")
+    if settings.durable_jobs:
+        from app.jobs import enqueue
+
+        job_id = enqueue(folder.name, "visual")
+        return {"status": "queued", "job_id": job_id}
     try:
         import faiss  # noqa: F401
         import torch  # noqa: F401
@@ -115,12 +125,20 @@ def visual_search(
     try:
         vectors = np.load(folder / "embeddings.npy", allow_pickle=False)
         scores, indices = rank_vectors(vectors, encoder().text(q), k)
+        from app.calibration import threshold
+
+        cutoff = threshold()
+        if cutoff is not None and record["sampling_interval"] != settings.sampling_interval:
+            raise HTTPException(409, "Video sampling differs from calibration; reingest it.")
         return {
+            "calibration_applied": cutoff is not None,
+            "abstained": cutoff is not None and not any(s >= cutoff for s in scores),
             "query": q,
             "score_type": "cosine_similarity",
             "results": [
                 {**record["frames"][index], "score": score, "modality": "visual"}
                 for score, index in zip(scores, indices)
+                if cutoff is None or score >= cutoff
             ],
         }
     finally:

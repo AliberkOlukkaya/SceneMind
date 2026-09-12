@@ -1,0 +1,33 @@
+# Calibration and durable local workers
+
+## What this evaluation measures
+
+The input is licensed video plus query text and half-open relevance intervals. The runner performs actual ingestion, cached CLIP image/text inference and exact retrieval. Outputs include file and manifest hashes, model revision, environment, raw scores, timestamps, Recall@K, MRR and negative return rate. Timings are in-process TestClient measurements, not network or throughput benchmarks. Concurrent local activity can affect latency.
+
+`bunny.json` uses Big Buck Bunny, (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org, under CC BY 3.0. License/source: https://peach.blender.org/about/ . The preparation script verifies the downloaded movie checksum, trims 30–70 seconds for calibration and 180–220 seconds for held-out evaluation, removes audio and re-encodes H.264. Media is ignored by Git. These are disjoint scenes from one animated film; they are not independent films, natural camera footage, or evidence of unseen-domain quality. CLIP pretraining overlap is unknown.
+
+Annotations were written from visually reviewed source frames at five-second intervals before retrieval. Each narrow interval `[t,t+0.1)` labels one sampled frame, not a continuous scene. Four positive and four negative queries per split cover rabbit/tree/flower/animal appearance and absent scenes, including compositional negatives. Recall measures the fraction of labeled moments recovered; MRR measures rank of the first relevant moment. For continuous real footage, label full valid intervals, document ambiguity and independently review them. Keep related clips in one source group. Freeze a new held-out set before changing the retrieval design; repeatedly optimizing against this pilot would turn it into development data.
+
+## Threshold fitting
+
+`calibrate.py` uses only calibration visual scores. It chooses the smallest floating-point threshold above the largest negative score. This guarantees zero false accepts on those four calibration negatives only. It is an operating threshold, not probability calibration. Held-out rows never enter fitting, and cross-split video hashes and source groups are checked. The report includes raw/calibrated Recall and MRR at 1, 3 and 5, positive abstention, and negative false accepts. Missing or incompatible artifacts fail closed when explicitly enabled.
+
+On this pilot, two of four held-out negatives still pass the threshold. The artifact remains opt-in through `SCENEMIND_CALIBRATION_PATH`. It filters visual evidence before hybrid fusion; it does not calibrate BM25, fused RRF values or the final hybrid response. The API checks the encoder revision and sampling configuration. Changing model, preprocessing, sampling or domain requires a new calibration study. Small float variations around the threshold are possible across hardware; use regression reports and do not silently retune held-out labels.
+
+Alternatives include quantile thresholds with larger negative sets, isotonic/Platt fitting with independently labeled correctness, and selective retrieval with explicit coverage/error targets. None is justified by eight calibration queries. No model training, OCR, action recognition or Video RAG was added. CLIP remains the existing pinned CPU-capable ViT-B/32 baseline; preprocessing, license and GPU tradeoffs are described in the earlier visual-search guide.
+
+## Worker lifecycle
+
+Default inline mode preserves V1 development behavior. With `SCENEMIND_DURABLE_JOBS=true`, the API persists jobs and returns promptly. One worker supervisor owns an OS lock in the shared data directory. A persistent spawned child processes jobs serially and reuses Python model caches. SQLite write transactions or a PostgreSQL transaction advisory lock serialize queue-capacity checks. A unique active key prevents duplicate work for a video/stage. The worker claims with compare-and-set, persists attempts, and backs off before retrying (two attempts by default).
+
+The supervisor waits up to `SCENEMIND_JOB_TIMEOUT` (900 seconds by default), then terminates the isolated process tree and recreates the child on subsequent work. FFmpeg still has its independent 300-second deadline. A child watchdog stops its process tree if the supervisor dies; an execution lock also prevents overlap with an orphan still exiting. Restart recovery requeues interrupted running rows within the attempt budget. Retries replay stages idempotently: frames are overwritten, embeddings replaced atomically, transcript segments replaced transactionally. The jobs table is authoritative for queued/running/failed state; existing product endpoints expose compatible processing status plus job metadata. `GET /jobs` and `POST /jobs/{id}/retry` provide inspection and deliberate retries.
+
+This is at-least-once processing, not an exactly-once distributed queue. A crash after saving a file and before acknowledging the job can cause a replay. A crash between saving an upload manifest and enqueueing can leave an unqueued asset; it is not silently deleted. Keep one consistent database/data-directory pair and one supervisor on one host. Network filesystems, multiple machines, multi-tenant ownership, high availability and public deployment are outside this milestone. API query inference still runs in the API process and is not covered by worker deadlines.
+
+## Authentication boundary
+
+Setting `SCENEMIND_AUTH_TOKEN` enables a shared operator credential. Browser-managed Basic authentication uses username `scenemind`; API tools can use Bearer authentication. Media, thumbnails, docs and job routes are protected; health and CORS preflight remain public. The frontend includes browser credentials, and mutations reject unexpected Origin headers. This is a single-operator foundation, not accounts, RBAC, session revocation or tenant isolation. Use loopback locally and TLS plus a properly configured proxy before any network deployment. Passwords stay in environment configuration, never frontend code or localStorage.
+
+## Verification
+
+Run `scripts/check.ps1`, opt-in real-model browser tests, benchmark preparation/run/calibration/regression, and `scripts/validate_containers.py`. The latter builds a non-root Linux image, runs model-mocked backend tests, then checks PostgreSQL in a disposable internal network without published ports or user volumes. Its test-only trust authentication is not the deployment configuration. Compose requires operator and database passwords and binds the API to loopback. The base image supports ingestion and test mocks; optional ML packages must be installed for containerized inference. Windows CPU inference remains the measured model path.

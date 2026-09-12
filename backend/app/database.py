@@ -51,5 +51,9 @@ def migrate():
     config = Config()
     config.set_main_option("script_location", str(Path(__file__).parents[1] / "migrations"))
     with engine().begin() as connection:
+        if connection.dialect.name == "sqlite":
+            connection.exec_driver_sql("BEGIN IMMEDIATE")
+        elif connection.dialect.name == "postgresql":
+            connection.exec_driver_sql("SELECT pg_advisory_xact_lock(734220)")
         config.attributes["connection"] = connection
         command.upgrade(config, "head")

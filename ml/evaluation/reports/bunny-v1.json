@@ -1,0 +1,607 @@
+{
+  "manifest_sha256": "0d2071ae81cb15bb7d852c9647d487cbd7e1f9af7d6c6be20843aaa4b78d54c2",
+  "dataset": "Big Buck Bunny scene-disjoint pilot v1",
+  "license": "CC-BY-3.0",
+  "attribution": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+  "source": "https://peach.blender.org/about/",
+  "limitations": "Animated single-film pilot, not source-disjoint. Labels cover reviewed 5-second frames only. No speech labels. CLIP pretraining overlap unknown.",
+  "utc": "2026-09-12T08:47:09.748728+00:00",
+  "machine": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.5",
+  "packages": {
+    "torch": "2.14.0+cpu",
+    "transformers": "4.57.6",
+    "faiss-cpu": "1.15.0"
+  },
+  "visual_model": "openai/clip-vit-base-patch32",
+  "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "device": "cpu",
+  "sampling_interval": 5.0,
+  "k": 5,
+  "repeats": 3,
+  "videos": [
+    {
+      "file": "data\\benchmark-source\\calibration.mp4",
+      "sha256": "f36b54695fdd0f591d944da4d97eb0708b255d9deef782f0b5f7d9a394efd105",
+      "split": "calibration",
+      "source_group": "opening",
+      "ingestion_seconds": 0.7168640999998388,
+      "duration": 40.0,
+      "frames": 8,
+      "index_seconds_including_model_setup": 13.34239290000005,
+      "storage_bytes": 1073053,
+      "vector_bytes": 16512
+    },
+    {
+      "file": "data\\benchmark-source\\heldout.mp4",
+      "sha256": "ec1e11b0dc787079440ba743afb5435dba928ee941d5a515542663ddff4008be",
+      "split": "heldout",
+      "source_group": "meadow",
+      "ingestion_seconds": 0.4907234000002063,
+      "duration": 40.0,
+      "frames": 8,
+      "index_seconds_including_model_setup": 0.5062368000008064,
+      "storage_bytes": 1161546,
+      "vector_bytes": 16512
+    }
+  ],
+  "queries": [
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.28579896688461304,
+        0.2676084041595459,
+        0.24308814108371735,
+        0.2409571409225464,
+        0.23695266246795654
+      ],
+      "query": "A rabbit standing outside its burrow",
+      "mode": "visual",
+      "intervals": [
+        [
+          15.0,
+          15.1
+        ],
+        [
+          20.0,
+          20.1
+        ],
+        [
+          25.0,
+          25.1
+        ],
+        [
+          30.0,
+          30.1
+        ],
+        [
+          35.0,
+          35.1
+        ]
+      ],
+      "timestamps": [
+        25.0,
+        0.0,
+        5.0,
+        30.0,
+        15.0
+      ],
+      "recall": 0.6,
+      "precision": 0.6,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.38679860000047483,
+      "warm_median_seconds": 0.023369300000013027
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.26795724034309387,
+        0.24643471837043762,
+        0.24067875742912292,
+        0.22880272567272186,
+        0.21354231238365173
+      ],
+      "query": "A dark hole beneath a tree",
+      "mode": "visual",
+      "intervals": [
+        [
+          0.0,
+          0.1
+        ],
+        [
+          5.0,
+          5.1
+        ],
+        [
+          10.0,
+          10.1
+        ],
+        [
+          15.0,
+          15.1
+        ],
+        [
+          20.0,
+          20.1
+        ],
+        [
+          25.0,
+          25.1
+        ]
+      ],
+      "timestamps": [
+        0.0,
+        5.0,
+        10.0,
+        15.0,
+        35.0
+      ],
+      "recall": 0.6666666666666666,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.026588900000206195,
+      "warm_median_seconds": 0.023774399999638263
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.24741125106811523,
+        0.20193734765052795,
+        0.18639792501926422,
+        0.186326801776886,
+        0.17537163197994232
+      ],
+      "query": "White flowers in the foreground",
+      "mode": "visual",
+      "intervals": [
+        [
+          35.0,
+          35.1
+        ]
+      ],
+      "timestamps": [
+        35.0,
+        0.0,
+        20.0,
+        25.0,
+        30.0
+      ],
+      "recall": 1.0,
+      "precision": 0.2,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.04497599999922386,
+      "warm_median_seconds": 0.04010460000063176
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.299270361661911,
+        0.2780236601829529,
+        0.253898561000824,
+        0.22271238267421722,
+        0.21893121302127838
+      ],
+      "query": "A rabbit with its arms raised",
+      "mode": "visual",
+      "intervals": [
+        [
+          20.0,
+          20.1
+        ]
+      ],
+      "timestamps": [
+        25.0,
+        30.0,
+        20.0,
+        15.0,
+        0.0
+      ],
+      "recall": 1.0,
+      "precision": 0.2,
+      "reciprocal_rank": 0.3333333333333333,
+      "returned": 5,
+      "first_search_seconds": 0.062296499999320076,
+      "warm_median_seconds": 0.0396309999996447
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.1583937555551529,
+        0.15683692693710327,
+        0.15497258305549622,
+        0.14043745398521423,
+        0.13901357352733612
+      ],
+      "query": "A red car on a road",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        0.0,
+        30.0,
+        35.0,
+        10.0,
+        5.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.02966400000059366,
+      "warm_median_seconds": 0.032989399999678426
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.21446362137794495,
+        0.21036292612552643,
+        0.19251267611980438,
+        0.19227918982505798,
+        0.1895008385181427
+      ],
+      "query": "A person cooking in a kitchen",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        30.0,
+        0.0,
+        20.0,
+        25.0,
+        5.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.03240749999986292,
+      "warm_median_seconds": 0.0314674000001105
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.19469095766544342,
+        0.18313708901405334,
+        0.1545465737581253,
+        0.14161543548107147,
+        0.13698364794254303
+      ],
+      "query": "An airplane flying over a city",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        30.0,
+        35.0,
+        0.0,
+        5.0,
+        20.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.029954300000099465,
+      "warm_median_seconds": 0.02649829999973008
+    },
+    {
+      "video": "data\\benchmark-source\\calibration.mp4",
+      "split": "calibration",
+      "source_group": "opening",
+      "scores": [
+        0.2029687464237213,
+        0.18525457382202148,
+        0.17838934063911438,
+        0.17369669675827026,
+        0.17065072059631348
+      ],
+      "query": "A dog swimming in water",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        30.0,
+        0.0,
+        10.0,
+        20.0,
+        35.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.02674990000014077,
+      "warm_median_seconds": 0.021759000000201922
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.2932347357273102,
+        0.2848190665245056,
+        0.2808871865272522,
+        0.27259257435798645,
+        0.2659515142440796
+      ],
+      "query": "A large rabbit in a grassy meadow",
+      "mode": "visual",
+      "intervals": [
+        [
+          0.0,
+          0.1
+        ],
+        [
+          10.0,
+          10.1
+        ],
+        [
+          15.0,
+          15.1
+        ],
+        [
+          25.0,
+          25.1
+        ]
+      ],
+      "timestamps": [
+        0.0,
+        15.0,
+        10.0,
+        25.0,
+        20.0
+      ],
+      "recall": 1.0,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.039991200000258686,
+      "warm_median_seconds": 0.035050800000135496
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.26784223318099976,
+        0.25874876976013184,
+        0.25743669271469116,
+        0.248848557472229,
+        0.19929955899715424
+      ],
+      "query": "Small animals beside a tree trunk",
+      "mode": "visual",
+      "intervals": [
+        [
+          5.0,
+          5.1
+        ],
+        [
+          20.0,
+          20.1
+        ],
+        [
+          30.0,
+          30.1
+        ],
+        [
+          35.0,
+          35.1
+        ]
+      ],
+      "timestamps": [
+        5.0,
+        30.0,
+        35.0,
+        20.0,
+        0.0
+      ],
+      "recall": 1.0,
+      "precision": 0.8,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.03941039999972418,
+      "warm_median_seconds": 0.039225599999554106
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.2629382610321045,
+        0.25856512784957886,
+        0.25329679250717163,
+        0.2529224753379822,
+        0.23077872395515442
+      ],
+      "query": "A rabbit holding its hands together",
+      "mode": "visual",
+      "intervals": [
+        [
+          25.0,
+          25.1
+        ]
+      ],
+      "timestamps": [
+        0.0,
+        5.0,
+        25.0,
+        15.0,
+        30.0
+      ],
+      "recall": 1.0,
+      "precision": 0.2,
+      "reciprocal_rank": 0.3333333333333333,
+      "returned": 5,
+      "first_search_seconds": 0.029595899999549147,
+      "warm_median_seconds": 0.031083800000487827
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.2856740653514862,
+        0.2711603343486786,
+        0.2611788511276245,
+        0.2562616765499115,
+        0.20456674695014954
+      ],
+      "query": "A red squirrel holding a purple butterfly",
+      "mode": "visual",
+      "intervals": [
+        [
+          30.0,
+          30.1
+        ]
+      ],
+      "timestamps": [
+        30.0,
+        20.0,
+        35.0,
+        5.0,
+        0.0
+      ],
+      "recall": 1.0,
+      "precision": 0.2,
+      "reciprocal_rank": 1.0,
+      "returned": 5,
+      "first_search_seconds": 0.02966740000010759,
+      "warm_median_seconds": 0.03157649999957357
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.1697966307401657,
+        0.16427430510520935,
+        0.1632072925567627,
+        0.15629060566425323,
+        0.1518281102180481
+      ],
+      "query": "A train arriving at a station",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        0.0,
+        15.0,
+        35.0,
+        20.0,
+        25.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.029839900000297348,
+      "warm_median_seconds": 0.017169700000522425
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.19397583603858948,
+        0.19147571921348572,
+        0.19012221693992615,
+        0.18379634618759155,
+        0.17779897153377533
+      ],
+      "query": "A person playing a piano",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        25.0,
+        35.0,
+        20.0,
+        0.0,
+        15.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.01629620000039722,
+      "warm_median_seconds": 0.015377400000033958
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.25713711977005005,
+        0.25447890162467957,
+        0.2289188653230667,
+        0.22564271092414856,
+        0.22369378805160522
+      ],
+      "query": "A white rabbit swimming underwater",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        0.0,
+        15.0,
+        25.0,
+        10.0,
+        5.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.01618629999939003,
+      "warm_median_seconds": 0.01507579999997688
+    },
+    {
+      "video": "data\\benchmark-source\\heldout.mp4",
+      "split": "heldout",
+      "source_group": "meadow",
+      "scores": [
+        0.2689109146595001,
+        0.25913742184638977,
+        0.24956084787845612,
+        0.24921070039272308,
+        0.22144851088523865
+      ],
+      "query": "A squirrel driving a car",
+      "mode": "visual",
+      "intervals": [],
+      "timestamps": [
+        20.0,
+        5.0,
+        30.0,
+        35.0,
+        15.0
+      ],
+      "recall": null,
+      "precision": 0.0,
+      "reciprocal_rank": null,
+      "returned": 5,
+      "first_search_seconds": 0.01730810000026395,
+      "warm_median_seconds": 0.018687900000259106
+    }
+  ],
+  "summary": {
+    "positive_queries": 8,
+    "negative_queries": 8,
+    "recall_at_k": 0.9083333333333333,
+    "precision_at_k": 0.47500000000000003,
+    "mrr_at_k": 0.8333333333333334,
+    "negative_return_rate": 1,
+    "warm_median_seconds": 0.028791050000108953
+  }
+}

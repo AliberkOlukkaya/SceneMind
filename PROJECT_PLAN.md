@@ -16,4 +16,4 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Phases 0-6 completed locally on 2026-09-12. Synthetic benchmarks and real-model browser/speech smoke checks are executed; real-video quality evaluation remains a follow-up. Phases 7-9 are deferred until a concrete use case/dataset justifies them. Phase 10 is not complete; public deployment is outside the verified local V1 boundary.
+Phases 0-6 and the bounded local Phase 10 follow-up are implemented: licensed scene-disjoint animated evaluation, frozen calibration/reporting/regression, optional operator authentication, durable isolated processing, retries/deadlines and Linux/PostgreSQL checks. Broad natural-video accuracy and full public production readiness remain unclaimed. Phases 7-9 stay deferred; measured compositional false matches first call for broader source-disjoint labels and calibration analysis.

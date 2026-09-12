@@ -1,10 +1,10 @@
 # Current architecture
 
-SceneMind is a local single-process application: Next.js/TypeScript/Tailwind in the browser, FastAPI in Python, local media/index files, and SQLite transcript tables managed by SQLAlchemy/Alembic. No hosted AI service is involved.
+SceneMind is a local single-host application: Next.js/TypeScript/Tailwind in the browser, FastAPI in Python, local media/index files, and SQLite transcript tables managed by SQLAlchemy/Alembic. No hosted AI service is involved.
 
 ## Video ingestion
 
-POST /videos receives a raw request body and filename query parameter. It checks extension, bounds streamed bytes and generates a UUID directory. One ingestion lock bounds concurrency. A 202 response schedules an in-process BackgroundTask. OpenCV inspects duration/FPS/resolution/codec; FFmpeg selects frames, emits actual presentation timestamps and produces 480-pixel JPEGs. Metadata and states live in atomic manifests. Startup marks interrupted jobs failed.
+POST /videos receives a raw request body and filename query parameter. It checks extension, bounds streamed bytes and generates a UUID directory. One ingestion lock bounds concurrency. A 202 response schedules a development BackgroundTask or persists a durable job for the isolated worker. OpenCV inspects duration/FPS/resolution/codec; FFmpeg selects frames, emits actual presentation timestamps and produces 480-pixel JPEGs. Metadata and states live in atomic manifests. Inline startup marks interruptions failed; durable recovery belongs to the worker supervisor.
 
 GET /videos lists manifests; GET /videos/{id} returns status/metadata/frames. /media supports HTTP byte ranges. /frames/{name} serves validated JPEG paths. Source media never uses user-controlled storage filenames. Supported limits: 250 MiB, 30 minutes, 4K, one ingestion at a time and a five-minute FFmpeg timeout.
 
@@ -12,7 +12,7 @@ GET /videos lists manifests; GET /videos/{id} returns status/metadata/frames. /m
 
 POST /videos/{id}/transcript starts a separate bounded speech job. FFmpeg extracts temporary mono 16 kHz WAV audio. A cached faster-whisper tiny model runs CPU INT8 inference with voice activity detection. SQLAlchemy stores transcript status and ordered segments; Alembic upgrades schema at application startup. Temporary audio is removed, retries replace segments transactionally, and restart recovery marks interrupted jobs failed.
 
-GET /videos/{id}/transcript returns segments with optional literal substring search. Video manifests remain authoritative for media; relational tables hold speech only. SQLite is verified. Configurable PostgreSQL URLs require a driver and migration/deployment validation that has not yet been performed.
+GET /videos/{id}/transcript returns segments with optional literal substring search. Video manifests remain authoritative for media; relational tables hold speech and durable jobs. SQLite and PostgreSQL migration/queue operations are verified; the optional postgres extra supplies psycopg. Full deployment and container ML remain separate validation steps.
 
 ## Visual retrieval
 
@@ -30,6 +30,14 @@ The client uploads File bodies, polls processing/index/transcript state, and pro
 
 Pytest uses generated media and mocked model inference. Real model smoke scripts verify the separate inference paths. Playwright starts isolated API/frontend instances and verifies desktop/mobile upload, seeking, error recovery and optional real CLIP retrieval. The benchmark runner measures the local pipeline against interval labels, keeping synthetic results distinct from real-video quality.
 
+## Durable processing and access
+
+Optional durable mode sends ingestion, speech and indexing to one reusable spawned inference child supervised by app.worker. SQL jobs store stage, unique active key, attempts, creation/retry time and safe errors. Transactional capacity checks and compare-and-set claims protect concurrent enqueue/claim. OS supervisor/execution locks enforce one host writer. Process-tree deadlines and parent-death monitoring isolate failed inference. Restart recovery replays jobs within the attempt budget. Model caches survive successful jobs. Files remain atomic, transcripts transactional; queue state overlays product status routes. Migrations are serialized per database.
+
+Optional Basic/Bearer operator authentication protects APIs, docs and media. Health and preflight stay public; Origin checks cover mutations. Browser requests include managed credentials. No password is embedded in the frontend.
+
+Evaluation records scores, intervals, hashes, split metadata and environment. Calibration fits only calibration visual negatives, rejects held-out split leakage, and reports Recall/MRR at 1/3/5 plus false accepts and abstention. An opt-in artifact gates visual evidence before fusion, bound to model revision and sampling. It is not a probability estimate or a calibrated hybrid score.
+
 ## Boundaries
 
-This is not a public production service. There is no authentication, durable job queue, model-inference deadline, multi-worker coordination, object storage or cross-user quota. FFmpeg has a timeout; model inference does not. Restart recovery reports failures rather than resuming work. OpenCV duration is approximate for VFR inputs. No OCR, action recognition, identity recognition, generated Q&A or fine-tuning exists.
+This is not a public multi-tenant service. Account lifecycle, tenant ownership, object storage, cross-user quotas, distributed worker leases and high availability are outside scope. Use consistent configuration on one host with local storage. API query inference remains in-process without the worker deadline. Inline mode retains V1 single-process limitations. Worker delivery is at-least-once; a crash before enqueue can leave an unqueued upload asset. OpenCV duration is approximate for VFR. The held-out pilot is small, single-film animated footage; broad natural-video and speech/hybrid accuracy remain unmeasured. No OCR, action recognition, identity recognition, generated Q&A or training was added.

@@ -7,7 +7,14 @@ export default defineConfig({
   globalSetup: "./e2e/setup.ts",
   timeout: 120_000,
   workers: 1,
-  use: { baseURL: "http://127.0.0.1:3010", trace: "retain-on-failure" },
+  use: {
+    baseURL: "http://127.0.0.1:3010",
+    trace: "retain-on-failure",
+    httpCredentials: process.env.SCENEMIND_E2E_AUTH ? {
+      username: "scenemind", password: process.env.SCENEMIND_E2E_AUTH,
+      origin: "http://127.0.0.1:8010",
+    } : undefined,
+  },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     {
@@ -20,6 +27,7 @@ export default defineConfig({
       command: `"${path.resolve(process.platform === "win32" ? "../.venv/Scripts/python.exe" : "../.venv/bin/python")}" -m uvicorn app.main:app --host 127.0.0.1 --port 8010`,
       url: "http://127.0.0.1:8010/health",
       env: {
+        SCENEMIND_AUTH_TOKEN: process.env.SCENEMIND_E2E_AUTH || "",
         SCENEMIND_DATA_DIR: `../data/e2e-${runId}/videos`,
         SCENEMIND_DATABASE_URL: `sqlite:///../data/e2e-${runId}/transcripts.db`,
         SCENEMIND_MODEL_CACHE: "../data/models",

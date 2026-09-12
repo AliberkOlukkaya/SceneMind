@@ -6,6 +6,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="SCENEMIND_", env_file=".env", extra="ignore")
+    calibration_path: Path | None = None
+    durable_jobs: bool = False
+    auth_token: str = ""
+    job_timeout: int = Field(default=900, ge=1)
+    job_attempts: int = Field(default=2, ge=1, le=5)
+    max_pending_jobs: int = Field(default=20, ge=1)
     cors_origins: list[str] = ["http://localhost:3000"]
     data_dir: Path = Path("data/videos")
     max_upload_bytes: int = Field(default=250 * 1024 * 1024, gt=0)

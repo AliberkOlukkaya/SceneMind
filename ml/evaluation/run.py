@@ -1,6 +1,7 @@
 """Reproducible local pipeline benchmark. Optional models are real, never mocked."""
 
 import argparse
+import hashlib
 import json
 import platform
 import statistics
@@ -29,28 +30,49 @@ class EvaluationQuery(BaseModel):
 
 class EvaluationVideo(BaseModel):
     path: Path
+    split: Literal["calibration", "heldout", "unspecified"] = "unspecified"
+    source_group: str = "unspecified"
     queries: list[EvaluationQuery] = Field(min_length=1)
 
 
 class EvaluationSet(BaseModel):
     name: str
     license: str
+    attribution: str = ""
+    source: str = ""
+    limitations: str = ""
     videos: list[EvaluationVideo] = Field(min_length=1)
 
 
 def run(manifest, k, repeats):
+    original = settings.model_dump()
+    try:
+        return _run(manifest, k, repeats)
+    finally:
+        for key, value in original.items():
+            setattr(settings, key, value)
+
+
+def _run(manifest, k, repeats):
     dataset = EvaluationSet.model_validate_json(manifest.read_text(encoding="utf-8"))
     for video in dataset.videos:
         if not video.path.is_file():
             raise FileNotFoundError(video.path)
         for query in video.queries:
             retrieval_metrics([], query.intervals, k)
+    settings.durable_jobs = False
+    settings.auth_token = ""
+    settings.calibration_path = None
     root = Path("data/benchmarks") / str(uuid4())
     settings.data_dir = root / "videos"
     settings.database_url = f"sqlite:///{root / 'transcripts.db'}"
     report = {
+        "manifest_sha256": hashlib.sha256(manifest.read_bytes()).hexdigest(),
         "dataset": dataset.name,
         "license": dataset.license,
+        "attribution": dataset.attribution,
+        "source": dataset.source,
+        "limitations": dataset.limitations,
         "utc": datetime.now(timezone.utc).isoformat(),
         "machine": platform.platform(),
         "python": platform.python_version(),
@@ -79,8 +101,17 @@ def run(manifest, k, repeats):
             record = client.get(f"/videos/{video_id}").json()
             if record["status"] != "ready":
                 raise RuntimeError(record)
+            if any(
+                end > record["metadata"]["duration"]
+                for q in video.queries
+                for _, end in q.intervals
+            ):
+                raise ValueError("Annotation extends beyond video duration")
             timings = {
                 "file": str(video.path),
+                "sha256": hashlib.sha256(video.path.read_bytes()).hexdigest(),
+                "split": video.split,
+                "source_group": video.source_group,
                 "ingestion_seconds": ingestion_seconds,
                 "duration": record["metadata"]["duration"],
                 "frames": len(record["frames"]),
@@ -118,6 +149,10 @@ def run(manifest, k, repeats):
                 timestamps = [r["timestamp"] for r in response.json()["results"]]
                 report["queries"].append(
                     {
+                        "video": str(video.path),
+                        "split": video.split,
+                        "source_group": video.source_group,
+                        "scores": [r["score"] for r in response.json()["results"]],
                         "query": query.text,
                         "mode": query.mode,
                         "intervals": query.intervals,

@@ -35,6 +35,7 @@ def test_index_search_and_model_mismatch(tmp_path, monkeypatch):
         folder,
         {
             "status": "ready",
+            "sampling_interval": settings.sampling_interval,
             "frames": [
                 {"timestamp": 0, "thumbnail": f"/videos/{VIDEO_ID}/frames/000001.jpg"},
                 {"timestamp": 5, "thumbnail": f"/videos/{VIDEO_ID}/frames/000002.jpg"},
@@ -55,5 +56,10 @@ def test_index_search_and_model_mismatch(tmp_path, monkeypatch):
     assert result["timestamp"] == 5
     assert result["score"] == pytest.approx(1)
     assert client.get(base + "/search?q=%20").status_code == 422
+    monkeypatch.setattr("app.calibration.threshold", lambda: 1.001)
+    abstained = client.get(base + "/search?q=car&k=2").json()
+    assert abstained["abstained"] is True
+    assert abstained["calibration_applied"] is True
+    assert abstained["results"] == []
     monkeypatch.setattr(settings, "visual_revision", "changed")
     assert client.get(base + "/search?q=car").status_code == 409

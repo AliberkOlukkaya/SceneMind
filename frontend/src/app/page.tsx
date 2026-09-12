@@ -1,4 +1,5 @@
 "use client";
+import { apiFetch } from "./api";
 import Link from "next/link";
 import Image from "next/image";
 import Transcript from "./transcript";
@@ -34,7 +35,7 @@ export default function Home() {
     let active = true;
     async function refresh() {
       try {
-        const response = await fetch(`${API}/videos`);
+        const response = await apiFetch(`${API}/videos`);
         if (!response.ok) throw new Error("Could not load the video library.");
         const data: Video[] = await response.json();
         if (active) {
@@ -68,7 +69,7 @@ export default function Home() {
     }
     setUploading(true);
     try {
-      const response = await fetch(
+      const response = await apiFetch(
         `${API}/videos?filename=${encodeURIComponent(file.name)}`,
         { method: "POST", body: file },
       );
