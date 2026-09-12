@@ -56,7 +56,7 @@ On Linux/macOS, create the environment with `python3 -m venv .venv` and use `.ve
 
 ## Evaluation and hardening
 
-The new [evaluation/hardening guide](docs/learning/06-calibration-and-durable-workers.md) and [measured pilot report](ml/evaluation/PILOT_RESULTS.md) cover the post-V1 milestone.
+The [Natural V2 protocol](ml/evaluation/NATURAL_V2_PROTOCOL.md), [measured results](ml/evaluation/NATURAL_V2_RESULTS.md), and [failure analysis](ml/evaluation/FAILURE_ANALYSIS.md) cover the current natural-video benchmark. The earlier [evaluation/hardening guide](docs/learning/06-calibration-and-durable-workers.md) and [animated pilot](ml/evaluation/PILOT_RESULTS.md) remain as historical baselines.
 
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
 
@@ -131,6 +131,16 @@ Run the real local synthetic benchmark from the root:
 
 The measured two-color fixture achieved Recall@1 and MRR@1 of 1.0 on **two positive queries**, with roughly **15 ms warm in-process median search latency**. The one negative query still returned a result. These tiny synthetic results validate the pipeline, not real-world accuracy or network performance. [Exact results](ml/evaluation/RESULTS.md) / [Protocol and custom manifests](ml/evaluation/PROTOCOL.md).
 
+Prepare and run the frozen natural-video benchmark:
+
+```powershell
+.venv/Scripts/python scripts/prepare_natural_v2.py
+.venv/Scripts/python -m ml.evaluation.run_natural_v2 --repeats 3
+.venv/Scripts/python -m ml.evaluation.regression_natural_v2 data/natural-v2-report.json ml/evaluation/reports/natural-v2.json
+```
+
+Natural V2's raw held-out visual R@5 is 85.7%, but nearest-neighbor retrieval accepts every negative. The calibration-only cutoff lowers negative FAR@5 to 10% while lowering R@5 to 38.1% and causing 52.4% positive false abstention. Speech reaches 80% R@5 with 0% negative FAR on its small slice. These are diagnostic results from three held-out videos, not population estimates.
+
 ## Learn the AI pipeline
 
 1. [Video processing](docs/learning/01-video-processing.md)
@@ -144,10 +154,10 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 ## Limitations and next work
 
 - Static frames can miss brief events and do not establish actions or causality.
-- Scores are rankings, not probabilities. There is no calibrated no-match threshold.
+- Scores are rankings, not probabilities. The opt-in no-match threshold transfers poorly across Natural V2 domains.
 - Whisper tiny can mistranscribe; lexical speech search misses paraphrases.
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
-- A licensed, held-out real-video benchmark is needed before quality claims.
+- Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

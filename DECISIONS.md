@@ -1,5 +1,9 @@
 # Decisions
 
+## 012 — High-recall candidates before an open-set verifier
+
+Natural V2 freezes 47 annotations over five independently sourced natural videos and evaluates visual, speech and hybrid paths without held-out tuning. Raw CLIP finds a relevant K=5 candidate for every held-out non-speech positive, while the calibration-only scalar cutoff causes 52.4% visual positive false abstention to reach 10% negative FAR. A calibration-only score-margin experiment rejects every held-out positive. Preserve CLIP as the candidate generator. Expand calibration sources, then test a compact pretrained image-text matching reranker with an explicit no-match score over the top five. Action Recognition, OCR, RAG, fine-tuning and a larger speech model remain unjustified by this evidence.
+
 ## 009 — Licensed, frozen scene-disjoint calibration pilot
 
 Two disjoint scenes from CC BY 3.0 Big Buck Bunny have checksum-verified media and reviewed sampled-frame labels written before inference. Raw scores and environment are recorded; calibration refuses cross-split content/group leakage. The threshold is just above the largest calibration-negative cosine score and remains opt-in. It reduces held-out false accepts from four to two but is not probability calibration or broad accuracy. Natural-footage/source-disjoint and speech/hybrid labels remain future data work. Existing evidence does not justify OCR/action/RAG.

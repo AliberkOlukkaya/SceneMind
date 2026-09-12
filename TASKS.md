@@ -38,6 +38,8 @@
 - [x] Shared operator authentication and authenticated browser validation
 - [x] Linux backend and PostgreSQL migration/queue validation paths
 - [x] Documentation and measured result artifacts
-- [ ] Broad source-disjoint natural-video and speech/hybrid quality evaluation
+- [x] Natural Video Benchmark V2 with source-disjoint held-out footage and speech/hybrid paths
+- [x] Versioned annotations, machine/human reports, failure analysis and stable regression gate
+- [ ] Expand calibration sources, then test the recommended compact image-text verifier in isolation
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
