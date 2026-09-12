@@ -10,6 +10,7 @@ from ml.experiments.image_text_verifier.schema import load_calibration
 from ml.experiments.lightweight_pair_scorer.learned import FEATURE_SCHEMA
 from ml.experiments.lightweight_pair_scorer.schema import (
     LearnedScorerArtifact,
+    UFormScorerArtifact,
     assert_all_disjoint,
     load_development,
 )
@@ -21,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def validate(report_path: Path, artifact_path: Path) -> None:
+def validate(report_path: Path, artifact_path: Path, uform_artifact_path: Path) -> None:
     natural_path = ROOT / "ml/evaluation/natural_v2.json"
     previous_path = ROOT / "ml/experiments/image_text_verifier/calibration_v1.json"
     development_path = Path(__file__).with_name("calibration_v2.json")
@@ -43,6 +44,15 @@ def validate(report_path: Path, artifact_path: Path) -> None:
     )
     if artifact.threshold != report["calibration"]["learned_threshold"]:
         raise ValueError("learned threshold differs between artifact and report")
+    uform_artifact = UFormScorerArtifact.model_validate_json(
+        uform_artifact_path.read_text(encoding="utf-8")
+    )
+    uform_artifact.assert_compatible(
+        report["uform"]["model_id"], report["uform"]["revision"],
+        report["environment"]["onnx_intra_op_threads"],
+    )
+    if uform_artifact.model_files != report["uform"]["model_files"]:
+        raise ValueError("UForm file metadata differs between artifact and report")
     expected_ids = {
         query.query_id
         for video in natural.videos if video.split == "heldout"
@@ -60,5 +70,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("report", type=Path)
     parser.add_argument("artifact", type=Path)
+    parser.add_argument("uform_artifact", type=Path)
     arguments = parser.parse_args()
-    validate(arguments.report, arguments.artifact)
+    validate(arguments.report, arguments.artifact, arguments.uform_artifact)

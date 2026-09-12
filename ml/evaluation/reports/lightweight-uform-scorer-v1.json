@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "unum-cloud/uform3-image-text-english-small",
+  "model_revision": "a8d990ed0dc6340b9c25cb47f06f86b9ecb67fa6",
+  "model_license": "Apache-2.0",
+  "runtime": "ONNX Runtime CPUExecutionProvider",
+  "image_size": 224,
+  "max_text_tokens": 64,
+  "embedding_dimensions": 256,
+  "model_files": {
+    "image_encoder.onnx": 22589738,
+    "text_encoder.onnx": 37994692
+  },
+  "intra_op_threads": 4,
+  "inter_op_threads": 1,
+  "threshold": 0.33021163940429693,
+  "threshold_rule": "lowest score allowing at most 10% calibration negative-query accepts",
+  "calibration_manifest_sha256": "a6a3e74e05f1bf76a711e6e31d67ccd0f024e865f4efd00ff83b7997bf27fc92",
+  "parent_calibration_manifest_sha256": "b5c43f977be3e51427f25143294d8edfb79e51f761eb26a6f1e415736af64c4c",
+  "parent_benchmark_manifest_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "created_at": "2026-09-12T11:29:25.941462+00:00",
+  "code_version": "285ee25bac46dfd1134ef2f904f357a606337803",
+  "promotable": false
+}

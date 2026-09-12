@@ -16,6 +16,7 @@ from ml.experiments.lightweight_pair_scorer.ranking import fit_threshold, rerank
 from ml.experiments.lightweight_pair_scorer.regression import check
 from ml.experiments.lightweight_pair_scorer.schema import (
     LearnedScorerArtifact,
+    UFormScorerArtifact,
     assert_all_disjoint,
     load_development,
 )
@@ -143,3 +144,24 @@ def test_frozen_heldout_comparison_detects_metric_change():
     current = json.loads(json.dumps(reference))
     current["heldout"]["metrics"]["uform_calibrated"]["5"]["recall"] = 0.7
     assert check(current, reference) == ["uform_calibrated@5 recall: 0.8 -> 0.7"]
+
+
+def test_uform_artifact_rejects_model_runtime_or_file_mismatch():
+    payload = {
+        "schema_version": "1.0.0", "model_id": "uform", "model_revision": "a" * 40,
+        "model_license": "Apache-2.0", "runtime": "ONNX Runtime CPUExecutionProvider",
+        "image_size": 224, "max_text_tokens": 64, "embedding_dimensions": 256,
+        "model_files": {"image_encoder.onnx": 10, "text_encoder.onnx": 20},
+        "intra_op_threads": 4, "inter_op_threads": 1, "threshold": 0.3,
+        "threshold_rule": "calibration only", "calibration_manifest_sha256": "b" * 64,
+        "parent_calibration_manifest_sha256": "c" * 64,
+        "parent_benchmark_manifest_sha256": "d" * 64,
+        "created_at": "2026-09-12T00:00:00Z", "code_version": "e" * 40,
+        "promotable": False,
+    }
+    artifact = UFormScorerArtifact.model_validate(payload)
+    artifact.assert_compatible("uform", "a" * 40, 4)
+    with pytest.raises(ValueError, match="does not match"):
+        artifact.assert_compatible("uform", "a" * 40, 2)
+    with pytest.raises(ValueError, match="unexpected"):
+        UFormScorerArtifact.model_validate({**payload, "model_files": {"model.onnx": 30}})

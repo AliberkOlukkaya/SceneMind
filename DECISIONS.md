@@ -1,5 +1,9 @@
 # Decisions
 
+## 014 — Stop dual-encoder threshold search; test explicit small-object evidence
+
+Freeze two more Commons calibration sources with 20 phone/key/bag/cup and relationship queries, then evaluate pinned `unum-cloud/uform3-image-text-english-small` through ONNX and an eight-parameter logistic scorer over CLIP retrieval statistics. UForm passes local resources at 202.1 ms warm median, 229.1 ms p95 and 163.1 MB isolated peak delta. It preserves candidate R@5 and reaches 0% held-out FAR, but abstains on 47.6% of positives. The logistic scorer costs 0.066 ms and abstains on 71.4%. Both fail the 20% limit, so skip the second run and keep production unchanged. All calibrated methods score 0% R@5 on the three small-object cases while raw CLIP scores 100%. Stop this similarity-threshold family and evaluate one explicit small-object/object-detector branch next.
+
 ## 013 — Reject BLIP ITM production promotion
 
 Expand verifier calibration with three source-disjoint Commons videos and 30 frozen relation/context annotations, then test pinned `Salesforce/blip-itm-base-coco` only over CLIP's top five. The calibration-only 0.433838 threshold reaches 10% held-out negative FAR but causes 52.4% positive false abstention and 26.2% R@5. Verifier-only reranking preserves R@5 but reduces R@1 and MRR. Batched CPU latency is 3.352 seconds and peak working set is about 1.49 GB. This fails the accuracy and 250 ms resource gates. Keep the experiment isolated, skip a second held-out run, and leave production unchanged. BridgeTower is larger; SigLIP lacks the joint ITM architecture being tested. Seek a materially smaller non-generative pair scorer only after expanding frozen held-out evidence.

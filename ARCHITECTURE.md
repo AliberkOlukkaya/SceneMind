@@ -40,6 +40,8 @@ Evaluation records scores, intervals, hashes, split metadata and environment. Na
 
 The image-text verifier lives only under `ml/experiments/image_text_verifier/`. It reuses the API and CLIP top-five candidates, batches pair scoring through a pinned BLIP ITM head, and emits ignored reports plus a model-bound calibration artifact. The experiment failed promotion gates, so the runtime architecture remains CLIP/BM25/RRF without verifier dependencies or fallback behavior.
 
+The follow-up under `ml/experiments/lightweight_pair_scorer/` preserves the same staged boundary. It benchmarks pinned UForm3-small ONNX cosine reranking and a deterministic logistic scorer over seven CLIP score/rank statistics. Two parent-hash-locked calibration expansions remain disjoint from Natural V2 held-out. Both fail the positive-abstention gate, so their dependencies and loading paths remain outside production.
+
 ## Boundaries
 
 This is not a public multi-tenant service. Account lifecycle, tenant ownership, object storage, cross-user quotas, distributed worker leases and high availability are outside scope. Use consistent configuration on one host with local storage. API query inference remains in-process without the worker deadline. Inline mode retains V1 single-process limitations. Worker delivery is at-least-once; a crash before enqueue can leave an unqueued upload asset. OpenCV duration is approximate for VFR. Natural V2 is small and diagnostic; it does not establish population accuracy. No OCR, action recognition, identity recognition, generated Q&A or training was added.

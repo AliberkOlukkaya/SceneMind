@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "scorer_type": "logistic-regression",
+  "feature_schema": [
+    "clip_score",
+    "reciprocal_rank",
+    "gap_from_top",
+    "top_two_gap",
+    "query_score_mean",
+    "query_score_std",
+    "query_score_range"
+  ],
+  "feature_mean": [
+    0.24010801166296006,
+    0.47622222222222227,
+    0.018868761608997982,
+    0.00919882208108902,
+    0.24010801166296014,
+    0.01433539004486896,
+    0.03788609231511752
+  ],
+  "feature_scale": [
+    0.036628924620561276,
+    0.29679364739799025,
+    0.020197351380282894,
+    0.007570713667638509,
+    0.032525971701541555,
+    0.008845104634245485,
+    0.02299427045512872
+  ],
+  "weights": [
+    1.0476782213781612,
+    -0.21185379732987528,
+    -0.2577481339939538,
+    -0.2848103029461235,
+    -0.048004917787595545,
+    -0.6773391095463492,
+    0.6654492037970446
+  ],
+  "intercept": -0.214281353423104,
+  "threshold": 0.6778145359668817,
+  "training_dataset": "scenemind-lightweight-pair-calibration-v2",
+  "training_manifest_sha256": "a6a3e74e05f1bf76a711e6e31d67ccd0f024e865f4efd00ff83b7997bf27fc92",
+  "parent_calibration_manifest_sha256": "b5c43f977be3e51427f25143294d8edfb79e51f761eb26a6f1e415736af64c4c",
+  "parent_benchmark_manifest_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "candidate_model_id": "openai/clip-vit-base-patch32",
+  "candidate_model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "runtime": "NumPy CPU float64",
+  "regularization": 1.0,
+  "random_seed": 0,
+  "trainable_parameters": 8,
+  "training_seconds": 0.003973499999119667,
+  "created_at": "2026-09-12T11:29:25.941462+00:00",
+  "code_version": "285ee25bac46dfd1134ef2f904f357a606337803"
+}

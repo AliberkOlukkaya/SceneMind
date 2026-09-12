@@ -16,4 +16,4 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Phases 0-6 and the bounded local Phase 10 follow-up are implemented, including Natural Video Benchmark V2. A Phase 7 candidate experiment expanded calibration data and evaluated BLIP ITM as an isolated second-stage verifier. It failed false-abstention and CPU-latency gates, so no advanced-understanding feature entered production. Broad accuracy and full public production readiness remain unclaimed. Phases 7-9 stay deferred pending stronger frozen evidence and a materially smaller pair scorer.
+Phases 0-6 and the bounded local Phase 10 follow-up are implemented, including Natural Video Benchmark V2. Two Phase 7 candidate experiments evaluated BLIP ITM, UForm3-small ONNX, and an eight-parameter retrieval-statistics scorer over CLIP's top five. UForm passes the resource gates but all calibrated methods fail positive abstention, so no pair scorer entered production. The next bounded Phase 7 experiment is an explicit small-object detector branch; phases 8-9 stay deferred.

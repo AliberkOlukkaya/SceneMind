@@ -42,6 +42,9 @@
 - [x] Versioned annotations, machine/human reports, failure analysis and stable regression gate
 - [x] Expand calibration sources and test BLIP ITM as an isolated image-text verifier
 - [x] Reject verifier production promotion after false-abstention and latency gate failures
-- [ ] Expand relation/small-object held-out evidence and research a sub-250 ms pair scorer
+- [x] Expand relation/small-object calibration evidence and benchmark a sub-250 ms pair scorer
+- [x] Test a calibration-only eight-parameter scorer over existing CLIP retrieval features
+- [x] Reject UForm/logistic promotion after frozen positive-abstention gate failures
+- [ ] Evaluate one small-object/object-detector branch over CLIP candidates
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

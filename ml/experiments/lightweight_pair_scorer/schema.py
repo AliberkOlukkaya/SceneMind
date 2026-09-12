@@ -99,3 +99,39 @@ class LearnedScorerArtifact(BaseModel):
             features, model_id, revision
         ):
             raise ValueError("learned scorer artifact does not match feature/model configuration")
+
+
+class UFormScorerArtifact(BaseModel):
+    schema_version: Literal["1.0.0"]
+    model_id: str
+    model_revision: str = Field(pattern=r"^[0-9a-f]{40}$")
+    model_license: str
+    runtime: Literal["ONNX Runtime CPUExecutionProvider"]
+    image_size: int = Field(gt=0)
+    max_text_tokens: int = Field(gt=0)
+    embedding_dimensions: int = Field(gt=0)
+    model_files: dict[str, int]
+    intra_op_threads: int = Field(gt=0)
+    inter_op_threads: int = Field(gt=0)
+    threshold: float
+    threshold_rule: str
+    calibration_manifest_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    parent_calibration_manifest_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    parent_benchmark_manifest_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    created_at: str
+    code_version: str
+    promotable: bool
+
+    @model_validator(mode="after")
+    def files(self):
+        if set(self.model_files) != {"image_encoder.onnx", "text_encoder.onnx"}:
+            raise ValueError("unexpected UForm ONNX artifact set")
+        if any(size <= 0 for size in self.model_files.values()):
+            raise ValueError("UForm ONNX artifact sizes must be positive")
+        return self
+
+    def assert_compatible(self, model_id: str, revision: str, threads: int) -> None:
+        if (self.model_id, self.model_revision, self.intra_op_threads) != (
+            model_id, revision, threads
+        ):
+            raise ValueError("UForm artifact does not match model/runtime configuration")
