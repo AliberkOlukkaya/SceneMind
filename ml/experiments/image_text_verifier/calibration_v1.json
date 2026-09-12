@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "scenemind-verifier-calibration-v1",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-12T13:42:00+03:00",
+  "parent_benchmark_id": "scenemind-natural-video-v2",
+  "parent_manifest_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "annotation_policy": "Annotations were visually reviewed and frozen before BLIP inference. Intervals are half-open and relative to the unmodified complete source file. Negatives emphasize plausible objects, activities, and relationships absent from each video.",
+  "videos": [
+    {
+      "video_id": "cal-food-preparation",
+      "path": "data/verifier-calibration/source/food-preparation.webm",
+      "source_group": "wikimedia-food-preparation-2023",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Food_Preparation.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Food_Preparation.webm",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Blvrsngh80540",
+        "source_sha1": "306a9c328eec5499822dd4fabb462f5ef5387340",
+        "source_sha256": "a2a2069e7fb5f27c26c6683c7ba2d831291b7b2b8d0e65ea115803301db93153",
+        "segment_start": 0.0,
+        "segment_end": 31.914,
+        "preparation": "Use the complete original WebM without transcoding."
+      },
+      "queries": [
+        {"query_id":"cal-food-object-fried","query_text":"Find the bowl of fried food.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0.0,31.914]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Fried food is visible on the counter throughout.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-object-woman","query_text":"Find the woman wearing yellow in the kitchen.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[14.0,27.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"The cook enters the visible frame.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-scene-kitchen","query_text":"Find the small food preparation kitchen.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0.0,31.914]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Counter, stove, utensils, and prepared food establish the kitchen.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-composition-holding","query_text":"Find the woman holding a plate of flatbread.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[15.0,24.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"The woman holds the plate near the counter.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-action-serving","query_text":"Find when the woman handles the prepared food.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[15.0,27.0]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Static frames expose handling but not the full motion.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-negative-cutting","query_text":"Find the woman cutting vegetables with a knife.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Plausible cooking action absent from the clip.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-negative-eating","query_text":"Find a customer eating the fried food.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Food is present but nobody eats it.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-negative-drink","query_text":"Find someone pouring a drink into a glass.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Semantically plausible kitchen activity is absent.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-negative-restaurant","query_text":"Find diners sitting in a restaurant dining room.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Food context is present but no dining room or diners.","annotation_version":"2.1.0"},
+        {"query_id":"cal-food-negative-dog","query_text":"Find a dog waiting beside the cook.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Person relation with an absent animal.","annotation_version":"2.1.0"}
+      ]
+    },
+    {
+      "video_id": "cal-couple-hands",
+      "path": "data/verifier-calibration/source/couple-holding-hands.webm",
+      "source_group": "youtube-editor-couple-2011",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Couple_holding_hands.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Couple_holding_hands.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "YouTube user Editor",
+        "source_sha1": "2aeea89e194fb9f8397aa93cb790d2d16d3f6cfa",
+        "source_sha256": "726fa7efba143027486bddfbb2420f40284088cfa744df1993f17d7dbeb68b5f",
+        "segment_start": 0.0,
+        "segment_end": 25.104,
+        "preparation": "Use the complete original WebM without transcoding."
+      },
+      "queries": [
+        {"query_id":"cal-couple-object-people","query_text":"Find the two people walking outdoors.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0.0,25.104]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Both people remain in view.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-scene-garden","query_text":"Find the garden path surrounded by trees.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[0.0,25.104]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Landscaped path is visible throughout.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-composition-hands","query_text":"Find the couple holding hands while walking.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[2.0,22.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Reviewed relation between the two people.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-action-walking","query_text":"Find the couple walking away along the path.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[0.0,25.104]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Walking direction is visible from posture and sequence.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-object-fence","query_text":"Find the wooden fence beside the path.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[0.0,25.104]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Fence appears beside the walkers.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-negative-bicycle","query_text":"Find the couple riding bicycles together.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Same outdoor movement context, wrong activity.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-negative-dog","query_text":"Find the couple walking a dog on a leash.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Plausible path scene and relation, absent dog.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-negative-bag","query_text":"Find the man carrying the woman's handbag.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"People are present but the object relation is absent.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-negative-wedding","query_text":"Find the couple standing at a wedding ceremony.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Couple context is plausible but scene and activity are absent.","annotation_version":"2.1.0"},
+        {"query_id":"cal-couple-negative-bench","query_text":"Find the two people sitting together on a bench.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Correct participants, wrong activity and relation.","annotation_version":"2.1.0"}
+      ]
+    },
+    {
+      "video_id": "cal-dog-gopro",
+      "path": "data/verifier-calibration/source/dog-gopro.webm",
+      "source_group": "youtube-pablo-fuentes-dog-2014",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Dog_seen_from_a_GoPro.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Dog_seen_from_a_GoPro.webm",
+        "license": "CC BY 3.0",
+        "license_url": "https://creativecommons.org/licenses/by/3.0/",
+        "attribution": "Pablo Fuentes",
+        "source_sha1": "269b9c9641927a8b5ad5396627e0c68e98ddaf16",
+        "source_sha256": "66559a1c5d786a414202e417c39c86fbc7d6b2240d3dc06e20f2dd87b97fb87a",
+        "segment_start": 0.0,
+        "segment_end": 43.32,
+        "preparation": "Use the complete original WebM without transcoding."
+      },
+      "queries": [
+        {"query_id":"cal-dog-object-white","query_text":"Find the small white dog.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[7.0,29.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Dog is clearly visible after the title and before the end card.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-scene-lawn","query_text":"Find the dog outdoors on a green lawn.","query_type":"SCENE","expected_presence":true,"relevant_intervals":[[7.0,29.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Outdoor grass scene with the dog.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-composition-woman","query_text":"Find the dog standing near a woman on the grass.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[12.0,23.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Woman is visible behind or beside dog.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-action-running","query_text":"Find the dog running toward the camera.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[7.0,27.0]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Dog approaches the low camera.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-object-tower","query_text":"Find the metal tower behind the dog.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[9.0,21.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Tower structure is visible in the background.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-negative-cat","query_text":"Find a cat playing with the dog on the grass.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Correct animal/play context but absent cat.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-negative-ball","query_text":"Find the dog chasing a red ball.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Plausible dog action with absent object.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-negative-swimming","query_text":"Find the white dog swimming in a pool.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Correct subject, wrong scene and activity.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-negative-indoors","query_text":"Find the dog sleeping indoors on a sofa.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Correct subject, absent indoor context and activity.","annotation_version":"2.1.0"},
+        {"query_id":"cal-dog-negative-leash","query_text":"Find a person walking the dog on a leash.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Person is nearby but no leash-walking relation occurs.","annotation_version":"2.1.0"}
+      ]
+    }
+  ]
+}
