@@ -1,8 +1,6 @@
 # Natural Video Benchmark V2 results
 
-Run `2026-09-12T10:17:56.464911+00:00` at commit `8092ea30aae2e23bee9c6454b20246f6df523a21` with frozen manifest 
-`3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd`. The visual cutoff `0.258063` was 
-fit only on calibration visual negatives. Held-out labels were not used for tuning.
+Run `2026-09-12T10:17:56.464911+00:00` at commit `8092ea30aae2e23bee9c6454b20246f6df523a21` with frozen manifest `3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd`. The visual cutoff `0.258063` was fit only on calibration visual negatives. Held-out labels were not used for tuning.
 
 ## Held-out metrics
 

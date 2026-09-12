@@ -181,8 +181,8 @@ def markdown(report: dict) -> str:
     lines = [
         "# Natural Video Benchmark V2 results",
         "",
-        f"Run `{report['utc']}` at commit `{report['git_commit']}` with frozen manifest ",
-        f"`{report['manifest_sha256']}`. The visual cutoff `{analysis['threshold']:.6f}` was ",
+        f"Run `{report['utc']}` at commit `{report['git_commit']}` with frozen manifest "
+        f"`{report['manifest_sha256']}`. The visual cutoff `{analysis['threshold']:.6f}` was "
         "fit only on calibration visual negatives. Held-out labels were not used for tuning.",
         "",
         "## Held-out metrics",
