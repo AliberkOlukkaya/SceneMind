@@ -1,0 +1,9 @@
+# Combining visual and speech evidence
+
+CLIP cosine and transcript BM25 scores have different units. Adding them directly would make ranking depend on an arbitrary scale. SceneMind instead combines positions in two ranked lists using reciprocal-rank fusion: sum 1/(60 + rank), with ranks starting at one and at most one contribution per modality per sampled-frame neighborhood.
+
+Implementation: backend/app/hybrid.py. BM25 tokenizes Unicode words, case-folds, removes a small documented English stopword set, and uses k1=1.2, b=0.75 with positive smoothed inverse document frequency. This is lexical speech relevance, not semantic paraphrase understanding. Every video's transcript segments form its corpus. Only positive-score speech candidates participate; up to 50 candidates per modality enter fusion.
+
+Speech segments map to the nearest sampled frame so evidence for the same neighborhood can reinforce itself. A fused speech-supported result seeks to the segment start, preserves its text/end timestamp, and shows the nearest frame as context. Thumbnail time and spoken evidence time may differ. Multiple transcript hits mapped to one frame contribute only once. Returned evidence includes original rank/score for each contributing modality.
+
+Modes: visual (cosine), speech (BM25), hybrid (RRF). Hybrid uses whichever completed modalities exist and explicitly reports modalities_used. It does not silently claim both exist. The constant 60 is a conventional smoothing baseline that dampens rank differences, not a tuned optimum. Tune only on a separate development set. Weighted score fusion and a learned reranker are alternatives requiring calibration or labels. Limitations: nearest-frame merging can conflate events, lexical search misses synonyms, and visual top-K has no calibrated abstention.

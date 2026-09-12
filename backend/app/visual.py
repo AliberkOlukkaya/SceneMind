@@ -95,7 +95,7 @@ def get_index(video_id: str):
     return index_status(folder)
 
 
-@router.get("/{video_id}/search")
+@router.get("/{video_id}/search/visual")
 def visual_search(
     video_id: str,
     q: str = Query(min_length=1, max_length=500),

@@ -37,7 +37,13 @@ def speech_client(tmp_path, monkeypatch):
         check=True,
     )
     save_manifest(
-        folder, {"status": "ready", "source": "source.wav", "metadata": {"duration": 3}}
+        folder,
+        {
+            "status": "ready",
+            "source": "source.wav",
+            "metadata": {"duration": 3},
+            "frames": [{"timestamp": 0, "thumbnail": "frame.jpg"}],
+        },
     )
     return TestClient(app)
 
@@ -60,6 +66,12 @@ def test_transcript_persistence_and_literal_search(speech_client, monkeypatch):
     # Retrying replaces segments rather than duplicating them.
     speech_client.post(route)
     assert len(speech_client.get(route).json()["segments"]) == 1
+    for mode in ("speech", "hybrid"):
+        results = speech_client.get(
+            f"/videos/{VIDEO_ID}/search", params={"q": "learning", "mode": mode}
+        ).json()
+        assert results["results"][0]["text"] == "Learning rate is 10% today."
+    assert results["modalities_used"] == ["speech"]
 
 
 def test_model_failure_and_restart(speech_client, monkeypatch):

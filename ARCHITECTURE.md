@@ -16,3 +16,6 @@ Video manifests remain authoritative for media assets; only transcript records a
 
 ## Phase 3 architecture
 Visual indexing is a separate explicit job. A cached Transformers CLIP dual encoder produces normalized 512-dimensional vectors, saved atomically as NumPy files. A sidecar records processing state, model and pinned revision. Search reconstructs a small exact FAISS IndexFlatIP index and embeds the query under the same inference lock. Results map to the original FFmpeg timestamps. Frontend displays raw cosine scores and seeks on selection. See learning documents 03 and 04.
+
+## Phase 4 architecture
+GET /videos/{id}/search accepts visual, speech or hybrid mode. BM25 ranks local transcript segments. Hybrid merges at most 50 candidates per modality through reciprocal-rank fusion in nearest-frame neighborhoods. Results expose evidence ranks/raw scores and use transcript-start navigation when speech contributes. Missing completed modalities are explicitly reported; speech mode needs no visual model. The ranking formula and tradeoffs are documented in learning/05-hybrid-retrieval.md.

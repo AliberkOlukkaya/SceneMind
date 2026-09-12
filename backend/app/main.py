@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database import migrate
+from app.hybrid import router as hybrid_router
 from app.speech import recover_speech
 from app.speech import router as speech_router
 from app.video import recover_interrupted, router
@@ -25,6 +26,7 @@ app = FastAPI(title="SceneMind", version="0.1.0", lifespan=lifespan)
 app.include_router(router)
 app.include_router(speech_router)
 app.include_router(visual_router)
+app.include_router(hybrid_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,

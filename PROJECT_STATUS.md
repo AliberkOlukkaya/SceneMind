@@ -1,11 +1,11 @@
 ﻿# Project status
 
-Current phase: 3 complete; Phase 4 next.
+Current phase: 4 complete; Phase 5 product validation next.
 
-Implemented: foundation, bounded video ingestion and timestamp browsing, local speech and literal search, pinned CLIP ViT-B/32 frame/text embeddings, exact FAISS cosine retrieval, explicit indexing and search UI. Models run locally and are optional installs.
+Implemented: video ingestion/library/player, local Whisper transcripts, pinned CLIP embeddings/FAISS search, BM25 speech relevance and documented reciprocal-rank fusion. Search supports visual, speech and hybrid modes with evidence labels and explicit available modalities. All inference is local.
 
-Verified 2026-09-12: 15 pytest tests passed; Ruff, frontend ESLint/TypeScript/build passed. Real Whisper speech smoke passed. Real CLIP synthetic smoke retrieved red at 0 s and blue at 5 s; first indexing including download took 64.311 s. These are smoke tests, not real-video quality benchmarks. Evaluation protocol exists in ml/evaluation/PROTOCOL.md.
+Verified 2026-09-12: 17 pytest tests passed; Ruff and frontend lint/type/build passed. Prior real Whisper and CLIP smoke tests passed. Hybrid tests cover lexical relevance, fusion, duplicate suppression and speech-only fallback. Real-world retrieval quality is not yet measured.
 
-Known limitations: browser visual/interaction QA outstanding; local single-process service, no auth/durable queue, approximate VFR metadata; CLIP static-frame limitations; no calibrated no-match threshold; no held-out real-video quality results. Optional models reside under ignored data/models. Two upstream test deprecation warnings remain.
+Limitations: browser QA outstanding; no authentication/durable queue; single-process deployment only; VFR duration approximate; models are not calibrated for no-match rejection or action understanding. Tiny speech accuracy and model-inference cancellation remain limited.
 
-Blockers: none for Phase 4. Next: token-based transcript relevance and reciprocal-rank fusion, modality-aware evidence tests; then browser end-to-end product validation and evaluation scripts.
+Blockers: no connected user browser; proceed with a dedicated Playwright development test browser. Next: end-to-end upload/seek/search validation, responsive screenshots, UI failure-state fixes, then benchmark scripts.
