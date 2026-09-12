@@ -4,13 +4,14 @@ from types import SimpleNamespace
 
 import imageio_ffmpeg
 import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy.orm import Session
+
 from app.config import settings
 from app.database import Transcript, engine, migrate
 from app.main import app
 from app.speech import recover_speech
 from app.video import save_manifest
-from fastapi.testclient import TestClient
-from sqlalchemy.orm import Session
 
 VIDEO_ID = "00000000-0000-0000-0000-000000000001"
 

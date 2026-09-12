@@ -7,9 +7,10 @@ import time
 from pathlib import Path
 
 import imageio_ffmpeg
+from fastapi.testclient import TestClient
+
 from app.config import settings
 from app.main import app
-from fastapi.testclient import TestClient
 
 parser = argparse.ArgumentParser()
 parser.add_argument("wav", type=Path)
@@ -45,9 +46,7 @@ with TestClient(app) as client:
     video_id = upload.json()["id"]
     started = time.perf_counter()
     client.post(f"/videos/{video_id}/transcript").raise_for_status()
-    result = client.get(
-        f"/videos/{video_id}/transcript", params={"q": "learning rate"}
-    ).json()
+    result = client.get(f"/videos/{video_id}/transcript", params={"q": "learning rate"}).json()
     result["elapsed_seconds"] = round(time.perf_counter() - started, 3)
     print(json.dumps(result, indent=2))
     assert result["status"] == "ready" and result["segments"], result

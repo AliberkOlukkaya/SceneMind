@@ -16,7 +16,7 @@
 - [x] 3: Visual embeddings and semantic retrieval
 - [x] 4: Explainable hybrid ranking
 - [x] 5: Complete product workspace
-- [ ] 6: Reproducible benchmark
+- [x] 6: Reproducible benchmark
 - [ ] 7: Justified advanced understanding
 - [ ] 8: Grounded Q&A
 - [ ] 9: Specialization proposal
@@ -27,3 +27,11 @@
 
 
 
+
+
+## V1 follow-up
+- [ ] Curate licensed held-out real-video queries and relevance intervals
+- [ ] Evaluate negative-query abstention/calibration
+- [ ] Add durable isolated workers and authentication before public deployment
+- [ ] Validate PostgreSQL and Linux deployment
+- [ ] Advanced phases 7-9: justify features/datasets before implementation

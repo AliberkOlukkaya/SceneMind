@@ -22,3 +22,6 @@ Use CLIP ViT-B/32 at a pinned Hub revision with Transformers 4.x and CPU PyTorch
 
 ## 007 — Rank fusion before learned ranking
 Use BM25 (k1=1.2, b=0.75) for lexical speech and RRF (constant 60) for hybrid ranking. Alternatives: uncalibrated score addition or a learned reranker without labeled data. Consequence: interpretable evidence and reasonable untuned defaults; nearest-frame merging can conflate moments and lexical search misses synonyms. Preserve modality-specific scores and document candidate limits.
+
+## 008 — Report synthetic evidence honestly
+The first benchmark is a generated two-color video with two positives and one negative. Keep it reproducible and label it as a pipeline baseline. Alternatives: invent quality claims or adopt an unreviewed external dataset. Consequences: measured timings/metrics and visible negative-query failure, but no real-world retrieval claim. Advanced OCR/Q&A/training remain deferred until a concrete use case and evaluation data justify them.

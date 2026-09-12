@@ -1,0 +1,14 @@
+{
+  "name": "Synthetic red/blue pipeline baseline",
+  "license": "Generated locally by SceneMind; no external media",
+  "videos": [
+    {
+      "path": "data/e2e-fixture.mp4",
+      "queries": [
+        {"text": "a red screen", "mode": "visual", "intervals": [[0, 5]]},
+        {"text": "a blue screen", "mode": "visual", "intervals": [[5, 10]]},
+        {"text": "a snowy mountain", "mode": "visual", "intervals": []}
+      ]
+    }
+  ]
+}

@@ -3,11 +3,12 @@ from types import SimpleNamespace
 
 import numpy as np
 import pytest
+from fastapi.testclient import TestClient
+
 from app.config import settings
 from app.encoder import normalize, rank_vectors
 from app.main import app
 from app.video import save_manifest
-from fastapi.testclient import TestClient
 
 VIDEO_ID = "00000000-0000-0000-0000-000000000002"
 

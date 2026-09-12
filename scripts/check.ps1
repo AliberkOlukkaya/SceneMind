@@ -3,7 +3,7 @@ Set-Location (Split-Path $PSScriptRoot -Parent)
 $testRun = 'data/test-' + [guid]::NewGuid().ToString('N')
 & .venv/Scripts/python -m pytest -c backend/pyproject.toml "--basetemp=$testRun"
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
-& .venv/Scripts/python -m ruff check backend tests
+& .venv/Scripts/python -m ruff check backend tests scripts ml
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
 Push-Location frontend
 try {

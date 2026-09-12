@@ -1,52 +1,139 @@
 # SceneMind
 
-Search inside video using natural language.
+**Search inside video using natural language.**
 
-SceneMind is a local-first video intelligence project built with FastAPI, Next.js, TypeScript and Tailwind. No paid AI API is required.
+Upload a video, browse sampled moments, transcribe speech, and retrieve scenes using visual or combined visual/speech evidence. Selecting a result seeks the player to its timestamp. Open pretrained models run locally: no API key, subscription, cloud GPU, or paid AI service is required.
+
+![SceneMind workspace](docs/images/workspace-desktop.png)
+
+*Actual application with generated red/blue test footage. This illustrates the workflow, not real-world retrieval quality. [Mobile view](docs/images/workspace-mobile.png).*
 
 ## Implemented
-Repository foundation and backend health endpoint. Video ingestion and AI retrieval are planned; see [project status](PROJECT_STATUS.md) for verified progress.
 
-## Development
-Requires Python 3.11–3.13 and Node.js 20.9+.
+- Bounded video upload, metadata, sampled frames and thumbnails.
+- Local Whisper tiny speech transcription and timestamped transcript search.
+- CLIP ViT-B/32 embeddings and exact FAISS cosine search.
+- BM25 speech relevance and explainable reciprocal-rank fusion.
+- Responsive library/player, processing states, three search modes and click-to-seek.
+- SQLite transcript persistence with SQLAlchemy/Alembic migrations.
+- Model-free unit tests, real-model smoke scripts, browser tests and a benchmark runner.
+
+Core phases 0-6 are implemented. This is a local portfolio application, not an authenticated public service. See [status](PROJECT_STATUS.md) for executed checks and limitations.
+
+## Run locally
+
+Verified on Windows, Python 3.13 and Node.js 24. Setup targets Python 3.11-3.13 and Node.js 20.9+. Other platforms are not yet verified.
+
+From the repository root in PowerShell:
 
 ```powershell
 py -3.13 -m venv .venv
-.venv\Scripts\python -m pip install -e "backend[dev]"
-.venv\Scripts\python -m uvicorn app.main:app --reload
+.venv/Scripts/python -m pip install -r backend/requirements.lock
+.venv/Scripts/python -m pip install -e "backend[dev]"
+.venv/Scripts/python -m uvicorn app.main:app --reload
 ```
 
-In another terminal:
+In a second terminal:
+
 ```powershell
 cd frontend
 npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. API documentation: http://localhost:8000/docs. Optional configuration: copy .env.example to .env at the repository root.
+Open **http://localhost:3000**. API docs: **http://localhost:8000/docs**. Run the backend from the repository root so relative paths resolve consistently. Use one backend worker.
 
-## Checks
+The base setup supports upload and frame browsing. Enable speech and visual search:
+
 ```powershell
-.venv\Scripts\python -m pytest -c backend/pyproject.toml
-.venv\Scripts\python -m ruff check backend tests
-cd frontend
-npm run lint
-npx tsc --noEmit
-npm run build
+.venv/Scripts/python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+.venv/Scripts/python -m pip install -e "backend[speech,visual]"
 ```
 
-See [architecture](ARCHITECTURE.md), [roadmap](PROJECT_PLAN.md), and [decisions](DECISIONS.md). Never commit uploaded media, model weights or secrets. This is not yet a production deployment.
+Restart the backend. Upload/select a video, then choose **Build visual index** and/or **Transcribe video**. First use downloads weights into ignored `data/models`; later runs reuse them. CLIP weights are roughly 600 MB; Whisper tiny is much smaller. `backend/requirements-ml.lock` records the full verified Windows CPU environment.
 
-## Video workflow
-Upload a supported video in the library, wait for processing, select it and click a thumbnail to seek. Limits: 250 MiB, 30 minutes, 4K. MP4/H.264 is recommended for browser playback; other accepted containers depend on browser codec support. Extraction runs locally with a packaged FFmpeg binary. Configure IMAGEIO_FFMPEG_EXE to use a system binary.
+On Linux/macOS, create the environment with `python3 -m venv .venv` and use `.venv/bin/python`. Install from `backend[dev]` instead of the Windows-specific lock.
 
-Implemented: upload, metadata, frames, thumbnails, processing states and video workspace. Speech and semantic search are not implemented yet. Run one backend worker; this local app has no authentication and should not be exposed publicly.
+## Configuration
 
-For reproducible Python dependencies, install `-r backend/requirements.lock` before `-e "backend[dev]"`. The lock records this Windows/Python 3.13 environment. Run `./scripts/check.ps1` for all checks; it uses isolated workspace test directories to avoid Windows temporary-directory permission issues.
+Optional: copy `.env.example` to root `.env`, and `frontend/.env.example` to `frontend/.env.local`.
 
-## Local speech
-Install `.venv\Scripts\python -m pip install -e "backend[speech]"`, restart the backend and select **Transcribe video** in a video workspace. First use downloads Whisper tiny into data/models. Transcripts can be searched by literal text and selected to seek. No API key is needed. See docs/learning/02-speech-transcription.md for model parameters and limitations.
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| SCENEMIND_DATA_DIR | data/videos | Media and indexes |
+| SCENEMIND_DATABASE_URL | sqlite:///data/scenemind.db | Transcript database |
+| SCENEMIND_SAMPLING_INTERVAL | 5 | Seconds between frames |
+| SCENEMIND_MAX_UPLOAD_BYTES | 262144000 | 250 MiB limit |
+| SCENEMIND_MAX_DURATION | 1800 | Maximum duration in seconds |
+| SCENEMIND_MODEL_CACHE | data/models | Model cache |
+| SCENEMIND_MODEL_DEVICE | cpu | Inference device; CUDA unverified |
+| SCENEMIND_SPEECH_MODEL | tiny | Whisper model or local directory |
+| SCENEMIND_VISUAL_MODEL | openai/clip-vit-base-patch32 | CLIP checkpoint |
+| SCENEMIND_VISUAL_REVISION | Pinned commit | Changing it requires reindexing |
+| NEXT_PUBLIC_API_URL | http://localhost:8000 | Browser API origin |
 
-SQLite transcript tables are migrated automatically at backend startup. SCENEMIND_DATABASE_URL changes the database location. Current core metadata remains in per-video manifests. The dependency lock currently includes the optional speech stack installed for verification.
+FFmpeg comes from imageio-ffmpeg; IMAGEIO_FFMPEG_EXE overrides its executable. No system FFmpeg installation was needed on Windows. Accepted containers: MP4, MOV, WebM, MKV and AVI, up to 4K. MP4/H.264 is the practical browser playback path; other codecs depend on the browser.
 
-A real model smoke check is available as `python scripts/smoke_speech.py path/to/short-reference.wav`; supply a short recording containing 'learning rate'. This downloads the model if uncached. Unit tests mock inference and do not download weights.
+## Architecture
+
+```mermaid
+flowchart LR
+  UI[Next.js workspace] --> API[FastAPI]
+  API --> Media[Local video]
+  Media --> FF[FFmpeg frames]
+  Media --> Audio[Mono 16 kHz audio]
+  FF --> CLIP[CLIP image encoder]
+  Query[Query text] --> Text[CLIP text encoder]
+  CLIP --> Vectors[Normalized vectors / FAISS]
+  Text --> Vectors
+  Audio --> Whisper[Whisper tiny]
+  Whisper --> DB[SQLite segments]
+  DB --> BM25[BM25 speech ranking]
+  Query --> BM25
+  Vectors --> Fusion[Reciprocal-rank fusion]
+  BM25 --> Fusion
+  Fusion --> Moments[Scored timestamps + evidence]
+  Moments --> UI
+```
+
+Preprocessing, inference, normalization, retrieval and evaluation remain explicit. Models load once per process. Video manifests and embedding files are atomic; relational migrations run at startup. Interrupted jobs are marked failed. [Architecture](ARCHITECTURE.md) / [Decisions](DECISIONS.md).
+
+## Validation and benchmarks
+
+```powershell
+./scripts/check.ps1
+cd frontend
+npx playwright install chromium
+npm run test:e2e
+```
+
+Default browser tests generate a fixture and require no model weights. Set `$env:SCENEMIND_MODEL_E2E='1'` to include real CLIP browser tests. Standalone smoke tests: scripts/smoke_visual.py and scripts/smoke_speech.py.
+
+Run the real local synthetic benchmark from the root:
+
+```powershell
+.venv/Scripts/python -m ml.evaluation.run --synthetic --k 1 --repeats 5
+```
+
+The measured two-color fixture achieved Recall@1 and MRR@1 of 1.0 on **two positive queries**, with roughly **15 ms warm in-process median search latency**. The one negative query still returned a result. These tiny synthetic results validate the pipeline, not real-world accuracy or network performance. [Exact results](ml/evaluation/RESULTS.md) / [Protocol and custom manifests](ml/evaluation/PROTOCOL.md).
+
+## Learn the AI pipeline
+
+1. [Video processing](docs/learning/01-video-processing.md)
+2. [Timestamped speech](docs/learning/02-speech-transcription.md)
+3. [CLIP embeddings](docs/learning/03-clip-and-multimodal-embeddings.md)
+4. [Vector retrieval](docs/learning/04-vector-search.md)
+5. [Hybrid ranking](docs/learning/05-hybrid-retrieval.md)
+
+CLIP and faster-whisper sources publish MIT licensing; consult model cards and retain notices when redistributing. No weights are vendored. FFmpeg licensing depends on the selected build.
+
+## Limitations and next work
+
+- Static frames can miss brief events and do not establish actions or causality.
+- Scores are rankings, not probabilities. There is no calibrated no-match threshold.
+- Whisper tiny can mistranscribe; lexical speech search misses paraphrases.
+- VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
+- No authentication, durable queue, hard model cancellation, multi-user quotas or multi-worker coordination. Keep the service bound to localhost.
+- A licensed, held-out real-video benchmark is needed before quality claims.
+
+OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

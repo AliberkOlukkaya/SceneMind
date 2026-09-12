@@ -2,9 +2,10 @@ import subprocess
 
 import imageio_ffmpeg
 import pytest
+from fastapi.testclient import TestClient
+
 from app.config import settings
 from app.main import app
-from fastapi.testclient import TestClient
 
 
 @pytest.fixture
@@ -45,10 +46,7 @@ def test_real_video_ingestion(client, video):
     assert record["metadata"]["width"] == 320
     assert record["metadata"]["duration"] == pytest.approx(6, abs=0.2)
     assert [frame["timestamp"] for frame in record["frames"]] == [0, 5]
-    assert (
-        client.get(record["frames"][0]["thumbnail"]).headers["content-type"]
-        == "image/jpeg"
-    )
+    assert client.get(record["frames"][0]["thumbnail"]).headers["content-type"] == "image/jpeg"
     assert len(client.get("/videos").json()) == 1
     media = client.get(f"/videos/{video_id}/media", headers={"Range": "bytes=0-9"})
     assert media.status_code == 206
@@ -92,9 +90,7 @@ def test_busy_pipeline(client):
 
     ingestion_lock.acquire()
     try:
-        assert (
-            client.post("/videos?filename=test.mp4", content=b"123").status_code == 429
-        )
+        assert client.post("/videos?filename=test.mp4", content=b"123").status_code == 429
     finally:
         ingestion_lock.release()
 

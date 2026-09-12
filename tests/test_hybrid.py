@@ -1,4 +1,5 @@
 import pytest
+
 from app.hybrid import bm25, fuse
 
 
