@@ -1,0 +1,71 @@
+{
+  "schema_version": "2.0.0",
+  "dataset_id": "scenemind-lightweight-pair-calibration-v2",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-12T14:25:00+03:00",
+  "parent_benchmark_id": "scenemind-natural-video-v2",
+  "parent_manifest_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "parent_calibration_id": "scenemind-verifier-calibration-v1",
+  "parent_calibration_manifest_sha256": "b5c43f977be3e51427f25143294d8edfb79e51f761eb26a6f1e415736af64c4c",
+  "annotation_policy": "Annotations were visually reviewed from one-second contact sheets and frozen before any candidate scorer inference. Intervals are half-open and relative to each complete original source file. Negatives require a plausible but visibly absent object, relationship, or action.",
+  "videos": [
+    {
+      "video_id": "cal-phone-keys-animation",
+      "path": "data/lightweight-pair-calibration/source/me-and-my-phone.webm",
+      "source_group": "wikimedia-mliteracy-phone-2018",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:1_Me_and_my_phone.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/1_Me_and_my_phone.webm",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Derek J Moore for mLiteracy",
+        "source_sha1": "c03f34d60659629c350b6a9e6798fb53d5210937",
+        "source_sha256": "51302ba9475e5660785d928f3e306fae64553ebb682a66c7bbaee2520020cd6a",
+        "segment_start": 0.0,
+        "segment_end": 30.101,
+        "preparation": "Use the complete original WebM without transcoding."
+      },
+      "queries": [
+        {"query_id":"cal-phone-keys-object-phone","query_text":"Find the phone standing upright on the table.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[6.0,10.0],[14.0,18.0],[23.0,25.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"A small phone stands on the tabletop in front of the silhouette.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-object-keys","query_text":"Find the keys beside the small bag.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[4.0,6.0],[10.0,14.0],[28.0,30.101]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Keys are clearly drawn beside the dark bag.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-object-bag","query_text":"Find the dark bag with a paper clip symbol.","query_type":"OBJECT","expected_presence":true,"relevant_intervals":[[4.0,6.0],[10.0,14.0],[28.0,30.101]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"The small bag and its clip symbol are visually distinct.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-relation-person","query_text":"Find a person standing behind a phone on a table.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[6.0,10.0],[14.0,18.0],[23.0,25.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"White silhouette is behind the upright phone and tabletop.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-object-bingo","query_text":"Find the bingo grid on a phone screen.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[5.0,8.0],[17.0,23.0],[25.0,28.0]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"A phone-shaped bingo board fills the frame.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-negative-holding","query_text":"Find the person holding the phone in one hand.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Person and phone coexist, but the phone stays on the table.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-negative-inside","query_text":"Find the phone inside the small bag.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Phone and bag appear in separate compositions; containment is absent.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-negative-hand","query_text":"Find a hand holding the keys.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Keys are present but no hand holds them.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-negative-cup","query_text":"Find a cup beside the phone on the table.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Phone and table are present; no cup appears.","annotation_version":"2.2.0"},
+        {"query_id":"cal-phone-keys-negative-calling","query_text":"Find the person making a phone call.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Person and phone appear but never in a calling pose.","annotation_version":"2.2.0"}
+      ]
+    },
+    {
+      "video_id": "cal-latte-salute",
+      "path": "data/lightweight-pair-calibration/source/latte-salute.webm",
+      "source_group": "white-house-latte-salute-2014",
+      "source": {
+        "page_url": "https://commons.wikimedia.org/wiki/File:Latte_salute.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Latte_salute.webm",
+        "license": "Public domain (United States government work)",
+        "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-POTUS",
+        "attribution": "Unidentified; released by the White House",
+        "source_sha1": "cc4f2673a978a54b0ba7f4a8b23c07bae54b4954",
+        "source_sha256": "7b339f9decba66c0c62f735dcbf36ec9151eab5b8ee858ae230d56679c12844f",
+        "segment_start": 0.0,
+        "segment_end": 6.571,
+        "preparation": "Use the complete original WebM without transcoding."
+      },
+      "queries": [
+        {"query_id":"cal-latte-object-cup","query_text":"Find the man holding a white coffee cup.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0.0,6.571]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"The white cup remains clearly visible in the man's right hand.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-relation-helicopter","query_text":"Find the man walking in front of a helicopter.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0.0,6.571]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"The man walks across the foreground with helicopter behind him.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-relation-marine","query_text":"Find the man walking past a saluting Marine.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[1.0,6.571]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"A uniformed Marine salutes while the man passes.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-action-walking","query_text":"Find the man walking away from the helicopter.","query_type":"ACTION_TEMPORAL","expected_presence":true,"relevant_intervals":[[2.0,6.571]],"modality_requirement":"temporal","evaluation_modes":["visual"],"notes":"Walking direction and increasing distance are visible across the clip.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-object-marine","query_text":"Find a uniformed Marine saluting beside the helicopter.","query_type":"COMPOSITIONAL","expected_presence":true,"relevant_intervals":[[0.0,5.5]],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Marine, salute, and helicopter are visible together.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-negative-drinking","query_text":"Find the man drinking from the coffee cup.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"He holds the cup but never raises it to drink.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-negative-transfer","query_text":"Find the man handing the coffee cup to the Marine.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Both people and cup are present, but no transfer occurs.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-negative-ground","query_text":"Find the coffee cup lying on the ground.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Cup remains in the man's hand.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-negative-phone","query_text":"Find the man holding a mobile phone.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"Small handheld-object hard negative; the object is a cup.","annotation_version":"2.2.0"},
+        {"query_id":"cal-latte-negative-handshake","query_text":"Find the man shaking hands with the Marine.","query_type":"NEGATIVE","expected_presence":false,"relevant_intervals":[],"modality_requirement":"visual","evaluation_modes":["visual"],"notes":"People pass near each other without a handshake.","annotation_version":"2.2.0"}
+      ]
+    }
+  ]
+}
