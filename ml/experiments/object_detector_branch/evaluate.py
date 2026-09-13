@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from importlib.metadata import version
 from pathlib import Path
 
-import cv2
+import imageio_ffmpeg
 
 from ml.experiments.object_detector_branch.detector import (
     MODEL_ID,
@@ -80,14 +80,19 @@ def extract_frame(video: Path, timestamp: float, output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     if output.is_file():
         return
-    capture = cv2.VideoCapture(str(video))
-    try:
-        capture.set(cv2.CAP_PROP_POS_MSEC, timestamp * 1000)
-        ok, image = capture.read()
-        if not ok or image is None or not cv2.imwrite(str(output), image):
-            raise RuntimeError(f"could not extract {video} at {timestamp}")
-    finally:
-        capture.release()
+    completed = subprocess.run(
+        [
+            imageio_ffmpeg.get_ffmpeg_exe(), "-hide_banner", "-loglevel", "error",
+            "-ss", str(timestamp), "-i", str(video), "-frames:v", "1", "-y", str(output),
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode or not output.is_file():
+        raise RuntimeError(
+            f"could not extract {video} at {timestamp}: {completed.stderr.strip()}"
+        )
 
 
 def runtime_benchmark(model_path: Path, frames: list[Path], threads: int) -> dict:

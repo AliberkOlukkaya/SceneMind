@@ -108,7 +108,11 @@ class YoloXNanoDetector:
         return self.session.get_providers()
 
     def detect_path(self, frame_id: str, timestamp: float, path: Path) -> list[DetectionEvidence]:
-        image = cv2.imread(str(path))
+        try:
+            encoded = np.fromfile(path, dtype=np.uint8)
+        except OSError as error:
+            raise ValueError(f"cannot read detector frame: {path}") from error
+        image = cv2.imdecode(encoded, cv2.IMREAD_COLOR)
         if image is None:
             raise ValueError(f"cannot read detector frame: {path}")
         return self.detect(frame_id, timestamp, image)

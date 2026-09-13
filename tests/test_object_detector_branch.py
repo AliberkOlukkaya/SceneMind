@@ -72,6 +72,17 @@ def test_detector_wrapper_decodes_mocked_onnx_output():
     )
 
 
+def test_detector_reads_unicode_windows_path(tmp_path):
+    import cv2
+
+    raw = np.zeros((1, 3549, 85), dtype=np.float32)
+    target = tmp_path / "görsel.jpg"
+    encoded = cv2.imencode(".jpg", np.zeros((10, 10, 3), dtype=np.uint8))[1]
+    encoded.tofile(target)
+    detector = YoloXNanoDetector(Path("unused.onnx"), session=FakeSession(raw))
+    assert detector.detect_path("frame-1", 0.0, target) == []
+
+
 def test_alias_mapping_and_query_gate_are_explicit():
     phone = map_query("Find the PHONE!", "OBJECT")
     assert phone.detector_enabled
