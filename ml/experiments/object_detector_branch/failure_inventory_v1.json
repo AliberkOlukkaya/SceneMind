@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "inventory_id": "scenemind-object-detector-failure-inventory-v1",
+  "annotation_status": "frozen-before-detector-selection",
+  "frozen_at": "2026-09-13T12:25:21+03:00",
+  "git_commit": "984fc81767b2e3e7c701138f1a2e84ec52588dde",
+  "parent_benchmark": {
+    "path": "ml/evaluation/natural_v2.json",
+    "sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd"
+  },
+  "parent_report": {
+    "path": "ml/evaluation/reports/lightweight-pair-scorer-v1.json",
+    "sha256": "669709a81c7052e576bce287226e2c792cd3ba155031110d32ceb55fad89c258"
+  },
+  "method": {
+    "failure_definition": "Held-out visual query in the predeclared small-object slice for which both calibrated lightweight scorers returned no result while raw CLIP retained an interval-relevant candidate in its first five results.",
+    "visual_review": "The exact JPEG frames referenced by the frozen parent report were manually inspected before any detector was selected or run.",
+    "scale_definition": "Approximate visible target bounding-box area divided by frame area. Values are coarse review estimates, not new benchmark annotations.",
+    "caveat": "Interval membership and visible object presence are recorded separately because a sampled frame can fall inside an interval while the target is cropped, occluded, or no longer visible."
+  },
+  "failures": [
+    {
+      "query_id": "street-object-bicycle",
+      "video_id": "street-traffic",
+      "query_text": "Find a bicycle.",
+      "query_type": "OBJECT",
+      "categories": ["OBJECT", "SMALL_OBJECT"],
+      "required_detector_classes": ["bicycle"],
+      "detector_friendly": true,
+      "relationship_required": false,
+      "raw_clip_recall_at_5": 1.0,
+      "calibrated_false_abstention": true,
+      "top5": [
+        {"rank": 1, "timestamp": 25.0, "clip_score": 0.238922, "interval_relevant": true, "object_visibly_present": true, "approx_area_ratio": 0.03, "scale_band": "small", "review_note": "Foreground cyclist and bicycle are visible; the bicycle is partly cropped by the lower frame edge."},
+        {"rank": 2, "timestamp": 30.0, "clip_score": 0.218317, "interval_relevant": true, "object_visibly_present": false, "approx_area_ratio": null, "scale_band": "not-visible", "review_note": "Timestamp is inside the frozen interval, but the cyclist has left the sampled frame."},
+        {"rank": 3, "timestamp": 20.0, "clip_score": 0.204943, "interval_relevant": false, "object_visibly_present": null, "approx_area_ratio": null, "scale_band": "not-reviewed", "review_note": "Outside the frozen relevant intervals."},
+        {"rank": 4, "timestamp": 15.0, "clip_score": 0.203808, "interval_relevant": true, "object_visibly_present": true, "approx_area_ratio": 0.01, "scale_band": "small", "review_note": "Cyclist and bicycle are visible at long range relative to the 1920 x 1080 source frame."},
+        {"rank": 5, "timestamp": 0.0, "clip_score": 0.194781, "interval_relevant": false, "object_visibly_present": null, "approx_area_ratio": null, "scale_band": "not-reviewed", "review_note": "Outside the frozen relevant intervals."}
+      ]
+    },
+    {
+      "query_id": "throw-object-ball",
+      "video_id": "ball-throwing",
+      "query_text": "Find the yellow ball.",
+      "query_type": "OBJECT",
+      "categories": ["OBJECT", "SMALL_OBJECT"],
+      "required_detector_classes": ["sports ball"],
+      "detector_friendly": true,
+      "relationship_required": false,
+      "raw_clip_recall_at_5": 1.0,
+      "calibrated_false_abstention": true,
+      "top5": [
+        {"rank": 1, "timestamp": 5.007, "clip_score": 0.230358, "interval_relevant": true, "object_visibly_present": false, "approx_area_ratio": null, "scale_band": "not-visible", "review_note": "The exact frozen candidate JPEG shows the man's hand below the lower edge; no yellow ball is visible."},
+        {"rank": 2, "timestamp": 0.007, "clip_score": 0.222545, "interval_relevant": false, "object_visibly_present": false, "approx_area_ratio": null, "scale_band": "not-visible", "review_note": "Outside the frozen interval and no ball is visible."},
+        {"rank": 3, "timestamp": 10.007, "clip_score": 0.218083, "interval_relevant": false, "object_visibly_present": null, "approx_area_ratio": null, "scale_band": "not-reviewed", "review_note": "Outside the frozen relevant interval."}
+      ]
+    },
+    {
+      "query_id": "throw-compositional-holding",
+      "video_id": "ball-throwing",
+      "query_text": "Find the man holding a yellow ball.",
+      "query_type": "COMPOSITIONAL",
+      "categories": ["SMALL_OBJECT", "RELATIONSHIP", "COMPOSITIONAL"],
+      "required_detector_classes": ["person", "sports ball"],
+      "detector_friendly": true,
+      "relationship_required": true,
+      "raw_clip_recall_at_5": 1.0,
+      "calibrated_false_abstention": true,
+      "top5": [
+        {"rank": 1, "timestamp": 5.007, "clip_score": 0.256721, "interval_relevant": true, "object_visibly_present": false, "approx_area_ratio": null, "scale_band": "not-visible", "review_note": "Person is visible, but the ball and hand are below the exact sampled JPEG; boxes cannot establish holding."},
+        {"rank": 2, "timestamp": 0.007, "clip_score": 0.24974, "interval_relevant": false, "object_visibly_present": false, "approx_area_ratio": null, "scale_band": "not-visible", "review_note": "Outside the frozen interval and no ball is visible."},
+        {"rank": 3, "timestamp": 10.007, "clip_score": 0.249582, "interval_relevant": false, "object_visibly_present": null, "approx_area_ratio": null, "scale_band": "not-reviewed", "review_note": "Outside the frozen relevant interval."}
+      ]
+    }
+  ],
+  "summary": {
+    "failed_queries": 3,
+    "object_presence_queries": 2,
+    "small_object_queries": 3,
+    "relationship_queries": 1,
+    "compositional_queries": 1,
+    "raw_clip_recall_at_5": 1.0,
+    "failed_queries_with_a_visibly_positive_top5_frame": 1,
+    "detector_friendly_class_queries": 3,
+    "relationship_required_queries": 1
+  }
+}
