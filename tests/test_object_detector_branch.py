@@ -18,6 +18,7 @@ from ml.experiments.object_detector_branch.schema import (
     DetectionEvidence,
     DetectorCalibrationArtifact,
 )
+from ml.experiments.object_detector_branch.validate import check
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -179,3 +180,10 @@ def test_failure_inventory_hashes_still_match_parents():
     for key in ("parent_benchmark", "parent_report"):
         parent = ROOT / inventory[key]["path"]
         assert hashlib.sha256(parent.read_bytes()).hexdigest() == inventory[key]["sha256"]
+
+
+def test_committed_report_artifact_and_evidence_validate():
+    assert check(
+        ROOT / "ml/evaluation/reports/object-detector-v1.json",
+        ROOT / "ml/experiments/object_detector_branch/calibration_v1.json",
+    ) == []

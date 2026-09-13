@@ -1,5 +1,9 @@
 # Decisions
 
+## 015 — Reject YOLOX-Nano; separate detection resolution from frame sampling
+
+Freeze the exact three-query small-object failure inventory before model selection. Test the official Apache-2.0 YOLOX-Nano `0.1.1rc0` ONNX artifact only on frozen CLIP top-five frames with explicit COCO aliases. Its 90.5 ms warm median, 99.6 ms p95 and 58.0 MiB added peak RSS pass resources, and class-matched negative FAR is 0%, but the calibration-only 0.8569 threshold causes 100% small-object false abstention. One ball-positive candidate does not visibly contain the ball, and the detector's best bicycle confidence is only 0.6085. Skip reranking, relationship rules and the second run; keep production unchanged. Next collect frame-visible source-disjoint small-object evidence and test a higher-resolution detector while evaluating sampling independently.
+
 ## 014 — Stop dual-encoder threshold search; test explicit small-object evidence
 
 Freeze two more Commons calibration sources with 20 phone/key/bag/cup and relationship queries, then evaluate pinned `unum-cloud/uform3-image-text-english-small` through ONNX and an eight-parameter logistic scorer over CLIP retrieval statistics. UForm passes local resources at 202.1 ms warm median, 229.1 ms p95 and 163.1 MB isolated peak delta. It preserves candidate R@5 and reaches 0% held-out FAR, but abstains on 47.6% of positives. The logistic scorer costs 0.066 ms and abstains on 71.4%. Both fail the 20% limit, so skip the second run and keep production unchanged. All calibrated methods score 0% R@5 on the three small-object cases while raw CLIP scores 100%. Stop this similarity-threshold family and evaluate one explicit small-object/object-detector branch next.

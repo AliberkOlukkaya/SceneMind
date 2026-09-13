@@ -62,6 +62,8 @@ The follow-up [image-text verifier experiment](ml/experiments/image_text_verifie
 
 The [lightweight scorer experiment](ml/experiments/lightweight_pair_scorer/README.md) added 20 frozen small-object/relation queries and tested UForm3-small ONNX plus an eight-parameter CLIP-statistics scorer. UForm meets resources at 202.1 ms median, 229.1 ms p95 and 163.1 MB isolated peak delta, but its 0% FAR costs 47.6% positive false abstention. The tiny scorer costs 0.066 ms but reaches 71.4% abstention. [Results](ml/evaluation/LIGHTWEIGHT_PAIR_SCORER_RESULTS.md), [failures](ml/evaluation/LIGHTWEIGHT_PAIR_SCORER_FAILURES.md), and the [model shortlist](ml/experiments/lightweight_pair_scorer/MODEL_SHORTLIST.md) record the rejection. Production remains CLIP/BM25/RRF.
 
+The [object-detector branch](ml/experiments/object_detector_branch/README.md) tested official YOLOX-Nano ONNX only on frozen CLIP top-five frames. It is efficient at 90.5 ms warm median, 99.6 ms p95 and 58.0 MiB added peak RSS, but its calibration-only threshold abstains on all three small-object positives. [Results](ml/evaluation/OBJECT_DETECTOR_RESULTS.md), [failures](ml/evaluation/OBJECT_DETECTOR_FAILURES.md), and the [shortlist](ml/experiments/object_detector_branch/MODEL_SHORTLIST.md) document the rejection. No detector code or dependency entered production.
+
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
 
 Optional settings: `SCENEMIND_JOB_TIMEOUT=900`, `SCENEMIND_JOB_ATTEMPTS=2`, `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.
@@ -163,6 +165,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- Compact dual-encoder rerankers still cannot transfer a low-FAR no-match threshold without excessive abstention; the next bounded experiment is explicit small-object detection.
+- YOLOX-Nano meets local resource targets but misses or weakly scores the frozen small objects; a future higher-resolution trial needs more source-disjoint, frame-visible evidence and a separate sampling analysis.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

@@ -45,6 +45,7 @@
 - [x] Expand relation/small-object calibration evidence and benchmark a sub-250 ms pair scorer
 - [x] Test a calibration-only eight-parameter scorer over existing CLIP retrieval features
 - [x] Reject UForm/logistic promotion after frozen positive-abstention gate failures
-- [ ] Evaluate one small-object/object-detector branch over CLIP candidates
+- [x] Evaluate and reject YOLOX-Nano as a small-object/object-detector branch over CLIP candidates
+- [ ] Add source-disjoint frame-visible small-object evidence before a higher-resolution detector trial
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

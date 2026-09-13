@@ -16,4 +16,4 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Phases 0-6 and the bounded local Phase 10 follow-up are implemented, including Natural Video Benchmark V2. Two Phase 7 candidate experiments evaluated BLIP ITM, UForm3-small ONNX, and an eight-parameter retrieval-statistics scorer over CLIP's top five. UForm passes the resource gates but all calibrated methods fail positive abstention, so no pair scorer entered production. The next bounded Phase 7 experiment is an explicit small-object detector branch; phases 8-9 stay deferred.
+Phases 0-6 and the bounded local Phase 10 follow-up are implemented, including Natural Video Benchmark V2. Three Phase 7 experiments evaluated BLIP ITM, UForm3-small ONNX, an eight-parameter retrieval-statistics scorer, and YOLOX-Nano over CLIP's top five. YOLOX-Nano passes resource limits but misses the small-object quality gate, so no verifier or detector entered production. The next bounded Phase 7 option is a higher-resolution detector after adding source-disjoint frame-visible small-object evidence; phases 8-9 stay deferred.
