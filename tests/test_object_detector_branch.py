@@ -72,11 +72,12 @@ def test_detector_wrapper_decodes_mocked_onnx_output():
     )
 
 
-def test_detector_reads_unicode_windows_path(tmp_path):
+def test_detector_reads_unicode_windows_path():
     import cv2
 
     raw = np.zeros((1, 3549, 85), dtype=np.float32)
-    target = tmp_path / "görsel.jpg"
+    target = ROOT / "data/test-object-detector-unicode/görsel.jpg"
+    target.parent.mkdir(parents=True, exist_ok=True)
     encoded = cv2.imencode(".jpg", np.zeros((10, 10, 3), dtype=np.uint8))[1]
     encoded.tofile(target)
     detector = YoloXNanoDetector(Path("unused.onnx"), session=FakeSession(raw))
