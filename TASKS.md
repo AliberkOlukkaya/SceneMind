@@ -61,7 +61,10 @@
 - [x] Integrate passing AUTO routing while retaining Visual, Speech and Hybrid overrides
 - [x] Prepare checksum-bound personal acceptance validation and human-usefulness aggregation
 - [x] Record the absence of personal media without substituting benchmark footage or fabricating metrics
-- [ ] Select three private videos and freeze English/Turkish queries before retrieval
-- [ ] Run private personal-video acceptance; record the >30-minute production upload outcome
+- [x] Select the three supplied videos and freeze 54 English/Turkish queries before retrieval
+- [x] Run production personal-video acceptance and record size, duration and audio limitations
+- [ ] Run a source-disjoint Turkish routing/retrieval compatibility milestone without tuning on personal acceptance
+- [ ] Define an honest unsupported-query response and a deliberate 30–60 minute ingestion policy
+- [ ] Repeat acceptance on valid-duration audio lecture/demo material after a candidate passes held-out gates
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

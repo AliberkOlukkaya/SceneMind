@@ -4,7 +4,7 @@ This is a private, human-judged product acceptance test. Benchmark and calibrati
 
 ## Freeze evidence before search
 
-Copy `personal_video_acceptance_template.json` to `data/personal-video-acceptance-v1.json`. Add exactly these three scenarios:
+Copy `personal_video_acceptance_template.json` to `data/personal-video-acceptance-v1.json`. Add exactly these three scenarios. Record whether the supplied file meets the target range instead of changing or rejecting the evidence:
 
 - `lecture_tutorial`: one 30–60 minute lecture or tutorial
 - `project_software_demo`: one 15–60 minute project or software demo
@@ -20,7 +20,7 @@ For each video record `video_id`, `scenario`, absolute `local_path`, SHA-256, `d
 - `mixed_visual_spoken`
 - `difficult_negative_unsupported`
 
-Each query needs `query_id`, `text`, `language` (`EN` or `TR`), `expected_best_route`, `expected_presence`, and manually reviewed half-open `relevant_intervals`. A positive needs at least one interval. A negative must use an empty list. Review the complete video, then set `annotation_status` to `frozen` and add `annotation_frozen_at` before running retrieval. Do not edit the frozen labels after seeing results.
+Each video also needs `duration_requirement_met`, matching the declared scenario range. Each query needs `query_id`, `text`, `language` (`EN` or `TR`), `expected_best_route`, `expected_presence`, and manually reviewed half-open `relevant_intervals`. A positive needs at least one interval. A negative must use an empty list. Review the complete video, then set `annotation_status` to `frozen` and add `annotation_frozen_at` before running retrieval. Do not edit the frozen labels after seeing results.
 
 Validate the frozen private manifest:
 
@@ -37,15 +37,16 @@ Use the current frontend and backend. Upload each video normally, wait for inges
 Run every frozen query in AUTO and then in Visual, Speech, and Hybrid modes. Judge the returned moments by clicking them. A result is useful only when a normal user would reasonably feel it found the request. Record:
 
 - AUTO selected route and whether it equals the frozen expected route
-- useful result in top 1, top 3, and top 5
+- useful result in top 1, top 3, and top 5 for positive queries
+- for a negative, whether the response is plausibly misleading
 - absolute timestamp error against the nearest reviewed interval
 - `PASS`, `PARTIAL`, or `FAIL`
 - one or more prescribed failure categories and a concrete reason
 - end-to-end search latency
 
-Top-k judgments must be monotonic: if top 1 is useful, top 3 and top 5 are useful. For an unsupported query, mark a rank useful only if the product response itself helps the user understand there is no supported match; unrelated nearest neighbors are not useful.
+Top-k judgments must be monotonic: if top 1 is useful, top 3 and top 5 are useful. Aggregate Top-k rates use positive queries only. Negatives require a boolean `negative_misleading` judgment and are aggregated separately. For an unsupported query, unrelated nearest neighbors are not useful.
 
-Store observations as a JSON object with the frozen `manifest_sha256`, `run_status: "complete"`, and one row for every video and query. Each video row needs `video_id`, `processing_time_seconds`, and non-empty `transcript_quality_observations`. Each query row uses `query_id`, `auto_selected_route`, `useful_top_1`, `useful_top_3`, `useful_top_5`, `timestamp_error_seconds`, `user_usefulness`, `failure_categories`, `failure_reason`, and `search_latency_ms`. It also contains `explicit_mode_results` with `VISUAL`, `SPEECH`, and `HYBRID` entries; every entry has the same usefulness, timestamp, failure, and latency fields except `auto_selected_route`.
+Store observations as a JSON object with the frozen `manifest_sha256`, `run_status: "complete"`, and one row for every video and query. Each video row needs `video_id`, `processing_time_seconds`, and non-empty `transcript_quality_observations`. Each query row uses `query_id`, `auto_selected_route`, `useful_top_1`, `useful_top_3`, `useful_top_5`, `timestamp_error_seconds`, `user_usefulness`, `failure_categories`, `failure_reason`, and `search_latency_ms`. Negative rows also require `negative_misleading`. It also contains `explicit_mode_results` with `VISUAL`, `SPEECH`, and `HYBRID` entries; every entry has the same usefulness, timestamp, failure, and latency fields except `auto_selected_route`.
 
 Generate the aggregate JSON only after all human judgments are complete:
 

@@ -126,15 +126,15 @@ def _acceptance_manifest(tmp_path):
         "suite_id": "personal-video-acceptance-v1", "annotation_status": "frozen",
         "videos": [
             {"video_id": "lecture", "scenario": "lecture_tutorial",
-             "duration_seconds": 1800,
+             "duration_seconds": 1800, "duration_requirement_met": True,
              "local_path": str(media[0]), "sha256": hashlib.sha256(media[0].read_bytes()).hexdigest(),
              "queries": queries("lecture")},
             {"video_id": "demo", "scenario": "project_software_demo",
-             "duration_seconds": 900,
+             "duration_seconds": 900, "duration_requirement_met": True,
              "local_path": str(media[1]), "sha256": hashlib.sha256(media[1].read_bytes()).hexdigest(),
              "queries": queries("demo")},
             {"video_id": "ordinary", "scenario": "ordinary_real_world",
-             "duration_seconds": 60,
+             "duration_seconds": 60, "duration_requirement_met": True,
              "local_path": str(media[2]), "sha256": hashlib.sha256(media[2].read_bytes()).hexdigest(),
              "queries": queries("ordinary")},
         ],
@@ -166,14 +166,24 @@ def test_personal_acceptance_supports_negative_queries_and_summarizes_human_usef
         "queries": [{
             "query_id": query["query_id"],
             "auto_selected_route": query["expected_best_route"],
-            "useful_top_1": True, "useful_top_3": True, "useful_top_5": True,
-            "timestamp_error_seconds": 1, "user_usefulness": "PASS",
+            "useful_top_1": query["expected_presence"],
+            "useful_top_3": query["expected_presence"],
+            "useful_top_5": query["expected_presence"],
+            "timestamp_error_seconds": 1 if query["expected_presence"] else None,
+            "user_usefulness": "PASS",
             "failure_categories": [], "failure_reason": "", "search_latency_ms": 5,
+            **({"negative_misleading": False} if not query["expected_presence"] else {}),
             "explicit_mode_results": {
-                mode: {"useful_top_1": True, "useful_top_3": True,
-                       "useful_top_5": True, "timestamp_error_seconds": 1,
+                mode: {"useful_top_1": query["expected_presence"],
+                       "useful_top_3": query["expected_presence"],
+                       "useful_top_5": query["expected_presence"],
+                       "timestamp_error_seconds": (
+                           1 if query["expected_presence"] else None
+                       ),
                        "user_usefulness": "PASS", "failure_categories": [],
-                       "failure_reason": "", "search_latency_ms": 6}
+                       "failure_reason": "", "search_latency_ms": 6,
+                       **({"negative_misleading": False}
+                          if not query["expected_presence"] else {})}
                 for mode in ("VISUAL", "SPEECH", "HYBRID")
             },
         } for query in all_queries],
@@ -183,6 +193,9 @@ def test_personal_acceptance_supports_negative_queries_and_summarizes_human_usef
     report = summarize(path, observations_path)
     assert report["overall"]["auto_routing_accuracy"] == 1.0
     assert report["overall"]["useful_top_5_rate"] == 1.0
+    assert report["overall"]["positive_queries"] == 36
+    assert report["overall"]["negative_queries"] == 6
+    assert report["overall"]["negative_non_misleading_rate"] == 1.0
     assert report["slices"]["language"]["TR"]["queries"] == 21
     assert report["processing"]["total_seconds"] == 30
     assert report["explicit_modes"]["VISUAL"]["useful_top_1_rate"] == 1.0
@@ -194,4 +207,18 @@ def test_personal_acceptance_rejects_positive_without_interval(tmp_path):
     path = tmp_path / "acceptance.json"
     path.write_text(json.dumps(manifest), encoding="utf-8")
     with pytest.raises(ValueError, match="positive query requires"):
+        validate(path)
+
+
+def test_personal_acceptance_records_supplied_video_duration_shortfall(tmp_path):
+    manifest = _acceptance_manifest(tmp_path)
+    manifest["videos"][0]["duration_seconds"] = 1200
+    manifest["videos"][0]["duration_requirement_met"] = False
+    path = tmp_path / "acceptance.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    assert validate(path)["videos"] == 3
+
+    manifest["videos"][0]["duration_requirement_met"] = True
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(ValueError, match="duration_requirement_met"):
         validate(path)

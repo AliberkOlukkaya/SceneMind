@@ -156,7 +156,7 @@ The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/t
 
 AUTO routing now uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 is 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matches. The interface defaults to Auto and keeps Visual, Speech, and Hybrid overrides. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
 
-Personal acceptance is prepared but has not run: no user-selected private videos or frozen manifest are present. Benchmark media was deliberately excluded, so no daily-use, Turkish, long-video, or AUTO reliability claim is made. The production duration default is 1,800 seconds, which rejects videos over 30 minutes. See [acceptance results](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) and [blocked evidence](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
+The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) froze 54 English/Turkish queries before searching the three supplied videos. Positive useful Top-1/3/5 was 52.8%/66.7%/83.3%, AUTO routing was 77.8%, and search latency was 23.25/32.02 ms median/p95. English Top-5 reached 88.9%; Turkish reached 77.8%, and all 12 route errors were Turkish. Only 22.2% of negatives avoided a misleading response. The measured outcome is C — not yet accepted. Production remains unchanged; see the [failure analysis](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
 
 ## Learn the AI pipeline
 
@@ -176,6 +176,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- AUTO can select the existing search path for represented English query forms, but personal 30–60 minute lecture/demo/podcast/ordinary-video use remains unverified. Keep explicit overrides and run the private acceptance protocol before v1.0 reliability claims.
+- AUTO can select the existing search path for represented English query forms, but Turkish routing and retrieval missed personal-use targets. The supplied 22:49 silent tutorial, 11:12 demo, and 35-second street clip do not verify 30–60 minute use; the original tutorial also exceeded the 250 MiB upload limit. Keep explicit overrides and avoid v1.0 reliability claims until the frozen acceptance gates pass.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

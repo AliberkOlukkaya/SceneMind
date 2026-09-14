@@ -22,9 +22,11 @@ CATEGORIES = {
 }
 USEFULNESS = {"PASS", "PARTIAL", "FAIL"}
 FAILURES = {
-    "ASR transcription failure", "Turkish routing failure", "CLIP semantic failure",
-    "timestamp imprecision", "hybrid fusion failure", "unsupported temporal reasoning",
-    "OCR required", "object too small", "no-match unsupported", "UI/product friction",
+    "AUTO routing failure", "ASR transcription failure", "speech lexical retrieval failure",
+    "Turkish language mismatch", "CLIP semantic retrieval failure",
+    "temporal sampling failure", "timestamp granularity issue", "hybrid fusion failure",
+    "small-object failure", "temporal/action reasoning required", "OCR required",
+    "no-match / false-confidence problem", "UI/product friction", "unsupported query",
 }
 
 
@@ -71,10 +73,13 @@ def validate(path: Path, require_frozen: bool = True) -> dict[str, Any]:
         duration = video.get("duration_seconds")
         if not isinstance(duration, (int, float)) or duration <= 0:
             raise ValueError(f"invalid duration: {video_id}")
-        if scenario == "lecture_tutorial" and not 1800 <= duration <= 3600:
-            raise ValueError("lecture/tutorial duration must be 30-60 minutes")
-        if scenario == "project_software_demo" and not 900 <= duration <= 3600:
-            raise ValueError("project/software demo duration must be 15-60 minutes")
+        target_met = (
+            1800 <= duration <= 3600 if scenario == "lecture_tutorial"
+            else 900 <= duration <= 3600 if scenario == "project_software_demo"
+            else True
+        )
+        if video.get("duration_requirement_met") is not target_met:
+            raise ValueError(f"incorrect duration_requirement_met: {video_id}")
         media = Path(video["local_path"])
         if not media.is_file() or sha256(media) != video["sha256"]:
             raise ValueError(f"missing or changed media: {video_id}")
@@ -147,19 +152,39 @@ def _rates(rows: list[dict[str, Any]]) -> dict[str, Any]:
     count = len(rows)
     if not count:
         return {"queries": 0}
+    positives = [row for row in rows if row["expected_presence"]]
+    negatives = [row for row in rows if not row["expected_presence"]]
+    positive_count = len(positives)
     return {
         "queries": count,
+        "positive_queries": positive_count,
+        "negative_queries": len(negatives),
         "auto_routing_accuracy": round(sum(row["route_correct"] for row in rows) / count, 4),
-        "useful_top_1_rate": round(sum(row["useful_top_1"] for row in rows) / count, 4),
-        "useful_top_3_rate": round(sum(row["useful_top_3"] for row in rows) / count, 4),
-        "useful_top_5_rate": round(sum(row["useful_top_5"] for row in rows) / count, 4),
+        "useful_top_1_rate": (
+            round(sum(row["useful_top_1"] for row in positives) / positive_count, 4)
+            if positive_count else None
+        ),
+        "useful_top_3_rate": (
+            round(sum(row["useful_top_3"] for row in positives) / positive_count, 4)
+            if positive_count else None
+        ),
+        "useful_top_5_rate": (
+            round(sum(row["useful_top_5"] for row in positives) / positive_count, 4)
+            if positive_count else None
+        ),
+        "negative_non_misleading_rate": (
+            round(sum(not row["negative_misleading"] for row in negatives) / len(negatives), 4)
+            if negatives else None
+        ),
         "pass_rate": round(sum(row["user_usefulness"] == "PASS" for row in rows) / count, 4),
         "partial_rate": round(sum(row["user_usefulness"] == "PARTIAL" for row in rows) / count, 4),
         "fail_rate": round(sum(row["user_usefulness"] == "FAIL" for row in rows) / count, 4),
     }
 
 
-def _validate_judgment(judgment: dict[str, Any], query_id: str) -> dict[str, Any]:
+def _validate_judgment(
+    judgment: dict[str, Any], query_id: str, expected_presence: bool
+) -> dict[str, Any]:
     useful = judgment["user_usefulness"].upper()
     if useful not in USEFULNESS:
         raise ValueError(f"invalid usefulness: {query_id}")
@@ -176,7 +201,11 @@ def _validate_judgment(judgment: dict[str, Any], query_id: str) -> dict[str, Any
     if timestamp_error is not None and (
             not isinstance(timestamp_error, (int, float)) or timestamp_error < 0):
         raise ValueError(f"invalid timestamp error: {query_id}")
-    return {**judgment, "user_usefulness": useful}
+    misleading = judgment.get("negative_misleading")
+    if not expected_presence and not isinstance(misleading, bool):
+        raise ValueError(f"negative query requires negative_misleading: {query_id}")
+    return {**judgment, "user_usefulness": useful,
+            "negative_misleading": misleading if not expected_presence else None}
 
 
 def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
@@ -203,11 +232,13 @@ def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
     for observation in observation_rows:
         video, query = expected[observation["query_id"]]
         selected = _route(observation["auto_selected_route"])
-        auto = _validate_judgment(observation, observation["query_id"])
+        presence = query["expected_presence"]
+        auto = _validate_judgment(observation, observation["query_id"], presence)
         rows.append({
             **auto, "language": query["language"].upper(),
             "scenario": video["scenario"], "category": query["category"],
             "expected_best_route": _expected_route(query),
+            "expected_presence": presence,
             "route_correct": selected == _expected_route(query),
         })
         mode_failures["AUTO"].update(auto.get("failure_categories", []))
@@ -215,8 +246,11 @@ def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
         if set(explicit) != ROUTES:
             raise ValueError(f"explicit results require VISUAL, SPEECH, and HYBRID: {observation['query_id']}")
         for mode in sorted(ROUTES):
-            result = _validate_judgment(explicit[mode], f"{observation['query_id']}:{mode}")
-            mode_rows[mode].append({**result, "route_correct": mode == _expected_route(query)})
+            result = _validate_judgment(
+                explicit[mode], f"{observation['query_id']}:{mode}", presence
+            )
+            mode_rows[mode].append({**result, "route_correct": mode == _expected_route(query),
+                                    "expected_presence": presence})
             mode_failures[mode].update(result.get("failure_categories", []))
 
     slices: dict[str, dict[str, Any]] = {}

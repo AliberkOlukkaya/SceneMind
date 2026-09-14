@@ -3,6 +3,6 @@
   "suite_id": "personal-video-acceptance-v1",
   "annotation_status": "draft",
   "annotation_frozen_at": null,
-  "policy": "Add only real user-selected local videos. For every video include both languages and all required categories. Freeze expected routes, presence, and reviewed intervals before retrieval. Do not commit populated copies, observations, or media.",
+  "policy": "Add only real user-selected local videos. For every video include both languages and all required categories. Freeze expected routes, presence, and reviewed intervals before retrieval. Never commit media, transcripts, indexes, databases, or secrets; commit a sanitized checksum-bound manifest only when the acceptance task explicitly requires it.",
   "videos": []
 }

@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.2.0",
+  "suite_id": "personal-video-acceptance-v1",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-15T01:18:00+03:00",
+  "heldout_tuning": false,
+  "ground_truth_method": "Direct review of source video frames before SceneMind ingestion/search; demo topic boundaries cross-checked against a pre-existing public chapter index. No SceneMind output was inspected before freezing.",
+  "videos": [
+    {
+      "video_id": "lecture-cup-of-tea",
+      "title": "Blender Tutorial: A cup of tea",
+      "scenario": "lecture_tutorial",
+      "local_path": "../video/Blender_Tutorial._A_cup_of_tea..webm",
+      "sha256": "cc77b4254e8a98724a6b882482b9a6d4bf0eaf9e61cd65641a2133d1f9245aee",
+      "duration_seconds": 1369.633,
+      "duration_requirement_met": false,
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "video_codec": "vp8",
+      "audio_present": false,
+      "audio_codec": null,
+      "file_size_bytes": 439295727,
+      "decode_verified": true,
+      "queries": [
+        {
+          "query_id": "lecture-01-en",
+          "text": "Where does he explain how to model the cup?",
+          "language": "EN",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The supplied file has no audio stream; no spoken explanation exists."
+        },
+        {
+          "query_id": "lecture-01-tr",
+          "text": "Fincan?n nas?l modellendi?ini anlatt??? b?l?m nerede?",
+          "language": "TR",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The supplied file has no audio stream; no spoken explanation exists."
+        },
+        {
+          "query_id": "lecture-02-en",
+          "text": "Where does he mention the Glass BSDF shader?",
+          "language": "EN",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The supplied file has no audio stream; no phrase is spoken."
+        },
+        {
+          "query_id": "lecture-02-tr",
+          "text": "Glass BSDF g?lgelendiricisinden nerede bahsediyor?",
+          "language": "TR",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The supplied file has no audio stream; no phrase is spoken."
+        },
+        {
+          "query_id": "lecture-03-en",
+          "text": "Show me the rendered cup on a saucer.",
+          "language": "EN",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              20
+            ],
+            [
+              325,
+              350
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "A rendered cup and saucer are visibly present in these sections."
+        },
+        {
+          "query_id": "lecture-03-tr",
+          "text": "Tabaktaki render edilmi? fincan? g?ster.",
+          "language": "TR",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              20
+            ],
+            [
+              325,
+              350
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "A rendered cup and saucer are visibly present in these sections."
+        },
+        {
+          "query_id": "lecture-04-en",
+          "text": "Find the Blender shader node editor.",
+          "language": "EN",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              350,
+              490
+            ],
+            [
+              620,
+              790
+            ],
+            [
+              980,
+              1130
+            ]
+          ],
+          "why": "Shader/material node graphs occupy a visible editor area."
+        },
+        {
+          "query_id": "lecture-04-tr",
+          "text": "Blender g?lgelendirici d???m d?zenleyicisini bul.",
+          "language": "TR",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              350,
+              490
+            ],
+            [
+              620,
+              790
+            ],
+            [
+              980,
+              1130
+            ]
+          ],
+          "why": "Shader/material node graphs occupy a visible editor area."
+        },
+        {
+          "query_id": "lecture-05-en",
+          "text": "Find the cup with its handle on the right and a saucer underneath.",
+          "language": "EN",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              275,
+              350
+            ],
+            [
+              1155,
+              1195
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "The cup, right-side handle and saucer are simultaneously visible."
+        },
+        {
+          "query_id": "lecture-05-tr",
+          "text": "Sap? sa?da ve alt?nda taba?? olan fincan? bul.",
+          "language": "TR",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              275,
+              350
+            ],
+            [
+              1155,
+              1195
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "The cup, right-side handle and saucer are simultaneously visible."
+        },
+        {
+          "query_id": "lecture-06-en",
+          "text": "Where does he explain glass shading while the transparent cup is visible?",
+          "language": "EN",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Transparent cup visuals occur, but the file has no speech, so the mixed condition is never satisfied."
+        },
+        {
+          "query_id": "lecture-06-tr",
+          "text": "?effaf fincan g?r?n?rken cam g?lgelendirmesini nerede anlat?yor?",
+          "language": "TR",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Transparent cup visuals occur, but the file has no speech, so the mixed condition is never satisfied."
+        },
+        {
+          "query_id": "lecture-07-en",
+          "text": "Show me the part where a donut is modeled.",
+          "language": "EN",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Manual visual review found no donut; the tutorial models tea, a cup, saucer and sugar."
+        },
+        {
+          "query_id": "lecture-07-tr",
+          "text": "Donut modellenen b?l?m? g?ster.",
+          "language": "TR",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Manual visual review found no donut; the tutorial models tea, a cup, saucer and sugar."
+        },
+        {
+          "query_id": "lecture-08-en",
+          "text": "Show me the sugar cubes beside the cup.",
+          "language": "EN",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              1155,
+              1195
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "White sugar cubes are visibly placed beside the cup."
+        },
+        {
+          "query_id": "lecture-08-tr",
+          "text": "Fincan?n yan?ndaki k?p ?ekerleri g?ster.",
+          "language": "TR",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              1155,
+              1195
+            ],
+            [
+              1335,
+              1369.633
+            ]
+          ],
+          "why": "White sugar cubes are visibly placed beside the cup."
+        },
+        {
+          "query_id": "lecture-09-en",
+          "text": "Find the smoke simulation around the cup.",
+          "language": "EN",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              1200,
+              1325
+            ]
+          ],
+          "why": "Smoke-domain settings and a visible rising smoke render appear here."
+        },
+        {
+          "query_id": "lecture-09-tr",
+          "text": "Fincan?n ?evresindeki duman sim?lasyonunu bul.",
+          "language": "TR",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              1200,
+              1325
+            ]
+          ],
+          "why": "Smoke-domain settings and a visible rising smoke render appear here."
+        },
+        {
+          "query_id": "lecture-10-en",
+          "text": "Show the transparent tea glass with tea leaves inside.",
+          "language": "EN",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              650,
+              710
+            ],
+            [
+              1325,
+              1369.633
+            ]
+          ],
+          "why": "A transparent glass containing amber tea and green leaves is visible."
+        },
+        {
+          "query_id": "lecture-10-tr",
+          "text": "??inde ?ay yapraklar? olan ?effaf ?ay barda??n? g?ster.",
+          "language": "TR",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              650,
+              710
+            ],
+            [
+              1325,
+              1369.633
+            ]
+          ],
+          "why": "A transparent glass containing amber tea and green leaves is visible."
+        }
+      ],
+      "ingestion_path": "data/personal-acceptance-inputs/Blender_Tutorial_A_cup_of_tea_ingest_crf27.mp4",
+      "ingestion_sha256": "e17197277d5340f70adf6b437668cd92921658a0e2bd89bce8fffc60aded6603",
+      "ingestion_file_size_bytes": 187399730,
+      "transcode_required": true,
+      "transcode_reason": "Original is 439,295,727 bytes and exceeds the production 262,144,000-byte upload limit.",
+      "transcode_command": "ffmpeg -y -v error -i <original> -map 0:v:0 -c:v libx264 -preset veryfast -crf 27 -pix_fmt yuv420p -an -movflags +faststart <derived.mp4>",
+      "discarded_attempt": "CRF 23 produced 288,109,027 bytes and still exceeded the limit; it was not ingested."
+    },
+    {
+      "video_id": "demo-blender-interface",
+      "title": "Interface Overview - Blender 2.80 Fundamentals",
+      "scenario": "project_software_demo",
+      "local_path": "../video/Interface_Overview_-_Blender_2.80_Fundamentals.webm",
+      "sha256": "7fa8a5bba05082467eb45088f2d8c39dea411b5c8062015749c5dd8934125d6d",
+      "duration_seconds": 672.561,
+      "duration_requirement_met": false,
+      "width": 1920,
+      "height": 1080,
+      "fps": 24.0,
+      "video_codec": "vp9",
+      "audio_present": true,
+      "audio_codec": "opus",
+      "audio_sample_rate_hz": 48000,
+      "audio_channels": 2,
+      "file_size_bytes": 40615175,
+      "decode_verified": true,
+      "queries": [
+        {
+          "query_id": "demo-01-en",
+          "text": "Where does he explain the status bar?",
+          "language": "EN",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              12,
+              58
+            ]
+          ],
+          "why": "The narration section explains the status bar."
+        },
+        {
+          "query_id": "demo-01-tr",
+          "text": "Durum ?ubu?unu anlatt??? b?l?m nerede?",
+          "language": "TR",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              12,
+              58
+            ]
+          ],
+          "why": "The narration section explains the status bar."
+        },
+        {
+          "query_id": "demo-02-en",
+          "text": "Where does he mention the 3D cursor?",
+          "language": "EN",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              201,
+              235
+            ]
+          ],
+          "why": "The chapter explicitly discusses the 3D cursor."
+        },
+        {
+          "query_id": "demo-02-tr",
+          "text": "3D cursor ifadesini nerede s?yl?yor?",
+          "language": "TR",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              201,
+              235
+            ]
+          ],
+          "why": "The chapter explicitly discusses the 3D cursor."
+        },
+        {
+          "query_id": "demo-03-en",
+          "text": "Show the default cube selected in the viewport.",
+          "language": "EN",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              672.542
+            ]
+          ],
+          "why": "The orange-outlined default cube remains visible for nearly the full demo."
+        },
+        {
+          "query_id": "demo-03-tr",
+          "text": "G?r?n?m alan?nda se?ili varsay?lan k?p? g?ster.",
+          "language": "TR",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              672.542
+            ]
+          ],
+          "why": "The orange-outlined default cube remains visible for nearly the full demo."
+        },
+        {
+          "query_id": "demo-04-en",
+          "text": "Find the Properties editor on the right side of Blender.",
+          "language": "EN",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              308,
+              672.542
+            ]
+          ],
+          "why": "The right-side Properties editor is the focus through the second half."
+        },
+        {
+          "query_id": "demo-04-tr",
+          "text": "Blender??n sa? taraf?ndaki Properties d?zenleyicisini bul.",
+          "language": "TR",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              308,
+              672.542
+            ]
+          ],
+          "why": "The right-side Properties editor is the focus through the second half."
+        },
+        {
+          "query_id": "demo-05-en",
+          "text": "Show the Outliner above the Properties editor on the right.",
+          "language": "EN",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              397,
+              416
+            ]
+          ],
+          "why": "The right column visibly contains the Outliner above Properties."
+        },
+        {
+          "query_id": "demo-05-tr",
+          "text": "Sa?da Outliner??n Properties d?zenleyicisinin ?st?nde oldu?u yeri g?ster.",
+          "language": "TR",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              397,
+              416
+            ]
+          ],
+          "why": "The right column visibly contains the Outliner above Properties."
+        },
+        {
+          "query_id": "demo-06-en",
+          "text": "Where are modifiers explained while the wrench tab is visible?",
+          "language": "EN",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              469,
+              495
+            ]
+          ],
+          "why": "Narration covers modifiers while the wrench icon/tab is shown."
+        },
+        {
+          "query_id": "demo-06-tr",
+          "text": "?ngiliz anahtar? sekmesi g?r?n?rken modifier?lar?n anlat?ld??? yer nerede?",
+          "language": "TR",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              469,
+              495
+            ]
+          ],
+          "why": "Narration covers modifiers while the wrench icon/tab is shown."
+        },
+        {
+          "query_id": "demo-07-en",
+          "text": "Show the UV Editor with an unwrapped texture.",
+          "language": "EN",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The interface overview does not open a UV Editor or show an unwrapped texture."
+        },
+        {
+          "query_id": "demo-07-tr",
+          "text": "A??lm?? bir doku ile UV Editor?? g?ster.",
+          "language": "TR",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The interface overview does not open a UV Editor or show an unwrapped texture."
+        },
+        {
+          "query_id": "demo-08-en",
+          "text": "Where does he explain pie menus?",
+          "language": "EN",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              235,
+              280
+            ]
+          ],
+          "why": "The narration chapter explains pie menus."
+        },
+        {
+          "query_id": "demo-08-tr",
+          "text": "Pie men?leri anlatt??? b?l?m nerede?",
+          "language": "TR",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              235,
+              280
+            ]
+          ],
+          "why": "The narration chapter explains pie menus."
+        },
+        {
+          "query_id": "demo-09-en",
+          "text": "Find the Add Modifier menu opened over the viewport.",
+          "language": "EN",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              488,
+              503
+            ]
+          ],
+          "why": "A large Add Modifier menu is visibly open."
+        },
+        {
+          "query_id": "demo-09-tr",
+          "text": "G?r?n?m alan?n?n ?zerinde a??lm?? Add Modifier men?s?n? bul.",
+          "language": "TR",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              488,
+              503
+            ]
+          ],
+          "why": "A large Add Modifier menu is visibly open."
+        },
+        {
+          "query_id": "demo-10-en",
+          "text": "Where is the camera object explained while its camera properties are shown?",
+          "language": "EN",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              646,
+              662
+            ]
+          ],
+          "why": "The camera is selected while camera-specific properties are narrated and visible."
+        },
+        {
+          "query_id": "demo-10-tr",
+          "text": "Kamera ?zellikleri g?sterilirken kamera nesnesinin anlat?ld??? yer nerede?",
+          "language": "TR",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              646,
+              662
+            ]
+          ],
+          "why": "The camera is selected while camera-specific properties are narrated and visible."
+        }
+      ],
+      "ingestion_path": "../video/Interface_Overview_-_Blender_2.80_Fundamentals.webm",
+      "ingestion_sha256": "7fa8a5bba05082467eb45088f2d8c39dea411b5c8062015749c5dd8934125d6d",
+      "ingestion_file_size_bytes": 40615175,
+      "transcode_required": false
+    },
+    {
+      "video_id": "real-world-street-traffic",
+      "title": "Street traffic",
+      "scenario": "ordinary_real_world",
+      "local_path": "../video/Street_traffic.webm",
+      "sha256": "e5facb24baf755f0c1193999d823e99f6032661ad2bdef5cc28cc1cbbfde03e2",
+      "duration_seconds": 35.004,
+      "duration_requirement_met": true,
+      "long_form_evidence": false,
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "video_codec": "vp8",
+      "audio_present": true,
+      "audio_codec": "vorbis",
+      "audio_sample_rate_hz": 44100,
+      "audio_channels": 2,
+      "file_size_bytes": 26490572,
+      "decode_verified": true,
+      "queries": [
+        {
+          "query_id": "street-01-en",
+          "text": "Where does the narrator discuss public transport?",
+          "language": "EN",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The clip contains ambient street audio and no narration."
+        },
+        {
+          "query_id": "street-01-tr",
+          "text": "Anlat?c? toplu ta??madan nerede bahsediyor?",
+          "language": "TR",
+          "category": "spoken_topic",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "The clip contains ambient street audio and no narration."
+        },
+        {
+          "query_id": "street-02-en",
+          "text": "Where does someone say traffic jam?",
+          "language": "EN",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "No spoken phrase is present in the ambient street clip."
+        },
+        {
+          "query_id": "street-02-tr",
+          "text": "Birisi traffic jam ifadesini nerede s?yl?yor?",
+          "language": "TR",
+          "category": "quoted_mentioned_phrase",
+          "expected_best_route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "No spoken phrase is present in the ambient street clip."
+        },
+        {
+          "query_id": "street-03-en",
+          "text": "Show the large city bus approaching the camera.",
+          "language": "EN",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              24
+            ]
+          ],
+          "why": "A large Muni bus approaches and dominates the foreground."
+        },
+        {
+          "query_id": "street-03-tr",
+          "text": "Kameraya yakla?an b?y?k ?ehir otob?s?n? g?ster.",
+          "language": "TR",
+          "category": "visual_object",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              24
+            ]
+          ],
+          "why": "A large Muni bus approaches and dominates the foreground."
+        },
+        {
+          "query_id": "street-04-en",
+          "text": "Find the busy city street filled with traffic.",
+          "language": "EN",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              35.004
+            ]
+          ],
+          "why": "The entire clip shows dense urban road traffic."
+        },
+        {
+          "query_id": "street-04-tr",
+          "text": "Trafikle dolu kalabal?k ?ehir caddesini bul.",
+          "language": "TR",
+          "category": "visual_scene",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              35.004
+            ]
+          ],
+          "why": "The entire clip shows dense urban road traffic."
+        },
+        {
+          "query_id": "street-05-en",
+          "text": "Show people crossing the road with buses behind them.",
+          "language": "EN",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              24,
+              35.004
+            ]
+          ],
+          "why": "Pedestrians cross in the foreground/background while buses remain visible."
+        },
+        {
+          "query_id": "street-05-tr",
+          "text": "Arkalar?nda otob?sler varken yoldan ge?en insanlar? g?ster.",
+          "language": "TR",
+          "category": "compositional_visual",
+          "expected_best_route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              24,
+              35.004
+            ]
+          ],
+          "why": "Pedestrians cross in the foreground/background while buses remain visible."
+        },
+        {
+          "query_id": "street-06-en",
+          "text": "Where is traffic congestion explained while the red light is visible?",
+          "language": "EN",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "A red light and congestion are visible, but there is no spoken explanation."
+        },
+        {
+          "query_id": "street-06-tr",
+          "text": "K?rm?z? ???k g?r?n?rken trafik s?k???kl???n?n anlat?ld??? yer nerede?",
+          "language": "TR",
+          "category": "mixed_visual_spoken",
+          "expected_best_route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "A red light and congestion are visible, but there is no spoken explanation."
+        },
+        {
+          "query_id": "street-07-en",
+          "text": "Show a motorcycle passing through the intersection.",
+          "language": "EN",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Manual review found cars, buses, trucks, taxis, cyclists and pedestrians, but no motorcycle."
+        },
+        {
+          "query_id": "street-07-tr",
+          "text": "Kav?aktan ge?en bir motosikleti g?ster.",
+          "language": "TR",
+          "category": "difficult_negative_unsupported",
+          "expected_best_route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "why": "Manual review found cars, buses, trucks, taxis, cyclists and pedestrians, but no motorcycle."
+        }
+      ],
+      "ingestion_path": "../video/Street_traffic.webm",
+      "ingestion_sha256": "e5facb24baf755f0c1193999d823e99f6032661ad2bdef5cc28cc1cbbfde03e2",
+      "ingestion_file_size_bytes": 26490572,
+      "transcode_required": false
+    }
+  ]
+}

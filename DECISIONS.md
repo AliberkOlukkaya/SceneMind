@@ -1,5 +1,9 @@
 # Decisions
 
+## 022 — Do not accept v1.0 after the first personal-video run
+
+Freeze 54 queries over the three exact supplied videos before retrieval, then use the production HTTP ingestion and search paths without tuning or model changes. AUTO reaches 77.8% routing accuracy and positive-query useful R@1/3/5 of 52.8%/66.7%/83.3%; all frozen quality gates fail. English Top-5 is 88.9% and Turkish Top-5 is 77.8%, while all 12 route mismatches are Turkish. Fourteen of 18 negatives return plausible but unsupported moments. Search latency passes at 23.25/32.02 ms median/p95, but the 419 MiB tutorial is rejected and requires an external transcode. The supplied lecture/demo durations also do not establish the requested 30–60 minute use. Choose outcome C, keep production unchanged, and make a bounded Turkish compatibility study with the current models the next ML milestone. Treat no-match disclosure and long-video policy as product work; require held-out evidence and a frozen repeat before promotion.
+
 ## 021 — Block personal acceptance rather than reuse benchmark media
 
 Inventory the ignored workspace before testing. Only fixtures, public benchmarks and earlier calibration sources are present; there is no Aliberk-selected lecture, demo, ordinary video or populated private manifest. Do not convert benchmark accuracy into a personal-use claim. Complete the checksum-bound manifest validator and human-usefulness aggregation, including Turkish, negative queries and all requested scenario/category slices, while leaving production unchanged. Record the current 1,800-second duration limit as an acceptance constraint: a video over 30 minutes is rejected. Resume evaluation only after real personal media is selected and annotations are frozen.
