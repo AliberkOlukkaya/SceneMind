@@ -27,9 +27,10 @@ export default function Search({
   const [results, setResults] = useState<Result[]>([]);
   const [busy, setBusy] = useState(false);
   const [searched, setSearched] = useState(false);
-  const [mode, setMode] = useState("hybrid");
+  const [mode, setMode] = useState("auto");
   const [scoreType, setScoreType] = useState("");
   const [modalities, setModalities] = useState<string[]>([]);
+  const [selectedRoute, setSelectedRoute] = useState("");
   useEffect(() => {
     let active = true;
     async function refresh() {
@@ -93,7 +94,8 @@ export default function Search({
       setResults(data.results);
       setSearched(true);
       setScoreType(data.score_type);
-      setModalities(data.modalities_used || [mode]);
+      setModalities(data.modalities_used || [data.selected_route || mode]);
+      setSelectedRoute(data.selected_route || mode);
     } catch (problem) {
       setError(problem instanceof Error ? problem.message : "Search failed.");
     } finally {
@@ -132,9 +134,10 @@ export default function Search({
             setSearched(false);
           }}
         >
-          <option value="hybrid">Visuals + speech</option>
+          <option value="auto">Auto</option>
           <option value="visual">Visuals</option>
           <option value="speech">Speech</option>
+          <option value="hybrid">Visuals + speech</option>
         </select>
       </label>
       <form onSubmit={(event) => void search(event)} className="search-form">
@@ -156,7 +159,7 @@ export default function Search({
       {results.length > 0 && (
         <>
           <p className="hint">
-            {scoreType.replaceAll("_", " ")} · Evidence:{" "}
+            {scoreType.replaceAll("_", " ")} · Route: {selectedRoute} · Evidence:{" "}
             {modalities.join(" + ")} · Scores are not confidence.
           </p>
           <div className="results">

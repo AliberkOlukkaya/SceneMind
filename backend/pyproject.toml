@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "scenemind-backend"
 version = "0.1.0"
 requires-python = ">=3.11,<3.14"
-dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic-settings>=2.7,<3", "opencv-python-headless>=4.11,<6", "imageio-ffmpeg>=0.6,<1", "sqlalchemy>=2,<3", "alembic>=1.15,<2"]
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic-settings>=2.7,<3", "numpy>=2,<3", "opencv-python-headless>=4.11,<6", "imageio-ffmpeg>=0.6,<1", "sqlalchemy>=2,<3", "alembic>=1.15,<2"]
 
 [project.optional-dependencies]
 postgres = ["psycopg[binary]>=3.2,<4"]
@@ -17,6 +17,9 @@ dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1", "faiss-cpu>=1.10,<2"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["../tests"]

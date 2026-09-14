@@ -24,6 +24,8 @@ The query text encoder produces a normalized vector. FAISS IndexFlatIP performs 
 
 GET /videos/{id}/search accepts visual, speech or hybrid mode. BM25 ranks transcript segments. Reciprocal-rank fusion combines up to 50 candidates per modality, one contribution per sampled-frame neighborhood. Speech-supported results seek to the speech start and retain text/end timestamp, while the thumbnail shows nearby visual context. Evidence contains each modality's original rank/score. Hybrid explicitly reports completed modalities used.
 
+The endpoint also accepts `auto`. A frozen 54-parameter multinomial linear router maps 18 lexical query features to visual, speech or hybrid in about 0.03 ms median on the measured CPU. Its artifact is bound to the source-disjoint routing calibration manifest. `SCENEMIND_AUTO_ROUTING_ENABLED` can make AUTO fall back to Hybrid without affecting explicit overrides. Responses expose requested mode, selected route, routing score and reason; the score is not correctness or no-match confidence. A Speech selection still requires a ready transcript.
+
 ## Product and validation
 
 The client uploads File bodies, polls processing/index/transcript state, and provides a library, player, sampled moments, search modes and transcript navigation. Result selection updates HTMLVideoElement.currentTime. Runtime data stays under ignored data/. Models are optional dependencies downloaded on explicit first use.
@@ -51,6 +53,8 @@ The rejected coarse-to-fine prototype under `ml/experiments/bounded_secondary_sa
 The rejected candidate-generation study under `ml/experiments/coarse_candidate_diversity/` retrieves up to 50 exact-FAISS CLIP candidates and deterministically evaluates temporal NMS, embedding MMR, combined diversity, embedding-change segments and a five-second-base plus high-change two-second diagnostic. Candidate intervals group neighboring evidence without changing relevance labels. A 50 ms timestamp tolerance handles measured VFR sampling jitter. Calibration selects all policy parameters before held-out evaluation. The high-recall raw pool is useful evidence for a future bounded list scorer, but no final-five selector meets quality and dense-index gates, so production remains the original five-second top-K search.
 
 The rejected study under `ml/experiments/candidate_list_ranking/` derives fixed candidate-list and query-distribution features from the existing five-second CLIP pool. Dependency-free L2 logistic models fit only calibration sources; Oracle@5/20/50 remains a permanent diagnostic. The list scorer loses held-out recall and the no-match model rejects nearly every positive, so neither enters the API. A separate audit selects already-recorded visual, BM25 speech or RRF hybrid results through the existing explicit mode and shows that correct routing has the largest measured gain. Because calibration has no speech rows, SceneMind does not infer modes from query text.
+
+The follow-up under `ml/experiments/query_routing/` adds three independent speech-heavy calibration sources and balances 36 Visual/Speech/Hybrid targets. Rules and class-balanced softmax use query text only. Leave-one-source-out selection precedes frozen Natural V2 evaluation. Learned AUTO matches the explicit-route Oracle at 95.2% R@5, passes an identical repeat, and enters production through `app.routing`. The interface keeps all explicit modes and defaults to Auto. The global no-match gate remains disabled.
 
 ## Boundaries
 

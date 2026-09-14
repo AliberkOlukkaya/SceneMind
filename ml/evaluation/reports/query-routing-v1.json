@@ -1,0 +1,6954 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "query-routing-v1",
+  "utc": "2026-09-14T21:28:15.102369+00:00",
+  "git_commit": "28866d180b4821bef66303d9df246527a0a5a25b",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.5",
+  "calibration_manifest_sha256": "8d6f17df2ba8615a63180bc6a030a57b95fe0fc32101dfd810ff6c93fd19f110",
+  "natural_manifest_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "natural_report_sha256": "c07dfdd16fbdb6eb0adb8f922600de88fede064fe374ee4869e60e63c5477cd8",
+  "heldout_tuning": false,
+  "dataset": {
+    "calibration_sources": 3,
+    "calibration_queries": 36,
+    "calibration_asr_segments": 205,
+    "route_counts": {
+      "VISUAL": 12,
+      "SPEECH": 12,
+      "HYBRID": 12
+    },
+    "duration_seconds": 961.304,
+    "heldout_sources": 3,
+    "heldout_queries": 31,
+    "source_disjoint": true,
+    "sources": [
+      {
+        "source_id": "translate-meta-tutorial",
+        "domain": "tutorial",
+        "title": "Video tutorial.webm",
+        "source_group": "commons-akwugo-translate-meta",
+        "page": "https://commons.wikimedia.org/wiki/File:Video_tutorial.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Video_tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "Akwugo",
+        "sha256": "7f8f412d4e68b259eb5571f289305f65408d717e14b1df6fa752a012194142fb",
+        "duration_seconds": 98.99,
+        "speech_characteristics": "English instructional narration with a strong accent; Whisper tiny labels language yo but produces usable English segments."
+      },
+      {
+        "source_id": "demo-production-tutorial",
+        "domain": "project_demo",
+        "title": "Demo Video Tutorial.webm",
+        "source_group": "commons-shagzhina-demo-production",
+        "page": "https://commons.wikimedia.org/wiki/File:Demo_Video_Tutorial.webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Demo_Video_Tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "attribution": "AlexandraShagzhina",
+        "sha256": "25a857b6896551f21c7d6c50181ad4451a903b53580fd5563af2c2a6bc2ae40f",
+        "duration_seconds": 199.916,
+        "speech_characteristics": "Clear English narration over slides and screen recordings; short pauses and mostly lexical instructional content."
+      },
+      {
+        "source_id": "mitx-course-overview",
+        "domain": "lecture",
+        "title": "Course Overview (6.002x).webm",
+        "source_group": "commons-mitx-6002-course-overview",
+        "page": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x).webm",
+        "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "license": "CC BY 2.0",
+        "license_url": "https://creativecommons.org/licenses/by/2.0",
+        "attribution": "mitxvtest / MITx",
+        "sha256": "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3",
+        "duration_seconds": 662.398,
+        "speech_characteristics": "Continuous English university lecture narration over an animated course-map slide; dense technical vocabulary."
+      }
+    ]
+  },
+  "selection": {
+    "split": "calibration",
+    "selected_method": "learned",
+    "learned": {
+      "winner": {
+        "regularization": 0.01,
+        "leave_one_source_out_accuracy": 0.9444444444444444
+      },
+      "trials": [
+        {
+          "regularization": 0.01,
+          "leave_one_source_out_accuracy": 0.9444444444444444
+        },
+        {
+          "regularization": 0.1,
+          "leave_one_source_out_accuracy": 0.9444444444444444
+        },
+        {
+          "regularization": 1.0,
+          "leave_one_source_out_accuracy": 0.9444444444444444
+        }
+      ]
+    },
+    "hybrid_fallback": {
+      "winner": {
+        "threshold": 0.0,
+        "routing_accuracy": 1,
+        "search": {
+          "1": {
+            "positive_queries": 36,
+            "recall": 0.6444444444444445,
+            "mrr": 0.7222222222222222
+          },
+          "3": {
+            "positive_queries": 36,
+            "recall": 0.8583333333333333,
+            "mrr": 0.7916666666666666
+          },
+          "5": {
+            "positive_queries": 36,
+            "recall": 0.8861111111111111,
+            "mrr": 0.7986111111111112
+          }
+        }
+      },
+      "trials": [
+        {
+          "threshold": 0.0,
+          "routing_accuracy": 1,
+          "search": {
+            "1": {
+              "positive_queries": 36,
+              "recall": 0.6444444444444445,
+              "mrr": 0.7222222222222222
+            },
+            "3": {
+              "positive_queries": 36,
+              "recall": 0.8583333333333333,
+              "mrr": 0.7916666666666666
+            },
+            "5": {
+              "positive_queries": 36,
+              "recall": 0.8861111111111111,
+              "mrr": 0.7986111111111112
+            }
+          }
+        },
+        {
+          "threshold": 0.45,
+          "routing_accuracy": 1,
+          "search": {
+            "1": {
+              "positive_queries": 36,
+              "recall": 0.6444444444444445,
+              "mrr": 0.7222222222222222
+            },
+            "3": {
+              "positive_queries": 36,
+              "recall": 0.8583333333333333,
+              "mrr": 0.7916666666666666
+            },
+            "5": {
+              "positive_queries": 36,
+              "recall": 0.8861111111111111,
+              "mrr": 0.7986111111111112
+            }
+          }
+        },
+        {
+          "threshold": 0.55,
+          "routing_accuracy": 1,
+          "search": {
+            "1": {
+              "positive_queries": 36,
+              "recall": 0.6444444444444445,
+              "mrr": 0.7222222222222222
+            },
+            "3": {
+              "positive_queries": 36,
+              "recall": 0.8583333333333333,
+              "mrr": 0.7916666666666666
+            },
+            "5": {
+              "positive_queries": 36,
+              "recall": 0.8861111111111111,
+              "mrr": 0.7986111111111112
+            }
+          }
+        },
+        {
+          "threshold": 0.65,
+          "routing_accuracy": 1,
+          "search": {
+            "1": {
+              "positive_queries": 36,
+              "recall": 0.6444444444444445,
+              "mrr": 0.7222222222222222
+            },
+            "3": {
+              "positive_queries": 36,
+              "recall": 0.8583333333333333,
+              "mrr": 0.7916666666666666
+            },
+            "5": {
+              "positive_queries": 36,
+              "recall": 0.8861111111111111,
+              "mrr": 0.7986111111111112
+            }
+          }
+        },
+        {
+          "threshold": 0.75,
+          "routing_accuracy": 1,
+          "search": {
+            "1": {
+              "positive_queries": 36,
+              "recall": 0.6444444444444445,
+              "mrr": 0.7222222222222222
+            },
+            "3": {
+              "positive_queries": 36,
+              "recall": 0.8583333333333333,
+              "mrr": 0.7916666666666666
+            },
+            "5": {
+              "positive_queries": 36,
+              "recall": 0.8861111111111111,
+              "mrr": 0.7986111111111112
+            }
+          }
+        }
+      ]
+    },
+    "calibration_methods": {
+      "heuristic": {
+        "routing_accuracy": 0.9444444444444444,
+        "confusion_matrix": {
+          "VISUAL": {
+            "VISUAL": 12,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "SPEECH": {
+            "VISUAL": 0,
+            "SPEECH": 11,
+            "HYBRID": 1
+          },
+          "HYBRID": {
+            "VISUAL": 1,
+            "SPEECH": 0,
+            "HYBRID": 11
+          }
+        },
+        "search": {
+          "1": {
+            "positive_queries": 36,
+            "recall": 0.6305555555555555,
+            "mrr": 0.6944444444444444
+          },
+          "3": {
+            "positive_queries": 36,
+            "recall": 0.8305555555555556,
+            "mrr": 0.7638888888888888
+          },
+          "5": {
+            "positive_queries": 36,
+            "recall": 0.8861111111111111,
+            "mrr": 0.7777777777777778
+          }
+        }
+      },
+      "learned": {
+        "routing_accuracy": 1,
+        "confusion_matrix": {
+          "VISUAL": {
+            "VISUAL": 12,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "SPEECH": {
+            "VISUAL": 0,
+            "SPEECH": 12,
+            "HYBRID": 0
+          },
+          "HYBRID": {
+            "VISUAL": 0,
+            "SPEECH": 0,
+            "HYBRID": 12
+          }
+        },
+        "search": {
+          "1": {
+            "positive_queries": 36,
+            "recall": 0.6444444444444445,
+            "mrr": 0.7222222222222222
+          },
+          "3": {
+            "positive_queries": 36,
+            "recall": 0.8583333333333333,
+            "mrr": 0.7916666666666666
+          },
+          "5": {
+            "positive_queries": 36,
+            "recall": 0.8861111111111111,
+            "mrr": 0.7986111111111112
+          }
+        }
+      },
+      "learned_fallback": {
+        "routing_accuracy": 1,
+        "confusion_matrix": {
+          "VISUAL": {
+            "VISUAL": 12,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "SPEECH": {
+            "VISUAL": 0,
+            "SPEECH": 12,
+            "HYBRID": 0
+          },
+          "HYBRID": {
+            "VISUAL": 0,
+            "SPEECH": 0,
+            "HYBRID": 12
+          }
+        },
+        "search": {
+          "1": {
+            "positive_queries": 36,
+            "recall": 0.6444444444444445,
+            "mrr": 0.7222222222222222
+          },
+          "3": {
+            "positive_queries": 36,
+            "recall": 0.8583333333333333,
+            "mrr": 0.7916666666666666
+          },
+          "5": {
+            "positive_queries": 36,
+            "recall": 0.8861111111111111,
+            "mrr": 0.7986111111111112
+          }
+        }
+      }
+    }
+  },
+  "learned_model": {
+    "feature_names": [
+      "bias",
+      "quoted",
+      "token_count_log",
+      "starts_when",
+      "starts_where",
+      "starts_find",
+      "speech_word_count",
+      "visual_word_count",
+      "color_word_count",
+      "spatial_word_count",
+      "action_word_count",
+      "abstract_word_count",
+      "object_word_count",
+      "has_while",
+      "has_on_screen",
+      "has_spoken_phrase",
+      "question_mark",
+      "speech_and_visual"
+    ],
+    "routes": [
+      "VISUAL",
+      "SPEECH",
+      "HYBRID"
+    ],
+    "mean": [
+      0.0,
+      0.0,
+      2.1687334583803306,
+      0.3333333333333333,
+      0.3055555555555556,
+      0.3611111111111111,
+      0.6388888888888888,
+      0.75,
+      0.1111111111111111,
+      0.0,
+      0.0,
+      0.1388888888888889,
+      0.6111111111111112,
+      0.3333333333333333,
+      0.08333333333333333,
+      0.05555555555555555,
+      0.6388888888888888,
+      0.3055555555555556
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      0.2838637533794,
+      0.4714045207910316,
+      0.46064233199380544,
+      0.4803226796052939,
+      0.4803226796052939,
+      0.7216878364870323,
+      0.3142696805273545,
+      1.0,
+      1.0,
+      0.4185144214810935,
+      0.590563656263036,
+      0.4714045207910317,
+      0.2763853991962834,
+      0.22906142364542562,
+      0.4803226796052939,
+      0.4606423319938055
+    ],
+    "weights": [
+      [
+        -0.27696432762617273,
+        0.24483029770861078,
+        0.032134029917561424
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.6727933248521384,
+        -0.8090403414305384,
+        1.4818336662826745
+      ],
+      [
+        -0.27566989573514816,
+        0.10930448072649379,
+        0.1663654150086532
+      ],
+      [
+        0.23695774471542605,
+        -0.1508011969517976,
+        -0.08615654776362786
+      ],
+      [
+        0.043302696018697795,
+        0.03734736966592767,
+        -0.08065006568462553
+      ],
+      [
+        -1.7521347069722693,
+        1.7523435030731551,
+        -0.0002087961008892823
+      ],
+      [
+        0.31617204046499886,
+        -0.6328598534658948,
+        0.3166878130008923
+      ],
+      [
+        0.6302494975319695,
+        -0.408406725607253,
+        -0.22184277192471794
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.04698576266498705,
+        -0.007063795248822869,
+        0.054049557913809984
+      ],
+      [
+        0.6468794512629515,
+        -0.7753167584479342,
+        0.12843730718498422
+      ],
+      [
+        -0.9265578492133707,
+        -1.1478970706826657,
+        2.074454919896049
+      ],
+      [
+        0.14165333158885504,
+        -0.19173633484116265,
+        0.05008300325230606
+      ],
+      [
+        -0.14384770123443955,
+        0.2705317139739102,
+        -0.12668401273947055
+      ],
+      [
+        -0.04330269601869779,
+        -0.03734736966592767,
+        0.08065006568462554
+      ],
+      [
+        -0.6639744880910022,
+        0.3246159868513763,
+        0.3393585012396236
+      ]
+    ],
+    "regularization": 0.01,
+    "parameters": 54
+  },
+  "heldout_methods": {
+    "current_default": {
+      "routing_accuracy": 0.03225806451612903,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 24
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 6
+        },
+        "HYBRID": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 1
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8095238095238095,
+          "mrr": 0.9047619047619048
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.8809523809523809,
+          "mrr": 0.9285714285714286
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9047619047619048,
+          "mrr": 0.9285714285714286
+        }
+      }
+    },
+    "always_visual": {
+      "routing_accuracy": 0.7741935483870968,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 24,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 6,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 1,
+          "SPEECH": 0,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.7142857142857143,
+          "mrr": 0.7619047619047619
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.7619047619047619,
+          "mrr": 0.7857142857142857
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.8047619047619048
+        }
+      }
+    },
+    "always_speech": {
+      "routing_accuracy": 0.1935483870967742,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 0,
+          "SPEECH": 24,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 0,
+          "SPEECH": 1,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.14285714285714285,
+          "mrr": 0.19047619047619047
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.19047619047619047,
+          "mrr": 0.21428571428571427
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.19047619047619047,
+          "mrr": 0.21428571428571427
+        }
+      }
+    },
+    "always_hybrid": {
+      "routing_accuracy": 0.03225806451612903,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 24
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 6
+        },
+        "HYBRID": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 1
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8095238095238095,
+          "mrr": 0.9047619047619048
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.8809523809523809,
+          "mrr": 0.9285714285714286
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9047619047619048,
+          "mrr": 0.9285714285714286
+        }
+      }
+    },
+    "oracle": {
+      "routing_accuracy": 1,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 24,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 0,
+          "SPEECH": 0,
+          "HYBRID": 1
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.9523809523809523
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.9285714285714286,
+          "mrr": 0.9761904761904762
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9523809523809523,
+          "mrr": 0.9761904761904762
+        }
+      }
+    },
+    "heuristic": {
+      "routing_accuracy": 0.7096774193548387,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 16,
+          "SPEECH": 0,
+          "HYBRID": 8
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 1,
+          "SPEECH": 0,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.9523809523809523
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.9285714285714286,
+          "mrr": 0.9761904761904762
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9523809523809523,
+          "mrr": 0.9761904761904762
+        }
+      }
+    },
+    "learned": {
+      "routing_accuracy": 0.967741935483871,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 24,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 1,
+          "SPEECH": 0,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.9523809523809523
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.9285714285714286,
+          "mrr": 0.9761904761904762
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9523809523809523,
+          "mrr": 0.9761904761904762
+        }
+      }
+    },
+    "learned_fallback": {
+      "routing_accuracy": 0.967741935483871,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 24,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 1,
+          "SPEECH": 0,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.9523809523809523
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.9285714285714286,
+          "mrr": 0.9761904761904762
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9523809523809523,
+          "mrr": 0.9761904761904762
+        }
+      }
+    }
+  },
+  "heldout_category_recall_at_5": {
+    "oracle": {
+      "ACTION_TEMPORAL": 1.0,
+      "COMPOSITIONAL": 1.0,
+      "OBJECT": 1.0,
+      "SCENE": 1.0,
+      "SPEECH": 0.8
+    },
+    "selected": {
+      "ACTION_TEMPORAL": 1.0,
+      "COMPOSITIONAL": 1.0,
+      "OBJECT": 1.0,
+      "SCENE": 1.0,
+      "SPEECH": 0.8
+    }
+  },
+  "resources": {
+    "median_seconds": 3.08e-05,
+    "p95_seconds": 4.180499999999993e-05,
+    "mean_seconds": 3.220817741948262e-05,
+    "artifact_bytes": 2077,
+    "parameters": 54
+  },
+  "gate": {
+    "end_to_end_recall_at_5": {
+      "value": 0.9523809523809523,
+      "minimum": 0.93,
+      "pass": true
+    },
+    "maximum_category_drop": {
+      "drops": {
+        "ACTION_TEMPORAL": 0.0,
+        "COMPOSITIONAL": 0.0,
+        "OBJECT": 0.0,
+        "SCENE": 0.0,
+        "SPEECH": 0.0
+      },
+      "limit": 0.05,
+      "pass": true
+    },
+    "median_latency_seconds": {
+      "value": 3.08e-05,
+      "preferred_maximum": 0.005,
+      "pass": true
+    },
+    "artifact_bytes": {
+      "value": 2077,
+      "negligible": true,
+      "pass": true
+    },
+    "passed": true
+  },
+  "second_frozen_run": {
+    "required": true,
+    "executed": true,
+    "passed": true,
+    "result": {
+      "routing_accuracy": 0.967741935483871,
+      "confusion_matrix": {
+        "VISUAL": {
+          "VISUAL": 24,
+          "SPEECH": 0,
+          "HYBRID": 0
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 6,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 1,
+          "SPEECH": 0,
+          "HYBRID": 0
+        }
+      },
+      "search": {
+        "1": {
+          "positive_queries": 21,
+          "recall": 0.8571428571428571,
+          "mrr": 0.9523809523809523
+        },
+        "3": {
+          "positive_queries": 21,
+          "recall": 0.9285714285714286,
+          "mrr": 0.9761904761904762
+        },
+        "5": {
+          "positive_queries": 21,
+          "recall": 0.9523809523809523,
+          "mrr": 0.9761904761904762
+        }
+      }
+    }
+  },
+  "failures": {
+    "speech_intent_misclassification": [],
+    "visual_intent_misclassification": [],
+    "hybrid_over_specialized": [
+      "talk-negative-cooking"
+    ],
+    "ambiguous_query": [
+      "street-scene-intersection",
+      "street-action-crossing",
+      "street-action-traffic",
+      "street-negative-classroom",
+      "street-negative-airplane",
+      "throw-scene-park",
+      "throw-negative-swimming",
+      "talk-scene-presentation"
+    ],
+    "transcript_unavailable": [],
+    "weak_transcript_retrieval": [],
+    "weak_clip_retrieval": [],
+    "hybrid_fusion_failure": [],
+    "temporal_reasoning": [],
+    "ocr_required": [],
+    "unsupported_capability": []
+  },
+  "production": {
+    "auto_integrated": true,
+    "auto_default_in_ui": true,
+    "feature_flag": "SCENEMIND_AUTO_ROUTING_ENABLED",
+    "feature_flag_default": true,
+    "explicit_modes_preserved": true,
+    "global_no_match_reopened": false
+  },
+  "decision": {
+    "outcome": "C_learned_lightweight_routing_wins",
+    "production_promoted": true,
+    "recommendation": "Ship the 54-parameter text-only AUTO router while retaining Visual, Speech, and Hybrid overrides. AUTO matches oracle explicit-mode R@5 on the frozen held-out set. Require a ready transcript for speech-routed searches and treat the next 30-60 minute personal-video acceptance run as the blocker before v1.0."
+  },
+  "calibration_rows": [
+    {
+      "query_id": "translate-v-page",
+      "query": "Where does the committee page appear?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          25
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9926612900015688,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 10.003,
+            "score": 0.3279058635234833,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.32671016454696655,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.32538169622421265,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.3224337697029114,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.30574649572372437,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 6.78,
+            "score": 1.6409554743572132,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 20.78,
+            "score": 1.6409554743572132,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 8.78,
+            "score": 1.5314164476988417,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 18.78,
+            "score": 1.5314164476988417,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 43.99,
+            "score": 1.5314164476988417,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 6.78,
+            "score": 0.032266458495966696,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 8.78,
+            "score": 0.032266458495966696,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 20.78,
+            "score": 0.031754032258064516,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 43.99,
+            "score": 0.029083245521601686,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 23.78,
+            "score": 0.027972027972027972,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-v-language",
+      "query": "Find the language selection screen.",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          25,
+          45
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9952173233386102,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.003,
+            "score": 0.2878654897212982,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.2744668126106262,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.2651591897010803,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.003,
+            "score": 0.2560200095176697,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.2544730007648468,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 12.78,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 27.78,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 33.78,
+            "score": 2.2185154525295503,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 27.78,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.78,
+            "score": 0.029206349206349208,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 12.78,
+            "score": 0.02889344262295082,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-v-keyboard",
+      "query": "Where is the on-screen keyboard visible?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          25,
+          45
+        ],
+        [
+          50,
+          96
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9993505943648983,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.003,
+            "score": 0.28898322582244873,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.28716129064559937,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.003,
+            "score": 0.28702250123023987,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.284244567155838,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.28223758935928345,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 39.99,
+            "score": 2.470756934948931,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 0.78,
+            "score": 2.0900710815007755,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 55.98,
+            "score": 2.0900710815007755,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 6.78,
+            "score": 1.9405726532591145,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 65.98,
+            "score": 1.8110332215562992,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 65.98,
+            "score": 0.0315136476426799,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 55.98,
+            "score": 0.030798389007344232,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 39.99,
+            "score": 0.03009207275993712,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.78,
+            "score": 0.02878726010616578,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 6.78,
+            "score": 0.02844551282051282,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-v-editor",
+      "query": "Find the translated text editor.",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          45,
+          96
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9831761102223477,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.31980735063552856,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.30205875635147095,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.29325544834136963,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.2784386873245239,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.2778278589248657,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 31.78,
+            "score": 2.5603367933858054,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 14.78,
+            "score": 2.2185154525295503,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 10.78,
+            "score": 1.8483630210863382,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 31.78,
+            "score": 0.031544957774465976,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 10.78,
+            "score": 0.029206349206349208,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 14.78,
+            "score": 0.028629032258064516,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-s-metawiki",
+      "query": "When does the narrator say MetaWiki?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          8
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9996149326095093,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.27099770307540894,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.26997342705726624,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.24237269163131714,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.24129772186279297,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.23671643435955048,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 3.78,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 0.78,
+            "score": 2.5603367933858054,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 65.98,
+            "score": 2.2185154525295503,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 65.98,
+            "score": 0.03057889822595705,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 3.78,
+            "score": 0.029726775956284153,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.78,
+            "score": 0.02964254577157803,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-s-languages",
+      "query": "Where does she mention other languages?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          14,
+          22
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9906157202383691,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.003,
+            "score": 0.2659611403942108,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.24476158618927002,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.23690815269947052,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.23060965538024902,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.22952793538570404,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 17.78,
+            "score": 7.570488087917732,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 16.78,
+            "score": 3.153346127972225,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 61.98,
+            "score": 2.7022415755899476,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 17.78,
+            "score": 0.030679156908665108,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 16.78,
+            "score": 0.030017921146953404,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 61.98,
+            "score": 0.029386529386529386,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-s-publish",
+      "query": "When does she say publish?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          55,
+          62
+        ],
+        [
+          91,
+          96
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9982607802072583,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.24591639637947083,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.24315252900123596,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.24056927859783173,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.23868253827095032,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.23863762617111206,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 55.98,
+            "score": 2.910417686698953,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 91.98,
+            "score": 2.36405038239948,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 55.98,
+            "score": 0.031544957774465976,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 91.98,
+            "score": 0.02928692699490662,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-s-code",
+      "query": "Find where she explains how to preserve code.",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          69,
+          92
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9930888442867936,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.25648999214172363,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.25632885098457336,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.24179716408252716,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.22958114743232727,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.22702860832214355,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 0.78,
+            "score": 3.7384052940010246,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 65.98,
+            "score": 3.2393042719945826,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 87.98,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 69.98,
+            "score": 2.774044478435397,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 75.98,
+            "score": 2.5603367933858054,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 87.98,
+            "score": 0.03200204813108039,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 65.98,
+            "score": 0.03128054740957967,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 69.98,
+            "score": 0.03125,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.78,
+            "score": 0.03009207275993712,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 75.98,
+            "score": 0.030090497737556562,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-h-language",
+      "query": "When does she explain choosing a language while the language menu is visible?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          25,
+          40
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9983232696940609,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.003,
+            "score": 0.2894737422466278,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.26728689670562744,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.2650904655456543,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.262046754360199,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.2608592212200165,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 12.78,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 27.78,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 33.78,
+            "score": 2.2185154525295503,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 27.78,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.78,
+            "score": 0.029206349206349208,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 12.78,
+            "score": 0.02889344262295082,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-h-editor",
+      "query": "Find where she says add the translation while the editor is shown.",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          49,
+          60
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9987342839341861,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.2745378315448761,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.26947736740112305,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.2693186402320862,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.26151883602142334,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.2531794011592865,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 51.98,
+            "score": 2.6311166420242844,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 51.98,
+            "score": 0.029051670471052088,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.015625,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-h-code",
+      "query": "When does she discuss code while square brackets are on screen?",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          69,
+          92
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9994456746940884,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.26777926087379456,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.003,
+            "score": 0.2522405982017517,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.24243862926959991,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.23629525303840637,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.22744223475456238,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 79.98,
+            "score": 3.72919453575109,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 87.98,
+            "score": 3.0266769125959696,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 69.98,
+            "score": 2.774044478435397,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 75.98,
+            "score": 2.5603367933858054,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 39.99,
+            "score": 2.470756934948931,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 79.98,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 87.98,
+            "score": 0.03200204813108039,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 69.98,
+            "score": 0.03057889822595705,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 65.98,
+            "score": 0.02964426877470356,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 75.98,
+            "score": 0.029513888888888888,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "translate-h-publish",
+      "query": "Find the section about publishing while the publish control is visible.",
+      "source_group": "commons-akwugo-translate-meta",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          55,
+          62
+        ],
+        [
+          91,
+          96
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9700313966302581,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 85.003,
+            "score": 0.28524094820022583,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.277772456407547,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.2754371464252472,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 55.003,
+            "score": 0.2693949341773987,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.003,
+            "score": 0.26817184686660767,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 55.98,
+            "score": 2.910417686698953,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 91.98,
+            "score": 2.36405038239948,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 55.98,
+            "score": 0.032018442622950824,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 91.98,
+            "score": 0.03200204813108039,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-v-title",
+      "query": "Find the white title card.",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          10
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9981151724837035,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 155.158,
+            "score": 0.22495581209659576,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 150.153,
+            "score": 0.2175918072462082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 175.178,
+            "score": 0.21729131042957306,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 180.183,
+            "score": 0.21187464892864227,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 100.103,
+            "score": 0.21110448241233826,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 155.158,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 150.153,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 175.178,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 180.183,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 100.103,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-v-analysis",
+      "query": "Where does the Analysis slide appear?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          40,
+          70
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.998729206313747,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 55.058,
+            "score": 0.3091784119606018,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.063,
+            "score": 0.30913639068603516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.068,
+            "score": 0.30910050868988037,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 45.048,
+            "score": 0.3089948892593384,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 50.053,
+            "score": 0.3089643716812134,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 30.02,
+            "score": 3.4211252972148047,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 41.02,
+            "score": 2.541717560377854,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 30.02,
+            "score": 0.030679156908665108,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 41.02,
+            "score": 0.030017921146953404,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 55.058,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.063,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.068,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-v-table",
+      "query": "Find the document with the colored table.",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          70,
+          95
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9992922046023321,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 80.083,
+            "score": 0.28201714158058167,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.093,
+            "score": 0.28076040744781494,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 75.078,
+            "score": 0.27791398763656616,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.098,
+            "score": 0.2754970192909241,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.088,
+            "score": 0.2674998342990875,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 110.62,
+            "score": 4.530083036270046,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 158.62,
+            "score": 3.2352846866939937,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 144.62,
+            "score": 2.8825029147098604,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 191.13,
+            "score": 2.5990927555860504,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 186.13,
+            "score": 2.265041518135023,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 110.62,
+            "score": 0.03131881575727918,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 158.62,
+            "score": 0.030017921146953404,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 191.13,
+            "score": 0.026736111111111113,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 144.62,
+            "score": 0.026399331662489554,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 186.13,
+            "score": 0.02625418060200669,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-v-timeline",
+      "query": "Where is the video editor timeline visible?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          128,
+          149
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9974048701733745,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 155.158,
+            "score": 0.2931506633758545,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 95.098,
+            "score": 0.2824777662754059,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 145.148,
+            "score": 0.2820415496826172,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 120.123,
+            "score": 0.2790874242782593,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 125.128,
+            "score": 0.2790195345878601,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 60.02,
+            "score": 4.230448932688937,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 106.62,
+            "score": 1.6112852681136776,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 158.62,
+            "score": 1.4140844017567784,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 0.02,
+            "score": 1.3325413287556163,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 38.02,
+            "score": 1.3325413287556163,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 106.62,
+            "score": 0.030834914611005692,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 144.62,
+            "score": 0.03036576949620428,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 110.62,
+            "score": 0.028438886647841874,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.02,
+            "score": 0.028125,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 60.02,
+            "score": 0.027031740495291244,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-s-addie",
+      "query": "Where does she say ADDIE model?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          22,
+          39
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9906157202383691,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.018,
+            "score": 0.2933867871761322,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.023,
+            "score": 0.29337143898010254,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 40.043,
+            "score": 0.29284146428108215,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.013,
+            "score": 0.29273051023483276,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.038,
+            "score": 0.2927132844924927,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 28.02,
+            "score": 3.867119635853859,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 22.02,
+            "score": 2.655483883305063,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 22.02,
+            "score": 0.03225806451612903,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 28.02,
+            "score": 0.03131881575727918,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 15.018,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 40.043,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.013,
+            "score": 0.015625,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-s-beginner",
+      "query": "When does she mention beginners?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          13,
+          22
+        ],
+        [
+          47,
+          53
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9982607802072583,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.008,
+            "score": 0.2346384972333908,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.23462024331092834,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 115.118,
+            "score": 0.22268232703208923,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 105.108,
+            "score": 0.22267481684684753,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 110.113,
+            "score": 0.2224784642457962,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 50.02,
+            "score": 3.9865004061954834,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 50.02,
+            "score": 0.028588564574170333,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 5.008,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 115.118,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 105.108,
+            "score": 0.015625,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-s-recording",
+      "query": "Find where she explains screen recording tools.",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          106,
+          128
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.963667443441375,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 125.128,
+            "score": 0.30429717898368835,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 115.118,
+            "score": 0.30413877964019775,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 120.123,
+            "score": 0.30410629510879517,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 110.113,
+            "score": 0.30408960580825806,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 105.108,
+            "score": 0.3040488660335541,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 108.62,
+            "score": 8.683610453557485,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 116.62,
+            "score": 5.502019405030637,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 105.62,
+            "score": 3.8930260077891634,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 142.62,
+            "score": 2.6717051026972163,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 38.02,
+            "score": 2.363577746287428,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 116.62,
+            "score": 0.03225806451612903,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 108.62,
+            "score": 0.032018442622950824,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 123.62,
+            "score": 0.031544957774465976,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 105.62,
+            "score": 0.03125763125763126,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 119.62,
+            "score": 0.030798389007344232,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-s-captions",
+      "query": "When does she discuss translatable captions?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          148,
+          173
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9977019411098227,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 185.188,
+            "score": 0.23518934845924377,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.193,
+            "score": 0.23498286306858063,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 195.198,
+            "score": 0.23489180207252502,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.2178875356912613,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.008,
+            "score": 0.2178044319152832,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 168.62,
+            "score": 6.570588516701811,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 161.62,
+            "score": 2.619516490320777,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 186.13,
+            "score": 2.541717560377854,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 149.62,
+            "score": 2.4840819143318518,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 163.62,
+            "score": 1.8959378040532155,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 186.13,
+            "score": 0.032266458495966696,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 149.62,
+            "score": 0.029138513513513514,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 163.62,
+            "score": 0.028205128205128206,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 168.62,
+            "score": 0.027263007840342125,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 161.62,
+            "score": 0.026881720430107527,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-h-design",
+      "query": "When does she describe the design phase while the script template is shown?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          70,
+          95
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9983232696940609,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.018,
+            "score": 0.2915036380290985,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.023,
+            "score": 0.2913047671318054,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.033,
+            "score": 0.29130053520202637,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.013,
+            "score": 0.29128262400627136,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.038,
+            "score": 0.291187584400177,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 70.02,
+            "score": 11.401009927165761,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 88.02,
+            "score": 4.600107016894022,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 72.02,
+            "score": 3.630476454913923,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 3.02,
+            "score": 3.239319844139562,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 30.02,
+            "score": 2.7705707160322026,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 30.02,
+            "score": 0.03125763125763126,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 70.02,
+            "score": 0.03028233151183971,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 88.02,
+            "score": 0.02803379416282642,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 3.02,
+            "score": 0.027820121951219513,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 76.02,
+            "score": 0.027809742999616416,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-h-equipment",
+      "query": "Find where she discusses equipment while the Development slide is visible.",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          95,
+          128
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9992862944872805,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 115.118,
+            "score": 0.3050239086151123,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 110.113,
+            "score": 0.30495485663414,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 105.108,
+            "score": 0.30475929379463196,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 100.103,
+            "score": 0.3046764135360718,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 120.123,
+            "score": 0.30459946393966675,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 95.62,
+            "score": 5.833146673058137,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 30.02,
+            "score": 3.4211252972148047,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 13.02,
+            "score": 2.541717560377854,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 30.02,
+            "score": 0.031054405392392875,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 13.02,
+            "score": 0.03036576949620428,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 95.62,
+            "score": 0.027263007840342125,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 115.118,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 110.113,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-h-editing",
+      "query": "When does she explain editing while the video editor is on screen?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          128,
+          149
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9999016330671968,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 0.003,
+            "score": 0.2753298282623291,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.008,
+            "score": 0.2752511501312256,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 120.123,
+            "score": 0.2709816098213196,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 125.128,
+            "score": 0.2709639072418213,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 115.118,
+            "score": 0.2707403302192688,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 142.62,
+            "score": 3.867119635853859,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 194.13,
+            "score": 3.686460686043572,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 108.62,
+            "score": 3.2352846866939937,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 172.62,
+            "score": 2.9981560003634318,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 116.62,
+            "score": 2.8825029147098604,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 116.62,
+            "score": 0.03076923076923077,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 108.62,
+            "score": 0.03057889822595705,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 123.62,
+            "score": 0.03055037313432836,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.02,
+            "score": 0.03047794966520434,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 194.13,
+            "score": 0.030017921146953404,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "demo-h-subtitles",
+      "query": "Where does she talk about subtitles while YouTube Studio appears?",
+      "source_group": "commons-shagzhina-demo-production",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          148,
+          181
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9885276661029705,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 155.158,
+            "score": 0.2617838382720947,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.25504186749458313,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.008,
+            "score": 0.2548726499080658,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 150.153,
+            "score": 0.24401476979255676,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 120.123,
+            "score": 0.2395630031824112,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 148.62,
+            "score": 4.283866452438096,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 149.62,
+            "score": 3.0673663835028058,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 163.62,
+            "score": 2.3411208188475454,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 186.13,
+            "score": 2.265041518135023,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 153.62,
+            "score": 2.0862805279087118,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 148.62,
+            "score": 0.032018442622950824,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 153.62,
+            "score": 0.03177805800756621,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 186.13,
+            "score": 0.0293236301369863,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 163.62,
+            "score": 0.029030910609857977,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-v-heading",
+      "query": "Where does the red What is engineering heading appear?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          20,
+          96
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9989561739138566,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 20.023,
+            "score": 0.32694241404533386,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.033,
+            "score": 0.31230056285858154,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.038,
+            "score": 0.31227341294288635,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.028,
+            "score": 0.31191593408584595,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 40.043,
+            "score": 0.3049812912940979,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 18.04,
+            "score": 5.450481091923267,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 29.44,
+            "score": 5.0712160656042595,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 66.54,
+            "score": 3.0217146140086264,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 381.74,
+            "score": 2.4578944983204276,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 49.44,
+            "score": 2.3483501483841303,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 18.04,
+            "score": 0.03278688524590164,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 29.44,
+            "score": 0.03225806451612903,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.74,
+            "score": 0.030798389007344232,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 66.54,
+            "score": 0.02976190476190476,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 49.44,
+            "score": 0.02946912242686891,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-v-boxes",
+      "query": "Find the blue boxes in the course diagram.",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          108,
+          662
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9994466323405004,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 160.163,
+            "score": 0.30775630474090576,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 170.173,
+            "score": 0.30691444873809814,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.193,
+            "score": 0.30590757727622986,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 180.183,
+            "score": 0.3058764636516571,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 175.178,
+            "score": 0.3045504689216614,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 629.74,
+            "score": 3.4158513027923605,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 3.110916850922271,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 611.74,
+            "score": 2.981029212443843,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 597.74,
+            "score": 2.8578244517091194,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 0.34,
+            "score": 2.5781588174575245,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 343.74,
+            "score": 0.028474711270410194,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 160.163,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 629.74,
+            "score": 0.01639344262295082,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 170.173,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.193,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-v-circuit",
+      "query": "Where is the circuit diagram visible?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          275,
+          365
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.998729206313747,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 590.593,
+            "score": 0.27466881275177,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 570.573,
+            "score": 0.2741057872772217,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 560.563,
+            "score": 0.2726288139820099,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 580.583,
+            "score": 0.2712719142436981,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 545.548,
+            "score": 0.2704938054084778,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 563.74,
+            "score": 3.7162899123097817,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 590.74,
+            "score": 3.6206937226301674,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 590.74,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 563.74,
+            "score": 0.031099324975891997,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 570.573,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 560.563,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 580.583,
+            "score": 0.015625,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-v-map",
+      "query": "Find the course map with filters and digital gates.",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          400,
+          662
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9735908498369837,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 410.413,
+            "score": 0.26639285683631897,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 420.423,
+            "score": 0.2659156918525696,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 415.418,
+            "score": 0.2658338248729706,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 450.453,
+            "score": 0.2650219202041626,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 430.433,
+            "score": 0.2644575536251068,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 438.74,
+            "score": 7.167824987562286,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 40.84,
+            "score": 5.6974977200308015,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 376.74,
+            "score": 4.52540687711305,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 381.74,
+            "score": 3.786562781771913,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 3.7483919744939556,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 438.74,
+            "score": 0.029906956136464335,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 454.74,
+            "score": 0.029437229437229435,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 381.74,
+            "score": 0.028958333333333336,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 413.74,
+            "score": 0.02821869488536155,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 434.74,
+            "score": 0.02819138376017471,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-s-maxwell",
+      "query": "When does he mention Maxwell's equations?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          40,
+          59
+        ],
+        [
+          79,
+          109
+        ],
+        [
+          224,
+          242
+        ],
+        [
+          264,
+          276
+        ],
+        [
+          590,
+          603
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9977019411098227,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 70.073,
+            "score": 0.2974807322025299,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 75.078,
+            "score": 0.29721537232398987,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 80.083,
+            "score": 0.2971388101577759,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 60.063,
+            "score": 0.29681840538978577,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 65.068,
+            "score": 0.29606950283050537,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 224.84,
+            "score": 8.506473878675715,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 228.14,
+            "score": 8.401103477157747,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 99.64,
+            "score": 7.705861429647948,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 79.14,
+            "score": 7.471461710744768,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 85.44,
+            "score": 6.009152801691718,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 79.14,
+            "score": 0.03149801587301587,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 49.44,
+            "score": 0.03007688828584351,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.44,
+            "score": 0.02967032967032967,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 40.84,
+            "score": 0.026021080368906456,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.74,
+            "score": 0.025793650793650792,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-s-ohm",
+      "query": "Where does the lecturer explain Ohm's law?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          217,
+          265
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9981316429161144,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 330.333,
+            "score": 0.2854613661766052,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 320.323,
+            "score": 0.28452274203300476,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 325.328,
+            "score": 0.281936377286911,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 355.358,
+            "score": 0.28089916706085205,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 315.318,
+            "score": 0.2808815538883209,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 245.74,
+            "score": 5.092821233741888,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 228.14,
+            "score": 2.529754716871902,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 33.74,
+            "score": 2.48042789199547,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 224.84,
+            "score": 2.3086226181895024,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 24.24,
+            "score": 2.091339636475658,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 245.74,
+            "score": 0.02738245361196181,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 228.14,
+            "score": 0.02699859747545582,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.74,
+            "score": 0.0265113137453563,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 24.24,
+            "score": 0.02580128205128205,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 264.14,
+            "score": 0.02378987898789879,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-s-digital",
+      "query": "Find where he discusses the digital abstraction.",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          413,
+          458
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9950968495275596,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 615.618,
+            "score": 0.2688017785549164,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 405.408,
+            "score": 0.26100900769233704,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 410.413,
+            "score": 0.26020127534866333,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 415.418,
+            "score": 0.259840190410614,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 400.403,
+            "score": 0.25914129614830017,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 413.74,
+            "score": 5.2064133658558065,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 434.74,
+            "score": 4.758548243655179,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 438.74,
+            "score": 4.758548243655179,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 3.089647008395925,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 466.74,
+            "score": 3.0298879113700288,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 413.74,
+            "score": 0.032018442622950824,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 434.74,
+            "score": 0.03128054740957967,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 438.74,
+            "score": 0.026984126984126985,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 287.94,
+            "score": 0.024722804914593947,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 615.618,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-s-python",
+      "query": "When does he say Python?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          498,
+          506
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9982607802072583,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 510.513,
+            "score": 0.24802464246749878,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 490.493,
+            "score": 0.2464757114648819,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 635.638,
+            "score": 0.24567407369613647,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 500.503,
+            "score": 0.24445296823978424,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 495.498,
+            "score": 0.24379950761795044,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 210.64,
+            "score": 4.215572445758889,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 498.74,
+            "score": 4.107132934137889,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 498.74,
+            "score": 0.031754032258064516,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 210.64,
+            "score": 0.01639344262295082,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 510.513,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 490.493,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 635.638,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-h-engineering",
+      "query": "When does he explain engineering while the engineering heading is visible?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          18,
+          41
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9990473764596489,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 20.023,
+            "score": 0.2960163354873657,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.033,
+            "score": 0.29131466150283813,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.038,
+            "score": 0.291088342666626,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.028,
+            "score": 0.29022499918937683,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 40.043,
+            "score": 0.2839857339859009,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 18.04,
+            "score": 3.924714328663158,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 29.44,
+            "score": 3.3061123999642166,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 66.54,
+            "score": 3.0217146140086264,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 381.74,
+            "score": 2.4578944983204276,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 49.44,
+            "score": 2.3483501483841303,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 18.04,
+            "score": 0.03278688524590164,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 29.44,
+            "score": 0.03225806451612903,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 66.54,
+            "score": 0.029571646010002173,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 49.44,
+            "score": 0.02946912242686891,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 551.74,
+            "score": 0.02535559678416821,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-h-measurements",
+      "query": "Find where he discusses voltage measurements while the table is being drawn.",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          148,
+          181
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9949014058977489,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 190.193,
+            "score": 0.2814198136329651,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 180.183,
+            "score": 0.2804536521434784,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 185.188,
+            "score": 0.2800803482532501,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 170.173,
+            "score": 0.2796454429626465,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 165.168,
+            "score": 0.2796214818954468,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 205.84,
+            "score": 4.4505877571968835,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 293.34,
+            "score": 3.1383719233074743,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 293.34,
+            "score": 0.0277569392348087,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 205.84,
+            "score": 0.02738245361196181,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 190.193,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 180.183,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 185.188,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-h-lumped",
+      "query": "When does he explain lumped circuit abstraction while its diagram grows?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          287,
+          365
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.9988962494923936,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 295.298,
+            "score": 0.29493504762649536,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 300.303,
+            "score": 0.2933858036994934,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 365.368,
+            "score": 0.2926986813545227,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 310.313,
+            "score": 0.28975459933280945,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 360.363,
+            "score": 0.2892642319202423,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 563.74,
+            "score": 5.7842883083541565,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 293.34,
+            "score": 4.306235572233516,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 590.74,
+            "score": 3.6206937226301674,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 3.089647008395925,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 466.74,
+            "score": 3.0298879113700288,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 293.34,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 0.029910714285714284,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 351.74,
+            "score": 0.029418126757516764,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 336.74,
+            "score": 0.026470588235294117,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 287.94,
+            "score": 0.025603392041748205,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "course-h-python",
+      "query": "Where does he mention Python while the course map is visible?",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "target_route": "HYBRID",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          498,
+          506
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent",
+        "visual_context"
+      ],
+      "learned": "HYBRID",
+      "learned_confidence": 0.998656977107128,
+      "learned_fallback": "HYBRID",
+      "selected_route": "HYBRID",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 620.623,
+            "score": 0.31502822041511536,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 615.618,
+            "score": 0.3146747946739197,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 635.638,
+            "score": 0.3120115101337433,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 510.513,
+            "score": 0.31011486053466797,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 630.633,
+            "score": 0.30917492508888245,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 498.74,
+            "score": 4.107132934137889,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 629.74,
+            "score": 3.4158513027923605,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 3.110916850922271,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 611.74,
+            "score": 2.981029212443843,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 597.74,
+            "score": 2.8578244517091194,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 629.74,
+            "score": 0.0315136476426799,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 498.74,
+            "score": 0.030886196246139225,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 343.74,
+            "score": 0.026289682539682536,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 620.623,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 615.618,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    }
+  ],
+  "heldout_rows": [
+    {
+      "query_id": "street-object-bus",
+      "query": "Find a city bus.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          35.004
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9819000161345703,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.0,
+            "score": 0.2683696746826172,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.2652437090873718,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.25985443592071533,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.2586955726146698,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.0,
+            "score": 0.2436438500881195,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 15.0,
+            "score": 0.2683696746826172,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.2652437090873718,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.25985443592071533,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.2586955726146698,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.0,
+            "score": 0.2436438500881195,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-object-bicycle",
+      "query": "Find a bicycle.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          12,
+          18
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9799596106885348,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 25.0,
+            "score": 0.23892202973365784,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.2183169424533844,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.20494261384010315,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.20380817353725433,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.19478069245815277,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 25.0,
+            "score": 0.23892202973365784,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.2183169424533844,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.20494261384010315,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.20380817353725433,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.19478069245815277,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-scene-intersection",
+      "query": "Find the busy street intersection.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          35.004
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8419902180958457,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 25.0,
+            "score": 0.24471840262413025,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.23831215500831604,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.23620952665805817,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.2196759134531021,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.2146897315979004,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 25.0,
+            "score": 0.24471840262413025,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.23831215500831604,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.23620952665805817,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.2196759134531021,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.2146897315979004,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-compositional-cyclist-bus",
+      "query": "Find a cyclist riding beside a bus.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          12,
+          18
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9830720090978716,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.0,
+            "score": 0.2925601601600647,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.28783726692199707,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.2803846597671509,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.27799227833747864,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.2737085819244385,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 15.0,
+            "score": 0.2925601601600647,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.28783726692199707,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.2803846597671509,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.27799227833747864,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.2737085819244385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-action-crossing",
+      "query": "Find when pedestrians cross the street.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          27,
+          35.004
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8504315098617704,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.0,
+            "score": 0.2612771689891815,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.2532382607460022,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.24217092990875244,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.23287762701511383,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.21893835067749023,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 30.0,
+            "score": 0.2612771689891815,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.2532382607460022,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.24217092990875244,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.23287762701511383,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.21893835067749023,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-action-traffic",
+      "query": "Find moving city traffic.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          35.004
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8303994601476852,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 25.0,
+            "score": 0.26634904742240906,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.25864383578300476,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.24906709790229797,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.24824146926403046,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.24711349606513977,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 25.0,
+            "score": 0.26634904742240906,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.25864383578300476,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.24906709790229797,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.24824146926403046,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.24711349606513977,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-negative-dog",
+      "query": "Find a dog crossing the street.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.983715203518165,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 30.0,
+            "score": 0.23055286705493927,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.22137963771820068,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.20944270491600037,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.18796131014823914,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.18667905032634735,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 30.0,
+            "score": 0.23055286705493927,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.22137963771820068,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.20944270491600037,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.18796131014823914,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.18667905032634735,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-negative-classroom",
+      "query": "Find a classroom with a projector.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8504315098617704,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 20.0,
+            "score": 0.14530736207962036,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.14069563150405884,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.13534604012966156,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.0,
+            "score": 0.13060198724269867,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.12821602821350098,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 20.0,
+            "score": 0.14530736207962036,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.14069563150405884,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.13534604012966156,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.0,
+            "score": 0.13060198724269867,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.0,
+            "score": 0.12821602821350098,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-negative-swimming",
+      "query": "Find a person swimming.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9819000161345703,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 25.0,
+            "score": 0.1696031242609024,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.16065658628940582,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.15195706486701965,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.1477586179971695,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.14482375979423523,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 25.0,
+            "score": 0.1696031242609024,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.16065658628940582,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.15195706486701965,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.1477586179971695,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.0,
+            "score": 0.14482375979423523,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "street-negative-airplane",
+      "query": "Find an airplane in the sky.",
+      "source_group": "commons-san-francisco-street-traffic",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8504315098617704,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.0,
+            "score": 0.19147798418998718,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.18136298656463623,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.1697443723678589,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.16612762212753296,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.1591378003358841,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.0,
+            "score": 0.19147798418998718,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.0,
+            "score": 0.18136298656463623,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.0,
+            "score": 0.1697443723678589,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.0,
+            "score": 0.16612762212753296,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.0,
+            "score": 0.1591378003358841,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-object-man",
+      "query": "Find the man in a black shirt.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          13.733
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9992922046023321,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.2660429775714874,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2595585584640503,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.25199371576309204,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.2660429775714874,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2595585584640503,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.25199371576309204,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-object-ball",
+      "query": "Find the yellow ball.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          4.5,
+          9
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9993217946283625,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.2303575724363327,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2225450575351715,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.21808277070522308,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.2303575724363327,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2225450575351715,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.21808277070522308,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-scene-park",
+      "query": "Find the outdoor park path.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          13.733
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8419902180958457,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.22787268459796906,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2234688401222229,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.21200771629810333,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.22787268459796906,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2234688401222229,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.21200771629810333,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-compositional-holding",
+      "query": "Find the man holding a yellow ball.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          4.5,
+          8
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9998807437399763,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.25672101974487305,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.24973952770233154,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.24958203732967377,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.25672101974487305,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.24973952770233154,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.24958203732967377,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-compositional-children",
+      "query": "Find children standing near the man.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          13.733
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.983715203518165,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.31267327070236206,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.31050294637680054,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.3073559105396271,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.31267327070236206,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.31050294637680054,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.3073559105396271,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-action-ball",
+      "query": "Find when the man throws the ball.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          5,
+          11
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.997620471303019,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.25303223729133606,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.2491384595632553,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2447626143693924,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.25303223729133606,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.2491384595632553,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.2447626143693924,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-negative-bicycle",
+      "query": "Find a person riding a bicycle.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9982103429428221,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.22110453248023987,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.21558527648448944,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.2074936330318451,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.22110453248023987,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.21558527648448944,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.2074936330318451,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-negative-car",
+      "query": "Find a city bus.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9819000161345703,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.1925666183233261,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.19041244685649872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.18441615998744965,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.1925666183233261,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.19041244685649872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.18441615998744965,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "throw-negative-swimming",
+      "query": "Find someone swimming in water.",
+      "source_group": "commons-nesnad-throwing",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8419902180958457,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 5.007,
+            "score": 0.17928238213062286,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.17850735783576965,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.17577794194221497,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.007,
+            "score": 0.17928238213062286,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 0.007,
+            "score": 0.17850735783576965,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.007,
+            "score": 0.17577794194221497,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-object-speaker",
+      "query": "Find the speaker at the podium.",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          219.443
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.983715203518165,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.003,
+            "score": 0.21836058795452118,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.21271146833896637,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.21218913793563843,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.2121807336807251,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.20908330380916595,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 15.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-object-screen",
+      "query": "Find the large projection screen.",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          219.443
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9952173233386102,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 190.003,
+            "score": 0.23475006222724915,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.22801025211811066,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.22741824388504028,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.22640539705753326,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.22441035509109497,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 190.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-scene-presentation",
+      "query": "Find the conference presentation room.",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          219.443
+        ]
+      ],
+      "heuristic": "HYBRID",
+      "heuristic_confidence": 0.5,
+      "heuristic_reasons": [
+        "ambiguous"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.8419902180958457,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 20.003,
+            "score": 0.2326056957244873,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.2299276888370514,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.22884368896484375,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.22769500315189362,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.225164532661438,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 20.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-compositional-speaker-screen",
+      "query": "Find a speaker standing next to a projected slide.",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          0,
+          219.443
+        ]
+      ],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9939121603961422,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 215.003,
+            "score": 0.27376067638397217,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.25915753841400146,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.25430792570114136,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2512021064758301,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.25108540058135986,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 85.85,
+            "score": 0.029957522915269395,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 58.95,
+            "score": 0.029236022193768675,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 45.95,
+            "score": 0.029206349206349208,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 197.8,
+            "score": 0.027432808155699723,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 101.85,
+            "score": 0.02699859747545582,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-speech-kansas-city",
+      "query": "Where does the speaker discuss Kansas City?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          37,
+          74
+        ],
+        [
+          175,
+          205
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9816664585174363,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 135.003,
+            "score": 0.21197961270809174,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.21009522676467896,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 110.003,
+            "score": 0.20946648716926575,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 155.003,
+            "score": 0.2082076519727707,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 125.003,
+            "score": 0.20792171359062195,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 191.8,
+            "score": 4.884069130953343,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 174.98,
+            "score": 4.514747361962736,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 47.95,
+            "score": 4.11492438592132,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 36.95,
+            "score": 3.723957698422857,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 67.85,
+            "score": 3.400837724590071,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 191.8,
+            "score": 0.03252247488101534,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 174.98,
+            "score": 0.02964254577157803,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 41.95,
+            "score": 0.02719970792259949,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 47.95,
+            "score": 0.026289682539682536,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 36.95,
+            "score": 0.026151315789473682,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-speech-changing-link",
+      "query": "Where does the speaker explain changing a link?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          76,
+          115
+        ],
+        [
+          197,
+          205
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9784004800730467,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 15.003,
+            "score": 0.28455352783203125,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2838170826435089,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 45.003,
+            "score": 0.2834276854991913,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.28245121240615845,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.2821078300476074,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 90.85,
+            "score": 5.40351417579266,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 105.85,
+            "score": 1.8299971670754722,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 153.42,
+            "score": 1.728612282472953,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 133.26,
+            "score": 1.6378714802434016,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 163.98,
+            "score": 1.6378714802434016,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 45.95,
+            "score": 0.031024531024531024,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 105.85,
+            "score": 0.030017921146953404,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 153.42,
+            "score": 0.028693528693528692,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 133.26,
+            "score": 0.028283227848101264,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 90.85,
+            "score": 0.026597524255603883,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-speech-bug",
+      "query": "Where does the speaker mention a bug that only works with source text?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          139,
+          153
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.8613745100374612,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 45.003,
+            "score": 0.2987808585166931,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 135.003,
+            "score": 0.28948429226875305,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2858407199382782,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 155.003,
+            "score": 0.285348117351532,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 150.003,
+            "score": 0.2852654457092285,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 143.42,
+            "score": 8.967627215506257,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 149.42,
+            "score": 7.106049433030922,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 166.98,
+            "score": 6.638438611329724,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 139.12,
+            "score": 3.8388445284442247,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 119.26,
+            "score": 2.9610345567411382,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 149.42,
+            "score": 0.0315136476426799,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 45.95,
+            "score": 0.031099324975891997,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 33.95,
+            "score": 0.028577260665441927,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 187.98,
+            "score": 0.028309409888357256,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.85,
+            "score": 0.027745885954841176,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-speech-languages",
+      "query": "Where does the speaker say the tool works with different languages?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          164,
+          175
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.942717714435565,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 45.003,
+            "score": 0.2776632010936737,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 215.003,
+            "score": 0.2689034044742584,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.26826828718185425,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.26557907462120056,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.26309236884117126,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 166.98,
+            "score": 14.766432011730693,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 119.26,
+            "score": 5.9220691134822765,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 196.8,
+            "score": 4.317205217346932,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 143.42,
+            "score": 2.8379432101659963,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 9.0,
+            "score": 2.805599671872837,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 33.95,
+            "score": 0.030776515151515152,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 9.0,
+            "score": 0.03076923076923077,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 119.26,
+            "score": 0.028629032258064516,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 85.85,
+            "score": 0.02862400327131466,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 196.8,
+            "score": 0.02736726874657909,
+            "modality": "visual+speech"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-speech-airport",
+      "query": "Where does the speaker discuss an airport?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": true,
+      "relevant_intervals": [
+        [
+          57,
+          74
+        ],
+        [
+          175,
+          197
+        ]
+      ],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9816664585174363,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 45.003,
+            "score": 0.23332732915878296,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 215.003,
+            "score": 0.22979070246219635,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.22862958908081055,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.22846843302249908,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.22843068838119507,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 56.95,
+            "score": 3.3300108254939285,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 191.8,
+            "score": 3.3300108254939285,
+            "modality": "speech"
+          },
+          {
+            "timestamp": 181.98,
+            "score": 2.0516957293350306,
+            "modality": "speech"
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 191.8,
+            "score": 0.0315136476426799,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 56.95,
+            "score": 0.029551337359792925,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 181.98,
+            "score": 0.026289682539682536,
+            "modality": "visual+speech"
+          },
+          {
+            "timestamp": 45.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 215.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-negative-gradient",
+      "query": "Where does the speaker explain gradient descent?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "SPEECH",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "SPEECH",
+      "heuristic_confidence": 0.95,
+      "heuristic_reasons": [
+        "speech_intent"
+      ],
+      "learned": "SPEECH",
+      "learned_confidence": 0.9816664585174363,
+      "learned_fallback": "SPEECH",
+      "selected_route": "SPEECH",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 35.003,
+            "score": 0.2701428532600403,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 215.003,
+            "score": 0.26019978523254395,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.2594898045063019,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.25595203042030334,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.25417855381965637,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 35.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 215.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-negative-bicycle",
+      "query": "Find a bicycle beside the speaker.",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "VISUAL",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9982103429428221,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 215.003,
+            "score": 0.21871435642242432,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.21447142958641052,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.21202069520950317,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2099079191684723,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.20876231789588928,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 215.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "talk-negative-cooking",
+      "query": "Where does the speaker demonstrate cooking?",
+      "source_group": "commons-wikimania-find-link-talk",
+      "split": "heldout",
+      "target_route": "HYBRID",
+      "expected_presence": false,
+      "relevant_intervals": [],
+      "heuristic": "VISUAL",
+      "heuristic_confidence": 0.85,
+      "heuristic_reasons": [
+        "visual_intent"
+      ],
+      "learned": "VISUAL",
+      "learned_confidence": 0.9923829573724424,
+      "learned_fallback": "VISUAL",
+      "selected_route": "VISUAL",
+      "path_top5": {
+        "VISUAL": [
+          {
+            "timestamp": 215.003,
+            "score": 0.25571194291114807,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 145.003,
+            "score": 0.2482699453830719,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.2456124722957611,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.24356737732887268,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.2431245744228363,
+            "modality": "visual"
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 215.003,
+            "score": 0.01639344262295082,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 145.003,
+            "score": 0.016129032258064516,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 90.003,
+            "score": 0.015873015873015872,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 85.003,
+            "score": 0.015625,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 190.003,
+            "score": 0.015384615384615385,
+            "modality": "visual"
+          }
+        ]
+      }
+    }
+  ],
+  "artifact_inputs": {
+    "raw_measurement_sha256": "4776a693a366a084071d5f34980d86f43908a3d158218782fdb1ca81934c9d3d",
+    "router_artifact_sha256": "bb212da54838beb7aa67c4962d72b39d41f05c5fe01b3ab71dc1adffd228e385"
+  }
+}

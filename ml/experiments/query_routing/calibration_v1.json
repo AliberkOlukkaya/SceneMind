@@ -1,0 +1,525 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "scenemind-query-routing-calibration-v1",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-15T00:00:00+03:00",
+  "split": "calibration",
+  "annotation_policy": "Sources, route targets, and relevance intervals were frozen after transcript/contact-sheet review and before held-out router evaluation. Media and inference artifacts are not committed.",
+  "sources": [
+    {
+      "source_id": "translate-meta-tutorial",
+      "file": "video-tutorial.webm",
+      "domain": "tutorial",
+      "title": "Video tutorial.webm",
+      "source_group": "commons-akwugo-translate-meta",
+      "page": "https://commons.wikimedia.org/wiki/File:Video_tutorial.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Video_tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Akwugo",
+      "sha256": "7f8f412d4e68b259eb5571f289305f65408d717e14b1df6fa752a012194142fb",
+      "duration_seconds": 98.99,
+      "speech_characteristics": "English instructional narration with a strong accent; Whisper tiny labels language yo but produces usable English segments.",
+      "queries": [
+        {
+          "query_id": "translate-v-page",
+          "query": "Where does the committee page appear?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              25
+            ]
+          ],
+          "hard_case": "visual noun and appear"
+        },
+        {
+          "query_id": "translate-v-language",
+          "query": "Find the language selection screen.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              25,
+              45
+            ]
+          ],
+          "hard_case": "same language keyword, visual intent"
+        },
+        {
+          "query_id": "translate-v-keyboard",
+          "query": "Where is the on-screen keyboard visible?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              25,
+              45
+            ],
+            [
+              50,
+              96
+            ]
+          ],
+          "hard_case": "spatial visual evidence"
+        },
+        {
+          "query_id": "translate-v-editor",
+          "query": "Find the translated text editor.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              45,
+              96
+            ]
+          ],
+          "hard_case": "concrete interface"
+        },
+        {
+          "query_id": "translate-s-metawiki",
+          "query": "When does the narrator say MetaWiki?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              0,
+              8
+            ]
+          ],
+          "hard_case": "explicit say"
+        },
+        {
+          "query_id": "translate-s-languages",
+          "query": "Where does she mention other languages?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              14,
+              22
+            ]
+          ],
+          "hard_case": "explicit mention"
+        },
+        {
+          "query_id": "translate-s-publish",
+          "query": "When does she say publish?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              55,
+              62
+            ],
+            [
+              91,
+              96
+            ]
+          ],
+          "hard_case": "quoted spoken keyword"
+        },
+        {
+          "query_id": "translate-s-code",
+          "query": "Find where she explains how to preserve code.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              69,
+              92
+            ]
+          ],
+          "hard_case": "abstract spoken explanation"
+        },
+        {
+          "query_id": "translate-h-language",
+          "query": "When does she explain choosing a language while the language menu is visible?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              25,
+              40
+            ]
+          ],
+          "hard_case": "speech plus visible interface"
+        },
+        {
+          "query_id": "translate-h-editor",
+          "query": "Find where she says add the translation while the editor is shown.",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              49,
+              60
+            ]
+          ],
+          "hard_case": "spoken instruction plus screen"
+        },
+        {
+          "query_id": "translate-h-code",
+          "query": "When does she discuss code while square brackets are on screen?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              69,
+              92
+            ]
+          ],
+          "hard_case": "spoken concept plus visual symbol"
+        },
+        {
+          "query_id": "translate-h-publish",
+          "query": "Find the section about publishing while the publish control is visible.",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              55,
+              62
+            ],
+            [
+              91,
+              96
+            ]
+          ],
+          "hard_case": "ambiguous topic plus visible control"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-production-tutorial",
+      "file": "demo-video-tutorial.webm",
+      "domain": "project_demo",
+      "title": "Demo Video Tutorial.webm",
+      "source_group": "commons-shagzhina-demo-production",
+      "page": "https://commons.wikimedia.org/wiki/File:Demo_Video_Tutorial.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Demo_Video_Tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "AlexandraShagzhina",
+      "sha256": "25a857b6896551f21c7d6c50181ad4451a903b53580fd5563af2c2a6bc2ae40f",
+      "duration_seconds": 199.916,
+      "speech_characteristics": "Clear English narration over slides and screen recordings; short pauses and mostly lexical instructional content.",
+      "queries": [
+        {
+          "query_id": "demo-v-title",
+          "query": "Find the white title card.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              10
+            ]
+          ],
+          "hard_case": "color and visual object"
+        },
+        {
+          "query_id": "demo-v-analysis",
+          "query": "Where does the Analysis slide appear?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              40,
+              70
+            ]
+          ],
+          "hard_case": "same topic, visual intent"
+        },
+        {
+          "query_id": "demo-v-table",
+          "query": "Find the document with the colored table.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              70,
+              95
+            ]
+          ],
+          "hard_case": "concrete screen layout"
+        },
+        {
+          "query_id": "demo-v-timeline",
+          "query": "Where is the video editor timeline visible?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              128,
+              149
+            ]
+          ],
+          "hard_case": "concrete interface"
+        },
+        {
+          "query_id": "demo-s-addie",
+          "query": "Where does she say ADDIE model?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              22,
+              39
+            ]
+          ],
+          "hard_case": "explicit say"
+        },
+        {
+          "query_id": "demo-s-beginner",
+          "query": "When does she mention beginners?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              13,
+              22
+            ],
+            [
+              47,
+              53
+            ]
+          ],
+          "hard_case": "explicit mention"
+        },
+        {
+          "query_id": "demo-s-recording",
+          "query": "Find where she explains screen recording tools.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              106,
+              128
+            ]
+          ],
+          "hard_case": "spoken explanation with visual noun"
+        },
+        {
+          "query_id": "demo-s-captions",
+          "query": "When does she discuss translatable captions?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              148,
+              173
+            ]
+          ],
+          "hard_case": "abstract spoken concept"
+        },
+        {
+          "query_id": "demo-h-design",
+          "query": "When does she describe the design phase while the script template is shown?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              70,
+              95
+            ]
+          ],
+          "hard_case": "speech plus visible document"
+        },
+        {
+          "query_id": "demo-h-equipment",
+          "query": "Find where she discusses equipment while the Development slide is visible.",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              95,
+              128
+            ]
+          ],
+          "hard_case": "speech plus slide"
+        },
+        {
+          "query_id": "demo-h-editing",
+          "query": "When does she explain editing while the video editor is on screen?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              128,
+              149
+            ]
+          ],
+          "hard_case": "speech plus interface"
+        },
+        {
+          "query_id": "demo-h-subtitles",
+          "query": "Where does she talk about subtitles while YouTube Studio appears?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              148,
+              181
+            ]
+          ],
+          "hard_case": "speech plus interface"
+        }
+      ]
+    },
+    {
+      "source_id": "mitx-course-overview",
+      "file": "course-overview-6.002x.webm",
+      "domain": "lecture",
+      "title": "Course Overview (6.002x).webm",
+      "source_group": "commons-mitx-6002-course-overview",
+      "page": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution": "mitxvtest / MITx",
+      "sha256": "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3",
+      "duration_seconds": 662.398,
+      "speech_characteristics": "Continuous English university lecture narration over an animated course-map slide; dense technical vocabulary.",
+      "queries": [
+        {
+          "query_id": "course-v-heading",
+          "query": "Where does the red What is engineering heading appear?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              20,
+              96
+            ]
+          ],
+          "hard_case": "color and visible text region"
+        },
+        {
+          "query_id": "course-v-boxes",
+          "query": "Find the blue boxes in the course diagram.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              108,
+              662
+            ]
+          ],
+          "hard_case": "concrete color and diagram"
+        },
+        {
+          "query_id": "course-v-circuit",
+          "query": "Where is the circuit diagram visible?",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              275,
+              365
+            ]
+          ],
+          "hard_case": "visual object"
+        },
+        {
+          "query_id": "course-v-map",
+          "query": "Find the course map with filters and digital gates.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              400,
+              662
+            ]
+          ],
+          "hard_case": "same technical nouns, visual intent"
+        },
+        {
+          "query_id": "course-s-maxwell",
+          "query": "When does he mention Maxwell's equations?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              40,
+              59
+            ],
+            [
+              79,
+              109
+            ],
+            [
+              224,
+              242
+            ],
+            [
+              264,
+              276
+            ],
+            [
+              590,
+              603
+            ]
+          ],
+          "hard_case": "explicit mention"
+        },
+        {
+          "query_id": "course-s-ohm",
+          "query": "Where does the lecturer explain Ohm's law?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              217,
+              265
+            ]
+          ],
+          "hard_case": "explicit explanation"
+        },
+        {
+          "query_id": "course-s-digital",
+          "query": "Find where he discusses the digital abstraction.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              413,
+              458
+            ]
+          ],
+          "hard_case": "abstract spoken concept"
+        },
+        {
+          "query_id": "course-s-python",
+          "query": "When does he say Python?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              498,
+              506
+            ]
+          ],
+          "hard_case": "same keyword, explicit say"
+        },
+        {
+          "query_id": "course-h-engineering",
+          "query": "When does he explain engineering while the engineering heading is visible?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              18,
+              41
+            ]
+          ],
+          "hard_case": "speech plus visible heading"
+        },
+        {
+          "query_id": "course-h-measurements",
+          "query": "Find where he discusses voltage measurements while the table is being drawn.",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              148,
+              181
+            ]
+          ],
+          "hard_case": "speech plus animated visual"
+        },
+        {
+          "query_id": "course-h-lumped",
+          "query": "When does he explain lumped circuit abstraction while its diagram grows?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              287,
+              365
+            ]
+          ],
+          "hard_case": "speech plus diagram"
+        },
+        {
+          "query_id": "course-h-python",
+          "query": "Where does he mention Python while the course map is visible?",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              498,
+              506
+            ]
+          ],
+          "hard_case": "same keyword requires both paths"
+        }
+      ]
+    }
+  ]
+}

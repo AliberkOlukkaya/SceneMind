@@ -9,7 +9,9 @@ from fastapi import APIRouter, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from app.config import settings
 from app.database import Segment, Transcript, engine
+from app.routing import resolve_mode
 from app.video import folder_for, read_manifest
 from app.visual import index_status, visual_search
 
@@ -91,12 +93,21 @@ def search(
     video_id: str,
     q: str = Query(min_length=1, max_length=500),
     k: int = Query(default=10, ge=1, le=50),
-    mode: Literal["visual", "speech", "hybrid"] = "visual",
+    mode: Literal["auto", "visual", "speech", "hybrid"] = "visual",
 ):
     if not q.strip():
         raise HTTPException(422, "Enter a search query.")
+    requested_mode = mode
+    routing = resolve_mode(mode, q, settings.auto_routing_enabled)
+    mode = routing["route"]
+    route_metadata = {
+        "requested_mode": requested_mode,
+        "selected_route": mode,
+        "routing_confidence": routing["confidence"],
+        "routing_reason": routing["reason"],
+    }
     if mode == "visual":
-        return visual_search(video_id, q, k)
+        return {**visual_search(video_id, q, k), **route_metadata}
     folder = folder_for(video_id)
     record = read_manifest(folder)
     if record["status"] != "ready":
@@ -105,7 +116,7 @@ def search(
     if mode == "speech":
         if not has_speech:
             raise HTTPException(409, "Transcribe this video before searching speech.")
-        return {"query": q, "score_type": "bm25", "results": speech[:k]}
+        return {"query": q, "score_type": "bm25", "results": speech[:k], **route_metadata}
     visual = []
     used = ["speech"] if has_speech else []
     if index_status(folder)["status"] == "ready":
@@ -118,4 +129,5 @@ def search(
         "score_type": "reciprocal_rank_fusion",
         "modalities_used": used,
         "results": fuse(visual, speech, k),
+        **route_metadata,
     }

@@ -1,6 +1,7 @@
 import pytest
 
 from app.hybrid import bm25, fuse
+from app.routing import resolve_mode
 
 
 def test_bm25_matches_terms_not_query_substrings():
@@ -28,3 +29,8 @@ def test_fusion_rewards_shared_evidence_and_deduplicates():
     assert result[0]["score"] == pytest.approx(1 / 62 + 1 / 61)
     assert result[0]["timestamp"] == 5.2
     assert result[0]["modality"] == "visual+speech"
+
+
+def test_explicit_search_modes_remain_overrides():
+    for mode in ("visual", "speech", "hybrid"):
+        assert resolve_mode(mode, "when does he say bicycle?", True)["route"] == mode

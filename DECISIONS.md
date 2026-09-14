@@ -1,5 +1,9 @@
 # Decisions
 
+## 020 — Promote tiny learned AUTO routing; retain explicit modes
+
+Freeze 36 balanced route queries over three new, source-disjoint Commons lecture/tutorial/demo videos with 205 real Whisper-tiny segments. Compare readable rules and a class-balanced 54-parameter softmax model using 18 lexical features. The learned router wins calibration, reaches 96.8% held-out routing accuracy, and matches explicit-route Oracle R@1/3/5 at 85.7%/92.9%/95.2% with MRR 0.9762 and zero category loss. Median/p95 is 0.031/0.042 ms; an identical second frozen evaluation matches. Choose outcome C. Add AUTO behind `SCENEMIND_AUTO_ROUTING_ENABLED`, default the UI to Auto, preserve Visual/Speech/Hybrid overrides, and keep no-match disabled. A private 30–60 minute personal-video acceptance run is the blocker before v1.0 reliability claims.
+
 ## 019 — Keep explicit paths; reject cheap list ranking and no-match
 
 Evaluate five-second CLIP top-20/top-50 candidates with score normalization, margins, temporal support, visual change, embedding agreement and calibration-only logistic models. The selected list scorer lowers held-out R@5 from 85.7% to 76.2%, while Oracle@20/50 is 92.9%/100%. A 10%-FAR calibration threshold reaches 0% held-out FAR only by falsely abstaining on 90.5% of positives. Resources pass at 0.44/0.96 ms median/p95 and 232 parameter bytes, but both quality gates fail. Existing explicit visual/speech/hybrid routing with real BM25/RRF evidence reaches 95.2% R@5. Choose outcome E: routing is dominant. Keep raw five-second CLIP and explicit modes, skip the second run, and collect new speech calibration sources before automatic routing. A stronger semantic reranker is justified only after the route is correct.

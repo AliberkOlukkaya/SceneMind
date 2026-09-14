@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "personal-video-acceptance-v1",
+  "annotation_status": "draft",
+  "annotation_frozen_at": null,
+  "policy": "Add only real user-selected local videos. Write route targets and relevance intervals after manual review and before running retrieval. Do not commit populated copies or media.",
+  "videos": []
+}

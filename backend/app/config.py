@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     speech_compute_type: str = "int8"
     visual_model: str = "openai/clip-vit-base-patch32"
     visual_revision: str = "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
+    auto_routing_enabled: bool = True
     embedding_batch_size: int = Field(default=8, ge=1, le=64)
 
 

@@ -94,6 +94,7 @@ Optional: copy `.env.example` to root `.env`, and `frontend/.env.example` to `fr
 | SCENEMIND_SPEECH_MODEL | tiny | Whisper model or local directory |
 | SCENEMIND_VISUAL_MODEL | openai/clip-vit-base-patch32 | CLIP checkpoint |
 | SCENEMIND_VISUAL_REVISION | Pinned commit | Changing it requires reindexing |
+| SCENEMIND_AUTO_ROUTING_ENABLED | true | AUTO classifier; false falls back to Hybrid |
 | NEXT_PUBLIC_API_URL | http://localhost:8000 | Browser API origin |
 
 FFmpeg comes from imageio-ffmpeg; IMAGEIO_FFMPEG_EXE overrides its executable. No system FFmpeg installation was needed on Windows. Accepted containers: MP4, MOV, WebM, MKV and AVI, up to 4K. MP4/H.264 is the practical browser playback path; other codecs depend on the browser.
@@ -153,6 +154,8 @@ Natural V2's raw held-out visual R@5 is 85.7%, but nearest-neighbor retrieval ac
 
 The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/top-50, but calibration-selected list features lowered final R@5 to 76.2% and a no-match threshold falsely rejected 90.5% of positives. Existing explicit Visual/Speech/Hybrid routing with real BM25 evidence reached 95.2% R@5. Production therefore keeps raw five-second CLIP ordering and explicit modes. [Candidate-list results](ml/evaluation/CANDIDATE_LIST_RANKING_RESULTS.md).
 
+AUTO routing now uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 is 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matches. The interface defaults to Auto and keeps Visual, Speech, and Hybrid overrides. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
+
 ## Learn the AI pipeline
 
 1. [Video processing](docs/learning/01-video-processing.md)
@@ -171,6 +174,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- Higher-resolution YOLOX-Nano meets local resource targets, but bounded refinement, cheap diversity, and list-statistic ranking cannot reliably compress the high-recall raw pool to five results. Keep the five-second production path and explicit search modes; gather speech calibration before automatic routing.
+- AUTO can select the existing search path for represented English query forms, but personal 30–60 minute lecture/demo/podcast/ordinary-video use remains unverified. Keep explicit overrides and run the private acceptance protocol before v1.0 reliability claims.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.
