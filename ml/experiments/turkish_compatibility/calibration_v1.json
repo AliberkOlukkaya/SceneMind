@@ -1,0 +1,1253 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "turkish-compatibility-v1",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-15T03:20:00+03:00",
+  "selection_policy": "Architecture and parameters use calibration sources only. Heldout sources and the personal acceptance set cannot influence selection.",
+  "personal_acceptance_manifest_sha256": "6849b08b1c18f75a28f0783a1898e4b625a7ead16f8c67a6086c5c04de949ddf",
+  "sources": [
+    {
+      "source_id": "wikipedia101-translation",
+      "source_group": "commons-wikipedia101-turkish-series",
+      "split": "calibration",
+      "domain": "software_demo",
+      "file": "Vikipedi 101 - Çeviri (video 10).webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_%C3%87eviri_(video_10).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Vikipedi_101_-_%C3%87eviri_%28video_10%29.webm",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Kurmanbek",
+      "sha256": "5f8c4116c00026d657f9abb30cd6d18bebd8f8679a182397f30fb8a08f6b3840",
+      "duration_seconds": 67.28,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 7 segments. Core words are usable, with substantial suffix and proper-word errors.",
+      "queries": [
+        {
+          "query_id": "trn-01",
+          "turkish_query": "Başka dildeki maddeyi çevirmeyi anlattığı yer nerede?",
+          "english_equivalent": "Where does he explain translating an article from another language?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              8,
+              17
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix",
+            "question"
+          ]
+        },
+        {
+          "query_id": "trn-02",
+          "turkish_query": "Çeviriler butonundan ne zaman bahsediyor?",
+          "english_equivalent": "When does he mention the translations button?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              19,
+              24
+            ]
+          ],
+          "linguistic_traits": [
+            "technical_term",
+            "question"
+          ]
+        },
+        {
+          "query_id": "trn-03",
+          "turkish_query": "Çeviri ekranını açmayı açıkladığı kısmı bul.",
+          "english_equivalent": "Find where he explains opening the translation screen.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              23,
+              36
+            ]
+          ],
+          "linguistic_traits": [
+            "omitted_subject",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "trn-04",
+          "turkish_query": "Wikipedia'de dünyayı değiştirmekten bahsettiği bölüm.",
+          "english_equivalent": "The part where he talks about changing the world on Wikipedia.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              35,
+              53
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "colloquial"
+          ]
+        },
+        {
+          "query_id": "trn-05",
+          "turkish_query": "Ekranda iki sütunlu çeviri sayfasının açık olduğu yer",
+          "english_equivalent": "The place where a two-column translation page is open on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              38,
+              46
+            ]
+          ],
+          "linguistic_traits": [
+            "turkish_characters",
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "trn-06",
+          "turkish_query": "Vikipedi ana sayfasını göster.",
+          "english_equivalent": "Show the Wikipedia home page.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              19,
+              24
+            ]
+          ],
+          "linguistic_traits": [
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "trn-07",
+          "turkish_query": "Beyaz kapüşonlu sunucunun göründüğü an",
+          "english_equivalent": "The moment the presenter in a white hoodie is visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              18
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "trn-08",
+          "turkish_query": "Çeviri aracını anlatırken iki dilli ekranı gösterdiği yer",
+          "english_equivalent": "Where he explains the translation tool while showing the bilingual screen",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              32,
+              47
+            ]
+          ],
+          "linguistic_traits": [
+            "while",
+            "mixed"
+          ]
+        },
+        {
+          "query_id": "trn-09",
+          "turkish_query": "Madde çevirmeyi anlatıp Museum of Design Atlanta sayfasını gösterdiği kısım",
+          "english_equivalent": "The part where he discusses translating an article and shows the Museum of Design Atlanta page",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              39,
+              45
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical",
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "trn-10",
+          "turkish_query": "ayarları gösterdiği yer",
+          "english_equivalent": "where he shows the settings",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              24,
+              35
+            ]
+          ],
+          "linguistic_traits": [
+            "ambiguous",
+            "colloquial"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "wikipedia101-upload",
+      "source_group": "commons-wikipedia101-turkish-series",
+      "split": "calibration",
+      "domain": "tutorial",
+      "file": "Vikipedi 101 - Wikimedia Commons'a medya yükleme (video 9).webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_(video_9).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_%28video_9%29.webm",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Kurmanbek",
+      "sha256": "18b116e6823d42027a0383f4ef87c05cdd65e11f539a55bf6b0e63ae80af8ba6",
+      "duration_seconds": 62.28,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 12 segments. Upload steps remain searchable despite repeated Commons transcription errors.",
+      "queries": [
+        {
+          "query_id": "upl-01",
+          "turkish_query": "Fotoğraf yüklemeyi anlattığı kısım nerede?",
+          "english_equivalent": "Where does he explain uploading a photo?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              8,
+              16
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix",
+            "question"
+          ]
+        },
+        {
+          "query_id": "upl-02",
+          "turkish_query": "Yükle butonundan ne zaman bahsediyor?",
+          "english_equivalent": "When does he mention the upload button?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              15,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "technical_term"
+          ]
+        },
+        {
+          "query_id": "upl-03",
+          "turkish_query": "kendi çalışmam seçeneğini açıkladığı yer",
+          "english_equivalent": "where he explains the own work option",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              26,
+              30
+            ]
+          ],
+          "linguistic_traits": [
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "upl-04",
+          "turkish_query": "Creative Commons lisansını anlattığı bölümü bul",
+          "english_equivalent": "Find the section where he explains the Creative Commons license",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              29,
+              34
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical"
+          ]
+        },
+        {
+          "query_id": "upl-05",
+          "turkish_query": "Kırmızı tren fotoğrafının olduğu yükleme formunu göster.",
+          "english_equivalent": "Show the upload form with the red train photo.",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              34,
+              50
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "upl-06",
+          "turkish_query": "ekranda takvimin açık olduğu an",
+          "english_equivalent": "the moment the calendar is open on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              44,
+              50
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "upl-07",
+          "turkish_query": "Wikimedia Commons ana sayfasının göründüğü bölüm",
+          "english_equivalent": "The section where the Wikimedia Commons home page is visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              19,
+              24
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical"
+          ]
+        },
+        {
+          "query_id": "upl-08",
+          "turkish_query": "Lisansı anlatırken yükleme sihirbazını gösterdiği yer",
+          "english_equivalent": "Where he explains the license while showing the upload wizard",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              29,
+              38
+            ]
+          ],
+          "linguistic_traits": [
+            "while",
+            "mixed"
+          ]
+        },
+        {
+          "query_id": "upl-09",
+          "turkish_query": "Kategori eklemekten bahsedip formu doldurduğu kısım",
+          "english_equivalent": "The part where he mentions adding a category while filling the form",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              40,
+              50
+            ]
+          ],
+          "linguistic_traits": [
+            "colloquial",
+            "mixed"
+          ]
+        },
+        {
+          "query_id": "upl-10",
+          "turkish_query": "dosya seçimini gösterdiği yer",
+          "english_equivalent": "where he shows file selection",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              21,
+              29
+            ]
+          ],
+          "linguistic_traits": [
+            "ambiguous",
+            "omitted_subject"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "mitx-course-overview",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "domain": "presentation",
+      "file": "course-overview-6.002x.webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "attribution": "mitxvtest / MITx",
+      "sha256": "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3",
+      "duration_seconds": 662.398,
+      "language": "en",
+      "asr_characteristics": "Whisper-tiny detected English; 111 segments with usable technical terms and several course-number errors.",
+      "queries": [
+        {
+          "query_id": "mit-01",
+          "turkish_query": "Maxwell denklemlerinden bahsettiği yer nerede?",
+          "english_equivalent": "Where does he mention Maxwell's equations?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              40,
+              59
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix",
+            "technical_term"
+          ]
+        },
+        {
+          "query_id": "mit-02",
+          "turkish_query": "Ohm kanununu açıkladığı kısmı bul.",
+          "english_equivalent": "Find the part where he explains Ohm's law.",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              205,
+              264
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "mit-03",
+          "turkish_query": "Python'dan ne zaman bahsediyor?",
+          "english_equivalent": "When does he mention Python?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              497,
+              506
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "technical_term"
+          ]
+        },
+        {
+          "query_id": "mit-04",
+          "turkish_query": "dijital soyutlamayı anlattığı bölüm",
+          "english_equivalent": "the section where he explains digital abstraction",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              413,
+              444
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "mit-05",
+          "turkish_query": "Slaytta nature kutusunun solda olduğu yer",
+          "english_equivalent": "The place where the nature box is on the left of the slide",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              108,
+              190
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical",
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "mit-06",
+          "turkish_query": "mavi kutularla çizilmiş ders haritasını göster",
+          "english_equivalent": "show the course map drawn with blue boxes",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              300,
+              600
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "mit-07",
+          "turkish_query": "kırmızı okların göründüğü karmaşık diyagram",
+          "english_equivalent": "the complex diagram where red arrows are visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              350,
+              590
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "mit-08",
+          "turkish_query": "ekrandaki purpose/use of science slaydı",
+          "english_equivalent": "the purpose/use of science slide on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              18,
+              58
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical"
+          ]
+        },
+        {
+          "query_id": "mit-09",
+          "turkish_query": "Python'ı anlatırken programlama dilleri kutusunu gösterdiği yer",
+          "english_equivalent": "Where he mentions Python while showing the programming languages box",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              497,
+              506
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "while"
+          ]
+        },
+        {
+          "query_id": "mit-10",
+          "turkish_query": "dijital abstraction'dan bahsedip şemada gate'leri gösterdiği bölüm",
+          "english_equivalent": "The section where he discusses digital abstraction and shows gates in the diagram",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              413,
+              449
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical",
+            "apostrophe"
+          ]
+        },
+        {
+          "query_id": "mit-11",
+          "turkish_query": "işlemcilerden konuşurken mavi şemayı gösterdiği kısım",
+          "english_equivalent": "The part where he talks about processors while showing the blue diagram",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              457,
+              532
+            ]
+          ],
+          "linguistic_traits": [
+            "while",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "mit-12",
+          "turkish_query": "model kısmı",
+          "english_equivalent": "the model part",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              276,
+              365
+            ]
+          ],
+          "linguistic_traits": [
+            "ambiguous",
+            "colloquial"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "phone-throwing",
+      "source_group": "commons-gameplay-send-me-to-heaven",
+      "split": "calibration",
+      "domain": "ordinary_visual",
+      "file": "phone-throwing.webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Gameplay_of_Send_Me_To_Heaven.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Gameplay_of_Send_Me_To_Heaven.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "petrsvar / Carrotpop; S.M.T.H.",
+      "sha256": "8d682ff80b87acf16c8b2e7eb25cc30b812ade8469bc4f921a25cbd7724819d9",
+      "duration_seconds": 21.267,
+      "language": "none",
+      "asr_characteristics": "No speech segments; visual-only source.",
+      "queries": [
+        {
+          "query_id": "phn-01",
+          "turkish_query": "sarı başlık ekranını bul",
+          "english_equivalent": "find the yellow title screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              10
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "phn-02",
+          "turkish_query": "buz pistindeki iki kadını göster",
+          "english_equivalent": "show the two women at the ice rink",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "turkish_characters"
+          ]
+        },
+        {
+          "query_id": "phn-03",
+          "turkish_query": "telefonu havaya atan kadın",
+          "english_equivalent": "the woman throwing a phone into the air",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "action"
+          ]
+        },
+        {
+          "query_id": "phn-04",
+          "turkish_query": "siyah beyaz çekimde yürüyen insanlar",
+          "english_equivalent": "people walking in black-and-white footage",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "action"
+          ]
+        },
+        {
+          "query_id": "phn-05",
+          "turkish_query": "kırmızı bereli kadının göründüğü an",
+          "english_equivalent": "the moment the woman in a red beret is visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              16
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "phn-06",
+          "turkish_query": "buz pateni pistinin görüldüğü yer",
+          "english_equivalent": "where the ice skating rink is visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "phn-07",
+          "turkish_query": "Send Me To Heaven yazısı ekrandayken",
+          "english_equivalent": "while the Send Me To Heaven text is on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              10
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical",
+            "while"
+          ]
+        },
+        {
+          "query_id": "phn-08",
+          "turkish_query": "telefon kısmı",
+          "english_equivalent": "the phone part",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "ambiguous",
+            "colloquial"
+          ]
+        },
+        {
+          "query_id": "phn-09",
+          "turkish_query": "kameraya doğru yürüyen iki kişiyi bul",
+          "english_equivalent": "find two people walking toward the camera",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              21
+            ]
+          ],
+          "linguistic_traits": [
+            "action",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "phn-10",
+          "turkish_query": "parlak sarı arka planın olduğu bölüm",
+          "english_equivalent": "the section with a bright yellow background",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              10
+            ]
+          ],
+          "linguistic_traits": [
+            "color"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "domain": "speech_heavy",
+      "file": "WIKITONGUES- Ela speaking Turkish.webm",
+      "page": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Wikitongues",
+      "sha256": "3c9142b5b2926462a4dcedfc35488bdb1e75b898c9924d29b8377609b9af1647",
+      "duration_seconds": 79.467,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 17 segments. Accent and proper nouns cause heavy errors, while journalism, television and language topics remain partly usable.",
+      "queries": [
+        {
+          "query_id": "ela-01",
+          "turkish_query": "Ankara'da üniversite okuduğunu söylediği yer",
+          "english_equivalent": "where she says she studied at university in Ankara",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              17,
+              25
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "ela-02",
+          "turkish_query": "gazetecilikten bahsettiği bölümü bul",
+          "english_equivalent": "find the section where she talks about journalism",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              24,
+              37
+            ]
+          ],
+          "linguistic_traits": [
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "ela-03",
+          "turkish_query": "televizyonda çalıştığını anlattığı kısım",
+          "english_equivalent": "the part where she explains that she works in television",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              32,
+              43
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "ela-04",
+          "turkish_query": "Türkçenin Kosova'da konuşulmasından ne zaman bahsediyor?",
+          "english_equivalent": "When does she mention Turkish being spoken in Kosovo?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              67,
+              79
+            ]
+          ],
+          "linguistic_traits": [
+            "apostrophe",
+            "question"
+          ]
+        },
+        {
+          "query_id": "ela-05",
+          "turkish_query": "pembe bluzlu kadının göründüğü an",
+          "english_equivalent": "the moment the woman in a pink blouse is visible",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              5,
+              79
+            ]
+          ],
+          "linguistic_traits": [
+            "color"
+          ]
+        },
+        {
+          "query_id": "ela-06",
+          "turkish_query": "kadının önünde pencere olan görüntüyü bul",
+          "english_equivalent": "find the shot with a window behind the woman",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              5,
+              79
+            ]
+          ],
+          "linguistic_traits": [
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "ela-07",
+          "turkish_query": "kameraya konuşan koyu saçlı kadın",
+          "english_equivalent": "dark-haired woman speaking to the camera",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              5,
+              79
+            ]
+          ],
+          "linguistic_traits": [
+            "action"
+          ]
+        },
+        {
+          "query_id": "ela-08",
+          "turkish_query": "gazeteciliği anlatırken kameraya baktığı yer",
+          "english_equivalent": "where she looks at the camera while discussing journalism",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              24,
+              37
+            ]
+          ],
+          "linguistic_traits": [
+            "while"
+          ]
+        },
+        {
+          "query_id": "ela-09",
+          "turkish_query": "belgeselden bahsederken pembe bluzlu kadının göründüğü bölüm",
+          "english_equivalent": "the section where the woman in a pink blouse is visible while she discusses the documentary",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              46,
+              59
+            ]
+          ],
+          "linguistic_traits": [
+            "while",
+            "color"
+          ]
+        },
+        {
+          "query_id": "ela-10",
+          "turkish_query": "Türkçe konuşulmasını anlatırken kadının ekranda olduğu kısım",
+          "english_equivalent": "the part where the woman is on screen while discussing speaking Turkish",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              58,
+              79
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "domain": "education",
+      "file": "Cesur ol, Wikipedist ol!.webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Cesur_ol,_Wikipedist_ol!.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Cesur_ol%2C_Wikipedist_ol%21.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "sosyalkafa tv",
+      "sha256": "f5ef216d1333912b9a448d971b076d32c1631419e7e46c7e4b94fe5f621f7354",
+      "duration_seconds": 115.829,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 36 segments. Meaning is recoverable but Wikipedia and several policy terms are repeatedly distorted.",
+      "queries": [
+        {
+          "query_id": "brv-01",
+          "turkish_query": "Herkesin düzeltme yapabileceğini söylediği yer",
+          "english_equivalent": "where she says everyone can make edits",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              26,
+              33
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "brv-02",
+          "turkish_query": "tarafsız bakış açısından bahsettiği bölüm",
+          "english_equivalent": "the section where she talks about neutral point of view",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              40,
+              50
+            ]
+          ],
+          "linguistic_traits": [
+            "turkish_characters"
+          ]
+        },
+        {
+          "query_id": "brv-03",
+          "turkish_query": "lisans koşullarını açıkladığı kısmı bul",
+          "english_equivalent": "find the part where she explains license conditions",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              53,
+              69
+            ]
+          ],
+          "linguistic_traits": [
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "brv-04",
+          "turkish_query": "değişikliklerin geri alınabildiğini ne zaman söylüyor?",
+          "english_equivalent": "When does she say edits can be reverted?",
+          "route": "SPEECH",
+          "relevant_intervals": [
+            [
+              98,
+              111
+            ]
+          ],
+          "linguistic_traits": [
+            "question",
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "brv-05",
+          "turkish_query": "Wikipedia logosunun ekranda olduğu an",
+          "english_equivalent": "the moment the Wikipedia logo is on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              4,
+              9
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed_technical"
+          ]
+        },
+        {
+          "query_id": "brv-06",
+          "turkish_query": "dünyayı tutan eller çizimini göster",
+          "english_equivalent": "show the illustration of hands holding the world",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              34,
+              40
+            ]
+          ],
+          "linguistic_traits": [
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "brv-07",
+          "turkish_query": "kadının iki yanında çizgi karakterlerin olduğu yer",
+          "english_equivalent": "where cartoon characters appear on both sides of the woman",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              44,
+              50
+            ]
+          ],
+          "linguistic_traits": [
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "brv-08",
+          "turkish_query": "ekranda gerekenler sağduyu ve saygı yazıları",
+          "english_equivalent": "the required, common sense and respect words on screen",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              88,
+              95
+            ]
+          ],
+          "linguistic_traits": [
+            "omitted_subject"
+          ]
+        },
+        {
+          "query_id": "brv-09",
+          "turkish_query": "kuralları anlatırken iki elini açtığı bölüm",
+          "english_equivalent": "the section where she opens both hands while explaining rules",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              24,
+              38
+            ]
+          ],
+          "linguistic_traits": [
+            "while"
+          ]
+        },
+        {
+          "query_id": "brv-10",
+          "turkish_query": "telif hakkını anlatırken kaynak çiziminin göründüğü yer",
+          "english_equivalent": "where the source illustration is visible while she explains copyright",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              53,
+              62
+            ]
+          ],
+          "linguistic_traits": [
+            "while"
+          ]
+        },
+        {
+          "query_id": "brv-11",
+          "turkish_query": "katkı yapmaktan bahsederken yazı yazan kişi çizimini gösterdiği kısım",
+          "english_equivalent": "the part where she discusses contributing while showing an illustration of someone writing",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              93,
+              105
+            ]
+          ],
+          "linguistic_traits": [
+            "mixed"
+          ]
+        },
+        {
+          "query_id": "brv-12",
+          "turkish_query": "temel taşlardan konuşurken taş görselini tuttuğu an",
+          "english_equivalent": "the moment she holds a stone image while talking about pillars",
+          "route": "HYBRID",
+          "relevant_intervals": [
+            [
+              72,
+              87
+            ]
+          ],
+          "linguistic_traits": [
+            "colloquial",
+            "mixed"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "domain": "ordinary_visual",
+      "file": "base-jump.webm",
+      "page": "https://commons.wikimedia.org/wiki/File:Base_jump.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Base_jump.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Quest Films",
+      "sha256": "4eff2d9c0d62cea6f2f806754bd1fea9ca7a5daefbd6208ee2201f67cd6509e5",
+      "duration_seconds": 37.004,
+      "language": "none",
+      "asr_characteristics": "No speech segments; visual-only source.",
+      "queries": [
+        {
+          "query_id": "jmp-01",
+          "turkish_query": "kırmızı kasklı adamı bul",
+          "english_equivalent": "find the man wearing a red helmet",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              8
+            ]
+          ],
+          "linguistic_traits": [
+            "color",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "jmp-02",
+          "turkish_query": "kayalık arazide duran sporcular",
+          "english_equivalent": "athletes standing on rocky terrain",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              31
+            ]
+          ],
+          "linguistic_traits": [
+            "suffix"
+          ]
+        },
+        {
+          "query_id": "jmp-03",
+          "turkish_query": "karanlık mağaraya atlayan kişiyi göster",
+          "english_equivalent": "show the person jumping into a dark cave",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              4,
+              10
+            ]
+          ],
+          "linguistic_traits": [
+            "action",
+            "imperative"
+          ]
+        },
+        {
+          "query_id": "jmp-04",
+          "turkish_query": "mağara girişinin yukarıdan göründüğü an",
+          "english_equivalent": "the moment the cave entrance is seen from above",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              4,
+              37
+            ]
+          ],
+          "linguistic_traits": [
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "jmp-05",
+          "turkish_query": "siyah bereli adamın kenarda durduğu yer",
+          "english_equivalent": "where the man in a black beanie stands at the edge",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              25
+            ]
+          ],
+          "linguistic_traits": [
+            "color"
+          ]
+        },
+        {
+          "query_id": "jmp-06",
+          "turkish_query": "arkada araçların olduğu kayalık alan",
+          "english_equivalent": "the rocky area with vehicles in the background",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              0,
+              20
+            ]
+          ],
+          "linguistic_traits": [
+            "spatial"
+          ]
+        },
+        {
+          "query_id": "jmp-07",
+          "turkish_query": "iki kişinin atlayışa hazırlandığı bölüm",
+          "english_equivalent": "the section where two people prepare for the jump",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              10,
+              31
+            ]
+          ],
+          "linguistic_traits": [
+            "action"
+          ]
+        },
+        {
+          "query_id": "jmp-08",
+          "turkish_query": "çukur kısmı",
+          "english_equivalent": "the hole part",
+          "route": "VISUAL",
+          "relevant_intervals": [
+            [
+              4,
+              37
+            ]
+          ],
+          "linguistic_traits": [
+            "ambiguous",
+            "colloquial"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3013 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "turkish-compatibility-v1",
+  "utc": "2026-09-14T23:17:39.730809+00:00",
+  "git_commit": "0de00368470c84e66a55a49ee8d9e9bdec0e857e",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.5",
+  "manifest_sha256": "1ed38941cb8cf6c33e86726f8ba1ecd545b8237faba852642ee27f2b9fd7e3bd",
+  "baseline_sha256": "db572f5404cfbfe5c8b0762b1f71d17827078252f06611cfa8c32e5b44e66993",
+  "personal_acceptance_used_for_selection": false,
+  "source_counts": {
+    "calibration": 3,
+    "heldout": 3
+  },
+  "query_counts": {
+    "calibration": 42,
+    "heldout": 30
+  },
+  "sources": [
+    {
+      "source_id": "wikipedia101-translation",
+      "source_group": "commons-wikipedia101-turkish-series",
+      "split": "calibration",
+      "domain": "software_demo",
+      "page": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_%C3%87eviri_(video_10).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Vikipedi_101_-_%C3%87eviri_%28video_10%29.webm",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Kurmanbek",
+      "sha256": "5f8c4116c00026d657f9abb30cd6d18bebd8f8679a182397f30fb8a08f6b3840",
+      "duration_seconds": 67.28,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 7 segments. Core words are usable, with substantial suffix and proper-word errors."
+    },
+    {
+      "source_id": "wikipedia101-upload",
+      "source_group": "commons-wikipedia101-turkish-series",
+      "split": "calibration",
+      "domain": "tutorial",
+      "page": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_(video_9).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_%28video_9%29.webm",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Kurmanbek",
+      "sha256": "18b116e6823d42027a0383f4ef87c05cdd65e11f539a55bf6b0e63ae80af8ba6",
+      "duration_seconds": 62.28,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 12 segments. Upload steps remain searchable despite repeated Commons transcription errors."
+    },
+    {
+      "source_id": "mitx-course-overview",
+      "source_group": "commons-mitx-6002-course-overview",
+      "split": "calibration",
+      "domain": "presentation",
+      "page": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "attribution": "mitxvtest / MITx",
+      "sha256": "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3",
+      "duration_seconds": 662.398,
+      "language": "en",
+      "asr_characteristics": "Whisper-tiny detected English; 111 segments with usable technical terms and several course-number errors."
+    },
+    {
+      "source_id": "phone-throwing",
+      "source_group": "commons-gameplay-send-me-to-heaven",
+      "split": "calibration",
+      "domain": "ordinary_visual",
+      "page": "https://commons.wikimedia.org/wiki/File:Gameplay_of_Send_Me_To_Heaven.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Gameplay_of_Send_Me_To_Heaven.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "petrsvar / Carrotpop; S.M.T.H.",
+      "sha256": "8d682ff80b87acf16c8b2e7eb25cc30b812ade8469bc4f921a25cbd7724819d9",
+      "duration_seconds": 21.267,
+      "language": "none",
+      "asr_characteristics": "No speech segments; visual-only source."
+    },
+    {
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "domain": "speech_heavy",
+      "page": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Wikitongues",
+      "sha256": "3c9142b5b2926462a4dcedfc35488bdb1e75b898c9924d29b8377609b9af1647",
+      "duration_seconds": 79.467,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 17 segments. Accent and proper nouns cause heavy errors, while journalism, television and language topics remain partly usable."
+    },
+    {
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "domain": "education",
+      "page": "https://commons.wikimedia.org/wiki/File:Cesur_ol,_Wikipedist_ol!.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Cesur_ol%2C_Wikipedist_ol%21.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "sosyalkafa tv",
+      "sha256": "f5ef216d1333912b9a448d971b076d32c1631419e7e46c7e4b94fe5f621f7354",
+      "duration_seconds": 115.829,
+      "language": "tr",
+      "asr_characteristics": "Whisper-tiny detected Turkish; 36 segments. Meaning is recoverable but Wikipedia and several policy terms are repeatedly distorted."
+    },
+    {
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "domain": "ordinary_visual",
+      "page": "https://commons.wikimedia.org/wiki/File:Base_jump.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Base_jump.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Quest Films",
+      "sha256": "4eff2d9c0d62cea6f2f806754bd1fea9ca7a5daefbd6208ee2201f67cd6509e5",
+      "duration_seconds": 37.004,
+      "language": "none",
+      "asr_characteristics": "No speech segments; visual-only source."
+    }
+  ],
+  "baseline": {
+    "schema_version": "1.0.0",
+    "manifest_sha256": "1ed38941cb8cf6c33e86726f8ba1ecd545b8237faba852642ee27f2b9fd7e3bd",
+    "personal_manifest_sha256": "6849b08b1c18f75a28f0783a1898e4b625a7ead16f8c67a6086c5c04de949ddf",
+    "frozen_at": 1789427514.3830175,
+    "source_counts": {
+      "calibration": 3,
+      "heldout": 3
+    },
+    "query_counts": {
+      "calibration": 42,
+      "heldout": 30
+    },
+    "routing": {
+      "calibration": {
+        "queries": 42,
+        "accuracy": 0.5,
+        "confusion": {
+          "VISUAL": {
+            "VISUAL": 20,
+            "SPEECH": 0,
+            "HYBRID": 1
+          },
+          "SPEECH": {
+            "VISUAL": 12,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "HYBRID": {
+            "VISUAL": 8,
+            "SPEECH": 0,
+            "HYBRID": 1
+          }
+        }
+      },
+      "heldout": {
+        "queries": 30,
+        "accuracy": 0.5333333333333333,
+        "confusion": {
+          "VISUAL": {
+            "VISUAL": 15,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "SPEECH": {
+            "VISUAL": 8,
+            "SPEECH": 0,
+            "HYBRID": 0
+          },
+          "HYBRID": {
+            "VISUAL": 6,
+            "SPEECH": 0,
+            "HYBRID": 1
+          }
+        }
+      }
+    },
+    "retrieval": {
+      "calibration": {
+        "native": {
+          "VISUAL": {
+            "1": {
+              "queries": 21,
+              "recall": 0.47619047619047616,
+              "mrr": 0.47619047619047616
+            },
+            "3": {
+              "queries": 21,
+              "recall": 0.5238095238095238,
+              "mrr": 0.5
+            },
+            "5": {
+              "queries": 21,
+              "recall": 0.7142857142857143,
+              "mrr": 0.5452380952380952
+            }
+          },
+          "SPEECH": {
+            "1": {
+              "queries": 12,
+              "recall": 0.4166666666666667,
+              "mrr": 0.4166666666666667
+            },
+            "3": {
+              "queries": 12,
+              "recall": 0.5,
+              "mrr": 0.4583333333333333
+            },
+            "5": {
+              "queries": 12,
+              "recall": 0.5,
+              "mrr": 0.4583333333333333
+            }
+          },
+          "HYBRID": {
+            "1": {
+              "queries": 9,
+              "recall": 0.3333333333333333,
+              "mrr": 0.3333333333333333
+            },
+            "3": {
+              "queries": 9,
+              "recall": 0.5555555555555556,
+              "mrr": 0.42592592592592593
+            },
+            "5": {
+              "queries": 9,
+              "recall": 0.7777777777777778,
+              "mrr": 0.48148148148148145
+            }
+          }
+        },
+        "english_oracle": {
+          "VISUAL": {
+            "1": {
+              "queries": 21,
+              "recall": 0.6190476190476191,
+              "mrr": 0.6190476190476191
+            },
+            "3": {
+              "queries": 21,
+              "recall": 0.8571428571428571,
+              "mrr": 0.7380952380952381
+            },
+            "5": {
+              "queries": 21,
+              "recall": 0.9047619047619048,
+              "mrr": 0.7476190476190476
+            }
+          },
+          "SPEECH": {
+            "1": {
+              "queries": 12,
+              "recall": 0.16666666666666666,
+              "mrr": 0.16666666666666666
+            },
+            "3": {
+              "queries": 12,
+              "recall": 0.3333333333333333,
+              "mrr": 0.2361111111111111
+            },
+            "5": {
+              "queries": 12,
+              "recall": 0.3333333333333333,
+              "mrr": 0.2361111111111111
+            }
+          },
+          "HYBRID": {
+            "1": {
+              "queries": 9,
+              "recall": 0.3333333333333333,
+              "mrr": 0.3333333333333333
+            },
+            "3": {
+              "queries": 9,
+              "recall": 0.7777777777777778,
+              "mrr": 0.5555555555555556
+            },
+            "5": {
+              "queries": 9,
+              "recall": 0.7777777777777778,
+              "mrr": 0.5555555555555556
+            }
+          }
+        }
+      },
+      "heldout": {
+        "native": {
+          "VISUAL": {
+            "1": {
+              "queries": 15,
+              "recall": 0.4,
+              "mrr": 0.4
+            },
+            "3": {
+              "queries": 15,
+              "recall": 0.8666666666666667,
+              "mrr": 0.6222222222222222
+            },
+            "5": {
+              "queries": 15,
+              "recall": 0.9333333333333333,
+              "mrr": 0.6388888888888888
+            }
+          },
+          "SPEECH": {
+            "1": {
+              "queries": 8,
+              "recall": 0.625,
+              "mrr": 0.625
+            },
+            "3": {
+              "queries": 8,
+              "recall": 0.625,
+              "mrr": 0.625
+            },
+            "5": {
+              "queries": 8,
+              "recall": 0.75,
+              "mrr": 0.65625
+            }
+          },
+          "HYBRID": {
+            "1": {
+              "queries": 7,
+              "recall": 0.42857142857142855,
+              "mrr": 0.42857142857142855
+            },
+            "3": {
+              "queries": 7,
+              "recall": 0.42857142857142855,
+              "mrr": 0.42857142857142855
+            },
+            "5": {
+              "queries": 7,
+              "recall": 0.7142857142857143,
+              "mrr": 0.4857142857142857
+            }
+          }
+        },
+        "english_oracle": {
+          "VISUAL": {
+            "1": {
+              "queries": 15,
+              "recall": 0.7333333333333333,
+              "mrr": 0.7333333333333333
+            },
+            "3": {
+              "queries": 15,
+              "recall": 1.0,
+              "mrr": 0.8555555555555555
+            },
+            "5": {
+              "queries": 15,
+              "recall": 1.0,
+              "mrr": 0.8555555555555555
+            }
+          },
+          "SPEECH": {
+            "1": {
+              "queries": 8,
+              "recall": 0.125,
+              "mrr": 0.125
+            },
+            "3": {
+              "queries": 8,
+              "recall": 0.125,
+              "mrr": 0.125
+            },
+            "5": {
+              "queries": 8,
+              "recall": 0.125,
+              "mrr": 0.125
+            }
+          },
+          "HYBRID": {
+            "1": {
+              "queries": 7,
+              "recall": 0.0,
+              "mrr": 0.0
+            },
+            "3": {
+              "queries": 7,
+              "recall": 0.42857142857142855,
+              "mrr": 0.14285714285714285
+            },
+            "5": {
+              "queries": 7,
+              "recall": 0.5714285714285714,
+              "mrr": 0.17857142857142858
+            }
+          }
+        }
+      }
+    }
+  },
+  "selection": {
+    "split": "calibration",
+    "router_cross_source_accuracy": {
+      "rules": 0.8571428571428571,
+      "features": 0.8809523809523809,
+      "word": 0.8333333333333334,
+      "char": 0.8809523809523809,
+      "combined": 0.8809523809523809
+    },
+    "selected_router": "features",
+    "retrieval_strategy_metrics": {
+      "native": {
+        "1": {
+          "queries": 42,
+          "recall": 0.42857142857142855,
+          "mrr": 0.42857142857142855
+        },
+        "3": {
+          "queries": 42,
+          "recall": 0.5,
+          "mrr": 0.4603174603174603
+        },
+        "5": {
+          "queries": 42,
+          "recall": 0.6428571428571429,
+          "mrr": 0.49484126984126986
+        }
+      },
+      "normalized": {
+        "1": {
+          "queries": 42,
+          "recall": 0.42857142857142855,
+          "mrr": 0.42857142857142855
+        },
+        "3": {
+          "queries": 42,
+          "recall": 0.5,
+          "mrr": 0.45634920634920634
+        },
+        "5": {
+          "queries": 42,
+          "recall": 0.6428571428571429,
+          "mrr": 0.48968253968253966
+        }
+      },
+      "lexical": {
+        "1": {
+          "queries": 42,
+          "recall": 0.5952380952380952,
+          "mrr": 0.5952380952380952
+        },
+        "3": {
+          "queries": 42,
+          "recall": 0.7857142857142857,
+          "mrr": 0.6825396825396826
+        },
+        "5": {
+          "queries": 42,
+          "recall": 0.8095238095238095,
+          "mrr": 0.6884920634920635
+        }
+      }
+    },
+    "selected_strategy": "lexical",
+    "routing_order": "original Turkish query -> Turkish router; path-specific lexical adaptation only for retrieval",
+    "translation_used": false,
+    "multilingual_embedding_used": false
+  },
+  "heldout": {
+    "routing": {
+      "queries": 30,
+      "accuracy": 0.7666666666666667,
+      "confusion": {
+        "VISUAL": {
+          "VISUAL": 12,
+          "SPEECH": 1,
+          "HYBRID": 2
+        },
+        "SPEECH": {
+          "VISUAL": 0,
+          "SPEECH": 8,
+          "HYBRID": 0
+        },
+        "HYBRID": {
+          "VISUAL": 3,
+          "SPEECH": 1,
+          "HYBRID": 3
+        }
+      }
+    },
+    "paths": {
+      "VISUAL": {
+        "baseline_native": {
+          "1": {
+            "queries": 15,
+            "recall": 0.4,
+            "mrr": 0.4
+          },
+          "3": {
+            "queries": 15,
+            "recall": 0.8666666666666667,
+            "mrr": 0.6222222222222222
+          },
+          "5": {
+            "queries": 15,
+            "recall": 0.9333333333333333,
+            "mrr": 0.6388888888888888
+          }
+        },
+        "english_oracle": {
+          "1": {
+            "queries": 15,
+            "recall": 0.7333333333333333,
+            "mrr": 0.7333333333333333
+          },
+          "3": {
+            "queries": 15,
+            "recall": 1.0,
+            "mrr": 0.8555555555555555
+          },
+          "5": {
+            "queries": 15,
+            "recall": 1.0,
+            "mrr": 0.8555555555555555
+          }
+        },
+        "selected": {
+          "1": {
+            "queries": 15,
+            "recall": 0.5333333333333333,
+            "mrr": 0.5333333333333333
+          },
+          "3": {
+            "queries": 15,
+            "recall": 0.8666666666666667,
+            "mrr": 0.6777777777777778
+          },
+          "5": {
+            "queries": 15,
+            "recall": 0.8666666666666667,
+            "mrr": 0.6777777777777778
+          }
+        }
+      },
+      "SPEECH": {
+        "baseline_native": {
+          "1": {
+            "queries": 8,
+            "recall": 0.625,
+            "mrr": 0.625
+          },
+          "3": {
+            "queries": 8,
+            "recall": 0.625,
+            "mrr": 0.625
+          },
+          "5": {
+            "queries": 8,
+            "recall": 0.75,
+            "mrr": 0.65625
+          }
+        },
+        "english_oracle": {
+          "1": {
+            "queries": 8,
+            "recall": 0.125,
+            "mrr": 0.125
+          },
+          "3": {
+            "queries": 8,
+            "recall": 0.125,
+            "mrr": 0.125
+          },
+          "5": {
+            "queries": 8,
+            "recall": 0.125,
+            "mrr": 0.125
+          }
+        },
+        "selected": {
+          "1": {
+            "queries": 8,
+            "recall": 0.875,
+            "mrr": 0.875
+          },
+          "3": {
+            "queries": 8,
+            "recall": 0.875,
+            "mrr": 0.875
+          },
+          "5": {
+            "queries": 8,
+            "recall": 0.875,
+            "mrr": 0.875
+          }
+        }
+      },
+      "HYBRID": {
+        "baseline_native": {
+          "1": {
+            "queries": 7,
+            "recall": 0.42857142857142855,
+            "mrr": 0.42857142857142855
+          },
+          "3": {
+            "queries": 7,
+            "recall": 0.42857142857142855,
+            "mrr": 0.42857142857142855
+          },
+          "5": {
+            "queries": 7,
+            "recall": 0.7142857142857143,
+            "mrr": 0.4857142857142857
+          }
+        },
+        "english_oracle": {
+          "1": {
+            "queries": 7,
+            "recall": 0.0,
+            "mrr": 0.0
+          },
+          "3": {
+            "queries": 7,
+            "recall": 0.42857142857142855,
+            "mrr": 0.14285714285714285
+          },
+          "5": {
+            "queries": 7,
+            "recall": 0.5714285714285714,
+            "mrr": 0.17857142857142858
+          }
+        },
+        "selected": {
+          "1": {
+            "queries": 7,
+            "recall": 0.5714285714285714,
+            "mrr": 0.5714285714285714
+          },
+          "3": {
+            "queries": 7,
+            "recall": 0.7142857142857143,
+            "mrr": 0.6190476190476191
+          },
+          "5": {
+            "queries": 7,
+            "recall": 0.7142857142857143,
+            "mrr": 0.6190476190476191
+          }
+        }
+      }
+    },
+    "auto": {
+      "1": {
+        "queries": 30,
+        "recall": 0.5666666666666667,
+        "mrr": 0.5666666666666667
+      },
+      "3": {
+        "queries": 30,
+        "recall": 0.8,
+        "mrr": 0.6666666666666666
+      },
+      "5": {
+        "queries": 30,
+        "recall": 0.8,
+        "mrr": 0.6666666666666666
+      }
+    }
+  },
+  "resources": {
+    "median_added_latency_ms": 0.1241,
+    "p95_added_latency_ms": 0.159305,
+    "batch_average_added_latency_ms": 0.11565966666666666,
+    "added_rss_bytes": 0,
+    "router_model_bytes": 1771,
+    "adapter_artifact_bytes": 1758
+  },
+  "english_regression": {
+    "routing_behavior": "English continues through the unchanged production router.",
+    "retrieval_behavior": "English queries are not adapted.",
+    "r5_regression_percentage_points": 0.0
+  },
+  "promotion_gates": {
+    "turkish_routing_at_least_0_90": false,
+    "turkish_auto_r5_at_least_0_85": false,
+    "english_r5_regression_at_most_0_02": true,
+    "routing_and_adaptation_latency_under_5_ms": true
+  },
+  "promotion_gate_passed": false,
+  "personal_acceptance_rerun_performed": false,
+  "production_modified": false,
+  "rows": [
+    {
+      "query_id": "ela-01",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "Ankara'da üniversite okuduğunu söylediği yer",
+      "english_equivalent": "where she says she studied at university in Ankara",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          17,
+          25
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "ankara'da üniversite okuduğunu söylediği yer",
+        "speech": "üniversite okuduğun"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 10.003,
+            "score": 0.23024186491966248
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.22786203026771545
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.22465619444847107
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.22337856888771057
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.22019636631011963
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 17.49,
+            "score": 2.0167923672533696
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 17.49,
+            "score": 0.030886196246139225
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-02",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "gazetecilikten bahsettiği bölümü bul",
+      "english_equivalent": "find the section where she talks about journalism",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          24,
+          37
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "gazetecilikten",
+        "speech": "gazetecilik"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 0.003,
+            "score": 0.2624340057373047
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.25104042887687683
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.24358677864074707
+          },
+          {
+            "timestamp": 60.003,
+            "score": 0.24303650856018066
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.24111515283584595
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 24.53,
+            "score": 2.2259539595493543
+          },
+          {
+            "timestamp": 17.49,
+            "score": 1.6021976302250847
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 17.49,
+            "score": 0.0315136476426799
+          },
+          {
+            "timestamp": 24.53,
+            "score": 0.029726775956284153
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015873015873015872
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-03",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "televizyonda çalıştığını anlattığı kısım",
+      "english_equivalent": "the part where she explains that she works in television",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          32,
+          43
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "televizyonda",
+        "speech": "televizyonda çalıştığın"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.2661623954772949
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.2546047270298004
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2520759105682373
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.2515999376773834
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.2514667809009552
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-04",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "Türkçenin Kosova'da konuşulmasından ne zaman bahsediyor?",
+      "english_equivalent": "When does she mention Turkish being spoken in Kosovo?",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          67,
+          79
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "kosova ne zaman bahsediyor",
+        "speech": "türkçe kosova ne zaman bahsediyor"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.25644251704216003
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.254340261220932
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.2471996694803238
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.24588839709758759
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.24563363194465637
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 67.91,
+            "score": 2.862832792295593
+          },
+          {
+            "timestamp": 69.71,
+            "score": 1.6690104504552394
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 67.91,
+            "score": 0.031099324975891997
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-05",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "pembe bluzlu kadının göründüğü an",
+      "english_equivalent": "the moment the woman in a pink blouse is visible",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          5,
+          79
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "pembe bluzlu woman",
+        "speech": "pembe bluzl kadı"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.2451576590538025
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.2419016808271408
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.23971903324127197
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.2383117824792862
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.23806101083755493
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-06",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "kadının önünde pencere olan görüntüyü bul",
+      "english_equivalent": "find the shot with a window behind the woman",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          5,
+          79
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "woman window olan",
+        "speech": "kadı önünde pencere olan"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.24245892465114594
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.24075648188591003
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.2302417755126953
+          },
+          {
+            "timestamp": 45.003,
+            "score": 0.2300633192062378
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.22984662652015686
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 45.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-07",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "kameraya konuşan koyu saçlı kadın",
+      "english_equivalent": "dark-haired woman speaking to the camera",
+      "expected_route": "VISUAL",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          5,
+          79
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "kameraya koyu woman",
+        "speech": "kameraya koyu saçl kadın"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.25339487195014954
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2533584237098694
+          },
+          {
+            "timestamp": 40.003,
+            "score": 0.24967455863952637
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.24802353978157043
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.24788963794708252
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 40.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-08",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "gazeteciliği anlatırken kameraya baktığı yer",
+      "english_equivalent": "where she looks at the camera while discussing journalism",
+      "expected_route": "HYBRID",
+      "selected_route": "HYBRID",
+      "relevant_intervals": [
+        [
+          24,
+          37
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "kameraya",
+        "speech": "gazeteciliğ kameraya baktığ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 0.003,
+            "score": 0.2492682933807373
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.22060257196426392
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.21750187873840332
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.21699444949626923
+          },
+          {
+            "timestamp": 40.003,
+            "score": 0.21630260348320007
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 0.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 30.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 40.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-09",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "belgeselden bahsederken pembe bluzlu kadının göründüğü bölüm",
+      "english_equivalent": "the section where the woman in a pink blouse is visible while she discusses the documentary",
+      "expected_route": "HYBRID",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          46,
+          59
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "belgeselden bahsederken pembe bluzlu woman",
+        "speech": "belgesel bahsederken pembe bluzl kadı"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.26012304425239563
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.25113803148269653
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.24526341259479523
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.24525941908359528
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.24318549036979675
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 65.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 70.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "ela-10",
+      "source_id": "wikitongues-ela",
+      "source_group": "commons-wikitongues-ela-turkish",
+      "split": "heldout",
+      "turkish_query": "Türkçe konuşulmasını anlatırken kadının ekranda olduğu kısım",
+      "english_equivalent": "the part where the woman is on screen while discussing speaking Turkish",
+      "expected_route": "HYBRID",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          58,
+          79
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "woman screen",
+        "speech": "türkçe kadı ekranda olduğ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 75.003,
+            "score": 0.26299458742141724
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.260553240776062
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.2587631344795227
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.25491398572921753
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.25398990511894226
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 67.91,
+            "score": 2.862832792295593
+          },
+          {
+            "timestamp": 53.91,
+            "score": 1.867291770262204
+          },
+          {
+            "timestamp": 69.71,
+            "score": 1.6690104504552394
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 67.91,
+            "score": 0.03047794966520434
+          },
+          {
+            "timestamp": 53.91,
+            "score": 0.030017921146953404
+          },
+          {
+            "timestamp": 75.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.015873015873015872
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-01",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "Herkesin düzeltme yapabileceğini söylediği yer",
+      "english_equivalent": "where she says everyone can make edits",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          26,
+          33
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "herkesin",
+        "speech": "herkesin düzeltme yapabileceğin"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.2771729826927185
+          },
+          {
+            "timestamp": 115.129,
+            "score": 0.2520684599876404
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.24308770895004272
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.23934926092624664
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.2389279305934906
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 26.86,
+            "score": 3.315101220134313
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 26.86,
+            "score": 0.029551337359792925
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 115.129,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-02",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "tarafsız bakış açısından bahsettiği bölüm",
+      "english_equivalent": "the section where she talks about neutral point of view",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          40,
+          50
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "tarafsız bakış açısından bahsettiği bölüm",
+        "speech": "tarafsız bakış açısın"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.30918872356414795
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.27496442198753357
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.27439916133880615
+          },
+          {
+            "timestamp": 40.054,
+            "score": 0.27416276931762695
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.27209025621414185
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 40.26,
+            "score": 3.1133178657620575
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 40.26,
+            "score": 0.032018442622950824
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-03",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "lisans koşullarını açıkladığı kısmı bul",
+      "english_equivalent": "find the part where she explains license conditions",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          53,
+          69
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "license",
+        "speech": "lisans koşulların kısm"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 30.044,
+            "score": 0.22019444406032562
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.2200678586959839
+          },
+          {
+            "timestamp": 25.039,
+            "score": 0.21993713080883026
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.21758897602558136
+          },
+          {
+            "timestamp": 95.109,
+            "score": 0.21578797698020935
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 65.94,
+            "score": 3.315101220134313
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 65.94,
+            "score": 0.02921395544346364
+          },
+          {
+            "timestamp": 30.044,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 25.039,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-04",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "değişikliklerin geri alınabildiğini ne zaman söylüyor?",
+      "english_equivalent": "When does she say edits can be reverted?",
+      "expected_route": "SPEECH",
+      "selected_route": "SPEECH",
+      "relevant_intervals": [
+        [
+          98,
+          111
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "geri ne zaman",
+        "speech": "değişikliklerin geri alınabildiğin ne zaman söylüyor"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.28773033618927
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.26654839515686035
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.2641899883747101
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.26303979754447937
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.2622543275356293
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 106.58,
+            "score": 4.4261231213919805
+          },
+          {
+            "timestamp": 105.02,
+            "score": 3.459454314522289
+          },
+          {
+            "timestamp": 62.54,
+            "score": 2.4670130201135576
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 106.58,
+            "score": 0.030886196246139225
+          },
+          {
+            "timestamp": 62.54,
+            "score": 0.029957522915269395
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.015873015873015872
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-05",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "Wikipedia logosunun ekranda olduğu an",
+      "english_equivalent": "the moment the Wikipedia logo is on screen",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          4,
+          9
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "wikipedia logosunun screen",
+        "speech": "wikipedia logosu ekranda olduğ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 115.129,
+            "score": 0.2917298972606659
+          },
+          {
+            "timestamp": 5.019,
+            "score": 0.2666899561882019
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.22975628077983856
+          },
+          {
+            "timestamp": 65.079,
+            "score": 0.22523638606071472
+          },
+          {
+            "timestamp": 25.039,
+            "score": 0.2233496904373169
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 53.3,
+            "score": 2.2804721342302785
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 53.3,
+            "score": 0.03131881575727918
+          },
+          {
+            "timestamp": 115.129,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 5.019,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 65.079,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-06",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "dünyayı tutan eller çizimini göster",
+      "english_equivalent": "show the illustration of hands holding the world",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          34,
+          40
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "world tutan eller",
+        "speech": "dünya tutan eller çizimin"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.25824010372161865
+          },
+          {
+            "timestamp": 115.129,
+            "score": 0.24883994460105896
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.23861849308013916
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.23785024881362915
+          },
+          {
+            "timestamp": 0.014,
+            "score": 0.23113730549812317
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 115.129,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 0.014,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-07",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "kadının iki yanında çizgi karakterlerin olduğu yer",
+      "english_equivalent": "where cartoon characters appear on both sides of the woman",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          44,
+          50
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "woman two karakterlerin",
+        "speech": "kadı iki yanında çizg karakterlerin olduğ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 70.084,
+            "score": 0.2751065790653229
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.2743833661079407
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.2723892331123352
+          },
+          {
+            "timestamp": 0.014,
+            "score": 0.27138832211494446
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.27041077613830566
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 53.3,
+            "score": 2.2804721342302785
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 53.3,
+            "score": 0.02889344262295082
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 0.014,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-08",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "ekranda gerekenler sağduyu ve saygı yazıları",
+      "english_equivalent": "the required, common sense and respect words on screen",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          88,
+          95
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "screen gerekenler ve",
+        "speech": "ekranda gerekenler sağdu ve sayg yazılar"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.2750396728515625
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.2507522702217102
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.2456618696451187
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.24198390543460846
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.23988789319992065
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 86.82,
+            "score": 3.7503532242965054
+          },
+          {
+            "timestamp": 53.3,
+            "score": 1.7160022859867177
+          },
+          {
+            "timestamp": 3.82,
+            "score": 1.6506095203374938
+          },
+          {
+            "timestamp": 26.86,
+            "score": 1.6506095203374938
+          },
+          {
+            "timestamp": 62.54,
+            "score": 1.461200104864022
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 98.42,
+            "score": 0.031054405392392875
+          },
+          {
+            "timestamp": 3.82,
+            "score": 0.030798389007344232
+          },
+          {
+            "timestamp": 26.86,
+            "score": 0.030776515151515152
+          },
+          {
+            "timestamp": 86.82,
+            "score": 0.03028233151183971
+          },
+          {
+            "timestamp": 53.3,
+            "score": 0.02946236559139785
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-09",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "kuralları anlatırken iki elini açtığı bölüm",
+      "english_equivalent": "the section where she opens both hands while explaining rules",
+      "expected_route": "HYBRID",
+      "selected_route": "HYBRID",
+      "relevant_intervals": [
+        [
+          24,
+          38
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "two elini",
+        "speech": "kurallar iki elin açtığ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 45.059,
+            "score": 0.2645350396633148
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.2565467953681946
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.2503577470779419
+          },
+          {
+            "timestamp": 40.054,
+            "score": 0.2468436360359192
+          },
+          {
+            "timestamp": 60.074,
+            "score": 0.2431933581829071
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 36.98,
+            "score": 3.0274797768188697
+          },
+          {
+            "timestamp": 24.46,
+            "score": 2.607841938235206
+          },
+          {
+            "timestamp": 81.14,
+            "score": 2.607841938235206
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 24.46,
+            "score": 0.030621785881252923
+          },
+          {
+            "timestamp": 81.14,
+            "score": 0.029957522915269395
+          },
+          {
+            "timestamp": 36.98,
+            "score": 0.0287391216352965
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.016129032258064516
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-10",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "telif hakkını anlatırken kaynak çiziminin göründüğü yer",
+      "english_equivalent": "where the source illustration is visible while she explains copyright",
+      "expected_route": "HYBRID",
+      "selected_route": "HYBRID",
+      "relevant_intervals": [
+        [
+          53,
+          62
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "telif kaynak",
+        "speech": "telif hakkın kaynak çizimi"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.2596689462661743
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.251424103975296
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.2507261037826538
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.2505042552947998
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.250424325466156
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 53.3,
+            "score": 2.2804721342302785
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 53.3,
+            "score": 0.028298204527712725
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 70.084,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-11",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "katkı yapmaktan bahsederken yazı yazan kişi çizimini gösterdiği kısım",
+      "english_equivalent": "the part where she discusses contributing while showing an illustration of someone writing",
+      "expected_route": "HYBRID",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          93,
+          105
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "yapmaktan bahsederken yazan",
+        "speech": "katk yapmak bahsederken yazı yazan kişi çizimin"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.3022039830684662
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.2903047800064087
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.2686465084552765
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.26141655445098877
+          },
+          {
+            "timestamp": 85.099,
+            "score": 0.25884705781936646
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 86.82,
+            "score": 2.1047322140174134
+          },
+          {
+            "timestamp": 98.42,
+            "score": 1.9170527761911738
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 98.42,
+            "score": 0.03225806451612903
+          },
+          {
+            "timestamp": 86.82,
+            "score": 0.03177805800756621
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "brv-12",
+      "source_id": "brave-wikipedian",
+      "source_group": "commons-sosyalkafa-brave-wikipedian",
+      "split": "heldout",
+      "turkish_query": "temel taşlardan konuşurken taş görselini tuttuğu an",
+      "english_equivalent": "the moment she holds a stone image while talking about pillars",
+      "expected_route": "HYBRID",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          72,
+          87
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "temel",
+        "speech": "temel taşlar taş tuttuğ"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 90.104,
+            "score": 0.2543985843658447
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.244663268327713
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.2445373237133026
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.24408969283103943
+          },
+          {
+            "timestamp": 15.029,
+            "score": 0.2424096167087555
+          }
+        ],
+        "SPEECH": [
+          {
+            "timestamp": 29.62,
+            "score": 2.9346893925006965
+          }
+        ],
+        "HYBRID": [
+          {
+            "timestamp": 29.62,
+            "score": 0.029906956136464335
+          },
+          {
+            "timestamp": 90.104,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 45.059,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 110.124,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 100.114,
+            "score": 0.015625
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-01",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "kırmızı kasklı adamı bul",
+      "english_equivalent": "find the man wearing a red helmet",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          0,
+          8
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "red man",
+        "speech": "red man"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 5.003,
+            "score": 0.22654783725738525
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.22171440720558167
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.20002606511116028
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.18918797373771667
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.18908411264419556
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-02",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "kayalık arazide duran sporcular",
+      "english_equivalent": "athletes standing on rocky terrain",
+      "expected_route": "VISUAL",
+      "selected_route": "HYBRID",
+      "relevant_intervals": [
+        [
+          0,
+          31
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "arazide duran sporcular",
+        "speech": "arazide duran sporcular"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 5.003,
+            "score": 0.2199181169271469
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.20678460597991943
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.20392893254756927
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.18820585310459137
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.1782735288143158
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-03",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "karanlık mağaraya atlayan kişiyi göster",
+      "english_equivalent": "show the person jumping into a dark cave",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          4,
+          10
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "atlayan",
+        "speech": "atlayan"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 5.003,
+            "score": 0.22738415002822876
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.22454096376895905
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.21873429417610168
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.2186243236064911
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.21681633591651917
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-04",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "mağara girişinin yukarıdan göründüğü an",
+      "english_equivalent": "the moment the cave entrance is seen from above",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          4,
+          37
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "mağara girişinin yukarıdan göründüğü an",
+        "speech": "mağara girişinin yukarıdan göründüğü an"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 0.003,
+            "score": 0.2409830391407013
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.23758670687675476
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.2370949685573578
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.22924157977104187
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.21204844117164612
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 0.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-05",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "siyah bereli adamın kenarda durduğu yer",
+      "english_equivalent": "where the man in a black beanie stands at the edge",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          10,
+          25
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "black bereli man kenarda",
+        "speech": "black bereli man kenarda"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 25.003,
+            "score": 0.24260467290878296
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.22435510158538818
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.22174766659736633
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.22057807445526123
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.21615682542324066
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 25.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-06",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "arkada araçların olduğu kayalık alan",
+      "english_equivalent": "the rocky area with vehicles in the background",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          0,
+          20
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "background alan",
+        "speech": "background alan"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 10.003,
+            "score": 0.22048625349998474
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.21856017410755157
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.19776953756809235
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.19715476036071777
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.19440501928329468
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 10.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 0.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 15.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-07",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "iki kişinin atlayışa hazırlandığı bölüm",
+      "english_equivalent": "the section where two people prepare for the jump",
+      "expected_route": "VISUAL",
+      "selected_route": "VISUAL",
+      "relevant_intervals": [
+        [
+          10,
+          31
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "two",
+        "speech": "two"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 5.003,
+            "score": 0.22618108987808228
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.21405760943889618
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.20778176188468933
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.2056177258491516
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.20540639758110046
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 5.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 10.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    },
+    {
+      "query_id": "jmp-08",
+      "source_id": "base-jump",
+      "source_group": "commons-quest-films-base-jump",
+      "split": "heldout",
+      "turkish_query": "çukur kısmı",
+      "english_equivalent": "the hole part",
+      "expected_route": "VISUAL",
+      "selected_route": "HYBRID",
+      "relevant_intervals": [
+        [
+          4,
+          37
+        ]
+      ],
+      "adapted_queries": {
+        "visual": "çukur kısmı",
+        "speech": "çukur kısmı"
+      },
+      "results": {
+        "VISUAL": [
+          {
+            "timestamp": 0.003,
+            "score": 0.23576843738555908
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.22703219950199127
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.22129972279071808
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.21863986551761627
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.2146451771259308
+          }
+        ],
+        "SPEECH": [],
+        "HYBRID": [
+          {
+            "timestamp": 0.003,
+            "score": 0.01639344262295082
+          },
+          {
+            "timestamp": 5.003,
+            "score": 0.016129032258064516
+          },
+          {
+            "timestamp": 20.003,
+            "score": 0.015873015873015872
+          },
+          {
+            "timestamp": 25.003,
+            "score": 0.015625
+          },
+          {
+            "timestamp": 35.003,
+            "score": 0.015384615384615385
+          }
+        ]
+      }
+    }
+  ],
+  "semantic_diagnostic": {
+    "eligible_for_promotion": false,
+    "reason": "Run only after the frozen cheap lexical candidate missed held-out gates.",
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e04d38a7d68c60a7a95390045400a555127ab033",
+    "license": "Apache-2.0",
+    "dimensions": 384,
+    "calibration": {
+      "speech": {
+        "1": {
+          "queries": 12,
+          "recall": 0.6666666666666666,
+          "mrr": 0.6666666666666666
+        },
+        "3": {
+          "queries": 12,
+          "recall": 0.9166666666666666,
+          "mrr": 0.7916666666666666
+        },
+        "5": {
+          "queries": 12,
+          "recall": 1.0,
+          "mrr": 0.8083333333333333
+        }
+      },
+      "hybrid": {
+        "1": {
+          "queries": 9,
+          "recall": 0.6666666666666666,
+          "mrr": 0.6666666666666666
+        },
+        "3": {
+          "queries": 9,
+          "recall": 0.6666666666666666,
+          "mrr": 0.6666666666666666
+        },
+        "5": {
+          "queries": 9,
+          "recall": 0.8888888888888888,
+          "mrr": 0.7222222222222222
+        }
+      },
+      "auto": {
+        "1": {
+          "queries": 42,
+          "recall": 0.6428571428571429,
+          "mrr": 0.6428571428571429
+        },
+        "3": {
+          "queries": 42,
+          "recall": 0.8333333333333334,
+          "mrr": 0.7341269841269841
+        },
+        "5": {
+          "queries": 42,
+          "recall": 0.8809523809523809,
+          "mrr": 0.7448412698412699
+        }
+      }
+    },
+    "heldout": {
+      "speech": {
+        "1": {
+          "queries": 8,
+          "recall": 0.625,
+          "mrr": 0.625
+        },
+        "3": {
+          "queries": 8,
+          "recall": 1.0,
+          "mrr": 0.8125
+        },
+        "5": {
+          "queries": 8,
+          "recall": 1.0,
+          "mrr": 0.8125
+        }
+      },
+      "hybrid": {
+        "1": {
+          "queries": 7,
+          "recall": 0.14285714285714285,
+          "mrr": 0.14285714285714285
+        },
+        "3": {
+          "queries": 7,
+          "recall": 0.7142857142857143,
+          "mrr": 0.38095238095238093
+        },
+        "5": {
+          "queries": 7,
+          "recall": 0.8571428571428571,
+          "mrr": 0.4095238095238095
+        }
+      },
+      "auto": {
+        "1": {
+          "queries": 30,
+          "recall": 0.5,
+          "mrr": 0.5
+        },
+        "3": {
+          "queries": 30,
+          "recall": 0.8333333333333334,
+          "mrr": 0.65
+        },
+        "5": {
+          "queries": 30,
+          "recall": 0.8666666666666667,
+          "mrr": 0.6566666666666666
+        }
+      }
+    },
+    "resources": {
+      "median_query_latency_ms": 9.99455,
+      "p95_query_latency_ms": 14.378159999999998,
+      "added_rss_bytes": 266276864,
+      "cache_bytes": 479776499,
+      "cold_first_run_load_seconds": 46.05782410000393,
+      "warm_repeat_load_seconds": 1.5702650000021094
+    },
+    "production_dependency_added": false
+  },
+  "stage_degradation_heldout": {
+    "routing": {
+      "production_turkish": 0.5333333333333333,
+      "selected_cheap_router": 0.7666666666666667
+    },
+    "visual_r5": {
+      "natural_turkish": 0.9333333333333333,
+      "english_equivalent_oracle": 1.0,
+      "cheap_lexical": 0.8666666666666667
+    },
+    "speech_r5": {
+      "natural_turkish": 0.75,
+      "english_equivalent_against_turkish_transcript": 0.125,
+      "cheap_lexical": 0.875,
+      "multilingual_semantic_diagnostic": 1.0
+    },
+    "hybrid_r5": {
+      "natural_turkish": 0.7142857142857143,
+      "english_equivalent": 0.5714285714285714,
+      "cheap_lexical": 0.7142857142857143,
+      "multilingual_semantic_diagnostic": 0.8571428571428571
+    },
+    "auto_r5": {
+      "selected_cheap": 0.8,
+      "multilingual_semantic_diagnostic": 0.8666666666666667
+    }
+  },
+  "translation_diagnostic": {
+    "full_local_translation_run": false,
+    "english_equivalent_oracle_visual_r5": 1.0,
+    "natural_turkish_visual_r5": 0.9333333333333333,
+    "english_equivalent_speech_r5_on_turkish_transcripts": 0.125,
+    "reason": "Direct Turkish visual retrieval lost only 6.67 pp to the English oracle, while translating Turkish queries away from Turkish ASR text collapsed speech R@5 to 12.5%. A full local MT dependency was not justified; path-specific semantic speech was the more direct diagnostic."
+  },
+  "final_decision": "E_TURKISH_COMPATIBILITY_STILL_FAILS_ACCEPTANCE",
+  "selected_language_strategy": "Original Turkish query for routing; cheap path-specific normalization/lexical adaptation for diagnosis. No production promotion.",
+  "personal_acceptance_comparison": {
+    "rerun_performed": false,
+    "reason": "Frozen Turkish development heldout routing and AUTO R@5 gates failed before production promotion.",
+    "before": {
+      "turkish_routing": 0.5556,
+      "turkish_useful_top_5": 0.7778,
+      "overall_auto_routing": 0.7778,
+      "overall_useful_top_5": 0.8333,
+      "english_useful_top_5": 0.8889
+    },
+    "after": null
+  },
+  "negative_query_behavior": {
+    "remeasured": false,
+    "reason": "Global no-match is outside this milestone and the personal acceptance rerun was not eligible."
+  },
+  "remaining_blockers": [
+    "Turkish route intent does not generalize across source groups: 76.67% heldout versus the 90% gate.",
+    "Cheap lexical adaptation reaches only 80% heldout AUTO R@5; visual adaptation can harm already-usable direct Turkish CLIP retrieval.",
+    "Multilingual semantic speech reaches 100% heldout Speech R@5 but adds about 480 MB cache, 254 MiB RSS and 10/14 ms median/p95 query latency, while total AUTO still depends on the failing router."
+  ],
+  "should_run_another_ml_milestone": "Not immediately. Add independent Turkish source groups and freeze a new router-validation split before reconsidering the compact semantic speech branch; do not tune this heldout set."
+}

@@ -63,7 +63,8 @@
 - [x] Record the absence of personal media without substituting benchmark footage or fabricating metrics
 - [x] Select the three supplied videos and freeze 54 English/Turkish queries before retrieval
 - [x] Run production personal-video acceptance and record size, duration and audio limitations
-- [ ] Run a source-disjoint Turkish routing/retrieval compatibility milestone without tuning on personal acceptance
+- [x] Run a source-disjoint Turkish routing/retrieval compatibility milestone without tuning on personal acceptance
+- [ ] Add independent Turkish source groups and freeze a new router-validation split before reconsidering semantic Speech retrieval
 - [ ] Define an honest unsupported-query response and a deliberate 30–60 minute ingestion policy
 - [ ] Repeat acceptance on valid-duration audio lecture/demo material after a candidate passes held-out gates
 - [ ] Full public production deployment, tenant ownership and operational security
