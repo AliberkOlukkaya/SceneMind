@@ -38,4 +38,3 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = assemble(args.source, args.output)
     print(json.dumps(result["decision"], indent=2))
-

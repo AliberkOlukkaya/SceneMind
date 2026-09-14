@@ -76,4 +76,3 @@ def query_features(candidates: list[dict], embeddings: np.ndarray) -> np.ndarray
         matrix[0, CANDIDATE_FEATURES.index("list_centroid_cosine")],
         float(np.mean(scores >= scores.mean() + scores.std())), math.log1p(len(scores)),
     ], dtype=np.float64)
-

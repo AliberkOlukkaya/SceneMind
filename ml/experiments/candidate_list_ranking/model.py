@@ -56,4 +56,3 @@ def fit_accept_threshold(probabilities: np.ndarray, labels: np.ndarray, max_far:
             feasible.append((pfa, far, -threshold, threshold))
     pfa, far, _, threshold = min(feasible)
     return {"threshold": threshold, "calibration_far": far, "calibration_pfa": pfa}
-

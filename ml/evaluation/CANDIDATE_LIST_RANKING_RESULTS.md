@@ -45,4 +45,3 @@ Added list feature, ranking, and no-match inference costs 0.441 ms median and 0.
 For a 30–60 minute lecture or podcast today, SceneMind can be trusted for exact spoken terms when transcription is ready and the user selects Speech; paraphrases remain weak because BM25 is lexical. For a software demo, Visual is useful for broad objects and scenes and Speech for narrated terms; precise UI text and short actions remain untrusted. For ordinary video, broad visible objects/scenes are useful candidate search, while absence claims, brief actions, tiny objects, and cross-modal questions are untrusted. Hybrid is useful when both evidence types may apply, but it is not a calibrated confidence signal.
 
 Exact rows, feature/model parameters, split selection evidence, slice metrics, path evidence, resource timing, and gates are in `reports/candidate-list-ranking-v1.json`.
-
