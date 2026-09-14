@@ -50,6 +50,8 @@
 - [x] Separate 5/2/1-second visible-evidence recall from CLIP candidate recall and cost
 - [x] Compare Nano 416/640/768 and RT-DETR-R18 on the same visible frames
 - [x] Repeat passing Nano 640/768 configurations on the frozen set
-- [ ] Prototype a query-gated cached 2-second secondary path with Nano 640 and wider candidates
+- [x] Prototype a query-gated cached 2-second secondary path with Nano 640 and wider candidates
+- [x] Reject bounded refinement after the frozen small-object abstention gate fails
+- [ ] Improve coarse candidate generation with bounded temporal coverage/diversification
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

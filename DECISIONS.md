@@ -1,5 +1,9 @@
 # Decisions
 
+## 017 — Reject bounded secondary search; repair coarse candidate generation
+
+Evaluate ±2/4/6-second windows, top 5/10/20, six-second temporal spacing, secondary CLIP, Nano 640 and calibration-only fusion over the frozen 66/31 calibration/held-out split. Calibration selects top-5 ±2 seconds without spacing and about nine secondary frames per routed query. On four human-reviewed events, selected windows reach only 50% of held-out visible evidence and secondary CLIP reaches 0% at K=5. Detector weights above zero hurt calibration, while the <=10% FAR threshold causes 100% small-object held-out abstention. Warm median and memory pass, but cold misses produce 2.54-second p95. Choose outcome C and leave production unchanged. Improve coarse candidate generation and bounded temporal coverage before reconsidering object evidence.
+
 ## 016 — Use sampling-first, query-gated Nano 640 as the next experiment
 
 Freeze four small-object events from three new Commons sources and review the exact sampled JPEGs before detector inference. Five-second visible-evidence recall is 25%; 2 and 1 seconds both reach 100%, making sampling the dominant measured failure. On the same 18 visible frames, manually box-reviewed YOLOX-Nano recall improves from 66.7% at 416 to 83.3% at both 640 and 768. RT-DETR-R18 reaches 88.9%, but its 362.8 ms per-frame p95 and 552.5 MiB added RSS are disproportionate to the 5.6-point gain over Nano 640. Choose outcome C. Keep production unchanged; next test a query-gated, cached 2-second secondary sample path with Nano 640 over bounded windows and a wider candidate strategy. Both passing Nano sizes produced identical detection rows on second frozen runs.
