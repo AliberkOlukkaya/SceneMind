@@ -1,0 +1,11 @@
+# Candidate-list ranking failure analysis
+
+The raw top-50 pool contains every held-out relevant interval, yet the calibration-selected logistic scorer misses five speech-labelled visual-path queries in its final five. Those are simultaneously ranking-path and routing failures: a frame-list model cannot recover spoken content reliably, while the real BM25 path returns useful evidence. Explicit path selection raises overall R@5 by 9.53 points over raw visual retrieval.
+
+The list model overfits source-level score structure. Leave-one-calibration-source-out selection predicts perfect R@5, but the selected model falls to 76.19% on three unseen sources. Candidate score distributions, temporal density, centroid agreement, and adjacent visual change are not stable relevance semantics. The top-50 logistic variant recovers some R@5 but still trails the raw top five and does not improve R@1.
+
+No-match fails for a related transfer reason. Enforcing <=10% calibration negative FAR sets a threshold that rejects 42.86% of calibration positives and 90.48% of held-out positives. Zero held-out FAR is therefore achieved through near-total abstention, not useful confidence. Every held-out object, scene, action, speech, and small-object positive is rejected; only two compositional positives pass.
+
+Permanent failure buckets in the machine report distinguish retrieval failure, ranking failure, routing failure, false abstention, and false accept. Oracle@5/20/50 remains part of the committed regression test. There is no held-out top-50 retrieval failure, no held-out false accept at the selected threshold, five speech routing/ranking failures, and 19 false abstentions.
+
+The exact architecture recommendation is to retain five-second raw CLIP and the current explicit Visual, Speech, and Hybrid modes. Improve mode guidance and collect new source-disjoint speech calibration before designing a deterministic automatic router. Do not ship the list scorer or no-match threshold. The 7.15-point Oracle@20 and 14.29-point Oracle@50 headroom justifies a future stronger semantic reranker only after routing is correct and with a new frozen protocol; these scalar/list statistics cannot exploit it. No detector, OCR, RAG, action recognition, tracking, segmentation, pose model, VLM, or fine-tuning was added.

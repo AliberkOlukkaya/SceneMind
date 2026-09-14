@@ -1,5 +1,9 @@
 # Decisions
 
+## 019 — Keep explicit paths; reject cheap list ranking and no-match
+
+Evaluate five-second CLIP top-20/top-50 candidates with score normalization, margins, temporal support, visual change, embedding agreement and calibration-only logistic models. The selected list scorer lowers held-out R@5 from 85.7% to 76.2%, while Oracle@20/50 is 92.9%/100%. A 10%-FAR calibration threshold reaches 0% held-out FAR only by falsely abstaining on 90.5% of positives. Resources pass at 0.44/0.96 ms median/p95 and 232 parameter bytes, but both quality gates fail. Existing explicit visual/speech/hybrid routing with real BM25/RRF evidence reaches 95.2% R@5. Choose outcome E: routing is dominant. Keep raw five-second CLIP and explicit modes, skip the second run, and collect new speech calibration sources before automatic routing. A stronger semantic reranker is justified only after the route is correct.
+
 ## 018 — Keep raw five-second retrieval; stop cheap diversity promotion
 
 Measure raw top-20/top-50 redundancy and compare temporal NMS, embedding MMR, combined selection, CLIP-change grouping and multi-scale sampling on the frozen 66/31 split. Calibration selects a top-20 multi-scale pool with 0.20 embedding-change threshold and five-second NMS. Held-out R@5 is 81.0% versus the 85.7% baseline; reviewed small-object R@5 remains 50%, speech falls 20 points, and dense indexing grows 2.40x. The two-second top-50 pool still reaches 97.6% correct-region and 100% reviewed visible-object recall, locating the failure in final score separation. Choose outcome F, reject promotion and skip the second run. Keep production unchanged; next specify a bounded candidate-list ranking/no-match experiment before any Video RAG work.

@@ -54,6 +54,8 @@
 - [x] Reject bounded refinement after the frozen small-object abstention gate fails
 - [x] Improve coarse candidate generation with bounded temporal coverage/diversification
 - [x] Reject temporal/MMR/scene-aware promotion after frozen top-five gates fail
-- [ ] Design a bounded candidate-list ranking/no-match experiment over the high-recall raw pool
+- [x] Design and run a bounded candidate-list ranking/no-match experiment over top-20/top-50
+- [x] Add permanent Oracle@5/20/50, leakage, feature, routing and no-match regression coverage
+- [ ] Collect source-disjoint speech calibration evidence before testing automatic routing
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

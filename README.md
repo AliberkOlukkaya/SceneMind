@@ -151,6 +151,8 @@ Prepare and run the frozen natural-video benchmark:
 
 Natural V2's raw held-out visual R@5 is 85.7%, but nearest-neighbor retrieval accepts every negative. The calibration-only cutoff lowers negative FAR@5 to 10% while lowering R@5 to 38.1% and causing 52.4% positive false abstention. Speech reaches 80% R@5 with 0% negative FAR on its small slice. These are diagnostic results from three held-out videos, not population estimates.
 
+The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/top-50, but calibration-selected list features lowered final R@5 to 76.2% and a no-match threshold falsely rejected 90.5% of positives. Existing explicit Visual/Speech/Hybrid routing with real BM25 evidence reached 95.2% R@5. Production therefore keeps raw five-second CLIP ordering and explicit modes. [Candidate-list results](ml/evaluation/CANDIDATE_LIST_RANKING_RESULTS.md).
+
 ## Learn the AI pipeline
 
 1. [Video processing](docs/learning/01-video-processing.md)
@@ -169,6 +171,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- Higher-resolution YOLOX-Nano meets local resource targets, but bounded refinement and cheap candidate diversity cannot reliably compress the high-recall raw pool to five results. Keep the five-second production path until a bounded list-ranking policy passes frozen gates.
+- Higher-resolution YOLOX-Nano meets local resource targets, but bounded refinement, cheap diversity, and list-statistic ranking cannot reliably compress the high-recall raw pool to five results. Keep the five-second production path and explicit search modes; gather speech calibration before automatic routing.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.
