@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "annotation_status": "frozen",
+  "annotation_protocol": "A human inspected the exact JPEG emitted by the production FFmpeg select expression at each timestamp. Visible means the target class can be identified without interval context; partial means it intersects the image edge; too-small means class identity is not reliable. Interval overlap alone never counts as evidence.",
+  "parent_benchmark_sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd",
+  "sources": [
+    {"source_id":"dirt-jump-biking","filename":"dirt-jump-biking.webm","source_group":"commons-youtube-dirt-jump-biking","page_url":"https://commons.wikimedia.org/wiki/File:Dirt_jump_biking.webm","download_url":"https://upload.wikimedia.org/wikipedia/commons/c/c4/Dirt_jump_biking.webm","license":"CC BY 3.0","sha256":"68b94c8a7c38755b0394af728ac7f83446bef607d1faa37c38047f389870ddfb","bytes":12552340,"duration_seconds":53.01963333333333},
+    {"source_id":"pantemaskin","filename":"pantemaskin.webm","source_group":"commons-pantemaskin-kjetil-ree","page_url":"https://commons.wikimedia.org/wiki/File:Pantemaskin.webm","download_url":"https://upload.wikimedia.org/wikipedia/commons/4/40/Pantemaskin.webm","license":"CC BY-SA 3.0","sha256":"8119db4847beb98d4126f746c35d5319680936cdbc2bf14c2b202924e51d9767","bytes":6457006,"duration_seconds":28.1281},
+    {"source_id":"throwball","filename":"throwball.webm","source_group":"commons-youtube-throwball","page_url":"https://commons.wikimedia.org/wiki/File:Throwball.webm","download_url":"https://upload.wikimedia.org/wikipedia/commons/4/4d/Throwball.webm","license":"CC BY 3.0","sha256":"d262781a857f45f807202d45882bd43342333d04a1c507844ce45edf6a5091c4","bytes":56924105,"duration_seconds":147.287}
+  ],
+  "events": [
+    {
+      "event_id":"dirt-bicycle-pass","source_id":"dirt-jump-biking","source_group":"commons-youtube-dirt-jump-biking","split":"calibration","query":"Find the bicycle during the jump.","target_class":"bicycle","interval":[9.0,13.5],
+      "observations":[
+        {"timestamp":9.009,"visibility":"too_small_to_judge","note":"Rider and a few bicycle pixels are at far left; bicycle identity is not reliable."},
+        {"timestamp":10.01,"visibility":"not_visible","note":"The sampled hill view contains no visible bicycle."},
+        {"timestamp":11.011,"visibility":"visible","note":"The bicycle outline is identifiable on the upper-left slope."},
+        {"timestamp":12.012,"visibility":"visible","note":"The bicycle and rider are clearly identifiable in the jump."},
+        {"timestamp":13.013,"visibility":"visible","note":"The bicycle remains identifiable on landing."}
+      ],
+      "sampling":[
+        {"interval_seconds":5,"sampled_timestamps":[10.01],"evidence_class":"B_only_visible_between_sampled_frames"},
+        {"interval_seconds":2,"sampled_timestamps":[10.01,12.012],"evidence_class":"A_visible_in_sampled_frame"},
+        {"interval_seconds":1,"sampled_timestamps":[9.009,10.01,11.011,12.012,13.013],"evidence_class":"A_visible_in_sampled_frame"}
+      ]
+    },
+    {
+      "event_id":"pant-bottle-insertion","source_id":"pantemaskin","source_group":"commons-pantemaskin-kjetil-ree","split":"calibration","query":"Find the bottle being inserted into the machine.","target_class":"bottle","interval":[0.0,4.5],
+      "observations":[
+        {"timestamp":0.014,"visibility":"not_visible","note":"Machine opening is visible before the bottle enters."},
+        {"timestamp":1.015,"visibility":"not_visible","note":"Hand approaches but the bottle is not identifiable."},
+        {"timestamp":2.016,"visibility":"partially_cropped","note":"Only part of the bottle has entered from the lower-right image edge."},
+        {"timestamp":3.017,"visibility":"partially_cropped","note":"Bottle is identifiable but still cut by the lower-right image edge."},
+        {"timestamp":4.018,"visibility":"visible","note":"Bottle body is identifiable inside the return chute."}
+      ],
+      "sampling":[
+        {"interval_seconds":5,"sampled_timestamps":[0.014],"evidence_class":"B_only_visible_between_sampled_frames"},
+        {"interval_seconds":2,"sampled_timestamps":[0.014,2.016,4.018],"evidence_class":"A_visible_in_sampled_frame"},
+        {"interval_seconds":1,"sampled_timestamps":[0.014,1.015,2.016,3.017,4.018],"evidence_class":"A_visible_in_sampled_frame"}
+      ]
+    },
+    {
+      "event_id":"throwball-early-ball","source_id":"throwball","source_group":"commons-youtube-throwball","split":"heldout","query":"Find the orange sports ball in the early rally.","target_class":"sports ball","interval":[0.0,20.0],
+      "observations":[
+        {"timestamp":0.003,"visibility":"visible","note":"Orange ball is held by the player at left."},
+        {"timestamp":1.004,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":2.005,"visibility":"too_small_to_judge","note":"A tiny possible airborne speck cannot be identified reliably."},
+        {"timestamp":3.006,"visibility":"not_visible","note":"Motion blur contains no identifiable ball."},
+        {"timestamp":4.007,"visibility":"visible","note":"Orange ball is held by the player at right."},
+        {"timestamp":5.008,"visibility":"partially_cropped","note":"Orange ball intersects the top image edge."},
+        {"timestamp":6.009,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":7.01,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":8.011,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":9.012,"visibility":"visible","note":"Orange ball is held by the player at right."},
+        {"timestamp":10.013,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":11.014,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":12.015,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":13.016,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":14.017,"visibility":"not_visible","note":"No ball is identifiable."},
+        {"timestamp":15.018,"visibility":"visible","note":"Orange ball is held in front of the player."},
+        {"timestamp":16.019,"visibility":"visible","note":"Orange ball is held in front of the player."},
+        {"timestamp":17.02,"visibility":"visible","note":"Orange ball is held in front of the player."},
+        {"timestamp":18.021,"visibility":"visible","note":"Orange ball is visible low in the frame."},
+        {"timestamp":19.022,"visibility":"not_visible","note":"No ball is identifiable."}
+      ],
+      "sampling":[
+        {"interval_seconds":5,"sampled_timestamps":[0.003,5.008,10.013,15.018],"evidence_class":"A_visible_in_sampled_frame"},
+        {"interval_seconds":2,"sampled_timestamps":[0.003,2.005,4.007,6.009,8.011,10.013,12.015,14.017,16.019,18.021],"evidence_class":"A_visible_in_sampled_frame"},
+        {"interval_seconds":1,"sampled_timestamps":[0.003,1.004,2.005,3.006,4.007,5.008,6.009,7.01,8.011,9.012,10.013,11.014,12.015,13.016,14.017,15.018,16.019,17.02,18.021,19.022],"evidence_class":"A_visible_in_sampled_frame"}
+      ]
+    },
+    {
+      "event_id":"throwball-late-ball","source_id":"throwball","source_group":"commons-youtube-throwball","split":"heldout","query":"Find the orange sports ball in the late rally.","target_class":"sports ball","interval":[80.0,100.0],
+      "observations":[
+        {"timestamp":80.083,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":81.084,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":82.085,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":83.086,"visibility":"visible","note":"Orange ball is identifiable in flight."},{"timestamp":84.087,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":85.088,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":86.089,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":87.09,"visibility":"visible","note":"Orange ball is identifiable in flight."},{"timestamp":88.091,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":89.092,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":90.093,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":91.094,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":92.095,"visibility":"visible","note":"Orange ball is held by a player."},{"timestamp":93.096,"visibility":"visible","note":"Orange ball is held by a player."},{"timestamp":94.097,"visibility":"visible","note":"Orange ball is held by a player."},{"timestamp":95.098,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":96.099,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":97.1,"visibility":"not_visible","note":"No ball is identifiable."},{"timestamp":98.101,"visibility":"visible","note":"Orange ball is visible beside the crouching player."},{"timestamp":99.102,"visibility":"visible","note":"Orange ball remains identifiable near the player."}
+      ],
+      "sampling":[
+        {"interval_seconds":5,"sampled_timestamps":[80.083,85.088,90.093,95.098],"evidence_class":"B_only_visible_between_sampled_frames"},
+        {"interval_seconds":2,"sampled_timestamps":[80.083,82.085,84.087,86.089,88.091,90.093,92.095,94.097,96.099,98.101],"evidence_class":"A_visible_in_sampled_frame"},
+        {"interval_seconds":1,"sampled_timestamps":[80.083,81.084,82.085,83.086,84.087,85.088,86.089,87.09,88.091,89.092,90.093,91.094,92.095,93.096,94.097,95.098,96.099,97.1,98.101,99.102],"evidence_class":"A_visible_in_sampled_frame"}
+      ]
+    }
+  ]
+}

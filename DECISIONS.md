@@ -1,5 +1,9 @@
 # Decisions
 
+## 016 — Use sampling-first, query-gated Nano 640 as the next experiment
+
+Freeze four small-object events from three new Commons sources and review the exact sampled JPEGs before detector inference. Five-second visible-evidence recall is 25%; 2 and 1 seconds both reach 100%, making sampling the dominant measured failure. On the same 18 visible frames, manually box-reviewed YOLOX-Nano recall improves from 66.7% at 416 to 83.3% at both 640 and 768. RT-DETR-R18 reaches 88.9%, but its 362.8 ms per-frame p95 and 552.5 MiB added RSS are disproportionate to the 5.6-point gain over Nano 640. Choose outcome C. Keep production unchanged; next test a query-gated, cached 2-second secondary sample path with Nano 640 over bounded windows and a wider candidate strategy. Both passing Nano sizes produced identical detection rows on second frozen runs.
+
 ## 015 — Reject YOLOX-Nano; separate detection resolution from frame sampling
 
 Freeze the exact three-query small-object failure inventory before model selection. Test the official Apache-2.0 YOLOX-Nano `0.1.1rc0` ONNX artifact only on frozen CLIP top-five frames with explicit COCO aliases. Its 90.5 ms warm median, 99.6 ms p95 and 58.0 MiB added peak RSS pass resources, and class-matched negative FAR is 0%, but the calibration-only 0.8569 threshold causes 100% small-object false abstention. One ball-positive candidate does not visibly contain the ball, and the detector's best bicycle confidence is only 0.6085. Skip reranking, relationship rules and the second run; keep production unchanged. Next collect frame-visible source-disjoint small-object evidence and test a higher-resolution detector while evaluating sampling independently.

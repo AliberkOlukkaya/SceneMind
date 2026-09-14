@@ -58,6 +58,13 @@ def test_preprocessing_letterboxes_without_normalizing_pixels():
     assert tensor[0, 0, 300, 0] == 114
 
 
+def test_preprocessing_supports_ablation_resolution_without_changing_default():
+    image = np.full((100, 200, 3), 10, dtype=np.uint8)
+    tensor, ratio = preprocess(image, (640, 640))
+    assert tensor.shape == (1, 3, 640, 640)
+    assert ratio == pytest.approx(3.2)
+
+
 def test_detector_wrapper_decodes_mocked_onnx_output():
     raw = np.zeros((1, 3549, 85), dtype=np.float32)
     raw[0, 0, :4] = [10, 10, np.log(5), np.log(5)]

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "annotation_status": "frozen-after-inference-before-gate-decision",
+  "protocol": "A human inspected each best target-class bounding box overlaid on the exact verified-visible JPEG. A detection counts only when its box covers the annotated target object. Listed rows are class-correct detections on a different object or region; every other emitted best box was visually matched to the target.",
+  "false_target_matches": [
+    {"configuration":"yolox-416","event_id":"throwball-early-ball","timestamp":4.007,"reason":"Box covers the large blue foreground ball, not the visible orange target ball."},
+    {"configuration":"yolox-416","event_id":"throwball-late-ball","timestamp":98.101,"reason":"Box covers the crouching player's torso/number area, not the orange target ball."},
+    {"configuration":"yolox-768","event_id":"throwball-late-ball","timestamp":98.101,"reason":"Box covers the crouching player's torso, not the orange target ball."},
+    {"configuration":"rtdetr-r18-640","event_id":"pant-bottle-insertion","timestamp":4.018,"reason":"The near-full-frame bottle box covers the return machine rather than the visible bottle."}
+  ]
+}

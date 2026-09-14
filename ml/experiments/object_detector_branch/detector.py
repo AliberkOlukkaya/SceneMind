@@ -26,28 +26,31 @@ COCO_CLASSES = (
 )
 
 
-def preprocess(image: np.ndarray) -> tuple[np.ndarray, float]:
+def preprocess(
+    image: np.ndarray, input_size: tuple[int, int] = INPUT_SIZE
+) -> tuple[np.ndarray, float]:
     if image.ndim != 3 or image.shape[2] != 3:
         raise ValueError("detector input must be a BGR image")
     height, width = image.shape[:2]
-    ratio = min(INPUT_SIZE[0] / height, INPUT_SIZE[1] / width)
+    ratio = min(input_size[0] / height, input_size[1] / width)
     resized = cv2.resize(
         image, (int(width * ratio), int(height * ratio)), interpolation=cv2.INTER_LINEAR
     ).astype(np.uint8)
-    padded = np.full((INPUT_SIZE[0], INPUT_SIZE[1], 3), 114, dtype=np.uint8)
+    padded = np.full((input_size[0], input_size[1], 3), 114, dtype=np.uint8)
     padded[: resized.shape[0], : resized.shape[1]] = resized
     tensor = np.ascontiguousarray(padded.transpose(2, 0, 1), dtype=np.float32)[None]
     return tensor, ratio
 
 
-def _decode(raw: np.ndarray) -> np.ndarray:
-    if raw.shape != (1, 3549, 85):
+def _decode(raw: np.ndarray, input_size: tuple[int, int] = INPUT_SIZE) -> np.ndarray:
+    expected_rows = sum((input_size[0] // stride) * (input_size[1] // stride) for stride in (8, 16, 32))
+    if raw.shape != (1, expected_rows, 85):
         raise ValueError(f"unexpected YOLOX output shape: {raw.shape}")
     decoded = raw[0].copy()
     grids = []
     strides = []
     for stride in (8, 16, 32):
-        height, width = INPUT_SIZE[0] // stride, INPUT_SIZE[1] // stride
+        height, width = input_size[0] // stride, input_size[1] // stride
         yv, xv = np.meshgrid(np.arange(height), np.arange(width), indexing="ij")
         grids.append(np.stack((xv, yv), axis=2).reshape(-1, 2))
         strides.append(np.full((height * width, 1), stride))
@@ -83,11 +86,12 @@ def _nms(boxes: np.ndarray, scores: np.ndarray, threshold: float) -> list[int]:
 class YoloXNanoDetector:
     def __init__(
         self, model_path: Path, *, threads: int = 4, confidence_floor: float = 0.01,
-        nms_threshold: float = 0.45, session=None
+        nms_threshold: float = 0.45, input_size: tuple[int, int] = INPUT_SIZE, session=None
     ):
         self.model_path = Path(model_path)
         self.confidence_floor = confidence_floor
         self.nms_threshold = nms_threshold
+        self.input_size = input_size
         if not 0 <= confidence_floor <= 1 or not 0 < nms_threshold <= 1:
             raise ValueError("invalid detector thresholds")
         if session is None:
@@ -120,7 +124,7 @@ class YoloXNanoDetector:
     def detect(
         self, frame_id: str, timestamp: float, image: np.ndarray
     ) -> list[DetectionEvidence]:
-        tensor, ratio = preprocess(image)
+        tensor, ratio = preprocess(image, self.input_size)
         raw = self.session.run(None, {self.input_name: tensor})[0]
         return self.postprocess(frame_id, timestamp, image.shape[:2], raw, ratio)
 
@@ -128,7 +132,7 @@ class YoloXNanoDetector:
         self, frame_id: str, timestamp: float, image_shape: tuple[int, int],
         raw: np.ndarray, ratio: float
     ) -> list[DetectionEvidence]:
-        predictions = _decode(raw)
+        predictions = _decode(raw, self.input_size)
         height, width = image_shape
         boxes = np.empty_like(predictions[:, :4])
         boxes[:, 0] = predictions[:, 0] - predictions[:, 2] / 2

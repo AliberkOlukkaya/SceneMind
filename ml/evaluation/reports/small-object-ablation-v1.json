@@ -1,0 +1,627 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "small-object-sampling-resolution-ablation-v1",
+  "production_changed": false,
+  "heldout_tuning": false,
+  "visibility_manifest_sha256": "4f8fd84a190142583485f9d8188433011f900801c884b901042334b53d1b36b1",
+  "detection_review_sha256": "f87d1186101517bc837a9833cc5f9cba4a8c620cc405a88494a76447d96d3be4",
+  "sampling_evidence": {
+    "all": {
+      "5": {
+        "events": 4,
+        "events_with_visual_evidence": 1,
+        "evidence_recall": 0.25,
+        "evidence_classes": {
+          "B_only_visible_between_sampled_frames": 3,
+          "A_visible_in_sampled_frame": 1
+        }
+      },
+      "2": {
+        "events": 4,
+        "events_with_visual_evidence": 4,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 4
+        }
+      },
+      "1": {
+        "events": 4,
+        "events_with_visual_evidence": 4,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 4
+        }
+      }
+    },
+    "calibration": {
+      "5": {
+        "events": 2,
+        "events_with_visual_evidence": 0,
+        "evidence_recall": 0.0,
+        "evidence_classes": {
+          "B_only_visible_between_sampled_frames": 2
+        }
+      },
+      "2": {
+        "events": 2,
+        "events_with_visual_evidence": 2,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 2
+        }
+      },
+      "1": {
+        "events": 2,
+        "events_with_visual_evidence": 2,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 2
+        }
+      }
+    },
+    "heldout": {
+      "5": {
+        "events": 2,
+        "events_with_visual_evidence": 1,
+        "evidence_recall": 0.5,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 1,
+          "B_only_visible_between_sampled_frames": 1
+        }
+      },
+      "2": {
+        "events": 2,
+        "events_with_visual_evidence": 2,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 2
+        }
+      },
+      "1": {
+        "events": 2,
+        "events_with_visual_evidence": 2,
+        "evidence_recall": 1.0,
+        "evidence_classes": {
+          "A_visible_in_sampled_frame": 2
+        }
+      }
+    }
+  },
+  "sampling_resources_and_clip": {
+    "schema_version": "1.0.0",
+    "search_loops": 10,
+    "intervals": {
+      "5": {
+        "frames_indexed": 47,
+        "jpeg_bytes": 1008678,
+        "embedding_bytes": 96256,
+        "extraction_seconds": 5.559177400000408,
+        "clip_index_seconds": 2.4404508999996324,
+        "clip_search_median_seconds": 0.010016249999353022,
+        "clip_search_p95_seconds": 0.011367005000283823,
+        "small_object_candidate_recall_at_5": 0.25,
+        "candidate_rows": [
+          {
+            "event_id": "dirt-bicycle-pass",
+            "split": "calibration",
+            "top5_timestamps": [
+              50.05,
+              30.03,
+              35.035,
+              45.045,
+              5.005
+            ],
+            "hit": false
+          },
+          {
+            "event_id": "pant-bottle-insertion",
+            "split": "calibration",
+            "top5_timestamps": [
+              10.024,
+              5.019,
+              0.014,
+              25.039,
+              15.029
+            ],
+            "hit": false
+          },
+          {
+            "event_id": "throwball-early-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              105.108,
+              5.008,
+              110.113,
+              115.118,
+              130.133
+            ],
+            "hit": true
+          },
+          {
+            "event_id": "throwball-late-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              105.108,
+              5.008,
+              130.133,
+              115.118,
+              110.113
+            ],
+            "hit": false
+          }
+        ],
+        "frame_growth_vs_5s": 1.0,
+        "jpeg_growth_vs_5s": 1.0,
+        "embedding_growth_vs_5s": 1.0,
+        "extraction_growth_vs_5s": 1.0,
+        "clip_index_growth_vs_5s": 1.0
+      },
+      "2": {
+        "frames_indexed": 116,
+        "jpeg_bytes": 2530178,
+        "embedding_bytes": 237568,
+        "extraction_seconds": 6.703651900001205,
+        "clip_index_seconds": 4.375488800000312,
+        "clip_search_median_seconds": 0.010295150001184084,
+        "clip_search_p95_seconds": 0.01141739499871619,
+        "small_object_candidate_recall_at_5": 0.25,
+        "candidate_rows": [
+          {
+            "event_id": "dirt-bicycle-pass",
+            "split": "calibration",
+            "top5_timestamps": [
+              50.05,
+              30.03,
+              28.028,
+              24.024,
+              34.034
+            ],
+            "hit": false
+          },
+          {
+            "event_id": "pant-bottle-insertion",
+            "split": "calibration",
+            "top5_timestamps": [
+              2.016,
+              10.024,
+              14.028,
+              24.038,
+              16.03
+            ],
+            "hit": true
+          },
+          {
+            "event_id": "throwball-early-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              78.081,
+              110.113,
+              130.133,
+              6.009,
+              96.099
+            ],
+            "hit": false
+          },
+          {
+            "event_id": "throwball-late-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              78.081,
+              130.133,
+              2.005,
+              56.059,
+              128.131
+            ],
+            "hit": false
+          }
+        ],
+        "frame_growth_vs_5s": 2.4680851063829787,
+        "jpeg_growth_vs_5s": 2.5084100178649678,
+        "embedding_growth_vs_5s": 2.4680851063829787,
+        "extraction_growth_vs_5s": 1.205871195979591,
+        "clip_index_growth_vs_5s": 1.792901795320271
+      },
+      "1": {
+        "frames_indexed": 230,
+        "jpeg_bytes": 5078291,
+        "embedding_bytes": 471040,
+        "extraction_seconds": 7.550365900000543,
+        "clip_index_seconds": 8.757343999999648,
+        "clip_search_median_seconds": 0.010526599999138853,
+        "clip_search_p95_seconds": 0.01133075999941866,
+        "small_object_candidate_recall_at_5": 0.5,
+        "candidate_rows": [
+          {
+            "event_id": "dirt-bicycle-pass",
+            "split": "calibration",
+            "top5_timestamps": [
+              51.051,
+              50.05,
+              33.033,
+              30.03,
+              35.035
+            ],
+            "hit": false
+          },
+          {
+            "event_id": "pant-bottle-insertion",
+            "split": "calibration",
+            "top5_timestamps": [
+              2.016,
+              3.017,
+              10.024,
+              14.028,
+              24.038
+            ],
+            "hit": true
+          },
+          {
+            "event_id": "throwball-early-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              133.136,
+              105.108,
+              5.008,
+              78.081,
+              110.113
+            ],
+            "hit": true
+          },
+          {
+            "event_id": "throwball-late-ball",
+            "split": "heldout",
+            "top5_timestamps": [
+              133.136,
+              105.108,
+              5.008,
+              78.081,
+              130.133
+            ],
+            "hit": false
+          }
+        ],
+        "frame_growth_vs_5s": 4.8936170212765955,
+        "jpeg_growth_vs_5s": 5.034600734823204,
+        "embedding_growth_vs_5s": 4.8936170212765955,
+        "extraction_growth_vs_5s": 1.3581804207219559,
+        "clip_index_growth_vs_5s": 3.588412288893404
+      }
+    }
+  },
+  "detectors": {
+    "yolox-416": {
+      "model": {
+        "id": "YOLOX-Nano",
+        "revision": "e1052df71842031413f6030723c3607b839c80ce",
+        "license": "Apache-2.0",
+        "input_size": [
+          416,
+          416
+        ],
+        "artifact_sha256": "c789161ed43c8269fcd4e67c67eeeb4e80c622da2eb296a20bc6007bd18a0b7d",
+        "artifact_bytes": 3659407
+      },
+      "runtime": {
+        "load_seconds": 0.1507870000004914,
+        "per_frame_median_seconds": 0.012958149999576563,
+        "per_frame_p95_seconds": 0.01685631499976807,
+        "baseline_rss_bytes": 46579712,
+        "peak_rss_bytes": 106610688,
+        "added_peak_rss_bytes": 60030976
+      },
+      "recall_at_confidence": {
+        "0.01": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 12,
+          "recall": 0.6666666666666666,
+          "mean_confidence_on_matches": 0.4573679401849707,
+          "mean_bbox_area_ratio_on_matches": 0.008003205680327917
+        },
+        "0.1": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 11,
+          "recall": 0.6111111111111112,
+          "mean_confidence_on_matches": 0.49515062706037,
+          "mean_bbox_area_ratio_on_matches": 0.008362125535029808
+        },
+        "0.25": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 8,
+          "recall": 0.4444444444444444,
+          "mean_confidence_on_matches": 0.6121359169483185,
+          "mean_bbox_area_ratio_on_matches": 0.009504351040929865
+        },
+        "0.5": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 5,
+          "recall": 0.2777777777777778,
+          "mean_confidence_on_matches": 0.7856373310089111,
+          "mean_bbox_area_ratio_on_matches": 0.01317564007993573
+        }
+      },
+      "split_recall_at_0.01": {
+        "calibration": {
+          "verified_visible_frames": 4,
+          "matched_target_frames": 1,
+          "recall": 0.25,
+          "mean_confidence_on_matches": 0.8308104276657104,
+          "mean_bbox_area_ratio_on_matches": 0.05162759883536974
+        },
+        "heldout": {
+          "verified_visible_frames": 14,
+          "matched_target_frames": 11,
+          "recall": 0.7857142857142857,
+          "mean_confidence_on_matches": 0.4234186231412671,
+          "mean_bbox_area_ratio_on_matches": 0.0040373517571422966
+        }
+      },
+      "measurement_sha256": "88c7abbbee345436ea3ff76ecdcb08b4f82d78315f09bd52f4ab9b28d979c587"
+    },
+    "yolox-640": {
+      "model": {
+        "id": "YOLOX-Nano",
+        "revision": "e1052df71842031413f6030723c3607b839c80ce",
+        "license": "Apache-2.0",
+        "input_size": [
+          640,
+          640
+        ],
+        "artifact_sha256": "a78d8834e54f709b15269c31e4ab4970c8faba014e895814d964bacf0ba4197f",
+        "artifact_bytes": 3713972
+      },
+      "runtime": {
+        "load_seconds": 0.14695019999999204,
+        "per_frame_median_seconds": 0.02449834999970335,
+        "per_frame_p95_seconds": 0.03246982000000571,
+        "baseline_rss_bytes": 46354432,
+        "peak_rss_bytes": 132214784,
+        "added_peak_rss_bytes": 85860352
+      },
+      "recall_at_confidence": {
+        "0.01": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 15,
+          "recall": 0.8333333333333334,
+          "mean_confidence_on_matches": 0.6070131537814935,
+          "mean_bbox_area_ratio_on_matches": 0.007763550911857364
+        },
+        "0.1": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 13,
+          "recall": 0.7222222222222222,
+          "mean_confidence_on_matches": 0.6915991810651926,
+          "mean_bbox_area_ratio_on_matches": 0.007322384799876642
+        },
+        "0.25": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 11,
+          "recall": 0.6111111111111112,
+          "mean_confidence_on_matches": 0.7795907855033875,
+          "mean_bbox_area_ratio_on_matches": 0.008007505050313652
+        },
+        "0.5": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 11,
+          "recall": 0.6111111111111112,
+          "mean_confidence_on_matches": 0.7795907855033875,
+          "mean_bbox_area_ratio_on_matches": 0.008007505050313652
+        }
+      },
+      "split_recall_at_0.01": {
+        "calibration": {
+          "verified_visible_frames": 4,
+          "matched_target_frames": 2,
+          "recall": 0.5,
+          "mean_confidence_on_matches": 0.4310827497392893,
+          "mean_bbox_area_ratio_on_matches": 0.034329835443334525
+        },
+        "heldout": {
+          "verified_visible_frames": 14,
+          "matched_target_frames": 13,
+          "recall": 0.9285714285714286,
+          "mean_confidence_on_matches": 0.6340793697879865,
+          "mean_bbox_area_ratio_on_matches": 0.0036764302147070317
+        }
+      },
+      "measurement_sha256": "707e7b38e6d518fb3e04ad1a478b138851477e3ad7fcae38d1679dc1461b3d21"
+    },
+    "yolox-768": {
+      "model": {
+        "id": "YOLOX-Nano",
+        "revision": "e1052df71842031413f6030723c3607b839c80ce",
+        "license": "Apache-2.0",
+        "input_size": [
+          768,
+          768
+        ],
+        "artifact_sha256": "aad6f7084d454fd1ab24378e256ee86eddb36e782e91e2f44907c6438d3ae5d3",
+        "artifact_bytes": 3713972
+      },
+      "runtime": {
+        "load_seconds": 0.14887290000115172,
+        "per_frame_median_seconds": 0.034854700000323646,
+        "per_frame_p95_seconds": 0.04769595000016124,
+        "baseline_rss_bytes": 46313472,
+        "peak_rss_bytes": 163020800,
+        "added_peak_rss_bytes": 116707328
+      },
+      "recall_at_confidence": {
+        "0.01": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 15,
+          "recall": 0.8333333333333334,
+          "mean_confidence_on_matches": 0.5810928193231424,
+          "mean_bbox_area_ratio_on_matches": 0.008515424739290223
+        },
+        "0.1": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 13,
+          "recall": 0.7222222222222222,
+          "mean_confidence_on_matches": 0.6634010615257117,
+          "mean_bbox_area_ratio_on_matches": 0.009386861122341095
+        },
+        "0.25": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 11,
+          "recall": 0.6111111111111112,
+          "mean_confidence_on_matches": 0.7521904436024752,
+          "mean_bbox_area_ratio_on_matches": 0.008389582196334884
+        },
+        "0.5": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 10,
+          "recall": 0.5555555555555556,
+          "mean_confidence_on_matches": 0.7892314970493317,
+          "mean_bbox_area_ratio_on_matches": 0.008885423188260059
+        }
+      },
+      "split_recall_at_0.01": {
+        "calibration": {
+          "verified_visible_frames": 4,
+          "matched_target_frames": 2,
+          "recall": 0.5,
+          "mean_confidence_on_matches": 0.5133175700902939,
+          "mean_bbox_area_ratio_on_matches": 0.039167796088366534
+        },
+        "heldout": {
+          "verified_visible_frames": 14,
+          "matched_target_frames": 13,
+          "recall": 0.9285714285714286,
+          "mean_confidence_on_matches": 0.5915197807435806,
+          "mean_bbox_area_ratio_on_matches": 0.0037996753009707893
+        }
+      },
+      "measurement_sha256": "7b193bdd12f2561876eecdb0f92af1f9d4faa3cc66b5e33408a8f8258a87dc3a"
+    },
+    "rtdetr-r18-640": {
+      "model": {
+        "id": "RT-DETR-R18",
+        "revision": "6401be7fee8b49ee00b42fcc4e0064bba8061777",
+        "license": "Apache-2.0",
+        "input_size": [
+          640,
+          640
+        ],
+        "artifact_sha256": "fe87a5a30f5daf298d10794c7682a63b6107986f97d6a770ba948d89e4340093",
+        "artifact_bytes": 80904152
+      },
+      "runtime": {
+        "load_seconds": 4.79471729999932,
+        "per_frame_median_seconds": 0.35068834999947285,
+        "per_frame_p95_seconds": 0.3628489500000796,
+        "baseline_rss_bytes": 46399488,
+        "peak_rss_bytes": 625688576,
+        "added_peak_rss_bytes": 579289088
+      },
+      "recall_at_confidence": {
+        "0.01": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 16,
+          "recall": 0.8888888888888888,
+          "mean_confidence_on_matches": 0.7207187823951244,
+          "mean_bbox_area_ratio_on_matches": 0.007644374905924
+        },
+        "0.1": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 16,
+          "recall": 0.8888888888888888,
+          "mean_confidence_on_matches": 0.7207187823951244,
+          "mean_bbox_area_ratio_on_matches": 0.007644374905924
+        },
+        "0.25": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 14,
+          "recall": 0.7777777777777778,
+          "mean_confidence_on_matches": 0.7982841304370335,
+          "mean_bbox_area_ratio_on_matches": 0.008538759067539462
+        },
+        "0.5": {
+          "verified_visible_frames": 18,
+          "matched_target_frames": 13,
+          "recall": 0.7222222222222222,
+          "mean_confidence_on_matches": 0.83428188929191,
+          "mean_bbox_area_ratio_on_matches": 0.009153009117241708
+        }
+      },
+      "split_recall_at_0.01": {
+        "calibration": {
+          "verified_visible_frames": 4,
+          "matched_target_frames": 2,
+          "recall": 0.5,
+          "mean_confidence_on_matches": 0.7958534359931946,
+          "mean_bbox_area_ratio_on_matches": 0.03838247469481673
+        },
+        "heldout": {
+          "verified_visible_frames": 14,
+          "matched_target_frames": 14,
+          "recall": 1.0,
+          "mean_confidence_on_matches": 0.709985260452543,
+          "mean_bbox_area_ratio_on_matches": 0.003253217793225038
+        }
+      },
+      "measurement_sha256": "894dcb8edb1818d10dabca3168d8250d1295fe1fa829ab9478c2e88548486127"
+    }
+  },
+  "higher_resolution_gates": {
+    "yolox-640": {
+      "quality": {
+        "rule": "reviewed visible-frame recall >=80% and >=10 percentage points over YOLOX-Nano 416",
+        "pass": true
+      },
+      "latency": {
+        "rule": "per-frame CPU p95 <=100 ms",
+        "pass": true
+      },
+      "memory": {
+        "rule": "added peak RSS <=500 MiB",
+        "pass": true
+      }
+    },
+    "yolox-768": {
+      "quality": {
+        "rule": "reviewed visible-frame recall >=80% and >=10 percentage points over YOLOX-Nano 416",
+        "pass": true
+      },
+      "latency": {
+        "rule": "per-frame CPU p95 <=100 ms",
+        "pass": true
+      },
+      "memory": {
+        "rule": "added peak RSS <=500 MiB",
+        "pass": true
+      }
+    }
+  },
+  "second_frozen_runs": {
+    "yolox-640": {
+      "quality_rows_identical": true,
+      "runtime": {
+        "load_seconds": 0.14974179999990156,
+        "per_frame_median_seconds": 0.029602949998661643,
+        "per_frame_p95_seconds": 0.033688559999154676,
+        "baseline_rss_bytes": 46120960,
+        "peak_rss_bytes": 132538368,
+        "added_peak_rss_bytes": 86417408
+      },
+      "measurement_sha256": "6ddeb3017f669d4f1091738c6ebabf6c2718ea1c15eb8b876c8596c6b2667117"
+    },
+    "yolox-768": {
+      "quality_rows_identical": true,
+      "runtime": {
+        "load_seconds": 0.15529290000085894,
+        "per_frame_median_seconds": 0.0358061999995698,
+        "per_frame_p95_seconds": 0.04815347500061762,
+        "baseline_rss_bytes": 46174208,
+        "peak_rss_bytes": 164642816,
+        "added_peak_rss_bytes": 118468608
+      },
+      "measurement_sha256": "44c917ca41faed04f19733c11b955e90a17fc761f3c4d665a0af81addd8bfa53"
+    }
+  },
+  "diagnosis": {
+    "outcome": "C_both_sampling_and_detector_matter",
+    "dominant_failure": "sampling",
+    "recommendation": "Keep production unchanged. Prototype a query-gated, cached 2-second secondary sampling path with YOLOX-Nano 640 over bounded windows. Do not run RT-DETR-R18 over every frame on CPU.",
+    "reason": "Five-second visible-evidence recall is 25%, so no detector can recover three of four events. Two-second sampling reaches 100% evidence recall here. Nano 640 improves reviewed conditional recall by 16.7 points, ties Nano 768, and has lower CPU latency and memory. RT-DETR improves another 5.6 points but exceeds the preferred memory gate and is much slower."
+  }
+}

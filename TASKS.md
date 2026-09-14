@@ -46,6 +46,10 @@
 - [x] Test a calibration-only eight-parameter scorer over existing CLIP retrieval features
 - [x] Reject UForm/logistic promotion after frozen positive-abstention gate failures
 - [x] Evaluate and reject YOLOX-Nano as a small-object/object-detector branch over CLIP candidates
-- [ ] Add source-disjoint frame-visible small-object evidence before a higher-resolution detector trial
+- [x] Add source-disjoint frame-visible small-object evidence before a higher-resolution detector trial
+- [x] Separate 5/2/1-second visible-evidence recall from CLIP candidate recall and cost
+- [x] Compare Nano 416/640/768 and RT-DETR-R18 on the same visible frames
+- [x] Repeat passing Nano 640/768 configurations on the frozen set
+- [ ] Prototype a query-gated cached 2-second secondary path with Nano 640 and wider candidates
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
