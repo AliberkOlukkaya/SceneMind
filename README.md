@@ -156,6 +156,8 @@ The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/t
 
 AUTO routing now uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 is 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matches. The interface defaults to Auto and keeps Visual, Speech, and Hybrid overrides. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
 
+Personal acceptance is prepared but has not run: no user-selected private videos or frozen manifest are present. Benchmark media was deliberately excluded, so no daily-use, Turkish, long-video, or AUTO reliability claim is made. The production duration default is 1,800 seconds, which rejects videos over 30 minutes. See [acceptance results](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) and [blocked evidence](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
+
 ## Learn the AI pipeline
 
 1. [Video processing](docs/learning/01-video-processing.md)

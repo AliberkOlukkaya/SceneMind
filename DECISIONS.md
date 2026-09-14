@@ -1,5 +1,9 @@
 # Decisions
 
+## 021 — Block personal acceptance rather than reuse benchmark media
+
+Inventory the ignored workspace before testing. Only fixtures, public benchmarks and earlier calibration sources are present; there is no Aliberk-selected lecture, demo, ordinary video or populated private manifest. Do not convert benchmark accuracy into a personal-use claim. Complete the checksum-bound manifest validator and human-usefulness aggregation, including Turkish, negative queries and all requested scenario/category slices, while leaving production unchanged. Record the current 1,800-second duration limit as an acceptance constraint: a video over 30 minutes is rejected. Resume evaluation only after real personal media is selected and annotations are frozen.
+
 ## 020 — Promote tiny learned AUTO routing; retain explicit modes
 
 Freeze 36 balanced route queries over three new, source-disjoint Commons lecture/tutorial/demo videos with 205 real Whisper-tiny segments. Compare readable rules and a class-balanced 54-parameter softmax model using 18 lexical features. The learned router wins calibration, reaches 96.8% held-out routing accuracy, and matches explicit-route Oracle R@1/3/5 at 85.7%/92.9%/95.2% with MRR 0.9762 and zero category loss. Median/p95 is 0.031/0.042 ms; an identical second frozen evaluation matches. Choose outcome C. Add AUTO behind `SCENEMIND_AUTO_ROUTING_ENABLED`, default the UI to Auto, preserve Visual/Speech/Hybrid overrides, and keep no-match disabled. A private 30–60 minute personal-video acceptance run is the blocker before v1.0 reliability claims.

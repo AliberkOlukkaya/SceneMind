@@ -15,7 +15,7 @@ from app.routing import (
 from app.routing import (
     text_features as production_features,
 )
-from ml.evaluation.personal_acceptance import validate
+from ml.evaluation.personal_acceptance import summarize, validate
 from ml.experiments.query_routing.router import (
     fit_softmax,
     learned_route,
@@ -98,20 +98,100 @@ def test_router_artifact_and_committed_report_are_bound_to_frozen_calibration():
     assert report["production"]["explicit_modes_preserved"] is True
 
 
-def test_personal_acceptance_requires_real_checksum_bound_media(tmp_path):
-    media = tmp_path / "lecture.mp4"
-    media.write_bytes(b"private fixture")
-    manifest = {
-        "annotation_status": "frozen",
-        "videos": [{"video_id": "mine", "local_path": str(media),
-                    "sha256": hashlib.sha256(media.read_bytes()).hexdigest(),
-                    "queries": [{"query_id": "mine-speech", "target_route": "SPEECH",
-                                 "relevant_intervals": [[1, 2]]}]}],
+def _acceptance_manifest(tmp_path):
+    media = []
+    for name in ("lecture", "demo", "ordinary"):
+        path = tmp_path / f"{name}.mp4"
+        path.write_bytes(name.encode())
+        media.append(path)
+    categories = [
+        "spoken_topic", "quoted_mentioned_phrase", "visual_object", "visual_scene",
+        "compositional_visual", "mixed_visual_spoken", "difficult_negative_unsupported",
+    ]
+    def queries(prefix):
+        rows = []
+        for index, category in enumerate(categories):
+            for language in ("EN", "TR"):
+                present = category != "difficult_negative_unsupported"
+                rows.append({
+                    "query_id": f"{prefix}-{index}-{language.lower()}",
+                    "text": f"query {index} {language}", "language": language,
+                    "category": category,
+                    "expected_best_route": ["SPEECH", "VISUAL", "HYBRID"][index % 3],
+                    "expected_presence": present,
+                    "relevant_intervals": [[1, 2]] if present else [],
+                })
+        return rows
+    return {
+        "suite_id": "personal-video-acceptance-v1", "annotation_status": "frozen",
+        "videos": [
+            {"video_id": "lecture", "scenario": "lecture_tutorial",
+             "duration_seconds": 1800,
+             "local_path": str(media[0]), "sha256": hashlib.sha256(media[0].read_bytes()).hexdigest(),
+             "queries": queries("lecture")},
+            {"video_id": "demo", "scenario": "project_software_demo",
+             "duration_seconds": 900,
+             "local_path": str(media[1]), "sha256": hashlib.sha256(media[1].read_bytes()).hexdigest(),
+             "queries": queries("demo")},
+            {"video_id": "ordinary", "scenario": "ordinary_real_world",
+             "duration_seconds": 60,
+             "local_path": str(media[2]), "sha256": hashlib.sha256(media[2].read_bytes()).hexdigest(),
+             "queries": queries("ordinary")},
+        ],
     }
+
+
+def test_personal_acceptance_requires_real_checksum_bound_media_and_all_dimensions(tmp_path):
+    manifest = _acceptance_manifest(tmp_path)
     path = tmp_path / "acceptance.json"
     path.write_text(json.dumps(manifest), encoding="utf-8")
-    assert validate(path)["queries"] == 1
+    assert validate(path)["queries"] == 42
     manifest["videos"][0]["sha256"] = "0" * 64
     path.write_text(json.dumps(manifest), encoding="utf-8")
     with pytest.raises(ValueError, match="changed media"):
+        validate(path)
+
+
+def test_personal_acceptance_supports_negative_queries_and_summarizes_human_usefulness(tmp_path):
+    manifest = _acceptance_manifest(tmp_path)
+    path = tmp_path / "acceptance.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    manifest_hash = validate(path)["manifest_sha256"]
+    all_queries = [query for video in manifest["videos"] for query in video["queries"]]
+    observations = {
+        "manifest_sha256": manifest_hash, "run_status": "complete",
+        "videos": [{"video_id": video["video_id"], "processing_time_seconds": 10,
+                    "transcript_quality_observations": "Reviewed; words are intelligible."}
+                   for video in manifest["videos"]],
+        "queries": [{
+            "query_id": query["query_id"],
+            "auto_selected_route": query["expected_best_route"],
+            "useful_top_1": True, "useful_top_3": True, "useful_top_5": True,
+            "timestamp_error_seconds": 1, "user_usefulness": "PASS",
+            "failure_categories": [], "failure_reason": "", "search_latency_ms": 5,
+            "explicit_mode_results": {
+                mode: {"useful_top_1": True, "useful_top_3": True,
+                       "useful_top_5": True, "timestamp_error_seconds": 1,
+                       "user_usefulness": "PASS", "failure_categories": [],
+                       "failure_reason": "", "search_latency_ms": 6}
+                for mode in ("VISUAL", "SPEECH", "HYBRID")
+            },
+        } for query in all_queries],
+    }
+    observations_path = tmp_path / "observations.json"
+    observations_path.write_text(json.dumps(observations), encoding="utf-8")
+    report = summarize(path, observations_path)
+    assert report["overall"]["auto_routing_accuracy"] == 1.0
+    assert report["overall"]["useful_top_5_rate"] == 1.0
+    assert report["slices"]["language"]["TR"]["queries"] == 21
+    assert report["processing"]["total_seconds"] == 30
+    assert report["explicit_modes"]["VISUAL"]["useful_top_1_rate"] == 1.0
+
+
+def test_personal_acceptance_rejects_positive_without_interval(tmp_path):
+    manifest = _acceptance_manifest(tmp_path)
+    manifest["videos"][0]["queries"][0]["relevant_intervals"] = []
+    path = tmp_path / "acceptance.json"
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    with pytest.raises(ValueError, match="positive query requires"):
         validate(path)

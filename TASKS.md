@@ -59,6 +59,9 @@
 - [x] Collect source-disjoint speech calibration evidence before testing automatic routing
 - [x] Compare deterministic, learned and confidence-fallback routing with real path retrieval
 - [x] Integrate passing AUTO routing while retaining Visual, Speech and Hybrid overrides
-- [ ] Run private personal-video acceptance on real 30–60 minute user-selected videos
+- [x] Prepare checksum-bound personal acceptance validation and human-usefulness aggregation
+- [x] Record the absence of personal media without substituting benchmark footage or fabricating metrics
+- [ ] Select three private videos and freeze English/Turkish queries before retrieval
+- [ ] Run private personal-video acceptance; record the >30-minute production upload outcome
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
