@@ -66,6 +66,8 @@ The [object-detector branch](ml/experiments/object_detector_branch/README.md) te
 
 The [bounded secondary experiment](ml/experiments/bounded_secondary_sampling/README.md) tested top-5/10/20 coarse expansion, ±2/4/6-second windows, a versioned two-second JPEG cache, secondary CLIP and Nano 640. The selected top-5 ±2-second policy averages nine frames, but reaches only 50% of verified held-out visible evidence; secondary CLIP reaches 0% there, and strict no-match gating abstains on every small-object query. [Results](ml/evaluation/BOUNDED_SECONDARY_RESULTS.md) and [failures](ml/evaluation/BOUNDED_SECONDARY_FAILURES.md) select coarse candidate generation as the next bottleneck. Production remains unchanged.
 
+The [coarse candidate diversity experiment](ml/experiments/coarse_candidate_diversity/README.md) measures top-20/top-50 redundancy and compares temporal NMS, MMR, embedding-change grouping and bounded multi-scale sampling. The selected cheap policy removes neighboring duplicates but reaches only 81.0% held-out R@5 versus the 85.7% five-second baseline and does not improve reviewed small-object recall. The raw two-second top-50 pool reaches 97.6% correct-region recall, so [results](ml/evaluation/COARSE_CANDIDATE_RESULTS.md) and [failures](ml/evaluation/COARSE_CANDIDATE_FAILURES.md) recommend a bounded candidate-list ranking/no-match experiment. Production remains unchanged.
+
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
 
 Optional settings: `SCENEMIND_JOB_TIMEOUT=900`, `SCENEMIND_JOB_ATTEMPTS=2`, `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.
@@ -167,6 +169,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- Higher-resolution YOLOX-Nano meets local resource targets, but bounded refinement cannot repair temporal regions absent from coarse candidates. Improve coarse temporal coverage before another detector trial.
+- Higher-resolution YOLOX-Nano meets local resource targets, but bounded refinement and cheap candidate diversity cannot reliably compress the high-recall raw pool to five results. Keep the five-second production path until a bounded list-ranking policy passes frozen gates.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

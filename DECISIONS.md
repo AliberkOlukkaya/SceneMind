@@ -1,5 +1,9 @@
 # Decisions
 
+## 018 — Keep raw five-second retrieval; stop cheap diversity promotion
+
+Measure raw top-20/top-50 redundancy and compare temporal NMS, embedding MMR, combined selection, CLIP-change grouping and multi-scale sampling on the frozen 66/31 split. Calibration selects a top-20 multi-scale pool with 0.20 embedding-change threshold and five-second NMS. Held-out R@5 is 81.0% versus the 85.7% baseline; reviewed small-object R@5 remains 50%, speech falls 20 points, and dense indexing grows 2.40x. The two-second top-50 pool still reaches 97.6% correct-region and 100% reviewed visible-object recall, locating the failure in final score separation. Choose outcome F, reject promotion and skip the second run. Keep production unchanged; next specify a bounded candidate-list ranking/no-match experiment before any Video RAG work.
+
 ## 017 — Reject bounded secondary search; repair coarse candidate generation
 
 Evaluate ±2/4/6-second windows, top 5/10/20, six-second temporal spacing, secondary CLIP, Nano 640 and calibration-only fusion over the frozen 66/31 calibration/held-out split. Calibration selects top-5 ±2 seconds without spacing and about nine secondary frames per routed query. On four human-reviewed events, selected windows reach only 50% of held-out visible evidence and secondary CLIP reaches 0% at K=5. Detector weights above zero hurt calibration, while the <=10% FAR threshold causes 100% small-object held-out abstention. Warm median and memory pass, but cold misses produce 2.54-second p95. Choose outcome C and leave production unchanged. Improve coarse candidate generation and bounded temporal coverage before reconsidering object evidence.

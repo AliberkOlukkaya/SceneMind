@@ -52,6 +52,8 @@
 - [x] Repeat passing Nano 640/768 configurations on the frozen set
 - [x] Prototype a query-gated cached 2-second secondary path with Nano 640 and wider candidates
 - [x] Reject bounded refinement after the frozen small-object abstention gate fails
-- [ ] Improve coarse candidate generation with bounded temporal coverage/diversification
+- [x] Improve coarse candidate generation with bounded temporal coverage/diversification
+- [x] Reject temporal/MMR/scene-aware promotion after frozen top-five gates fail
+- [ ] Design a bounded candidate-list ranking/no-match experiment over the high-recall raw pool
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
