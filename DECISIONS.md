@@ -1,5 +1,11 @@
 # Decisions
 
+## 030 - Make Hybrid-backed Smart Search the v1.0 default
+
+Remove automatic route classification from the normal SceneMind v1.0 path after real-video evidence measured 48.33% accuracy for the production router and 60.00% for the best lightweight candidate. Present three product modes: Smart Search maps directly to existing Hybrid retrieval and is the default; Spoken Content maps to Speech; Visual Content maps to Visual. Preserve the `auto` API value, router implementation, artifact, feature flag, tests, and historical reports for compatibility and internal work, but do not expose or recommend AUTO in the standard frontend.
+
+This decision changes only frontend labels, default state, and the request mode. CLIP, Whisper, BM25, RRF, FAISS, five-second sampling, ranking, indexing, workers, response data, conservative candidate wording, and click-to-seek behavior remain unchanged. Final English Acceptance V2 will use one new independent 30-60 minute English video and evaluate Smart Search / Hybrid useful Top-1/3/5, latency, timestamps, pipeline completion, and honest negative-query UX. It will not score AUTO; explicit Speech and Visual modes are diagnostics only.
+
 ## 029 - Reject the character router after human-grounded validation
 
 Review actual five-second frames and local Whisper transcripts for ten independent CC BY/CC BY-SA English videos, then freeze 360 balanced route queries by video source. Use four train videos, four validation videos, and two untouched final-test videos. Preserve the protected failed-acceptance source without opening or reusing its evidence. Evaluate production first and test the previously fixed character 3-5 gram TF-IDF plus linear-softmax configuration with raw argmax and no confidence fallback.

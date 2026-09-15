@@ -1,5 +1,7 @@
 # Final English long-video acceptance protocol
 
+This is the historical v1 protocol used for the completed AUTO-based run. The next acceptance milestone uses [FINAL_ENGLISH_ACCEPTANCE_V2_PLAN.md](FINAL_ENGLISH_ACCEPTANCE_V2_PLAN.md), defaults directly to Smart Search / Hybrid, and does not score AUTO routing.
+
 The final acceptance run requires at least one real, continuous 30–60 minute English-speaking lecture, tutorial, technical presentation, or software/project demonstration. It must be available for legal local testing and must not have contributed to SceneMind tuning or threshold selection. Synthetic repetition and concatenation are infrastructure fixtures only.
 
 ## Current result

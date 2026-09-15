@@ -74,6 +74,9 @@
 - [x] Run one source-disjoint English AUTO-router generalization milestone without using final-acceptance evidence for tuning
 - [x] Replace source-card routing evidence with 360 independently reviewed queries tied to ten new real English videos
 - [x] Reject character-router promotion after the clean human-grounded frozen test misses accuracy, Visual-recall and Speech-recall gates
-- [ ] If a later independently authorized router milestone passes on new untouched sources, freeze a new real English long-video acceptance source and rerun once
+- [x] Remove AUTO from the normal v1.0 path and default Smart Search directly to existing Hybrid retrieval
+- [x] Preserve AUTO API compatibility and historical router evidence without exposing it as the recommended frontend mode
+- [x] Freeze the Final English Acceptance V2 plan and gates around Smart Search / Hybrid
+- [ ] Obtain a completely new independent 30-60 minute English video and run Final English Acceptance V2 once
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

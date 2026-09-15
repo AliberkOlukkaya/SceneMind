@@ -14,7 +14,7 @@ Upload a video, browse sampled moments, transcribe English speech, and retrieve 
 - Local Whisper tiny speech transcription and timestamped transcript search.
 - CLIP ViT-B/32 embeddings and exact FAISS cosine search.
 - BM25 speech relevance and explainable reciprocal-rank fusion.
-- Responsive library/player, durable processing states, AUTO plus three explicit search modes, and click-to-seek.
+- Responsive library/player, durable processing states, three clear v1.0 search modes, and click-to-seek.
 - SQLite transcript persistence with SQLAlchemy/Alembic migrations.
 - Model-free unit tests, real-model smoke scripts, browser tests and a benchmark runner.
 
@@ -22,7 +22,9 @@ Core phases 0-6 and a bounded local hardening milestone are implemented. Optiona
 
 Search results are ranked candidate moments, not confirmed answers. The UI presents “Most relevant moments,” keeps useful transcript excerpts and evidence labels, and does not expose raw model scores. SceneMind cannot reliably determine that requested content is absent; it returns possible moments with one restrained relevance explanation.
 
-Validated claims are local multimodal retrieval with CLIP visual search, Whisper speech indexing, BM25/RRF hybrid ranking, lightweight English AUTO routing, benchmark-driven evaluation, measured latency/memory, and long-video processing infrastructure. SceneMind does not claim reliable no-match detection, multilingual robustness, OCR or action understanding, Video RAG, broad production readiness, or 60-minute search quality.
+SceneMind v1.0 defaults to **Smart Search**, which uses the existing Hybrid retrieval path across speech and visuals. **Spoken Content** maps to Speech retrieval and **Visual Content** maps to Visual retrieval. The historical AUTO classifier remains API-compatible for experiments and existing clients, but it is not exposed in the normal frontend or recommended for v1.0. Human-grounded validation measured only 48.33% accuracy for the current router and 60.00% for the best lightweight candidate. The [Final Acceptance V2 plan](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_PLAN.md) therefore evaluates Smart Search directly without scoring AUTO.
+
+Validated claims are local multimodal retrieval with CLIP visual search, Whisper speech indexing, BM25/RRF hybrid ranking, benchmark-driven evaluation, measured latency/memory, and long-video processing infrastructure. SceneMind does not claim reliable automatic route selection, no-match detection, multilingual robustness, OCR or action understanding, Video RAG, broad production readiness, or 60-minute search quality.
 
 ## Run locally
 
@@ -160,7 +162,7 @@ Natural V2's raw held-out visual R@5 is 85.7%, but nearest-neighbor retrieval ac
 
 The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/top-50, but calibration-selected list features lowered final R@5 to 76.2% and a no-match threshold falsely rejected 90.5% of positives. Existing explicit Visual/Speech/Hybrid routing with real BM25 evidence reached 95.2% R@5. Production therefore keeps raw five-second CLIP ordering and explicit modes. [Candidate-list results](ml/evaluation/CANDIDATE_LIST_RANKING_RESULTS.md).
 
-AUTO routing now uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 is 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matches. The interface defaults to Auto and keeps Visual, Speech, and Hybrid overrides. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
+The historical AUTO routing milestone uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 was 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matched. Later real-video validation invalidated AUTO as the product default, so the implementation remains compatible while the v1.0 interface uses the three direct modes above. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
 
 The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) froze 54 English/Turkish queries before searching the three supplied videos. Positive useful Top-1/3/5 was 52.8%/66.7%/83.3%, AUTO routing was 77.8%, and search latency was 23.25/32.02 ms median/p95. English Top-5 reached 88.9%; Turkish reached 77.8%, and all 12 route errors were Turkish. Only 22.2% of negatives avoided a misleading response. The measured outcome is C — not yet accepted. Production remains unchanged; see the [failure analysis](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
 

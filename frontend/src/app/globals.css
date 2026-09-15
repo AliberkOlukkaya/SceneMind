@@ -348,6 +348,7 @@ button:disabled {
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
   margin: 24px 0;
   font-size: 13px;
   color: #a0a69d;
@@ -358,6 +359,9 @@ button:disabled {
   border: 1px solid #424b3c;
   padding: 8px;
   border-radius: 4px;
+}
+.mode-label small {
+  color: #a0a69d;
 }
 @media (max-width: 800px) {
   .workspace {

@@ -43,6 +43,7 @@ test("upload, browse frames and seek on desktop and mobile", async ({
         .evaluate((video: HTMLVideoElement) => video.currentTime),
     )
     .toBeCloseTo(5, 0);
+  await page.getByLabel("Search mode").selectOption("visual");
   await page.getByLabel("Describe a moment").fill("a blue screen");
   await page.getByRole("button", { name: "Search", exact: true }).click();
   await expect(
@@ -69,14 +70,22 @@ test("search presents possible moments without false certainty", async ({
   await expect(page.getByLabel("Seek to 0:05")).toBeVisible({
     timeout: 30_000,
   });
-  await expect(page.getByLabel("Search in")).toHaveValue("auto");
+  await expect(page.getByLabel("Search mode")).toHaveValue("hybrid");
+  await expect(page.getByLabel("Search mode")).not.toHaveValue("auto");
+  await expect(
+    page.getByText("Search across both spoken and visual content."),
+  ).toBeVisible();
   await page.route("**/videos/*/search?*", async (route) => {
+    expect(new URL(route.request().url()).searchParams.get("mode")).toBe(
+      "hybrid",
+    );
     await route.fulfill({
       contentType: "application/json",
       body: JSON.stringify({
-        score_type: "bm25",
-        selected_route: "speech",
-        modalities_used: ["speech"],
+        score_type: "reciprocal_rank_fusion",
+        requested_mode: "hybrid",
+        selected_route: "hybrid",
+        modalities_used: ["speech", "visual"],
         results: [
           {
             timestamp: 5,
@@ -102,8 +111,8 @@ test("search presents possible moments without false certainty", async ({
     page.getByText("Results are ranked by relevance", { exact: false }),
   ).toBeVisible();
   await expect(
-    page.getByText("Auto chose speech", { exact: false }),
-  ).toBeVisible();
+    page.locator(".result-context"),
+  ).toContainText("Smart Search");
   await expect(
     page.getByText("The speaker explains the project architecture."),
   ).toBeVisible();
@@ -116,6 +125,31 @@ test("search presents possible moments without false certainty", async ({
         .evaluate((video: HTMLVideoElement) => video.currentTime),
     )
     .toBeCloseTo(5, 0);
+});
+
+test("product search modes map directly to existing retrieval modes", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByLabel("Choose video", { exact: true })
+    .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
+  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({
+    timeout: 30_000,
+  });
+  const selector = page.getByLabel("Search mode");
+  await expect(selector.locator("option")).toHaveText([
+    "Smart Search",
+    "Spoken Content",
+    "Visual Content",
+  ]);
+  await selector.selectOption({ label: "Spoken Content" });
+  await expect(selector).toHaveValue("speech");
+  await expect(page.getByText("Search what is said in the video.")).toBeVisible();
+  await selector.selectOption({ label: "Visual Content" });
+  await expect(selector).toHaveValue("visual");
+  await expect(page.getByText("Search what appears in the video.")).toBeVisible();
+  await expect(selector.locator('option[value="auto"]')).toHaveCount(0);
 });
 
 test("real model search seeks to the matching scene", async ({ page }) => {

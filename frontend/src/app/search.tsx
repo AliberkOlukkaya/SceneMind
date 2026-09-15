@@ -12,6 +12,21 @@ type Result = {
   text?: string;
 };
 
+const MODE_DETAILS: Record<string, { label: string; description: string }> = {
+  hybrid: {
+    label: "Smart Search",
+    description: "Search across both spoken and visual content.",
+  },
+  speech: {
+    label: "Spoken Content",
+    description: "Search what is said in the video.",
+  },
+  visual: {
+    label: "Visual Content",
+    description: "Search what appears in the video.",
+  },
+};
+
 export default function Search({
   videoId,
   api,
@@ -27,7 +42,7 @@ export default function Search({
   const [results, setResults] = useState<Result[]>([]);
   const [busy, setBusy] = useState(false);
   const [searched, setSearched] = useState(false);
-  const [mode, setMode] = useState("auto");
+  const [mode, setMode] = useState("hybrid");
   const [modalities, setModalities] = useState<string[]>([]);
   const [selectedRoute, setSelectedRoute] = useState("");
   useEffect(() => {
@@ -123,7 +138,7 @@ export default function Search({
         </>
       )}
       <label className="mode-label">
-        Search in{" "}
+        Search mode{" "}
         <select
           value={mode}
           onChange={(event) => {
@@ -132,11 +147,11 @@ export default function Search({
             setSearched(false);
           }}
         >
-          <option value="auto">Auto (recommended)</option>
-          <option value="visual">Visuals</option>
-          <option value="speech">Speech</option>
-          <option value="hybrid">Visuals + speech</option>
+          <option value="hybrid">Smart Search</option>
+          <option value="speech">Spoken Content</option>
+          <option value="visual">Visual Content</option>
         </select>
+        <small>{MODE_DETAILS[mode].description}</small>
       </label>
       <form onSubmit={(event) => void search(event)} className="search-form">
         <label className="search-label">
@@ -168,7 +183,7 @@ export default function Search({
             moments when an exact match is not present.
           </p>
           <p className="result-context">
-            {mode === "auto" ? `Auto chose ${selectedRoute}` : selectedRoute} ·{" "}
+            {MODE_DETAILS[selectedRoute]?.label || selectedRoute} ·{" "}
             {modalities.join(" + ")} evidence
           </p>
           <div className="results">
