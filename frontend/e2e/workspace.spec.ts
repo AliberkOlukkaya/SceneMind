@@ -22,7 +22,10 @@ test("upload, browse frames and seek on desktop and mobile", async ({
   await expect(
     page.getByRole("heading", { name: "Video library" }),
   ).toBeVisible();
-  await expect(page.getByText("Up to 1024 MiB", { exact: false })).toBeVisible();
+  await expect(
+    page.getByText("Up to 1024 MiB", { exact: false }),
+  ).toBeVisible();
+  await expect(page.getByText("60 minutes", { exact: false })).toBeVisible();
   await page
     .getByLabel("Choose video", { exact: true })
     .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
@@ -54,6 +57,65 @@ test("upload, browse frames and seek on desktop and mobile", async ({
     path: `../data/workspace-${test.info().project.name}.png`,
     fullPage: true,
   });
+});
+
+test("search presents possible moments without false certainty", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByLabel("Choose video", { exact: true })
+    .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
+  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({
+    timeout: 30_000,
+  });
+  await expect(page.getByLabel("Search in")).toHaveValue("auto");
+  await page.route("**/videos/*/search?*", async (route) => {
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        score_type: "bm25",
+        selected_route: "speech",
+        modalities_used: ["speech"],
+        results: [
+          {
+            timestamp: 5,
+            thumbnail: "/fixture/frame.jpg",
+            score: 8.74219,
+            modality: "speech",
+            text: "The speaker explains the project architecture.",
+          },
+        ],
+      }),
+    });
+  });
+  await page.route("**/fixture/frame.jpg", (route) =>
+    route.fulfill({ status: 200, contentType: "image/jpeg", body: "" }),
+  );
+  await page.getByLabel("Describe a moment").fill("project architecture");
+  await page.getByRole("button", { name: "Search", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Most relevant moments" }),
+  ).toBeVisible();
+  await expect(page.getByText("1 possible match")).toBeVisible();
+  await expect(
+    page.getByText("Results are ranked by relevance", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Auto chose speech", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("The speaker explains the project architecture."),
+  ).toBeVisible();
+  await expect(page.getByText("8.742", { exact: false })).not.toBeVisible();
+  await page.locator(".result").click();
+  await expect
+    .poll(() =>
+      page
+        .locator("video")
+        .evaluate((video: HTMLVideoElement) => video.currentTime),
+    )
+    .toBeCloseTo(5, 0);
 });
 
 test("real model search seeks to the matching scene", async ({ page }) => {

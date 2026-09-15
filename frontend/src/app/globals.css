@@ -304,6 +304,26 @@ button:disabled {
   gap: 16px;
   margin-top: 20px;
 }
+.results-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+.results-heading h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.results-heading span,
+.result-context {
+  color: #a0a69d;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.result-context {
+  margin: 8px 0 0;
+}
 .result {
   display: flex;
   align-items: center;

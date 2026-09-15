@@ -16,8 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Long-video ingestion and resource hardening is complete. The English path-aware no-match milestone is also complete with outcome E: three calibration and three held-out source groups show that cheap Visual/Speech/Hybrid evidence cannot meet the 15% FAR and false-abstention gates together. AUTO routing remains strong, but rejection cuts held-out overall R@5 from 87.5% to 41.7%. Production stays unchanged. V1.0 work now focuses on conservative result wording, product polish, and a real 30–60 minute English-audio personal acceptance run.
+Long-video ingestion and resource hardening is complete. Conservative search wording is implemented without changing CLIP, Whisper, BM25, RRF, routing, sampling, or ranking. AUTO remains default; manual modes remain visible. The final English long-video run is prepared but blocked with decision D because the local 45-minute source is synthetic repetition and the longest real candidate is only 22:49 and silent.
 
-The bounded Turkish compatibility milestone remains preserved as future multilingual evidence; Turkish is outside the English-first v1.0 requirement. Unsupported-query rejection has now been measured and rejected. Phases 8-9 remain deferred.
+The bounded Turkish compatibility milestone remains preserved as future multilingual evidence; Turkish is outside the English-first v1.0 requirement. Unsupported-query rejection has been measured and rejected. The next bounded step is to obtain eligible real media, freeze its human-written 25-40 query manifest, and execute final acceptance once. Phases 8-9 remain deferred.
 
 Phases 0-6 and the bounded local Phase 10 follow-up are implemented. Earlier retrieval experiments and the first personal acceptance run remain frozen evidence. The Turkish compatibility result above supersedes the former next-milestone statement; no candidate was promoted.

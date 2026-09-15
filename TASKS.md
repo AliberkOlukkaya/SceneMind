@@ -67,7 +67,9 @@
 - [ ] Add independent Turkish source groups and freeze a new router-validation split before reconsidering semantic Speech retrieval
 - [x] Implement and measure streamed 1 GiB / 60-minute ingestion with disk, timeout and cleanup guards
 - [x] Evaluate path-aware unsupported-query rejection and reject it after frozen quality-gate failures
-- [ ] Apply conservative English result wording without claiming a confirmed match
-- [ ] Repeat acceptance on valid-duration audio lecture/demo material after a candidate passes held-out gates
+- [x] Apply conservative English result wording without claiming a confirmed match
+- [x] Prepare the frozen final English long-video manifest, observation schema, validator, and protocol
+- [x] Inventory local media and record decision D because no eligible real 30-60 minute English-speaking video exists
+- [ ] Obtain eligible real English long-video media and execute final acceptance
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

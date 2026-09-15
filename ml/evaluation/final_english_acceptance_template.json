@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "final-english-long-video-acceptance-v1",
+  "annotation_status": "draft",
+  "annotation_frozen_at": null,
+  "policy": "Use only a real continuous 30-60 minute English-speaking video that was not used for tuning. Human-review the complete video and write 25-40 queries before running SceneMind search. Keep populated private manifests, observations, media, transcripts, frames, indexes, and databases under ignored data/.",
+  "videos": []
+}

@@ -2,7 +2,7 @@
 
 **Search inside video using natural language.**
 
-Upload a video, browse sampled moments, transcribe speech, and retrieve scenes using visual or combined visual/speech evidence. Selecting a result seeks the player to its timestamp. Open pretrained models run locally: no API key, subscription, cloud GPU, or paid AI service is required.
+Upload a video, browse sampled moments, transcribe English speech, and retrieve scenes using visual or combined visual/speech evidence. Selecting a result seeks the player to its timestamp. SceneMind v1.0 is English-first. Open pretrained models run locally: no API key, subscription, cloud GPU, or paid AI service is required.
 
 ![SceneMind workspace](docs/images/workspace-desktop.png)
 
@@ -14,11 +14,15 @@ Upload a video, browse sampled moments, transcribe speech, and retrieve scenes u
 - Local Whisper tiny speech transcription and timestamped transcript search.
 - CLIP ViT-B/32 embeddings and exact FAISS cosine search.
 - BM25 speech relevance and explainable reciprocal-rank fusion.
-- Responsive library/player, processing states, three search modes and click-to-seek.
+- Responsive library/player, durable processing states, AUTO plus three explicit search modes, and click-to-seek.
 - SQLite transcript persistence with SQLAlchemy/Alembic migrations.
 - Model-free unit tests, real-model smoke scripts, browser tests and a benchmark runner.
 
 Core phases 0-6 and a bounded local hardening milestone are implemented. Optional operator authentication and durable workers are available; public deployment remains outside verified scope. See [status](PROJECT_STATUS.md).
+
+Search results are ranked candidate moments, not confirmed answers. The UI presents “Most relevant moments,” keeps useful transcript excerpts and evidence labels, and does not expose raw model scores. SceneMind cannot reliably determine that requested content is absent; it returns possible moments with one restrained relevance explanation.
+
+Validated claims are local multimodal retrieval with CLIP visual search, Whisper speech indexing, BM25/RRF hybrid ranking, lightweight English AUTO routing, benchmark-driven evaluation, measured latency/memory, and long-video processing infrastructure. SceneMind does not claim reliable no-match detection, multilingual robustness, OCR or action understanding, Video RAG, broad production readiness, or 60-minute search quality.
 
 ## Run locally
 
@@ -162,6 +166,8 @@ The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESUL
 
 [Long-video infrastructure](ml/evaluation/LONG_VIDEO_INGEST_RESULTS.md) now accepts a configurable 1 GiB / 60-minute envelope through streamed disk writes and durable jobs. The original 419 MiB tutorial completed normally without transcoding, and a 45-minute audio stress fixture completed Whisper plus CLIP indexing. Peak measured worker-tree RSS was 3.02 GB; no temporary artifacts remained. This validates processing infrastructure, not long-video search accuracy. Configuration and operational details are in [long-video support](docs/LONG_VIDEO_SUPPORT.md).
 
+[Final English acceptance preparation](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_PREPARATION.md) ended with decision D. The only local 30–60 minute file is a repeated stress fixture, while the longest real video is 22:49 and silent. No final quality metrics were fabricated. The validator, templates, and [protocol](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_PROTOCOL.md) are ready for one real continuous 30–60 minute English-speaking video that is legal for local testing and unused for tuning.
+
 The source-disjoint [Turkish compatibility study](ml/evaluation/TURKISH_COMPATIBILITY_RESULTS.md) used 72 natural queries across six development source groups without tuning on personal acceptance. Cheap routing improved held-out Turkish route accuracy from 53.3% to 76.7%, but missed the 90% gate; cheap AUTO R@5 reached 80%, below its 85% gate. Direct Turkish Visual R@5 was already 93.3%. A multilingual Speech diagnostic reached 100% R@5 but did not fix routing and added about 254 MiB RSS. Outcome E keeps production unchanged, skips the personal rerun and does not claim reliable Turkish support for v1.0. See the [failure analysis](ml/evaluation/TURKISH_COMPATIBILITY_FAILURES.md).
 
 The English [path-aware no-match study](ml/evaluation/PATH_AWARE_NO_MATCH_RESULTS.md) freezes 120 balanced queries across six source-disjoint groups. AUTO routing reaches 95.83%, but Visual rejection falsely abstains on 83.33% of positives while Speech and Hybrid accept 33.33% and 50.00% of negatives. Overall R@5 falls from 87.50% to 41.67%. Outcome E keeps production unchanged, skips the second/personal runs, and ends no-match model experimentation for v1.0. Search results should be read as likely moments rather than confirmed answers.
@@ -187,3 +193,5 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - AUTO can select the existing search path for represented English query forms, but Turkish routing and retrieval missed personal-use targets. Infrastructure now processes 1 GiB / 60-minute inputs and passed a 45-minute stress run, but the supplied personal videos still do not verify 30–60 minute search usefulness. Keep explicit overrides and avoid v1.0 reliability claims until the frozen acceptance gates pass.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.
+
+SceneMind v1.0 is English-first. Turkish code and research remain available, but robust Turkish or multilingual search is not a validated product claim.

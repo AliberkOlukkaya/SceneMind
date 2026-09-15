@@ -131,7 +131,9 @@ export default function Transcript({
               ))
             ) : (
               <p>
-                {query ? "No matching speech found." : "No speech detected."}
+                {query
+                  ? "No transcript excerpts returned."
+                  : "No speech detected."}
               </p>
             )}
           </div>

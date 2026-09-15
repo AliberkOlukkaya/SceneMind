@@ -1,5 +1,9 @@
 # Decisions
 
+## 026 — Ship conservative candidate wording; block final acceptance on real media
+
+Keep the validated CLIP/Whisper/BM25/RRF/AUTO core unchanged. Present ranked output as “Most relevant moments,” explain once that possible moments may appear without an exact match, hide raw scores, and preserve timestamp, transcript, evidence, and click-to-seek. Do not infer absence from an empty or weak list. Inventory local media before final acceptance: the sole 30–60 minute source is a synthetic repeated stress fixture, while the longest real source is 1,369.633 seconds and silent. Choose decision D and do not fabricate routing or Top-k metrics. Prepare an English-only checksum-bound validator and protocol; resume only when a real continuous English-speaking 1,800–3,600 second video with usage rights and no tuning history is available.
+
 ## 025 — Stop no-match model experimentation for English v1.0
 
 Freeze 72 balanced calibration and 48 balanced held-out English queries across six source-disjoint Commons groups. Evaluate separate CLIP-list, BM25/transcript, and RRF/dual-path rules after AUTO routing. AUTO passes at 95.83%, but held-out Visual/Speech/Hybrid FAR is 8.33%/33.33%/50.00% and false abstention is 83.33%/16.67%/16.67%. Overall R@5 falls from 87.50% to 41.67%. Choose outcome E. Do not add a threshold, feature flag, API uncertainty state, or personal-acceptance rerun. For v1.0, retain ranked results and explicit modes and use conservative wording. Further rejection-model work is not justified by current score separation.

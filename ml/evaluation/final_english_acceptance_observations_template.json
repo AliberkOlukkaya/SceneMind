@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_sha256": "replace-with-frozen-manifest-sha256",
+  "run_status": "draft",
+  "pipeline": {
+    "upload_seconds": null,
+    "total_processing_seconds": null,
+    "peak_worker_ram_bytes": null,
+    "disk_bytes": null,
+    "frame_count": null,
+    "asr_segment_count": null,
+    "failures": [],
+    "retries": 0
+  },
+  "queries": []
+}

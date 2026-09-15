@@ -32,6 +32,10 @@ Path-aware no-match remains evaluation-only under `ml/experiments/path_aware_no_
 
 The client uploads File bodies, polls processing/index/transcript state, and provides a library, player, sampled moments, search modes and transcript navigation. Result selection updates HTMLVideoElement.currentTime. Runtime data stays under ignored data/. Models are optional dependencies downloaded on explicit first use.
 
+Search presentation is intentionally conservative. The API still returns unchanged scores and ranked results, but the normal client does not display raw scores or interpret them as confidence. It labels the list “Most relevant moments,” shows one relevance caveat, retains route/evidence context and speech excerpts, and treats an empty candidate list as a prompt to rephrase or change mode rather than proof of absence. AUTO is the default; Visual, Speech, and Hybrid are manual overrides.
+
+Final English long-video acceptance remains outside runtime code. A private checksum-bound manifest must describe real continuous 30–60 minute English media, legal local use, no tuning history, complete human inspection, and 25–40 frozen queries. The normal durable upload/Whisper/CLIP/search path supplies measurements; human click review determines usefulness. The current local inventory has no eligible source, so no 60-minute search-quality claim exists.
+
 Pytest uses generated media and mocked model inference. Real model smoke scripts verify the separate inference paths. Playwright starts isolated API/frontend instances and verifies desktop/mobile upload, seeking, error recovery and optional real CLIP retrieval. The benchmark runner measures the local pipeline against interval labels, keeping synthetic results distinct from real-video quality.
 
 ## Durable processing and access

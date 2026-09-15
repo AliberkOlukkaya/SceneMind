@@ -28,7 +28,6 @@ export default function Search({
   const [busy, setBusy] = useState(false);
   const [searched, setSearched] = useState(false);
   const [mode, setMode] = useState("auto");
-  const [scoreType, setScoreType] = useState("");
   const [modalities, setModalities] = useState<string[]>([]);
   const [selectedRoute, setSelectedRoute] = useState("");
   useEffect(() => {
@@ -93,7 +92,6 @@ export default function Search({
         );
       setResults(data.results);
       setSearched(true);
-      setScoreType(data.score_type);
       setModalities(data.modalities_used || [data.selected_route || mode]);
       setSelectedRoute(data.selected_route || mode);
     } catch (problem) {
@@ -134,7 +132,7 @@ export default function Search({
             setSearched(false);
           }}
         >
-          <option value="auto">Auto</option>
+          <option value="auto">Auto (recommended)</option>
           <option value="visual">Visuals</option>
           <option value="speech">Speech</option>
           <option value="hybrid">Visuals + speech</option>
@@ -158,9 +156,20 @@ export default function Search({
       {error && <p role="alert">{error}</p>}
       {results.length > 0 && (
         <>
+          <div className="results-heading">
+            <h4>Most relevant moments</h4>
+            <span>
+              {results.length} possible{" "}
+              {results.length === 1 ? "match" : "matches"}
+            </span>
+          </div>
           <p className="hint">
-            {scoreType.replaceAll("_", " ")} · Route: {selectedRoute} · Evidence:{" "}
-            {modalities.join(" + ")} · Scores are not confidence.
+            Results are ranked by relevance. SceneMind may return possible
+            moments when an exact match is not present.
+          </p>
+          <p className="result-context">
+            {mode === "auto" ? `Auto chose ${selectedRoute}` : selectedRoute} ·{" "}
+            {modalities.join(" + ")} evidence
           </p>
           <div className="results">
             {results.map((result) => (
@@ -174,7 +183,7 @@ export default function Search({
                   width={240}
                   height={135}
                   src={`${api}${result.thumbnail}`}
-                  alt={`Match at ${result.timestamp.toFixed(1)} seconds`}
+                  alt={`Video moment at ${result.timestamp.toFixed(1)} seconds`}
                 />
                 <div>
                   <span>
@@ -183,12 +192,7 @@ export default function Search({
                       .toString()
                       .padStart(2, "0")}
                   </span>
-                  <small>
-                    {result.modality} ·{" "}
-                    {result.score.toFixed(
-                      scoreType === "reciprocal_rank_fusion" ? 5 : 3,
-                    )}
-                  </small>
+                  <small>{result.modality} evidence</small>
                   {result.text && <p>{result.text}</p>}
                 </div>
               </button>
@@ -197,7 +201,10 @@ export default function Search({
         </>
       )}
       {searched && !results.length && !busy && !error && (
-        <p>No matching moments found.</p>
+        <p>
+          No candidate moments were returned. Try another search mode or
+          wording.
+        </p>
       )}
     </section>
   );
