@@ -2,6 +2,7 @@
 
 import multiprocessing as mp
 import os
+import shutil
 import signal
 import subprocess
 import time
@@ -94,6 +95,31 @@ def await_result(parent, process, timeout):
     return "Job exceeded inference deadline", None
 
 
+def timeout_for(kind):
+    return {
+        "ingest": settings.ingest_job_timeout,
+        "speech": settings.speech_job_timeout,
+        "visual": settings.visual_job_timeout,
+    }.get(kind, settings.job_timeout)
+
+
+def cleanup_job_artifacts(job):
+    """Remove only disposable partial files after a killed or failed worker job."""
+    from app.video import folder_for
+
+    folder = folder_for(job["video_id"])
+    targets = {
+        "ingest": (folder / "frames.tmp", folder / "manifest.tmp"),
+        "speech": (folder / "audio.wav",),
+        "visual": (folder / "embeddings.tmp", folder / "index.tmp"),
+    }.get(job["kind"], ())
+    for target in targets:
+        if target.is_dir():
+            shutil.rmtree(target, ignore_errors=True)
+        else:
+            target.unlink(missing_ok=True)
+
+
 def child_loop(pipe, config):
     if os.name != "nt":
         os.setsid()
@@ -159,9 +185,11 @@ def main():
                     parent.close()
                     finish(job, "Inference process exited before dispatch")
                     continue
-                error, process = await_result(parent, process, settings.job_timeout)
+                error, process = await_result(parent, process, timeout_for(job["kind"]))
                 if process is None:
                     parent.close()
+                if error:
+                    cleanup_job_artifacts(job)
                 finish(job, error)
         finally:
             if process is not None:

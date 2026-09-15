@@ -9,15 +9,20 @@ class Settings(BaseSettings):
     calibration_path: Path | None = None
     durable_jobs: bool = False
     auth_token: str = ""
-    job_timeout: int = Field(default=900, ge=1)
+    job_timeout: int = Field(default=7200, ge=1, le=86400)
+    ingest_job_timeout: int = Field(default=1800, ge=1, le=86400)
+    speech_job_timeout: int = Field(default=7200, ge=1, le=86400)
+    visual_job_timeout: int = Field(default=3600, ge=1, le=86400)
     job_attempts: int = Field(default=2, ge=1, le=5)
     max_pending_jobs: int = Field(default=20, ge=1)
     cors_origins: list[str] = ["http://localhost:3000"]
     data_dir: Path = Path("data/videos")
-    max_upload_bytes: int = Field(default=250 * 1024 * 1024, gt=0)
+    max_upload_bytes: int = Field(default=1024 * 1024 * 1024, gt=0)
+    min_free_disk_bytes: int = Field(default=512 * 1024 * 1024, ge=0)
+    processing_disk_headroom_ratio: float = Field(default=0.25, ge=0, le=2)
     sampling_interval: float = Field(default=5, ge=1, le=60)
-    max_duration: float = Field(default=1800, gt=0)
-    processing_timeout: int = Field(default=300, gt=0)
+    max_duration: float = Field(default=3600, gt=0)
+    processing_timeout: int = Field(default=1800, gt=0, le=86400)
     database_url: str = "sqlite:///data/scenemind.db"
     speech_model: str = "tiny"
     model_cache: str = "data/models"

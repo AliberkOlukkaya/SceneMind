@@ -10,10 +10,13 @@ type Video = {
   id: string;
   filename: string;
   status: string;
+  stage?: string;
+  job_status?: string;
   error?: string;
   metadata?: { duration: number; width: number; height: number; fps: number };
   frames: { timestamp: number; thumbnail: string }[];
 };
+type Limits = { max_upload_bytes: number; max_duration_seconds: number };
 const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 const timestamp = (value: number) =>
   `${Math.floor(value / 60)}:${Math.floor(value % 60)
@@ -27,6 +30,10 @@ export default function Home() {
   const [serviceError, setServiceError] = useState("");
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [limits, setLimits] = useState<Limits>({
+    max_upload_bytes: 1024 * 1024 * 1024,
+    max_duration_seconds: 3600,
+  });
   const player = useRef<HTMLVideoElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const selected = videos.find((video) => video.id === selectedId);
@@ -60,11 +67,27 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    let active = true;
+    apiFetch(`${API}/videos/limits`)
+      .then(async (response) => {
+        if (!response.ok) throw new Error("Could not load upload limits.");
+        const value: Limits = await response.json();
+        if (active) setLimits(value);
+      })
+      .catch(() => undefined);
+    return () => {
+      active = false;
+    };
+  }, []);
+
   async function upload(file?: File) {
     if (!file) return;
     setError("");
-    if (file.size > 250 * 1024 * 1024) {
-      setError("Choose a video smaller than 250 MB.");
+    if (file.size > limits.max_upload_bytes) {
+      setError(
+        `Choose a video no larger than ${Math.floor(limits.max_upload_bytes / 1024 ** 2)} MiB.`,
+      );
       return;
     }
     setUploading(true);
@@ -124,7 +147,10 @@ export default function Home() {
           >
             {uploading ? "Uploading…" : "+ Upload video"}
           </button>
-          <p className="hint">Up to 250 MB · 30 minutes · 4K</p>
+          <p className="hint">
+            Up to {Math.floor(limits.max_upload_bytes / 1024 ** 2)} MiB ·{" "}
+            {Math.floor(limits.max_duration_seconds / 60)} minutes · 4K
+          </p>
         </div>
       </section>
       {serviceError && (
@@ -167,7 +193,11 @@ export default function Home() {
               >
                 <span>{video.filename}</span>
                 <small>
-                  {video.status}{" "}
+                  {video.job_status === "queued"
+                    ? "queued"
+                    : video.stage === "preparing_video"
+                      ? "preparing video"
+                      : video.status}{" "}
                   {video.metadata && `· ${timestamp(video.metadata.duration)}`}
                 </small>
               </button>
@@ -185,7 +215,12 @@ export default function Home() {
                 <p aria-live="polite">
                   {selected.status === "ready"
                     ? `${selected.metadata?.width} × ${selected.metadata?.height} · ${selected.frames.length} sampled frames`
-                    : selected.error || `Video ${selected.status}…`}
+                    : selected.error ||
+                      (selected.job_status === "queued"
+                        ? "Video queued..."
+                        : selected.stage === "preparing_video"
+                          ? "Preparing video..."
+                          : `Video ${selected.status}...`)}
                 </p>
                 {selected.status === "ready" && (
                   <>

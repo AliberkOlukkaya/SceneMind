@@ -123,6 +123,11 @@ def pending(video_id, kind):
         if row and row["status"] != "ready":
             return {
                 "status": "processing" if row["status"] in {"queued", "running"} else "failed",
+                "stage": {
+                    "ingest": "preparing_video",
+                    "speech": "transcribing",
+                    "visual": "indexing",
+                }.get(kind, kind),
                 "job_status": row["status"],
                 "job_id": row["id"],
                 "error": row["error"],

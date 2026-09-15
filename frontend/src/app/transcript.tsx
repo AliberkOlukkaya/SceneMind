@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 type TranscriptData = {
   status: string;
+  stage?: string;
   error?: string;
   segments: { start: number; end: number; text: string }[];
 };
@@ -66,7 +67,7 @@ export default function Transcript({
             ? result.detail
             : "Could not start transcription.",
         );
-      setData({ status: "processing", segments: [] });
+      setData({ status: "processing", stage: "transcribing", segments: [] });
     } catch (problem) {
       setError(
         problem instanceof Error ? problem.message : "Transcription failed.",
@@ -80,7 +81,9 @@ export default function Transcript({
     <section className="transcript">
       <div className="timeline-heading">
         <h3>Transcript</h3>
-        <span aria-live="polite">{data.status.replace("_", " ")}</span>
+        <span aria-live="polite">
+          {(data.stage || data.status).replace("_", " ")}
+        </span>
       </div>
       {(data.status === "not_started" || data.status === "failed") && (
         <>

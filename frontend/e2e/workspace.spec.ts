@@ -22,6 +22,7 @@ test("upload, browse frames and seek on desktop and mobile", async ({
   await expect(
     page.getByRole("heading", { name: "Video library" }),
   ).toBeVisible();
+  await expect(page.getByText("Up to 1024 MiB", { exact: false })).toBeVisible();
   await page
     .getByLabel("Choose video", { exact: true })
     .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
@@ -43,7 +44,7 @@ test("upload, browse frames and seek on desktop and mobile", async ({
   await page.getByRole("button", { name: "Search", exact: true }).click();
   await expect(
     page.locator(".semantic-search").getByRole("alert"),
-  ).toContainText("Build a visual index or transcribe");
+  ).toContainText("Build the visual index before searching.");
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,

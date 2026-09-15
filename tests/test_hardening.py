@@ -99,7 +99,9 @@ def test_durable_upload_survives_api_restart_and_spawned_worker(durable, tmp_pat
     response = durable.post("/videos?filename=fixture.mp4", content=source.read_bytes())
     video_id = response.json()["id"]
     with TestClient(app) as restarted:
-        assert restarted.get(f"/videos/{video_id}").json()["job_status"] == "queued"
+        queued = restarted.get(f"/videos/{video_id}").json()
+        assert queued["job_status"] == "queued"
+        assert queued["stage"] == "preparing_video"
     context = mp.get_context("spawn")
     parent, child = context.Pipe()
     process = context.Process(target=child_loop, args=(child, settings.model_dump()))

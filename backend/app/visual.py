@@ -50,6 +50,7 @@ def recover_visual():
 
 def build_index(video_id):
     folder = folder_for(video_id)
+    temporary = folder / "embeddings.tmp"
     try:
         record = read_manifest(folder)
         paths = [
@@ -58,15 +59,19 @@ def build_index(video_id):
         vectors = encoder().images(paths)
         if len(vectors) != len(paths):
             raise ValueError("Embedding/frame count mismatch")
-        with (folder / "embeddings.tmp").open("wb") as output:
+        with temporary.open("wb") as output:
             np.save(output, vectors, allow_pickle=False)
-        (folder / "embeddings.tmp").replace(folder / "embeddings.npy")
+        temporary.replace(folder / "embeddings.npy")
         save_status(folder, "ready")
     except Exception:
         logger.exception("Visual indexing failed for %s", video_id)
         save_status(folder, "failed", "Indexing failed. Check model availability and server logs.")
     finally:
-        visual_lock.release()
+        try:
+            temporary.unlink(missing_ok=True)
+            (folder / "index.tmp").unlink(missing_ok=True)
+        finally:
+            visual_lock.release()
 
 
 @router.post("/{video_id}/index", status_code=202)

@@ -16,6 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
+Long-video ingestion and resource hardening is complete. The default configurable envelope is now 1 GiB and 60 minutes with streamed-to-disk upload, free-space/headroom guards, atomic derived artifacts, stage-specific durable deadlines and supervisor cleanup. The unmodified 419 MiB tutorial completes ingest and CLIP indexing; a 45-minute audio infrastructure stress fixture completes ingest, Whisper and CLIP in 245.4 seconds. This validates infrastructure capacity only. Long-video personal search quality, Turkish compatibility and unsupported-query behavior remain v1.0 acceptance work.
+
 The bounded Turkish compatibility milestone is complete with outcome E. Six source-disjoint development groups and 72 natural Turkish queries show that cheap routing improves held-out accuracy from 53.3% to 76.7%, but misses the 90% gate; cheap AUTO R@5 is 80%, below its 85% gate. Direct Turkish CLIP is already useful at 93.3% forced-Visual R@5, while lexical adaptation lowers it. A multilingual semantic Speech diagnostic reaches 100% R@5 but adds about 254 MiB RSS and does not fix routing. Nothing is promoted and the personal suite is not rerun. Before another ML milestone, add independent Turkish sources and freeze a new router-validation split. Unsupported-query disclosure and a deliberate 30–60 minute ingestion policy remain separate product blockers; phases 8-9 remain deferred.
 
 Phases 0-6 and the bounded local Phase 10 follow-up are implemented. Earlier retrieval experiments and the first personal acceptance run remain frozen evidence. The Turkish compatibility result above supersedes the former next-milestone statement; no candidate was promoted.

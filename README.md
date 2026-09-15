@@ -70,7 +70,7 @@ The [coarse candidate diversity experiment](ml/experiments/coarse_candidate_dive
 
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
 
-Optional settings: `SCENEMIND_JOB_TIMEOUT=900`, `SCENEMIND_JOB_ATTEMPTS=2`, `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.
+Optional durable settings include `SCENEMIND_INGEST_JOB_TIMEOUT=1800`, `SCENEMIND_SPEECH_JOB_TIMEOUT=7200`, `SCENEMIND_VISUAL_JOB_TIMEOUT=3600`, `SCENEMIND_JOB_ATTEMPTS=2`, and `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.
 
 Set a strong private `SCENEMIND_AUTH_TOKEN` for protected operator access. Open `http://localhost:8000/docs`, sign in through the browser prompt as `scenemind`, then open the frontend using the same hostname. Browser-managed credentials cover API/media requests; API tools can use Bearer authentication. Do not put passwords in frontend configuration. This is one operator, not a tenant/account system; use TLS before non-loopback access.
 
@@ -87,8 +87,10 @@ Optional: copy `.env.example` to root `.env`, and `frontend/.env.example` to `fr
 | SCENEMIND_DATA_DIR | data/videos | Media and indexes |
 | SCENEMIND_DATABASE_URL | sqlite:///data/scenemind.db | Transcript database |
 | SCENEMIND_SAMPLING_INTERVAL | 5 | Seconds between frames |
-| SCENEMIND_MAX_UPLOAD_BYTES | 262144000 | 250 MiB limit |
-| SCENEMIND_MAX_DURATION | 1800 | Maximum duration in seconds |
+| SCENEMIND_MAX_UPLOAD_BYTES | 1073741824 | 1 GiB streamed-upload limit |
+| SCENEMIND_MAX_DURATION | 3600 | Maximum duration in seconds |
+| SCENEMIND_MIN_FREE_DISK_BYTES | 536870912 | Free disk reserve |
+| SCENEMIND_PROCESSING_DISK_HEADROOM_RATIO | 0.25 | Derived-file headroom relative to source bytes |
 | SCENEMIND_MODEL_CACHE | data/models | Model cache |
 | SCENEMIND_MODEL_DEVICE | cpu | Inference device; CUDA unverified |
 | SCENEMIND_SPEECH_MODEL | tiny | Whisper model or local directory |
@@ -158,6 +160,8 @@ AUTO routing now uses a frozen 54-parameter text-only classifier trained on 36 b
 
 The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) froze 54 English/Turkish queries before searching the three supplied videos. Positive useful Top-1/3/5 was 52.8%/66.7%/83.3%, AUTO routing was 77.8%, and search latency was 23.25/32.02 ms median/p95. English Top-5 reached 88.9%; Turkish reached 77.8%, and all 12 route errors were Turkish. Only 22.2% of negatives avoided a misleading response. The measured outcome is C — not yet accepted. Production remains unchanged; see the [failure analysis](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
 
+[Long-video infrastructure](ml/evaluation/LONG_VIDEO_INGEST_RESULTS.md) now accepts a configurable 1 GiB / 60-minute envelope through streamed disk writes and durable jobs. The original 419 MiB tutorial completed normally without transcoding, and a 45-minute audio stress fixture completed Whisper plus CLIP indexing. Peak measured worker-tree RSS was 3.02 GB; no temporary artifacts remained. This validates processing infrastructure, not long-video search accuracy. Configuration and operational details are in [long-video support](docs/LONG_VIDEO_SUPPORT.md).
+
 The source-disjoint [Turkish compatibility study](ml/evaluation/TURKISH_COMPATIBILITY_RESULTS.md) used 72 natural queries across six development source groups without tuning on personal acceptance. Cheap routing improved held-out Turkish route accuracy from 53.3% to 76.7%, but missed the 90% gate; cheap AUTO R@5 reached 80%, below its 85% gate. Direct Turkish Visual R@5 was already 93.3%. A multilingual Speech diagnostic reached 100% R@5 but did not fix routing and added about 254 MiB RSS. Outcome E keeps production unchanged, skips the personal rerun and does not claim reliable Turkish support for v1.0. See the [failure analysis](ml/evaluation/TURKISH_COMPATIBILITY_FAILURES.md).
 
 ## Learn the AI pipeline
@@ -178,6 +182,6 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
 - Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- AUTO can select the existing search path for represented English query forms, but Turkish routing and retrieval missed personal-use targets. The supplied 22:49 silent tutorial, 11:12 demo, and 35-second street clip do not verify 30–60 minute use; the original tutorial also exceeded the 250 MiB upload limit. Keep explicit overrides and avoid v1.0 reliability claims until the frozen acceptance gates pass.
+- AUTO can select the existing search path for represented English query forms, but Turkish routing and retrieval missed personal-use targets. Infrastructure now processes 1 GiB / 60-minute inputs and passed a 45-minute stress run, but the supplied personal videos still do not verify 30–60 minute search usefulness. Keep explicit overrides and avoid v1.0 reliability claims until the frozen acceptance gates pass.
 
 OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.

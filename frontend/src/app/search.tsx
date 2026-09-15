@@ -39,7 +39,7 @@ export default function Search({
         if (!response.ok) throw new Error("Could not retrieve index status.");
         const data = await response.json();
         if (active) {
-          setStatus(data.status);
+          setStatus(data.stage || data.status);
           if (data.error) setError(data.error);
         }
       } catch (problem) {
@@ -69,7 +69,7 @@ export default function Search({
         throw new Error(
           typeof data.detail === "string" ? data.detail : "Indexing failed.",
         );
-      setStatus("processing");
+      setStatus("indexing");
     } catch (problem) {
       setError(problem instanceof Error ? problem.message : "Indexing failed.");
     } finally {

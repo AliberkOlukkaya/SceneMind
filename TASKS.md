@@ -65,7 +65,8 @@
 - [x] Run production personal-video acceptance and record size, duration and audio limitations
 - [x] Run a source-disjoint Turkish routing/retrieval compatibility milestone without tuning on personal acceptance
 - [ ] Add independent Turkish source groups and freeze a new router-validation split before reconsidering semantic Speech retrieval
-- [ ] Define an honest unsupported-query response and a deliberate 30–60 minute ingestion policy
+- [x] Implement and measure streamed 1 GiB / 60-minute ingestion with disk, timeout and cleanup guards
+- [ ] Define an honest unsupported-query response
 - [ ] Repeat acceptance on valid-duration audio lecture/demo material after a candidate passes held-out gates
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
