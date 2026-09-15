@@ -71,7 +71,8 @@
 - [x] Prepare the frozen final English long-video manifest, observation schema, validator, and protocol
 - [x] Inventory local media and record decision D because no eligible real 30-60 minute English-speaking video exists
 - [x] Obtain eligible real English long-video media and execute final acceptance
-- [ ] Run one source-disjoint English AUTO-router generalization milestone without using final-acceptance evidence for tuning
+- [x] Run one source-disjoint English AUTO-router generalization milestone without using final-acceptance evidence for tuning
+- [ ] Replace source-card routing evidence with independently reviewed queries tied to new real English videos
 - [ ] If routing passes its own held-out gate, freeze a new real English long-video acceptance source and rerun once
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

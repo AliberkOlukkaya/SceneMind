@@ -1,0 +1,530 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "english-router-generalization-v1",
+  "manifest_sha256": "ce1f2b0e0665c037fb4f914878e5209052160687775cfdfdafa5d406810380da",
+  "data": {
+    "sha256": "ce1f2b0e0665c037fb4f914878e5209052160687775cfdfdafa5d406810380da",
+    "sources": 15,
+    "queries": 450,
+    "split_sources": {
+      "train": 9,
+      "validation": 3,
+      "frozen_test": 3
+    },
+    "split_queries": {
+      "train": 270,
+      "validation": 90,
+      "frozen_test": 90
+    },
+    "split_route_counts": {
+      "train": {
+        "VISUAL": 90,
+        "SPEECH": 90,
+        "HYBRID": 90
+      },
+      "validation": {
+        "VISUAL": 30,
+        "SPEECH": 30,
+        "HYBRID": 30
+      },
+      "frozen_test": {
+        "VISUAL": 30,
+        "SPEECH": 30,
+        "HYBRID": 30
+      }
+    },
+    "route_counts": {
+      "VISUAL": 150,
+      "SPEECH": 150,
+      "HYBRID": 150
+    },
+    "provenance": "independently authored source scenarios",
+    "real_video_grounded": false
+  },
+  "baseline": {
+    "accuracy": 0.5,
+    "per_route": {
+      "VISUAL": {
+        "precision": 0.4225352112676056,
+        "recall": 1.0,
+        "f1": 0.5940594059405941
+      },
+      "SPEECH": {
+        "precision": 0.5,
+        "recall": 0.13333333333333333,
+        "f1": 0.2105263157894737
+      },
+      "HYBRID": {
+        "precision": 1.0,
+        "recall": 0.36666666666666664,
+        "f1": 0.5365853658536585
+      }
+    },
+    "confusion_matrix": {
+      "VISUAL": {
+        "VISUAL": 30,
+        "SPEECH": 0,
+        "HYBRID": 0
+      },
+      "SPEECH": {
+        "VISUAL": 26,
+        "SPEECH": 4,
+        "HYBRID": 0
+      },
+      "HYBRID": {
+        "VISUAL": 15,
+        "SPEECH": 4,
+        "HYBRID": 11
+      }
+    },
+    "confidence": {
+      "minimum": 0.4841110622093903,
+      "median": 0.8438625144368757,
+      "p95": 0.9939513850412306,
+      "maximum": 0.9988029716822181
+    },
+    "latency": {
+      "median_ms": 0.0272,
+      "p95_ms": 0.0414,
+      "samples": 9000
+    },
+    "diagnosis": {
+      "failures": 45,
+      "failure_rate": 0.5,
+      "failure_tags": {
+        "ambiguous_wording": 7,
+        "indirect_speech_intent": 25,
+        "lexical_overlap_trap": 3,
+        "long_query": 9,
+        "mixed_modality": 19,
+        "natural_question": 17,
+        "technical_terms": 13
+      },
+      "unseen_vocabulary_failures": 45,
+      "slices": {
+        "natural_question": {
+          "queries": 34,
+          "failures": 17,
+          "accuracy": 0.5
+        },
+        "long_query": {
+          "queries": 18,
+          "failures": 9,
+          "accuracy": 0.5
+        },
+        "technical_terms": {
+          "queries": 30,
+          "failures": 13,
+          "accuracy": 0.5666666666666667
+        },
+        "indirect_speech_intent": {
+          "queries": 26,
+          "failures": 25,
+          "accuracy": 0.038461538461538464
+        },
+        "indirect_visual_intent": {
+          "queries": 18,
+          "failures": 0,
+          "accuracy": 1
+        },
+        "mixed_modality": {
+          "queries": 30,
+          "failures": 19,
+          "accuracy": 0.36666666666666664
+        },
+        "ambiguous_wording": {
+          "queries": 12,
+          "failures": 7,
+          "accuracy": 0.4166666666666667
+        },
+        "lexical_overlap_trap": {
+          "queries": 7,
+          "failures": 3,
+          "accuracy": 0.5714285714285714
+        },
+        "unseen_vocabulary": {
+          "queries": 90,
+          "failures": 45,
+          "accuracy": 0.5
+        }
+      },
+      "failed_query_ids": [
+        "espresso-dialin-s01",
+        "espresso-dialin-h01",
+        "espresso-dialin-s02",
+        "espresso-dialin-h02",
+        "espresso-dialin-s03",
+        "espresso-dialin-h03",
+        "espresso-dialin-s04",
+        "espresso-dialin-h04",
+        "espresso-dialin-s05",
+        "espresso-dialin-h05",
+        "espresso-dialin-s06",
+        "espresso-dialin-h06",
+        "espresso-dialin-s07",
+        "espresso-dialin-h07",
+        "espresso-dialin-s08",
+        "espresso-dialin-h08",
+        "espresso-dialin-s09",
+        "espresso-dialin-h09",
+        "espresso-dialin-s10",
+        "wetland-survey-s01",
+        "wetland-survey-h01",
+        "wetland-survey-s03",
+        "wetland-survey-h03",
+        "wetland-survey-s05",
+        "wetland-survey-h05",
+        "wetland-survey-s06",
+        "wetland-survey-h06",
+        "wetland-survey-s07",
+        "wetland-survey-s08",
+        "wetland-survey-h08",
+        "wetland-survey-s09",
+        "wetland-survey-s10",
+        "printer-calibration-s01",
+        "printer-calibration-h01",
+        "printer-calibration-s02",
+        "printer-calibration-h02",
+        "printer-calibration-s03",
+        "printer-calibration-s04",
+        "printer-calibration-s05",
+        "printer-calibration-h05",
+        "printer-calibration-s06",
+        "printer-calibration-h06",
+        "printer-calibration-s07",
+        "printer-calibration-h09",
+        "printer-calibration-s10"
+      ]
+    }
+  },
+  "candidate_selection": {
+    "selected": "char_tfidf",
+    "validation_only": true,
+    "candidates": {
+      "word_tfidf": {
+        "validation": {
+          "accuracy": 0.9666666666666667,
+          "per_route": {
+            "VISUAL": {
+              "precision": 0.967741935483871,
+              "recall": 1.0,
+              "f1": 0.9836065573770492
+            },
+            "SPEECH": {
+              "precision": 0.9666666666666667,
+              "recall": 0.9666666666666667,
+              "f1": 0.9666666666666667
+            },
+            "HYBRID": {
+              "precision": 0.9655172413793104,
+              "recall": 0.9333333333333333,
+              "f1": 0.9491525423728815
+            }
+          },
+          "confusion_matrix": {
+            "VISUAL": {
+              "VISUAL": 30,
+              "SPEECH": 0,
+              "HYBRID": 0
+            },
+            "SPEECH": {
+              "VISUAL": 0,
+              "SPEECH": 29,
+              "HYBRID": 1
+            },
+            "HYBRID": {
+              "VISUAL": 1,
+              "SPEECH": 1,
+              "HYBRID": 28
+            }
+          },
+          "confidence": {
+            "minimum": 0.347304510109224,
+            "median": 0.3830567571442688,
+            "p95": 0.41170372131748567,
+            "maximum": 0.4233709142987671
+          },
+          "fallback_frequency": 0.0
+        },
+        "fallback": {
+          "threshold": 0.0,
+          "validation_accuracy": 0.9666666666666667,
+          "fallback_frequency": 0.0,
+          "calibrated_on": "validation"
+        },
+        "artifact_bytes": 110753,
+        "memory_bytes": 47719,
+        "parameters": 3483
+      },
+      "char_tfidf": {
+        "validation": {
+          "accuracy": 0.9888888888888889,
+          "per_route": {
+            "VISUAL": {
+              "precision": 1.0,
+              "recall": 0.9666666666666667,
+              "f1": 0.983050847457627
+            },
+            "SPEECH": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "HYBRID": {
+              "precision": 0.967741935483871,
+              "recall": 1.0,
+              "f1": 0.9836065573770492
+            }
+          },
+          "confusion_matrix": {
+            "VISUAL": {
+              "VISUAL": 29,
+              "SPEECH": 0,
+              "HYBRID": 1
+            },
+            "SPEECH": {
+              "VISUAL": 0,
+              "SPEECH": 30,
+              "HYBRID": 0
+            },
+            "HYBRID": {
+              "VISUAL": 0,
+              "SPEECH": 0,
+              "HYBRID": 30
+            }
+          },
+          "confidence": {
+            "minimum": 0.3458728875873121,
+            "median": 0.37725987805399436,
+            "p95": 0.40205225324220545,
+            "maximum": 0.4338718209761009
+          },
+          "fallback_frequency": 0.03333333333333333
+        },
+        "fallback": {
+          "threshold": 0.348785,
+          "validation_accuracy": 0.9888888888888889,
+          "fallback_frequency": 0.03333333333333333,
+          "calibrated_on": "validation"
+        },
+        "artifact_bytes": 731117,
+        "memory_bytes": 288922,
+        "parameters": 23919
+      },
+      "word_char_tfidf": {
+        "validation": {
+          "accuracy": 0.9888888888888889,
+          "per_route": {
+            "VISUAL": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "SPEECH": {
+              "precision": 1.0,
+              "recall": 0.9666666666666667,
+              "f1": 0.983050847457627
+            },
+            "HYBRID": {
+              "precision": 0.967741935483871,
+              "recall": 1.0,
+              "f1": 0.9836065573770492
+            }
+          },
+          "confusion_matrix": {
+            "VISUAL": {
+              "VISUAL": 30,
+              "SPEECH": 0,
+              "HYBRID": 0
+            },
+            "SPEECH": {
+              "VISUAL": 0,
+              "SPEECH": 29,
+              "HYBRID": 1
+            },
+            "HYBRID": {
+              "VISUAL": 0,
+              "SPEECH": 0,
+              "HYBRID": 30
+            }
+          },
+          "confidence": {
+            "minimum": 0.36182823497947597,
+            "median": 0.4265864139579919,
+            "p95": 0.4712081223606137,
+            "maximum": 0.5061179424277403
+          },
+          "fallback_frequency": 0.0
+        },
+        "fallback": {
+          "threshold": 0.0,
+          "validation_accuracy": 0.9888888888888889,
+          "fallback_frequency": 0.0,
+          "calibrated_on": "validation"
+        },
+        "artifact_bytes": 842126,
+        "memory_bytes": 336617,
+        "parameters": 27399
+      }
+    }
+  },
+  "best_candidate": {
+    "accuracy": 0.9555555555555556,
+    "per_route": {
+      "VISUAL": {
+        "precision": 0.967741935483871,
+        "recall": 1.0,
+        "f1": 0.9836065573770492
+      },
+      "SPEECH": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316
+      },
+      "HYBRID": {
+        "precision": 0.90625,
+        "recall": 0.9666666666666667,
+        "f1": 0.9354838709677419
+      }
+    },
+    "confusion_matrix": {
+      "VISUAL": {
+        "VISUAL": 30,
+        "SPEECH": 0,
+        "HYBRID": 0
+      },
+      "SPEECH": {
+        "VISUAL": 0,
+        "SPEECH": 27,
+        "HYBRID": 3
+      },
+      "HYBRID": {
+        "VISUAL": 1,
+        "SPEECH": 0,
+        "HYBRID": 29
+      }
+    },
+    "confidence": {
+      "minimum": 0.34600898365824073,
+      "median": 0.37800078081905014,
+      "p95": 0.39976285774036113,
+      "maximum": 0.41987751250649663
+    },
+    "fallback_frequency": 0.03333333333333333,
+    "architecture": "char_tfidf",
+    "artifact_bytes": 731122,
+    "parameters": 23919,
+    "latency": {
+      "median_ms": 2.7706,
+      "p95_ms": 3.367654999999999,
+      "samples": 9000
+    },
+    "memory_bytes": 288922,
+    "diagnosis": {
+      "failures": 4,
+      "failure_rate": 0.044444444444444446,
+      "failure_tags": {
+        "indirect_speech_intent": 3,
+        "lexical_overlap_trap": 1,
+        "long_query": 1,
+        "mixed_modality": 1,
+        "natural_question": 1,
+        "technical_terms": 1
+      },
+      "unseen_vocabulary_failures": 4,
+      "slices": {
+        "natural_question": {
+          "queries": 34,
+          "failures": 1,
+          "accuracy": 0.9705882352941176
+        },
+        "long_query": {
+          "queries": 18,
+          "failures": 1,
+          "accuracy": 0.9444444444444444
+        },
+        "technical_terms": {
+          "queries": 30,
+          "failures": 1,
+          "accuracy": 0.9666666666666667
+        },
+        "indirect_speech_intent": {
+          "queries": 26,
+          "failures": 3,
+          "accuracy": 0.8846153846153846
+        },
+        "indirect_visual_intent": {
+          "queries": 18,
+          "failures": 0,
+          "accuracy": 1
+        },
+        "mixed_modality": {
+          "queries": 30,
+          "failures": 1,
+          "accuracy": 0.9666666666666667
+        },
+        "ambiguous_wording": {
+          "queries": 12,
+          "failures": 0,
+          "accuracy": 1
+        },
+        "lexical_overlap_trap": {
+          "queries": 7,
+          "failures": 1,
+          "accuracy": 0.8571428571428571
+        },
+        "unseen_vocabulary": {
+          "queries": 90,
+          "failures": 4,
+          "accuracy": 0.9555555555555556
+        }
+      },
+      "failed_query_ids": [
+        "espresso-dialin-s02",
+        "espresso-dialin-h08",
+        "wetland-survey-s01",
+        "printer-calibration-s01"
+      ]
+    }
+  },
+  "fallback": {
+    "used": true,
+    "threshold": 0.348785,
+    "frozen_test_frequency": 0.03333333333333333,
+    "frozen_test_accuracy_without_fallback": 0.9777777777777777,
+    "frozen_test_accuracy": 0.9555555555555556
+  },
+  "gate": {
+    "accuracy": true,
+    "each_route_recall": true,
+    "median_latency": true,
+    "p95_latency": true,
+    "retrieval_unchanged": true,
+    "acceptance_leakage_absent": true,
+    "passed": true
+  },
+  "second_frozen_run": {
+    "completed": true,
+    "deterministic": true,
+    "metrics_equal": true
+  },
+  "integrity": {
+    "acceptance_video_leakage_detected": false,
+    "protected_acceptance_queries_checked": 30,
+    "protected_acceptance_manifest_sha256": "075d792d05f08e443b3f638e69f93a3f1c24d54dbd472052c1075bb478da11f8",
+    "source_disjoint_verified": true,
+    "test_used_for_selection": false
+  },
+  "production": {
+    "router_promoted": false,
+    "retrieval_stack_modified": false,
+    "explicit_modes_preserved": true,
+    "artifact_written_to_production": false
+  },
+  "decision": {
+    "code": "E",
+    "reason": "The 450-query source-card set is balanced and source-disjoint but is not grounded in independently reviewed real videos, so it is insufficient evidence for production promotion.",
+    "next_milestone": "Collect independently reviewed real-video route annotations from new source groups, freeze a new source-disjoint test, and rerun the same classical comparison.",
+    "new_independent_acceptance_video_required_after_promotion": true
+  }
+}
