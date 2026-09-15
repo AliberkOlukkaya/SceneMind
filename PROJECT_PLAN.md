@@ -16,8 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Long-video ingestion and resource hardening is complete. Conservative search wording is implemented without changing CLIP, Whisper, BM25, RRF, routing, sampling, or ranking. AUTO remains default; manual modes remain visible. The final English long-video run is prepared but blocked with decision D because the local 45-minute source is synthetic repetition and the longest real candidate is only 22:49 and silent.
+Long-video ingestion and resource hardening is complete. Conservative search wording is implemented without changing CLIP, Whisper, BM25, RRF, routing, sampling, or ranking. AUTO remains default; manual modes remain visible. Final English long-video acceptance has now run on a real 54:11 English technical presentation. Ingest and negative UX gates pass, but routing and Top-k gates fail: 56.67% AUTO routing and 50.00%/65.38%/65.38% useful Top-1/3/5.
 
-The bounded Turkish compatibility milestone remains preserved as future multilingual evidence; Turkish is outside the English-first v1.0 requirement. Unsupported-query rejection has been measured and rejected. The next bounded step is to obtain eligible real media, freeze its human-written 25-40 query manifest, and execute final acceptance once. Phases 8-9 remain deferred.
+The bounded Turkish compatibility milestone remains preserved as future multilingual evidence; Turkish is outside the English-first v1.0 requirement. Unsupported-query rejection has been measured and rejected. Decision C identifies exactly one next step: source-disjoint English AUTO-router generalization for natural interrogative technical queries. The failed acceptance media stays held out and cannot tune that work. A passing candidate would require a new long-video acceptance source and newly frozen labels. Phases 8-9 remain deferred.
 
 Phases 0-6 and the bounded local Phase 10 follow-up are implemented. Earlier retrieval experiments and the first personal acceptance run remain frozen evidence. The Turkish compatibility result above supersedes the former next-milestone statement; no candidate was promoted.

@@ -83,6 +83,7 @@ def test_final_summary_applies_frozen_gates_and_negative_ux(tmp_path):
             "useful_top_1": not query["negative"],
             "useful_top_3": not query["negative"],
             "useful_top_5": not query["negative"],
+            "best_useful_result_rank": None if query["negative"] else 1,
             "timestamp_quality": "direct",
             "user_usefulness": "PASS",
             "failure_categories": [], "failure_reason": "Human-reviewed useful result.",
@@ -103,3 +104,7 @@ def test_final_summary_applies_frozen_gates_and_negative_ux(tmp_path):
     assert result["gate"]["passed"] is True
     assert result["auto_routing_accuracy"] == 1
     assert result["negative_ux_understandable_rate"] == 1
+    assert result["negative_misleading_rate"] == 0
+    assert result["mrr_at_5"] == 1
+    assert result["positive_outcomes"] == {"PASS": 28}
+    assert sum(group["queries"] for group in result["category_breakdown"].values()) == 28

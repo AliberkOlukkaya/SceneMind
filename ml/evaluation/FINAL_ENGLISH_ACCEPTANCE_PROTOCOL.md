@@ -2,11 +2,9 @@
 
 The final acceptance run requires at least one real, continuous 30–60 minute English-speaking lecture, tutorial, technical presentation, or software/project demonstration. It must be available for legal local testing and must not have contributed to SceneMind tuning or threshold selection. Synthetic repetition and concatenation are infrastructure fixtures only.
 
-## Current readiness
+## Current result
 
-The 2026-09-15 exact-SHA inventory found 41 unique media candidates; 33 decoded and eight were deliberately corrupt/unreadable test artifacts. The only decoded 30–60 minute file is the 2,700-second stress fixture, created by repeating a short Blender demo. The longest real content is 1,369.633 seconds (22:49) and silent; two differently encoded copies exist. Final acceptance therefore has decision **D — acceptance not run**. No quality values are inferred from these files.
-
-The exact missing input is one real continuous video with English speech, duration from 1,800 through 3,600 seconds, documented local usage rights, and no previous tuning use.
+After the initial inventory produced decision D, an eligible CC BY 4.0 real continuous 54:11 English technical presentation was supplied. The protocol was executed once with 30 frozen queries. Decision **C — FINAL ACCEPTANCE FAILED**: ingestion and conservative negative UX passed, while AUTO routing and positive Top-k failed. See [FINAL_ENGLISH_ACCEPTANCE_RESULTS.md](FINAL_ENGLISH_ACCEPTANCE_RESULTS.md). The failed media and labels remain held out and cannot be used for tuning; any later final acceptance requires a new independently reviewed source and manifest.
 
 ## Freeze the private manifest
 

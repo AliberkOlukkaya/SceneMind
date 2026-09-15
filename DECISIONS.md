@@ -1,5 +1,9 @@
 # Decisions
 
+## 027 — Fail final acceptance on AUTO routing generalization
+
+Freeze 30 English queries before retrieval over one independently reviewed, CC BY 4.0, real continuous 54:11 technical presentation. Run normal HTTP upload, durable FFmpeg ingest, Whisper, CLIP, persistence, and production AUTO without tuning or changing retrieval. Processing succeeds in 579.258 seconds with no retry or residue. Search does not: routing is 56.67% against the frozen 90% gate, and positive useful Top-1/3/5 is 50.00%/65.38%/65.38% against preferred 70% and required 85%/90%. Negative conservative UX passes 4/4. Explicit diagnostics recover six weak cases through their frozen Speech or Hybrid route. Choose decision C and name one dominant blocker: AUTO routing generalization on natural English interrogative technical queries. Do not tune or relabel this acceptance source, do not change production in this milestone, and do not broaden model research. The next bounded milestone uses source-disjoint routing evidence; any later acceptance uses new media and newly frozen ground truth.
+
 ## 026 — Ship conservative candidate wording; block final acceptance on real media
 
 Keep the validated CLIP/Whisper/BM25/RRF/AUTO core unchanged. Present ranked output as “Most relevant moments,” explain once that possible moments may appear without an exact match, hide raw scores, and preserve timestamp, transcript, evidence, and click-to-seek. Do not infer absence from an empty or weak list. Inventory local media before final acceptance: the sole 30–60 minute source is a synthetic repeated stress fixture, while the longest real source is 1,369.633 seconds and silent. Choose decision D and do not fabricate routing or Top-k metrics. Prepare an English-only checksum-bound validator and protocol; resume only when a real continuous English-speaking 1,800–3,600 second video with usage rights and no tuning history is available.

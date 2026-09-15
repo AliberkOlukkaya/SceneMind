@@ -23,6 +23,12 @@ FAILURES = {
     "compositional reasoning", "action/temporal reasoning", "OCR required",
     "unsupported query", "UI/product friction",
 }
+CATEGORY_GROUPS = {
+    "spoken_concept": "Speech", "explained_topic": "Speech",
+    "mentioned_technical_term": "Speech", "visual_object": "Visual",
+    "visual_interface_or_scene": "Visual", "hybrid_spoken_visual": "Hybrid",
+    "compositional": "Compositional", "plausible_negative": "Negative",
+}
 
 
 def sha256(path: Path) -> str:
@@ -152,7 +158,8 @@ def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
         expected_route = _route(query["expected_route"])
         rows.append({**row, "expected_route": expected_route,
                      "route_correct": route == expected_route,
-                     "negative": query["negative"]})
+                     "negative": query["negative"], "category": query["category"],
+                     "category_group": CATEGORY_GROUPS[query["category"]]})
     positives = [row for row in rows if not row["negative"]]
     negatives = [row for row in rows if row["negative"]]
     resources = observations.get("pipeline", {})
@@ -170,6 +177,27 @@ def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
         raise ValueError("pipeline failures must be a list")
     rates = {f"useful_top_{depth}": sum(row[f"useful_top_{depth}"] for row in positives)
              / len(positives) for depth in (1, 3, 5)}
+    reciprocal_ranks = []
+    for row in positives:
+        rank = row.get("best_useful_result_rank")
+        if rank is not None and (not isinstance(rank, int) or not 1 <= rank <= 5):
+            raise ValueError(f"best useful rank must be 1-5 or null: {row['query_id']}")
+        if (rank is None) != (not row["useful_top_5"]):
+            raise ValueError(f"best useful rank must agree with Top-5: {row['query_id']}")
+        if rank is not None and (row["useful_top_1"] != (rank == 1)
+                                 or row["useful_top_3"] != (rank <= 3)):
+            raise ValueError(f"best useful rank must agree with Top-k: {row['query_id']}")
+        reciprocal_ranks.append(0 if rank is None else 1 / rank)
+    category_breakdown = {}
+    for name in ("Speech", "Visual", "Hybrid", "Compositional"):
+        group = [row for row in positives if row["category_group"] == name]
+        if group:
+            category_breakdown[name] = {
+                "queries": len(group),
+                **{f"useful_top_{depth}": sum(row[f"useful_top_{depth}"] for row in group)
+                   / len(group) for depth in (1, 3, 5)},
+                "outcomes": dict(Counter(row["user_usefulness"].upper() for row in group)),
+            }
     routing = sum(row["route_correct"] for row in rows) / len(rows)
     latencies = [float(row["search_latency_ms"]) for row in rows]
     gate = {
@@ -180,14 +208,23 @@ def summarize(manifest_path: Path, observations_path: Path) -> dict[str, Any]:
     }
     return {
         "manifest_sha256": validated["manifest_sha256"], "queries": len(rows),
+        "positive_queries": len(positives), "negative_queries": len(negatives),
         "auto_routing_accuracy": routing, **rates,
+        "mrr_at_5": sum(reciprocal_ranks) / len(reciprocal_ranks),
+        "positive_outcomes": dict(Counter(row["user_usefulness"].upper()
+                                           for row in positives)),
+        "category_breakdown": category_breakdown,
         "useful_top_1_preferred_gate": rates["useful_top_1"] >= 0.70,
         "negative_ux_understandable_rate": (
             sum(row["conservative_ux_understandable"] for row in negatives) / len(negatives)
             if negatives else None
         ),
+        "negative_misleading_rate": (
+            sum(not row["conservative_ux_understandable"] for row in negatives) / len(negatives)
+            if negatives else None
+        ),
         "search_latency_ms": {"median": _percentile(latencies, 0.5),
-                              "p95": _percentile(latencies, 0.95)},
+                              "p95": _percentile(latencies, 0.95), "max": max(latencies)},
         "pipeline": resources, "failure_categories": dict(failures),
         "gate": {**gate, "passed": all(gate.values())},
     }

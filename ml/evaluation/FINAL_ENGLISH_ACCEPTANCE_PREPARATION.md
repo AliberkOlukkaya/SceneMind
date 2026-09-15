@@ -1,5 +1,7 @@
 # Final English acceptance preparation result
 
+Historical note: this document records the pre-run inventory decision. Eligible media was later supplied and the completed decision C result is in [FINAL_ENGLISH_ACCEPTANCE_RESULTS.md](FINAL_ENGLISH_ACCEPTANCE_RESULTS.md).
+
 Decision: **D — acceptance not run**.
 
 Conservative search UX is implemented without changing retrieval. AUTO remains default; Visual, Speech, and Hybrid overrides remain available. Results are titled “Most relevant moments,” described as possible matches ranked by relevance, and no longer display raw scores. Empty candidate lists suggest another mode or wording without claiming the requested content is absent.
