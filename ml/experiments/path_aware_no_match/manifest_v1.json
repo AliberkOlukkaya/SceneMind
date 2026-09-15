@@ -1,0 +1,1513 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "path-aware-no-match-v1",
+  "annotation_status": "frozen",
+  "annotation_frozen_at": "2026-09-15T12:00:00+03:00",
+  "annotation_policy": "All English queries, path labels, presence labels, and positive intervals were frozen after source, transcript, and contact-sheet review and before any no-match rule fitting or held-out inference. Only calibration rows may select rules. The personal acceptance suite remains untouched.",
+  "personal_acceptance_manifest_sha256": "6849b08b1c18f75a28f0783a1898e4b625a7ead16f8c67a6086c5c04de949ddf",
+  "negative_taxonomy": {
+    "A": "completely unrelated",
+    "B": "same domain but absent",
+    "C": "same object, wrong attribute",
+    "D": "same object, wrong action",
+    "E": "same scene, absent object",
+    "F": "visually plausible but absent",
+    "G": "related spoken concept never mentioned",
+    "H": "plausible technical term absent",
+    "I": "compositional mismatch"
+  },
+  "sources": [
+    {
+      "source_id": "translate-meta-tutorial",
+      "split": "calibration",
+      "asset_set": "query-routing",
+      "path": "data/query-routing/sources/video-tutorial.webm",
+      "domain": "tutorial",
+      "title": "Video tutorial.webm",
+      "source_group": "commons-akwugo-translate-meta",
+      "page": "https://commons.wikimedia.org/wiki/File:Video_tutorial.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Video_tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "Akwugo",
+      "sha256": "7f8f412d4e68b259eb5571f289305f65408d717e14b1df6fa752a012194142fb",
+      "duration_seconds": 98.99,
+      "queries": [
+        {
+          "query_id": "translate-v-page",
+          "query": "Where does the committee page appear?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              25
+            ]
+          ],
+          "case": "visual noun and appear"
+        },
+        {
+          "query_id": "translate-v-language",
+          "query": "Find the language selection screen.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              25,
+              45
+            ]
+          ],
+          "case": "same language keyword, visual intent"
+        },
+        {
+          "query_id": "translate-v-keyboard",
+          "query": "Where is the on-screen keyboard visible?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              25,
+              45
+            ],
+            [
+              50,
+              96
+            ]
+          ],
+          "case": "spatial visual evidence"
+        },
+        {
+          "query_id": "translate-v-editor",
+          "query": "Find the translated text editor.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              45,
+              96
+            ]
+          ],
+          "case": "concrete interface"
+        },
+        {
+          "query_id": "translate-s-metawiki",
+          "query": "When does the narrator say MetaWiki?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              8
+            ]
+          ],
+          "case": "explicit say"
+        },
+        {
+          "query_id": "translate-s-languages",
+          "query": "Where does she mention other languages?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              14,
+              22
+            ]
+          ],
+          "case": "explicit mention"
+        },
+        {
+          "query_id": "translate-s-publish",
+          "query": "When does she say publish?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              55,
+              62
+            ],
+            [
+              91,
+              96
+            ]
+          ],
+          "case": "quoted spoken keyword"
+        },
+        {
+          "query_id": "translate-s-code",
+          "query": "Find where she explains how to preserve code.",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              69,
+              92
+            ]
+          ],
+          "case": "abstract spoken explanation"
+        },
+        {
+          "query_id": "translate-h-language",
+          "query": "When does she explain choosing a language while the language menu is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              25,
+              40
+            ]
+          ],
+          "case": "speech plus visible interface"
+        },
+        {
+          "query_id": "translate-h-editor",
+          "query": "Find where she says add the translation while the editor is shown.",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              49,
+              60
+            ]
+          ],
+          "case": "spoken instruction plus screen"
+        },
+        {
+          "query_id": "translate-h-code",
+          "query": "When does she discuss code while square brackets are on screen?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              69,
+              92
+            ]
+          ],
+          "case": "spoken concept plus visual symbol"
+        },
+        {
+          "query_id": "translate-h-publish",
+          "query": "Find the section about publishing while the publish control is visible.",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              55,
+              62
+            ],
+            [
+              91,
+              96
+            ]
+          ],
+          "case": "ambiguous topic plus visible control"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nv-dog",
+          "query": "Find a dog beside the on-screen keyboard.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "E",
+          "case": "same scene, absent object"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nv-red",
+          "query": "Find the red translation editor.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nv-close",
+          "query": "Find a person closing the laptop.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "D",
+          "case": "same object, wrong action"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nv-chart",
+          "query": "Find a pie chart on the committee page.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "F",
+          "case": "visually plausible but absent"
+        },
+        {
+          "query_id": "translate-meta-tutorial-ns-password",
+          "query": "Where does she explain resetting a password?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "translate-meta-tutorial-ns-neural",
+          "query": "When does she mention a neural network?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "translate-meta-tutorial-ns-pdf",
+          "query": "Where does she discuss downloading a PDF?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "G",
+          "case": "related spoken concept never mentioned"
+        },
+        {
+          "query_id": "translate-meta-tutorial-ns-shortcut",
+          "query": "When does she say the Ctrl-S keyboard shortcut?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "H",
+          "case": "plausible technical term absent"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nh-french",
+          "query": "Where does she mention French while a French flag is visible?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "I",
+          "case": "compositional mismatch"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nh-login",
+          "query": "Find where she explains logging in while a profile photo is shown.",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nh-delete",
+          "query": "When does she say delete while a red button appears?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "translate-meta-tutorial-nh-video",
+          "query": "Where does she discuss uploading video while a map is on screen?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        }
+      ]
+    },
+    {
+      "source_id": "demo-production-tutorial",
+      "split": "calibration",
+      "asset_set": "query-routing",
+      "path": "data/query-routing/sources/demo-video-tutorial.webm",
+      "domain": "project_demo",
+      "title": "Demo Video Tutorial.webm",
+      "source_group": "commons-shagzhina-demo-production",
+      "page": "https://commons.wikimedia.org/wiki/File:Demo_Video_Tutorial.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Demo_Video_Tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attribution": "AlexandraShagzhina",
+      "sha256": "25a857b6896551f21c7d6c50181ad4451a903b53580fd5563af2c2a6bc2ae40f",
+      "duration_seconds": 199.916,
+      "queries": [
+        {
+          "query_id": "demo-v-title",
+          "query": "Find the white title card.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              10
+            ]
+          ],
+          "case": "color and visual object"
+        },
+        {
+          "query_id": "demo-v-analysis",
+          "query": "Where does the Analysis slide appear?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              40,
+              70
+            ]
+          ],
+          "case": "same topic, visual intent"
+        },
+        {
+          "query_id": "demo-v-table",
+          "query": "Find the document with the colored table.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              70,
+              95
+            ]
+          ],
+          "case": "concrete screen layout"
+        },
+        {
+          "query_id": "demo-v-timeline",
+          "query": "Where is the video editor timeline visible?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              128,
+              149
+            ]
+          ],
+          "case": "concrete interface"
+        },
+        {
+          "query_id": "demo-s-addie",
+          "query": "Where does she say ADDIE model?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              22,
+              39
+            ]
+          ],
+          "case": "explicit say"
+        },
+        {
+          "query_id": "demo-s-beginner",
+          "query": "When does she mention beginners?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              13,
+              22
+            ],
+            [
+              47,
+              53
+            ]
+          ],
+          "case": "explicit mention"
+        },
+        {
+          "query_id": "demo-s-recording",
+          "query": "Find where she explains screen recording tools.",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              106,
+              128
+            ]
+          ],
+          "case": "spoken explanation with visual noun"
+        },
+        {
+          "query_id": "demo-s-captions",
+          "query": "When does she discuss translatable captions?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              148,
+              173
+            ]
+          ],
+          "case": "abstract spoken concept"
+        },
+        {
+          "query_id": "demo-h-design",
+          "query": "When does she describe the design phase while the script template is shown?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              70,
+              95
+            ]
+          ],
+          "case": "speech plus visible document"
+        },
+        {
+          "query_id": "demo-h-equipment",
+          "query": "Find where she discusses equipment while the Development slide is visible.",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              95,
+              128
+            ]
+          ],
+          "case": "speech plus slide"
+        },
+        {
+          "query_id": "demo-h-editing",
+          "query": "When does she explain editing while the video editor is on screen?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              128,
+              149
+            ]
+          ],
+          "case": "speech plus interface"
+        },
+        {
+          "query_id": "demo-h-subtitles",
+          "query": "Where does she talk about subtitles while YouTube Studio appears?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              148,
+              181
+            ]
+          ],
+          "case": "speech plus interface"
+        },
+        {
+          "query_id": "demo-production-tutorial-nv-green",
+          "query": "Find the green title card.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "demo-production-tutorial-nv-code",
+          "query": "Find a source-code editor on screen.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "demo-production-tutorial-nv-camera",
+          "query": "Find a woman speaking into a camera.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "F",
+          "case": "visually plausible but absent"
+        },
+        {
+          "query_id": "demo-production-tutorial-nv-drag",
+          "query": "Find someone dragging an audio clip on the timeline.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "D",
+          "case": "same object, wrong action"
+        },
+        {
+          "query_id": "demo-production-tutorial-ns-premiere",
+          "query": "Where does she mention Adobe Premiere Pro?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "H",
+          "case": "plausible technical term absent"
+        },
+        {
+          "query_id": "demo-production-tutorial-ns-story",
+          "query": "Where does she explain storyboarding?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "G",
+          "case": "related spoken concept never mentioned"
+        },
+        {
+          "query_id": "demo-production-tutorial-ns-budget",
+          "query": "When does she discuss the production budget?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "demo-production-tutorial-ns-cooking",
+          "query": "When does she explain baking a cake?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "demo-production-tutorial-nh-green",
+          "query": "Where does she say analysis while a green Analysis slide is visible?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "demo-production-tutorial-nh-camera",
+          "query": "Find where she explains camera settings while a presenter is on screen.",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "I",
+          "case": "compositional mismatch"
+        },
+        {
+          "query_id": "demo-production-tutorial-nh-premiere",
+          "query": "Where does she mention Premiere while its timeline is shown?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "H",
+          "case": "plausible technical term absent"
+        },
+        {
+          "query_id": "demo-production-tutorial-nh-map",
+          "query": "When does she discuss uploading while a world map appears?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "E",
+          "case": "same scene, absent object"
+        }
+      ]
+    },
+    {
+      "source_id": "mitx-course-overview",
+      "split": "calibration",
+      "asset_set": "query-routing",
+      "path": "data/query-routing/sources/course-overview-6.002x.webm",
+      "domain": "lecture",
+      "title": "Course Overview (6.002x).webm",
+      "source_group": "commons-mitx-6002-course-overview",
+      "page": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x).webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "attribution": "mitxvtest / MITx",
+      "sha256": "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3",
+      "duration_seconds": 662.398,
+      "queries": [
+        {
+          "query_id": "course-v-heading",
+          "query": "Where does the red What is engineering heading appear?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              20,
+              96
+            ]
+          ],
+          "case": "color and visible text region"
+        },
+        {
+          "query_id": "course-v-boxes",
+          "query": "Find the blue boxes in the course diagram.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              108,
+              662
+            ]
+          ],
+          "case": "concrete color and diagram"
+        },
+        {
+          "query_id": "course-v-circuit",
+          "query": "Where is the circuit diagram visible?",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              275,
+              365
+            ]
+          ],
+          "case": "visual object"
+        },
+        {
+          "query_id": "course-v-map",
+          "query": "Find the course map with filters and digital gates.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              400,
+              662
+            ]
+          ],
+          "case": "same technical nouns, visual intent"
+        },
+        {
+          "query_id": "course-s-maxwell",
+          "query": "When does he mention Maxwell's equations?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              40,
+              59
+            ],
+            [
+              79,
+              109
+            ],
+            [
+              224,
+              242
+            ],
+            [
+              264,
+              276
+            ],
+            [
+              590,
+              603
+            ]
+          ],
+          "case": "explicit mention"
+        },
+        {
+          "query_id": "course-s-ohm",
+          "query": "Where does the lecturer explain Ohm's law?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              217,
+              265
+            ]
+          ],
+          "case": "explicit explanation"
+        },
+        {
+          "query_id": "course-s-digital",
+          "query": "Find where he discusses the digital abstraction.",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              413,
+              458
+            ]
+          ],
+          "case": "abstract spoken concept"
+        },
+        {
+          "query_id": "course-s-python",
+          "query": "When does he say Python?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              498,
+              506
+            ]
+          ],
+          "case": "same keyword, explicit say"
+        },
+        {
+          "query_id": "course-h-engineering",
+          "query": "When does he explain engineering while the engineering heading is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              18,
+              41
+            ]
+          ],
+          "case": "speech plus visible heading"
+        },
+        {
+          "query_id": "course-h-measurements",
+          "query": "Find where he discusses voltage measurements while the table is being drawn.",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              148,
+              181
+            ]
+          ],
+          "case": "speech plus animated visual"
+        },
+        {
+          "query_id": "course-h-lumped",
+          "query": "When does he explain lumped circuit abstraction while its diagram grows?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              287,
+              365
+            ]
+          ],
+          "case": "speech plus diagram"
+        },
+        {
+          "query_id": "course-h-python",
+          "query": "Where does he mention Python while the course map is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              498,
+              506
+            ]
+          ],
+          "case": "same keyword requires both paths"
+        },
+        {
+          "query_id": "mitx-course-overview-nv-green",
+          "query": "Find the green engineering heading.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "mitx-course-overview-nv-prof",
+          "query": "Find the professor standing beside the diagram.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "E",
+          "case": "same scene, absent object"
+        },
+        {
+          "query_id": "mitx-course-overview-nv-scope",
+          "query": "Find an oscilloscope trace on the slide.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "F",
+          "case": "visually plausible but absent"
+        },
+        {
+          "query_id": "mitx-course-overview-nv-erase",
+          "query": "Find a hand erasing the circuit diagram.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "D",
+          "case": "same object, wrong action"
+        },
+        {
+          "query_id": "mitx-course-overview-ns-kirchhoff",
+          "query": "Where does he explain Kirchhoff?s voltage law?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "mitx-course-overview-ns-fourier",
+          "query": "When does he mention the Fourier transform?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "H",
+          "case": "plausible technical term absent"
+        },
+        {
+          "query_id": "mitx-course-overview-ns-quantum",
+          "query": "Where does he discuss quantum entanglement?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "mitx-course-overview-ns-homework",
+          "query": "Where does he explain the weekly homework policy?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "G",
+          "case": "related spoken concept never mentioned"
+        },
+        {
+          "query_id": "mitx-course-overview-nh-prof",
+          "query": "Where does he mention Python while the professor is visible?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "I",
+          "case": "compositional mismatch"
+        },
+        {
+          "query_id": "mitx-course-overview-nh-green",
+          "query": "When does he discuss Maxwell?s equations while a green heading appears?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "mitx-course-overview-nh-kirchhoff",
+          "query": "Where does he explain Kirchhoff?s law while a circuit board is shown?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "mitx-course-overview-nh-robot",
+          "query": "When does he discuss filters while a robot is on screen?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "E",
+          "case": "same scene, absent object"
+        }
+      ]
+    },
+    {
+      "source_id": "street-traffic",
+      "split": "heldout",
+      "asset_set": "natural-v2",
+      "path": "data/natural-v2/source/street-traffic.webm",
+      "domain": "street",
+      "title": "street-traffic",
+      "source_group": "commons-san-francisco-street-traffic",
+      "page": "https://commons.wikimedia.org/wiki/File:Street_traffic.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Street_traffic.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "YouTube user Editor; Street traffic",
+      "sha256": "e5facb24baf755f0c1193999d823e99f6032661ad2bdef5cc28cc1cbbfde03e2",
+      "duration_seconds": 35.004,
+      "queries": [
+        {
+          "query_id": "street-object-bus",
+          "query": "Find a city bus.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              35.004
+            ]
+          ],
+          "case": "Multiple large buses are visible throughout."
+        },
+        {
+          "query_id": "street-object-bicycle",
+          "query": "Find a bicycle.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              12,
+              18
+            ],
+            [
+              25,
+              31
+            ]
+          ],
+          "case": "Cyclists are small relative to buses and cars."
+        },
+        {
+          "query_id": "street-scene-intersection",
+          "query": "Find the busy street intersection.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              35.004
+            ]
+          ],
+          "case": "Urban multi-lane street context is persistent."
+        },
+        {
+          "query_id": "street-compositional-cyclist-bus",
+          "query": "Find a cyclist riding beside a bus.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              12,
+              18
+            ],
+            [
+              25,
+              31
+            ]
+          ],
+          "case": "Requires small cyclist and bus relationship."
+        },
+        {
+          "query_id": "street-action-crossing",
+          "query": "Find when pedestrians cross the street.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              27,
+              35.004
+            ]
+          ],
+          "case": "Pedestrians enter near the end and move across lanes."
+        },
+        {
+          "query_id": "street-action-traffic",
+          "query": "Find moving city traffic.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              35.004
+            ]
+          ],
+          "case": "Motion is continuous but static frames only imply it."
+        },
+        {
+          "query_id": "street-negative-dog",
+          "query": "Find a dog crossing the street.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No dog is visible.",
+          "negative_taxonomy": "E"
+        },
+        {
+          "query_id": "street-negative-classroom",
+          "query": "Find a classroom with a projector.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No indoor scene is present.",
+          "negative_taxonomy": "A"
+        },
+        {
+          "query_id": "street-negative-swimming",
+          "query": "Find a person swimming.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No water or swimming is present.",
+          "negative_taxonomy": "A"
+        },
+        {
+          "query_id": "street-negative-airplane",
+          "query": "Find an airplane in the sky.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No airplane is visible.",
+          "negative_taxonomy": "F"
+        },
+        {
+          "query_id": "street-traffic-nv-tram",
+          "query": "Find a red tram at the intersection.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "street-traffic-nv-police",
+          "query": "Find a police officer directing traffic.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "F",
+          "case": "visually plausible but absent"
+        }
+      ]
+    },
+    {
+      "source_id": "ball-throwing",
+      "split": "heldout",
+      "asset_set": "natural-v2",
+      "path": "data/natural-v2/source/throwing.webm",
+      "domain": "sports",
+      "title": "ball-throwing",
+      "source_group": "commons-nesnad-throwing",
+      "page": "https://commons.wikimedia.org/wiki/File:Throwing-slowmotion-man2013-stabilized.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Throwing-slowmotion-man2013-stabilized.webm",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Nesnad; Throwing-slowmotion-man2013-stabilized",
+      "sha256": "bcb20541112226cccd9f4e123ba7af69dcdb2333b4d5ac8b018f6cc4639e639c",
+      "duration_seconds": 13.733,
+      "queries": [
+        {
+          "query_id": "throw-object-man",
+          "query": "Find the man in a black shirt.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              13.733
+            ]
+          ],
+          "case": "Adult man remains visible throughout."
+        },
+        {
+          "query_id": "throw-object-ball",
+          "query": "Find the yellow ball.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              4.5,
+              9
+            ]
+          ],
+          "case": "Ball is very small except near the hand."
+        },
+        {
+          "query_id": "throw-scene-park",
+          "query": "Find the outdoor park path.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              13.733
+            ]
+          ],
+          "case": "Path, grass, trees and playground equipment persist."
+        },
+        {
+          "query_id": "throw-compositional-holding",
+          "query": "Find the man holding a yellow ball.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              4.5,
+              8
+            ]
+          ],
+          "case": "Small object-person relation."
+        },
+        {
+          "query_id": "throw-compositional-children",
+          "query": "Find children standing near the man.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              13.733
+            ]
+          ],
+          "case": "At least two children appear below the man."
+        },
+        {
+          "query_id": "throw-action-ball",
+          "query": "Find when the man throws the ball.",
+          "route": "VISUAL",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              5,
+              11
+            ]
+          ],
+          "case": "Slow-motion action spans preparation, release and follow-through."
+        },
+        {
+          "query_id": "throw-negative-bicycle",
+          "query": "Find a person riding a bicycle.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No bicycle is visible.",
+          "negative_taxonomy": "E"
+        },
+        {
+          "query_id": "throw-negative-car",
+          "query": "Find a city bus.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No vehicles are visible.",
+          "negative_taxonomy": "A"
+        },
+        {
+          "query_id": "throw-negative-swimming",
+          "query": "Find someone swimming in water.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "case": "No water or swimmer is visible.",
+          "negative_taxonomy": "A"
+        },
+        {
+          "query_id": "ball-throwing-nv-red",
+          "query": "Find the red ball.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "ball-throwing-nv-kick",
+          "query": "Find the man kicking the yellow ball.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "D",
+          "case": "same object, wrong action"
+        },
+        {
+          "query_id": "ball-throwing-nv-dog",
+          "query": "Find a dog standing on the park path.",
+          "route": "VISUAL",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "E",
+          "case": "same scene, absent object"
+        }
+      ]
+    },
+    {
+      "source_id": "find-link-talk",
+      "split": "heldout",
+      "asset_set": "natural-v2",
+      "path": "data/natural-v2/source/find-link-talk.webm",
+      "domain": "education",
+      "title": "find-link-talk",
+      "source_group": "commons-wikimania-find-link-talk",
+      "page": "https://commons.wikimedia.org/wiki/File:Find_link_-_lightning_talk.webm",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Find_link_-_lightning_talk.webm",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "Magnus Sälgö; Find link lightning talk",
+      "sha256": "530ffecb380b3a36165c7918ac191eca4a06b90546025f6d49cf9b6956c285f7",
+      "duration_seconds": 219.443,
+      "queries": [
+        {
+          "query_id": "talk-s-kansas",
+          "query": "Where does the speaker discuss Kansas City?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              37,
+              74
+            ],
+            [
+              175,
+              205
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-s-change",
+          "query": "Where does the speaker explain changing a link?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              76,
+              115
+            ],
+            [
+              197,
+              205
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-s-bug",
+          "query": "Where does the speaker mention a bug that only works with source text?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              139,
+              153
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-s-languages",
+          "query": "Where does the speaker say the tool works with different languages?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              164,
+              175
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-s-airport",
+          "query": "Where does the speaker discuss an airport?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              57,
+              74
+            ],
+            [
+              175,
+              197
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-s-findlink",
+          "query": "Where does the speaker introduce FindLink?",
+          "route": "SPEECH",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              38
+            ]
+          ],
+          "case": "spoken evidence"
+        },
+        {
+          "query_id": "talk-ns-gradient",
+          "query": "Where does the speaker explain gradient descent?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "talk-ns-wikidata",
+          "query": "Where does the speaker explain Wikidata properties?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "talk-ns-neural",
+          "query": "When does he mention a convolutional neural network?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "H",
+          "case": "plausible technical term absent"
+        },
+        {
+          "query_id": "talk-ns-privacy",
+          "query": "Where does he discuss user privacy settings?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "G",
+          "case": "related spoken concept never mentioned"
+        },
+        {
+          "query_id": "talk-ns-tokyo",
+          "query": "When does the speaker say Tokyo airport?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "talk-ns-download",
+          "query": "Where does he explain downloading the article?",
+          "route": "SPEECH",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "D",
+          "case": "same object, wrong action"
+        },
+        {
+          "query_id": "talk-h-kansas",
+          "query": "Where does he discuss Kansas City while a projected slide is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              37,
+              74
+            ],
+            [
+              175,
+              205
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-h-change",
+          "query": "Where does he explain changing a link while the large screen is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              76,
+              115
+            ],
+            [
+              197,
+              205
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-h-bug",
+          "query": "Where does he mention the source-text bug while standing at the podium?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              139,
+              153
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-h-languages",
+          "query": "Where does he discuss different languages while a slide is projected?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              164,
+              175
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-h-airport",
+          "query": "Where does he mention an airport while the projection screen is visible?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              57,
+              74
+            ],
+            [
+              175,
+              197
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-h-findlink",
+          "query": "Where does he introduce FindLink while standing beside the projected screen?",
+          "route": "HYBRID",
+          "expected_presence": true,
+          "relevant_intervals": [
+            [
+              0,
+              38
+            ]
+          ],
+          "case": "speech plus visible presentation scene"
+        },
+        {
+          "query_id": "talk-nh-gradient",
+          "query": "Where does he explain gradient descent while a slide is projected?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "talk-nh-bicycle",
+          "query": "Where does he mention cycling while a bicycle is beside the speaker?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "I",
+          "case": "compositional mismatch"
+        },
+        {
+          "query_id": "talk-nh-red",
+          "query": "Where does he discuss links while a red projection screen is visible?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "C",
+          "case": "same object, wrong attribute"
+        },
+        {
+          "query_id": "talk-nh-cooking",
+          "query": "Where does the speaker demonstrate cooking at the podium?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "A",
+          "case": "completely unrelated"
+        },
+        {
+          "query_id": "talk-nh-wikidata",
+          "query": "Where does he explain Wikidata while its logo is on screen?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "B",
+          "case": "same domain but absent"
+        },
+        {
+          "query_id": "talk-nh-download",
+          "query": "Where does he discuss downloading while a city map is projected?",
+          "route": "HYBRID",
+          "expected_presence": false,
+          "relevant_intervals": [],
+          "negative_taxonomy": "I",
+          "case": "compositional mismatch"
+        }
+      ]
+    }
+  ]
+}

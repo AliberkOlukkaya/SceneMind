@@ -26,6 +26,8 @@ GET /videos/{id}/search accepts visual, speech or hybrid mode. BM25 ranks transc
 
 The endpoint also accepts `auto`. A frozen 54-parameter multinomial linear router maps 18 lexical query features to visual, speech or hybrid in about 0.03 ms median on the measured CPU. Its artifact is bound to the source-disjoint routing calibration manifest. `SCENEMIND_AUTO_ROUTING_ENABLED` can make AUTO fall back to Hybrid without affecting explicit overrides. Responses expose requested mode, selected route, routing score and reason; the score is not correctness or no-match confidence. A Speech selection still requires a ready transcript.
 
+Path-aware no-match remains evaluation-only under `ml/experiments/path_aware_no_match/`. AUTO chooses the path before the experiment summarizes that path's existing ranked evidence. Frozen held-out results fail the quality gates for all three paths, so no rule, uncertainty response field, configuration flag, or frontend state enters production. Search scores remain ranking signals rather than existence probabilities; the product must describe results as likely moments without asserting confirmation.
+
 ## Product and validation
 
 The client uploads File bodies, polls processing/index/transcript state, and provides a library, player, sampled moments, search modes and transcript navigation. Result selection updates HTMLVideoElement.currentTime. Runtime data stays under ignored data/. Models are optional dependencies downloaded on explicit first use.

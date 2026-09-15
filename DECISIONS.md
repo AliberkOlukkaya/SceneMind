@@ -1,5 +1,9 @@
 # Decisions
 
+## 025 — Stop no-match model experimentation for English v1.0
+
+Freeze 72 balanced calibration and 48 balanced held-out English queries across six source-disjoint Commons groups. Evaluate separate CLIP-list, BM25/transcript, and RRF/dual-path rules after AUTO routing. AUTO passes at 95.83%, but held-out Visual/Speech/Hybrid FAR is 8.33%/33.33%/50.00% and false abstention is 83.33%/16.67%/16.67%. Overall R@5 falls from 87.50% to 41.67%. Choose outcome E. Do not add a threshold, feature flag, API uncertainty state, or personal-acceptance rerun. For v1.0, retain ranked results and explicit modes and use conservative wording. Further rejection-model work is not justified by current score separation.
+
 ## 024 — Support one-hour local video with streamed upload and bounded resources
 
 Raise configurable defaults from 250 MiB/30 minutes to 1 GiB/60 minutes only after preserving direct request streaming, adding early and counted size rejection, reserving 512 MiB free disk plus 25% processing headroom, atomically staging frames and embeddings, and cleaning disposable artifacts at both stage and supervisor boundaries. Use the existing durable queue and expose its real queued/running stage instead of fake percentages. Replace the single 15-minute worker deadline with bounded per-kind defaults: 30 minutes ingest, two hours speech and one hour visual. An unmodified 439,295,727-byte tutorial reaches ready ingest and visual states; a 45-minute audio stress fixture reaches ready Whisper and CLIP states in 245.4 seconds with 3.02 GB peak worker-tree RSS and no remaining temporary files. Search models and five-second sampling stay unchanged. This proves infrastructure support only; 30-60 minute retrieval usefulness still requires personal acceptance evidence.

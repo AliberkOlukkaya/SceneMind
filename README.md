@@ -164,6 +164,8 @@ The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESUL
 
 The source-disjoint [Turkish compatibility study](ml/evaluation/TURKISH_COMPATIBILITY_RESULTS.md) used 72 natural queries across six development source groups without tuning on personal acceptance. Cheap routing improved held-out Turkish route accuracy from 53.3% to 76.7%, but missed the 90% gate; cheap AUTO R@5 reached 80%, below its 85% gate. Direct Turkish Visual R@5 was already 93.3%. A multilingual Speech diagnostic reached 100% R@5 but did not fix routing and added about 254 MiB RSS. Outcome E keeps production unchanged, skips the personal rerun and does not claim reliable Turkish support for v1.0. See the [failure analysis](ml/evaluation/TURKISH_COMPATIBILITY_FAILURES.md).
 
+The English [path-aware no-match study](ml/evaluation/PATH_AWARE_NO_MATCH_RESULTS.md) freezes 120 balanced queries across six source-disjoint groups. AUTO routing reaches 95.83%, but Visual rejection falsely abstains on 83.33% of positives while Speech and Hybrid accept 33.33% and 50.00% of negatives. Overall R@5 falls from 87.50% to 41.67%. Outcome E keeps production unchanged, skips the second/personal runs, and ends no-match model experimentation for v1.0. Search results should be read as likely moments rather than confirmed answers.
+
 ## Learn the AI pipeline
 
 1. [Video processing](docs/learning/01-video-processing.md)
@@ -177,7 +179,7 @@ CLIP and faster-whisper sources publish MIT licensing; consult model cards and r
 ## Limitations and next work
 
 - Static frames can miss brief events and do not establish actions or causality.
-- Scores are rankings, not probabilities. The opt-in no-match threshold transfers poorly across Natural V2 domains.
+- Scores are rankings, not probabilities. Global and path-aware no-match rules both fail frozen transfer gates and are not production confidence estimates.
 - Whisper tiny can mistranscribe; lexical speech search misses paraphrases.
 - VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
 - Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
