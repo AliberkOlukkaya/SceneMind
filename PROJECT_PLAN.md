@@ -16,8 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Long-video ingestion and resource hardening is complete. Final English acceptance failed its routing and Top-k gates. The bounded router follow-up built 450 balanced queries over 15 source scenarios and measured the current router at 50.00% frozen accuracy. A character n-gram linear candidate reaches 95.56% with every numeric gate passing, but production remains unchanged because the scenarios are not grounded in independently reviewed real videos.
+Long-video ingestion and resource hardening is complete. Final English acceptance failed its routing and Top-k gates. The human-grounded router follow-up reviewed ten new real videos and froze 360 balanced, source-disjoint queries. On the final two unseen videos, production reaches 48.33% routing accuracy and the fixed character n-gram candidate reaches 60.00%; both fail the required quality gates.
 
-Decision E identifies one next step: gather human route labels tied to new real English videos, keep sources disjoint across train/validation/test, and rerun the existing classical comparison. The failed acceptance media stays protected and cannot contribute queries, vocabulary, rules, labels, thresholds, or templates. If real-video evidence later supports promotion, Final English Acceptance V2 needs another untouched long video and new frozen labels. Phases 8-9 remain deferred.
+Decision C leaves production unchanged and stops automatic router experimentation. The failed acceptance media remained protected and contributed no queries, vocabulary, rules, labels, thresholds, or templates. A future router milestone would require explicit authorization, more varied independent training evidence, and another untouched frozen test. Final English Acceptance V2 remains conditional on a later promotion. Phases 8-9 remain deferred.
 
 Phases 0-6 and the bounded local Phase 10 follow-up are implemented. Earlier retrieval experiments and the first personal acceptance run remain frozen evidence. The Turkish compatibility result above supersedes the former next-milestone statement; no candidate was promoted.

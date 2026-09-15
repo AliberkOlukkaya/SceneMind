@@ -72,7 +72,8 @@
 - [x] Inventory local media and record decision D because no eligible real 30-60 minute English-speaking video exists
 - [x] Obtain eligible real English long-video media and execute final acceptance
 - [x] Run one source-disjoint English AUTO-router generalization milestone without using final-acceptance evidence for tuning
-- [ ] Replace source-card routing evidence with independently reviewed queries tied to new real English videos
-- [ ] If routing passes its own held-out gate, freeze a new real English long-video acceptance source and rerun once
+- [x] Replace source-card routing evidence with 360 independently reviewed queries tied to ten new real English videos
+- [x] Reject character-router promotion after the clean human-grounded frozen test misses accuracy, Visual-recall and Speech-recall gates
+- [ ] If a later independently authorized router milestone passes on new untouched sources, freeze a new real English long-video acceptance source and rerun once
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
