@@ -41,6 +41,24 @@ def infer_audio(path):
     ], info.language
 
 
+def normalize_segments(segments, duration):
+    """Validate model timestamps and keep them inside the playable video timeline."""
+    normalized = []
+    for segment in segments:
+        start, end = segment["start"], segment["end"]
+        if not (
+            math.isfinite(start)
+            and math.isfinite(end)
+            and 0 <= start <= end
+            and start <= duration + 1
+        ):
+            raise ValueError("Invalid transcription timestamps")
+        if start >= duration:
+            continue
+        normalized.append({**segment, "end": min(end, duration)})
+    return normalized
+
+
 def recover_speech():
     with Session(engine()) as session, session.begin():
         session.execute(
@@ -79,13 +97,7 @@ def transcribe(video_id: str):
         )
         segments, language = infer_audio(audio)
         duration = record["metadata"]["duration"]
-        for segment in segments:
-            if not (
-                math.isfinite(segment["start"])
-                and math.isfinite(segment["end"])
-                and 0 <= segment["start"] <= segment["end"] <= duration + 1
-            ):
-                raise ValueError("Invalid transcription timestamps")
+        segments = normalize_segments(segments, duration)
         with Session(engine()) as session, session.begin():
             session.execute(delete(Segment).where(Segment.video_id == video_id))
             session.add_all(Segment(video_id=video_id, **segment) for segment in segments)

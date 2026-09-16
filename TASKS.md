@@ -82,6 +82,7 @@
 - [x] Diagnose Hybrid fusion on 32 queries from two source-disjoint development videos without reusing V2 acceptance media
 - [x] Pre-register and test capped-overlap and normalized-rank fusion families on development evidence
 - [x] Select the 1.50× cap as a provisional development candidate without modifying production
-- [ ] Validate the frozen 1.50× candidate once on new source-disjoint holdout media before any promotion decision
+- [x] Validate the frozen 1.50× candidate once on new source-disjoint holdout media before any promotion decision
+- [x] Reject Cap 1.50× after holdout Top-5/Speech/source-robustness/negative-ordering gates fail
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

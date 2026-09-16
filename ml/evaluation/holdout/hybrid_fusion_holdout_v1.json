@@ -1,0 +1,522 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "hybrid-fusion-holdout-v1",
+  "status": "HOLDOUT - DO NOT TUNE ON THIS DATA",
+  "frozen_at": "2026-09-16T13:25:47+03:00",
+  "frozen_before_retrieval": true,
+  "candidate": {
+    "name": "shared-contribution-cap",
+    "alpha": 1.5,
+    "parameter_search": false
+  },
+  "isolation": {
+    "final_acceptance_v2_used": false,
+    "development_queries_copied": false,
+    "retrieval_used_for_annotation": false,
+    "eligible_for_tuning": false
+  },
+  "sources": [
+    {
+      "source_id": "jimmy-wales-interview",
+      "role": "SPEECH_HEAVY",
+      "filename": "Jimmy_Wales_interview_for_WikipediaDay_2019.webm",
+      "bytes": 136352207,
+      "sha256": "dfba01c662cb7736642092e2311eaa46306a7023cd5af4dd231ab3918e7e568b",
+      "duration_seconds": 1208.32,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jimmy_Wales_interview_for_WikipediaDay_2019.webm",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "source_id": "run-child-marriage-documentary",
+      "role": "VISUAL_MULTIMODAL",
+      "filename": "RUN.webm",
+      "bytes": 356013405,
+      "sha256": "d35021584e3859bab68a465a8d341c2f813abe145f506e8edede5713022e61db",
+      "duration_seconds": 1515.36,
+      "source_url": "https://commons.wikimedia.org/wiki/File:RUN.webm",
+      "license": "CC BY-SA 4.0"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "hfh-j-s01",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "reason",
+      "text": "Why did the project avoid relying on advertising even before it had a clear survival plan?",
+      "negative": false,
+      "intervals": [
+        [
+          56,
+          89
+        ]
+      ],
+      "justification": "He says he disliked advertising for an encyclopedia and that ads were never part of the plan."
+    },
+    {
+      "query_id": "hfh-j-s02",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "explanation",
+      "text": "How does he reject both the idea of top-down editorial control and the idea that Wikipedia is complete anarchy?",
+      "negative": false,
+      "intervals": [
+        [
+          96,
+          150
+        ]
+      ],
+      "justification": "The answer explains community control together with hierarchy, rules, and shared values."
+    },
+    {
+      "query_id": "hfh-j-s03",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "semantic_paraphrase",
+      "text": "Why can accepting large donations from technology companies threaten the movement's independence?",
+      "negative": false,
+      "intervals": [
+        [
+          266,
+          356
+        ]
+      ],
+      "justification": "He calls corporate support a double-edged sword because perceived dependence can weaken Wikimedia's independent public voice."
+    },
+    {
+      "query_id": "hfh-j-s04",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "concept",
+      "text": "What two kinds of contributor diversity does he most want Wikipedia to improve?",
+      "negative": false,
+      "intervals": [
+        [
+          394,
+          464
+        ]
+      ],
+      "justification": "He identifies gender diversity and participation in languages used across the developing world."
+    },
+    {
+      "query_id": "hfh-j-s05",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "tradeoff",
+      "text": "What tradeoff does he see in using bots to fill a small-language encyclopedia with articles?",
+      "negative": false,
+      "intervals": [
+        [
+          496,
+          573
+        ]
+      ],
+      "justification": "He contrasts poor automated content that may deter participation with search visibility that may seed a community."
+    },
+    {
+      "query_id": "hfh-j-s06",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "reason",
+      "text": "Why does the decline of local journalism create a long-term source problem for Wikipedia?",
+      "negative": false,
+      "intervals": [
+        [
+          646,
+          749
+        ]
+      ],
+      "justification": "Reliable-source rules make Wikipedia reflect gaps left when local newspapers and journalists disappear."
+    },
+    {
+      "query_id": "hfh-j-s07",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "claim",
+      "text": "Where does he argue that facts still matter despite disinformation and post-truth politics?",
+      "negative": false,
+      "intervals": [
+        [
+          794,
+          890
+        ]
+      ],
+      "justification": "He describes frustration with information warfare, declining media quality, and political exploitation of ignorance."
+    },
+    {
+      "query_id": "hfh-j-s08",
+      "source_id": "jimmy-wales-interview",
+      "category": "SPEECH",
+      "style": "explanation",
+      "text": "Why does he think Wikipedia can outlast changing technology companies and remain useful for centuries?",
+      "negative": false,
+      "intervals": [
+        [
+          1120,
+          1208.32
+        ]
+      ],
+      "justification": "He contrasts uncertain AI and company turnover with the timeless goal of a free neutral encyclopedia in every language."
+    },
+    {
+      "query_id": "hfh-j-v01",
+      "source_id": "jimmy-wales-interview",
+      "category": "VISUAL",
+      "style": "title_card",
+      "text": "Show the black question card asking whether corporations that use Wikipedia content should contribute more.",
+      "negative": false,
+      "intervals": [
+        [
+          204,
+          209
+        ]
+      ],
+      "justification": "A distinct full-screen black card displays the corporate-contribution question."
+    },
+    {
+      "query_id": "hfh-j-v02",
+      "source_id": "jimmy-wales-interview",
+      "category": "VISUAL",
+      "style": "title_card",
+      "text": "Find the black question card about using citizen journalism as a citable source.",
+      "negative": false,
+      "intervals": [
+        [
+          749,
+          754
+        ]
+      ],
+      "justification": "A distinct full-screen card presents the citizen-journalism question."
+    },
+    {
+      "query_id": "hfh-j-m01",
+      "source_id": "jimmy-wales-interview",
+      "category": "MULTIMODAL",
+      "style": "speaker_context",
+      "text": "Find the man seated beside a tall plant while he explains that gender and language diversity would strengthen Wikipedia.",
+      "negative": false,
+      "intervals": [
+        [
+          394,
+          464
+        ]
+      ],
+      "justification": "The recurring office interview composition and the spoken diversity answer jointly identify this passage."
+    },
+    {
+      "query_id": "hfh-j-m02",
+      "source_id": "jimmy-wales-interview",
+      "category": "MULTIMODAL",
+      "style": "speaker_context",
+      "text": "Show the bespectacled interviewee in the office as he discusses post-truth politics and information warfare.",
+      "negative": false,
+      "intervals": [
+        [
+          794,
+          850
+        ]
+      ],
+      "justification": "The visible interview subject and the localized spoken argument are both required by the request."
+    },
+    {
+      "query_id": "hfh-j-n01",
+      "source_id": "jimmy-wales-interview",
+      "category": "NEGATIVE",
+      "style": "negative_visual",
+      "text": "Show the colorful bar chart comparing Wikipedia donation revenue by year.",
+      "negative": true,
+      "intervals": [],
+      "justification": "No chart or donation-revenue visualization appears; the video uses interview shots and question cards."
+    },
+    {
+      "query_id": "hfh-j-n02",
+      "source_id": "jimmy-wales-interview",
+      "category": "NEGATIVE",
+      "style": "negative_speech",
+      "text": "Where does he propose funding Wikipedia with blockchain transaction fees?",
+      "negative": true,
+      "intervals": [],
+      "justification": "Blockchain funding and transaction fees are absent from the reviewed transcript."
+    },
+    {
+      "query_id": "hfh-r-s01",
+      "source_id": "run-child-marriage-documentary",
+      "category": "SPEECH",
+      "style": "claim",
+      "text": "Why does the activist say child marriage prevents girls from contributing to society?",
+      "negative": false,
+      "intervals": [
+        [
+          817,
+          887
+        ]
+      ],
+      "justification": "She says child marriage destroys dreams, potential, capacity, and future contribution."
+    },
+    {
+      "query_id": "hfh-r-s02",
+      "source_id": "run-child-marriage-documentary",
+      "category": "SPEECH",
+      "style": "medical_explanation",
+      "text": "How can a narrow undeveloped pelvis lead from prolonged labor to fistula, divorce, and family rejection?",
+      "negative": false,
+      "intervals": [
+        [
+          1150,
+          1270
+        ]
+      ],
+      "justification": "The doctor traces obstructed labor through infant death, incontinence, divorce, and ostracism."
+    },
+    {
+      "query_id": "hfh-r-s03",
+      "source_id": "run-child-marriage-documentary",
+      "category": "SPEECH",
+      "style": "concept",
+      "text": "How is educating girls connected to the UN goal of gender equality?",
+      "negative": false,
+      "intervals": [
+        [
+          1311,
+          1389
+        ]
+      ],
+      "justification": "The closing advocacy links girls' education and ending child marriage to Sustainable Development Goal 5."
+    },
+    {
+      "query_id": "hfh-r-v01",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "people_action",
+      "text": "Show two schoolgirls in matching green uniforms walking through the neighborhood.",
+      "negative": false,
+      "intervals": [
+        [
+          50,
+          76
+        ]
+      ],
+      "justification": "Two uniformed girls walk together past homes and street activity."
+    },
+    {
+      "query_id": "hfh-r-v02",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "object_scene",
+      "text": "Find the young man in a white undershirt holding up a bottle while seated in a red chair.",
+      "negative": false,
+      "intervals": [
+        [
+          84,
+          108
+        ]
+      ],
+      "justification": "The indoor scene visibly centers a seated man displaying a bottle."
+    },
+    {
+      "query_id": "hfh-r-v03",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "event",
+      "text": "Find the traditional wedding celebration with dancing under a canopy and fruit arranged on the ground.",
+      "negative": false,
+      "intervals": [
+        [
+          420,
+          530
+        ]
+      ],
+      "justification": "The ceremony has a distinctive canopy, seated crowd, dancers, and central fruit display."
+    },
+    {
+      "query_id": "hfh-r-v04",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "scene",
+      "text": "Show the rows of schoolgirls in green uniforms sitting inside a dark classroom.",
+      "negative": false,
+      "intervals": [
+        [
+          565,
+          612
+        ]
+      ],
+      "justification": "A dim classroom sequence shows multiple rows of uniformed pupils."
+    },
+    {
+      "query_id": "hfh-r-v05",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "graphic",
+      "text": "Find the white UNICEF card citing the report titled Ending Child Marriage, Progress and Prospects.",
+      "negative": false,
+      "intervals": [
+        [
+          980,
+          1023
+        ]
+      ],
+      "justification": "A full-screen UNICEF-branded card names the report and summarizes its findings."
+    },
+    {
+      "query_id": "hfh-r-v06",
+      "source_id": "run-child-marriage-documentary",
+      "category": "VISUAL",
+      "style": "event",
+      "text": "Show students holding handmade signs against child marriage outside their school.",
+      "negative": false,
+      "intervals": [
+        [
+          1318,
+          1390
+        ]
+      ],
+      "justification": "Students assemble outdoors with multiple handwritten advocacy placards."
+    },
+    {
+      "query_id": "hfh-r-m01",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "dialogue_scene",
+      "text": "Find the woman with braided hair facing the seated man when she argues that the girl is too young for marriage.",
+      "negative": false,
+      "intervals": [
+        [
+          116,
+          165
+        ]
+      ],
+      "justification": "The living-room confrontation and the marriage-age dialogue jointly identify the scene."
+    },
+    {
+      "query_id": "hfh-r-m02",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "people_claim",
+      "text": "Show the girls in green school uniforms as the film argues that there is a time for school before marriage.",
+      "negative": false,
+      "intervals": [
+        [
+          326,
+          350
+        ]
+      ],
+      "justification": "Uniformed pupils appear while the advocacy speech contrasts schooling with premature marriage."
+    },
+    {
+      "query_id": "hfh-r-m03",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "speaker_location",
+      "text": "Find the woman speaking outdoors in a narrow lane when she says child marriage kills girls' dreams.",
+      "negative": false,
+      "intervals": [
+        [
+          840,
+          887
+        ]
+      ],
+      "justification": "The outdoor advocate and her spoken statement about destroyed dreams occur together."
+    },
+    {
+      "query_id": "hfh-r-m04",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "graphic_narration",
+      "text": "Show the UNICEF statistic about Northern Nigerian girls while the narrator gives the marriage rate and age.",
+      "negative": false,
+      "intervals": [
+        [
+          886,
+          903
+        ]
+      ],
+      "justification": "The on-screen UNICEF statistic and narration both state the regional rate and marriage by age sixteen."
+    },
+    {
+      "query_id": "hfh-r-m05",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "image_rights",
+      "text": "Find the courtroom image of a woman in a legal wig beside a girl while the film lists a girl's rights to life and education.",
+      "negative": false,
+      "intervals": [
+        [
+          962,
+          984
+        ]
+      ],
+      "justification": "The legal still and spoken rights list jointly identify this brief passage."
+    },
+    {
+      "query_id": "hfh-r-m06",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "expert_gesture",
+      "text": "Show the doctor in a suit using his fingers to compare pelvis widths while explaining obstructed labor.",
+      "negative": false,
+      "intervals": [
+        [
+          1150,
+          1219
+        ]
+      ],
+      "justification": "The doctor's hand demonstration visually supports his medical explanation of a pelvis too narrow for delivery."
+    },
+    {
+      "query_id": "hfh-r-m07",
+      "source_id": "run-child-marriage-documentary",
+      "category": "MULTIMODAL",
+      "style": "event_advocacy",
+      "text": "Find students displaying anti-child-marriage posters while the closing message calls for girls to attend school and achieve their goals.",
+      "negative": false,
+      "intervals": [
+        [
+          1339,
+          1389
+        ]
+      ],
+      "justification": "The student protest visuals coincide with the spoken appeal for education and opportunity."
+    },
+    {
+      "query_id": "hfh-r-n01",
+      "source_id": "run-child-marriage-documentary",
+      "category": "NEGATIVE",
+      "style": "negative_visual",
+      "text": "Show a girl riding a bicycle to school through city traffic.",
+      "negative": true,
+      "intervals": [],
+      "justification": "No bicycle commute or city-traffic sequence appears."
+    },
+    {
+      "query_id": "hfh-r-n02",
+      "source_id": "run-child-marriage-documentary",
+      "category": "NEGATIVE",
+      "style": "negative_visual",
+      "text": "Find the hospital operating room where surgeons perform a procedure.",
+      "negative": true,
+      "intervals": [],
+      "justification": "The documentary discusses medical harm but shows no surgery or operating room."
+    },
+    {
+      "query_id": "hfh-r-n03",
+      "source_id": "run-child-marriage-documentary",
+      "category": "NEGATIVE",
+      "style": "negative_speech",
+      "text": "Where does the doctor recommend a specific surgical treatment for fistula?",
+      "negative": true,
+      "intervals": [],
+      "justification": "The medical explanation covers causes and consequences without prescribing a named operation."
+    },
+    {
+      "query_id": "hfh-r-n04",
+      "source_id": "run-child-marriage-documentary",
+      "category": "NEGATIVE",
+      "style": "negative_multimodal",
+      "text": "Show a teacher writing the legal marriage age on a classroom chalkboard while explaining the law.",
+      "negative": true,
+      "intervals": [],
+      "justification": "Neither a chalkboard legal lesson nor that spoken explanation occurs."
+    }
+  ]
+}

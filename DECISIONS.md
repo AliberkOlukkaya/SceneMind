@@ -1,5 +1,13 @@
 # Decisions
 
+## 034 - Reject the 1.50× overlap cap on frozen holdout evidence
+
+Freeze 34 queries over two new source-disjoint Wikimedia sources before retrieval: 11 Speech, eight Visual, nine Multimodal, and six negative. Process both through normal streamed upload, durable ingestion, Whisper, CLIP, and persistence. Compare only production-equivalent RRF60 with the fixed 1.50× shared-contribution cap; do not use Final English Acceptance V2 or search another parameter.
+
+Baseline positive Top-1/3/5 is 12/19/21 with MRR@5 0.5560. Cap reaches 15/19/20 and 0.6083. Speech Top-5 falls from 8/11 to 7/11; Jimmy Wales falls from 6/12 to 5/12 while RUN stays 15/16. There are zero rescues and one newly broken query. Strong-candidate retention is unchanged at 18/32, all 28 positives have required Top-50 input evidence, and one negative becomes more plausibly misleading. Choose **REJECTED** because the predeclared Top-5, Speech, rescue/break, source-robustness, and negative-ordering criteria fail. Do not run a second frozen evaluation, tune the holdout, or promote the cap. Keep production `app.hybrid.fuse` at uncapped RRF60.
+
+The approved Jimmy media also exposed a final-segment boundary defect: Whisper audio can extend slightly beyond OpenCV's playable video duration. Validate starts, clip stored ends to playback duration, and discard fully out-of-range tails. Preserve model, sampler, search contracts, and ranking.
+
 ## 033 - Carry the 1.50× overlap cap only to holdout validation
 
 Freeze the existing two-video, 32-query diagnostic development evidence and establish exact offline parity with production `app.hybrid.fuse` before evaluating alternatives. Compare three predeclared rank-only caps and three independent list-normalized rank formulas. Do not use raw CLIP/BM25 scores, learned weights, modality quotas, Final English Acceptance V2, or production code.

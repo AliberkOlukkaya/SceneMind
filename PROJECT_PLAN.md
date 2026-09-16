@@ -16,8 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Hybrid Fusion Refinement V1 is complete on the frozen 32-query diagnostic development set. The offline baseline reproduces production `app.hybrid.fuse` exactly. Three predeclared shared-contribution caps and three independent normalized-rank formulas were compared without raw scores, learned weights, modality rules, or Final English Acceptance V2 evidence.
+Hybrid Fusion Holdout Validation V1 is complete. Two new source-disjoint sources and 34 queries were reviewed and frozen before retrieval. Production parity passed on all queries, and only baseline RRF60 and the predeclared 1.50× cap were compared.
 
-The 1.50× cap is the provisional development candidate. It raises positive Top-5 from 20/28 to 21/28 and MRR@5 from 0.4827 to 0.5155, raises Speech Top-5 from 6/11 to 7/11, preserves Visual at 7/8 and Multimodal at 7/9, and produces one rescue with no new failure. Both sources avoid Top-K regression, though only one supplies the aggregate Top-5 gain. Production remains Smart Search (Hybrid), Spoken Content (Speech), and Visual Content (Visual); AUTO remains compatibility-only.
+The candidate is rejected. It changes ALL Top-1/3/5 from 12/19/21 to 15/19/20 and MRR@5 from 0.5560 to 0.6083, but Speech Top-5 falls from 8/11 to 7/11, Jimmy Wales Top-5 falls from 6/12 to 5/12, one query breaks, and none are rescued. Strong-candidate retention remains 18/32. Production remains Smart Search (uncapped Hybrid), Spoken Content (Speech), and Visual Content (Visual); AUTO remains compatibility-only.
 
-The next bounded milestone is a new source-disjoint holdout validation with algorithms, parameters, metrics, and gates frozen before retrieval. Do not tune further on the two development videos, use Final English Acceptance V2, or change production before holdout evidence. Phases 8-9 and public deployment remain deferred.
+Do not tune, relabel, or rerun the failed holdout, promote Cap 1.50×, or start Final Acceptance V3. The next product milestone requires an explicit decision based on the accumulated acceptance and holdout evidence. Phases 8-9 and public deployment remain deferred.

@@ -97,3 +97,23 @@ def test_invalid_model_timestamps(speech_client, monkeypatch):
     route = f"/videos/{VIDEO_ID}/transcript"
     speech_client.post(route)
     assert speech_client.get(route).json()["status"] == "failed"
+
+
+def test_transcript_end_is_clamped_to_playable_video(speech_client, monkeypatch):
+    monkeypatch.setattr(
+        "app.speech.infer_audio",
+        lambda path: (
+            [
+                {"start": 2.5, "end": 4.2, "text": "playable tail"},
+                {"start": 3.2, "end": 4.5, "text": "outside video"},
+            ],
+            "en",
+        ),
+    )
+    route = f"/videos/{VIDEO_ID}/transcript"
+    speech_client.post(route)
+    data = speech_client.get(route).json()
+    assert data["status"] == "ready"
+    assert data["segments"] == [
+        {"start": 2.5, "end": 3.0, "text": "playable tail"}
+    ]
