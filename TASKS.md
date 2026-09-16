@@ -87,7 +87,8 @@
 - [x] Reconstruct and standardize 19 Hybrid ranking failures with 12 success controls
 - [x] Diagnose irrelevant consensus, raw-score information loss, temporal grouping, deduplication and negative-query behavior without tuning
 - [x] Confirm 30/30 historical Acceptance V2 trace parity and keep Holdout V1 frozen
-- [ ] Collect new ranking-development evidence and pre-register a future untouched holdout before testing confidence-aware agreement or reranking
+- [x] Test raw-score calibratability on 72 calibration and 32 source-disjoint validation queries; stop before fusion after both modalities fail AUC/Brier generalization
+- [ ] Collect at least three new source-disjoint calibration sources with complete Top-50 Visual/Speech traces and freeze a new validation split
 - [ ] Keep Final Acceptance V3 blocked until a ranking candidate passes an independent frozen evaluation
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

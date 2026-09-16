@@ -1,5 +1,9 @@
 # Decisions
 
+## 036 - Reject raw-score fusion before candidate construction
+
+Use 72 legitimate calibration queries from three sources and 32 queries from two source-disjoint development-validation sources to test per-retriever confidence calibration. Calibration-only selection chooses Visual raw-score logistic and Speech query-relative logistic mappings, but both lose to rank-only on validation AUC and Brier. Choose outcome C. Stop before building a fusion formula or opening the 34-query protected holdout, mark the artifact non-production, and keep uncapped RRF60. A second-stage reranker is not justified. Collect at least three new source-disjoint calibration sources with full Top-50 Visual/Speech traces and freeze a new validation split before reconsidering confidence-aware fusion.
+
 ## 035 - End diagnosis with confidence-aware ranking as a design class
 
 Reconstruct every available Hybrid ranking failure from development, frozen Holdout V1, and safely reproducible historical Acceptance V2 evidence. Keep `app.hybrid.fuse` authoritative and verify all 30 reconstructed V2 outputs against the historical artifact. Compare 19 failures with 12 balanced controls. Fourteen failures are primarily irrelevant consensus; 16 contain explicit required-modality Top-5 evidence displaced outside Hybrid Top-5, and 11 reverse a stronger same-retriever raw-score advantage. Two-contribution winners occur in 18/19 failures and 12/12 controls, while same-thumbnail Speech duplicates are discarded, so overlap or accumulation alone is not causal. Temporal attachment/context explains two cases and weak required-modality rank explains two.

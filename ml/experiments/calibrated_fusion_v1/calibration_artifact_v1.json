@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "calibrated-fusion-v1",
+  "status": "diagnostic_rejected_before_fusion",
+  "production_eligible": false,
+  "regularization": 1.0,
+  "feature_sets": {
+    "rank_only": [
+      "reciprocal_rank"
+    ],
+    "raw_only": [
+      "raw_score"
+    ],
+    "query_relative": [
+      "reciprocal_rank",
+      "margin_to_top",
+      "margin_to_next",
+      "robust_z"
+    ],
+    "combined": [
+      "raw_score",
+      "reciprocal_rank",
+      "margin_to_top",
+      "margin_to_next",
+      "robust_z",
+      "log_query_tokens"
+    ]
+  },
+  "generalization_gate": {
+    "auc_delta_vs_rank_minimum": 0.0,
+    "brier_delta_vs_rank_maximum": 0.0,
+    "rule": "Both modalities must be no worse than rank-only on both source-disjoint AUC and Brier."
+  },
+  "input_hashes": {
+    "calibration_manifest": "93e2bd28604e00dd217c8a7790aa07de7fa0e2ecf0dadd3a5afb27078621f95a",
+    "validation_manifest": "79020ae3af85e69f88be2a460a5d04273b09a5596ccd12d390da1b7e00f791be"
+  },
+  "models": {
+    "visual": {
+      "selected": {
+        "mean": [
+          0.24044534982605414
+        ],
+        "scale": [
+          0.03207063232976826
+        ],
+        "intercept": -3.026251355107838,
+        "weights": [
+          1.5954191648807745
+        ],
+        "regularization": 1.0,
+        "examples": 2200,
+        "feature_set": "raw_only",
+        "features": [
+          "raw_score"
+        ]
+      },
+      "rank_only_reference": {
+        "mean": [
+          0.11250443667644984
+        ],
+        "scale": [
+          0.17707837583280112
+        ],
+        "intercept": -2.2507177710119213,
+        "weights": [
+          0.3223629008691212
+        ],
+        "regularization": 1.0,
+        "examples": 2200,
+        "feature_set": "rank_only",
+        "features": [
+          "reciprocal_rank"
+        ]
+      }
+    },
+    "speech": {
+      "selected": {
+        "mean": [
+          0.2902223931197927,
+          2.367532405388873,
+          0.28481171025585444,
+          0.43304789935038424
+        ],
+        "scale": [
+          0.2980414270791157,
+          1.916007147442065,
+          0.6217195132650709,
+          2.185014041785953
+        ],
+        "intercept": -1.3221391457751532,
+        "weights": [
+          0.6395084062123203,
+          0.43999015029692795,
+          0.7225683089584539,
+          -0.054558819360486094
+        ],
+        "regularization": 1.0,
+        "examples": 340,
+        "feature_set": "query_relative",
+        "features": [
+          "reciprocal_rank",
+          "margin_to_top",
+          "margin_to_next",
+          "robust_z"
+        ]
+      },
+      "rank_only_reference": {
+        "mean": [
+          0.2902223931197924
+        ],
+        "scale": [
+          0.2980414270791156
+        ],
+        "intercept": -1.295538709905897,
+        "weights": [
+          0.5956985601019721
+        ],
+        "regularization": 1.0,
+        "examples": 340,
+        "feature_set": "rank_only",
+        "features": [
+          "reciprocal_rank"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1000 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "calibrated-fusion-v1",
+  "git_commit_before_experiment": "21818dd484328bf2e3f0181fd6cc18f95ccc646f",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.5",
+  "production_baseline": "uncapped RRF60",
+  "production_retrieval_modified": false,
+  "holdout_used_for_tuning": false,
+  "protected_holdout_opened_for_candidate_evaluation": false,
+  "feature_definitions_frozen_before_holdout": true,
+  "fusion_candidate_constructed": false,
+  "fusion_candidate_metrics": null,
+  "data": {
+    "calibration": {
+      "sources": 3,
+      "queries": 72,
+      "historical_top5_parity": 72,
+      "manifest_sha256": "93e2bd28604e00dd217c8a7790aa07de7fa0e2ecf0dadd3a5afb27078621f95a"
+    },
+    "validation": {
+      "sources": 2,
+      "queries": 32,
+      "manifest_sha256": "79020ae3af85e69f88be2a460a5d04273b09a5596ccd12d390da1b7e00f791be",
+      "production_parity": true
+    },
+    "isolation": {
+      "calibration_source_hashes": [
+        "25a857b6896551f21c7d6c50181ad4451a903b53580fd5563af2c2a6bc2ae40f",
+        "7f8f412d4e68b259eb5571f289305f65408d717e14b1df6fa752a012194142fb",
+        "b80c402211d80949ebe7e81a539649e3cebcc9c3bb7b6c0a5cec8a0ac9344bf3"
+      ],
+      "validation_source_hashes": [
+        "2bc604a1ad04d1ca5537eb3348d691a3e1e2a845c114c49d97ccd923e8d880dc",
+        "f389e9911d1583b63b5286967675a189c152421f91dd5f0ff0a158270f5dcb74"
+      ],
+      "protected_source_hashes": [
+        "addb005d02cde7bc6b277e938bc10190709e278088caa23354e1323477f0000c",
+        "d35021584e3859bab68a465a8d341c2f813abe145f506e8edede5713022e61db",
+        "dfba01c662cb7736642092e2311eaa46306a7023cd5af4dd231ab3918e7e568b"
+      ],
+      "all_disjoint": true,
+      "protected_holdout_manifest_sha256": "dcddffb0495cb7c397249ccd13d5818967127b6c62d01173944d0235030b64b5",
+      "protected_holdout_queries_available": 34,
+      "protected_holdout_queries_evaluated": 0
+    }
+  },
+  "raw_score_analysis_on_source_disjoint_validation": {
+    "visual": {
+      "relevant": {
+        "raw_score": {
+          "count": 109,
+          "minimum": 0.21659542620182037,
+          "q25": 0.25610774755477905,
+          "median": 0.27249959111213684,
+          "q75": 0.29918164014816284,
+          "maximum": 0.35424530506134033,
+          "mean": 0.27671108716124787
+        },
+        "rank": {
+          "count": 109,
+          "minimum": 1.0,
+          "q25": 4.0,
+          "median": 11.0,
+          "q75": 24.0,
+          "maximum": 50.0,
+          "mean": 16.486238532110093
+        },
+        "margin_to_top": {
+          "count": 109,
+          "minimum": 0.0,
+          "q25": 0.011693894863128662,
+          "median": 0.03227949142456055,
+          "q75": 0.046733975410461426,
+          "maximum": 0.10869622230529785,
+          "mean": 0.03142305716462092
+        },
+        "margin_to_next": {
+          "count": 109,
+          "minimum": 0.0,
+          "q25": 0.00028429925441741943,
+          "median": 0.0010971426963806152,
+          "q75": 0.003507554531097412,
+          "maximum": 0.03943580389022827,
+          "mean": 0.0037011763918290445
+        }
+      },
+      "irrelevant": {
+        "raw_score": {
+          "count": 941,
+          "minimum": 0.20617154240608215,
+          "q25": 0.24120685458183289,
+          "median": 0.254965215921402,
+          "q75": 0.2707623243331909,
+          "maximum": 0.3385394811630249,
+          "mean": 0.2575750907568318
+        },
+        "rank": {
+          "count": 941,
+          "minimum": 1.0,
+          "q25": 15.0,
+          "median": 27.0,
+          "q75": 39.0,
+          "maximum": 50.0,
+          "mean": 26.544102019128587
+        },
+        "margin_to_top": {
+          "count": 941,
+          "minimum": 0.0,
+          "q25": 0.026048362255096436,
+          "median": 0.04084143042564392,
+          "q75": 0.057789146900177,
+          "maximum": 0.12270233035087585,
+          "mean": 0.04402227354543749
+        },
+        "margin_to_next": {
+          "count": 941,
+          "minimum": 0.0,
+          "q25": 9.733438491821289e-05,
+          "median": 0.0003688931465148926,
+          "q75": 0.0009503811597824097,
+          "maximum": 0.025577127933502197,
+          "mean": 0.000890871416876344
+        }
+      },
+      "raw_score_auc": 0.6862989792237421,
+      "rank_auc": 0.7011572697403698,
+      "by_source": {
+        "design-free-software-talk": {
+          "examples": 500,
+          "positives": 41,
+          "raw_auc": 0.562357192199373,
+          "relevant_median": 0.2679145038127899,
+          "irrelevant_median": 0.2609507739543915
+        },
+        "human-software-extensions-talk": {
+          "examples": 550,
+          "positives": 68,
+          "raw_auc": 0.7912496948987063,
+          "relevant_median": 0.27263718843460083,
+          "irrelevant_median": 0.24897154420614243
+        }
+      },
+      "by_query_length": {
+        "short_1_6": {
+          "examples": 0
+        },
+        "medium_7_12": {
+          "examples": 650,
+          "positives": 60,
+          "raw_auc": 0.6823728813559322
+        },
+        "long_13_plus": {
+          "examples": 400,
+          "positives": 49,
+          "raw_auc": 0.6649805221233792
+        }
+      }
+    },
+    "speech": {
+      "relevant": {
+        "raw_score": {
+          "count": 79,
+          "minimum": 1.0779127300442546,
+          "q25": 3.593009432064127,
+          "median": 4.5466880447219715,
+          "q75": 6.740251700989584,
+          "maximum": 19.806583895345906,
+          "mean": 5.828217383972346
+        },
+        "rank": {
+          "count": 79,
+          "minimum": 1.0,
+          "q25": 2.0,
+          "median": 6.0,
+          "q75": 15.5,
+          "maximum": 43.0,
+          "mean": 9.962025316455696
+        },
+        "margin_to_top": {
+          "count": 79,
+          "minimum": 0.0,
+          "q25": 1.2842383663085484,
+          "median": 4.638826801175551,
+          "q75": 8.973828297736729,
+          "maximum": 17.99826815701753,
+          "mean": 5.4362116605510264
+        },
+        "margin_to_next": {
+          "count": 79,
+          "minimum": 0.0,
+          "q25": 0.05499156331424604,
+          "median": 0.2584158389817759,
+          "q75": 0.8907683983311574,
+          "maximum": 10.62115844990421,
+          "mean": 1.0479552941485242
+        }
+      },
+      "irrelevant": {
+        "raw_score": {
+          "count": 682,
+          "minimum": 0.8591722105316544,
+          "q25": 1.9042017268452234,
+          "median": 2.792778871246175,
+          "q75": 3.7442822351564162,
+          "maximum": 11.91003277356553,
+          "mean": 3.0607279466594095
+        },
+        "rank": {
+          "count": 682,
+          "minimum": 1.0,
+          "q25": 10.0,
+          "median": 19.0,
+          "q75": 30.75,
+          "maximum": 50.0,
+          "mean": 20.865102639296186
+        },
+        "margin_to_top": {
+          "count": 682,
+          "minimum": 0.0,
+          "q25": 3.7667856433807776,
+          "median": 6.130094327633344,
+          "q75": 9.455153040401386,
+          "maximum": 18.350373643027144,
+          "mean": 7.0737605680716165
+        },
+        "margin_to_next": {
+          "count": 682,
+          "minimum": 0.0,
+          "q25": 0.0,
+          "median": 0.04802888558104168,
+          "q75": 0.1303878571835153,
+          "maximum": 4.118883394671982,
+          "mean": 0.14193503745396113
+        }
+      },
+      "raw_score_auc": 0.7788336612346413,
+      "rank_auc": 0.7644121905044731,
+      "by_source": {
+        "design-free-software-talk": {
+          "examples": 379,
+          "positives": 44,
+          "raw_auc": 0.8054274084124831,
+          "relevant_median": 4.743439062853435,
+          "irrelevant_median": 1.9657267217083798
+        },
+        "human-software-extensions-talk": {
+          "examples": 382,
+          "positives": 35,
+          "raw_auc": 0.760312885961301,
+          "relevant_median": 4.377401754230057,
+          "irrelevant_median": 3.1709921003179824
+        }
+      },
+      "by_query_length": {
+        "short_1_6": {
+          "examples": 0
+        },
+        "medium_7_12": {
+          "examples": 244,
+          "positives": 16,
+          "raw_auc": 0.854577850877193
+        },
+        "long_13_plus": {
+          "examples": 517,
+          "positives": 63,
+          "raw_auc": 0.7428326690441228
+        }
+      }
+    }
+  },
+  "calibration": {
+    "visual": {
+      "selection_on_calibration_only": {
+        "winner": {
+          "feature_set": "raw_only",
+          "features": [
+            "raw_score"
+          ],
+          "mean_auc": 0.8085107825109087,
+          "mean_brier": 0.07288397384395288,
+          "folds": [
+            {
+              "source_id": "demo-production-tutorial",
+              "examples": 800,
+              "positives": 40,
+              "auc": 0.8023684210526316,
+              "brier": 0.042395957095860776
+            },
+            {
+              "source_id": "mitx-course-overview",
+              "examples": 1000,
+              "positives": 132,
+              "auc": 0.8195957268537913,
+              "brier": 0.09128154990445261
+            },
+            {
+              "source_id": "translate-meta-tutorial",
+              "examples": 400,
+              "positives": 47,
+              "auc": 0.8035681996263034,
+              "brier": 0.08497441453154525
+            }
+          ]
+        },
+        "trials": [
+          {
+            "feature_set": "rank_only",
+            "features": [
+              "reciprocal_rank"
+            ],
+            "mean_auc": 0.6849158976688717,
+            "mean_brier": 0.0902747818593312,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 800,
+                "positives": 40,
+                "auc": 0.743421052631579,
+                "brier": 0.05188783944910679
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 1000,
+                "positives": 132,
+                "auc": 0.6323139226365033,
+                "brier": 0.11823310382549246
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 400,
+                "positives": 47,
+                "auc": 0.6790127177385329,
+                "brier": 0.10070340230339436
+              }
+            ]
+          },
+          {
+            "feature_set": "raw_only",
+            "features": [
+              "raw_score"
+            ],
+            "mean_auc": 0.8085107825109087,
+            "mean_brier": 0.07288397384395288,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 800,
+                "positives": 40,
+                "auc": 0.8023684210526316,
+                "brier": 0.042395957095860776
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 1000,
+                "positives": 132,
+                "auc": 0.8195957268537913,
+                "brier": 0.09128154990445261
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 400,
+                "positives": 47,
+                "auc": 0.8035681996263034,
+                "brier": 0.08497441453154525
+              }
+            ]
+          },
+          {
+            "feature_set": "query_relative",
+            "features": [
+              "reciprocal_rank",
+              "margin_to_top",
+              "margin_to_next",
+              "robust_z"
+            ],
+            "mean_auc": 0.6554046108033904,
+            "mean_brier": 0.09124703680667545,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 800,
+                "positives": 40,
+                "auc": 0.7249342105263158,
+                "brier": 0.05477550396712456
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 1000,
+                "positives": 132,
+                "auc": 0.6229925987990504,
+                "brier": 0.11499345486170708
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 400,
+                "positives": 47,
+                "auc": 0.618287023084805,
+                "brier": 0.1039721515911947
+              }
+            ]
+          },
+          {
+            "feature_set": "combined",
+            "features": [
+              "raw_score",
+              "reciprocal_rank",
+              "margin_to_top",
+              "margin_to_next",
+              "robust_z",
+              "log_query_tokens"
+            ],
+            "mean_auc": 0.7840974285132621,
+            "mean_brier": 0.07479534077496375,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 800,
+                "positives": 40,
+                "auc": 0.7983223684210526,
+                "brier": 0.043039406704699516
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 1000,
+                "positives": 132,
+                "auc": 0.7664345063538612,
+                "brier": 0.09390396972882988
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 400,
+                "positives": 47,
+                "auc": 0.7875354107648725,
+                "brier": 0.08744264589136186
+              }
+            ]
+          }
+        ],
+        "model": {
+          "mean": [
+            0.24044534982605414
+          ],
+          "scale": [
+            0.03207063232976826
+          ],
+          "intercept": -3.026251355107838,
+          "weights": [
+            1.5954191648807745
+          ],
+          "regularization": 1.0,
+          "examples": 2200,
+          "feature_set": "raw_only",
+          "features": [
+            "raw_score"
+          ]
+        }
+      },
+      "source_disjoint_validation": {
+        "selected": {
+          "examples": 1050,
+          "positives": 109,
+          "auc": 0.6862989792237421,
+          "brier": 0.10021092908978486
+        },
+        "rank_only": {
+          "examples": 1050,
+          "positives": 109,
+          "auc": 0.7011572697403698,
+          "brier": 0.09014003125822416
+        },
+        "auc_delta_selected_minus_rank": -0.014858290516627792,
+        "brier_delta_selected_minus_rank": 0.010070897831560705,
+        "generalization_gate_passed": false
+      },
+      "prediction_latency": {
+        "median_ms_for_all_validation_candidates": 0.02269999822601676,
+        "p95_ms_for_all_validation_candidates": 0.02330498828087002
+      }
+    },
+    "speech": {
+      "selection_on_calibration_only": {
+        "winner": {
+          "feature_set": "query_relative",
+          "features": [
+            "reciprocal_rank",
+            "margin_to_top",
+            "margin_to_next",
+            "robust_z"
+          ],
+          "mean_auc": 0.733420577281243,
+          "mean_brier": 0.17798771185597947,
+          "folds": [
+            {
+              "source_id": "demo-production-tutorial",
+              "examples": 76,
+              "positives": 26,
+              "auc": 0.7615384615384615,
+              "brier": 0.18473912342836443
+            },
+            {
+              "source_id": "mitx-course-overview",
+              "examples": 198,
+              "positives": 31,
+              "auc": 0.720204751786749,
+              "brier": 0.1397026481046501
+            },
+            {
+              "source_id": "translate-meta-tutorial",
+              "examples": 66,
+              "positives": 21,
+              "auc": 0.7185185185185186,
+              "brier": 0.20952136403492386
+            }
+          ]
+        },
+        "trials": [
+          {
+            "feature_set": "rank_only",
+            "features": [
+              "reciprocal_rank"
+            ],
+            "mean_auc": 0.6782353509531411,
+            "mean_brier": 0.18859481298094707,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 76,
+                "positives": 26,
+                "auc": 0.6676923076923077,
+                "brier": 0.21965995929554938
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 198,
+                "positives": 31,
+                "auc": 0.6733629515163222,
+                "brier": 0.14120669665067687
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 66,
+                "positives": 21,
+                "auc": 0.6936507936507936,
+                "brier": 0.20491778299661495
+              }
+            ]
+          },
+          {
+            "feature_set": "raw_only",
+            "features": [
+              "raw_score"
+            ],
+            "mean_auc": 0.7521044131490978,
+            "mean_brier": 0.1959490420474825,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 76,
+                "positives": 26,
+                "auc": 0.7103846153846154,
+                "brier": 0.2073035582112692
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 198,
+                "positives": 31,
+                "auc": 0.7787328568669113,
+                "brier": 0.15803091684682904
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 66,
+                "positives": 21,
+                "auc": 0.7671957671957672,
+                "brier": 0.22251265108434926
+              }
+            ]
+          },
+          {
+            "feature_set": "query_relative",
+            "features": [
+              "reciprocal_rank",
+              "margin_to_top",
+              "margin_to_next",
+              "robust_z"
+            ],
+            "mean_auc": 0.733420577281243,
+            "mean_brier": 0.17798771185597947,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 76,
+                "positives": 26,
+                "auc": 0.7615384615384615,
+                "brier": 0.18473912342836443
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 198,
+                "positives": 31,
+                "auc": 0.720204751786749,
+                "brier": 0.1397026481046501
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 66,
+                "positives": 21,
+                "auc": 0.7185185185185186,
+                "brier": 0.20952136403492386
+              }
+            ]
+          },
+          {
+            "feature_set": "combined",
+            "features": [
+              "raw_score",
+              "reciprocal_rank",
+              "margin_to_top",
+              "margin_to_next",
+              "robust_z",
+              "log_query_tokens"
+            ],
+            "mean_auc": 0.752942311053186,
+            "mean_brier": 0.18232041027334908,
+            "folds": [
+              {
+                "source_id": "demo-production-tutorial",
+                "examples": 76,
+                "positives": 26,
+                "auc": 0.7861538461538462,
+                "brier": 0.17408213499757208
+              },
+              {
+                "source_id": "mitx-course-overview",
+                "examples": 198,
+                "positives": 31,
+                "auc": 0.815530229862855,
+                "brier": 0.14304743022698552
+              },
+              {
+                "source_id": "translate-meta-tutorial",
+                "examples": 66,
+                "positives": 21,
+                "auc": 0.6571428571428571,
+                "brier": 0.22983166559548965
+              }
+            ]
+          }
+        ],
+        "model": {
+          "mean": [
+            0.2902223931197927,
+            2.367532405388873,
+            0.28481171025585444,
+            0.43304789935038424
+          ],
+          "scale": [
+            0.2980414270791157,
+            1.916007147442065,
+            0.6217195132650709,
+            2.185014041785953
+          ],
+          "intercept": -1.3221391457751532,
+          "weights": [
+            0.6395084062123203,
+            0.43999015029692795,
+            0.7225683089584539,
+            -0.054558819360486094
+          ],
+          "regularization": 1.0,
+          "examples": 340,
+          "feature_set": "query_relative",
+          "features": [
+            "reciprocal_rank",
+            "margin_to_top",
+            "margin_to_next",
+            "robust_z"
+          ]
+        }
+      },
+      "source_disjoint_validation": {
+        "selected": {
+          "examples": 761,
+          "positives": 79,
+          "auc": 0.645402576190653,
+          "brier": 0.1721002815846137
+        },
+        "rank_only": {
+          "examples": 761,
+          "positives": 79,
+          "auc": 0.7644121905044731,
+          "brier": 0.08730607004790562
+        },
+        "auc_delta_selected_minus_rank": -0.11900961431382007,
+        "brier_delta_selected_minus_rank": 0.08479421153670809,
+        "generalization_gate_passed": false
+      },
+      "prediction_latency": {
+        "median_ms_for_all_validation_candidates": 0.027999994927085936,
+        "p95_ms_for_all_validation_candidates": 0.029294989508343854
+      }
+    }
+  },
+  "calibration_artifact": {
+    "path": "ml/experiments/calibrated_fusion_v1/calibration_artifact_v1.json",
+    "sha256": "6818d271cd1dcac5de222dde135339659390bc4e141ea0ed0c9613115f4dc768",
+    "bytes": 3168,
+    "loaded_round_trip": true
+  },
+  "validation_production_rrf60": {
+    "all": {
+      "queries": 28,
+      "top1": 10,
+      "top3": 16,
+      "top5": 20,
+      "mrr_at_5": 0.48273809523809524
+    },
+    "by_category": {
+      "MULTIMODAL": {
+        "queries": 9,
+        "top1": 5,
+        "top3": 7,
+        "top5": 7,
+        "mrr_at_5": 0.6666666666666666
+      },
+      "SPEECH": {
+        "queries": 11,
+        "top1": 2,
+        "top3": 4,
+        "top5": 6,
+        "mrr_at_5": 0.2833333333333333
+      },
+      "VISUAL": {
+        "queries": 8,
+        "top1": 3,
+        "top3": 5,
+        "top5": 7,
+        "mrr_at_5": 0.55
+      }
+    },
+    "positive_queries": 28,
+    "negative_queries": 4,
+    "queries": [
+      {
+        "query_id": "hfd-d-s01",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 6
+      },
+      {
+        "query_id": "hfd-d-s02",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-d-s03",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 18
+      },
+      {
+        "query_id": "hfd-d-s04",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-d-s05",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 16
+      },
+      {
+        "query_id": "hfd-d-v01",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-d-v02",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 2
+      },
+      {
+        "query_id": "hfd-d-v03",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 5
+      },
+      {
+        "query_id": "hfd-d-v04",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 29
+      },
+      {
+        "query_id": "hfd-d-m01",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-d-m02",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 2
+      },
+      {
+        "query_id": "hfd-d-m03",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": null
+      },
+      {
+        "query_id": "hfd-d-m04",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": null
+      },
+      {
+        "query_id": "hfd-d-a01",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 7
+      },
+      {
+        "query_id": "hfd-d-n01",
+        "category": "NEGATIVE",
+        "negative": true,
+        "relevant_rank": null
+      },
+      {
+        "query_id": "hfd-d-n02",
+        "category": "NEGATIVE",
+        "negative": true,
+        "relevant_rank": null
+      },
+      {
+        "query_id": "hfd-h-s01",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 3
+      },
+      {
+        "query_id": "hfd-h-s02",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 3
+      },
+      {
+        "query_id": "hfd-h-s03",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 12
+      },
+      {
+        "query_id": "hfd-h-s04",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 4
+      },
+      {
+        "query_id": "hfd-h-s05",
+        "category": "SPEECH",
+        "negative": false,
+        "relevant_rank": 5
+      },
+      {
+        "query_id": "hfd-h-v01",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 5
+      },
+      {
+        "query_id": "hfd-h-v02",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-v03",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 2
+      },
+      {
+        "query_id": "hfd-h-v04",
+        "category": "VISUAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-m01",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-m02",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 2
+      },
+      {
+        "query_id": "hfd-h-m03",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-m04",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-a01",
+        "category": "MULTIMODAL",
+        "negative": false,
+        "relevant_rank": 1
+      },
+      {
+        "query_id": "hfd-h-n01",
+        "category": "NEGATIVE",
+        "negative": true,
+        "relevant_rank": null
+      },
+      {
+        "query_id": "hfd-h-n02",
+        "category": "NEGATIVE",
+        "negative": true,
+        "relevant_rank": null
+      }
+    ]
+  },
+  "validation_failures": [
+    {
+      "query_id": "hfd-d-s01",
+      "mechanism": "irrelevant consensus"
+    },
+    {
+      "query_id": "hfd-d-s03",
+      "mechanism": "irrelevant consensus"
+    },
+    {
+      "query_id": "hfd-d-s05",
+      "mechanism": "irrelevant consensus"
+    },
+    {
+      "query_id": "hfd-d-v04",
+      "mechanism": "weak required-modality rank"
+    },
+    {
+      "query_id": "hfd-d-m03",
+      "mechanism": "cross-modal agreement"
+    },
+    {
+      "query_id": "hfd-d-m04",
+      "mechanism": "retrieval miss"
+    },
+    {
+      "query_id": "hfd-d-a01",
+      "mechanism": "irrelevant consensus"
+    },
+    {
+      "query_id": "hfd-h-s03",
+      "mechanism": "irrelevant consensus"
+    }
+  ],
+  "fusion_experiment": {
+    "status": "stopped_before_candidate_methods",
+    "methods_not_run": [
+      "RRF plus calibrated raw-score confidence",
+      "calibrated confidence fusion with rank features",
+      "tiny interpretable linear/logistic fusion"
+    ],
+    "recovered_failures": [],
+    "new_regressions": [],
+    "net_gain": 0,
+    "irrelevant_consensus_before": 5,
+    "irrelevant_consensus_after": null,
+    "strong_single_modality_recoveries": 0,
+    "negative_query_behavior": "not evaluated for a rejected calibration"
+  },
+  "resource_impact": {
+    "production_memory_bytes": 0,
+    "production_artifact_bytes": 0,
+    "diagnostic_artifact_bytes": 3168
+  },
+  "decision": {
+    "code": "C",
+    "label": "CALIBRATION DOES NOT GENERALIZE",
+    "reason": "Both calibration-selected modality models are worse than rank-only on source-disjoint validation AUC and Brier; fusion candidate construction and protected holdout evaluation therefore stopped."
+  },
+  "second_stage_reranker_justified": false,
+  "next_milestone": "Collect at least three additional source-disjoint calibration sources with full Top-50 Visual/Speech traces and freeze a new validation split before reconsidering confidence-aware fusion."
+}
