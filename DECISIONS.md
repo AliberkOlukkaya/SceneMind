@@ -1,5 +1,11 @@
 # Decisions
 
+## 033 - Carry the 1.50× overlap cap only to holdout validation
+
+Freeze the existing two-video, 32-query diagnostic development evidence and establish exact offline parity with production `app.hybrid.fuse` before evaluating alternatives. Compare three predeclared rank-only caps and three independent list-normalized rank formulas. Do not use raw CLIP/BM25 scores, learned weights, modality quotas, Final English Acceptance V2, or production code.
+
+The 1.50× cap raises Top-1/3/5 from 10/16/20 to 11/16/21, MRR@5 from 0.4827 to 0.5155, Speech Top-5 from 6/11 to 7/11, and strong retention from 13/28 to 14/28. Visual remains 7/8 and Multimodal 7/9. It rescues one query and breaks none; neither source loses Top-K, although one supplies the Top-5 gain and Multimodal MRR declines slightly. Stronger caps or normalized ranks introduce Visual failures. Skip the optional modality floor. Designate 1.50× a provisional development candidate, keep production uncapped, and require one new source-disjoint frozen holdout before any promotion.
+
 ## 032 - Diagnose exact-thumbnail overlap before changing Hybrid
 
 Use two existing source-disjoint CC BY 4.0 English development videos and freeze 32 queries before retrieval. Keep Final English Acceptance V2 fully isolated. Add evaluation-only tracing that calls production `app.hybrid.fuse` as the authoritative ranker and proves reconstructed IDs, timestamps, scores, and ordering are identical. The normal API and frontend remain unchanged.

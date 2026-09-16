@@ -80,6 +80,8 @@
 - [x] Obtain a completely new independent 30-60 minute English video and run Final English Acceptance V2 once
 - [x] Audit and instrument Hybrid fusion without changing production ranking
 - [x] Diagnose Hybrid fusion on 32 queries from two source-disjoint development videos without reusing V2 acceptance media
-- [ ] Pre-register and test one minimal overlap/per-modality fusion candidate on development evidence, then use a new frozen source for any promotion decision
+- [x] Pre-register and test capped-overlap and normalized-rank fusion families on development evidence
+- [x] Select the 1.50× cap as a provisional development candidate without modifying production
+- [ ] Validate the frozen 1.50× candidate once on new source-disjoint holdout media before any promotion decision
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
