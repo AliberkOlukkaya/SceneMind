@@ -1,0 +1,3841 @@
+{
+  "schema_version": "2.0.0",
+  "suite_id": "final-english-acceptance-v2",
+  "run_date": "2026-09-16",
+  "manifest_sha256": "ce633b525af0cc3a347c51017c4019eb173e376246783b8153bd6dc8b4c60b7c",
+  "media_sha256": "addb005d02cde7bc6b277e938bc10190709e278088caa23354e1323477f0000c",
+  "primary_product_label": "Smart Search",
+  "primary_mode": "hybrid",
+  "auto_used": false,
+  "production_retrieval_modified": false,
+  "manifest_changed_after_freeze": false,
+  "acceptance_video_used_for_tuning": false,
+  "pipeline": {
+    "media_size_bytes": 167172049,
+    "duration_seconds": 1829.08,
+    "upload_successful": true,
+    "upload_seconds": 0.9937852999937604,
+    "processing_successful": true,
+    "total_processing_seconds": 244.39304370000173,
+    "ingest_seconds": 57.815206600003876,
+    "speech_seconds": 132.82097229999636,
+    "visual_seconds": 53.756864800001495,
+    "frame_count": 366,
+    "asr_segment_count": 576,
+    "asr_language": "en",
+    "api_upload_peak_rss_bytes": 112427008,
+    "api_search_peak_tree_rss_bytes": 590110720,
+    "worker_peak_tree_rss_bytes": 2086465536,
+    "worker_steady_tree_rss_bytes": 1042067456,
+    "persistent_disk_bytes": 174692504,
+    "temporary_residue_bytes": 0,
+    "retries": 0,
+    "failures": [],
+    "jobs": [
+      {
+        "kind": "ingest",
+        "attempts": 1,
+        "status": "ready",
+        "error": null
+      },
+      {
+        "kind": "speech",
+        "attempts": 1,
+        "status": "ready",
+        "error": null
+      },
+      {
+        "kind": "visual",
+        "attempts": 1,
+        "status": "ready",
+        "error": null
+      }
+    ]
+  },
+  "queries": [
+    {
+      "query_id": "v2-s01",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 10416.6207,
+      "results": [
+        {
+          "timestamp": 62.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000013.jpg",
+          "score": 0.02530334418467002,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 49,
+              "score": 0.2378520965576172
+            },
+            "speech": {
+              "rank": 2,
+              "score": 9.980637131344732
+            }
+          },
+          "text": "and I also want to take away some of the fears of computer networks.",
+          "end": 67.09
+        },
+        {
+          "timestamp": 265.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000054.jpg",
+          "score": 0.024934585193166076,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 29,
+              "score": 0.2502928674221039
+            },
+            "speech": {
+              "rank": 13,
+              "score": 5.8497615023670795
+            }
+          },
+          "text": "For the rest of my talk, I mostly go to talk about home networks.",
+          "end": 268.78
+        },
+        {
+          "timestamp": 1148.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000231.jpg",
+          "score": 0.024481265860576206,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 27,
+              "score": 0.2509615123271942
+            },
+            "speech": {
+              "rank": 17,
+              "score": 5.289720541941245
+            }
+          },
+          "text": "So, but how do we talk to the internet?",
+          "end": 1152.78
+        },
+        {
+          "timestamp": 717.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000145.jpg",
+          "score": 0.02191142191142191,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 50,
+              "score": 0.23726803064346313
+            },
+            "speech": {
+              "rank": 18,
+              "score": 5.219038736883271
+            }
+          },
+          "text": "but assume you want to talk to EMFCAM.org or to Google.",
+          "end": 721.78
+        },
+        {
+          "timestamp": 364.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000074.jpg",
+          "score": 0.021178843567906766,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 32,
+              "score": 0.24764779210090637
+            },
+            "speech": {
+              "rank": 37,
+              "score": 3.5305553921121757
+            }
+          },
+          "text": "oh, this is a message from Alice.",
+          "end": 366.78
+        }
+      ],
+      "top_5_timestamps": [
+        62.09,
+        265.78,
+        1148.78,
+        717.78,
+        364.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result starts inside the goals passage and states the intended beginner takeaway.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 62.09,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s02",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 60.8821,
+      "results": [
+        {
+          "timestamp": 146.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000030.jpg",
+          "score": 0.03028233151183971,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 12,
+              "score": 0.26369813084602356
+            },
+            "speech": {
+              "rank": 1,
+              "score": 12.655288894459286
+            }
+          },
+          "text": "what your browser gets from your internet to show you the website.",
+          "end": 150.09
+        },
+        {
+          "timestamp": 138.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000029.jpg",
+          "score": 0.02964254577157803,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 14,
+              "score": 0.26255467534065247
+            },
+            "speech": {
+              "rank": 2,
+              "score": 9.454018915479217
+            }
+          },
+          "text": "what text is on the website,",
+          "end": 140.09
+        },
+        {
+          "timestamp": 133.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000028.jpg",
+          "score": 0.028404512489927477,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.26321840286254883
+            },
+            "speech": {
+              "rank": 8,
+              "score": 5.461550652999078
+            }
+          },
+          "text": "which is the HTML source code of the website,",
+          "end": 136.09
+        },
+        {
+          "timestamp": 1233.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000248.jpg",
+          "score": 0.023403679653679656,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 36,
+              "score": 0.2470439374446869
+            },
+            "speech": {
+              "rank": 17,
+              "score": 3.413082833430922
+            }
+          },
+          "text": "what the address is on the local network.",
+          "end": 1236.78
+        },
+        {
+          "timestamp": 1240.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000249.jpg",
+          "score": 0.022001934235976787,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 28,
+              "score": 0.25046306848526
+            },
+            "speech": {
+              "rank": 34,
+              "score": 2.6125407324026844
+            }
+          },
+          "text": "it just sends a message or what's my IP address,",
+          "end": 1243.78
+        }
+      ],
+      "top_5_timestamps": [
+        146.09,
+        138.09,
+        133.09,
+        1233.78,
+        1240.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result directly states what the browser receives and shows the HTML source slide.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 146.09,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s03",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 65.3096,
+      "results": [
+        {
+          "timestamp": 1521.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000305.jpg",
+          "score": 0.02750455373406193,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.30159491300582886
+            },
+            "speech": {
+              "rank": 30,
+              "score": 2.423370098605872
+            }
+          },
+          "text": "But the internet is obviously not like this,",
+          "end": 1523.16
+        },
+        {
+          "timestamp": 1195.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000240.jpg",
+          "score": 0.025728708679368183,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 29,
+              "score": 0.2756575345993042
+            },
+            "speech": {
+              "rank": 9,
+              "score": 5.061492327642945
+            }
+          },
+          "text": "This also shows why you need a name, too,",
+          "end": 1198.78
+        },
+        {
+          "timestamp": 1148.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000231.jpg",
+          "score": 0.02488425925925926,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.2907528579235077
+            },
+            "speech": {
+              "rank": 48,
+              "score": 2.172468857532329
+            }
+          },
+          "text": "So, but how do we talk to the internet?",
+          "end": 1152.78
+        },
+        {
+          "timestamp": 801.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000161.jpg",
+          "score": 0.02159090909090909,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 50,
+              "score": 0.27149641513824463
+            },
+            "speech": {
+              "rank": 20,
+              "score": 2.5718852789623354
+            }
+          },
+          "text": "IP stands for internet protocol.",
+          "end": 803.78
+        },
+        {
+          "timestamp": 243.78,
+          "end": 248.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000050.jpg",
+          "score": 0.01639344262295082,
+          "text": "receiving is split up into little blocks of 1,500 characters",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 9.70501575621989
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        1521.16,
+        1195.78,
+        1148.78,
+        801.78,
+        243.78
+      ],
+      "outcome": "PARTIAL",
+      "human_evidence_note": "Rank 5 lands at the conclusion that data is split, after the size-limit explanation; it omits the causal context and requires manual searching backward.",
+      "failure_categories": [
+        "Hybrid fusion",
+        "ranking"
+      ],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": false,
+      "best_useful_rank": null,
+      "best_useful_timestamp": null,
+      "timestamp_error_to_frozen_interval_seconds": null,
+      "timestamp_judgment": "No PASS-level timestamp in the primary Top-5."
+    },
+    {
+      "query_id": "v2-s04",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 64.8866,
+      "results": [
+        {
+          "timestamp": 435.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000088.jpg",
+          "score": 0.032018442622950824,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.32953697443008423
+            },
+            "speech": {
+              "rank": 1,
+              "score": 11.561555459117162
+            }
+          },
+          "text": "or other devices, it just learns where everything is",
+          "end": 439.78
+        },
+        {
+          "timestamp": 428.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000087.jpg",
+          "score": 0.03200204813108039,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.3301364481449127
+            },
+            "speech": {
+              "rank": 2,
+              "score": 10.050921884690162
+            }
+          },
+          "text": "this is exactly how a switch on your home network",
+          "end": 432.78
+        },
+        {
+          "timestamp": 1106.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000222.jpg",
+          "score": 0.028991596638655463,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 10,
+              "score": 0.3050763010978699
+            },
+            "speech": {
+              "rank": 8,
+              "score": 4.586621027993124
+            }
+          },
+          "text": "And they are the devices that are responsible for figuring out which direction",
+          "end": 1110.78
+        },
+        {
+          "timestamp": 1135.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000228.jpg",
+          "score": 0.028205128205128206,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.2860892415046692
+            },
+            "speech": {
+              "rank": 5,
+              "score": 5.061492327642945
+            }
+          },
+          "text": "And an essence between the yellow ports is something like a switch,",
+          "end": 1139.78
+        },
+        {
+          "timestamp": 442.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000090.jpg",
+          "score": 0.02749719416386083,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.329431414604187
+            },
+            "speech": {
+              "rank": 21,
+              "score": 2.8863799632227094
+            }
+          },
+          "text": "How does this work on a slightly different class?",
+          "end": 444.78
+        }
+      ],
+      "top_5_timestamps": [
+        435.78,
+        428.78,
+        1106.78,
+        1135.78,
+        442.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result directly states that the switch learns where devices are.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 435.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s05",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 64.7226,
+      "results": [
+        {
+          "timestamp": 524.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000106.jpg",
+          "score": 0.03009207275993712,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.28547048568725586
+            },
+            "speech": {
+              "rank": 1,
+              "score": 13.187163984950516
+            }
+          },
+          "text": "for us, wired and wireless networks work exactly the same.",
+          "end": 529.78
+        },
+        {
+          "timestamp": 510.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000103.jpg",
+          "score": 0.029211087420042643,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 10,
+              "score": 0.28751900792121887
+            },
+            "speech": {
+              "rank": 7,
+              "score": 8.283793796043764
+            }
+          },
+          "text": "So ethernet for cable network and WiFi obviously for WiFi.",
+          "end": 513.78
+        },
+        {
+          "timestamp": 442.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000090.jpg",
+          "score": 0.028991596638655463,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 8,
+              "score": 0.29230397939682007
+            },
+            "speech": {
+              "rank": 10,
+              "score": 6.196611707032153
+            }
+          },
+          "text": "How does this work on a slightly different class?",
+          "end": 444.78
+        },
+        {
+          "timestamp": 1087.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000219.jpg",
+          "score": 0.02565270188221008,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.30101269483566284
+            },
+            "speech": {
+              "rank": 48,
+              "score": 3.09554389073495
+            }
+          },
+          "text": "And I talked a little bit about that you use switches for the local network.",
+          "end": 1092.78
+        },
+        {
+          "timestamp": 1126.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000226.jpg",
+          "score": 0.025603864734299518,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 30,
+              "score": 0.27827543020248413
+            },
+            "speech": {
+              "rank": 9,
+              "score": 6.677450973814019
+            }
+          },
+          "text": "In this case, the yellow ports say LAN,",
+          "end": 1129.78
+        }
+      ],
+      "top_5_timestamps": [
+        524.78,
+        510.78,
+        442.78,
+        1087.78,
+        1126.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result explicitly says wired and wireless networks work the same at this abstraction.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 524.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s06",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 66.553,
+      "results": [
+        {
+          "timestamp": 540.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000109.jpg",
+          "score": 0.030536130536130537,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 5,
+              "score": 0.30897295475006104
+            },
+            "speech": {
+              "rank": 6,
+              "score": 7.913534186249706
+            }
+          },
+          "text": "This address can either be called a Mac address,",
+          "end": 543.78
+        },
+        {
+          "timestamp": 576.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000116.jpg",
+          "score": 0.03047794966520434,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 11,
+              "score": 0.30497390031814575
+            },
+            "speech": {
+              "rank": 1,
+              "score": 12.413209017119044
+            }
+          },
+          "text": "has a globally unique address,",
+          "end": 581.78
+        },
+        {
+          "timestamp": 558.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000113.jpg",
+          "score": 0.025678061306371368,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.30762961506843567
+            },
+            "speech": {
+              "rank": 33,
+              "score": 4.113469221772519
+            }
+          },
+          "text": "has one of these addresses.",
+          "end": 560.78
+        },
+        {
+          "timestamp": 584.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000118.jpg",
+          "score": 0.025047327799621377,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.3094424605369568
+            },
+            "speech": {
+              "rank": 49,
+              "score": 3.1011632903379716
+            }
+          },
+          "text": "assume that we have a class where you have two addresses.",
+          "end": 586.78
+        },
+        {
+          "timestamp": 828.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000167.jpg",
+          "score": 0.024687641125997292,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.2947102189064026
+            },
+            "speech": {
+              "rank": 31,
+              "score": 4.231275903560151
+            }
+          },
+          "text": "I am mostly going to talk about version 4 addresses,",
+          "end": 831.78
+        }
+      ],
+      "top_5_timestamps": [
+        540.78,
+        576.78,
+        558.78,
+        584.78,
+        828.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result starts the continuous MAC-address explanation that reaches uniqueness and its reason within the same passage.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 540.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s07",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 63.9725,
+      "results": [
+        {
+          "timestamp": 711.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000143.jpg",
+          "score": 0.030679156908665108,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.2767640948295593
+            },
+            "speech": {
+              "rank": 10,
+              "score": 3.4516967718372746
+            }
+          },
+          "text": "so how does this scale?",
+          "end": 713.78
+        },
+        {
+          "timestamp": 633.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000128.jpg",
+          "score": 0.025910931174089068,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 5,
+              "score": 0.27272701263427734
+            },
+            "speech": {
+              "rank": 35,
+              "score": 2.369045509821154
+            }
+          },
+          "text": "and wants to see how this happens at your home network.",
+          "end": 636.78
+        },
+        {
+          "timestamp": 1791.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000359.jpg",
+          "score": 0.020303527481542245,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 46,
+              "score": 0.25191763043403625
+            },
+            "speech": {
+              "rank": 32,
+              "score": 2.4801779236780606
+            }
+          },
+          "text": "at home and just figure out how they look like.",
+          "end": 1793.16
+        },
+        {
+          "timestamp": 1510.16,
+          "end": 1515.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000303.jpg",
+          "score": 0.01639344262295082,
+          "text": "So, but how do packets on the internet go to the right place?",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 6.362261246179784
+            }
+          }
+        },
+        {
+          "timestamp": 658.78,
+          "end": 660.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000133.jpg",
+          "score": 0.016129032258064516,
+          "text": "at the right shows activity.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 2,
+              "score": 5.818111053290586
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        711.78,
+        633.78,
+        1791.16,
+        1510.16,
+        658.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "Rank 5 starts at the activity graph and immediately leads to choosing the interface with the most activity.",
+      "failure_categories": [],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": true,
+      "best_useful_rank": 5,
+      "best_useful_timestamp": 658.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-s08",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 72.5969,
+      "results": [
+        {
+          "timestamp": 827.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000167.jpg",
+          "score": 0.03055037313432836,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.3070239722728729
+            },
+            "speech": {
+              "rank": 4,
+              "score": 8.46115117015122
+            }
+          },
+          "text": "before.",
+          "end": 828.78
+        },
+        {
+          "timestamp": 1078.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000217.jpg",
+          "score": 0.02280088094312735,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 33,
+              "score": 0.2736110985279083
+            },
+            "speech": {
+              "rank": 23,
+              "score": 5.689567006510541
+            }
+          },
+          "text": "That says that this is from this source IP address to this destination IP address.",
+          "end": 1083.78
+        },
+        {
+          "timestamp": 1099.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000221.jpg",
+          "score": 0.02278953922789539,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.28853923082351685
+            },
+            "speech": {
+              "rank": 50,
+              "score": 4.305859397998461
+            }
+          },
+          "text": "There's another device that, as called routers,",
+          "end": 1103.78
+        },
+        {
+          "timestamp": 1428.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000287.jpg",
+          "score": 0.022602397602397604,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 44,
+              "score": 0.2677893042564392
+            },
+            "speech": {
+              "rank": 17,
+              "score": 5.992066381946733
+            }
+          },
+          "text": "doesn't really matter why.",
+          "end": 1429.16
+        },
+        {
+          "timestamp": 424.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000086.jpg",
+          "score": 0.02233220666344761,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 16,
+              "score": 0.2874981164932251
+            },
+            "speech": {
+              "rank": 49,
+              "score": 4.305859397998461
+            }
+          },
+          "text": "so like a device where you plug in like several computers,",
+          "end": 427.78
+        }
+      ],
+      "top_5_timestamps": [
+        827.78,
+        1078.78,
+        1099.78,
+        1428.16,
+        424.78
+      ],
+      "outcome": "FAIL",
+      "human_evidence_note": "No Hybrid Top-5 result reaches the lower-level-address explanation.",
+      "failure_categories": [
+        "Hybrid fusion",
+        "ranking"
+      ],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": false,
+      "best_useful_rank": null,
+      "best_useful_timestamp": null,
+      "timestamp_error_to_frozen_interval_seconds": null,
+      "timestamp_judgment": "No PASS-level timestamp in the primary Top-5."
+    },
+    {
+      "query_id": "v2-s09",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 63.3239,
+      "results": [
+        {
+          "timestamp": 1278.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000257.jpg",
+          "score": 0.028612012987012988,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.30502068996429443
+            },
+            "speech": {
+              "rank": 17,
+              "score": 3.4516967718372746
+            }
+          },
+          "text": "And how does this work?",
+          "end": 1280.16
+        },
+        {
+          "timestamp": 1336.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000268.jpg",
+          "score": 0.027783137179239824,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.3029598593711853
+            },
+            "speech": {
+              "rank": 11,
+              "score": 4.181764893137002
+            }
+          },
+          "text": "Casey is like, okay, I know the address of a DNS server",
+          "end": 1340.16
+        },
+        {
+          "timestamp": 1293.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000260.jpg",
+          "score": 0.027777777777777776,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 12,
+              "score": 0.30316728353500366
+            },
+            "speech": {
+              "rank": 12,
+              "score": 3.975942256478827
+            }
+          },
+          "text": "they either manually have to type in the address of a DNS server",
+          "end": 1298.16
+        },
+        {
+          "timestamp": 1345.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000270.jpg",
+          "score": 0.027031963470319637,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 15,
+              "score": 0.3028881549835205
+            },
+            "speech": {
+              "rank": 13,
+              "score": 3.7894299845590185
+            }
+          },
+          "text": "The DNS server on the internet, either randomly already knows what the address",
+          "end": 1349.16
+        },
+        {
+          "timestamp": 1306.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000262.jpg",
+          "score": 0.026387470207694927,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 29,
+              "score": 0.3012954294681549
+            },
+            "speech": {
+              "rank": 6,
+              "score": 6.0658214893989095
+            }
+          },
+          "text": "of the DNS server.",
+          "end": 1309.16
+        }
+      ],
+      "top_5_timestamps": [
+        1278.16,
+        1336.16,
+        1293.16,
+        1345.16,
+        1306.16
+      ],
+      "outcome": "FAIL",
+      "human_evidence_note": "Hybrid returns the earlier DNS explanation but misses the later 9.9.9.9 troubleshooting passage.",
+      "failure_categories": [
+        "Hybrid fusion",
+        "ranking"
+      ],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": false,
+      "best_useful_rank": null,
+      "best_useful_timestamp": null,
+      "timestamp_error_to_frozen_interval_seconds": null,
+      "timestamp_judgment": "No PASS-level timestamp in the primary Top-5."
+    },
+    {
+      "query_id": "v2-s10",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 59.1036,
+      "results": [
+        {
+          "timestamp": 1774.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000356.jpg",
+          "score": 0.030536130536130537,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.31306108832359314
+            },
+            "speech": {
+              "rank": 5,
+              "score": 5.775465809700244
+            }
+          },
+          "text": "I just want to encourage you to play with computer networks.",
+          "end": 1777.16
+        },
+        {
+          "timestamp": 95.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000020.jpg",
+          "score": 0.02715098147128967,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 19,
+              "score": 0.2914179563522339
+            },
+            "speech": {
+              "rank": 9,
+              "score": 5.337815044520069
+            }
+          },
+          "text": "If you're interested in this after this,",
+          "end": 97.09
+        },
+        {
+          "timestamp": 1798.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000361.jpg",
+          "score": 0.026625704045058884,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.31390899419784546
+            },
+            "speech": {
+              "rank": 33,
+              "score": 3.4397677217566573
+            }
+          },
+          "text": "You can become parts of like virtual networks",
+          "end": 1801.16
+        },
+        {
+          "timestamp": 90.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000019.jpg",
+          "score": 0.02651914295749912,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.29194876551628113
+            },
+            "speech": {
+              "rank": 13,
+              "score": 4.7183589495431235
+            }
+          },
+          "text": "and I also want to give you some pointers on how to experiment with computer networks.",
+          "end": 95.09
+        },
+        {
+          "timestamp": 1781.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000357.jpg",
+          "score": 0.02603648424543947,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.31288301944732666
+            },
+            "speech": {
+              "rank": 30,
+              "score": 3.522159055804476
+            }
+          },
+          "text": "they are software for that.",
+          "end": 1782.16
+        }
+      ],
+      "top_5_timestamps": [
+        1774.16,
+        95.09,
+        1798.16,
+        90.09,
+        1781.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result opens the closing tools-and-experimentation recommendation.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1774.16,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v01",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 49.7456,
+      "results": [
+        {
+          "timestamp": 90.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000019.jpg",
+          "score": 0.027637721755368813,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.25021350383758545
+            },
+            "speech": {
+              "rank": 25,
+              "score": 2.4118614983568136
+            }
+          },
+          "text": "and I also want to give you some pointers on how to experiment with computer networks.",
+          "end": 95.09
+        },
+        {
+          "timestamp": 450.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000091.jpg",
+          "score": 0.02728937728937729,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 24,
+              "score": 0.23386654257774353
+            },
+            "speech": {
+              "rank": 5,
+              "score": 4.301378280546609
+            }
+          },
+          "text": "with all of the pneumatic tubes.",
+          "end": 452.78
+        },
+        {
+          "timestamp": 65.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000014.jpg",
+          "score": 0.01639344262295082,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.2507399022579193
+            }
+          }
+        },
+        {
+          "timestamp": 1612.16,
+          "end": 1613.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000323.jpg",
+          "score": 0.01639344262295082,
+          "text": "send them onto me.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 5.27380036727703
+            }
+          }
+        },
+        {
+          "timestamp": 95.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000020.jpg",
+          "score": 0.016129032258064516,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.2504308223724365
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        90.09,
+        450.78,
+        65.0,
+        1612.16,
+        95.0
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the requested slide with three orange goal bars.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 90.09,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v02",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 63.2091,
+      "results": [
+        {
+          "timestamp": 133.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000028.jpg",
+          "score": 0.032018442622950824,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.2776564657688141
+            },
+            "speech": {
+              "rank": 1,
+              "score": 19.434708357875508
+            }
+          },
+          "text": "which is the HTML source code of the website,",
+          "end": 136.09
+        },
+        {
+          "timestamp": 146.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000030.jpg",
+          "score": 0.03036576949620428,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.277775377035141
+            },
+            "speech": {
+              "rank": 9,
+              "score": 4.586621027993124
+            }
+          },
+          "text": "what your browser gets from your internet to show you the website.",
+          "end": 150.09
+        },
+        {
+          "timestamp": 538.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000109.jpg",
+          "score": 0.026494565217391304,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 32,
+              "score": 0.26910579204559326
+            },
+            "speech": {
+              "rank": 4,
+              "score": 5.368105096813006
+            }
+          },
+          "text": "by an address that looks like this.",
+          "end": 540.78
+        },
+        {
+          "timestamp": 692.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000140.jpg",
+          "score": 0.025396825396825397,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 45,
+              "score": 0.2669224739074707
+            },
+            "speech": {
+              "rank": 3,
+              "score": 6.224479705023363
+            }
+          },
+          "text": "and a source address.",
+          "end": 693.78
+        },
+        {
+          "timestamp": 129.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000027.jpg",
+          "score": 0.02530334418467002,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 49,
+              "score": 0.2650355100631714
+            },
+            "speech": {
+              "rank": 2,
+              "score": 8.374318337056097
+            }
+          },
+          "text": "So if you go to your browser and hit view source,",
+          "end": 132.09
+        }
+      ],
+      "top_5_timestamps": [
+        133.09,
+        146.09,
+        538.78,
+        692.78,
+        129.09
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the HTML source immediately after the browser-page demonstration.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 133.09,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v03",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 53.7239,
+      "results": [
+        {
+          "timestamp": 212.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000044.jpg",
+          "score": 0.029709507042253523,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 11,
+              "score": 0.21606045961380005
+            },
+            "speech": {
+              "rank": 4,
+              "score": 4.360829424356334
+            }
+          },
+          "text": "it has to be split up across several of those postcards.",
+          "end": 216.78
+        },
+        {
+          "timestamp": 176.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000036.jpg",
+          "score": 0.028693528693528692,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.21515250205993652
+            },
+            "speech": {
+              "rank": 3,
+              "score": 5.0750434286697566
+            }
+          },
+          "text": "And this really is a little bit like postcards in",
+          "end": 179.78
+        },
+        {
+          "timestamp": 260.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000053.jpg",
+          "score": 0.01639344262295082,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.21936246752738953
+            }
+          }
+        },
+        {
+          "timestamp": 809.78,
+          "end": 811.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000163.jpg",
+          "score": 0.01639344262295082,
+          "text": "and both of them are used simultaneously",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 6.3869993222247095
+            }
+          }
+        },
+        {
+          "timestamp": 255.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000052.jpg",
+          "score": 0.016129032258064516,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.21875476837158203
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        212.78,
+        176.78,
+        260.0,
+        809.78,
+        255.0
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the hand-drawn postcard slide in the analogy.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 212.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v04",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 46.0048,
+      "results": [
+        {
+          "timestamp": 442.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000090.jpg",
+          "score": 0.03149801587301587,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.3309701681137085
+            },
+            "speech": {
+              "rank": 3,
+              "score": 4.865224345614742
+            }
+          },
+          "text": "How does this work on a slightly different class?",
+          "end": 444.78
+        },
+        {
+          "timestamp": 428.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000087.jpg",
+          "score": 0.029437229437229435,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.330097496509552
+            },
+            "speech": {
+              "rank": 10,
+              "score": 3.5861204167831926
+            }
+          },
+          "text": "this is exactly how a switch on your home network",
+          "end": 432.78
+        },
+        {
+          "timestamp": 1114.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000224.jpg",
+          "score": 0.028381642512077296,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 9,
+              "score": 0.32683366537094116
+            },
+            "speech": {
+              "rank": 12,
+              "score": 3.5861204167831926
+            }
+          },
+          "text": "At home, you typically have something like this.",
+          "end": 1117.78
+        },
+        {
+          "timestamp": 1044.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000210.jpg",
+          "score": 0.026438310608579978,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 37,
+              "score": 0.2991074025630951
+            },
+            "speech": {
+              "rank": 2,
+              "score": 5.347869572151555
+            }
+          },
+          "text": "you take away from this is that what you do in networking,",
+          "end": 1047.78
+        },
+        {
+          "timestamp": 1791.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000359.jpg",
+          "score": 0.024961240310077522,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 26,
+              "score": 0.30328792333602905
+            },
+            "speech": {
+              "rank": 15,
+              "score": 3.249669118868922
+            }
+          },
+          "text": "at home and just figure out how they look like.",
+          "end": 1793.16
+        }
+      ],
+      "top_5_timestamps": [
+        442.78,
+        428.78,
+        1114.78,
+        1044.78,
+        1791.16
+      ],
+      "outcome": "FAIL",
+      "human_evidence_note": "All five results show switches, routers, or other diagrams; none shows the three-device product slide.",
+      "failure_categories": [
+        "visual retrieval"
+      ],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": false,
+      "best_useful_rank": null,
+      "best_useful_timestamp": null,
+      "timestamp_error_to_frozen_interval_seconds": null,
+      "timestamp_judgment": "No PASS-level timestamp in the primary Top-5."
+    },
+    {
+      "query_id": "v2-v05",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 64.326,
+      "results": [
+        {
+          "timestamp": 315.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000064.jpg",
+          "score": 0.03131881575727918,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.2859867513179779
+            },
+            "speech": {
+              "rank": 7,
+              "score": 5.258213487185153
+            }
+          },
+          "text": "And each student gets one pneumatic tube",
+          "end": 319.78
+        },
+        {
+          "timestamp": 1142.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000230.jpg",
+          "score": 0.028404512489927477,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 8,
+              "score": 0.1966804414987564
+            },
+            "speech": {
+              "rank": 13,
+              "score": 1.5219874384258953
+            }
+          },
+          "text": "and between the yellow ports and the blue ports is a router.",
+          "end": 1145.78
+        },
+        {
+          "timestamp": 311.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000063.jpg",
+          "score": 0.02625745950554135,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 25,
+              "score": 0.18997660279273987
+            },
+            "speech": {
+              "rank": 9,
+              "score": 4.093928943507845
+            }
+          },
+          "text": "that you send via nomadic tubes to each other.",
+          "end": 315.78
+        },
+        {
+          "timestamp": 606.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000122.jpg",
+          "score": 0.02484567901234568,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 21,
+              "score": 0.19354544579982758
+            },
+            "speech": {
+              "rank": 20,
+              "score": 1.3922337205942212
+            }
+          },
+          "text": "and click on this,",
+          "end": 608.78
+        },
+        {
+          "timestamp": 60.09,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000013.jpg",
+          "score": 0.023822791864028976,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 37,
+              "score": 0.18757180869579315
+            },
+            "speech": {
+              "rank": 14,
+              "score": 1.489474927362662
+            }
+          },
+          "text": "and in the internet specifically,",
+          "end": 62.09
+        }
+      ],
+      "top_5_timestamps": [
+        315.78,
+        1142.78,
+        311.78,
+        606.78,
+        60.09
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result visibly contains the distinctive monochrome pneumatic-tube photograph.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 315.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v06",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 251.6315,
+      "results": [
+        {
+          "timestamp": 326.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000066.jpg",
+          "score": 0.027692895339954164,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 8,
+              "score": 0.27797383069992065
+            },
+            "speech": {
+              "rank": 17,
+              "score": 4.869842181264199
+            }
+          },
+          "text": "the teacher just and the student are in a random place.",
+          "end": 331.78
+        },
+        {
+          "timestamp": 1675.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000336.jpg",
+          "score": 0.027651515151515153,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 20,
+              "score": 0.27575114369392395
+            },
+            "speech": {
+              "rank": 6,
+              "score": 5.818111053290586
+            }
+          },
+          "text": "through the least amount of networks.",
+          "end": 1677.16
+        },
+        {
+          "timestamp": 460.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000093.jpg",
+          "score": 0.026736111111111113,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.27861475944519043
+            },
+            "speech": {
+              "rank": 30,
+              "score": 4.400776378044582
+            }
+          },
+          "text": "on to the teacher.",
+          "end": 462.78
+        },
+        {
+          "timestamp": 376.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000076.jpg",
+          "score": 0.026008827238335436,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 44,
+              "score": 0.27175310254096985
+            },
+            "speech": {
+              "rank": 1,
+              "score": 8.68142421959032
+            }
+          },
+          "text": "The teacher doesn't know where Blair is.",
+          "end": 379.78
+        },
+        {
+          "timestamp": 350.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000071.jpg",
+          "score": 0.025807525807525808,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 17,
+              "score": 0.27631571888923645
+            },
+            "speech": {
+              "rank": 18,
+              "score": 4.869842181264199
+            }
+          },
+          "text": "And the teacher will gladly forward this.",
+          "end": 354.78
+        }
+      ],
+      "top_5_timestamps": [
+        326.78,
+        1675.16,
+        460.78,
+        376.78,
+        350.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "Rank 4 clearly shows Alice and Blair labels, message arrows, and the teacher icon.",
+      "failure_categories": [],
+      "useful_top_1": false,
+      "useful_top_3": false,
+      "useful_top_5": true,
+      "best_useful_rank": 4,
+      "best_useful_timestamp": 376.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v07",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 71.2988,
+      "results": [
+        {
+          "timestamp": 517.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000105.jpg",
+          "score": 0.03177805800756621,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 5,
+              "score": 0.35699647665023804
+            },
+            "speech": {
+              "rank": 1,
+              "score": 15.925081002651435
+            }
+          },
+          "text": "which is IEEE 802.",
+          "end": 519.78
+        },
+        {
+          "timestamp": 428.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000087.jpg",
+          "score": 0.02877846790890269,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 10,
+              "score": 0.30456969141960144
+            },
+            "speech": {
+              "rank": 9,
+              "score": 5.061492327642945
+            }
+          },
+          "text": "this is exactly how a switch on your home network",
+          "end": 432.78
+        },
+        {
+          "timestamp": 510.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000103.jpg",
+          "score": 0.02792120864410021,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.3592529594898224
+            },
+            "speech": {
+              "rank": 23,
+              "score": 3.68950012900378
+            }
+          },
+          "text": "So ethernet for cable network and WiFi obviously for WiFi.",
+          "end": 513.78
+        },
+        {
+          "timestamp": 1019.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000205.jpg",
+          "score": 0.026137303556658397,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 33,
+              "score": 0.2781534492969513
+            },
+            "speech": {
+              "rank": 5,
+              "score": 5.337815044520069
+            }
+          },
+          "text": "you access it via HTTP or HTTPS.",
+          "end": 1022.78
+        },
+        {
+          "timestamp": 283.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000058.jpg",
+          "score": 0.02558175373709354,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 43,
+              "score": 0.2727470397949219
+            },
+            "speech": {
+              "rank": 3,
+              "score": 9.777844079082536
+            }
+          },
+          "text": "or probably use Wi-Fi nowadays to connect to the internet",
+          "end": 288.78
+        }
+      ],
+      "top_5_timestamps": [
+        517.78,
+        428.78,
+        510.78,
+        1019.78,
+        283.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the IEEE 802 comparison with the round access point and Ethernet switch.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 517.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-v08",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 63.4569,
+      "results": [
+        {
+          "timestamp": 688.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000139.jpg",
+          "score": 0.030536130536130537,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.3060394525527954
+            },
+            "speech": {
+              "rank": 5,
+              "score": 5.368105096813006
+            }
+          },
+          "text": "So here inside this yellow circle,",
+          "end": 690.78
+        },
+        {
+          "timestamp": 677.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000137.jpg",
+          "score": 0.03021353930031804,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 11,
+              "score": 0.30349183082580566
+            },
+            "speech": {
+              "rank": 2,
+              "score": 5.992066381946733
+            }
+          },
+          "text": "Where every line on the screen is a packet",
+          "end": 680.78
+        },
+        {
+          "timestamp": 692.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000140.jpg",
+          "score": 0.0266900790166813,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.3055213689804077
+            },
+            "speech": {
+              "rank": 25,
+              "score": 3.20652417665968
+            }
+          },
+          "text": "and a source address.",
+          "end": 693.78
+        },
+        {
+          "timestamp": 672.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000136.jpg",
+          "score": 0.02668564312399929,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 17,
+              "score": 0.29540514945983887
+            },
+            "speech": {
+              "rank": 13,
+              "score": 4.601810031753863
+            }
+          },
+          "text": "to with the internet.",
+          "end": 673.78
+        },
+        {
+          "timestamp": 1065.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000214.jpg",
+          "score": 0.02625745950554135,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 25,
+              "score": 0.28568747639656067
+            },
+            "speech": {
+              "rank": 9,
+              "score": 5.061492327642945
+            }
+          },
+          "text": "So this is the same packet that we had earlier.",
+          "end": 1068.78
+        }
+      ],
+      "top_5_timestamps": [
+        688.78,
+        677.78,
+        692.78,
+        672.78,
+        1065.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows Wireshark with the requested yellow address-field circle.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 688.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m01",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 64.5814,
+      "results": [
+        {
+          "timestamp": 435.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000088.jpg",
+          "score": 0.032266458495966696,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.3309817910194397
+            },
+            "speech": {
+              "rank": 1,
+              "score": 13.74489682712176
+            }
+          },
+          "text": "or other devices, it just learns where everything is",
+          "end": 439.78
+        },
+        {
+          "timestamp": 439.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000089.jpg",
+          "score": 0.03055037313432836,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.3287511467933655
+            },
+            "speech": {
+              "rank": 4,
+              "score": 8.256519781606189
+            }
+          },
+          "text": "on the first message that it receives.",
+          "end": 442.78
+        },
+        {
+          "timestamp": 428.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000087.jpg",
+          "score": 0.030117753623188408,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.3308294415473938
+            },
+            "speech": {
+              "rank": 9,
+              "score": 7.313961177609758
+            }
+          },
+          "text": "this is exactly how a switch on your home network",
+          "end": 432.78
+        },
+        {
+          "timestamp": 1096.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000220.jpg",
+          "score": 0.030090497737556562,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 5,
+              "score": 0.3303327262401581
+            },
+            "speech": {
+              "rank": 8,
+              "score": 7.409765220516386
+            }
+          },
+          "text": "That's all they just forward messages in the local network.",
+          "end": 1099.78
+        },
+        {
+          "timestamp": 1289.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000259.jpg",
+          "score": 0.025676937441643323,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 42,
+              "score": 0.2805655896663666
+            },
+            "speech": {
+              "rank": 3,
+              "score": 8.8379509386478
+            }
+          },
+          "text": "while it's internet provider.",
+          "end": 1291.16
+        }
+      ],
+      "top_5_timestamps": [
+        435.78,
+        439.78,
+        428.78,
+        1096.78,
+        1289.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result combines the photographed switch with speech that it learns connected devices.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 435.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m02",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 71.8247,
+      "results": [
+        {
+          "timestamp": 819.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000165.jpg",
+          "score": 0.03252247488101534,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.3208732604980469
+            },
+            "speech": {
+              "rank": 1,
+              "score": 9.973044889755192
+            }
+          },
+          "text": "I believe six addresses just look more intimidating",
+          "end": 823.78
+        },
+        {
+          "timestamp": 823.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000166.jpg",
+          "score": 0.031024531024531024,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.31906837224960327
+            },
+            "speech": {
+              "rank": 3,
+              "score": 9.482180757702109
+            }
+          },
+          "text": "because they are longer, because you are more likely to encounter",
+          "end": 827.78
+        },
+        {
+          "timestamp": 811.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000163.jpg",
+          "score": 0.02844163539403516,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.32150840759277344
+            },
+            "speech": {
+              "rank": 23,
+              "score": 4.071488898214304
+            }
+          },
+          "text": "at home, you are somewhat more likely to encounter",
+          "end": 814.78
+        },
+        {
+          "timestamp": 851.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000171.jpg",
+          "score": 0.02388888888888889,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 12,
+              "score": 0.3124101161956787
+            },
+            "speech": {
+              "rank": 40,
+              "score": 3.234330758569888
+            }
+          },
+          "text": "So if you go back to our school example, how this looks like,",
+          "end": 855.78
+        },
+        {
+          "timestamp": 1041.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000209.jpg",
+          "score": 0.02345679012345679,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 21,
+              "score": 0.2757260799407959
+            },
+            "speech": {
+              "rank": 30,
+              "score": 3.6667005497927305
+            }
+          },
+          "text": "And one of the really important things that I want to take away,",
+          "end": 1044.78
+        }
+      ],
+      "top_5_timestamps": [
+        819.78,
+        823.78,
+        811.78,
+        851.78,
+        1041.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows both address forms while the speaker says IPv6 only looks more intimidating.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 819.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m03",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 73.6903,
+      "results": [
+        {
+          "timestamp": 845.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000170.jpg",
+          "score": 0.032018442622950824,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 4,
+              "score": 0.34972241520881653
+            },
+            "speech": {
+              "rank": 1,
+              "score": 7.752691209621862
+            }
+          },
+          "text": "Identifies the host, so the computer or device on your network.",
+          "end": 850.78
+        },
+        {
+          "timestamp": 486.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000098.jpg",
+          "score": 0.02623004235907462,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 39,
+              "score": 0.29820820689201355
+            },
+            "speech": {
+              "rank": 2,
+              "score": 6.499038398372795
+            }
+          },
+          "text": "And while they are doing that, everyone writes down",
+          "end": 489.78
+        },
+        {
+          "timestamp": 1289.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000259.jpg",
+          "score": 0.02488425925925926,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 48,
+              "score": 0.2966921627521515
+            },
+            "speech": {
+              "rank": 4,
+              "score": 6.3869993222247095
+            }
+          },
+          "text": "while it's internet provider.",
+          "end": 1291.16
+        },
+        {
+          "timestamp": 1002.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000202.jpg",
+          "score": 0.024502524502524506,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 31,
+              "score": 0.3047679364681244
+            },
+            "speech": {
+              "rank": 14,
+              "score": 4.120414586998809
+            }
+          },
+          "text": "And inside of that IP address,",
+          "end": 1005.78
+        },
+        {
+          "timestamp": 1312.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000263.jpg",
+          "score": 0.02183253977470677,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 49,
+              "score": 0.29654985666275024
+            },
+            "speech": {
+              "rank": 19,
+              "score": 3.882478579301597
+            }
+          },
+          "text": "and gets the IP address via DHCP,",
+          "end": 1315.16
+        }
+      ],
+      "top_5_timestamps": [
+        845.78,
+        486.78,
+        1289.16,
+        1002.78,
+        1312.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the green/yellow IPv4 decomposition during the host explanation.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 845.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m04",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 67.5013,
+      "results": [
+        {
+          "timestamp": 1011.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000203.jpg",
+          "score": 0.0287391216352965,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 21,
+              "score": 0.29642772674560547
+            },
+            "speech": {
+              "rank": 1,
+              "score": 9.822654889703466
+            }
+          },
+          "text": "This is the payload of the internet protocol message.",
+          "end": 1014.78
+        },
+        {
+          "timestamp": 982.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000198.jpg",
+          "score": 0.028283227848101264,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 19,
+              "score": 0.29760873317718506
+            },
+            "speech": {
+              "rank": 4,
+              "score": 6.526960372015148
+            }
+          },
+          "text": "and this is the ethernet layer.",
+          "end": 985.78
+        },
+        {
+          "timestamp": 1656.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000332.jpg",
+          "score": 0.02724014336917563,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 30,
+              "score": 0.29140082001686096
+            },
+            "speech": {
+              "rank": 2,
+              "score": 7.962256351794797
+            }
+          },
+          "text": "And send a message to AS 64,500, AS 65,542,",
+          "end": 1660.16
+        },
+        {
+          "timestamp": 1002.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000202.jpg",
+          "score": 0.02532051282051282,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.29901283979415894
+            },
+            "speech": {
+              "rank": 20,
+              "score": 4.425014813445889
+            }
+          },
+          "text": "And inside of that IP address,",
+          "end": 1005.78
+        },
+        {
+          "timestamp": 1559.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000313.jpg",
+          "score": 0.024925373134328358,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 40,
+              "score": 0.2807871401309967
+            },
+            "speech": {
+              "rank": 7,
+              "score": 5.7913848760215085
+            }
+          },
+          "text": "And each network that participates on the internet is known as an AS,",
+          "end": 1563.16
+        }
+      ],
+      "top_5_timestamps": [
+        1011.78,
+        982.78,
+        1656.16,
+        1002.78,
+        1559.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the nested colored layers while speech identifies the payload.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1011.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m05",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 67.1364,
+      "results": [
+        {
+          "timestamp": 1131.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000227.jpg",
+          "score": 0.028629032258064516,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 20,
+              "score": 0.3122981786727905
+            },
+            "speech": {
+              "rank": 2,
+              "score": 18.27178363642712
+            }
+          },
+          "text": "and the blue ports is LAN, which means wide area network.",
+          "end": 1135.78
+        },
+        {
+          "timestamp": 1142.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000230.jpg",
+          "score": 0.028588564574170333,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 22,
+              "score": 0.30947595834732056
+            },
+            "speech": {
+              "rank": 1,
+              "score": 23.484843307819936
+            }
+          },
+          "text": "and between the yellow ports and the blue ports is a router.",
+          "end": 1145.78
+        },
+        {
+          "timestamp": 1126.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000226.jpg",
+          "score": 0.028531243721117136,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 19,
+              "score": 0.3124912977218628
+            },
+            "speech": {
+              "rank": 3,
+              "score": 16.53245288349948
+            }
+          },
+          "text": "In this case, the yellow ports say LAN,",
+          "end": 1129.78
+        },
+        {
+          "timestamp": 1135.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000228.jpg",
+          "score": 0.02797067901234568,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 21,
+              "score": 0.3105234205722809
+            },
+            "speech": {
+              "rank": 4,
+              "score": 10.529636468844101
+            }
+          },
+          "text": "And an essence between the yellow ports is something like a switch,",
+          "end": 1139.78
+        },
+        {
+          "timestamp": 428.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000087.jpg",
+          "score": 0.026140526140526144,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.3362506031990051
+            },
+            "speech": {
+              "rank": 31,
+              "score": 3.5861204167831926
+            }
+          },
+          "text": "this is exactly how a switch on your home network",
+          "end": 432.78
+        }
+      ],
+      "top_5_timestamps": [
+        1131.78,
+        1142.78,
+        1126.78,
+        1135.78,
+        428.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the colored router ports in the LAN/WAN explanation.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1131.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m06",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 69.2266,
+      "results": [
+        {
+          "timestamp": 1185.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000238.jpg",
+          "score": 0.03225806451612903,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.32117295265197754
+            },
+            "speech": {
+              "rank": 2,
+              "score": 8.805074512200065
+            }
+          },
+          "text": "you ask, what is my IP address?",
+          "end": 1187.78
+        },
+        {
+          "timestamp": 1211.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000243.jpg",
+          "score": 0.029850746268656716,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.3169610798358917
+            },
+            "speech": {
+              "rank": 7,
+              "score": 7.02215426421245
+            }
+          },
+          "text": "The Ethernet level to be able to ask for an IP address in the first step.",
+          "end": 1215.78
+        },
+        {
+          "timestamp": 1175.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000236.jpg",
+          "score": 0.02886002886002886,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.3196001648902893
+            },
+            "speech": {
+              "rank": 17,
+              "score": 5.931606832881915
+            }
+          },
+          "text": "but they have an IP address.",
+          "end": 1177.78
+        },
+        {
+          "timestamp": 1166.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000234.jpg",
+          "score": 0.027884615384615386,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 20,
+              "score": 0.3110101819038391
+            },
+            "speech": {
+              "rank": 5,
+              "score": 8.05902626152583
+            }
+          },
+          "text": "an IP address to be able to talk to the internet.",
+          "end": 1169.78
+        },
+        {
+          "timestamp": 1215.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000244.jpg",
+          "score": 0.027651515151515153,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.3182886242866516
+            },
+            "speech": {
+              "rank": 20,
+              "score": 5.589082356461835
+            }
+          },
+          "text": "And this is exactly how IP address is.",
+          "end": 1218.78
+        }
+      ],
+      "top_5_timestamps": [
+        1185.78,
+        1211.78,
+        1175.78,
+        1166.78,
+        1215.78
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the DHCP exchange exactly as the new device asks for an IP address.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1185.78,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m07",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 68.1454,
+      "results": [
+        {
+          "timestamp": 1321.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000265.jpg",
+          "score": 0.031544957774465976,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 6,
+              "score": 0.3207792639732361
+            },
+            "speech": {
+              "rank": 1,
+              "score": 9.243257220779947
+            }
+          },
+          "text": "just send the message with the request of what the domain name,",
+          "end": 1326.16
+        },
+        {
+          "timestamp": 1306.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000262.jpg",
+          "score": 0.028381642512077296,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 9,
+              "score": 0.3206311762332916
+            },
+            "speech": {
+              "rank": 12,
+              "score": 6.0658214893989095
+            }
+          },
+          "text": "of the DNS server.",
+          "end": 1309.16
+        },
+        {
+          "timestamp": 1336.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000268.jpg",
+          "score": 0.027972027972027972,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.31982842087745667
+            },
+            "speech": {
+              "rank": 6,
+              "score": 6.5583282479652745
+            }
+          },
+          "text": "Casey is like, okay, I know the address of a DNS server",
+          "end": 1340.16
+        },
+        {
+          "timestamp": 1289.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000259.jpg",
+          "score": 0.02782608695652174,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 15,
+              "score": 0.32033979892730713
+            },
+            "speech": {
+              "rank": 9,
+              "score": 6.3869993222247095
+            }
+          },
+          "text": "while it's internet provider.",
+          "end": 1291.16
+        },
+        {
+          "timestamp": 1293.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000260.jpg",
+          "score": 0.027598020555767037,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 14,
+              "score": 0.3204684257507324
+            },
+            "speech": {
+              "rank": 11,
+              "score": 6.235533340417664
+            }
+          },
+          "text": "they either manually have to type in the address of a DNS server",
+          "end": 1298.16
+        }
+      ],
+      "top_5_timestamps": [
+        1321.16,
+        1306.16,
+        1336.16,
+        1289.16,
+        1293.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the animated DNS path while the request is explained.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1321.16,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-m08",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 67.3884,
+      "results": [
+        {
+          "timestamp": 1643.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000330.jpg",
+          "score": 0.030679156908665108,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.3404626250267029
+            },
+            "speech": {
+              "rank": 10,
+              "score": 5.0750434286697566
+            }
+          },
+          "text": "And this protocol that does that is called BGP,",
+          "end": 1645.16
+        },
+        {
+          "timestamp": 1563.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000314.jpg",
+          "score": 0.02844551282051282,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 18,
+              "score": 0.33548182249069214
+            },
+            "speech": {
+              "rank": 4,
+              "score": 6.3869993222247095
+            }
+          },
+          "text": "which stands for Autonomous System,",
+          "end": 1565.16
+        },
+        {
+          "timestamp": 1671.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000335.jpg",
+          "score": 0.02429667519181586,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 42,
+              "score": 0.32271772623062134
+            },
+            "speech": {
+              "rank": 9,
+              "score": 5.10824093548353
+            }
+          },
+          "text": "And obviously, what you do is you choose the shorter version that goes",
+          "end": 1675.16
+        },
+        {
+          "timestamp": 1278.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000257.jpg",
+          "score": 0.021164021164021163,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 48,
+              "score": 0.31680625677108765
+            },
+            "speech": {
+              "rank": 24,
+              "score": 3.4516967718372746
+            }
+          },
+          "text": "And how does this work?",
+          "end": 1280.16
+        },
+        {
+          "timestamp": 1677.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000336.jpg",
+          "score": 0.019246784491533265,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 41,
+              "score": 0.32348817586898804
+            },
+            "speech": {
+              "rank": 47,
+              "score": 2.602250008713399
+            }
+          },
+          "text": "And this is actually, in principle, how routing on the internet works.",
+          "end": 1681.16
+        }
+      ],
+      "top_5_timestamps": [
+        1643.16,
+        1563.16,
+        1671.16,
+        1278.16,
+        1677.16
+      ],
+      "outcome": "PASS",
+      "human_evidence_note": "The first result shows the AS cloud diagram and explicitly names BGP; later Top-5 results cover route choice.",
+      "failure_categories": [],
+      "useful_top_1": true,
+      "useful_top_3": true,
+      "useful_top_5": true,
+      "best_useful_rank": 1,
+      "best_useful_timestamp": 1643.16,
+      "timestamp_error_to_frozen_interval_seconds": 0.0,
+      "timestamp_judgment": "Inside the frozen interval and useful at click time."
+    },
+    {
+      "query_id": "v2-n01",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 52.9832,
+      "results": [
+        {
+          "timestamp": 1321.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000265.jpg",
+          "score": 0.027149321266968326,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 25,
+              "score": 0.27800124883651733
+            },
+            "speech": {
+              "rank": 5,
+              "score": 3.410700336194001
+            }
+          },
+          "text": "just send the message with the request of what the domain name,",
+          "end": 1326.16
+        },
+        {
+          "timestamp": 672.78,
+          "end": 673.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000136.jpg",
+          "score": 0.01639344262295082,
+          "text": "to with the internet.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 4.601810031753863
+            }
+          }
+        },
+        {
+          "timestamp": 1200.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000241.jpg",
+          "score": 0.01639344262295082,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.3071621060371399
+            }
+          }
+        },
+        {
+          "timestamp": 450.78,
+          "end": 452.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000091.jpg",
+          "score": 0.016129032258064516,
+          "text": "with all of the pneumatic tubes.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 2,
+              "score": 4.301378280546609
+            }
+          }
+        },
+        {
+          "timestamp": 1190.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000239.jpg",
+          "score": 0.016129032258064516,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.3045002222061157
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        1321.16,
+        672.78,
+        1200.0,
+        450.78,
+        1190.0
+      ],
+      "outcome": "ACCEPTABLE",
+      "human_evidence_note": "Returned candidates are visibly unrelated and the UI labels them as possible/relevant moments without asserting a TCP/UDP comparison exists.",
+      "failure_categories": []
+    },
+    {
+      "query_id": "v2-n02",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 64.1135,
+      "results": [
+        {
+          "timestamp": 1612.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000323.jpg",
+          "score": 0.028068137824235385,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 22,
+              "score": 0.22068071365356445
+            },
+            "speech": {
+              "rank": 3,
+              "score": 5.27380036727703
+            }
+          },
+          "text": "send them onto me.",
+          "end": 1613.16
+        },
+        {
+          "timestamp": 1605.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000322.jpg",
+          "score": 0.027730294396961064,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 21,
+              "score": 0.22091136872768402
+            },
+            "speech": {
+              "rank": 5,
+              "score": 4.41006053438538
+            }
+          },
+          "text": "These are the two networks that belong to me.",
+          "end": 1608.16
+        },
+        {
+          "timestamp": 268.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000055.jpg",
+          "score": 0.024925373134328358,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 7,
+              "score": 0.23145177960395813
+            },
+            "speech": {
+              "rank": 40,
+              "score": 2.172468857532329
+            }
+          },
+          "text": "So if you use your internet at home,",
+          "end": 271.78
+        },
+        {
+          "timestamp": 1623.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000326.jpg",
+          "score": 0.024501173708920188,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 36,
+              "score": 0.2184768170118332
+            },
+            "speech": {
+              "rank": 11,
+              "score": 3.0694802290101997
+            }
+          },
+          "text": "If you want to reach these messages, send them for me and I will forward.",
+          "end": 1626.16
+        },
+        {
+          "timestamp": 1639.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000329.jpg",
+          "score": 0.023863636363636365,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 28,
+              "score": 0.2194022536277771
+            },
+            "speech": {
+              "rank": 20,
+              "score": 2.5718852789623354
+            }
+          },
+          "text": "of every provider that is part of the internet.",
+          "end": 1643.16
+        }
+      ],
+      "top_5_timestamps": [
+        1612.16,
+        1605.16,
+        268.78,
+        1623.16,
+        1639.16
+      ],
+      "outcome": "ACCEPTABLE",
+      "human_evidence_note": "Topology diagrams are plausible neighbors, but the conservative UI does not claim they are an undersea-cable world map.",
+      "failure_categories": []
+    },
+    {
+      "query_id": "v2-n03",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 46.7327,
+      "results": [
+        {
+          "timestamp": 677.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000137.jpg",
+          "score": 0.02750455373406193,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 30,
+              "score": 0.23614320158958435
+            },
+            "speech": {
+              "rank": 1,
+              "score": 6.3869993222247095
+            }
+          },
+          "text": "Where every line on the screen is a packet",
+          "end": 680.78
+        },
+        {
+          "timestamp": 595.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000120.jpg",
+          "score": 0.01639344262295082,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.2621481418609619
+            }
+          }
+        },
+        {
+          "timestamp": 310.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000063.jpg",
+          "score": 0.016129032258064516,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 2,
+              "score": 0.25687018036842346
+            }
+          }
+        },
+        {
+          "timestamp": 1289.16,
+          "end": 1291.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000259.jpg",
+          "score": 0.016129032258064516,
+          "text": "while it's internet provider.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 2,
+              "score": 6.3869993222247095
+            }
+          }
+        },
+        {
+          "timestamp": 605.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000122.jpg",
+          "score": 0.015873015873015872,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 3,
+              "score": 0.2526627779006958
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        677.78,
+        595.0,
+        310.0,
+        1289.16,
+        605.0
+      ],
+      "outcome": "ACCEPTABLE",
+      "human_evidence_note": "The results show Wireshark, the presenter, or DNS rather than a phone; product wording remains non-assertive.",
+      "failure_categories": []
+    },
+    {
+      "query_id": "v2-n04",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "requested_mode": "hybrid",
+      "selected_route": "hybrid",
+      "latency_ms": 57.6765,
+      "results": [
+        {
+          "timestamp": 801.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000161.jpg",
+          "score": 0.027212143650499815,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 13,
+              "score": 0.2734360098838806
+            },
+            "speech": {
+              "rank": 14,
+              "score": 3.3063050730727928
+            }
+          },
+          "text": "IP stands for internet protocol.",
+          "end": 803.78
+        },
+        {
+          "timestamp": 1763.16,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000354.jpg",
+          "score": 0.024250440917107582,
+          "modality": "visual+speech",
+          "evidence": {
+            "visual": {
+              "rank": 24,
+              "score": 0.262958288192749
+            },
+            "speech": {
+              "rank": 21,
+              "score": 3.0907070226570097
+            }
+          },
+          "text": "play around with having several, or how you do it,",
+          "end": 1766.16
+        },
+        {
+          "timestamp": 1036.78,
+          "end": 1038.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000208.jpg",
+          "score": 0.01639344262295082,
+          "text": "which is an encryption protocol,",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 1,
+              "score": 7.962540501325718
+            }
+          }
+        },
+        {
+          "timestamp": 1250.0,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000251.jpg",
+          "score": 0.01639344262295082,
+          "modality": "visual",
+          "evidence": {
+            "visual": {
+              "rank": 1,
+              "score": 0.2822374999523163
+            }
+          }
+        },
+        {
+          "timestamp": 1019.78,
+          "end": 1022.78,
+          "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000205.jpg",
+          "score": 0.016129032258064516,
+          "text": "you access it via HTTP or HTTPS.",
+          "modality": "speech",
+          "evidence": {
+            "speech": {
+              "rank": 2,
+              "score": 5.689626732812388
+            }
+          }
+        }
+      ],
+      "top_5_timestamps": [
+        801.78,
+        1763.16,
+        1036.78,
+        1250.0,
+        1019.78
+      ],
+      "outcome": "ACCEPTABLE",
+      "human_evidence_note": "Related HTTPS speech appears, but no result is presented as confirmed proof of a padlock slide.",
+      "failure_categories": []
+    }
+  ],
+  "diagnostics": {
+    "metrics_impact": "none",
+    "note": "Explicit modes were run only after primary judgments; S06 was checked while its long-passage judgment was unresolved and remained a primary PASS without metric substitution.",
+    "queries": [
+      {
+        "query_id": "v2-s03",
+        "mode": "speech",
+        "latency_ms": 36.741,
+        "selected_route": "speech",
+        "results": [
+          {
+            "timestamp": 243.78,
+            "end": 248.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000050.jpg",
+            "score": 9.70501575621989,
+            "text": "receiving is split up into little blocks of 1,500 characters",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 290.78,
+            "end": 293.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000059.jpg",
+            "score": 6.583134333807449,
+            "text": "And to explain how this works,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1510.16,
+            "end": 1515.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000303.jpg",
+            "score": 6.045863645322872,
+            "text": "So, but how do packets on the internet go to the right place?",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1428.16,
+            "end": 1429.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000287.jpg",
+            "score": 5.992066381946733,
+            "text": "doesn't really matter why.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 216.78,
+            "end": 219.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000044.jpg",
+            "score": 5.368105096813006,
+            "text": "In networks, you typically call them packets.",
+            "modality": "speech"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-s06",
+        "mode": "speech",
+        "latency_ms": 21.9415,
+        "selected_route": "speech",
+        "results": [
+          {
+            "timestamp": 576.78,
+            "end": 581.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000116.jpg",
+            "score": 12.413209017119044,
+            "text": "has a globally unique address,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1195.78,
+            "end": 1198.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000240.jpg",
+            "score": 9.509230779792134,
+            "text": "This also shows why you need a name, too,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 596.78,
+            "end": 598.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000120.jpg",
+            "score": 9.358375143644317,
+            "text": "So it's really important that names are globally unique.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 290.78,
+            "end": 293.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000059.jpg",
+            "score": 8.153361966521983,
+            "text": "And to explain how this works,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1554.16,
+            "end": 1559.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000312.jpg",
+            "score": 8.06089958893252,
+            "text": "You need a unique identifier that identifies you network on the internet.",
+            "modality": "speech"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-s07",
+        "mode": "speech",
+        "latency_ms": 25.6236,
+        "selected_route": "speech",
+        "results": [
+          {
+            "timestamp": 1510.16,
+            "end": 1515.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000303.jpg",
+            "score": 6.362261246179784,
+            "text": "So, but how do packets on the internet go to the right place?",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 658.78,
+            "end": 660.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000133.jpg",
+            "score": 5.818111053290586,
+            "text": "at the right shows activity.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 620.78,
+            "end": 622.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000125.jpg",
+            "score": 5.697087078180308,
+            "text": "and the Linux command line interface",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1654.16,
+            "end": 1656.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000332.jpg",
+            "score": 5.461550652999078,
+            "text": "They either can go right.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 662.78,
+            "end": 664.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000134.jpg",
+            "score": 5.0750434286697566,
+            "text": "because it shows you which network interface",
+            "modality": "speech"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-s08",
+        "mode": "speech",
+        "latency_ms": 26.0239,
+        "selected_route": "speech",
+        "results": [
+          {
+            "timestamp": 1210.78,
+            "end": 1211.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000243.jpg",
+            "score": 12.622089211689502,
+            "text": "You need the lower level.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 904.78,
+            "end": 908.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000182.jpg",
+            "score": 8.679049684936476,
+            "text": "By the IP address, then it can go to the school coordinator,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1501.16,
+            "end": 1505.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000301.jpg",
+            "score": 8.663073771569627,
+            "text": "If this doesn't work, then something else is lower level is down.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 827.78,
+            "end": 828.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000167.jpg",
+            "score": 8.46115117015122,
+            "text": "before.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1211.78,
+            "end": 1215.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000243.jpg",
+            "score": 7.972863312070842,
+            "text": "The Ethernet level to be able to ask for an IP address in the first step.",
+            "modality": "speech"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-s09",
+        "mode": "speech",
+        "latency_ms": 22.0438,
+        "selected_route": "speech",
+        "results": [
+          {
+            "timestamp": 1489.16,
+            "end": 1491.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000299.jpg",
+            "score": 11.672238809471596,
+            "text": "You can just ping 9, 9, 9, 9.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 290.78,
+            "end": 293.78,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000059.jpg",
+            "score": 9.63619017651894,
+            "text": "And to explain how this works,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1484.16,
+            "end": 1489.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000298.jpg",
+            "score": 8.432921689763658,
+            "text": "that is likely to always be up 9, 9, 9, 9 is one of those.",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1494.16,
+            "end": 1497.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000300.jpg",
+            "score": 7.643878120241103,
+            "text": "then DNS is broken and you can change your DNS server,",
+            "modality": "speech"
+          },
+          {
+            "timestamp": 1788.16,
+            "end": 1791.16,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000359.jpg",
+            "score": 6.349935752461583,
+            "text": "You can run DNS servers, the HTTP servers, web servers,",
+            "modality": "speech"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-v04",
+        "mode": "visual",
+        "latency_ms": 9217.5415,
+        "selected_route": "visual",
+        "results": [
+          {
+            "timestamp": 425.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000086.jpg",
+            "score": 0.3328942060470581,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 440.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000089.jpg",
+            "score": 0.3314957618713379,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 1095.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000220.jpg",
+            "score": 0.33143195509910583,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 445.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000090.jpg",
+            "score": 0.3309701681137085,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 1100.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000221.jpg",
+            "score": 0.3307137191295624,
+            "modality": "visual"
+          }
+        ]
+      },
+      {
+        "query_id": "v2-v06",
+        "mode": "visual",
+        "latency_ms": 33.0479,
+        "selected_route": "visual",
+        "results": [
+          {
+            "timestamp": 1655.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000332.jpg",
+            "score": 0.27927112579345703,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 340.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000069.jpg",
+            "score": 0.27902811765670776,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 1660.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000333.jpg",
+            "score": 0.27895990014076233,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 460.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000093.jpg",
+            "score": 0.27861475944519043,
+            "modality": "visual"
+          },
+          {
+            "timestamp": 1670.0,
+            "thumbnail": "/videos/3acd98bb-e026-4efb-a627-e1f26894e624/frames/000335.jpg",
+            "score": 0.27853530645370483,
+            "modality": "visual"
+          }
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "code": "C",
+    "label": "FINAL ACCEPTANCE V2 FAILED",
+    "dominant_failure_subsystem": "Hybrid fusion/ranking of speech evidence",
+    "search_core_frozen": false,
+    "next_milestone": "Product-level Hybrid fusion investigation on source-disjoint development evidence; do not tune or rerun on this acceptance video."
+  },
+  "acceptance": {
+    "queries": 30,
+    "positive_queries": 26,
+    "negative_queries": 4,
+    "useful_top_1": 0.7692307692307693,
+    "useful_top_3": 0.7692307692307693,
+    "useful_top_5": 0.8461538461538461,
+    "mrr_at_5": 0.7865384615384615,
+    "positive_outcomes": {
+      "PASS": 22,
+      "PARTIAL": 1,
+      "FAIL": 3
+    },
+    "category_breakdown": {
+      "SPEECH": {
+        "queries": 10,
+        "useful_top_1": 0.6,
+        "useful_top_3": 0.6,
+        "useful_top_5": 0.7,
+        "outcomes": {
+          "PASS": 7,
+          "PARTIAL": 1,
+          "FAIL": 2
+        }
+      },
+      "VISUAL": {
+        "queries": 8,
+        "useful_top_1": 0.75,
+        "useful_top_3": 0.75,
+        "useful_top_5": 0.875,
+        "outcomes": {
+          "PASS": 7,
+          "FAIL": 1
+        }
+      },
+      "MULTIMODAL": {
+        "queries": 8,
+        "useful_top_1": 1.0,
+        "useful_top_3": 1.0,
+        "useful_top_5": 1.0,
+        "outcomes": {
+          "PASS": 8
+        }
+      }
+    },
+    "negative_ux": {
+      "ACCEPTABLE": 4
+    },
+    "search_latency_ms": {
+      "median": 64.5814,
+      "p95": 251.6315,
+      "max": 10416.6207
+    },
+    "gates": {
+      "top_3": false,
+      "top_5": false,
+      "top_1_preferred": true,
+      "pipeline": true,
+      "negative_ux": true,
+      "passed": false
+    }
+  }
+}

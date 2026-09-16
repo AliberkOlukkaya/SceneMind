@@ -1,5 +1,11 @@
 # Decisions
 
+## 031 - Fail Final English Acceptance V2 on Hybrid ranking
+
+Freeze 30 natural English queries only after full independent review of a new source-disjoint 30:29 CC BY-SA presentation, then run every primary request through unchanged Smart Search / Hybrid. Normal durable ingestion succeeds in 244.393 seconds with 366 frames, 576 Whisper segments, zero retry/failure/residue, and 1.94 GiB peak worker-tree RSS. PASS-level useful Top-1/3/5 is 76.92%/76.92%/84.62%, so Top-3 and Top-5 miss their frozen 85%/90% gates. Multimodal is 100% at rank 1, Visual Top-5 is 87.50%, and Speech Top-5 is 70.00%. All four negatives remain understandable under conservative wording.
+
+Choose C. Explicit post-judgment Speech diagnostics recover both primary Speech FAILs at rank 1; the sole PARTIAL also moves to rank 1 but remains incomplete. Explicit Visual still misses the remaining failure. Hybrid fusion/ranking of strong Speech evidence is the dominant subsystem, with one secondary CLIP visual-retrieval miss. Do not tune, relabel, or rerun this held-out source and do not change production in this milestone. The English-first v1.0 search core is not frozen. Any next work must use new source-disjoint development evidence for a bounded product-level Hybrid fusion investigation; no new model milestone starts automatically.
+
 ## 030 - Make Hybrid-backed Smart Search the v1.0 default
 
 Remove automatic route classification from the normal SceneMind v1.0 path after real-video evidence measured 48.33% accuracy for the production router and 60.00% for the best lightweight candidate. Present three product modes: Smart Search maps directly to existing Hybrid retrieval and is the default; Spoken Content maps to Speech; Visual Content maps to Visual. Preserve the `auto` API value, router implementation, artifact, feature flag, tests, and historical reports for compatibility and internal work, but do not expose or recommend AUTO in the standard frontend.

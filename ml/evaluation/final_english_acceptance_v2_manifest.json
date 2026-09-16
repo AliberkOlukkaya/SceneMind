@@ -1,0 +1,302 @@
+{
+  "schema_version": "2.0.0",
+  "suite_id": "final-english-acceptance-v2",
+  "annotation_status": "frozen-before-search",
+  "frozen_date": "2026-09-16",
+  "manifest_sha256": "ce633b525af0cc3a347c51017c4019eb173e376246783b8153bd6dc8b4c60b7c",
+  "primary_mode": "hybrid",
+  "product_label": "Smart Search",
+  "video": {
+    "filename": "emf2026-9801-eng-So_-_how_does_the_Internet_really_work_hd.mp4",
+    "title": "So - how does the Internet really work",
+    "speaker": "Johanna",
+    "bytes": 167172049,
+    "sha256": "addb005d02cde7bc6b277e938bc10190709e278088caa23354e1323477f0000c",
+    "duration_seconds": 1829.08,
+    "video_stream": "H.264 High, 1920x1080, 25 fps",
+    "audio_stream": "AAC-LC, 48 kHz, stereo, English",
+    "source_url": "https://media.ccc.de/v/emf2026-98-1-so-how-does-the-internet-really-work",
+    "license": "CC BY-SA 4.0",
+    "real_continuous_content": true,
+    "previously_unseen": true,
+    "source_disjoint": true,
+    "used_for_tuning": false,
+    "full_human_inspection_completed": true,
+    "review_frame_interval_seconds": 5,
+    "review_frame_count": 366,
+    "review_transcript_language": "en",
+    "review_transcript_segment_count": 576
+  },
+  "queries": [
+    {
+      "query_id": "v2-s01",
+      "text": "Where does she explain what she wants beginners to take away from the talk?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[43, 103]],
+      "evidence_description": "The speaker lists understanding core concepts, losing fear of networks, experimenting, and debugging as her goals.",
+      "why_interval_answers": "The goals are stated continuously in speech; the slide alone only gives short headings."
+    },
+    {
+      "query_id": "v2-s02",
+      "text": "Find the part where she describes what a browser receives to display a website.",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[123, 150]],
+      "evidence_description": "She explains that HTML source describes text, appearance, and downloaded images.",
+      "why_interval_answers": "The spoken explanation directly answers what is transferred to the browser."
+    },
+    {
+      "query_id": "v2-s03",
+      "text": "When does she explain why Internet data is split into packets?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[158, 251]],
+      "evidence_description": "The postcard analogy leads to the roughly 1,500-byte message size and packet splitting.",
+      "why_interval_answers": "The interval contains the complete spoken reason and packet terminology."
+    },
+    {
+      "query_id": "v2-s04",
+      "text": "Find the explanation of how a network switch learns where devices are.",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[341, 442]],
+      "evidence_description": "Alice, Blair, and the teacher illustrate flooding an unknown destination and learning a sender's tube.",
+      "why_interval_answers": "The speaker explicitly maps the classroom behavior to a home-network switch."
+    },
+    {
+      "query_id": "v2-s05",
+      "text": "Where does she say wired Ethernet and Wi-Fi work similarly for this explanation?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[498, 529]],
+      "evidence_description": "Ethernet and Wi-Fi are described as members of IEEE 802 and functionally equivalent at this abstraction.",
+      "why_interval_answers": "The equivalence is a spoken qualification rather than merely a visual comparison."
+    },
+    {
+      "query_id": "v2-s06",
+      "text": "When does she explain why MAC addresses need to be globally unique?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[538, 603]],
+      "evidence_description": "She explains that each interface has a burned-in address and computers cannot handle ambiguous names well.",
+      "why_interval_answers": "The interval states both uniqueness and its practical reason."
+    },
+    {
+      "query_id": "v2-s07",
+      "text": "How does she suggest choosing the right interface in Wireshark?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[627, 676]],
+      "evidence_description": "She recommends selecting the interface whose squiggly activity graph shows the most traffic.",
+      "why_interval_answers": "The recommendation and its rationale are both spoken here."
+    },
+    {
+      "query_id": "v2-s08",
+      "text": "Find where she explains why a device needs a lower-level address before it can get an IP address.",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[1177, 1218]],
+      "evidence_description": "A new device first identifies itself with its burned-in name so the IP assignment can be returned.",
+      "why_interval_answers": "The speech explicitly connects Ethernet identity to obtaining an IP address."
+    },
+    {
+      "query_id": "v2-s09",
+      "text": "Where does she explain how pinging 9.9.9.9 can help diagnose a DNS problem?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[1443, 1510]],
+      "evidence_description": "She describes ping, pong replies, and using 9.9.9.9 to distinguish DNS failure from lower-level connectivity failure.",
+      "why_interval_answers": "This interval contains the complete troubleshooting logic."
+    },
+    {
+      "query_id": "v2-s10",
+      "text": "What tools does she recommend for experimenting with networks after the talk?",
+      "evidence_category": "SPEECH",
+      "negative": false,
+      "intervals": [[1714, 1805]],
+      "evidence_description": "She recommends GNS3, Containerlab, Raspberry Pi BGP practice, Wireshark, Linux services, and distributed lab networks.",
+      "why_interval_answers": "The closing advice names the practical tools and ways to experiment."
+    },
+    {
+      "query_id": "v2-v01",
+      "text": "Show me the slide with three orange goal bars.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[45, 101]],
+      "evidence_description": "A white Goals slide contains three horizontal orange gradient bars.",
+      "why_interval_answers": "The requested layout is clearly visible throughout the interval."
+    },
+    {
+      "query_id": "v2-v02",
+      "text": "Find the browser page followed by its HTML source code.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[108, 150]],
+      "evidence_description": "The projected content changes from the EMF website in a browser to a page of HTML source.",
+      "why_interval_answers": "Both requested visual states appear consecutively and are legible as browser/source views."
+    },
+    {
+      "query_id": "v2-v03",
+      "text": "Show the hand-drawn postcards used in the networking analogy.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[165, 265]],
+      "evidence_description": "Two and later three handwritten postcard rectangles show short From and To messages.",
+      "why_interval_answers": "The postcards are the dominant slide graphic."
+    },
+    {
+      "query_id": "v2-v04",
+      "text": "Find the slide showing three different home networking boxes.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[271, 302]],
+      "evidence_description": "Three product photos show black, white-red, and upright white home network devices.",
+      "why_interval_answers": "All three boxes are simultaneously visible on the slide."
+    },
+    {
+      "query_id": "v2-v05",
+      "text": "Show the old black-and-white picture of pneumatic tubes.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[309, 324]],
+      "evidence_description": "A monochrome archival photograph of a bank of pneumatic tubes appears beside text.",
+      "why_interval_answers": "The distinctive photograph is visibly present in this short interval."
+    },
+    {
+      "query_id": "v2-v06",
+      "text": "Find the diagram with Alice and Blair sending messages through a teacher.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[341, 421]],
+      "evidence_description": "Named person icons for Alice and Blair connect by animated arrows to a teacher icon.",
+      "why_interval_answers": "The named diagram and message arrows are clearly visible."
+    },
+    {
+      "query_id": "v2-v07",
+      "text": "Show the IEEE 802 slide comparing a round Wi-Fi access point with an Ethernet switch.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[505, 535]],
+      "evidence_description": "The IEEE 802 slide places a circular Wi-Fi device on the left and a black Ethernet switch on the right.",
+      "why_interval_answers": "The two device images and labels are visible together."
+    },
+    {
+      "query_id": "v2-v08",
+      "text": "Find the Wireshark packet window with yellow circles around address fields.",
+      "evidence_category": "VISUAL",
+      "negative": false,
+      "intervals": [[675, 706]],
+      "evidence_description": "A Wireshark packet-detail window shows yellow oval annotations around source and destination address rows.",
+      "why_interval_answers": "The requested application view and annotations are visibly present."
+    },
+    {
+      "query_id": "v2-m01",
+      "text": "Show the network switch while she explains that it learns connected devices from their first messages.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[416, 442]],
+      "evidence_description": "The explanation concludes over the learned-path diagram and transitions to a photographed network switch.",
+      "why_interval_answers": "Speech supplies the learning behavior while the visual identifies the physical switch."
+    },
+    {
+      "query_id": "v2-m02",
+      "text": "Find the IPv4 and IPv6 examples while she says the longer one only looks more intimidating.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[789, 832]],
+      "evidence_description": "The IP Addresses slide shows 192.168.0.1 and a long IPv6 address as she compares them.",
+      "why_interval_answers": "The wording refers to the spoken judgment and the two visible address forms."
+    },
+    {
+      "query_id": "v2-m03",
+      "text": "Show the green network part and yellow host part while she explains an IPv4 address.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[832, 851]],
+      "evidence_description": "An IPv4 address is highlighted green for Network and yellow for Host during the verbal decomposition.",
+      "why_interval_answers": "The color-coded visual and spoken meaning are both required."
+    },
+    {
+      "query_id": "v2-m04",
+      "text": "Find the colored nested message diagram while she explains Ethernet, IP, and the payload as layers.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[962, 1062]],
+      "evidence_description": "Green Ethernet, yellow IP, and blue payload rows build up beside the network diagram.",
+      "why_interval_answers": "The colors identify visible layers while speech explains their nesting and roles."
+    },
+    {
+      "query_id": "v2-m05",
+      "text": "Show the home router's yellow and blue ports while she explains which side is LAN and WAN.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[1114, 1148]],
+      "evidence_description": "A home router rear panel shows grouped yellow and blue ports as the speaker distinguishes local and wide area sides.",
+      "why_interval_answers": "The query requires the visible port colors and the spoken LAN/WAN explanation."
+    },
+    {
+      "query_id": "v2-m06",
+      "text": "Find the DHCP diagram when a new device asks what its IP address should be.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[1177, 1248]],
+      "evidence_description": "The DHCP slide animates a handwritten IP question and assignment between Alice and the gateway.",
+      "why_interval_answers": "The visible exchange and spoken address-assignment sequence jointly answer the query."
+    },
+    {
+      "query_id": "v2-m07",
+      "text": "Show the DNS request moving through the network while she explains how a domain becomes an IP address.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[1264, 1399]],
+      "evidence_description": "Blue and red arrows connect clients, a gateway, the Internet cloud, and a DNS server while lookup steps are narrated.",
+      "why_interval_answers": "The animation shows the path while speech supplies the domain-to-address meaning."
+    },
+    {
+      "query_id": "v2-m08",
+      "text": "Find the network-cloud diagram while she explains how BGP chooses a shorter route between autonomous systems.",
+      "evidence_category": "MULTIMODAL",
+      "negative": false,
+      "intervals": [[1533, 1691]],
+      "evidence_description": "Several AS clouds and router icons receive blue and red path arrows as BGP announcements and route choice are explained.",
+      "why_interval_answers": "The route alternatives are visual, while BGP and shortest-path meaning come from speech."
+    },
+    {
+      "query_id": "v2-n01",
+      "text": "When does she compare TCP with UDP?",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "intervals": [],
+      "evidence_description": "The full transcript contains no TCP-versus-UDP comparison.",
+      "why_interval_answers": "Verified absent by full transcript and frame review before search."
+    },
+    {
+      "query_id": "v2-n02",
+      "text": "Show me the world map of undersea Internet cables.",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "intervals": [],
+      "evidence_description": "No world map or undersea-cable visualization appears in the reviewed frames.",
+      "why_interval_answers": "Verified absent across all 366 review frames before search."
+    },
+    {
+      "query_id": "v2-n03",
+      "text": "Find the phone screen while she explains mobile data.",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "intervals": [],
+      "evidence_description": "The talk mentions browsers on phones briefly but shows no phone screen and gives no mobile-data explanation.",
+      "why_interval_answers": "The required combined evidence is absent from the full frame and transcript review."
+    },
+    {
+      "query_id": "v2-n04",
+      "text": "Show the slide with a padlock icon for HTTPS encryption.",
+      "evidence_category": "NEGATIVE",
+      "negative": true,
+      "intervals": [],
+      "evidence_description": "HTTPS and TLS are spoken, but no padlock icon appears on any slide.",
+      "why_interval_answers": "The specific requested visual evidence is absent despite related speech."
+    }
+  ]
+}

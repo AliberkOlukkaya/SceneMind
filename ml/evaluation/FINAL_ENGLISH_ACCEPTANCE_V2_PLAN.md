@@ -1,6 +1,6 @@
 # Final English Acceptance V2 plan
 
-Status: frozen preparation only. Do not run this acceptance until a completely new independent video is supplied. Do not tune SceneMind on that video before or during evaluation.
+Status: executed once on 2026-09-16 with Decision C. This document remains the unchanged pre-run protocol and frozen gates; see `FINAL_ENGLISH_ACCEPTANCE_V2_RESULTS.md`. The acceptance video must never be used for tuning or rerun as fresh acceptance.
 
 ## Product path
 
