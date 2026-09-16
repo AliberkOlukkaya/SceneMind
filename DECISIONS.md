@@ -1,5 +1,11 @@
 # Decisions
 
+## 035 - End diagnosis with confidence-aware ranking as a design class
+
+Reconstruct every available Hybrid ranking failure from development, frozen Holdout V1, and safely reproducible historical Acceptance V2 evidence. Keep `app.hybrid.fuse` authoritative and verify all 30 reconstructed V2 outputs against the historical artifact. Compare 19 failures with 12 balanced controls. Fourteen failures are primarily irrelevant consensus; 16 contain explicit required-modality Top-5 evidence displaced outside Hybrid Top-5, and 11 reverse a stronger same-retriever raw-score advantage. Two-contribution winners occur in 18/19 failures and 12/12 controls, while same-thumbnail Speech duplicates are discarded, so overlap or accumulation alone is not causal. Temporal attachment/context explains two cases and weak required-modality rank explains two.
+
+Conclude that fixed RRF60 is insufficient for the observed tail, while remaining the safest production baseline because Cap 1.50× failed frozen holdout. Rank calibrated confidence plus explicit agreement features first by evidence coverage, followed by second-stage reranking and temporal representation. Implement none of them here. Do not search another alpha, tune on Holdout V1, optimize on Acceptance V2, or start Acceptance V3. Any next ranking experiment requires new development evidence and a future untouched holdout. Production remains uncapped RRF60.
+
 ## 034 - Reject the 1.50× overlap cap on frozen holdout evidence
 
 Freeze 34 queries over two new source-disjoint Wikimedia sources before retrieval: 11 Speech, eight Visual, nine Multimodal, and six negative. Process both through normal streamed upload, durable ingestion, Whisper, CLIP, and persistence. Compare only production-equivalent RRF60 with the fixed 1.50× shared-contribution cap; do not use Final English Acceptance V2 or search another parameter.

@@ -84,5 +84,10 @@
 - [x] Select the 1.50× cap as a provisional development candidate without modifying production
 - [x] Validate the frozen 1.50× candidate once on new source-disjoint holdout media before any promotion decision
 - [x] Reject Cap 1.50× after holdout Top-5/Speech/source-robustness/negative-ordering gates fail
+- [x] Reconstruct and standardize 19 Hybrid ranking failures with 12 success controls
+- [x] Diagnose irrelevant consensus, raw-score information loss, temporal grouping, deduplication and negative-query behavior without tuning
+- [x] Confirm 30/30 historical Acceptance V2 trace parity and keep Holdout V1 frozen
+- [ ] Collect new ranking-development evidence and pre-register a future untouched holdout before testing confidence-aware agreement or reranking
+- [ ] Keep Final Acceptance V3 blocked until a ranking candidate passes an independent frozen evaluation
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation

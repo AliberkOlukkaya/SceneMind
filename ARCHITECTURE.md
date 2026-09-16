@@ -42,6 +42,8 @@ Final English acceptance remains outside runtime code. V1 historically evaluated
 
 Hybrid Fusion Holdout V1 also stays outside runtime ranking. Its checksum sidecar locks two new sources and 34 independently annotated queries before retrieval. The evaluation runner requests real production candidates, asserts exact `app.hybrid.fuse` parity, and applies only the offline Cap 1.50× formula. The rejected result is permanently non-tuning evidence; production receives no cap or configuration switch.
 
+Hybrid Ranking Failure Analysis V1 is also evaluation-only. `ml/evaluation/development/analyze_hybrid_ranking_failures_v1.py` compacts existing production-authoritative traces into standardized failure and control records; it cannot participate in API ranking. Across 19 failures, irrelevant shared-thumbnail consensus is dominant, but shared winners also appear in every success control. Production deduplicates repeated same-modality segments before scoring, so those segments do not accumulate. The remaining architectural gap is the inability of fixed rank-only RRF to assess agreement quality, use calibrated confidence, or represent longer temporal evidence. These findings define design classes for a future development set and do not add a reranker, raw-score formula, threshold, model, endpoint, flag, or UI behavior.
+
 Pytest uses generated media and mocked model inference. Real model smoke scripts verify the separate inference paths. Playwright starts isolated API/frontend instances and verifies desktop/mobile upload, seeking, error recovery and optional real CLIP retrieval. The benchmark runner measures the local pipeline against interval labels, keeping synthetic results distinct from real-video quality.
 
 ## Durable processing and access

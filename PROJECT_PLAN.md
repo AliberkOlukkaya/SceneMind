@@ -16,8 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Hybrid Fusion Holdout Validation V1 is complete. Two new source-disjoint sources and 34 queries were reviewed and frozen before retrieval. Production parity passed on all queries, and only baseline RRF60 and the predeclared 1.50× cap were compared.
+Hybrid Ranking Failure Analysis V1 is complete. It reconstructs 19 available ranking failures and compares them with 12 balanced success controls without changing production ranking. Historical Acceptance V2 traces match 30/30 recorded production outputs. Irrelevant consensus explains 14/19 failures, while rank-only information loss is a supported secondary mechanism in 11. Thumbnail overlap is common in successes as well as failures, and same-thumbnail Speech duplicates do not accumulate.
 
-The candidate is rejected. It changes ALL Top-1/3/5 from 12/19/21 to 15/19/20 and MRR@5 from 0.5560 to 0.6083, but Speech Top-5 falls from 8/11 to 7/11, Jimmy Wales Top-5 falls from 6/12 to 5/12, one query breaks, and none are rescued. Strong-candidate retention remains 18/32. Production remains Smart Search (uncapped Hybrid), Spoken Content (Speech), and Visual Content (Visual); AUTO remains compatibility-only.
+Cap 1.50× remains rejected. It changes Holdout ALL Top-1/3/5 from 12/19/21 to 15/19/20 and MRR@5 from 0.5560 to 0.6083, but Speech Top-5 falls from 8/11 to 7/11, one query breaks, none are rescued, and an unsupported result becomes more convincing. Production remains Smart Search (uncapped RRF60 Hybrid), Spoken Content, and Visual Content; AUTO remains compatibility-only.
 
-Do not tune, relabel, or rerun the failed holdout, promote Cap 1.50×, or start Final Acceptance V3. The next product milestone requires an explicit decision based on the accumulated acceptance and holdout evidence. Phases 8-9 and public deployment remain deferred.
+The next ranking milestone may compare broad confidence-aware agreement or second-stage reranking designs only after collecting new development data and defining a future untouched holdout. It must not tune on Holdout V1 or Acceptance V2. Do not continue alpha search, promote Cap 1.50×, change production retrieval, or start Final Acceptance V3. Phases 8-9 and public deployment remain deferred.
