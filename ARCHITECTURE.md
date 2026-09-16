@@ -1,85 +1,166 @@
-# Current architecture
+# SceneMind architecture
 
-SceneMind is a local single-host application: Next.js/TypeScript/Tailwind in the browser, FastAPI in Python, local media/index files, and SQLite transcript tables managed by SQLAlchemy/Alembic. No hosted AI service is involved.
+SceneMind v1.0 RC is a single-operator, local-first video search application. Its production search
+core is frozen at five-second frame sampling, CLIP/FAISS Visual retrieval, Whisper/BM25 Speech
+retrieval and uncapped RRF60 Hybrid ranking.
 
-## Video ingestion
+## End-to-end data flow
 
-POST /videos receives a raw request body and filename query parameter. It checks extension, bounds streamed bytes and generates a UUID directory. One ingestion lock bounds concurrency. A 202 response schedules a development BackgroundTask or persists a durable job for the isolated worker. OpenCV inspects duration/FPS/resolution/codec; FFmpeg selects frames, emits actual presentation timestamps and produces 480-pixel JPEGs. Metadata and states live in atomic manifests. Inline startup marks interruptions failed; durable recovery belongs to the worker supervisor.
+```mermaid
+flowchart TD
+    Browser[Next.js workspace] -->|streamed bytes| API[FastAPI]
+    API --> Validate[Extension, byte, disk and video validation]
+    Validate --> Store[UUID-owned local source and atomic manifest]
+    Store --> Queue{Durable jobs enabled?}
+    Queue -->|No| Inline[Bounded background task]
+    Queue -->|Yes| SQLJob[Persisted SQL job]
+    SQLJob --> Worker[Single-host worker supervisor]
+    Inline --> Ingest[Ingest stage]
+    Worker --> Ingest
+    Ingest --> Frames[FFmpeg frames every 5 seconds]
+    Ingest --> Metadata[OpenCV metadata]
+    Frames --> VisualJob[Visual-index stage]
+    Store --> SpeechJob[Speech stage]
+    VisualJob --> CLIP[CLIP image inference]
+    CLIP --> Vectors[Normalized embeddings and FAISS index]
+    SpeechJob --> Audio[Temporary 16 kHz mono WAV]
+    Audio --> Whisper[Whisper inference]
+    Whisper --> Transcript[Timestamped SQL segments]
+    Query[Natural-language query] --> Mode{Product mode}
+    Mode -->|Visual Content| CLIPText[CLIP text inference]
+    CLIPText --> Vectors
+    Mode -->|Spoken Content| BM25[BM25 over transcript]
+    Transcript --> BM25
+    Mode -->|Smart Search| Both[Run Visual and Speech]
+    Both --> RRF[Group by thumbnail and apply RRF60]
+    Vectors --> RRF
+    BM25 --> RRF
+    Vectors --> Results[Ranked moments]
+    BM25 --> Results
+    RRF --> Results
+    Results -->|timestamp, thumbnail, evidence| Browser
+```
 
-GET /videos lists manifests; GET /videos/{id} returns status/metadata/frames. /media supports HTTP byte ranges. /frames/{name} serves validated JPEG paths. Source media never uses user-controlled storage filenames. The request body streams directly to the UUID source file with byte counting, early Content-Length rejection, a free-disk reserve and processing headroom. Supported defaults are 1 GiB, 60 minutes and 4K, with one ingestion at a time and bounded configurable stage deadlines.
+## Upload and storage
 
-## Speech
+`POST /videos` accepts MP4, MOV, WebM, MKV and AVI names, streams the request directly to disk,
+and enforces the configured byte limit without buffering the complete file in memory. A declared
+oversize request is rejected before allocation; the streamed byte counter remains authoritative.
+Disk checks retain a fixed reserve plus source-relative processing headroom.
 
-POST /videos/{id}/transcript starts a separate bounded speech job. FFmpeg extracts temporary mono 16 kHz WAV audio. A cached faster-whisper tiny model runs CPU INT8 inference with voice activity detection. SQLAlchemy stores transcript status and ordered segments; Alembic upgrades schema at application startup. Valid segments that cross the playable video boundary have their end clipped to the video duration, and segments beginning after playback ends are discarded. Invalid negative, non-finite, or reversed timestamps still fail the job. Temporary audio is removed, retries replace segments transactionally, and restart recovery marks interrupted jobs failed.
+Each video owns a UUID directory below `SCENEMIND_DATA_DIR`. `folder_for` canonicalizes UUID input,
+so callers cannot construct arbitrary paths. OpenCV verifies a readable video stream, positive
+metadata, the duration limit and the 4K pixel bound. FFmpeg extracts scaled JPEGs into a temporary
+directory. Only a complete result replaces the live frame directory, and the manifest is written
+through an atomic temporary file.
 
-GET /videos/{id}/transcript returns segments with optional literal substring search. Video manifests remain authoritative for media; relational tables hold speech and durable jobs. SQLite and PostgreSQL migration/queue operations are verified; the optional postgres extra supplies psycopg. Full deployment and container ML remain separate validation steps.
+The browser polls `/videos` and displays real states: waiting, extracting frames, ready or failed.
+It never invents a percentage.
 
 ## Visual retrieval
 
-POST /videos/{id}/index starts explicit indexing. The cached CLIP ViT-B/32 processor/model uses a pinned checkpoint. RGB frames are resized/cropped/normalized; batches produce 512-dimensional L2-normalized embeddings. An atomic NumPy file stores vectors, and a sidecar stores status/model/revision. Changing the configured checkpoint requires reindexing.
+The Visual stage loads the pinned `openai/clip-vit-base-patch32` revision, applies its matching
+processor, encodes JPEG batches and L2-normalizes the output. Embeddings are stored locally and
+loaded into FAISS `IndexFlatIP`. Because query and frame vectors are normalized, inner product is
+cosine similarity. Exact search is appropriate for the measured local collections and avoids an
+approximate-index tuning surface.
 
-The query text encoder produces a normalized vector. FAISS IndexFlatIP performs exact cosine retrieval over the sampled frames. The small index is reconstructed per query. One visual inference lock protects model loading/index replacement and limits concurrent work. Search scores are not confidence probabilities.
+At query time CLIP encodes text and FAISS returns frames with timestamps. Five-second sampling is a
+known recall boundary: content between samples cannot be recovered by the retriever.
 
-## Hybrid retrieval
+## Speech retrieval
 
-GET /videos/{id}/search accepts visual, speech or hybrid mode. BM25 ranks transcript segments. Reciprocal-rank fusion combines up to 50 candidates per modality, one contribution per sampled-frame neighborhood. Speech-supported results seek to the speech start and retain text/end timestamp, while the thumbnail shows nearby visual context. Evidence contains each modality's original rank/score. Hybrid explicitly reports completed modalities used.
+The Speech stage extracts a temporary mono 16 kHz WAV, runs configurable faster-whisper inference,
+validates segment timestamps and replaces database rows transactionally. Segment ends are clipped
+to playable duration and fully out-of-range tails are discarded. The WAV is deleted in `finally`.
 
-The exact implementation is documented in `ml/evaluation/HYBRID_FUSION_ARCHITECTURE.md`. `app.hybrid.fuse` uses the thumbnail URL as its bucket key and adds `1 / (60 + rank)` once per modality. It does not normalize or combine raw BM25/CLIP scores, apply modality weights, rerank, diversify, or reject weak matches. An evaluation-only tracer in `ml/evaluation/hybrid_fusion_trace.py` calls this production function as the ranking authority and reconstructs candidate provenance for assertions and reports; runtime code never imports it. Development diagnostics show exact-thumbnail overlap structurally dominates single-modality candidates, but no ranker, endpoint, model, or UI behavior has changed.
+BM25 uses `k1=1.2` and `b=0.75` to rank transcript segments. Speech thumbnails use the nearest
+sampled frame, while the seek timestamp is the segment start. BM25 is lexical: exact phrases and
+rare terms work well, while paraphrases can fail.
 
-The isolated refinement code under `ml/evaluation/development/hybrid_fusion_refinement_v1.py` independently reproduces the production grouping/sort and evaluates rank-only formulas over frozen traces. Its 1.50× candidate caps a shared bucket at `1.50 * max(individual contribution)` while leaving single-modality scores unchanged. A new source-disjoint 34-query holdout rejected it after ALL and Speech Top-5 fell and one Speech query broke without a rescue. The experiment is not imported by the backend, packaged as runtime configuration, or exposed through an endpoint. Production continues to use uncapped RRF60.
+## Product modes and fusion
 
-The endpoint also accepts `auto` for backward compatibility and internal experiments. A frozen 54-parameter multinomial linear router maps 18 lexical query features to visual, speech or hybrid in about 0.03 ms median on the measured CPU. Its artifact is bound to the source-disjoint routing calibration manifest. `SCENEMIND_AUTO_ROUTING_ENABLED` can make AUTO fall back to Hybrid without affecting explicit overrides. Responses expose requested mode, selected route, routing score and reason; the score is not correctness or no-match confidence. A Speech selection still requires a ready transcript. AUTO is outside the recommended v1.0 product path after human-grounded accuracy reached only 48.33% for this router and 60.00% for the best lightweight candidate.
+- **Smart Search** directly selects Hybrid and is the UI default.
+- **Spoken Content** directly selects Speech.
+- **Visual Content** directly selects Visual.
+- **AUTO** remains an API-compatible experimental route and is outside the normal v1.0 interface.
 
-Path-aware no-match remains evaluation-only under `ml/experiments/path_aware_no_match/`. AUTO chooses the path before the experiment summarizes that path's existing ranked evidence. Frozen held-out results fail the quality gates for all three paths, so no rule, uncertainty response field, configuration flag, or frontend state enters production. Search scores remain ranking signals rather than existence probabilities; the product must describe results as likely moments without asserting confirmation.
+Hybrid retrieval groups contributions by exact nearest-frame thumbnail. Within each modality only
+the best contribution to a thumbnail counts. The score is the sum of `1 / (60 + rank)`. This
+uncapped RRF60 baseline avoids comparing incompatible CLIP and BM25 raw values. It has a documented
+failure mode: weak evidence from both modalities can outrank strong evidence from one modality.
+Alternative caps and calibrated raw-score fusion failed frozen gates, so runtime behavior remains
+unchanged.
 
-## Product and validation
+Responses include timestamps, thumbnails, evidence type and transcript excerpts where available.
+The UI hides raw scores and presents results as possible matches.
 
-The client uploads File bodies, polls processing/index/transcript state, and provides a library, player, sampled moments, search modes and transcript navigation. Result selection updates HTMLVideoElement.currentTime. Runtime data stays under ignored data/. Models are optional dependencies downloaded on explicit first use.
+## Durable processing
 
-Search presentation is intentionally conservative. The API still returns unchanged scores and ranked results, but the normal client does not display raw scores or interpret them as confidence. It labels the list “Most relevant moments,” shows one relevance caveat, retains route/evidence context and speech excerpts, and treats an empty candidate list as a prompt to rephrase or change mode rather than proof of absence. The frontend maps **Smart Search** to `hybrid`, **Spoken Content** to `speech`, and **Visual Content** to `visual`; Smart Search is the default. This is a presentation and request-mapping change. CLIP, Whisper, BM25, RRF, FAISS, sampling, ranking, and timestamp navigation are unchanged.
+Inline mode is the simplest local path. With `SCENEMIND_DURABLE_JOBS=true`, upload and stage requests
+enqueue SQL jobs and return. One worker supervisor per shared data directory claims jobs with
+compare-and-set transitions. It starts a reusable spawned inference child so model weights can stay
+warm across jobs.
 
-Final English acceptance remains outside runtime code. V1 historically evaluated AUTO and failed. V2 binds one new real continuous 30:29 English source to a canonical-checksum manifest frozen after full frame/transcript review and before search. All 30 primary requests use the existing Smart Search / Hybrid path; explicit Speech and Visual calls are post-judgment diagnostics only. The normal durable pipeline completes without retry, failure, or residue, but PASS-level Top-3/5 is 76.92%/84.62% and misses frozen gates. Explicit Speech recovers both primary Speech FAILs at rank 1; the sole PARTIAL also moves to rank 1 but remains incomplete. This identifies fusion/ranking as the dominant blocker. The evidence changes no endpoint, model, sampler, ranking rule, index, worker, or UI behavior.
+Retries are bounded and receive persisted backoff. Each kind has a configurable deadline. On a
+deadline or crashed child, the supervisor terminates the process tree and removes only disposable
+partial artifacts. Worker locks prevent multiple supervisors or inference writers from owning the
+same local directory. Delivery is at-least-once; stage operations are designed to replay safely.
 
-Hybrid Fusion Holdout V1 also stays outside runtime ranking. Its checksum sidecar locks two new sources and 34 independently annotated queries before retrieval. The evaluation runner requests real production candidates, asserts exact `app.hybrid.fuse` parity, and applies only the offline Cap 1.50× formula. The rejected result is permanently non-tuning evidence; production receives no cap or configuration switch.
+## Persistence
 
-Hybrid Ranking Failure Analysis V1 is also evaluation-only. `ml/evaluation/development/analyze_hybrid_ranking_failures_v1.py` compacts existing production-authoritative traces into standardized failure and control records; it cannot participate in API ranking. Across 19 failures, irrelevant shared-thumbnail consensus is dominant, but shared winners also appear in every success control. Production deduplicates repeated same-modality segments before scoring, so those segments do not accumulate. The remaining architectural gap is the inability of fixed rank-only RRF to assess agreement quality, use calibrated confidence, or represent longer temporal evidence. These findings define design classes for a future development set and do not add a reranker, raw-score formula, threshold, model, endpoint, flag, or UI behavior.
+- Atomic JSON manifests own video metadata and frame state.
+- Local NumPy/FAISS-compatible artifacts own visual embeddings and index metadata.
+- SQLAlchemy models store transcripts, segments and durable jobs.
+- Alembic migrations run at API/worker startup with SQLite immediate locking or a PostgreSQL
+  advisory transaction lock.
+- SQLite is the verified simple local default. PostgreSQL migration and queue behavior have a
+  disposable validation path.
 
-Calibrated Fusion V1 remains under `ml/experiments/calibrated_fusion_v1/` and cannot participate in runtime ranking. It fits deterministic per-modality L2 logistic mappings from bounded raw, rank, margin and query-relative features using three calibration sources, then applies a source-disjoint AUC/Brier gate on two validation sources. Both selected mappings fail against rank-only references. The emitted 3,168-byte artifact is marked non-production, and agreement presence plus temporal distance are analysis fields without fusion weights. No candidate was evaluated on the protected holdout; the API continues to use `app.hybrid.fuse` and uncapped RRF60.
+Uploaded media, frames, audio intermediates, embeddings, indexes, databases, model weights and
+caches are ignored by Git.
 
-Pytest uses generated media and mocked model inference. Real model smoke scripts verify the separate inference paths. Playwright starts isolated API/frontend instances and verifies desktop/mobile upload, seeking, error recovery and optional real CLIP retrieval. The benchmark runner measures the local pipeline against interval labels, keeping synthetic results distinct from real-video quality.
+## Failure handling
 
-## Durable processing and access
+Upload failures remove the partial UUID directory. Failed frame extraction removes staged and live
+partial frames. Visual artifacts are promoted atomically. Transcript replacement is transactional.
+The durable supervisor marks abandoned running jobs failed on restart, applies bounded retry, and
+exposes terminal errors for explicit retry. Inline startup marks interrupted stages failed rather
+than pretending they completed.
 
-Optional durable mode sends ingestion, speech and indexing to one reusable spawned inference child supervised by app.worker. SQL jobs store stage, unique active key, attempts, creation/retry time and safe errors. Transactional capacity checks and compare-and-set claims protect concurrent enqueue/claim. OS supervisor/execution locks enforce one host writer. Per-kind process-tree deadlines and parent-death monitoring isolate failed inference. Restart recovery replays jobs within the attempt budget. The supervisor removes disposable partial frame/audio/embedding artifacts after errors. Model caches survive successful jobs. Files remain atomic, transcripts transactional; queue state overlays product status routes. Migrations are serialized per database.
+Public error messages are bounded. The UI handles backend unavailability, invalid or oversized
+uploads, processing failure, search/index failure and empty result lists. Optional Basic/Bearer
+authentication protects all endpoints except health; cross-origin writes are limited to configured
+origins.
 
-Optional Basic/Bearer operator authentication protects APIs, docs and media. Health and preflight stay public; Origin checks cover mutations. Browser requests include managed credentials. No password is embedded in the frontend.
+## Resource model
 
-Evaluation records scores, intervals, hashes, split metadata and environment. Natural V2 adds versioned query IDs/types/modalities, source/license/checksum provenance, frozen calibration and source-disjoint held-out groups, Precision/Recall/MRR at 1/3/5, negative FAR, abstention, latency, path/category slices, and per-failure evidence. Calibration fits only calibration visual negatives. An opt-in artifact gates visual evidence before fusion, bound to model revision and sampling. It is not a probability estimate or a calibrated hybrid score.
+The default envelope is 1 GiB and 60 minutes. Upload API memory stayed near 110 MB in measured
+419 MiB and 45-minute runs because bytes stream to disk. The 45-minute sequential Whisper/CLIP run
+completed in 245.4 seconds and peaked at about 3.02 GB across the worker process tree. Completed
+storage was 1.064× source size, and temporary residue was zero.
 
-The image-text verifier lives only under `ml/experiments/image_text_verifier/`. It reuses the API and CLIP top-five candidates, batches pair scoring through a pinned BLIP ITM head, and emits ignored reports plus a model-bound calibration artifact. The experiment failed promotion gates, so the runtime architecture remains CLIP/BM25/RRF without verifier dependencies or fallback behavior.
+Model loading dominates cold search. Final English Acceptance V2 measured a 10.42-second first
+CLIP-backed search and 46–252 ms for the next 29 requests. Hardware, content and model cache state
+will change these values.
 
-The follow-up under `ml/experiments/lightweight_pair_scorer/` preserves the same staged boundary. It benchmarks pinned UForm3-small ONNX cosine reranking and a deterministic logistic scorer over seven CLIP score/rank statistics. Two parent-hash-locked calibration expansions remain disjoint from Natural V2 held-out. Both fail the positive-abstention gate, so their dependencies and loading paths remain outside production.
+## Deployment boundary
 
-The rejected branch under `ml/experiments/object_detector_branch/` reuses frozen CLIP top-five timestamps, maps explicit aliases to COCO class groups, and emits versioned class/confidence/source-pixel box/area/center evidence from pinned YOLOX-Nano ONNX. It runs the five candidate frames sequentially on CPU and fits a presence threshold on calibration rows only. Query routing preserves CLIP results for non-triggered rows. The branch fails small-object abstention, so no detector dependency, configuration, route or UI behavior entered the application. Its calibration artifact is explicitly non-promotable.
+SceneMind is a local single-operator application. Optional authentication is not tenant ownership
+or RBAC. Public TLS termination, object storage, user quotas, distributed leases, high availability
+and untrusted multi-user isolation are outside v1.0. Use one API and one durable worker per shared
+local data directory.
 
-The follow-up under `ml/experiments/small_object_ablation/` remains outside production. It freezes source-disjoint visible-frame labels before inference, reproduces the production FFmpeg selector at 5/2/1-second intervals, and measures CLIP frame/index growth separately from detector recall. YOLOX-Nano 416/640/768 and RT-DETR-R18 640 run only on the same human-verified visible JPEGs. Best target-class boxes receive a second manual target-match review so a same-class distractor cannot count as recall. Both higher-resolution Nano configurations passed bounded experiment gates and repeated identically, but no runtime route or sampler setting changed. The next proposed branch is a cached, query-gated 2-second secondary sample path with Nano 640 over bounded windows.
+The Docker/Compose files validate the backend, PostgreSQL and job foundation. The base image does
+not install the complete ML environment or serve the frontend. Full containerized ML deployment is
+not claimed.
 
-The rejected coarse-to-fine prototype under `ml/experiments/bounded_secondary_sampling/` starts from the frozen five-second CLIP index, expands rule-routed object queries into calibration-selected local windows, extracts two-second JPEGs through a versioned byte-bounded cache, rescoring them with the existing CLIP session before optional Nano-640 evidence. Cache keys hash policy version, video ID and millisecond timestamp; atomic writes and least-recently-used cleanup prevent partial or unbounded data. Unsupported, speech, scene and action routes retain coarse candidates. The branch is experimental only: verified held-out evidence coverage is 50%, detector fusion receives zero calibration weight, and no-match gating causes 100% small-object abstention. No endpoint, worker, configuration, manifest or UI contract changed.
+## Evaluation boundary
 
-The rejected candidate-generation study under `ml/experiments/coarse_candidate_diversity/` retrieves up to 50 exact-FAISS CLIP candidates and deterministically evaluates temporal NMS, embedding MMR, combined diversity, embedding-change segments and a five-second-base plus high-change two-second diagnostic. Candidate intervals group neighboring evidence without changing relevance labels. A 50 ms timestamp tolerance handles measured VFR sampling jitter. Calibration selects all policy parameters before held-out evaluation. The high-recall raw pool is useful evidence for a future bounded list scorer, but no final-five selector meets quality and dense-index gates, so production remains the original five-second top-K search.
+Production modules live under `backend/app`. Candidate models and ranking methods live under
+`ml/experiments` and cannot enter runtime implicitly. Evaluation uses source-disjoint splits,
+checksum-frozen manifests and query-level reports. Protected holdout evidence is not a tuning set.
+The current search core is frozen for `1.0.0-rc1`; speculative work is Future Work.
 
-The rejected study under `ml/experiments/candidate_list_ranking/` derives fixed candidate-list and query-distribution features from the existing five-second CLIP pool. Dependency-free L2 logistic models fit only calibration sources; Oracle@5/20/50 remains a permanent diagnostic. The list scorer loses held-out recall and the no-match model rejects nearly every positive, so neither enters the API. A separate audit selects already-recorded visual, BM25 speech or RRF hybrid results through the existing explicit mode and shows that correct routing has the largest measured gain. Because calibration has no speech rows, SceneMind does not infer modes from query text.
-
-The follow-up under `ml/experiments/query_routing/` adds three independent speech-heavy calibration sources and balances 36 Visual/Speech/Hybrid targets. Rules and class-balanced softmax use query text only. Leave-one-source-out selection precedes frozen Natural V2 evaluation. Learned AUTO matches the explicit-route Oracle at 95.2% R@5, passes an identical repeat, and remains available through `app.routing`. Later human-grounded validation supersedes its default-product status: the normal interface now defaults directly to Hybrid through Smart Search. The global no-match gate remains disabled.
-
-The English generalization follow-up under `ml/experiments/english_router_generalization/` is evaluation-only. It freezes 450 balanced queries over 15 independent text source scenarios, enforces source-level train/validation/test separation and protects the failed final-acceptance manifest from exact query leakage. Dependency-free word and character TF-IDF linear candidates fit vocabulary and weights on train; validation alone selects architecture and confidence fallback. Character 3–5 grams pass internal frozen gates and repeat deterministically, but the scenarios are not grounded in reviewed real video/audio. Decision E keeps the 54-parameter `app.routing` artifact, explicit-mode bypass, disabled-AUTO Hybrid fallback, API schema, dependencies and all retrieval paths unchanged. The experimental 731 KB candidate stays under ignored `data/` and is not packaged.
-
-The human-grounded follow-up under `ml/experiments/human_grounded_router/` binds 360 balanced annotations to reviewed frames, local Whisper text, and intervals from ten new videos. Sources remain disjoint across 180 train, 120 validation, and 60 frozen-test queries; the test contains two completely unseen videos and mixes query syntax across routes. The unchanged character 3-5 gram architecture fits vocabulary and linear weights on train only, uses raw argmax with no confidence fallback, and reaches 60.00% test accuracy with 50.00%/40.00%/90.00% Visual/Speech/Hybrid recall. Decision C does not package its 402 KB artifact. `app.routing`, the V1 fallback flag, explicit overrides, CLIP, Whisper, BM25, RRF, sampling, ranking, and API contracts remain unchanged.
-
-Personal acceptance stays outside runtime behavior. A checksum-bound manifest froze three user scenarios, 54 English/Turkish queries, expected routes, presence and reviewed intervals before retrieval. A separate complete observation file records human Top-1/3/5 usefulness, negative misleading behavior, timestamp error, latency and prescribed failures; `ml.evaluation.personal_acceptance` validates and aggregates it with positive-only Top-k denominators. Private media, derived assets, transcripts, embeddings and databases remain ignored. The measured report is committed without changing search. That historical run encountered the former 250 MiB / 1,800-second defaults; the current configurable infrastructure defaults are 1 GiB / 3,600 seconds.
-
-## Boundaries
-
-The Turkish compatibility study under `ml/experiments/turkish_compatibility/` is evaluation-only. Its frozen manifest binds 42 calibration and 30 held-out natural Turkish queries across six disjoint source groups and rejects personal-acceptance checksum leakage. The candidate applies NFC, Turkish casing, suffix-aware tokens and an auditable lexicon after a small Turkish router. English and production paths are untouched. Held-out routing and AUTO R@5 miss their fixed gates, so neither the 1.7 KB router, the 1.8 KB adapter nor the optional pinned multilingual MiniLM diagnostic enters `app`, dependencies, configuration, API contracts or indexes. Direct Turkish CLIP remains the production visual behavior.
-
-This is not a public multi-tenant service. Account lifecycle, tenant ownership, object storage, cross-user quotas, distributed worker leases and high availability are outside scope. Use consistent configuration on one host with local storage. API query inference remains in-process without the worker deadline. Inline mode retains V1 single-process limitations. Worker delivery is at-least-once; a crash before enqueue can leave an unqueued upload asset. OpenCV duration is approximate for VFR. Natural V2 is small and diagnostic; it does not establish population accuracy. No OCR, action recognition, identity recognition, generated Q&A or training was added.
+See [README.md](README.md), [long-video support](docs/LONG_VIDEO_SUPPORT.md),
+[DECISIONS.md](DECISIONS.md), and the [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md).

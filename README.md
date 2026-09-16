@@ -1,211 +1,261 @@
 # SceneMind
 
-**Search inside video using natural language.**
+SceneMind is a local-first multimodal video search engine that finds relevant moments in long
+videos from natural-language queries.
 
-Upload a video, browse sampled moments, transcribe English speech, and retrieve scenes using visual or combined visual/speech evidence. Selecting a result seeks the player to its timestamp. SceneMind v1.0 is English-first. Open pretrained models run locally: no API key, subscription, cloud GPU, or paid AI service is required.
+Upload a video, build local visual and speech indexes, search for what appears or what is said,
+then click a ranked result to jump directly to its timestamp. SceneMind v1.0 RC uses pretrained
+models for inference; it does not train CLIP or Whisper and does not require a paid API.
 
-![SceneMind workspace](docs/images/workspace-desktop.png)
+> **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
+> demonstration and engineering review. It is not presented as a universal video-understanding
+> system or a public multi-tenant service.
 
-*Actual application with generated red/blue test footage. This illustrates the workflow, not real-world retrieval quality. [Mobile view](docs/images/workspace-mobile.png).*
+## Demo and screenshots
 
-## Implemented
+![SceneMind desktop workspace](docs/images/workspace-desktop.png)
 
-- Bounded video upload, metadata, sampled frames and thumbnails.
-- Local Whisper tiny speech transcription and timestamped transcript search.
-- CLIP ViT-B/32 embeddings and exact FAISS cosine search.
-- BM25 speech relevance and explainable reciprocal-rank fusion.
-- Responsive library/player, durable processing states, three clear v1.0 search modes, and click-to-seek.
-- SQLite transcript persistence with SQLAlchemy/Alembic migrations.
-- Model-free unit tests, real-model smoke scripts, browser tests and a benchmark runner.
+The screenshot is the real application running against generated red/blue fixture video. It
+demonstrates the interface and click-to-seek workflow, not real-world search accuracy.
+[Mobile view](docs/images/workspace-mobile.png).
 
-Core phases 0-6 and a bounded local hardening milestone are implemented. Optional operator authentication and durable workers are available; public deployment remains outside verified scope. See [status](PROJECT_STATUS.md).
+## What it does
 
-Search results are ranked candidate moments, not confirmed answers. The UI presents “Most relevant moments,” keeps useful transcript excerpts and evidence labels, and does not expose raw model scores. SceneMind cannot reliably determine that requested content is absent; it returns possible moments with one restrained relevance explanation.
+1. Streams an uploaded video to local storage and validates its size, duration and video stream.
+2. Extracts timestamped JPEG frames at the configured five-second interval.
+3. Optionally transcribes speech with Whisper and builds a CLIP/FAISS visual index.
+4. Searches with one of three explicit product modes.
+5. Returns possible timestamped moments; clicking a result seeks the video player.
 
-SceneMind v1.0 defaults to **Smart Search**, which uses the existing Hybrid retrieval path across speech and visuals. **Spoken Content** maps to Speech retrieval and **Visual Content** maps to Visual retrieval. The historical AUTO classifier remains API-compatible for experiments and existing clients, but it is not exposed in the normal frontend or recommended for v1.0. [Final English Acceptance V2](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_RESULTS.md) evaluated Smart Search directly on a new frozen 30:29 English video: PASS-level useful Top-1/3/5 is 76.92%/76.92%/84.62%. The hard Top-3/5 gates failed. A later source-disjoint [Hybrid fusion holdout](ml/evaluation/HYBRID_FUSION_HOLDOUT_V1.md) rejected the proposed 1.50× overlap cap because ALL and Speech Top-5 regressed and one Speech query broke without a rescue. Production remains uncapped RRF60.
+Processing states come from the real pipeline: waiting, frame extraction, transcription, visual
+indexing, ready or failed. SceneMind does not fabricate percentage progress.
 
-Validated claims are local multimodal retrieval with CLIP visual search, Whisper speech indexing, BM25/RRF hybrid ranking, benchmark-driven evaluation, measured latency/memory, and long-video processing infrastructure. SceneMind does not claim reliable automatic route selection, no-match detection, multilingual robustness, OCR or action understanding, Video RAG, broad production readiness, or 60-minute search quality.
+## Search modes
 
-## Run locally
+| Mode | Behavior |
+| --- | --- |
+| **Smart Search** | Default. Searches spoken and visual evidence and combines ranks with uncapped RRF60. |
+| **Spoken Content** | Searches what is said using timestamped Whisper segments and BM25. |
+| **Visual Content** | Searches what appears in sampled frames using CLIP and FAISS. |
 
-Verified on Windows, Python 3.13 and Node.js 24. Setup targets Python 3.11-3.13 and Node.js 20.9+. Linux backend tests and PostgreSQL queue/migrations are also verified; actual ML inference is measured on Windows CPU.
-
-From the repository root in PowerShell:
-
-```powershell
-py -3.13 -m venv .venv
-.venv/Scripts/python -m pip install -r backend/requirements.lock
-.venv/Scripts/python -m pip install -e "backend[dev]"
-.venv/Scripts/python -m uvicorn app.main:app --reload
-```
-
-In a second terminal:
-
-```powershell
-cd frontend
-npm ci
-npm run dev
-```
-
-Open **http://localhost:3000**. API docs: **http://localhost:8000/docs**. Run the backend from the repository root so relative paths resolve consistently. Use one backend worker.
-
-The base setup supports upload and frame browsing. Enable speech and visual search:
-
-```powershell
-.venv/Scripts/python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-.venv/Scripts/python -m pip install -e "backend[speech,visual]"
-```
-
-Restart the backend. Upload/select a video, then choose **Build visual index** and/or **Transcribe video**. First use downloads weights into ignored `data/models`; later runs reuse them. CLIP weights are roughly 600 MB; Whisper tiny is much smaller. `backend/requirements-ml.lock` records the full verified Windows CPU environment.
-
-On Linux/macOS, create the environment with `python3 -m venv .venv` and use `.venv/bin/python`. Install from `backend[dev]` instead of the Windows-specific lock.
-
-## Evaluation and hardening
-
-The [Natural V2 protocol](ml/evaluation/NATURAL_V2_PROTOCOL.md), [measured results](ml/evaluation/NATURAL_V2_RESULTS.md), and [failure analysis](ml/evaluation/FAILURE_ANALYSIS.md) cover the current natural-video benchmark. The earlier [evaluation/hardening guide](docs/learning/06-calibration-and-durable-workers.md) and [animated pilot](ml/evaluation/PILOT_RESULTS.md) remain as historical baselines.
-
-The [Final English Acceptance V2 results](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_RESULTS.md) and [failure analysis](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_FAILURES.md) preserve the frozen Smart Search evaluation. All eight multimodal queries pass at rank 1, but Speech Top-5 is 70.00%. The completed [Hybrid fusion diagnostic](ml/evaluation/HYBRID_FUSION_DIAGNOSTICS.md) uses two separate development videos and 32 queries: 20/28 positives reach Hybrid Top-5, seven failures are ranking/exact-overlap failures, and one is candidate recall. Shared thumbnail buckets occupy 84.4% of final slots. This evidence supports a later bounded fusion experiment; no production retrieval behavior changed.
-
-The offline [Hybrid Fusion Refinement V1](ml/evaluation/HYBRID_FUSION_REFINEMENT_V1.md) selected a 1.50× shared-contribution cap on development evidence. [Hybrid Fusion Holdout V1](ml/evaluation/HYBRID_FUSION_HOLDOUT_V1.md) then froze 34 queries over two new Wikimedia sources before retrieval. Cap raises Top-1 from 12/28 to 15/28 and MRR@5 from 0.5560 to 0.6083, but lowers Top-5 from 21/28 to 20/28, lowers Speech Top-5 from 8/11 to 7/11, breaks one query, and rescues none. It is rejected. Runtime Hybrid retrieval remains the original uncapped RRF60 implementation.
-
-The [Calibrated Fusion V1 experiment](ml/experiments/calibrated_fusion_v1/README.md) tested whether raw CLIP/BM25 scores and query-local margins generalize as confidence signals. Calibration used 72 queries from three sources; validation used 32 queries from two new sources. Both selected modality calibrators were worse than rank-only on source-disjoint AUC and Brier, so the experiment stopped before fusion or protected holdout evaluation. [Results](ml/evaluation/CALIBRATED_FUSION_V1_RESULTS.md) and [failure analysis](ml/evaluation/CALIBRATED_FUSION_V1_FAILURES.md) record decision C. Production remains uncapped RRF60.
-
-The follow-up [image-text verifier experiment](ml/experiments/image_text_verifier/README.md) tested BLIP ITM over CLIP's top five using an expanded calibration pool. It failed promotion: calibrated R@5 was 26.2%, positive false abstention 52.4%, and added CPU median latency 3.352 seconds. [Results](ml/evaluation/VERIFIER_RESULTS.md) and [reviewed failures](ml/evaluation/VERIFIER_FAILURE_ANALYSIS.md) document why production remains unchanged.
-
-The [lightweight scorer experiment](ml/experiments/lightweight_pair_scorer/README.md) added 20 frozen small-object/relation queries and tested UForm3-small ONNX plus an eight-parameter CLIP-statistics scorer. UForm meets resources at 202.1 ms median, 229.1 ms p95 and 163.1 MB isolated peak delta, but its 0% FAR costs 47.6% positive false abstention. The tiny scorer costs 0.066 ms but reaches 71.4% abstention. [Results](ml/evaluation/LIGHTWEIGHT_PAIR_SCORER_RESULTS.md), [failures](ml/evaluation/LIGHTWEIGHT_PAIR_SCORER_FAILURES.md), and the [model shortlist](ml/experiments/lightweight_pair_scorer/MODEL_SHORTLIST.md) record the rejection. Production remains CLIP/BM25/RRF.
-
-The [object-detector branch](ml/experiments/object_detector_branch/README.md) tested official YOLOX-Nano ONNX only on frozen CLIP top-five frames. It is efficient at 90.5 ms warm median, 99.6 ms p95 and 58.0 MiB added peak RSS, but its calibration-only threshold abstains on all three small-object positives. [Results](ml/evaluation/OBJECT_DETECTOR_RESULTS.md), [failures](ml/evaluation/OBJECT_DETECTOR_FAILURES.md), and the [shortlist](ml/experiments/object_detector_branch/MODEL_SHORTLIST.md) document the rejection. No detector code or dependency entered production.
-
-The [bounded secondary experiment](ml/experiments/bounded_secondary_sampling/README.md) tested top-5/10/20 coarse expansion, ±2/4/6-second windows, a versioned two-second JPEG cache, secondary CLIP and Nano 640. The selected top-5 ±2-second policy averages nine frames, but reaches only 50% of verified held-out visible evidence; secondary CLIP reaches 0% there, and strict no-match gating abstains on every small-object query. [Results](ml/evaluation/BOUNDED_SECONDARY_RESULTS.md) and [failures](ml/evaluation/BOUNDED_SECONDARY_FAILURES.md) select coarse candidate generation as the next bottleneck. Production remains unchanged.
-
-The [coarse candidate diversity experiment](ml/experiments/coarse_candidate_diversity/README.md) measures top-20/top-50 redundancy and compares temporal NMS, MMR, embedding-change grouping and bounded multi-scale sampling. The selected cheap policy removes neighboring duplicates but reaches only 81.0% held-out R@5 versus the 85.7% five-second baseline and does not improve reviewed small-object recall. The raw two-second top-50 pool reaches 97.6% correct-region recall, so [results](ml/evaluation/COARSE_CANDIDATE_RESULTS.md) and [failures](ml/evaluation/COARSE_CANDIDATE_FAILURES.md) recommend a bounded candidate-list ranking/no-match experiment. Production remains unchanged.
-
-For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, stop the old inline API, then start the API and `.venv/Scripts/python -m app.worker` from the same repository root. Both processes must share database, data directory, cache and model configuration. Use one API process and one worker supervisor per host. Inspect `GET /jobs`; retry a failed job with `POST /jobs/{id}/retry`.
-
-Optional durable settings include `SCENEMIND_INGEST_JOB_TIMEOUT=1800`, `SCENEMIND_SPEECH_JOB_TIMEOUT=7200`, `SCENEMIND_VISUAL_JOB_TIMEOUT=3600`, `SCENEMIND_JOB_ATTEMPTS=2`, and `SCENEMIND_MAX_PENDING_JOBS=20`. Calibration stays off unless `SCENEMIND_CALIBRATION_PATH` points to a reviewed artifact. The pilot threshold reduced held-out false accepts from 4/4 to 2/4; it does not establish semantic absence.
-
-Set a strong private `SCENEMIND_AUTH_TOKEN` for protected operator access. Open `http://localhost:8000/docs`, sign in through the browser prompt as `scenemind`, then open the frontend using the same hostname. Browser-managed credentials cover API/media requests; API tools can use Bearer authentication. Do not put passwords in frontend configuration. This is one operator, not a tenant/account system; use TLS before non-loopback access.
-
-Run `python scripts/validate_containers.py` in the virtual environment for disposable Linux/PostgreSQL verification. Optional `compose.yaml` requires `SCENEMIND_DB_PASSWORD` and `SCENEMIND_AUTH_TOKEN` and binds the API to loopback. Use a URL-safe generated database password. The base image supports ingestion and mocked tests; install CPU speech/visual extras in a derived image for ML stages. Container ML and full Compose deployment are separate, unverified paths. Preserve persistent volumes.
-
-For authenticated browser checks, set `SCENEMIND_E2E_AUTH` to a test-only password and `SCENEMIND_MODEL_E2E=1`, then run `npm run test:e2e` in `frontend`. These settings target only the isolated test backend.
-
-## Configuration
-
-Optional: copy `.env.example` to root `.env`, and `frontend/.env.example` to `frontend/.env.local`.
-
-| Setting | Default | Purpose |
-| --- | --- | --- |
-| SCENEMIND_DATA_DIR | data/videos | Media and indexes |
-| SCENEMIND_DATABASE_URL | sqlite:///data/scenemind.db | Transcript database |
-| SCENEMIND_SAMPLING_INTERVAL | 5 | Seconds between frames |
-| SCENEMIND_MAX_UPLOAD_BYTES | 1073741824 | 1 GiB streamed-upload limit |
-| SCENEMIND_MAX_DURATION | 3600 | Maximum duration in seconds |
-| SCENEMIND_MIN_FREE_DISK_BYTES | 536870912 | Free disk reserve |
-| SCENEMIND_PROCESSING_DISK_HEADROOM_RATIO | 0.25 | Derived-file headroom relative to source bytes |
-| SCENEMIND_MODEL_CACHE | data/models | Model cache |
-| SCENEMIND_MODEL_DEVICE | cpu | Inference device; CUDA unverified |
-| SCENEMIND_SPEECH_MODEL | tiny | Whisper model or local directory |
-| SCENEMIND_VISUAL_MODEL | openai/clip-vit-base-patch32 | CLIP checkpoint |
-| SCENEMIND_VISUAL_REVISION | Pinned commit | Changing it requires reindexing |
-| SCENEMIND_AUTO_ROUTING_ENABLED | true | AUTO classifier; false falls back to Hybrid |
-| NEXT_PUBLIC_API_URL | http://localhost:8000 | Browser API origin |
-
-FFmpeg comes from imageio-ffmpeg; IMAGEIO_FFMPEG_EXE overrides its executable. No system FFmpeg installation was needed on Windows. Accepted containers: MP4, MOV, WebM, MKV and AVI, up to 4K. MP4/H.264 is the practical browser playback path; other codecs depend on the browser.
+The historical AUTO query classifier remains API-compatible for experiments, but it is absent
+from the normal v1.0 interface. Results use conservative wording such as **Most relevant
+moments** and **Possible matches**. Raw model scores are not shown to normal users.
 
 ## Architecture
 
 ```mermaid
-flowchart LR
-  UI[Next.js workspace] --> API[FastAPI]
-  API --> Media[Local video]
-  Media --> FF[FFmpeg frames]
-  Media --> Audio[Mono 16 kHz audio]
-  FF --> CLIP[CLIP image encoder]
-  Query[Query text] --> Text[CLIP text encoder]
-  CLIP --> Vectors[Normalized vectors / FAISS]
-  Text --> Vectors
-  Audio --> Whisper[Whisper tiny]
-  Whisper --> DB[SQLite segments]
-  DB --> BM25[BM25 speech ranking]
-  Query --> BM25
-  Vectors --> Fusion[Reciprocal-rank fusion]
-  BM25 --> Fusion
-  Fusion --> Moments[Scored timestamps + evidence]
-  Moments --> UI
+flowchart TD
+    Upload[Video upload] --> API[FastAPI validation and local storage]
+    API --> Job[Inline task or durable SQL job]
+    Job --> Frames[FFmpeg / OpenCV<br/>timestamped frames]
+    Job --> Audio[FFmpeg<br/>16 kHz mono audio]
+    Frames --> CLIP[CLIP image embeddings]
+    CLIP --> FAISS[FAISS exact vector index]
+    Audio --> Whisper[Whisper transcription]
+    Whisper --> Segments[SQL transcript segments]
+    Query[Natural-language query] --> CLIPText[CLIP text embedding]
+    CLIPText --> FAISS
+    Query --> BM25[BM25 lexical retrieval]
+    Segments --> BM25
+    FAISS --> RRF[RRF60 rank fusion]
+    BM25 --> RRF
+    RRF --> Moments[Ranked moments and timestamps]
+    Moments --> UI[Next.js workspace and click-to-seek]
 ```
 
-Preprocessing, inference, normalization, retrieval and evaluation remain explicit. Models load once per process. Video manifests and embedding files are atomic; relational migrations run at startup. Inline mode marks interruptions failed; durable mode retries persisted jobs within the attempt budget. [Architecture](ARCHITECTURE.md) / [Decisions](DECISIONS.md).
+The detailed data flow, failure behavior and resource boundaries are in
+[ARCHITECTURE.md](ARCHITECTURE.md).
 
-## Validation and benchmarks
+## AI and retrieval components
+
+| Component | Role | Type |
+| --- | --- | --- |
+| CLIP ViT-B/32 | Encodes sampled images and visual-language queries into comparable vectors | Pretrained neural model |
+| faster-whisper tiny | Produces timestamped local speech transcripts | Pretrained neural model |
+| FAISS `IndexFlatIP` | Performs exact similarity search over normalized frame vectors | Vector-search library, not a neural network |
+| BM25 | Ranks transcript segments by lexical relevance | Statistical retrieval algorithm |
+| RRF60 | Combines Visual and Speech rank positions without comparing incompatible raw scores | Deterministic rank-fusion algorithm |
+
+Model revisions and runtime behavior are configurable. Weights are downloaded to ignored local
+storage and are never committed.
+
+## Engineering features
+
+- Streamed uploads up to the configurable 1 GiB / 60-minute envelope, with disk-reserve checks.
+- Atomic manifests, frame directories and vector-index replacement; transactional transcripts.
+- Optional durable SQL job queue with bounded retries, stage deadlines and failed-job retry.
+- Reusable inference child, process-tree termination and cleanup of partial stage artifacts.
+- SQLite for the simple local path; Alembic migrations and PostgreSQL-compatible persistence.
+- Optional single-operator Basic/Bearer authentication and origin checks for writes.
+- Local CPU inference, pinned model revision, exact FAISS search and configurable caches.
+- Mocked inference tests, browser tests, real-model smoke scripts and frozen evaluation tooling.
+
+## Evaluation
+
+SceneMind uses source-disjoint media, frozen query manifests, development/holdout separation and
+query-level failure review. Reported figures describe their named datasets; they are not general
+accuracy claims.
+
+| Evaluation | Verified result | Interpretation |
+| --- | --- | --- |
+| Natural Video V2 | Raw held-out Visual R@5 **85.7%**, Speech R@5 **80.0%**, Hybrid R@5 **77.8%** | Useful diagnostic coverage on a small three-video held-out split; nearest-neighbor Visual still accepted every negative. |
+| 45-minute infrastructure run | **245.4 s** total processing, 540 frames, 373 transcript segments, zero temporary residue | Long-video processing and cleanup work; this fixture does not prove search quality. |
+| Final English Acceptance V2 | 30:29 real presentation; useful Top-1/3/5 **76.9/76.9/84.6%**; median warm search **64.6 ms** | Interactive and useful in many cases, but missed the frozen 85% Top-3 and 90% Top-5 gates. |
+| Human-grounded AUTO routing | Production **48.3%**, candidate **60.0%** on 60 frozen test queries | AUTO was removed from the normal UI; explicit product modes remain. |
+| Hybrid cap holdout | Cap raised Top-1 but reduced Top-5 **21/28 → 20/28** and Speech Top-5 **8/11 → 7/11** | Candidate rejected; production remains uncapped RRF60. |
+
+See [Final Acceptance V2](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_RESULTS.md),
+[long-video measurements](ml/evaluation/LONG_VIDEO_INGEST_RESULTS.md), and the
+[evaluation directory](ml/evaluation/).
+
+## Experiments we rejected
+
+Failed experiments remain tracked because knowing what *not* to ship is part of production ML
+engineering.
+
+| Approach | Why tested | Verified outcome | Decision |
+| --- | --- | --- | --- |
+| BLIP image-text verifier | Reject visually unrelated CLIP candidates | 26.2% held-out R@5, 52.4% positive abstention, 3.352 s median CPU latency | Rejected |
+| UForm3-small pair scorer | Seek a sub-250 ms semantic reranker | 202.1 ms median, but 47.6% positive abstention | Rejected |
+| YOLOX / RT-DETR small-object branch | Separate frame visibility from detector capacity | Nano 640 reached 83.3% visible-frame recall; RT-DETR reached 88.9% but cost 350.7 ms/frame and 552.5 MiB | Kept diagnostic only; five-second sampling was the larger bottleneck |
+| Denser secondary sampling | Recover short or small-object evidence | Two-second frames retained 4/4 reviewed events, but fixed CLIP Top-5 found only 1/4 | Rejected for production |
+| Character n-gram AUTO router | Improve automatic mode selection | 60.0% human-grounded test accuracy; Visual/Speech recall 50/40% | Rejected; AUTO removed from UI |
+| Calibrated raw-score fusion | Distinguish strong evidence from weak cross-modal consensus | Both modality calibrators lost source-disjoint AUC and Brier versus rank-only | Stopped before fusion or protected holdout |
+
+## Limitations
+
+- English-first. Turkish and multilingual research did not pass product gates.
+- There is no reliable global no-match detector; returned items are possible matches.
+- Five-second visual sampling can miss brief events and small objects.
+- Hybrid RRF60 can over-reward incidental agreement and displace strong single-modality evidence.
+- Whisper tiny can mistranscribe, while BM25 misses paraphrases absent from the transcript.
+- SceneMind has no general OCR, action understanding, facial identity recognition or Video RAG.
+- A 30–60 minute video can take several minutes to process on CPU; the measured worker peak was
+  about 3.02 GB in the 45-minute stress run.
+- Public multi-user deployment, tenant isolation, quotas and high availability are outside v1.0.
+
+## Tech stack
+
+- **Backend:** Python 3.11–3.13, FastAPI, Pydantic, SQLAlchemy, Alembic, Uvicorn
+- **Frontend:** Next.js 16, React 19, TypeScript, Playwright
+- **ML:** PyTorch, Transformers CLIP, faster-whisper/CTranslate2
+- **Media and retrieval:** FFmpeg via imageio-ffmpeg, OpenCV, FAISS, BM25, RRF
+- **Storage:** local UUID-owned media directories, SQLite or PostgreSQL
+- **Quality:** pytest, Ruff, ESLint, TypeScript, Next.js production build, frozen regressions
+
+## Local setup
+
+The primary verified environment is Windows with Python 3.13 and Node.js 24. Node.js 20.9+ is
+supported by the frontend toolchain.
 
 ```powershell
-./scripts/check.ps1
+git clone https://github.com/AliberkOlukkaya/SceneMind.git
+cd SceneMind
+py -3.13 -m venv .venv
+.venv\Scripts\python -m pip install -r backend\requirements-ml.lock
+.venv\Scripts\python -m pip install -e backend
+cd frontend
+npm ci
+cd ..
+```
+
+Start the API from the repository root:
+
+```powershell
+.venv\Scripts\python -m uvicorn app.main:app --reload
+```
+
+Start the UI in a second terminal:
+
+```powershell
+cd frontend
+npm run dev
+```
+
+Open `http://localhost:3000`. Upload a video, wait for frame extraction, then use **Build visual
+index** and/or **Transcribe video**. The first use downloads model weights into ignored
+`data/models`; subsequent runs reuse them. MP4/H.264 is the most portable browser playback path.
+
+For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, start the API, and run one worker from
+the same repository root:
+
+```powershell
+.venv\Scripts\python -m app.worker
+```
+
+The API and worker must share configuration, database, data directory and model cache. See
+[long-video operations](docs/LONG_VIDEO_SUPPORT.md). Linux backend and disposable PostgreSQL
+validation exist through `scripts/validate_containers.py`. The provided Docker/Compose path is a
+backend validation foundation; its base image does not include the full ML stack or frontend.
+
+## Configuration
+
+Copy `.env.example` to `.env` and `frontend/.env.example` to `frontend/.env.local` only when you
+need overrides. Important defaults:
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `SCENEMIND_DATA_DIR` | `data/videos` | Local media and derived assets |
+| `SCENEMIND_DATABASE_URL` | `sqlite:///data/scenemind.db` | Transcript and job database |
+| `SCENEMIND_SAMPLING_INTERVAL` | `5` | Seconds between sampled frames |
+| `SCENEMIND_MAX_UPLOAD_BYTES` | `1073741824` | Streamed upload limit |
+| `SCENEMIND_MAX_DURATION` | `3600` | Duration limit in seconds |
+| `SCENEMIND_AUTH_TOKEN` | empty | Optional local operator password |
+| `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | Browser API origin |
+
+## Tests
+
+Run the backend, lint, type and production-build checks once:
+
+```powershell
+.\scripts\check.ps1
+```
+
+Run browser tests after installing Chromium:
+
+```powershell
 cd frontend
 npx playwright install chromium
 npm run test:e2e
 ```
 
-Default browser tests generate a fixture and require no model weights. Set `$env:SCENEMIND_MODEL_E2E='1'` to include real CLIP browser tests. Standalone smoke tests: scripts/smoke_visual.py and scripts/smoke_speech.py.
+Default Playwright tests use generated fixture media and mocked search responses. Set
+`SCENEMIND_MODEL_E2E=1` only for the opt-in real CLIP browser test; it may download weights.
+Real-model command-line checks are `scripts/smoke_visual.py` and `scripts/smoke_speech.py`.
 
-Run the real local synthetic benchmark from the root:
+## Project structure
 
-```powershell
-.venv/Scripts/python -m ml.evaluation.run --synthetic --k 1 --repeats 5
+```text
+backend/          FastAPI application, retrieval paths, persistence and worker
+frontend/         Next.js workspace and Playwright tests
+ml/evaluation/    Frozen protocols, reports, metrics and failure analyses
+ml/experiments/   Isolated candidates that do not enter production automatically
+docs/learning/    First-principles explanations of the system
+scripts/          Validation, fixtures, smoke tests and environment locking
+tests/            Backend, infrastructure and frozen-regression tests
+data/             Ignored local media, models, indexes and databases
 ```
 
-The measured two-color fixture achieved Recall@1 and MRR@1 of 1.0 on **two positive queries**, with roughly **15 ms warm in-process median search latency**. The one negative query still returned a result. These tiny synthetic results validate the pipeline, not real-world accuracy or network performance. [Exact results](ml/evaluation/RESULTS.md) / [Protocol and custom manifests](ml/evaluation/PROTOCOL.md).
+## Engineering philosophy
 
-Prepare and run the frozen natural-video benchmark:
+SceneMind follows a simple promotion loop:
 
-```powershell
-.venv/Scripts/python scripts/prepare_natural_v2.py
-.venv/Scripts/python -m ml.evaluation.run_natural_v2 --repeats 3
-.venv/Scripts/python -m ml.evaluation.regression_natural_v2 data/natural-v2-report.json ml/evaluation/reports/natural-v2.json
+```text
+readable baseline → frozen evaluation → failure analysis → bounded experiment
+                  → independent holdout → promote only when gates pass
 ```
 
-Natural V2's raw held-out visual R@5 is 85.7%, but nearest-neighbor retrieval accepts every negative. The calibration-only cutoff lowers negative FAR@5 to 10% while lowering R@5 to 38.1% and causing 52.4% positive false abstention. Speech reaches 80% R@5 with 0% negative FAR on its small slice. These are diagnostic results from three held-out videos, not population estimates.
+This process rejected larger models and plausible ranking changes when held-out quality,
+latency, memory or negative behavior did not support them. The search core is frozen for this
+portfolio release candidate.
 
-The candidate-list follow-up found 92.9%/100% held-out Oracle recall at top-20/top-50, but calibration-selected list features lowered final R@5 to 76.2% and a no-match threshold falsely rejected 90.5% of positives. Existing explicit Visual/Speech/Hybrid routing with real BM25 evidence reached 95.2% R@5. Production therefore keeps raw five-second CLIP ordering and explicit modes. [Candidate-list results](ml/evaluation/CANDIDATE_LIST_RANKING_RESULTS.md).
+## Roadmap
 
-The historical AUTO routing milestone uses a frozen 54-parameter text-only classifier trained on 36 balanced queries from three additional Commons sources. Held-out AUTO R@5 was 95.2%, matching explicit routing, with 0.031 ms median routing latency; a second run matched. Later real-video validation invalidated AUTO as the product default, so the implementation remains compatible while the v1.0 interface uses the three direct modes above. [Routing results](ml/evaluation/QUERY_ROUTING_RESULTS.md) / [personal acceptance protocol](ml/evaluation/PERSONAL_VIDEO_ACCEPTANCE_PROTOCOL.md).
+The v1.0 RC scope is complete: local ingestion, Visual/Speech/Smart Search, timestamp navigation,
+durable processing, conservative result UX and reproducible evaluation. Future work may revisit
+multimodal ranking, OCR, temporal/action understanding, Video RAG and stronger deployment only
+with new data and frozen gates. These are future possibilities, not current product claims.
 
-The first real [personal acceptance run](ml/evaluation/PERSONAL_ACCEPTANCE_RESULTS.md) froze 54 English/Turkish queries before searching the three supplied videos. Positive useful Top-1/3/5 was 52.8%/66.7%/83.3%, AUTO routing was 77.8%, and search latency was 23.25/32.02 ms median/p95. English Top-5 reached 88.9%; Turkish reached 77.8%, and all 12 route errors were Turkish. Only 22.2% of negatives avoided a misleading response. The measured outcome is C — not yet accepted. Production remains unchanged; see the [failure analysis](ml/evaluation/PERSONAL_ACCEPTANCE_FAILURES.md).
-
-[Long-video infrastructure](ml/evaluation/LONG_VIDEO_INGEST_RESULTS.md) now accepts a configurable 1 GiB / 60-minute envelope through streamed disk writes and durable jobs. The original 419 MiB tutorial completed normally without transcoding, and a 45-minute audio stress fixture completed Whisper plus CLIP indexing. Peak measured worker-tree RSS was 3.02 GB; no temporary artifacts remained. This validates processing infrastructure, not long-video search accuracy. Configuration and operational details are in [long-video support](docs/LONG_VIDEO_SUPPORT.md).
-
-[Final English long-video acceptance](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_RESULTS.md) used a new real CC BY 4.0 54:11 technical presentation and 30 queries frozen before product search. The normal durable pipeline completed with 651 frames, 684 English segments, no failure, and no temporary residue. Search failed the v1.0 gates: AUTO routing was 56.67%, and positive useful Top-1/3/5 was 50.00%/65.38%/65.38%. Clear Visual slides were much stronger at 83.33% Top-5, while Speech AUTO was 30%. Conservative behavior was acceptable on all four confirmed negatives. Decision C leaves production unchanged and identifies one blocker: AUTO routing generalization on natural English interrogative technical queries.
-
-The bounded [English router generalization study](ml/evaluation/ENGLISH_ROUTER_GENERALIZATION_RESULTS.md) freezes 450 balanced queries across 15 source scenarios. Production AUTO reaches 50.00% frozen routing accuracy. A dependency-free character n-gram linear candidate reaches 95.56%, with 100.00%/90.00%/96.67% Visual/Speech/Hybrid recall and 2.7706/3.3677 ms median/p95 latency. It is not promoted: the scenarios were independently authored but not verified against real video evidence, and validation-selected Hybrid fallback lowered raw frozen accuracy from 97.78% to 95.56%. Decision E preserves the existing router and all retrieval behavior; new real-video source groups are required.
-
-The subsequent [human-grounded router validation](ml/evaluation/HUMAN_GROUNDED_ROUTER_RESULTS.md) reviews frames and local transcripts from ten new openly licensed videos and freezes 360 balanced queries with two unseen test videos. Production scores 48.33%; the fixed character candidate scores 60.00%, with 50.00%/40.00%/90.00% Visual/Speech/Hybrid recall. It is fast at 1.626/1.928 ms median/p95 but fails three quality gates. Decision C keeps the production router and all retrieval behavior unchanged; no second run or Final English Acceptance V2 is scheduled.
-
-The [final English acceptance preparation](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_PREPARATION.md) records the earlier inventory decision D, before eligible media was supplied. Its validator, templates, and [protocol](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_PROTOCOL.md) were then used for the completed run above.
-
-The source-disjoint [Turkish compatibility study](ml/evaluation/TURKISH_COMPATIBILITY_RESULTS.md) used 72 natural queries across six development source groups without tuning on personal acceptance. Cheap routing improved held-out Turkish route accuracy from 53.3% to 76.7%, but missed the 90% gate; cheap AUTO R@5 reached 80%, below its 85% gate. Direct Turkish Visual R@5 was already 93.3%. A multilingual Speech diagnostic reached 100% R@5 but did not fix routing and added about 254 MiB RSS. Outcome E keeps production unchanged, skips the personal rerun and does not claim reliable Turkish support for v1.0. See the [failure analysis](ml/evaluation/TURKISH_COMPATIBILITY_FAILURES.md).
-
-The English [path-aware no-match study](ml/evaluation/PATH_AWARE_NO_MATCH_RESULTS.md) freezes 120 balanced queries across six source-disjoint groups. AUTO routing reaches 95.83%, but Visual rejection falsely abstains on 83.33% of positives while Speech and Hybrid accept 33.33% and 50.00% of negatives. Overall R@5 falls from 87.50% to 41.67%. Outcome E keeps production unchanged, skips the second/personal runs, and ends no-match model experimentation for v1.0. Search results should be read as likely moments rather than confirmed answers.
-
-## Learn the AI pipeline
-
-1. [Video processing](docs/learning/01-video-processing.md)
-2. [Timestamped speech](docs/learning/02-speech-transcription.md)
-3. [CLIP embeddings](docs/learning/03-clip-and-multimodal-embeddings.md)
-4. [Vector retrieval](docs/learning/04-vector-search.md)
-5. [Hybrid ranking](docs/learning/05-hybrid-retrieval.md)
-
-CLIP and faster-whisper sources publish MIT licensing; consult model cards and retain notices when redistributing. No weights are vendored. FFmpeg licensing depends on the selected build.
-
-## Limitations and next work
-
-- Static frames can miss brief events and do not establish actions or causality.
-- Scores are rankings, not probabilities. Global and path-aware no-match rules both fail frozen transfer gates and are not production confidence estimates.
-- Whisper tiny can mistranscribe; lexical speech search misses paraphrases.
-- VFR duration is approximate. A speech result's thumbnail may represent a nearby time.
-- Operator authentication and durable worker deadlines are optional. Multi-user quotas, distributed coordination and public deployment are outside scope. Keep the service bound to localhost.
-- Natural V2 is too small for broad quality claims; expand frozen source-disjoint calibration and held-out coverage.
-- AUTO can select the existing search path for represented English query forms, but Turkish routing and retrieval missed personal-use targets. Infrastructure now processes 1 GiB / 60-minute inputs and passed a 45-minute stress run, but the supplied personal videos still do not verify 30–60 minute search usefulness. Keep explicit overrides and avoid v1.0 reliability claims until the frozen acceptance gates pass.
-
-OCR, scene detection, grounded Q&A and specialization are planned only where they improve a concrete use case. Fine-tuning requires a dataset and measured baseline first. [Roadmap](PROJECT_PLAN.md) / [Tasks](TASKS.md). Facial identity recognition is outside scope.
-
-SceneMind v1.0 is English-first. Turkish code and research remain available, but robust Turkish or multilingual search is not a validated product claim.
+For a recruiter-oriented overview see the [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md).
+For implementation decisions see [DECISIONS.md](DECISIONS.md).

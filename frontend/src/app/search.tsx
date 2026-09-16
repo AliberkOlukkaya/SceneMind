@@ -27,6 +27,16 @@ const MODE_DETAILS: Record<string, { label: string; description: string }> = {
   },
 };
 
+const INDEX_STATUS: Record<string, string> = {
+  loading: "Checking",
+  not_started: "Not built",
+  queued: "Waiting to build",
+  processing: "Building visual index",
+  indexing: "Building visual index",
+  ready: "Ready",
+  failed: "Failed",
+};
+
 export default function Search({
   videoId,
   api,
@@ -120,7 +130,9 @@ export default function Search({
     <section className="semantic-search">
       <div className="timeline-heading">
         <h3>Search moments</h3>
-        <span aria-live="polite">Visual index: {status.replace("_", " ")}</span>
+        <span aria-live="polite">
+          Visual index: {INDEX_STATUS[status] || status.replaceAll("_", " ")}
+        </span>
       </div>
       {(status === "not_started" || status === "failed") && (
         <>
@@ -168,7 +180,11 @@ export default function Search({
           {busy ? "Searching…" : "Search"}
         </button>
       </form>
-      {error && <p role="alert">{error}</p>}
+      {error && (
+        <p role="alert" className="error">
+          {error}
+        </p>
+      )}
       {results.length > 0 && (
         <>
           <div className="results-heading">

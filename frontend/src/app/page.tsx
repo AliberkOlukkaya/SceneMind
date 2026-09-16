@@ -23,6 +23,15 @@ const timestamp = (value: number) =>
     .toString()
     .padStart(2, "0")}`;
 
+function videoStatus(video: Video) {
+  if (video.status === "failed") return "Processing failed";
+  if (video.status === "ready") return "Ready";
+  if (video.job_status === "queued") return "Waiting to process";
+  if (video.stage === "preparing_video" || video.status === "processing")
+    return "Extracting video frames";
+  return video.status.replaceAll("_", " ");
+}
+
 export default function Home() {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedId, setSelectedId] = useState<string>();
@@ -127,8 +136,8 @@ export default function Home() {
           <p className="eyebrow">YOUR WORKSPACE</p>
           <h1>Video library</h1>
           <p>
-            {videos.length} {videos.length === 1 ? "video" : "videos"} · Browse
-            sampled moments
+            {videos.length} {videos.length === 1 ? "video" : "videos"} ·
+            Upload, process, and search by meaning or spoken words.
           </p>
         </div>
         <div>
@@ -173,7 +182,10 @@ export default function Home() {
             ?
           </span>
           <h2>Add your first video.</h2>
-          <p>Upload a video to extract frames and browse its timeline.</p>
+          <p>
+            Upload a video, build its local search indexes, then find moments
+            with natural language.
+          </p>
           <button
             className="button"
             disabled={uploading}
@@ -193,11 +205,7 @@ export default function Home() {
               >
                 <span>{video.filename}</span>
                 <small>
-                  {video.job_status === "queued"
-                    ? "queued"
-                    : video.stage === "preparing_video"
-                      ? "preparing video"
-                      : video.status}{" "}
+                  {videoStatus(video)}{" "}
                   {video.metadata && `· ${timestamp(video.metadata.duration)}`}
                 </small>
               </button>
@@ -212,15 +220,13 @@ export default function Home() {
             ) : (
               <>
                 <h2 className="video-title">{selected.filename}</h2>
-                <p aria-live="polite">
+                <p
+                  aria-live="polite"
+                  role={selected.status === "failed" ? "alert" : "status"}
+                >
                   {selected.status === "ready"
                     ? `${selected.metadata?.width} × ${selected.metadata?.height} · ${selected.frames.length} sampled frames`
-                    : selected.error ||
-                      (selected.job_status === "queued"
-                        ? "Video queued..."
-                        : selected.stage === "preparing_video"
-                          ? "Preparing video..."
-                          : `Video ${selected.status}...`)}
+                    : selected.error || `${videoStatus(selected)}…`}
                 </p>
                 {selected.status === "ready" && (
                   <>

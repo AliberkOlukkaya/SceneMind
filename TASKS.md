@@ -64,7 +64,7 @@
 - [x] Select the three supplied videos and freeze 54 English/Turkish queries before retrieval
 - [x] Run production personal-video acceptance and record size, duration and audio limitations
 - [x] Run a source-disjoint Turkish routing/retrieval compatibility milestone without tuning on personal acceptance
-- [ ] Add independent Turkish source groups and freeze a new router-validation split before reconsidering semantic Speech retrieval
+- [x] Freeze multilingual/router research as Future Work for the v1.0 portfolio release candidate
 - [x] Implement and measure streamed 1 GiB / 60-minute ingestion with disk, timeout and cleanup guards
 - [x] Evaluate path-aware unsupported-query rejection and reject it after frozen quality-gate failures
 - [x] Apply conservative English result wording without claiming a confirmed match
@@ -88,7 +88,12 @@
 - [x] Diagnose irrelevant consensus, raw-score information loss, temporal grouping, deduplication and negative-query behavior without tuning
 - [x] Confirm 30/30 historical Acceptance V2 trace parity and keep Holdout V1 frozen
 - [x] Test raw-score calibratability on 72 calibration and 32 source-disjoint validation queries; stop before fusion after both modalities fail AUC/Brier generalization
-- [ ] Collect at least three new source-disjoint calibration sources with complete Top-50 Visual/Speech traces and freeze a new validation split
-- [ ] Keep Final Acceptance V3 blocked until a ranking candidate passes an independent frozen evaluation
+- [x] Stop search-core ML experimentation for v1.0 and preserve all rejected evidence
+- [x] Prepare v1.0.0-rc1 README, architecture, portfolio, CV, study and release documentation
+- [x] Align release metadata and polish real processing/error states without changing retrieval
+
+## Future work — not active v1.0 tasks
+
+- [ ] New source-disjoint evidence before any ranking or multilingual experiment
 - [ ] Full public production deployment, tenant ownership and operational security
-- [ ] Advanced phases 7-9: justify features/datasets before implementation
+- [ ] Advanced phases 7–9 only after a concrete use case and frozen evaluation plan

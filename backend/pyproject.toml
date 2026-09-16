@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scenemind-backend"
-version = "0.1.0"
+version = "1.0.0rc1"
 requires-python = ">=3.11,<3.14"
 dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic-settings>=2.7,<3", "numpy>=2,<3", "opencv-python-headless>=4.11,<6", "imageio-ffmpeg>=0.6,<1", "sqlalchemy>=2,<3", "alembic>=1.15,<2"]
 

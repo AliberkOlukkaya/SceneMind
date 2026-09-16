@@ -16,8 +16,13 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Calibrated Raw-Score + Agreement Fusion V1 is complete with decision C. Deterministic per-retriever logistic calibration was selected on 72 queries from three sources and evaluated on 32 queries from two new sources. Both Visual and Speech calibration underperformed a rank-only reference in validation AUC and Brier, so the experiment stopped before constructing a fusion candidate. The protected 34-query holdout remained unopened for candidate evaluation and production remains uncapped RRF60.
+SceneMind is at **v1.0.0-rc1 Portfolio Release Candidate**. Phases 0–6 and the bounded local hardening work are complete. The release presents one coherent local workflow, copy-pasteable setup, conservative result UX, durable processing, reproducible evaluation and documented limitations. Search remains Smart Search → uncapped RRF60 Hybrid, Spoken Content → Speech, and Visual Content → Visual. AUTO is compatibility-only.
 
-Cap 1.50× remains rejected. It changes Holdout ALL Top-1/3/5 from 12/19/21 to 15/19/20 and MRR@5 from 0.5560 to 0.6083, but Speech Top-5 falls from 8/11 to 7/11, one query breaks, none are rescued, and an unsupported result becomes more convincing. Production remains Smart Search (uncapped RRF60 Hybrid), Spoken Content, and Visual Content; AUTO remains compatibility-only.
+Search-core ML research is closed for v1.0. Cap 1.50×, calibrated fusion, verifier, reranker, detector, sampling and router alternatives remain documented rejections. Acceptance and holdout evidence stays frozen and is not a future tuning set.
 
-The next ranking milestone is data acquisition: collect at least three additional source-disjoint calibration sources with complete Top-50 Visual/Speech traces and freeze a new validation split. Only then may confidence-aware fusion be reconsidered. Do not tune on Holdout V1 or Acceptance V2, begin a second-stage reranker, continue alpha search, change production retrieval, or start Final Acceptance V3. Phases 8-9 and public deployment remain deferred.
+## Future work
+
+Potential post-v1.0 work includes improved multimodal ranking, OCR, temporal/action understanding,
+Video RAG and stronger deployment. Each requires a concrete user scenario, licensed data, a readable
+baseline, source-disjoint validation and resource gates before implementation. Public multi-tenant
+deployment, phases 7–9 and Final Acceptance V3 are not active release tasks.

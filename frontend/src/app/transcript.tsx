@@ -10,6 +10,16 @@ type TranscriptData = {
   segments: { start: number; end: number; text: string }[];
 };
 
+const TRANSCRIPT_STATUS: Record<string, string> = {
+  loading: "Checking",
+  not_started: "Not created",
+  queued: "Waiting to transcribe",
+  processing: "Transcribing speech",
+  transcribing: "Transcribing speech",
+  ready: "Ready",
+  failed: "Failed",
+};
+
 export default function Transcript({
   videoId,
   api,
@@ -82,7 +92,8 @@ export default function Transcript({
       <div className="timeline-heading">
         <h3>Transcript</h3>
         <span aria-live="polite">
-          {(data.stage || data.status).replace("_", " ")}
+          {TRANSCRIPT_STATUS[data.stage || data.status] ||
+            (data.stage || data.status).replaceAll("_", " ")}
         </span>
       </div>
       {(data.status === "not_started" || data.status === "failed") && (
@@ -100,7 +111,11 @@ export default function Transcript({
           </button>
         </>
       )}
-      {(error || data.error) && <p role="alert">{error || data.error}</p>}
+      {(error || data.error) && (
+        <p role="alert" className="error">
+          {error || data.error}
+        </p>
+      )}
       {data.status === "ready" && (
         <>
           <label className="search-label">

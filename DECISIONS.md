@@ -1,5 +1,9 @@
 # Decisions
 
+## 037 - Freeze the search core and prepare v1.0.0-rc1
+
+End search-core ML research for v1.0 after the calibrated fusion generalization failure. Keep Smart Search mapped directly to uncapped RRF60 Hybrid, retain explicit Speech and Visual modes, and leave AUTO outside the normal interface. Present the system as a local single-operator portfolio release candidate with documented held-out failures and limitations. Add simple version metadata, release-focused documentation and clearer real pipeline state labels; do not change models, sampling, retrieval, ranking or API search contracts. Move OCR, action understanding, RAG, multilingual work, stronger deployment and ranking research to Future Work that requires new evidence.
+
 ## 036 - Reject raw-score fusion before candidate construction
 
 Use 72 legitimate calibration queries from three sources and 32 queries from two source-disjoint development-validation sources to test per-retriever confidence calibration. Calibration-only selection chooses Visual raw-score logistic and Speech query-relative logistic mappings, but both lose to rank-only on validation AUC and Brier. Choose outcome C. Stop before building a fusion formula or opening the 34-query protected holdout, mark the artifact non-production, and keep uncapped RRF60. A second-stage reranker is not justified. Collect at least three new source-disjoint calibration sources with full Top-50 Visual/Speech traces and freeze a new validation split before reconsidering confidence-aware fusion.
