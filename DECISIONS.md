@@ -1,5 +1,11 @@
 # Decisions
 
+## 032 - Diagnose exact-thumbnail overlap before changing Hybrid
+
+Use two existing source-disjoint CC BY 4.0 English development videos and freeze 32 queries before retrieval. Keep Final English Acceptance V2 fully isolated. Add evaluation-only tracing that calls production `app.hybrid.fuse` as the authoritative ranker and proves reconstructed IDs, timestamps, scores, and ordering are identical. The normal API and frontend remain unchanged.
+
+On 28 positives, unchanged Hybrid reaches interval-evidence Top-5 on 20; seven failures retain relevant evidence in an input list and one is candidate recall. Thirteen relevant Speech Top-5 and eight relevant Visual Top-5 candidates are displaced. Exact-thumbnail dual contributions occupy 135/160 final slots. Because `2/(60+50)` exceeds `1/(60+1)`, every shared top-50 bucket outranks every single bucket under the current limits. Choose diagnosis-only outcome C: production remains unchanged. Next pre-register a minimal per-modality preservation or capped-overlap experiment on development sources and require a new frozen source-disjoint evaluation before promotion.
+
 ## 031 - Fail Final English Acceptance V2 on Hybrid ranking
 
 Freeze 30 natural English queries only after full independent review of a new source-disjoint 30:29 CC BY-SA presentation, then run every primary request through unchanged Smart Search / Hybrid. Normal durable ingestion succeeds in 244.393 seconds with 366 frames, 576 Whisper segments, zero retry/failure/residue, and 1.94 GiB peak worker-tree RSS. PASS-level useful Top-1/3/5 is 76.92%/76.92%/84.62%, so Top-3 and Top-5 miss their frozen 85%/90% gates. Multimodal is 100% at rank 1, Visual Top-5 is 87.50%, and Speech Top-5 is 70.00%. All four negatives remain understandable under conservative wording.

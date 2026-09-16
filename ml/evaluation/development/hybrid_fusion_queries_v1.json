@@ -1,0 +1,360 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "hybrid-fusion-development-v1",
+  "purpose": "Development-only diagnosis of unchanged production Speech, Visual, and Hybrid retrieval.",
+  "acceptance_isolation": {
+    "final_english_acceptance_v2_used": false,
+    "acceptance_queries_copied": false,
+    "eligible_for_future_tuning": true
+  },
+  "sources": [
+    {
+      "source_id": "design-free-software-talk",
+      "title": "Design Students Experimenting with Free Software",
+      "file": "design-free-software.mp4",
+      "sha256": "f389e9911d1583b63b5286967675a189c152421f91dd5f0ff0a158270f5dcb74",
+      "bytes": 68906127,
+      "duration_seconds": 1343.66,
+      "language": "English",
+      "license": "CC BY 4.0",
+      "source_url": "https://media.ccc.de/v/lgm-2026-110678-design-students-experimenting-with-free-software",
+      "prior_role": "human-grounded-router validation development source",
+      "content_review": "Existing full five-second frame and Whisper review rechecked for this development set."
+    },
+    {
+      "source_id": "human-software-extensions-talk",
+      "title": "Humans as Software Extensions: Will You Be My Plugin?",
+      "file": "humans-software-extensions.mp4",
+      "sha256": "2bc604a1ad04d1ca5537eb3348d691a3e1e2a845c114c49d97ccd923e8d880dc",
+      "bytes": 51800049,
+      "duration_seconds": 1589.28,
+      "language": "English",
+      "license": "CC BY 4.0",
+      "source_url": "https://media.ccc.de/v/34c3-9077-humans_as_software_extensions",
+      "prior_role": "human-grounded-router validation development source",
+      "content_review": "Existing full five-second frame and Whisper review rechecked for this development set."
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "hfd-d-s01",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "How does she separate the frustration of a new interface from a real defect in the tool?",
+      "negative": false,
+      "intervals": [[318, 376]],
+      "evidence": "She contrasts unfamiliar shortcuts and terminology with missing features, documentation, or interface failures."
+    },
+    {
+      "query_id": "hfd-d-s02",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "lexical",
+      "text": "Where does she describe software as a two-level black box?",
+      "negative": false,
+      "intervals": [[234, 294]],
+      "evidence": "The talk explicitly names hardware and software as two black-box levels."
+    },
+    {
+      "query_id": "hfd-d-s03",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "Why must students use a specific everyday task when they compare unfamiliar software?",
+      "negative": false,
+      "intervals": [[586, 660]],
+      "evidence": "The Q&A explains that a known task supplies a concrete reference point for comparison."
+    },
+    {
+      "query_id": "hfd-d-s04",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "lexical",
+      "text": "When does she warn that design education can train operators instead of authors?",
+      "negative": false,
+      "intervals": [[422, 459]],
+      "evidence": "She says tool mastery without control of the medium trains operators rather than authors."
+    },
+    {
+      "query_id": "hfd-d-s05",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "What did students realize after trying alternatives to their usual proprietary programs?",
+      "negative": false,
+      "intervals": [[487, 556]],
+      "evidence": "Students discovered familiar software was a choice rather than a mandate and found alternatives."
+    },
+    {
+      "query_id": "hfd-d-v01",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_state",
+      "text": "Show the case-study slide that includes the Blender name.",
+      "negative": false,
+      "intervals": [[304, 319]],
+      "evidence": "Blender appears visibly in the free-software case-study slide."
+    },
+    {
+      "query_id": "hfd-d-v02",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_composition",
+      "text": "Find the two-column slide comparing unfamiliarity with objective software problems.",
+      "negative": false,
+      "intervals": [[318, 376]],
+      "evidence": "A comparison slide separates two kinds of discomfort."
+    },
+    {
+      "query_id": "hfd-d-v03",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_state",
+      "text": "Show the screenshots of student software-review blog pages.",
+      "negative": false,
+      "intervals": [[458, 499]],
+      "evidence": "Several student review pages are shown together."
+    },
+    {
+      "query_id": "hfd-d-v04",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_scene",
+      "text": "Find the remote presenter seated in front of shelves during questions.",
+      "negative": false,
+      "intervals": [[565, 1343.66]],
+      "evidence": "The Q&A uses a stable webcam view with shelving behind the presenter."
+    },
+    {
+      "query_id": "hfd-d-m01",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Show the black-box diagram while she explains that tools contain developers' encoded decisions.",
+      "negative": false,
+      "intervals": [[234, 304]],
+      "evidence": "The diagram and spoken developer-decision explanation coincide."
+    },
+    {
+      "query_id": "hfd-d-m02",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_lexical",
+      "text": "Find the student review pages while she discusses installation trouble on macOS.",
+      "negative": false,
+      "intervals": [[469, 499]],
+      "evidence": "Review screenshots remain visible while macOS installation difficulty is described."
+    },
+    {
+      "query_id": "hfd-d-m03",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Show the student feedback quotes when she says their usual software was a choice, not a mandate.",
+      "negative": false,
+      "intervals": [[499, 556]],
+      "evidence": "Feedback blocks are displayed during the choice-not-mandate conclusion."
+    },
+    {
+      "query_id": "hfd-d-m04",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Find the presenter on camera while she answers why students complete the same daily task with a new tool.",
+      "negative": false,
+      "intervals": [[578, 660]],
+      "evidence": "The presenter is visible during the Q&A explanation of task-based comparison."
+    },
+    {
+      "query_id": "hfd-d-a01",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "difficult_ambiguous",
+      "text": "Find the discussion about code being a hard moment for some design students.",
+      "negative": false,
+      "intervals": [[801, 921]],
+      "evidence": "A long Q&A answer discusses uneven technical skills and code being difficult for some students."
+    },
+    {
+      "query_id": "hfd-d-n01",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "NEGATIVE",
+      "query_style": "negative_visual",
+      "text": "Show the spreadsheet chart comparing annual software licensing costs.",
+      "negative": true,
+      "intervals": [],
+      "evidence": "No spreadsheet cost chart appears in the reviewed frames."
+    },
+    {
+      "query_id": "hfd-d-n02",
+      "source_id": "design-free-software-talk",
+      "evidence_category": "NEGATIVE",
+      "query_style": "negative_speech",
+      "text": "Where does she compare Photoshop benchmark scores?",
+      "negative": true,
+      "intervals": [],
+      "evidence": "No Photoshop performance benchmark comparison occurs in the transcript."
+    },
+    {
+      "query_id": "hfd-h-s01",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "How does Upwork monitor the activity of freelancers while they work?",
+      "negative": false,
+      "intervals": [[350, 390]],
+      "evidence": "The speaker describes keystroke logging, screenshots, and activity records."
+    },
+    {
+      "query_id": "hfd-h-s02",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "lexical",
+      "text": "Who manually created the segmentation masks for the COCO recognition dataset?",
+      "negative": false,
+      "intervals": [[835, 864]],
+      "evidence": "Mechanical Turk cloud workers are identified as the manual creators."
+    },
+    {
+      "query_id": "hfd-h-s03",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "Why can heavily fragmented micro-work look as if nobody performed the job?",
+      "negative": false,
+      "intervals": [[1045, 1076]],
+      "evidence": "The speaker explains the trick of fragmenting work until paid labor appears to disappear."
+    },
+    {
+      "query_id": "hfd-h-s04",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "What power do workers gain by manipulating datasets from inside the systems they extend?",
+      "negative": false,
+      "intervals": [[1310, 1413]],
+      "evidence": "Workers can alter data and create strange alternatives from within governing systems."
+    },
+    {
+      "query_id": "hfd-h-s05",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "SPEECH",
+      "query_style": "semantic_paraphrase",
+      "text": "Why does the speaker value the buggy abstract appearance of Zuckerberg's virtual-reality demo?",
+      "negative": false,
+      "intervals": [[1455, 1525]],
+      "evidence": "He connects software glitches and abstraction with detaching from constant work expectations."
+    },
+    {
+      "query_id": "hfd-h-v01",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_interface",
+      "text": "Show the freelancer page with Pay and End Contract controls.",
+      "negative": false,
+      "intervals": [[310, 350]],
+      "evidence": "The marketplace interface visibly includes payment and contract controls."
+    },
+    {
+      "query_id": "hfd-h-v02",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_interface",
+      "text": "Find the work diary listing keyboard, mouse, and activity levels.",
+      "negative": false,
+      "intervals": [[350, 390]],
+      "evidence": "An Upwork activity log displays input counts and activity bars."
+    },
+    {
+      "query_id": "hfd-h-v03",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_composition",
+      "text": "Show the four-panel grid of animated logo demonstrations.",
+      "negative": false,
+      "intervals": [[615, 670]],
+      "evidence": "Four simultaneous logo-gig examples fill the projected image."
+    },
+    {
+      "query_id": "hfd-h-v04",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "VISUAL",
+      "query_style": "visual_object",
+      "text": "Find the long accordion books being unfolded by hand.",
+      "negative": false,
+      "intervals": [[930, 970]],
+      "evidence": "Hands unfold tall concertina books into a long strip."
+    },
+    {
+      "query_id": "hfd-h-m01",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Show the apartment-access phone app while he explains granting entry without meeting a worker.",
+      "negative": false,
+      "intervals": [[455, 495]],
+      "evidence": "Amazon Key visuals coincide with the remote-access explanation."
+    },
+    {
+      "query_id": "hfd-h-m02",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_lexical",
+      "text": "Find the Fiverr gig collage while the original five-dollar payment is broken down.",
+      "negative": false,
+      "intervals": [[535, 590]],
+      "evidence": "Marketplace tiles are shown while the original fee division is explained."
+    },
+    {
+      "query_id": "hfd-h-m03",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Show the flashing outline masks while he identifies the hidden manual labor behind AI data.",
+      "negative": false,
+      "intervals": [[835, 864]],
+      "evidence": "Rapid segmentation masks accompany the Mechanical Turk labor explanation."
+    },
+    {
+      "query_id": "hfd-h-m04",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "multimodal_semantic",
+      "text": "Find Zuckerberg's virtual-reality clip while software glitches are described as an aesthetic mask.",
+      "negative": false,
+      "intervals": [[1439, 1525]],
+      "evidence": "The VR clip remains visible as the speaker discusses abstraction, glitches, and masking."
+    },
+    {
+      "query_id": "hfd-h-a01",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "MULTIMODAL",
+      "query_style": "difficult_ambiguous",
+      "text": "Find the pizza chatbot conversation where the supposed bot admits a real person is texting.",
+      "negative": false,
+      "intervals": [[1160, 1208]],
+      "evidence": "A narrated video excerpt contains the automated pizza exchange and human-worker reveal."
+    },
+    {
+      "query_id": "hfd-h-n01",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "NEGATIVE",
+      "query_style": "negative_visual",
+      "text": "Show the bar chart comparing freelancer salaries by country.",
+      "negative": true,
+      "intervals": [],
+      "evidence": "No salary-by-country bar chart appears in the reviewed frames."
+    },
+    {
+      "query_id": "hfd-h-n02",
+      "source_id": "human-software-extensions-talk",
+      "evidence_category": "NEGATIVE",
+      "query_style": "negative_speech",
+      "text": "Where does he explain blockchain payments for gig workers?",
+      "negative": true,
+      "intervals": [],
+      "evidence": "Blockchain payment systems are absent from the reviewed transcript."
+    }
+  ]
+}

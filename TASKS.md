@@ -78,6 +78,8 @@
 - [x] Preserve AUTO API compatibility and historical router evidence without exposing it as the recommended frontend mode
 - [x] Freeze the Final English Acceptance V2 plan and gates around Smart Search / Hybrid
 - [x] Obtain a completely new independent 30-60 minute English video and run Final English Acceptance V2 once
-- [ ] Investigate Hybrid fusion on new source-disjoint development evidence without reusing V2 acceptance media
+- [x] Audit and instrument Hybrid fusion without changing production ranking
+- [x] Diagnose Hybrid fusion on 32 queries from two source-disjoint development videos without reusing V2 acceptance media
+- [ ] Pre-register and test one minimal overlap/per-modality fusion candidate on development evidence, then use a new frozen source for any promotion decision
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7-9: justify features/datasets before implementation
