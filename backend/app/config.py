@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     auth_token: str = ""
     job_timeout: int = Field(default=7200, ge=1, le=86400)
     ingest_job_timeout: int = Field(default=1800, ge=1, le=86400)
+    acquire_job_timeout: int = Field(default=900, ge=1, le=86400)
     speech_job_timeout: int = Field(default=7200, ge=1, le=86400)
     visual_job_timeout: int = Field(default=3600, ge=1, le=86400)
     job_attempts: int = Field(default=2, ge=1, le=5)
@@ -23,6 +24,10 @@ class Settings(BaseSettings):
     sampling_interval: float = Field(default=5, ge=1, le=60)
     max_duration: float = Field(default=3600, gt=0)
     processing_timeout: int = Field(default=1800, gt=0, le=86400)
+    url_connect_timeout: float = Field(default=10, gt=0, le=120)
+    url_read_timeout: float = Field(default=30, gt=0, le=300)
+    url_acquire_timeout: int = Field(default=600, gt=0, le=3600)
+    url_redirect_limit: int = Field(default=5, ge=0, le=10)
     database_url: str = "sqlite:///data/scenemind.db"
     speech_model: str = "tiny"
     model_cache: str = "data/models"

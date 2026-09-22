@@ -41,10 +41,16 @@ def worker_lock(name=".worker.lock"):
 
 
 def execute(job):
-    from app import speech, video, visual
+    from app import speech, url_ingest, video, visual
 
     folder = video.folder_for(job["video_id"])
-    if job["kind"] == "ingest":
+    if job["kind"] == "acquire":
+        try:
+            url_ingest.acquire_to_local(folder.name)
+        except url_ingest.URLIngestError as error:
+            return {"error": error.public_message, "retryable": error.retryable}
+        return {"error": None, "retryable": True, "next_kind": "ingest"}
+    elif job["kind"] == "ingest":
         video.ingestion_lock.acquire()
         video.process_video(folder, video.read_manifest(folder))
         state = video.read_manifest(folder)
@@ -97,6 +103,7 @@ def await_result(parent, process, timeout):
 
 def timeout_for(kind):
     return {
+        "acquire": settings.acquire_job_timeout,
         "ingest": settings.ingest_job_timeout,
         "speech": settings.speech_job_timeout,
         "visual": settings.visual_job_timeout,
@@ -109,6 +116,7 @@ def cleanup_job_artifacts(job):
 
     folder = folder_for(job["video_id"])
     targets = {
+        "acquire": tuple(folder.glob("source*")) + tuple(folder.glob("*.ytdl")),
         "ingest": (folder / "frames.tmp", folder / "manifest.tmp"),
         "speech": (folder / "audio.wav",),
         "visual": (folder / "embeddings.tmp", folder / "index.tmp"),
@@ -185,12 +193,24 @@ def main():
                     parent.close()
                     finish(job, "Inference process exited before dispatch")
                     continue
-                error, process = await_result(parent, process, timeout_for(job["kind"]))
+                result, process = await_result(parent, process, timeout_for(job["kind"]))
                 if process is None:
                     parent.close()
+                retryable = True
+                next_kind = None
+                if isinstance(result, dict):
+                    error = result.get("error")
+                    retryable = result.get("retryable", True)
+                    next_kind = result.get("next_kind")
+                else:
+                    error = result
                 if error:
                     cleanup_job_artifacts(job)
-                finish(job, error)
+                finish(job, error, retryable=retryable)
+                if not error and next_kind:
+                    from app.jobs import enqueue
+
+                    enqueue(job["video_id"], next_kind)
         finally:
             if process is not None:
                 stop_process(process)

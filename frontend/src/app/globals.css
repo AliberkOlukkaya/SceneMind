@@ -136,6 +136,47 @@ footer {
   justify-content: space-between;
   gap: 24px;
 }
+.add-video {
+  width: min(100%, 560px);
+}
+.separator {
+  display: block;
+  color: #828b7d;
+  font-size: 11px;
+  margin: 12px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.url-import label {
+  display: block;
+  color: #c7ccc4;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+.url-import > div {
+  display: flex;
+  gap: 8px;
+}
+.url-import input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #3a4038;
+  border-radius: 5px;
+  background: #191d19;
+  color: #eeeee8;
+  padding: 12px;
+}
+.url-import .button {
+  margin: 0;
+  white-space: nowrap;
+}
+.source-link {
+  font-size: 12px;
+}
+.source-link a {
+  color: var(--accent);
+  text-decoration: underline;
+}
 .hint {
   font-size: 11px;
 }
@@ -382,6 +423,10 @@ button:disabled {
   }
   .toolbar {
     align-items: flex-start;
+    flex-direction: column;
+  }
+  .url-import > div {
+    align-items: stretch;
     flex-direction: column;
   }
 }

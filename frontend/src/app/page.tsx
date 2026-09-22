@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Transcript from "./transcript";
 import Search from "./search";
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 type Video = {
   id: string;
@@ -13,6 +13,9 @@ type Video = {
   stage?: string;
   job_status?: string;
   error?: string;
+  source_type?: "upload" | "url";
+  source_provider?: string;
+  source_url?: string;
   metadata?: { duration: number; width: number; height: number; fps: number };
   frames: { timestamp: number; thumbnail: string }[];
 };
@@ -26,6 +29,8 @@ const timestamp = (value: number) =>
 function videoStatus(video: Video) {
   if (video.status === "failed") return "Processing failed";
   if (video.status === "ready") return "Ready";
+  if (video.stage === "fetching") return "Fetching video";
+  if (video.stage === "validating") return "Validating media";
   if (video.job_status === "queued") return "Waiting to process";
   if (video.stage === "preparing_video" || video.status === "processing")
     return "Extracting video frames";
@@ -39,6 +44,8 @@ export default function Home() {
   const [serviceError, setServiceError] = useState("");
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [importing, setImporting] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
   const [limits, setLimits] = useState<Limits>({
     max_upload_bytes: 1024 * 1024 * 1024,
     max_duration_seconds: 3600,
@@ -123,6 +130,36 @@ export default function Home() {
     }
   }
 
+  async function importVideo(event: FormEvent) {
+    event.preventDefault();
+    setError("");
+    setImporting(true);
+    try {
+      const response = await apiFetch(`${API}/videos/import-url`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: videoUrl.trim() }),
+      });
+      const data = await response.json();
+      if (!response.ok)
+        throw new Error(
+          typeof data.detail === "string" ? data.detail : "URL import failed.",
+        );
+      setVideos((previous) => [
+        data,
+        ...previous.filter((item) => item.id !== data.id),
+      ]);
+      setSelectedId(data.id);
+      setVideoUrl("");
+    } catch (problem) {
+      setError(
+        problem instanceof Error ? problem.message : "URL import failed.",
+      );
+    } finally {
+      setImporting(false);
+    }
+  }
+
   return (
     <main>
       <header>
@@ -132,7 +169,7 @@ export default function Home() {
         <span className="status">Local library</span>
       </header>
       <section className="heading toolbar">
-        <div>
+        <div className="add-video">
           <p className="eyebrow">YOUR WORKSPACE</p>
           <h1>Video library</h1>
           <p>
@@ -159,6 +196,31 @@ export default function Home() {
           <p className="hint">
             Up to {Math.floor(limits.max_upload_bytes / 1024 ** 2)} MiB ·{" "}
             {Math.floor(limits.max_duration_seconds / 60)} minutes · 4K
+          </p>
+          <span className="separator">or</span>
+          <form className="url-import" onSubmit={importVideo}>
+            <label htmlFor="video-url">Video URL</label>
+            <div>
+              <input
+                id="video-url"
+                type="url"
+                required
+                maxLength={2048}
+                placeholder="https://…"
+                value={videoUrl}
+                onChange={(event) => setVideoUrl(event.target.value)}
+              />
+              <button
+                className="button"
+                disabled={importing || !videoUrl.trim()}
+              >
+                {importing ? "Importing…" : "Import video"}
+              </button>
+            </div>
+          </form>
+          <p className="hint">
+            Supported direct MP4/WebM links and public YouTube videos. Only
+            import content you have permission to process.
           </p>
         </div>
       </section>
@@ -220,6 +282,18 @@ export default function Home() {
             ) : (
               <>
                 <h2 className="video-title">{selected.filename}</h2>
+                {selected.source_type === "url" && selected.source_url && (
+                  <p className="source-link">
+                    Imported via {selected.source_provider}.{" "}
+                    <a
+                      href={selected.source_url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Open source
+                    </a>
+                  </p>
+                )}
                 <p
                   aria-live="polite"
                   role={selected.status === "failed" ? "alert" : "status"}

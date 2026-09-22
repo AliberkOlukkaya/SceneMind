@@ -41,6 +41,7 @@ def test_real_video_ingestion(client, video):
     response = client.post("/videos?filename=sample.mp4", content=video)
     assert response.status_code == 202
     video_id = response.json()["id"]
+    assert response.json()["source_type"] == "upload"
     record = client.get(f"/videos/{video_id}").json()
     assert record["status"] == "ready"
     assert record["metadata"]["width"] == 320

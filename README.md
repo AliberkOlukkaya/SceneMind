@@ -3,7 +3,7 @@
 SceneMind is a local-first multimodal video search engine that finds relevant moments in long
 videos from natural-language queries.
 
-Upload a video, build local visual and speech indexes, search for what appears or what is said,
+Upload a video or import a supported public video URL, build local visual and speech indexes, search for what appears or what is said,
 then click a ranked result to jump directly to its timestamp. SceneMind v1.0 RC uses pretrained
 models for inference; it does not train CLIP or Whisper and does not require a paid API.
 
@@ -21,7 +21,7 @@ demonstrates the interface and click-to-seek workflow, not real-world search acc
 
 ## What it does
 
-1. Streams an uploaded video to local storage and validates its size, duration and video stream.
+1. Streams an upload or supported direct/YouTube URL into bounded local storage and validates its size, duration and video stream.
 2. Extracts timestamped JPEG frames at the configured five-second interval.
 3. Optionally transcribes speech with Whisper and builds a CLIP/FAISS visual index.
 4. Searches with one of three explicit product modes.
@@ -47,6 +47,8 @@ moments** and **Possible matches**. Raw model scores are not shown to normal use
 ```mermaid
 flowchart TD
     Upload[Video upload] --> API[FastAPI validation and local storage]
+    URL[Supported public URL] --> Acquire[Secure provider acquisition]
+    Acquire --> API
     API --> Job[Inline task or durable SQL job]
     Job --> Frames[FFmpeg / OpenCV<br/>timestamped frames]
     Job --> Audio[FFmpeg<br/>16 kHz mono audio]
@@ -83,6 +85,7 @@ storage and are never committed.
 ## Engineering features
 
 - Streamed uploads up to the configurable 1 GiB / 60-minute envelope, with disk-reserve checks.
+- Secure direct-media and public YouTube URL import through the same local processing pipeline.
 - Atomic manifests, frame directories and vector-index replacement; transactional transcripts.
 - Optional durable SQL job queue with bounded retries, stage deadlines and failed-job retry.
 - Reusable inference child, process-tree termination and cleanup of partial stage artifacts.
@@ -173,9 +176,11 @@ cd frontend
 npm run dev
 ```
 
-Open `http://localhost:3000`. Upload a video, wait for frame extraction, then use **Build visual
+Open `http://localhost:3000`. Upload a video or import a supported public direct/YouTube URL, wait for frame extraction, then use **Build visual
 index** and/or **Transcribe video**. The first use downloads model weights into ignored
 `data/models`; subsequent runs reuse them. MP4/H.264 is the most portable browser playback path.
+URL import does not support arbitrary websites, private/login-only content, paywalls or DRM. Only
+submit content you have permission to process. See [URL ingestion](docs/URL_INGESTION.md).
 
 For durable processing, set `SCENEMIND_DURABLE_JOBS=true`, start the API, and run one worker from
 the same repository root:

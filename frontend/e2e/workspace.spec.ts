@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import fs from "node:fs";
 import path from "node:path";
 
 test("connection warning clears when the backend recovers", async ({
@@ -150,6 +151,118 @@ test("product search modes map directly to existing retrieval modes", async ({
   await expect(selector).toHaveValue("visual");
   await expect(page.getByText("Search what appears in the video.")).toBeVisible();
   await expect(selector.locator('option[value="auto"]')).toHaveCount(0);
+});
+
+test("URL import joins the normal library, search, and seek flow", async ({
+  page,
+}) => {
+  const id = "00000000-0000-0000-0000-000000000099";
+  let imported = false;
+  let polls = 0;
+  const queued = {
+    id,
+    filename: "Importing video",
+    status: "processing",
+    stage: "fetching",
+    source_type: "url",
+    source_provider: "direct",
+    source_url: "https://media.example/test.mp4",
+    frames: [],
+  };
+  const ready = {
+    ...queued,
+    filename: "Public test video.mp4",
+    status: "ready",
+    stage: "ready",
+    metadata: { duration: 6, width: 320, height: 240, fps: 10 },
+    frames: [
+      { timestamp: 0, thumbnail: `/videos/${id}/frames/000001.jpg` },
+      { timestamp: 5, thumbnail: `/videos/${id}/frames/000002.jpg` },
+    ],
+  };
+  await page.route("http://127.0.0.1:8010/videos", async (route) => {
+    if (route.request().method() !== "GET") return route.fallback();
+    polls += 1;
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify(imported ? (polls > 1 ? [ready] : [queued]) : []),
+    });
+  });
+  await page.route("**/videos/import-url", async (route) => {
+    expect(route.request().postDataJSON()).toEqual({
+      url: "https://media.example/test.mp4",
+    });
+    imported = true;
+    polls = 0;
+    await route.fulfill({ status: 202, contentType: "application/json", body: JSON.stringify(queued) });
+  });
+  await page.route(`**/videos/${id}/index`, (route) =>
+    route.fulfill({ contentType: "application/json", body: JSON.stringify({ status: "ready" }) }),
+  );
+  await page.route(`**/videos/${id}/transcript?*`, (route) =>
+    route.fulfill({ contentType: "application/json", body: JSON.stringify({ status: "ready", segments: [] }) }),
+  );
+  const media = fs.readFileSync(path.resolve("../data/e2e-fixture.mp4"));
+  await page.route(`**/videos/${id}/media`, (route) => {
+    const range = route.request().headers().range;
+    if (!range)
+      return route.fulfill({
+        status: 200,
+        contentType: "video/mp4",
+        headers: { "Content-Length": String(media.length), "Accept-Ranges": "bytes" },
+        body: media,
+      });
+    const match = /bytes=(\d+)-(\d*)/.exec(range);
+    const start = Number(match?.[1] || 0);
+    const end = Math.min(Number(match?.[2] || media.length - 1), media.length - 1);
+    return route.fulfill({
+      status: 206,
+      contentType: "video/mp4",
+      headers: {
+        "Accept-Ranges": "bytes",
+        "Content-Range": `bytes ${start}-${end}/${media.length}`,
+        "Content-Length": String(end - start + 1),
+      },
+      body: media.subarray(start, end + 1),
+    });
+  });
+  await page.route(`**/videos/${id}/frames/*.jpg`, (route) =>
+    route.fulfill({ status: 200, contentType: "image/jpeg", body: "" }),
+  );
+  await page.route(`**/videos/${id}/search?*`, (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        selected_route: "hybrid",
+        modalities_used: ["visual", "speech"],
+        results: [
+          {
+            timestamp: 5,
+            thumbnail: `/videos/${id}/frames/000002.jpg`,
+            score: 0.1,
+            modality: "visual+speech",
+          },
+        ],
+      }),
+    }),
+  );
+
+  await page.goto("/");
+  await page.getByLabel("Video URL").fill("https://media.example/test.mp4");
+  await page.getByRole("button", { name: "Import video" }).click();
+  await expect(page.getByRole("status")).toContainText("Fetching video");
+  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByRole("link", { name: "Open source" })).toHaveAttribute(
+    "href",
+    "https://media.example/test.mp4",
+  );
+  await page.getByLabel("Describe a moment").fill("public test moment");
+  await page.getByRole("button", { name: "Search", exact: true }).click();
+  await expect.poll(() => page.locator("video").evaluate((video: HTMLVideoElement) => video.duration)).toBeGreaterThan(0);
+  await page.locator(".result").click();
+  await expect
+    .poll(() => page.locator("video").evaluate((video: HTMLVideoElement) => video.currentTime))
+    .toBeCloseTo(5, 0);
 });
 
 test("real model search seeks to the matching scene", async ({ page }) => {

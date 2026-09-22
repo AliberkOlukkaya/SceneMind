@@ -35,7 +35,7 @@ def recover_interrupted() -> None:
     for path in settings.data_dir.glob("*/manifest.json"):
         record = read_manifest(path.parent)
         if record["status"] in {"queued", "processing"}:
-            record.update(status="failed", error="Processing interrupted. Upload the video again.")
+            record.update(status="failed", error="Processing interrupted. Add the video again.")
             save_manifest(path.parent, record)
 
 
@@ -216,6 +216,7 @@ async def upload(
             "stage": "preparing_video",
             "frames": [],
             "sampling_interval": settings.sampling_interval,
+            "source_type": "upload",
         }
         save_manifest(folder, record)
         if settings.durable_jobs:
@@ -258,7 +259,8 @@ def get_video(video_id: str):
     from app.jobs import pending
 
     record = read_manifest(folder_for(video_id))
-    return {**record, **(pending(video_id, "ingest") or {})}
+    queued = pending(video_id, "acquire") or pending(video_id, "ingest") or {}
+    return {**record, **queued}
 
 
 @router.get("/{video_id}/media")

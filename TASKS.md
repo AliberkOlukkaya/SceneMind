@@ -96,6 +96,12 @@
 - [x] Freeze `quota_1` before one source-disjoint validation run
 - [x] Reject evidence-preserving quota fusion after the cross-category accuracy gate fails
 - [x] Preserve Hybrid Holdout V1 and keep production uncapped RRF60
+- [x] Add Direct Media and pinned YouTube URL providers behind one acquisition interface
+- [x] Reject private/non-public URL destinations and revalidate bounded redirects
+- [x] Integrate URL acquisition with durable jobs, bounded retries, provenance and cleanup
+- [x] Add responsive URL import UI to the normal library/player/search workflow
+- [x] Prove Direct URL/upload functional equivalence on real licensed media
+- [x] Validate one real public YouTube acquisition through frames, Whisper and visual search
 
 ## Future work — not active v1.0 tasks
 

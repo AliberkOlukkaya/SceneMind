@@ -1,0 +1,292 @@
+{
+  "schema_version": "1.0.0",
+  "experiment": "url-ingestion-v1",
+  "source": {
+    "provider": "direct",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Find_link_-_lightning_talk.webm",
+    "license": "CC BY-SA 4.0",
+    "local_path": "data/natural-v2/source/find-link-talk.webm",
+    "source_sha256": "530ffecb380b3a36165c7918ac191eca4a06b90546025f6d49cf9b6956c285f7"
+  },
+  "video_ids": {
+    "upload": "d89da8a2-e464-4c99-bc08-839a12e530b2",
+    "url": "06f54457-ed95-4b6a-a507-9bd1f6cf073b"
+  },
+  "stage_seconds": {
+    "upload": {
+      "ingest": 6.2703732999998465,
+      "speech": 21.924897800000508,
+      "visual": 32.775880700000016
+    },
+    "url": {
+      "acquire": 3.994005300000026,
+      "ingest": 6.826916600000004,
+      "speech": 19.38672040000074,
+      "visual": 2.494433200000458
+    }
+  },
+  "url_media_bytes": 35611959,
+  "duration_seconds": 219.443,
+  "frames": 44,
+  "whisper_segments": 60,
+  "structural_equivalence": {
+    "duration_delta_seconds": 0.0,
+    "frame_counts": [
+      44,
+      44
+    ],
+    "max_frame_timestamp_delta_seconds": 0.0,
+    "transcript_segment_counts": [
+      60,
+      60
+    ],
+    "transcript_similarity": 1.0,
+    "visual_index_shapes": [
+      [
+        44,
+        512
+      ],
+      [
+        44,
+        512
+      ]
+    ],
+    "media_sha256_equal": true,
+    "partial_artifacts": []
+  },
+  "structural_gates_passed": true,
+  "query_comparisons": [
+    {
+      "query_id": "visual-1",
+      "query": "a presentation slide with a browser interface",
+      "local_timestamps": [
+        5.003,
+        0.003,
+        55.003,
+        160.003,
+        10.003
+      ],
+      "url_timestamps": [
+        5.003,
+        0.003,
+        55.003,
+        160.003,
+        10.003
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "visual-2",
+      "query": "a speaker standing beside the projected screen",
+      "local_timestamps": [
+        190.003,
+        215.003,
+        85.003,
+        60.003,
+        150.003
+      ],
+      "url_timestamps": [
+        190.003,
+        215.003,
+        85.003,
+        60.003,
+        150.003
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "visual-3",
+      "query": "a web page shown on the screen",
+      "local_timestamps": [
+        55.003,
+        60.003,
+        65.003,
+        70.003,
+        125.003
+      ],
+      "url_timestamps": [
+        55.003,
+        60.003,
+        65.003,
+        70.003,
+        125.003
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "speech-1",
+      "query": "Kansas",
+      "local_timestamps": [
+        174.98,
+        191.8,
+        47.95,
+        36.95,
+        67.85
+      ],
+      "url_timestamps": [
+        174.98,
+        191.8,
+        47.95,
+        36.95,
+        67.85
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "speech-2",
+      "query": "airport",
+      "local_timestamps": [
+        56.95,
+        191.8,
+        181.98
+      ],
+      "url_timestamps": [
+        56.95,
+        191.8,
+        181.98
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "speech-3",
+      "query": "languages",
+      "local_timestamps": [
+        166.98
+      ],
+      "url_timestamps": [
+        166.98
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "hybrid-1",
+      "query": "the speaker discusses Kansas while a slide is visible",
+      "local_timestamps": [
+        191.8,
+        174.98,
+        67.85,
+        41.95,
+        181.98
+      ],
+      "url_timestamps": [
+        191.8,
+        174.98,
+        67.85,
+        41.95,
+        181.98
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "hybrid-2",
+      "query": "the airport example on the presentation screen",
+      "local_timestamps": [
+        56.95,
+        23.95,
+        191.8,
+        9.0,
+        181.98
+      ],
+      "url_timestamps": [
+        56.95,
+        23.95,
+        191.8,
+        9.0,
+        181.98
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "query_id": "hybrid-3",
+      "query": "languages mentioned during the browser demonstration",
+      "local_timestamps": [
+        166.98,
+        45.003,
+        5.003,
+        20.003,
+        0.003
+      ],
+      "url_timestamps": [
+        166.98,
+        45.003,
+        5.003,
+        20.003,
+        0.003
+      ],
+      "max_paired_delta_seconds": 0.0,
+      "passed": true
+    }
+  ],
+  "query_comparisons_passed": 9,
+  "equivalence_passed": true,
+  "retrieval_modified": false,
+  "run_root": "data/url-ingestion-v1/11eedeed-b39d-452d-bef0-0756164de403",
+  "youtube_real_test": {
+    "provider": "youtube",
+    "source_url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "external_id": "aqz-KE-bpKQ",
+    "title": "Big Buck Bunny 60fps 4K - Official Blender Foundation Short Film",
+    "duration_seconds": 634.5666666666667,
+    "acquisition_seconds": 14.720359325408936,
+    "processing_seconds": {
+      "ingest": 116.63991022109985,
+      "speech": 5.540034055709839,
+      "visual": 16.011414289474487,
+      "total": 138.19135856628418
+    },
+    "media_bytes": 81554084,
+    "frames": 127,
+    "whisper_segments": 0,
+    "visual_query": "animated rabbit in a field",
+    "visual_result_timestamps": [
+      490.0,
+      85.0,
+      90.0,
+      175.0,
+      100.0
+    ],
+    "search_ready": true,
+    "partial_artifacts": [],
+    "retries": 0,
+    "errors": [],
+    "run_root": "data/url-ingestion-v1/0765754c-57de-40ac-ab9d-67261ef047f0",
+    "license": "CC BY 3.0 (Blender Foundation film)"
+  },
+  "acceptance_gates": {
+    "direct_media_real_import": true,
+    "youtube_real_import": true,
+    "normal_pipeline": true,
+    "search_modes_after_import": true,
+    "click_to_seek_contract": true,
+    "retrieval_unchanged": true,
+    "functional_equivalence": true,
+    "limits_enforced": true,
+    "partial_cleanup": true,
+    "ssrf_tests": true,
+    "unsafe_url_failure": true,
+    "upload_regression": true
+  },
+  "decision": {
+    "code": "A",
+    "label": "URL INGESTION V1 PASSES",
+    "reason": "Direct and YouTube providers passed real acquisition, normal-pipeline, security, cleanup, UI and functional-equivalence gates; retrieval remained unchanged.",
+    "next_milestone": "GROUNDED VIDEO Q&A V1"
+  },
+  "validation": {
+    "pytest": "201 passed, 1 opt-in real-network test skipped",
+    "ruff": "passed",
+    "eslint": "passed",
+    "typescript": "passed",
+    "next_build": "passed",
+    "playwright": "10 passed, 2 opt-in real-model skipped",
+    "frozen_retrieval_regressions": "passed within full pytest"
+  }
+}

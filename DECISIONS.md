@@ -1,5 +1,11 @@
 # Decisions
 
+## 039 - Promote bounded URL ingestion through the existing local pipeline
+
+Add `URLIngestProvider` with Direct Media and YouTube implementations. Accept only HTTP(S), reject embedded credentials and every non-global resolved IPv4/IPv6 address, revalidate redirects and DNS address sets, stream direct media with authoritative byte counting, and wrap pinned yt-dlp in a monitored subprocess with a 720p ceiling. Queue acquisition as a bounded durable job, retain provenance in the existing atomic video manifest, classify retryability in migration 003, and hand validated local media to the unchanged ingest, Whisper, CLIP/FAISS, BM25 and RRF60 paths. Exact provider plus external-ID duplicates return the existing video.
+
+Choose decision A. A real 35,611,959-byte DirectMedia import and local upload produced identical 219.443-second media, 44 frame timestamps, 60 Whisper segments, 44×512 indexes and all nine frozen Visual/Speech/Smart Search Top-5 timestamp lists. A real public YouTube run acquired the official CC BY 3.0 Big Buck Bunny source at a bounded format, produced 127 frames, completed speech and visual stages, returned visual search results and left no partial files. Keep retrieval unchanged. The next milestone is Grounded Video Q&A V1, designed separately over local timestamped evidence.
+
 ## 038 - Reject evidence-preserving quota fusion on cross-category validation
 
 Compare eight deterministic rank-only configurations on the two-source, 32-query Hybrid Fusion development set. Select and checksum-freeze `quota_1`, which preserves the first unique bucket from each modality and fills the remaining Top-5 positions in production RRF order. Validate it once on 48 queries from three source-disjoint sources after reproducing all historical RRF60 Top-5 outputs.

@@ -1,6 +1,6 @@
 # SceneMind architecture
 
-SceneMind v1.0 RC is a single-operator, local-first video search application. Its production search
+SceneMind is a single-operator, local-first video search application. Its production search
 core is frozen at five-second frame sampling, CLIP/FAISS Visual retrieval, Whisper/BM25 Speech
 retrieval and uncapped RRF60 Hybrid ranking.
 
@@ -9,6 +9,8 @@ retrieval and uncapped RRF60 Hybrid ranking.
 ```mermaid
 flowchart TD
     Browser[Next.js workspace] -->|streamed bytes| API[FastAPI]
+    URL[Supported public URL] --> Provider[SSRF-safe Direct / YouTube provider]
+    Provider -->|bounded local artifact| Validate
     API --> Validate[Extension, byte, disk and video validation]
     Validate --> Store[UUID-owned local source and atomic manifest]
     Store --> Queue{Durable jobs enabled?}
@@ -122,6 +124,15 @@ same local directory. Delivery is at-least-once; stage operations are designed t
 
 Uploaded media, frames, audio intermediates, embeddings, indexes, databases, model weights and
 caches are ignored by Git.
+
+## URL acquisition
+
+`POST /videos/import-url` creates the same UUID-owned video record as upload and queues a durable
+`acquire` job. Provider code lives in `app.url_ingest`; Direct Media streams with manual validated
+redirects, while the YouTube adapter wraps pinned yt-dlp with structured metadata, a 720p ceiling,
+process timeout and live output-size monitoring. After acquisition the existing `inspect_video`
+and `ingest` job remain authoritative. Provenance lives in the atomic manifest; retryability lives
+on the normal durable job row through migration 003. Search modules never branch on source type.
 
 ## Failure handling
 

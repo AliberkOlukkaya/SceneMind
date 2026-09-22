@@ -10,6 +10,7 @@ from app.hybrid import router as hybrid_router
 from app.jobs import router as jobs_router
 from app.speech import recover_speech
 from app.speech import router as speech_router
+from app.url_ingest import router as url_ingest_router
 from app.video import recover_interrupted, router
 from app.visual import recover_visual
 from app.visual import router as visual_router
@@ -27,6 +28,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="SceneMind", version="1.0.0-rc1", lifespan=lifespan)
 app.include_router(router)
+app.include_router(url_ingest_router)
 app.include_router(jobs_router)
 app.add_middleware(AccessMiddleware)
 app.include_router(speech_router)

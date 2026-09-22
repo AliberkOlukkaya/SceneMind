@@ -4,7 +4,18 @@ import time
 from uuid import uuid4
 
 from fastapi import APIRouter, HTTPException
-from sqlalchemy import Column, Float, Integer, MetaData, String, Table, insert, select, update
+from sqlalchemy import (
+    Boolean,
+    Column,
+    Float,
+    Integer,
+    MetaData,
+    String,
+    Table,
+    insert,
+    select,
+    update,
+)
 from sqlalchemy.exc import IntegrityError
 
 from app.config import settings
@@ -23,6 +34,7 @@ jobs = Table(
     Column("available_at", Float, nullable=False),
     Column("created_at", Float, nullable=False),
     Column("error", String(500)),
+    Column("retryable", Boolean),
 )
 router = APIRouter(prefix="/jobs", tags=["jobs"])
 
@@ -80,8 +92,8 @@ def claim():
         return dict(row, attempts=row["attempts"] + 1) if changed.rowcount else None
 
 
-def finish(job, error=None):
-    retry = error is not None and job["attempts"] < settings.job_attempts
+def finish(job, error=None, *, retryable=True):
+    retry = error is not None and retryable and job["attempts"] < settings.job_attempts
     with engine().begin() as conn:
         conn.execute(
             update(jobs)
@@ -91,6 +103,7 @@ def finish(job, error=None):
                 active_key=f"{job['video_id']}:{job['kind']}" if retry else None,
                 available_at=time.time() + 2 ** job["attempts"],
                 error=error,
+                retryable=retryable if error else None,
             )
         )
 
@@ -124,6 +137,7 @@ def pending(video_id, kind):
             return {
                 "status": "processing" if row["status"] in {"queued", "running"} else "failed",
                 "stage": {
+                    "acquire": "fetching",
                     "ingest": "preparing_video",
                     "speech": "transcribing",
                     "visual": "indexing",
@@ -143,4 +157,8 @@ def retry_job(job_id: str):
         raise HTTPException(404, "Job not found")
     if job["status"] != "failed":
         raise HTTPException(409, "Only failed jobs can be retried")
+    if job["retryable"] is False:
+        raise HTTPException(
+            409, "This failure cannot be retried without changing the URL or media."
+        )
     return {"job_id": enqueue(job["video_id"], job["kind"]), "status": "queued"}
