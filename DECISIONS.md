@@ -1,5 +1,11 @@
 # Decisions
 
+## 038 - Reject evidence-preserving quota fusion on cross-category validation
+
+Compare eight deterministic rank-only configurations on the two-source, 32-query Hybrid Fusion development set. Select and checksum-freeze `quota_1`, which preserves the first unique bucket from each modality and fills the remaining Top-5 positions in production RRF order. Validate it once on 48 queries from three source-disjoint sources after reproducing all historical RRF60 Top-5 outputs.
+
+On 24 positives, the candidate raises useful Top-1/3/5 from 19/21/21 to 20/22/22, raises MRR@5 from 0.8333 to 0.8681, retains 21/21 baseline Top-5 successes, eliminates the one measured explicit-modality displacement, and recovers one Speech query. Reject promotion because every aggregate gain comes from Speech, Visual is unchanged, and Hybrid MRR falls from 0.7500 to 0.7222. Choose decision B. Do not open the protected 34-query Hybrid Holdout V1, run another fusion variant, or change production. Keep Smart Search on uncapped RRF60 and choose any later product milestone independently.
+
 ## 037 - Freeze the search core and prepare v1.0.0-rc1
 
 End search-core ML research for v1.0 after the calibrated fusion generalization failure. Keep Smart Search mapped directly to uncapped RRF60 Hybrid, retain explicit Speech and Visual modes, and leave AUTO outside the normal interface. Present the system as a local single-operator portfolio release candidate with documented held-out failures and limitations. Add simple version metadata, release-focused documentation and clearer real pipeline state labels; do not change models, sampling, retrieval, ranking or API search contracts. Move OCR, action understanding, RAG, multilingual work, stronger deployment and ranking research to Future Work that requires new evidence.

@@ -89,8 +89,11 @@ Hybrid retrieval groups contributions by exact nearest-frame thumbnail. Within e
 the best contribution to a thumbnail counts. The score is the sum of `1 / (60 + rank)`. This
 uncapped RRF60 baseline avoids comparing incompatible CLIP and BM25 raw values. It has a documented
 failure mode: weak evidence from both modalities can outrank strong evidence from one modality.
-Alternative caps and calibrated raw-score fusion failed frozen gates, so runtime behavior remains
-unchanged.
+Alternative caps, calibrated raw-score fusion and evidence-preserving rank quotas failed frozen
+gates, so runtime behavior remains unchanged. The evidence-preserving candidate exists only under
+`ml/experiments/evidence_preserving_fusion_v1`; it reserves one unique Top-5 bucket from each lane
+and fills the remainder in production RRF order. Its aggregate validation gain came only from
+Speech while Hybrid MRR regressed, so it is not imported by the backend.
 
 Responses include timestamps, thumbnails, evidence type and transcript excerpts where available.
 The UI hides raw scores and presents results as possible matches.
@@ -160,7 +163,9 @@ not claimed.
 Production modules live under `backend/app`. Candidate models and ranking methods live under
 `ml/experiments` and cannot enter runtime implicitly. Evaluation uses source-disjoint splits,
 checksum-frozen manifests and query-level reports. Protected holdout evidence is not a tuning set.
-The current search core is frozen for `1.0.0-rc1`; speculative work is Future Work.
+The current search core is frozen for `1.0.0-rc1`. Evidence-Preserving Hybrid Fusion V1 used
+development and one source-disjoint validation split, stopped at its cross-category gate, and did
+not consume Hybrid Holdout V1. Speculative work is Future Work.
 
 See [README.md](README.md), [long-video support](docs/LONG_VIDEO_SUPPORT.md),
 [DECISIONS.md](DECISIONS.md), and the [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md).

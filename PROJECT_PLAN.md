@@ -16,9 +16,9 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-SceneMind is at **v1.0.0-rc1 Portfolio Release Candidate**. Phases 0–6 and the bounded local hardening work are complete. The release presents one coherent local workflow, copy-pasteable setup, conservative result UX, durable processing, reproducible evaluation and documented limitations. Search remains Smart Search → uncapped RRF60 Hybrid, Spoken Content → Speech, and Visual Content → Visual. AUTO is compatibility-only.
+SceneMind remains at **v1.0.0-rc1 Portfolio Release Candidate** after Evidence-Preserving Hybrid Fusion V1. Phases 0–6 and bounded local hardening are complete. The post-RC experiment compared eight deterministic rank-only configurations, froze `quota_1` on development data, and evaluated it once on source-disjoint validation. Aggregate Top-K improved, but the gain came only from Speech and Hybrid MRR regressed, so decision B blocks holdout use and promotion. Search remains Smart Search → uncapped RRF60 Hybrid, Spoken Content → Speech, and Visual Content → Visual. AUTO is compatibility-only.
 
-Search-core ML research is closed for v1.0. Cap 1.50×, calibrated fusion, verifier, reranker, detector, sampling and router alternatives remain documented rejections. Acceptance and holdout evidence stays frozen and is not a future tuning set.
+Search-core ML research remains closed for v1.0. Cap 1.50×, calibrated fusion, evidence-preserving quota fusion, verifier, reranker, detector, sampling and router alternatives remain documented rejections. Acceptance and holdout evidence stays frozen and is not a future tuning set.
 
 ## Future work
 

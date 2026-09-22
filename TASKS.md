@@ -91,6 +91,11 @@
 - [x] Stop search-core ML experimentation for v1.0 and preserve all rejected evidence
 - [x] Prepare v1.0.0-rc1 README, architecture, portfolio, CV, study and release documentation
 - [x] Align release metadata and polish real processing/error states without changing retrieval
+- [x] Inventory fusion datasets and prove source/query isolation across development, validation and protected evidence
+- [x] Compare RRF60, strict quota, round-robin and rank-preservation strategies on development data
+- [x] Freeze `quota_1` before one source-disjoint validation run
+- [x] Reject evidence-preserving quota fusion after the cross-category accuracy gate fails
+- [x] Preserve Hybrid Holdout V1 and keep production uncapped RRF60
 
 ## Future work — not active v1.0 tasks
 

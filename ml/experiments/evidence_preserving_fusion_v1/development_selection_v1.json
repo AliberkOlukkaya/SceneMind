@@ -1,0 +1,3599 @@
+{
+  "spec_sha256": "5e427a293a07968f5a650cf3aeef4ed974ad8a240974cf11a85de64d4d209b6f",
+  "trials": [
+    {
+      "configuration": {
+        "config_id": "rrf60",
+        "strategy": "baseline",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 10,
+          "top3": 16,
+          "top5": 20,
+          "mrr_at_5": 0.48273809523809524
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 7,
+            "top5": 7,
+            "mrr_at_5": 0.6666666666666666
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 2,
+            "top3": 4,
+            "top5": 6,
+            "mrr_at_5": 0.2833333333333333
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 3,
+            "top3": 5,
+            "top5": 7,
+            "mrr_at_5": 0.55
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 9,
+          "top3": 12,
+          "top5": 15,
+          "mrr_at_5": 0.5408333333333333,
+          "eligible_queries": 20,
+          "displacement_count": 5,
+          "displacement_rate": 0.25
+        },
+        "irrelevant_consensus_count": 5,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000023.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000021.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000083.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000040.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000046.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000032.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000023.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000115.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 4,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000027.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000102.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000191.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000097.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000107.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000171.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "quota_1",
+        "strategy": "quota",
+        "quota": 1,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 8,
+          "top3": 20,
+          "top5": 22,
+          "mrr_at_5": 0.49821428571428567
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 7,
+            "top5": 7,
+            "mrr_at_5": 0.6296296296296297
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 1,
+            "top3": 8,
+            "top5": 9,
+            "mrr_at_5": 0.4121212121212121
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 6,
+            "mrr_at_5": 0.46875
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 6,
+          "top3": 17,
+          "top5": 17,
+          "mrr_at_5": 0.5583333333333333,
+          "eligible_queries": 20,
+          "displacement_count": 3,
+          "displacement_rate": 0.15
+        },
+        "irrelevant_consensus_count": 1,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 4,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "quota_2",
+        "strategy": "quota",
+        "quota": 2,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 8,
+          "top3": 17,
+          "top5": 20,
+          "mrr_at_5": 0.455952380952381
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 5,
+            "top5": 7,
+            "mrr_at_5": 0.6000000000000001
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 1,
+            "top3": 7,
+            "top5": 8,
+            "mrr_at_5": 0.36666666666666664
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.4166666666666667
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 6,
+          "top3": 15,
+          "top5": 17,
+          "mrr_at_5": 0.5283333333333333,
+          "eligible_queries": 20,
+          "displacement_count": 3,
+          "displacement_rate": 0.15
+        },
+        "irrelevant_consensus_count": 2,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000023.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000058.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000023.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000115.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "interleave_visual",
+        "strategy": "interleave",
+        "quota": null,
+        "start_lane": "visual",
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 7,
+          "top3": 17,
+          "top5": 17,
+          "mrr_at_5": 0.42857142857142855
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 3,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.4444444444444444
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 0,
+            "top3": 7,
+            "top5": 7,
+            "mrr_at_5": 0.3181818181818182
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 4,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.5625
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 7,
+          "top3": 15,
+          "top5": 15,
+          "mrr_at_5": 0.55,
+          "eligible_queries": 20,
+          "displacement_count": 5,
+          "displacement_rate": 0.25
+        },
+        "irrelevant_consensus_count": 0,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000064.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000105.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000052.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000064.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000047.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000249.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000068.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000070.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000128.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000193.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000139.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000071.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000240.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000064.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "interleave_speech",
+        "strategy": "interleave",
+        "quota": null,
+        "start_lane": "speech",
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 13,
+          "top3": 17,
+          "top5": 19,
+          "mrr_at_5": 0.55
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 4,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.5
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 7,
+            "top3": 7,
+            "top5": 9,
+            "mrr_at_5": 0.6727272727272727
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.4375
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 11,
+          "top3": 15,
+          "top5": 17,
+          "mrr_at_5": 0.67,
+          "eligible_queries": 20,
+          "displacement_count": 3,
+          "displacement_rate": 0.15
+        },
+        "irrelevant_consensus_count": 2,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000226.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000118.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000118.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000144.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000071.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000099.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000058.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000108.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000175.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000226.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000118.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000170.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000212.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000282.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000304.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "preserve_depth_1",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 1,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 8,
+          "top3": 20,
+          "top5": 22,
+          "mrr_at_5": 0.49821428571428567
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 7,
+            "top5": 7,
+            "mrr_at_5": 0.6296296296296297
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 1,
+            "top3": 8,
+            "top5": 9,
+            "mrr_at_5": 0.4121212121212121
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 6,
+            "mrr_at_5": 0.46875
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 6,
+          "top3": 17,
+          "top5": 17,
+          "mrr_at_5": 0.5583333333333333,
+          "eligible_queries": 20,
+          "displacement_count": 3,
+          "displacement_rate": 0.15
+        },
+        "irrelevant_consensus_count": 1,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 4,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 3,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "preserve_depth_2",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 2,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 8,
+          "top3": 17,
+          "top5": 20,
+          "mrr_at_5": 0.46785714285714286
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 5,
+            "top5": 7,
+            "mrr_at_5": 0.6000000000000001
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 1,
+            "top3": 7,
+            "top5": 8,
+            "mrr_at_5": 0.38181818181818183
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.4375
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 6,
+          "top3": 15,
+          "top5": 17,
+          "mrr_at_5": 0.545,
+          "eligible_queries": 20,
+          "displacement_count": 3,
+          "displacement_rate": 0.15
+        },
+        "irrelevant_consensus_count": 1,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "configuration": {
+        "config_id": "preserve_depth_3",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 3,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      "metrics": {
+        "all": {
+          "queries": 28,
+          "top1": 8,
+          "top3": 17,
+          "top5": 18,
+          "mrr_at_5": 0.45357142857142857
+        },
+        "by_category": {
+          "MULTIMODAL": {
+            "queries": 9,
+            "top1": 5,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.5555555555555556
+          },
+          "SPEECH": {
+            "queries": 11,
+            "top1": 1,
+            "top3": 7,
+            "top5": 8,
+            "mrr_at_5": 0.38181818181818183
+          },
+          "VISUAL": {
+            "queries": 8,
+            "top1": 2,
+            "top3": 5,
+            "top5": 5,
+            "mrr_at_5": 0.4375
+          }
+        },
+        "explicit_modality_preservation": {
+          "queries": 20,
+          "top1": 6,
+          "top3": 15,
+          "top5": 16,
+          "mrr_at_5": 0.5349999999999999,
+          "eligible_queries": 20,
+          "displacement_count": 4,
+          "displacement_rate": 0.2
+        },
+        "irrelevant_consensus_count": 2,
+        "negative_queries": {
+          "count": 4,
+          "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+          "top1_ids": {
+            "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+            "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+            "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+            "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        },
+        "records": [
+          {
+            "query_id": "hfd-d-s01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+          },
+          {
+            "query_id": "hfd-d-s02",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+          },
+          {
+            "query_id": "hfd-d-s03",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+          },
+          {
+            "query_id": "hfd-d-s04",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 5,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+          },
+          {
+            "query_id": "hfd-d-s05",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+          },
+          {
+            "query_id": "hfd-d-v01",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+          },
+          {
+            "query_id": "hfd-d-v02",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+          },
+          {
+            "query_id": "hfd-d-v03",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-v04",
+            "source_id": "design-free-software-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+          },
+          {
+            "query_id": "hfd-d-m01",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+          },
+          {
+            "query_id": "hfd-d-m02",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+          },
+          {
+            "query_id": "hfd-d-m03",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+          },
+          {
+            "query_id": "hfd-d-m04",
+            "source_id": "design-free-software-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+          },
+          {
+            "query_id": "hfd-d-a01",
+            "source_id": "design-free-software-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n01",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+          },
+          {
+            "query_id": "hfd-d-n02",
+            "source_id": "design-free-software-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s01",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+          },
+          {
+            "query_id": "hfd-h-s02",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+          },
+          {
+            "query_id": "hfd-h-s03",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+          },
+          {
+            "query_id": "hfd-h-s04",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+          },
+          {
+            "query_id": "hfd-h-s05",
+            "source_id": "human-software-extensions-talk",
+            "category": "SPEECH",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+          },
+          {
+            "query_id": "hfd-h-v01",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+          },
+          {
+            "query_id": "hfd-h-v02",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+          },
+          {
+            "query_id": "hfd-h-v03",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+          },
+          {
+            "query_id": "hfd-h-v04",
+            "source_id": "human-software-extensions-talk",
+            "category": "VISUAL",
+            "negative": false,
+            "relevant_rank": 2,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+          },
+          {
+            "query_id": "hfd-h-m01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": true,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+          },
+          {
+            "query_id": "hfd-h-m02",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+          },
+          {
+            "query_id": "hfd-h-m03",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+          },
+          {
+            "query_id": "hfd-h-m04",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+          },
+          {
+            "query_id": "hfd-h-a01",
+            "source_id": "human-software-extensions-talk",
+            "category": "MULTIMODAL",
+            "negative": false,
+            "relevant_rank": 1,
+            "explicit_top5_available": true,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+          },
+          {
+            "query_id": "hfd-h-n01",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+          },
+          {
+            "query_id": "hfd-h-n02",
+            "source_id": "human-software-extensions-talk",
+            "category": "NEGATIVE",
+            "negative": true,
+            "relevant_rank": null,
+            "explicit_top5_available": false,
+            "irrelevant_consensus": false,
+            "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+          }
+        ]
+      }
+    }
+  ],
+  "spec": {
+    "schema_version": "1.0.0",
+    "experiment": "evidence-preserving-fusion-v1",
+    "status": "frozen_before_source_disjoint_validation",
+    "production_eligible": false,
+    "selected_configuration": {
+      "config_id": "quota_1",
+      "strategy": "quota",
+      "quota": 1,
+      "start_lane": null,
+      "protected_depth": null,
+      "temporal_grouping": "production exact-thumbnail grouping",
+      "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+    },
+    "selection_rule": "maximize development Top-5, then Top-3, Top-1, MRR@5, then minimize displacement; final tie by config_id",
+    "finite_search_space": [
+      {
+        "config_id": "rrf60",
+        "strategy": "baseline",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "quota_1",
+        "strategy": "quota",
+        "quota": 1,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "quota_2",
+        "strategy": "quota",
+        "quota": 2,
+        "start_lane": null,
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "interleave_visual",
+        "strategy": "interleave",
+        "quota": null,
+        "start_lane": "visual",
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "interleave_speech",
+        "strategy": "interleave",
+        "quota": null,
+        "start_lane": "speech",
+        "protected_depth": null,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "preserve_depth_1",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 1,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "preserve_depth_2",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 2,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      },
+      {
+        "config_id": "preserve_depth_3",
+        "strategy": "preserve",
+        "quota": null,
+        "start_lane": null,
+        "protected_depth": 3,
+        "temporal_grouping": "production exact-thumbnail grouping",
+        "tie_rule": "declared lane order, then production RRF rank, timestamp, candidate_id"
+      }
+    ],
+    "development": {
+      "sources": 2,
+      "queries": 32,
+      "manifest_sha256": "79020ae3af85e69f88be2a460a5d04273b09a5596ccd12d390da1b7e00f791be"
+    },
+    "development_winner_metrics": {
+      "all": {
+        "queries": 28,
+        "top1": 8,
+        "top3": 20,
+        "top5": 22,
+        "mrr_at_5": 0.49821428571428567
+      },
+      "by_category": {
+        "MULTIMODAL": {
+          "queries": 9,
+          "top1": 5,
+          "top3": 7,
+          "top5": 7,
+          "mrr_at_5": 0.6296296296296297
+        },
+        "SPEECH": {
+          "queries": 11,
+          "top1": 1,
+          "top3": 8,
+          "top5": 9,
+          "mrr_at_5": 0.4121212121212121
+        },
+        "VISUAL": {
+          "queries": 8,
+          "top1": 2,
+          "top3": 5,
+          "top5": 6,
+          "mrr_at_5": 0.46875
+        }
+      },
+      "explicit_modality_preservation": {
+        "queries": 20,
+        "top1": 6,
+        "top3": 17,
+        "top5": 17,
+        "mrr_at_5": 0.5583333333333333,
+        "eligible_queries": 20,
+        "displacement_count": 3,
+        "displacement_rate": 0.15
+      },
+      "irrelevant_consensus_count": 1,
+      "negative_queries": {
+        "count": 4,
+        "candidate_presentation": "unchanged possible-match UX; no no-match threshold",
+        "top1_ids": {
+          "hfd-d-n01": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg",
+          "hfd-d-n02": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg",
+          "hfd-h-n01": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg",
+          "hfd-h-n02": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+        }
+      },
+      "records": [
+        {
+          "query_id": "hfd-d-s01",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": true,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000019.jpg"
+        },
+        {
+          "query_id": "hfd-d-s02",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000051.jpg"
+        },
+        {
+          "query_id": "hfd-d-s03",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000078.jpg"
+        },
+        {
+          "query_id": "hfd-d-s04",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 3,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000085.jpg"
+        },
+        {
+          "query_id": "hfd-d-s05",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000076.jpg"
+        },
+        {
+          "query_id": "hfd-d-v01",
+          "source_id": "design-free-software-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000063.jpg"
+        },
+        {
+          "query_id": "hfd-d-v02",
+          "source_id": "design-free-software-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 4,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000026.jpg"
+        },
+        {
+          "query_id": "hfd-d-v03",
+          "source_id": "design-free-software-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+        },
+        {
+          "query_id": "hfd-d-v04",
+          "source_id": "design-free-software-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000048.jpg"
+        },
+        {
+          "query_id": "hfd-d-m01",
+          "source_id": "design-free-software-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000055.jpg"
+        },
+        {
+          "query_id": "hfd-d-m02",
+          "source_id": "design-free-software-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000095.jpg"
+        },
+        {
+          "query_id": "hfd-d-m03",
+          "source_id": "design-free-software-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000045.jpg"
+        },
+        {
+          "query_id": "hfd-d-m04",
+          "source_id": "design-free-software-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000042.jpg"
+        },
+        {
+          "query_id": "hfd-d-a01",
+          "source_id": "design-free-software-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+        },
+        {
+          "query_id": "hfd-d-n01",
+          "source_id": "design-free-software-talk",
+          "category": "NEGATIVE",
+          "negative": true,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000002.jpg"
+        },
+        {
+          "query_id": "hfd-d-n02",
+          "source_id": "design-free-software-talk",
+          "category": "NEGATIVE",
+          "negative": true,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/b1735a8f-6ac8-4bb4-af87-1abba7710f26/frames/000039.jpg"
+        },
+        {
+          "query_id": "hfd-h-s01",
+          "source_id": "human-software-extensions-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000065.jpg"
+        },
+        {
+          "query_id": "hfd-h-s02",
+          "source_id": "human-software-extensions-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000233.jpg"
+        },
+        {
+          "query_id": "hfd-h-s03",
+          "source_id": "human-software-extensions-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000116.jpg"
+        },
+        {
+          "query_id": "hfd-h-s04",
+          "source_id": "human-software-extensions-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000039.jpg"
+        },
+        {
+          "query_id": "hfd-h-s05",
+          "source_id": "human-software-extensions-talk",
+          "category": "SPEECH",
+          "negative": false,
+          "relevant_rank": 5,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000289.jpg"
+        },
+        {
+          "query_id": "hfd-h-v01",
+          "source_id": "human-software-extensions-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000024.jpg"
+        },
+        {
+          "query_id": "hfd-h-v02",
+          "source_id": "human-software-extensions-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000074.jpg"
+        },
+        {
+          "query_id": "hfd-h-v03",
+          "source_id": "human-software-extensions-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000123.jpg"
+        },
+        {
+          "query_id": "hfd-h-v04",
+          "source_id": "human-software-extensions-talk",
+          "category": "VISUAL",
+          "negative": false,
+          "relevant_rank": 2,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000137.jpg"
+        },
+        {
+          "query_id": "hfd-h-m01",
+          "source_id": "human-software-extensions-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 3,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000088.jpg"
+        },
+        {
+          "query_id": "hfd-h-m02",
+          "source_id": "human-software-extensions-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000109.jpg"
+        },
+        {
+          "query_id": "hfd-h-m03",
+          "source_id": "human-software-extensions-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 3,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000250.jpg"
+        },
+        {
+          "query_id": "hfd-h-m04",
+          "source_id": "human-software-extensions-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000295.jpg"
+        },
+        {
+          "query_id": "hfd-h-a01",
+          "source_id": "human-software-extensions-talk",
+          "category": "MULTIMODAL",
+          "negative": false,
+          "relevant_rank": 1,
+          "explicit_top5_available": true,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000239.jpg"
+        },
+        {
+          "query_id": "hfd-h-n01",
+          "source_id": "human-software-extensions-talk",
+          "category": "NEGATIVE",
+          "negative": true,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000016.jpg"
+        },
+        {
+          "query_id": "hfd-h-n02",
+          "source_id": "human-software-extensions-talk",
+          "category": "NEGATIVE",
+          "negative": true,
+          "relevant_rank": null,
+          "explicit_top5_available": false,
+          "irrelevant_consensus": false,
+          "top1_candidate_id": "/videos/a906e2f6-1e45-46e4-892b-f4f6c3aef5e2/frames/000093.jpg"
+        }
+      ]
+    },
+    "input_hashes": {
+      "development_manifest": "79020ae3af85e69f88be2a460a5d04273b09a5596ccd12d390da1b7e00f791be",
+      "validation_manifest": "93e2bd28604e00dd217c8a7790aa07de7fa0e2ecf0dadd3a5afb27078621f95a",
+      "protected_holdout_manifest": "dcddffb0495cb7c397249ccd13d5818967127b6c62d01173944d0235030b64b5"
+    },
+    "leakage_audit": {
+      "development_vs_validation": {
+        "exact": [],
+        "lexical_similarity_at_least_0_8": []
+      },
+      "development_vs_protected": {
+        "exact": [],
+        "lexical_similarity_at_least_0_8": []
+      },
+      "validation_vs_protected": {
+        "exact": [],
+        "lexical_similarity_at_least_0_8": []
+      },
+      "source_hashes": {
+        "development": [
+          "2bc604a1ad04d1ca5537eb3348d691a3e1e2a845c114c49d97ccd923e8d880dc",
+          "f389e9911d1583b63b5286967675a189c152421f91dd5f0ff0a158270f5dcb74"
+        ],
+        "validation": [
+          "530ffecb380b3a36165c7918ac191eca4a06b90546025f6d49cf9b6956c285f7",
+          "bcb20541112226cccd9f4e123ba7af69dcdb2333b4d5ac8b018f6cc4639e639c",
+          "e5facb24baf755f0c1193999d823e99f6032661ad2bdef5cc28cc1cbbfde03e2"
+        ],
+        "protected": [
+          "addb005d02cde7bc6b277e938bc10190709e278088caa23354e1323477f0000c",
+          "d35021584e3859bab68a465a8d341c2f813abe145f506e8edede5713022e61db",
+          "dfba01c662cb7736642092e2311eaa46306a7023cd5af4dd231ab3918e7e568b"
+        ]
+      }
+    },
+    "implementation_commit_before_run": "254a1a05ec8206e5d895e33f98a7b7db073481ce"
+  }
+}
