@@ -1,6 +1,7 @@
 """Transcript-grounded question answering with server-resolved citations."""
 
 import json
+import re
 import time
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
@@ -18,6 +19,20 @@ from app.video import folder_for, read_manifest
 
 router = APIRouter(prefix="/videos", tags=["grounded video Q&A"])
 ABSTENTION = "I couldn't find enough evidence in this video to answer that reliably."
+QA_INSTRUCTIONS = (
+    "Decide whether the supplied video transcript evidence directly and completely answers "
+    "the actual question. Topical similarity is not sufficient. Do not use outside knowledge "
+    "or infer missing details. Require the correct entity, requested relation, temporal order, "
+    "and complete requested count. Evidence may be combined across supplied chunks. Imperfect "
+    "automatic-transcription wording is acceptable when the intended fact is still clear; do "
+    "not demand exact phrasing or one self-contained chunk. For before/after questions, evidence "
+    "must establish both the anchor and the requested event. Put each independently checkable "
+    "factual statement in a separate claim with all supporting evidence IDs. For a requested "
+    "list, put each item in a separate claim. Set answerable=false if any required fact is "
+    "absent, and name the gap briefly in unsupported_or_missing; then return an empty answer, "
+    "evidence_ids, and claims. When answerable=true, unsupported_or_missing must be empty. Cite "
+    "only IDs from the supplied evidence and keep the answer concise."
+)
 
 
 @dataclass(frozen=True)
@@ -38,6 +53,70 @@ class GeneratedAnswer(BaseModel):
     answerable: bool
     answer: str = Field(max_length=2000)
     evidence_ids: list[str] = Field(max_length=5)
+    claims: list["GeneratedClaim"] = Field(max_length=8)
+    unsupported_or_missing: list[str] = Field(max_length=8)
+
+
+class GeneratedClaim(BaseModel):
+    text: str = Field(min_length=1, max_length=500)
+    evidence_ids: list[str] = Field(min_length=1, max_length=5)
+
+
+@dataclass(frozen=True)
+class QuestionConstraints:
+    requested_count: int | None = None
+    temporal_relation: str | None = None
+    relation_types: tuple[str, ...] = ()
+
+
+_NUMBER_WORDS = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "eight": 8,
+}
+
+
+def analyze_question(question: str) -> QuestionConstraints:
+    """Extract only high-value constraints used by the safety contract."""
+    lowered = question.lower()
+    count_match = re.search(
+        r"\b(?:what|which|name|list|give|identify)\s+(?:(\d+)|("
+        + "|".join(_NUMBER_WORDS)
+        + r"))\b",
+        lowered,
+    )
+    requested_count = None
+    if count_match:
+        requested_count = (
+            int(count_match.group(1))
+            if count_match.group(1)
+            else _NUMBER_WORDS[count_match.group(2)]
+        )
+    temporal_relation = next(
+        (
+            word
+            for word in ("before", "after", "then", "next", "previously", "later")
+            if re.search(rf"\b{word}\b", lowered)
+        ),
+        None,
+    )
+    relations = []
+    if re.search(r"\b(?:why|cause|causes|reason|reasons)\b", lowered):
+        relations.append("cause_or_reason")
+    if re.search(r"\b(?:compare|comparison|difference|differ)\b", lowered):
+        relations.append("comparison")
+    if re.search(r"\b(?:define|definition|what (?:is|are|does))\b", lowered):
+        relations.append("definition_or_fact")
+    if requested_count is not None or re.search(r"\b(?:list|approaches|reasons|steps)\b", lowered):
+        relations.append("list")
+    if temporal_relation:
+        relations.append("temporal")
+    return QuestionConstraints(requested_count, temporal_relation, tuple(relations))
 
 
 class AnswerGenerator(ABC):
@@ -102,12 +181,22 @@ class OpenAIAnswerGenerator(AnswerGenerator):
 
     def _payload(self, question: str, evidence: list[EvidenceChunk]) -> dict:
         evidence_text = "\n\n".join(f"{item.evidence_id}: {item.text}" for item in evidence)
-        instructions = (
-            "Answer only from the supplied video transcript evidence. Do not use outside "
-            "knowledge or infer unsupported details. If the evidence is insufficient, set "
-            "answerable to false and use no evidence IDs. Cite only supplied evidence IDs. "
-            "Keep the answer concise and include every evidence ID needed to support its claims."
-        )
+        constraints = analyze_question(question)
+        constraint_text = json.dumps(asdict(constraints), separators=(",", ":"))
+        claim_schema = {
+            "type": "object",
+            "properties": {
+                "text": {"type": "string"},
+                "evidence_ids": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "minItems": 1,
+                    "maxItems": 5,
+                },
+            },
+            "required": ["text", "evidence_ids"],
+            "additionalProperties": False,
+        }
         schema = {
             "type": "object",
             "properties": {
@@ -118,15 +207,31 @@ class OpenAIAnswerGenerator(AnswerGenerator):
                     "items": {"type": "string"},
                     "maxItems": 5,
                 },
+                "claims": {"type": "array", "items": claim_schema, "maxItems": 8},
+                "unsupported_or_missing": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "maxItems": 8,
+                },
             },
-            "required": ["answerable", "answer", "evidence_ids"],
+            "required": [
+                "answerable",
+                "answer",
+                "evidence_ids",
+                "claims",
+                "unsupported_or_missing",
+            ],
             "additionalProperties": False,
         }
         return {
             "model": settings.qa_model,
             "store": False,
-            "instructions": instructions,
-            "input": f"Question: {question}\n\nVideo evidence:\n{evidence_text}",
+            "instructions": QA_INSTRUCTIONS,
+            "input": (
+                f"Question: {question}\n"
+                f"Deterministic question constraints: {constraint_text}\n\n"
+                f"Video evidence:\n{evidence_text}"
+            ),
             "text": {
                 "format": {
                     "type": "json_schema",
@@ -190,16 +295,32 @@ class OpenAIAnswerGenerator(AnswerGenerator):
         raise HTTPException(502, "The answer provider is temporarily unavailable.") from last_error
 
 
-def resolve_answer(generated: GeneratedAnswer, evidence: list[EvidenceChunk]) -> dict:
+def resolve_answer(
+    generated: GeneratedAnswer, evidence: list[EvidenceChunk], question: str = ""
+) -> dict:
     lookup = {item.evidence_id: item for item in evidence}
-    unknown = [item for item in generated.evidence_ids if item not in lookup]
+    claim_ids = [item for claim in generated.claims for item in claim.evidence_ids]
+    unknown = [item for item in [*generated.evidence_ids, *claim_ids] if item not in lookup]
     if unknown:
         raise HTTPException(502, "The answer provider returned an invalid evidence citation.")
     if not generated.answerable:
         return {"answerable": False, "answer": ABSTENTION, "citations": []}
-    citation_ids = list(dict.fromkeys(generated.evidence_ids))
-    if not citation_ids or not generated.answer.strip():
-        raise HTTPException(502, "The answer provider returned an ungrounded answer.")
+    citation_ids = list(dict.fromkeys(claim_ids))
+    constraints = analyze_question(question)
+    claim_citation_ids = list(dict.fromkeys(claim_ids))
+    contract_invalid = (
+        not citation_ids
+        or not generated.answer.strip()
+        or not generated.claims
+        or bool(generated.unsupported_or_missing)
+        or not set(generated.evidence_ids).issubset(set(claim_citation_ids))
+        or (
+            constraints.requested_count is not None
+            and len(generated.claims) != constraints.requested_count
+        )
+    )
+    if contract_invalid:
+        return {"answerable": False, "answer": ABSTENTION, "citations": []}
     return {
         "answerable": True,
         "answer": generated.answer.strip(),
@@ -262,7 +383,7 @@ def ask_video(video_id: str, request: AskRequest):
     generation_started = time.perf_counter()
     generated, usage = answer_generator().generate(question, evidence)
     generation_ms = (time.perf_counter() - generation_started) * 1000
-    answer = resolve_answer(generated, evidence)
+    answer = resolve_answer(generated, evidence, question)
     return {
         **answer,
         "evidence": [asdict(item) for item in evidence],

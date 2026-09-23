@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     visual_revision: str = "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
     auto_routing_enabled: bool = True
     embedding_batch_size: int = Field(default=8, ge=1, le=64)
-    qa_model: str = "gpt-5.4-mini"
+    qa_model: str = "gpt-5.4-mini-2026-03-17"
     qa_enabled: bool = False
     openai_api_key: str = Field(
         default="",

@@ -108,7 +108,10 @@
 - [x] Freeze source-disjoint Grounded Video Q&A development/validation questions and checksum
 - [x] Run the frozen real-provider Q&A validation exactly once with manual claim/evidence review
 - [x] Record Decision D after abstention, grounding and unsupported-claim gates fail
-- [ ] Develop Q&A abstention safety only on new development evidence; never tune on frozen validation
+- [x] Develop Q&A abstention safety only on new development evidence; never tune on frozen validation
+- [x] Freeze and run one new two-source, 30-question validation with manual claim/citation review
+- [x] Record Decision D after correctness and structured-category gates fail despite passing safety gates
+- [ ] Develop structured-question evidence handling only on new sources; keep both Q&A validations frozen
 
 ## Future work — not active v1.0 tasks
 

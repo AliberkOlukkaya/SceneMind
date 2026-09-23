@@ -14,9 +14,12 @@ from app.database import Segment, Transcript, engine, migrate
 from app.main import app
 from app.qa import (
     ABSTENTION,
+    QA_INSTRUCTIONS,
     EvidenceChunk,
     GeneratedAnswer,
+    GeneratedClaim,
     OpenAIAnswerGenerator,
+    analyze_question,
     chunk_segments,
     resolve_answer,
     retrieve_evidence,
@@ -74,6 +77,18 @@ def _evidence():
     return [EvidenceChunk("E001", VIDEO_ID, 10, 19, "RAG grounds answers.", (1, 2))]
 
 
+def _generated(*, answerable=True, answer="Claim", evidence_ids=None, claims=None, missing=None):
+    evidence_ids = ["E001"] if evidence_ids is None else evidence_ids
+    claims = [GeneratedClaim(text="Claim", evidence_ids=evidence_ids)] if claims is None else claims
+    return GeneratedAnswer(
+        answerable=answerable,
+        answer=answer,
+        evidence_ids=evidence_ids,
+        claims=claims,
+        unsupported_or_missing=[] if missing is None else missing,
+    )
+
+
 def test_chunking_is_deterministic_and_preserves_timestamps_ids_and_overlap():
     first = chunk_segments(VIDEO_ID, _segments(), max_seconds=20, max_characters=100)
     second = chunk_segments(VIDEO_ID, _segments(), max_seconds=20, max_characters=100)
@@ -127,23 +142,74 @@ def test_frozen_machine_report_records_failed_abstention_gate():
     assert report["decision"]["code"] == "D"
 
 
+def test_abstention_safety_sources_and_questions_are_disjoint_and_balanced():
+    path = ROOT / "ml/evaluation/qa_abstention_safety_v1_manifest.json"
+    expected = (
+        (ROOT / "ml/evaluation/qa_abstention_safety_v1_manifest.sha256")
+        .read_text(encoding="ascii")
+        .split()[0]
+    )
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == expected
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    assert (
+        hashlib.sha256(QA_INSTRUCTIONS.encode()).hexdigest()
+        == manifest["frozen_configuration"]["prompt_sha256"]
+    )
+    historical = json.loads(
+        (ROOT / "ml/evaluation/grounded_video_qa_v1_manifest.json").read_text(encoding="utf-8")
+    )
+    development = manifest["development"]
+    validation = manifest["validation"]
+    development_hashes = {source["sha256"] for source in development["sources"]}
+    validation_hashes = {source["sha256"] for source in validation["sources"]}
+    historical_hashes = {
+        historical["development"]["source"]["sha256"],
+        historical["validation"]["source"]["sha256"],
+    }
+    assert len(development["sources"]) == len(validation["sources"]) == 2
+    assert development_hashes.isdisjoint(validation_hashes | historical_hashes)
+    assert validation_hashes.isdisjoint(historical_hashes)
+    for split in (development, validation):
+        assert len(split["questions"]) == 30
+        assert sum(row["answerable"] for row in split["questions"]) == 18
+        assert sum(row["category"] == "HARD_NEGATIVE" for row in split["questions"]) == 10
+        assert all(row["expected_intervals"] for row in split["questions"] if row["answerable"])
+        assert all(
+            not row["expected_intervals"] for row in split["questions"] if not row["answerable"]
+        )
+
+
+def test_abstention_safety_frozen_report_records_decision_d():
+    report = json.loads(
+        (ROOT / "ml/evaluation/reports/qa-abstention-safety-v1.json").read_text(encoding="utf-8")
+    )
+    assert (
+        report["manifest_sha256"]
+        == "26646d2bf977981950e68888898522e348e6019cc39acac417a8a28acca34255"
+    )
+    assert report["validation_run_count"] == 1
+    assert report["metrics"]["correct_abstention_rate"] == 1
+    assert report["metrics"]["false_answer_rate"] == 0
+    assert report["metrics"]["answer_correctness"] == pytest.approx(14 / 18)
+    assert report["categories"]["LIST_COUNT"]["answer_correctness"] == 0
+    assert report["decision"]["code"] == "D"
+    assert report["decision"]["ask_video_eligible_for_enablement"] is False
+    assert all(row["safe_abstention"] for row in report["historical_replay"]["rows"])
+
+
 def test_unknown_evidence_id_is_rejected():
     with pytest.raises(HTTPException, match="invalid evidence"):
-        resolve_answer(
-            GeneratedAnswer(answerable=True, answer="Claim", evidence_ids=["E999"]), _evidence()
-        )
+        resolve_answer(_generated(evidence_ids=["E999"]), _evidence())
 
 
-def test_answerable_response_requires_a_citation():
-    with pytest.raises(HTTPException, match="ungrounded"):
-        resolve_answer(
-            GeneratedAnswer(answerable=True, answer="Claim", evidence_ids=[]), _evidence()
-        )
+def test_answerable_response_without_a_citation_fails_safely():
+    result = resolve_answer(_generated(evidence_ids=[], claims=[]), _evidence())
+    assert result == {"answerable": False, "answer": ABSTENTION, "citations": []}
 
 
 def test_abstention_discards_provider_text_and_citations():
     result = resolve_answer(
-        GeneratedAnswer(answerable=False, answer="Maybe outside knowledge", evidence_ids=["E001"]),
+        _generated(answerable=False, answer="Maybe outside knowledge"),
         _evidence(),
     )
     assert result == {"answerable": False, "answer": ABSTENTION, "citations": []}
@@ -186,6 +252,63 @@ def test_provider_payload_sends_only_question_and_selected_evidence():
     assert "E001: RAG grounds answers." in payload["input"]
     assert VIDEO_ID not in payload["input"]
     assert "start_seconds" not in payload["input"]
+    assert payload["text"]["format"]["schema"]["required"] == [
+        "answerable",
+        "answer",
+        "evidence_ids",
+        "claims",
+        "unsupported_or_missing",
+    ]
+
+
+def test_question_constraints_extract_count_temporal_and_relation():
+    constraints = analyze_question("What three reasons are given after the comparison?")
+    assert constraints.requested_count == 3
+    assert constraints.temporal_relation == "after"
+    assert set(constraints.relation_types) == {"cause_or_reason", "comparison", "list", "temporal"}
+
+
+def test_topically_related_but_insufficient_and_outside_knowledge_abstain():
+    for missing in (["wrong entity"], ["requested fact is outside the evidence"]):
+        result = resolve_answer(
+            _generated(missing=missing), _evidence(), "What does RAG guarantee?"
+        )
+        assert result == {"answerable": False, "answer": ABSTENTION, "citations": []}
+
+
+def test_wrong_entity_fails_safely():
+    result = resolve_answer(
+        _generated(missing=["Evidence discusses Wi-Fi, not the requested mobile-data entity."]),
+        _evidence(),
+        "What does the speaker say about mobile data?",
+    )
+    assert result["answerable"] is False
+
+
+def test_before_after_mismatch_fails_safely():
+    result = resolve_answer(
+        _generated(missing=["The evidence is before the requested temporal anchor."]),
+        _evidence(),
+        "What happens after DNS resolution?",
+    )
+    assert result["answerable"] is False
+
+
+def test_partial_or_wrong_list_count_fails_safely():
+    result = resolve_answer(
+        _generated(claims=[GeneratedClaim(text="One reason", evidence_ids=["E001"])]),
+        _evidence(),
+        "What two reasons are given?",
+    )
+    assert result["answerable"] is False
+
+
+def test_claim_citations_must_match_answer_citations():
+    generated = _generated(
+        evidence_ids=["E001"], claims=[GeneratedClaim(text="Claim", evidence_ids=["E002"])]
+    )
+    evidence = [*_evidence(), EvidenceChunk("E002", VIDEO_ID, 20, 25, "Other", (3,))]
+    assert resolve_answer(generated, evidence)["answerable"] is False
 
 
 @pytest.mark.parametrize("source_type", ["upload", "url"])
@@ -205,6 +328,13 @@ def test_answer_and_citation_resolution_for_upload_and_url_video(
                     answerable=True,
                     answer="RAG retrieves documents to improve factual grounding [1].",
                     evidence_ids=[evidence[0].evidence_id],
+                    claims=[
+                        GeneratedClaim(
+                            text="RAG retrieves documents to improve factual grounding.",
+                            evidence_ids=[evidence[0].evidence_id],
+                        )
+                    ],
+                    unsupported_or_missing=[],
                 ),
                 {"provider": "fake", "model": "test", "input_tokens": 20, "output_tokens": 10},
             )

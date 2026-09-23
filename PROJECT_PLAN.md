@@ -16,11 +16,11 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Grounded Video Q&A V1 is complete but remains evaluation-gated after Decision D. Deterministic transcript chunks and BM25 Top-5 retrieved sufficient evidence for all nine answerable validation questions, but one of three unanswerable questions received a substantive response and one temporal answer added an unsupported ordering claim. The next bounded milestone is Q&A Abstention Safety V1 on new development evidence; this validation set remains frozen and evaluation-only.
+Q&A Abstention Safety V1 is complete with Decision D. A claim-level structured contract eliminated false answers and unsupported claims on 30 new frozen validation questions, while frozen list/count correctness reached 0/2 and temporal correctness 1/2. Ask Video remains evaluation-gated. The next bounded milestone is Q&A Structured-Question Evidence V1 on new sources; both observed Q&A validation sets remain frozen and evaluation-only.
 
 SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Grounded Video Q&A V1 is implemented but remains disabled after frozen abstention-safety gates failed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
 
-URL ingestion is complete without reopening search-core ML research. Q&A retrieval passed Evidence Recall@5, but generation safety failed; the next bounded milestone may use new development evidence for abstention safety only. The frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
+URL ingestion is complete without reopening search-core ML research. Q&A safety now passes its abstention, grounding, citation and unsupported-claim gates, but overall correctness and structured categories fail. Any next Q&A work must use new development evidence for count/list completeness and temporal anchors. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
 
 ## Future work
 

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "suite_id": "qa-abstention-safety-v1",
+  "construction": "Questions, answerability labels, key facts and intervals were authored from full local Whisper transcript review before any Q&A run. Sources had been collected for an independent routing study but had never been used for Q&A development or validation. The previous Grounded Video Q&A V1 sources and questions are excluded.",
+  "frozen_configuration": {
+    "retrieval": "unchanged deterministic 45-second/900-character overlapping chunks and BM25 Top-5",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "generation_parameters": "Responses API defaults; strict JSON schema; store=false",
+    "prompt_version": "qa-abstention-safety-v1",
+    "prompt_sha256": "5d00c3f2a75ef745440de79ec6b3b640d670315f85661a61a835a9580a35c762",
+    "answerability_rule": "Direct and complete support for the requested entity, relation, temporal order and count; topical similarity or outside knowledge is insufficient."
+  },
+  "development": {
+    "sources": [
+      {
+        "source_id": "oceans-explainer",
+        "title": "The Oceans",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Oceans.webm",
+        "license": "CC BY 3.0",
+        "sha256": "968b1672963a303f265a8809d7ec9ecda63afccf456a0acec1261f4b80afb87c",
+        "duration_seconds": 477.851
+      },
+      {
+        "source_id": "design-free-software-talk",
+        "title": "Design Students Experimenting with Free Software",
+        "url": "https://media.ccc.de/v/lgm-2026-110678-design-students-experimenting-with-free-software",
+        "license": "CC BY 4.0",
+        "sha256": "f389e9911d1583b63b5286967675a189c152421f91dd5f0ff0a158270f5dcb74",
+        "duration_seconds": 1343.66
+      }
+    ],
+    "questions": [
+      {"id":"dev-ocean-01","source_id":"oceans-explainer","category":"FACTUAL","answerable":true,"question":"How much of the world's oxygen does the video say plankton produces?","key_facts":["Plankton produces more than half of all oxygen."],"expected_intervals":[[132,154]]},
+      {"id":"dev-ocean-02","source_id":"oceans-explainer","category":"EXPLANATION","answerable":true,"question":"How do mangrove forests protect coastal areas?","key_facts":["They shelter young fish and stop tsunamis and floods."],"expected_intervals":[[18,54]]},
+      {"id":"dev-ocean-03","source_id":"oceans-explainer","category":"LIST_COUNT","answerable":true,"question":"What two climate functions of the oceans are described?","key_facts":["They store and transport heat.","They absorb greenhouse gases."],"expected_intervals":[[143,165]]},
+      {"id":"dev-ocean-04","source_id":"oceans-explainer","category":"TEMPORAL","answerable":true,"question":"What does the narrator discuss after explaining that plastic breaks into smaller fragments?","key_facts":["Microplastics enter the food chain and reach our plates."],"expected_intervals":[[297,324]]},
+      {"id":"dev-ocean-05","source_id":"oceans-explainer","category":"EXPLANATION","answerable":true,"question":"Why does warm water cause coral to turn white and eventually die?","key_facts":["The polyp expels the algae in its tissue; prolonged loss kills the coral."],"expected_intervals":[[414,434]]},
+      {"id":"dev-ocean-06","source_id":"oceans-explainer","category":"FACTUAL","answerable":true,"question":"How deep does the video say the oceans are at their deepest?","key_facts":["Close to six miles."],"expected_intervals":[[163,179]]},
+      {"id":"dev-ocean-07","source_id":"oceans-explainer","category":"EXPLANATION","answerable":true,"question":"How does the female frogfish attract prey in the deep sea?","key_facts":["It uses a lantern containing glowing bacteria to lure prey."],"expected_intervals":[[190,212]]},
+      {"id":"dev-ocean-08","source_id":"oceans-explainer","category":"FACTUAL","answerable":true,"question":"What happens to other marine life caught while fishing for shrimp?","key_facts":["Up to nine pounds per pound of shrimp can be caught and discarded."],"expected_intervals":[[330,354]]},
+      {"id":"dev-ocean-09","source_id":"oceans-explainer","category":"EXPLANATION","answerable":true,"question":"How does fertilizer runoff create ocean dead zones?","key_facts":["It lowers oxygen in the water, choking marine life."],"expected_intervals":[[365,389]]},
+      {"id":"dev-ocean-10","source_id":"oceans-explainer","category":"HARD_NEGATIVE","answerable":false,"question":"How do dolphins navigate during the migration described in the video?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-ocean-11","source_id":"oceans-explainer","category":"HARD_NEGATIVE","answerable":false,"question":"What three countries does the video identify as the largest sources of ocean plastic?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-ocean-12","source_id":"oceans-explainer","category":"HARD_NEGATIVE","answerable":false,"question":"Which conservation policy is introduced after the narrator mentions sustainable practices?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-ocean-13","source_id":"oceans-explainer","category":"HARD_NEGATIVE","answerable":false,"question":"Why is the Mariana Trench the deepest named location in the ocean?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-ocean-14","source_id":"oceans-explainer","category":"HARD_NEGATIVE","answerable":false,"question":"What two mangrove restoration methods does the video recommend?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-ocean-15","source_id":"oceans-explainer","category":"ORDINARY_UNANSWERABLE","answerable":false,"question":"In what year was this ocean film released?","key_facts":[],"expected_intervals":[]},
+
+      {"id":"dev-design-01","source_id":"design-free-software-talk","category":"FACTUAL","answerable":true,"question":"What are students asked to do in the free-software assignment?","key_facts":["Identify, test and publicly review a free software tool used for a daily task."],"expected_intervals":[[179,231]]},
+      {"id":"dev-design-02","source_id":"design-free-software-talk","category":"EXPLANATION","answerable":true,"question":"Why must students test the new software on a specific familiar task?","key_facts":["A familiar task gives them a useful reference point for comparison."],"expected_intervals":[[585,649]]},
+      {"id":"dev-design-03","source_id":"design-free-software-talk","category":"LIST_COUNT","answerable":true,"question":"What two kinds of difficulty are students taught to distinguish when testing software?","key_facts":["Discomfort caused by unfamiliarity.","Objective problems such as missing features, poor documentation or interface failures."],"expected_intervals":[[315,365]]},
+      {"id":"dev-design-04","source_id":"design-free-software-talk","category":"EXPLANATION","answerable":true,"question":"What does treating software as a black box help students understand?","key_facts":["A tool's behavior reflects encoded developer decisions and commercial goals."],"expected_intervals":[[239,301]]},
+      {"id":"dev-design-05","source_id":"design-free-software-talk","category":"EXPLANATION","answerable":true,"question":"What loop does teaching only industry-standard proprietary suites create?","key_facts":["Being a designer becomes reduced to proficiency with a particular brand."],"expected_intervals":[[132,179]]},
+      {"id":"dev-design-06","source_id":"design-free-software-talk","category":"EXPLANATION","answerable":true,"question":"What does the speaker say is lost when design competence means mastering one software package?","key_facts":["Understanding and control of the medium, critical reading of interfaces, and agency over creative tools are lost."],"expected_intervals":[[409,463]]},
+      {"id":"dev-design-07","source_id":"design-free-software-talk","category":"FACTUAL","answerable":true,"question":"What did students discover about the software they already used?","key_facts":["It was a choice rather than a mandate because alternatives exist."],"expected_intervals":[[506,552]]},
+      {"id":"dev-design-08","source_id":"design-free-software-talk","category":"EXPLANATION","answerable":true,"question":"Why does the speaker consider exposure to free software necessary at a public university?","key_facts":["Students should know alternatives and develop a critical approach to tools."],"expected_intervals":[[1186,1269]]},
+      {"id":"dev-design-09","source_id":"design-free-software-talk","category":"TEMPORAL","answerable":true,"question":"What happens after the main presentation ends and the speaker invites questions?","key_facts":["A question asks whether students compare the new software with their usual software."],"expected_intervals":[[535,625]]},
+      {"id":"dev-design-10","source_id":"design-free-software-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What percentage of students continued using free software one year later?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-design-11","source_id":"design-free-software-talk","category":"HARD_NEGATIVE","answerable":false,"question":"Which AI coding model does the speaker recommend to design students?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-design-12","source_id":"design-free-software-talk","category":"HARD_NEGATIVE","answerable":false,"question":"How does the speaker compare Photoshop's subscription tiers?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-design-13","source_id":"design-free-software-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What three named student reviews received the highest grades?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-design-14","source_id":"design-free-software-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What happened before the course adopted Blender as its required editor?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-design-15","source_id":"design-free-software-talk","category":"ORDINARY_UNANSWERABLE","answerable":false,"question":"How many students were enrolled in the course?","key_facts":[],"expected_intervals":[]}
+    ]
+  },
+  "validation": {
+    "sources": [
+      {
+        "source_id": "rewiring-video-editor-talk",
+        "title": "ReWiring the Video Editor — Timeline as a Node",
+        "url": "https://media.ccc.de/v/lgm-2026-110669-rewiring-the-video-editor-timeline-as-a-node",
+        "license": "CC BY 4.0",
+        "sha256": "7461d640ec53cb30e39e67d2977d81c470bd40d1975580d2f285892ddae00288",
+        "duration_seconds": 1504.9
+      },
+      {
+        "source_id": "ui-frameworks-talk",
+        "title": "Exploring modern UI frameworks",
+        "url": "https://media.ccc.de/v/lgm-2026-110661-exploring-modern-ui-frameworks",
+        "license": "CC BY 4.0",
+        "sha256": "4733a50b3ac02d179c3080555b2c4dbd62d5ce33edf1f607071246d81adb4c5d",
+        "duration_seconds": 1785.68
+      }
+    ],
+    "questions": [
+      {"id":"val-rewire-01","source_id":"rewiring-video-editor-talk","category":"FACTUAL","answerable":true,"question":"What three actions are needed to rearrange the purple clip in the traditional editor example?","key_facts":["Move other clips to create space.","Move the purple clip.","Bring the displaced clips back."],"expected_intervals":[[62,81]]},
+      {"id":"val-rewire-02","source_id":"rewiring-video-editor-talk","category":"EXPLANATION","answerable":true,"question":"Why do ordinary node-editor canvases struggle to represent time?","key_facts":["The canvas uses both spatial axes and lacks timeline functionality needed by a video editor."],"expected_intervals":[[120,168]]},
+      {"id":"val-rewire-03","source_id":"rewiring-video-editor-talk","category":"LIST_COUNT","answerable":true,"question":"What three design guidelines are set for the proposed node-based video editor?","key_facts":["It should be familiar and intuitive.","Time should be shown in the node graph rather than hidden in panels.","It must be flexible."],"expected_intervals":[[445,491]]},
+      {"id":"val-rewire-04","source_id":"rewiring-video-editor-talk","category":"TEMPORAL","answerable":true,"question":"What proposal is introduced after the speaker reviews connection-based time systems?","key_facts":["Put the entire timeline into a node on the canvas."],"expected_intervals":[[419,540]]},
+      {"id":"val-rewire-05","source_id":"rewiring-video-editor-talk","category":"EXPLANATION","answerable":true,"question":"How does changing the length of a trim node affect later clips?","key_facts":["Later clips shift automatically through ripple editing."],"expected_intervals":[[594,633]]},
+      {"id":"val-rewire-06","source_id":"rewiring-video-editor-talk","category":"EXPLANATION","answerable":true,"question":"How does the node design keep multicamera editing non-destructive?","key_facts":["Camera selection stays in its own editable node and can be revisited after reordering or adding transitions."],"expected_intervals":[[785,906]]},
+      {"id":"val-rewire-07","source_id":"rewiring-video-editor-talk","category":"FACTUAL","answerable":true,"question":"What can script-based editing do when screenplay text changes?","key_facts":["It can propagate text changes to associated clips and timeline output."],"expected_intervals":[[903,955]]},
+      {"id":"val-rewire-08","source_id":"rewiring-video-editor-talk","category":"EXPLANATION","answerable":true,"question":"What cross-application use does the speaker imagine for a common node API?","key_facts":["A graphics editor could pass a motion-graphics design file into a video editor."],"expected_intervals":[[1065,1142]]},
+      {"id":"val-rewire-09","source_id":"rewiring-video-editor-talk","category":"FACTUAL","answerable":true,"question":"Why is there no working demo of the proposed editor?","key_facts":["The speaker is not a programmer and has produced mockups rather than a prototype."],"expected_intervals":[[1158,1198]]},
+      {"id":"val-rewire-10","source_id":"rewiring-video-editor-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What benchmark shows the node editor exports video faster than Adobe Premiere?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-rewire-11","source_id":"rewiring-video-editor-talk","category":"HARD_NEGATIVE","answerable":false,"question":"Which three programming languages will be used to implement the prototype?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-rewire-12","source_id":"rewiring-video-editor-talk","category":"HARD_NEGATIVE","answerable":false,"question":"How does the implemented prototype handle GPU memory limits?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-rewire-13","source_id":"rewiring-video-editor-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What happens after the completed user study confirms the design is faster?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-rewire-14","source_id":"rewiring-video-editor-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What two accessibility defects were found during keyboard testing?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-rewire-15","source_id":"rewiring-video-editor-talk","category":"ORDINARY_UNANSWERABLE","answerable":false,"question":"When will the editor be released?","key_facts":[],"expected_intervals":[]},
+
+      {"id":"val-ui-01","source_id":"ui-frameworks-talk","category":"FACTUAL","answerable":true,"question":"Why did the speaker spend three months exploring UI frameworks?","key_facts":["He needed a replacement UI approach for Coollab and compared available frameworks."],"expected_intervals":[[56,83]]},
+      {"id":"val-ui-02","source_id":"ui-frameworks-talk","category":"EXPLANATION","answerable":true,"question":"Why did Electron not fit the speaker's application?","key_facts":["Its application backend would be JavaScript, while the project needed a different native backend; native plugins looked complicated."],"expected_intervals":[[500,552]]},
+      {"id":"val-ui-03","source_id":"ui-frameworks-talk","category":"LIST_COUNT","answerable":true,"question":"What two sides must be synchronized in a Tauri application as described?","key_facts":["State changes from the Rust backend must reach the UI.","User changes in the UI must reach the Rust backend."],"expected_intervals":[[760,829]]},
+      {"id":"val-ui-04","source_id":"ui-frameworks-talk","category":"TEMPORAL","answerable":true,"question":"Which framework does the speaker discuss after explaining Tauri's state-synchronization problem?","key_facts":["Dioxus."],"expected_intervals":[[807,858]]},
+      {"id":"val-ui-05","source_id":"ui-frameworks-talk","category":"EXPLANATION","answerable":true,"question":"Why is moving rendered images between the Rust engine and web UI a problem?","key_facts":["It requires downloading from the GPU and copying across processes, adding unacceptable latency for real-time use."],"expected_intervals":[[889,942]]},
+      {"id":"val-ui-06","source_id":"ui-frameworks-talk","category":"EXPLANATION","answerable":true,"question":"Why does retained-mode UI coupling cause trouble for the speaker's engine architecture?","key_facts":["Engine values would need signals or callbacks and the reusable renderer would become coupled to a UI framework."],"expected_intervals":[[1025,1185]]},
+      {"id":"val-ui-07","source_id":"ui-frameworks-talk","category":"FACTUAL","answerable":true,"question":"How does immediate-mode UI know what to render each frame?","key_facts":["The program supplies the current engine state each frame without change-tracking callbacks."],"expected_intervals":[[1180,1245]]},
+      {"id":"val-ui-08","source_id":"ui-frameworks-talk","category":"EXPLANATION","answerable":true,"question":"What improvement does egui provide over Dear ImGui for the speaker's use case?","key_facts":["It supports more advanced layouts, including flow elements that wrap automatically."],"expected_intervals":[[1265,1349]]},
+      {"id":"val-ui-09","source_id":"ui-frameworks-talk","category":"EXPLANATION","answerable":true,"question":"What decision rule does the speaker recommend when no UI framework is perfect?","key_facts":["Identify essential non-negotiable requirements and accept problems in less important areas."],"expected_intervals":[[1380,1446]]},
+      {"id":"val-ui-10","source_id":"ui-frameworks-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What measured frame-rate improvement did egui achieve over Dear ImGui?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-ui-11","source_id":"ui-frameworks-talk","category":"HARD_NEGATIVE","answerable":false,"question":"Which three production users reported that Dioxus reduced their memory use?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-ui-12","source_id":"ui-frameworks-talk","category":"HARD_NEGATIVE","answerable":false,"question":"How does React outperform Tauri in the speaker's benchmark?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-ui-13","source_id":"ui-frameworks-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What did the speaker implement after proving that web rendering was faster than native UI?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-ui-14","source_id":"ui-frameworks-talk","category":"HARD_NEGATIVE","answerable":false,"question":"What two security vulnerabilities did the speaker find in Chromium Embedded Framework?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-ui-15","source_id":"ui-frameworks-talk","category":"ORDINARY_UNANSWERABLE","answerable":false,"question":"How many paid developers work full-time on Coollab?","key_facts":[],"expected_intervals":[]}
+    ]
+  }
+}

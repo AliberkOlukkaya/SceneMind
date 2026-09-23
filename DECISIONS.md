@@ -1,5 +1,11 @@
 # Decisions
 
+## 041 - Keep Ask Video disabled after structured-question validation failure
+
+Add a lightweight answerability contract without changing evidence retrieval: deterministic question constraints for count, temporal and selected relation forms; strict claim-level citations; explicit missing requirements; backend-derived citations; and safe abstention for malformed, uncited, incomplete-count or provider-declared insufficient responses. Pin `gpt-5.4-mini-2026-03-17`. Use 30 new development questions over two licensed sources to select one of three bounded prompt/contract designs. Freeze two further source-disjoint videos and 30 questions at SHA-256 `26646d2bf977981950e68888898522e348e6019cc39acac417a8a28acca34255` before one validation run. Do not use the observed Grounded Video Q&A V1 validation for development.
+
+Choose decision D. Validation reaches 94.44% Evidence Recall@5, 77.78% Answer Correctness, 100% Grounded Answer, 100% Citation Precision/Recall, 0% Unsupported Claims, 100% Correct Abstention, 0% False Answers and 11.11% False Abstention. Frozen `LIST_COUNT` correctness is 0/2 and `TEMPORAL` correctness 1/2, so answer correctness and no-catastrophic-category gates fail. Historical replay of the old temporal and mobile-data patterns safely abstains but is excluded from metrics. Keep `SCENEMIND_QA_ENABLED=false`; do not rerun or tune either Q&A validation. The next eligible experiment is Q&A Structured-Question Evidence V1 on wholly new development sources, with BM25 Top-5 and Find Moments frozen.
+
 ## 040 - Keep transcript-grounded Ask Video evaluation-gated after abstention failure
 
 Add a Q&A-specific evidence layer without changing production search: deterministic 45-second/900-character transcript chunks with one-segment overlap, existing BM25 Top-5 retrieval, an extensible `AnswerGenerator`, strict OpenAI Responses JSON schema, pre-provider abstention on no lexical evidence, and server-side evidence-ID-to-timestamp resolution. Reject unknown evidence IDs and answerable responses without citations. Send only the question and selected transcript text with `store: false`; never send video bytes, full transcripts, source metadata, paths, or secrets.

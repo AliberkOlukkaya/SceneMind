@@ -142,16 +142,19 @@ segment of overlap. Each chunk carries a stable evidence ID, video ID, start/end
 and underlying segment IDs. The existing BM25 implementation ranks chunks without changing
 production Speech Search.
 
-The `AnswerGenerator` boundary receives one question and at most five chunks. The OpenAI Responses
-implementation requests strict structured JSON and disables response storage. It accepts evidence
-IDs from the model, never timestamps. The backend rejects unknown IDs and answerable responses with
-no citation, then resolves IDs to original timestamps. No positive lexical evidence causes a
-pre-provider abstention.
+The `AnswerGenerator` boundary receives one question and at most five chunks. A bounded analyzer
+extracts explicit count, temporal and relation constraints. The OpenAI Responses implementation
+requests strict structured JSON with an answerability decision, separately cited claims and missing
+requirements; response storage is disabled. The model returns evidence IDs, never timestamps. The
+backend rejects unknown IDs, uncited claims, declared evidence gaps and wrong explicit claim counts,
+derives displayed citations from the validated claim set, and resolves them to original timestamps.
+An invalid contract safely abstains. No positive lexical evidence causes a pre-provider abstention.
 
 `POST /videos/{id}/ask` requires a ready video, ready non-empty transcript, the feature gate and a
 local provider key. `GET /videos/{id}/ask/status` exposes only enabled/configured state and model
 name. Upload and URL provenance do not alter this path. The feature is disabled by default after
-Decision D; Find Moments retrieval modules and expected values are unchanged.
+Decision D; frozen validation passed safety but failed answer correctness and structured-question
+categories. Find Moments and Q&A evidence retrieval modules and expected values are unchanged.
 
 ## Failure handling
 
