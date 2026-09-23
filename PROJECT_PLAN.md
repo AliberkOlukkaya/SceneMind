@@ -16,11 +16,11 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Q&A Abstention Safety V1 is complete with Decision D. A claim-level structured contract eliminated false answers and unsupported claims on 30 new frozen validation questions, while frozen list/count correctness reached 0/2 and temporal correctness 1/2. Ask Video remains evaluation-gated. The next bounded milestone is Q&A Structured-Question Evidence V1 on new sources; both observed Q&A validation sets remain frozen and evaluation-only.
+Q&A Structured-Question Evidence V1 is complete with Decision D — safety regression. Bounded list neighbors and segment-level temporal anchors were developed on 36 new questions, then run once on 36 questions from two source-disjoint videos. Overall correctness was 72.22%, list and temporal correctness were each 62.50%, and three of ten hard negatives received false answers. Ask Video remains disabled, production search is unchanged, and all three observed Q&A validations are frozen evaluation-only. Any future Q&A safety work requires new sources and a predeclared semantic premise/anchor design; Final Ask Video Acceptance is not eligible.
 
 SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Grounded Video Q&A V1 is implemented but remains disabled after frozen abstention-safety gates failed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
 
-URL ingestion is complete without reopening search-core ML research. Q&A safety now passes its abstention, grounding, citation and unsupported-claim gates, but overall correctness and structured categories fail. Any next Q&A work must use new development evidence for count/list completeness and temporal anchors. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
+URL ingestion is complete without reopening search-core ML research. The structured Q&A expansion failed both utility and protected safety gates, so it is rejected. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
 
 ## Future work
 

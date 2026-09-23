@@ -4,6 +4,8 @@ SceneMind is a single-operator, local-first video search application. Its produc
 core is frozen at five-second frame sampling, CLIP/FAISS Visual retrieval, Whisper/BM25 Speech
 retrieval and uncapped RRF60 Hybrid ranking.
 
+Ask Video remains disabled. Its rejected Structured-Question Evidence V1 branch preserves the existing 45-second/900-character BM25 Top-5 base. Ordinary questions use that list unchanged. Explicit list/count questions may add at most three deduplicated adjacent chunks. Temporal questions localize a lexical anchor over one- or two-segment windows and add at most two transcript segments strictly before or after it. Total evidence is bounded to eight units, 6,000 characters and a 90-second local window. The backend validates evidence roles, timestamp direction, exact explicit list count, distinct claims and server-resolved citations. Frozen validation showed that these structural checks do not validate semantic premise or type compatibility, so the branch is not production architecture and the feature flag stays off.
+
 ## End-to-end data flow
 
 ```mermaid
@@ -142,19 +144,21 @@ segment of overlap. Each chunk carries a stable evidence ID, video ID, start/end
 and underlying segment IDs. The existing BM25 implementation ranks chunks without changing
 production Speech Search.
 
-The `AnswerGenerator` boundary receives one question and at most five chunks. A bounded analyzer
-extracts explicit count, temporal and relation constraints. The OpenAI Responses implementation
-requests strict structured JSON with an answerability decision, separately cited claims and missing
-requirements; response storage is disabled. The model returns evidence IDs, never timestamps. The
-backend rejects unknown IDs, uncited claims, declared evidence gaps and wrong explicit claim counts,
-derives displayed citations from the validated claim set, and resolves them to original timestamps.
-An invalid contract safely abstains. No positive lexical evidence causes a pre-provider abstention.
+The `AnswerGenerator` boundary receives one question and the selected evidence. Ordinary questions
+retain at most five chunks. The rejected structured branch can expand to eight bounded evidence
+units. A deterministic analyzer extracts explicit count, temporal and relation constraints. The
+OpenAI Responses implementation requests strict structured JSON with an answerability decision,
+separately cited claims, temporal roles and missing requirements; response storage is disabled. The
+model returns evidence IDs, never timestamps. The backend rejects unknown IDs, uncited claims,
+declared evidence gaps, duplicate list claims, wrong explicit counts, invalid temporal roles and
+wrong timestamp direction, then resolves citations to original timestamps. An invalid contract
+safely abstains. No positive lexical evidence causes a pre-provider abstention.
 
 `POST /videos/{id}/ask` requires a ready video, ready non-empty transcript, the feature gate and a
 local provider key. `GET /videos/{id}/ask/status` exposes only enabled/configured state and model
 name. Upload and URL provenance do not alter this path. The feature is disabled by default after
-Decision D; frozen validation passed safety but failed answer correctness and structured-question
-categories. Find Moments and Q&A evidence retrieval modules and expected values are unchanged.
+Decision D; structured validation failed correctness, grounding, citation, abstention and
+hard-negative safety gates. Find Moments, BM25 Top-5 and general transcript chunking are unchanged.
 
 ## Failure handling
 

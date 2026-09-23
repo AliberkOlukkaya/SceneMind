@@ -1,5 +1,11 @@
 # Decisions
 
+## 042 - Reject structured evidence expansion after safety regression
+
+Keep global BM25 Top-5 and general transcript chunking frozen. On two new development sources, compare two predeclared bounded expansions and select at most three deduplicated list neighbors plus two direction-specific temporal segments, capped at eight evidence units, 6,000 characters and 90 seconds. Freeze 36 questions over two further source-disjoint videos at manifest SHA-256 `27e43fb83b7d039abe160828d3d0f19f9e2b56a2ef223a78e6bde7f4f8c85d9f` and run validation once with `gpt-5.4-mini-2026-03-17`.
+
+Choose Decision D — safety regression. Base and expanded evidence recall are both 92.31%; list completeness is 87.50% and temporal pair recall is 75.00%. Human answer correctness is 72.22%, list and temporal correctness are each 62.50%, unsupported claims are 20.75%, correct abstention is 70.00%, and three of ten hard negatives receive false answers. Only ordinary non-regression passes. Skip the second frozen run, do not promote the branch, keep `SCENEMIND_QA_ENABLED=false`, and leave production search unchanged. Any later attempt needs wholly new data and an explicit premise/type and semantic-anchor safety design.
+
 ## 041 - Keep Ask Video disabled after structured-question validation failure
 
 Add a lightweight answerability contract without changing evidence retrieval: deterministic question constraints for count, temporal and selected relation forms; strict claim-level citations; explicit missing requirements; backend-derived citations; and safe abstention for malformed, uncited, incomplete-count or provider-declared insufficient responses. Pin `gpt-5.4-mini-2026-03-17`. Use 30 new development questions over two licensed sources to select one of three bounded prompt/contract designs. Freeze two further source-disjoint videos and 30 questions at SHA-256 `26646d2bf977981950e68888898522e348e6019cc39acac417a8a28acca34255` before one validation run. Do not use the observed Grounded Video Q&A V1 validation for development.

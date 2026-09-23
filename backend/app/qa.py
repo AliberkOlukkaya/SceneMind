@@ -4,7 +4,7 @@ import json
 import re
 import time
 from abc import ABC, abstractmethod
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 
 import httpx
 from fastapi import APIRouter, HTTPException
@@ -33,6 +33,21 @@ QA_INSTRUCTIONS = (
     "evidence_ids, and claims. When answerable=true, unsupported_or_missing must be empty. Cite "
     "only IDs from the supplied evidence and keep the answer concise."
 )
+QA_STRUCTURED_INSTRUCTIONS = QA_INSTRUCTIONS + (
+    " Evidence labels identify bounded structured context. For temporal questions, cite at least "
+    "one TEMPORAL_ANCHOR evidence ID and at least one TEMPORAL_TARGET ID, and return those IDs in "
+    "their dedicated arrays. The anchor establishes ordering and does not need to be repeated on "
+    "an answer claim unless it also supports that claim. The target must be in the requested "
+    "direction. The top-level evidence_ids must contain exactly the union of claim evidence_ids. "
+    "For explicit lists, "
+    "return exactly the requested number of distinct claims; do not split one requirement into "
+    "synonyms or omit a required item merely to reach the count. Leave both temporal ID arrays "
+    "empty for non-temporal questions."
+)
+MAX_STRUCTURED_EVIDENCE = 8
+MAX_ADDITIONAL_EVIDENCE = 3
+MAX_STRUCTURED_CHARACTERS = 6000
+MAX_EXPANSION_SECONDS = 90.0
 
 
 @dataclass(frozen=True)
@@ -43,6 +58,17 @@ class EvidenceChunk:
     end_seconds: float
     text: str
     segment_ids: tuple[int, ...]
+    role: str = "RELEVANT"
+
+
+@dataclass(frozen=True)
+class EvidenceSelection:
+    base: tuple[EvidenceChunk, ...]
+    expanded: tuple[EvidenceChunk, ...]
+    added_count: int
+    added_characters: int
+    temporal_span_seconds: float
+    expansion_ms: float
 
 
 class AskRequest(BaseModel):
@@ -55,6 +81,8 @@ class GeneratedAnswer(BaseModel):
     evidence_ids: list[str] = Field(max_length=5)
     claims: list["GeneratedClaim"] = Field(max_length=8)
     unsupported_or_missing: list[str] = Field(max_length=8)
+    temporal_anchor_ids: list[str] = Field(max_length=3)
+    temporal_target_ids: list[str] = Field(max_length=3)
 
 
 class GeneratedClaim(BaseModel):
@@ -66,6 +94,7 @@ class GeneratedClaim(BaseModel):
 class QuestionConstraints:
     requested_count: int | None = None
     temporal_relation: str | None = None
+    temporal_anchor: str | None = None
     relation_types: tuple[str, ...] = ()
 
 
@@ -97,14 +126,32 @@ def analyze_question(question: str) -> QuestionConstraints:
             if count_match.group(1)
             else _NUMBER_WORDS[count_match.group(2)]
         )
-    temporal_relation = next(
+    temporal_term = next(
         (
             word
-            for word in ("before", "after", "then", "next", "previously", "later")
-            if re.search(rf"\b{word}\b", lowered)
+            for word in (
+                "prior to",
+                "before",
+                "after",
+                "following",
+                "then",
+                "next",
+                "previously",
+                "later",
+            )
+            if re.search(rf"\b{re.escape(word)}\b", lowered)
         ),
         None,
     )
+    temporal_relation = None
+    temporal_anchor = None
+    if temporal_term:
+        temporal_relation = (
+            "BEFORE" if temporal_term in {"before", "previously", "prior to"} else "AFTER"
+        )
+        anchor_match = re.search(rf"\b{re.escape(temporal_term)}\b\s+(.+?)(?:\?|$)", lowered)
+        if anchor_match:
+            temporal_anchor = anchor_match.group(1).strip(" .")
     relations = []
     if re.search(r"\b(?:why|cause|causes|reason|reasons)\b", lowered):
         relations.append("cause_or_reason")
@@ -116,7 +163,9 @@ def analyze_question(question: str) -> QuestionConstraints:
         relations.append("list")
     if temporal_relation:
         relations.append("temporal")
-    return QuestionConstraints(requested_count, temporal_relation, tuple(relations))
+    return QuestionConstraints(
+        requested_count, temporal_relation, temporal_anchor, tuple(relations)
+    )
 
 
 class AnswerGenerator(ABC):
@@ -173,6 +222,218 @@ def retrieve_evidence(question: str, chunks: list[EvidenceChunk], k: int | None 
     return [chunks[index] for index in ranked if scores[index] > 0][: k or settings.qa_top_k]
 
 
+def _within_budget(selected: list[EvidenceChunk], candidate: EvidenceChunk) -> bool:
+    if candidate.evidence_id in {item.evidence_id for item in selected}:
+        return False
+    if len(selected) >= MAX_STRUCTURED_EVIDENCE:
+        return False
+    return sum(len(item.text) for item in [*selected, candidate]) <= MAX_STRUCTURED_CHARACTERS
+
+
+def _with_role(chunk: EvidenceChunk, role: str) -> EvidenceChunk:
+    return replace(chunk, role=role)
+
+
+def _segment_evidence(video_id: str, segment, role: str) -> EvidenceChunk:
+    return EvidenceChunk(
+        evidence_id=f"T{int(segment.id):04d}",
+        video_id=video_id,
+        start_seconds=round(float(segment.start), 3),
+        end_seconds=round(float(segment.end), 3),
+        text=segment.text.strip(),
+        segment_ids=(int(segment.id),),
+        role=role,
+    )
+
+
+_ANCHOR_STOP_WORDS = {
+    "a",
+    "an",
+    "and",
+    "are",
+    "does",
+    "explaining",
+    "in",
+    "is",
+    "it",
+    "of",
+    "says",
+    "saying",
+    "speaker",
+    "that",
+    "the",
+    "to",
+    "video",
+}
+
+
+def _normalized_terms(text: str) -> set[str]:
+    terms = set()
+    for term in re.findall(r"[a-z0-9]+", text.casefold()):
+        if term in _ANCHOR_STOP_WORDS:
+            continue
+        if term.endswith("ies") and len(term) > 4:
+            term = f"{term[:-3]}y"
+        elif term.endswith("ing") and len(term) > 5:
+            term = term[:-3]
+        elif term.endswith("ed") and len(term) > 4:
+            term = term[:-2]
+        elif term.endswith("s") and len(term) > 3:
+            term = term[:-1]
+        terms.add(term)
+    return terms
+
+
+def _localize_temporal_anchor(anchor_text: str, segments: list, video_id: str):
+    """Choose the smallest adjacent segment window with strongest anchor coverage."""
+    candidates = []
+    for index, segment in enumerate(segments):
+        candidates.append(_segment_evidence(video_id, segment, "TEMPORAL_ANCHOR"))
+        if index + 1 < len(segments):
+            following = segments[index + 1]
+            candidates.append(
+                EvidenceChunk(
+                    evidence_id=f"T{int(segment.id):04d}-{int(following.id):04d}",
+                    video_id=video_id,
+                    start_seconds=round(float(segment.start), 3),
+                    end_seconds=round(float(following.end), 3),
+                    text=f"{segment.text.strip()} {following.text.strip()}",
+                    segment_ids=(int(segment.id), int(following.id)),
+                    role="TEMPORAL_ANCHOR",
+                )
+            )
+    query_terms = _normalized_terms(anchor_text)
+    lexical_scores = bm25(anchor_text, [item.text for item in candidates])
+    ranked = sorted(
+        enumerate(candidates),
+        key=lambda pair: (
+            -len(query_terms & _normalized_terms(pair[1].text)),
+            -lexical_scores[pair[0]],
+            len(pair[1].segment_ids),
+            pair[1].start_seconds,
+        ),
+    )
+    return ranked[0][1] if ranked and lexical_scores[ranked[0][0]] > 0 else None
+
+
+def expand_structured_evidence(
+    question: str,
+    chunks: list[EvidenceChunk],
+    base_evidence: list[EvidenceChunk],
+    *,
+    segments: list | None = None,
+    max_list_additions: int = MAX_ADDITIONAL_EVIDENCE,
+    temporal_neighbor_count: int = 2,
+) -> EvidenceSelection:
+    """Conditionally add a small, ordered neighborhood for structured questions."""
+    started = time.perf_counter()
+    constraints = analyze_question(question)
+    selected = list(base_evidence)
+    original_ids = {item.evidence_id for item in selected}
+    index_by_id = {item.evidence_id: index for index, item in enumerate(chunks)}
+
+    if constraints.temporal_relation and constraints.temporal_anchor:
+        temporal_units = chunks
+        anchor = None
+        if segments and chunks:
+            temporal_units = [
+                _segment_evidence(chunks[0].video_id, segment, "RELEVANT") for segment in segments
+            ]
+            anchor = _localize_temporal_anchor(
+                constraints.temporal_anchor, segments, chunks[0].video_id
+            )
+        else:
+            anchors = retrieve_evidence(constraints.temporal_anchor, temporal_units, k=3)
+            anchor = anchors[0] if anchors else None
+        if anchor:
+            if segments:
+                positions = {int(segment.id): index for index, segment in enumerate(segments)}
+                anchor_index = (
+                    positions[anchor.segment_ids[-1]]
+                    if constraints.temporal_relation == "AFTER"
+                    else positions[anchor.segment_ids[0]]
+                )
+            else:
+                temporal_index_by_id = {
+                    item.evidence_id: index for index, item in enumerate(temporal_units)
+                }
+                anchor_index = temporal_index_by_id[anchor.evidence_id]
+            selected = [
+                _with_role(item, "TEMPORAL_ANCHOR")
+                if item.evidence_id == anchor.evidence_id
+                else item
+                for item in selected
+            ]
+            if anchor.evidence_id not in {item.evidence_id for item in selected} and _within_budget(
+                selected, anchor
+            ):
+                selected.append(_with_role(anchor, "TEMPORAL_ANCHOR"))
+            direction = 1 if constraints.temporal_relation == "AFTER" else -1
+            for distance in range(1, temporal_neighbor_count + 1):
+                target_index = anchor_index + direction * distance
+                if not 0 <= target_index < len(temporal_units):
+                    continue
+                target = temporal_units[target_index]
+                span = (
+                    target.end_seconds - anchor.start_seconds
+                    if direction == 1
+                    else anchor.end_seconds - target.start_seconds
+                )
+                if span > MAX_EXPANSION_SECONDS:
+                    continue
+                replacement = _with_role(target, "TEMPORAL_TARGET")
+                found = next(
+                    (
+                        index
+                        for index, item in enumerate(selected)
+                        if item.evidence_id == target.evidence_id
+                    ),
+                    None,
+                )
+                if found is not None:
+                    selected[found] = replacement
+                elif _within_budget(selected, replacement):
+                    selected.append(replacement)
+    elif constraints.requested_count is not None or "list" in constraints.relation_types:
+        candidates = []
+        for item in base_evidence:
+            index = index_by_id[item.evidence_id]
+            for neighbor_index in (index - 1, index + 1):
+                if 0 <= neighbor_index < len(chunks):
+                    neighbor = chunks[neighbor_index]
+                    span = max(
+                        abs(neighbor.start_seconds - item.start_seconds),
+                        abs(neighbor.end_seconds - item.end_seconds),
+                    )
+                    if span <= MAX_EXPANSION_SECONDS:
+                        candidates.append(_with_role(neighbor, "LIST_NEIGHBOR"))
+        for candidate in candidates:
+            if len({item.evidence_id for item in selected} - original_ids) >= max_list_additions:
+                break
+            if _within_budget(selected, candidate):
+                selected.append(candidate)
+
+    deduplicated = list(dict((item.evidence_id, item) for item in selected).values())
+    added = [item for item in deduplicated if item.evidence_id not in original_ids]
+    temporal_evidence = [
+        item for item in deduplicated if item.role in {"TEMPORAL_ANCHOR", "TEMPORAL_TARGET"}
+    ]
+    span = (
+        max(item.end_seconds for item in temporal_evidence)
+        - min(item.start_seconds for item in temporal_evidence)
+        if constraints.temporal_relation and temporal_evidence
+        else 0.0
+    )
+    return EvidenceSelection(
+        base=tuple(base_evidence),
+        expanded=tuple(deduplicated),
+        added_count=len(added),
+        added_characters=sum(len(item.text) for item in added),
+        temporal_span_seconds=span,
+        expansion_ms=(time.perf_counter() - started) * 1000,
+    )
+
+
 class OpenAIAnswerGenerator(AnswerGenerator):
     endpoint = "https://api.openai.com/v1/responses"
 
@@ -180,7 +441,9 @@ class OpenAIAnswerGenerator(AnswerGenerator):
         self.api_key = api_key if api_key is not None else settings.openai_api_key
 
     def _payload(self, question: str, evidence: list[EvidenceChunk]) -> dict:
-        evidence_text = "\n\n".join(f"{item.evidence_id}: {item.text}" for item in evidence)
+        evidence_text = "\n\n".join(
+            f"{item.evidence_id} [{item.role}]: {item.text}" for item in evidence
+        )
         constraints = analyze_question(question)
         constraint_text = json.dumps(asdict(constraints), separators=(",", ":"))
         claim_schema = {
@@ -213,6 +476,16 @@ class OpenAIAnswerGenerator(AnswerGenerator):
                     "items": {"type": "string"},
                     "maxItems": 8,
                 },
+                "temporal_anchor_ids": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "maxItems": 3,
+                },
+                "temporal_target_ids": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "maxItems": 3,
+                },
             },
             "required": [
                 "answerable",
@@ -220,13 +493,15 @@ class OpenAIAnswerGenerator(AnswerGenerator):
                 "evidence_ids",
                 "claims",
                 "unsupported_or_missing",
+                "temporal_anchor_ids",
+                "temporal_target_ids",
             ],
             "additionalProperties": False,
         }
         return {
             "model": settings.qa_model,
             "store": False,
-            "instructions": QA_INSTRUCTIONS,
+            "instructions": QA_STRUCTURED_INSTRUCTIONS,
             "input": (
                 f"Question: {question}\n"
                 f"Deterministic question constraints: {constraint_text}\n\n"
@@ -300,7 +575,12 @@ def resolve_answer(
 ) -> dict:
     lookup = {item.evidence_id: item for item in evidence}
     claim_ids = [item for claim in generated.claims for item in claim.evidence_ids]
-    unknown = [item for item in [*generated.evidence_ids, *claim_ids] if item not in lookup]
+    structured_ids = [*generated.temporal_anchor_ids, *generated.temporal_target_ids]
+    unknown = [
+        item
+        for item in [*generated.evidence_ids, *claim_ids, *structured_ids]
+        if item not in lookup
+    ]
     if unknown:
         raise HTTPException(502, "The answer provider returned an invalid evidence citation.")
     if not generated.answerable:
@@ -313,14 +593,49 @@ def resolve_answer(
         or not generated.answer.strip()
         or not generated.claims
         or bool(generated.unsupported_or_missing)
-        or not set(generated.evidence_ids).issubset(set(claim_citation_ids))
+        or (
+            not constraints.temporal_relation
+            and not set(generated.evidence_ids).issubset(set(claim_citation_ids))
+        )
         or (
             constraints.requested_count is not None
             and len(generated.claims) != constraints.requested_count
         )
+        or len({claim.text.strip().casefold() for claim in generated.claims})
+        != len(generated.claims)
     )
+    if constraints.temporal_relation:
+        anchors = [lookup[item] for item in generated.temporal_anchor_ids]
+        targets = [lookup[item] for item in generated.temporal_target_ids]
+        roles_valid = all(item.role == "TEMPORAL_ANCHOR" for item in anchors) and all(
+            item.role == "TEMPORAL_TARGET" for item in targets
+        )
+        if constraints.temporal_relation == "AFTER":
+            ordered = any(
+                target.start_seconds > anchor.start_seconds
+                and target.end_seconds > anchor.end_seconds
+                for anchor in anchors
+                for target in targets
+            )
+        else:
+            ordered = any(
+                target.start_seconds < anchor.start_seconds
+                and target.end_seconds < anchor.end_seconds
+                for anchor in anchors
+                for target in targets
+            )
+        contract_invalid = contract_invalid or not anchors or not targets or not ordered
+        contract_invalid = contract_invalid or not roles_valid
+    elif structured_ids:
+        contract_invalid = True
     if contract_invalid:
         return {"answerable": False, "answer": ABSTENTION, "citations": []}
+    if constraints.temporal_relation:
+        citation_ids = list(
+            dict.fromkeys(
+                [*generated.temporal_anchor_ids, *generated.temporal_target_ids, *citation_ids]
+            )
+        )
     return {
         "answerable": True,
         "answer": generated.answer.strip(),
@@ -365,8 +680,11 @@ def ask_video(video_id: str, request: AskRequest):
     if not segments:
         raise HTTPException(409, "The transcript contains no spoken evidence.")
     retrieval_started = time.perf_counter()
-    evidence = retrieve_evidence(question, chunk_segments(folder.name, segments))
+    chunks = chunk_segments(folder.name, segments)
+    base_evidence = retrieve_evidence(question, chunks)
     retrieval_ms = (time.perf_counter() - retrieval_started) * 1000
+    selection = expand_structured_evidence(question, chunks, base_evidence, segments=list(segments))
+    evidence = list(selection.expanded)
     if not evidence:
         return {
             "answerable": False,
@@ -376,6 +694,7 @@ def ask_video(video_id: str, request: AskRequest):
             "usage": {"provider": "none", "model": None, "input_tokens": 0, "output_tokens": 0},
             "latency_ms": {
                 "retrieval": retrieval_ms,
+                "expansion": selection.expansion_ms,
                 "generation": 0,
                 "total": (time.perf_counter() - started) * 1000,
             },
@@ -390,7 +709,14 @@ def ask_video(video_id: str, request: AskRequest):
         "usage": usage,
         "latency_ms": {
             "retrieval": retrieval_ms,
+            "expansion": selection.expansion_ms,
             "generation": generation_ms,
             "total": (time.perf_counter() - started) * 1000,
+        },
+        "evidence_budget": {
+            "initial_count": len(selection.base),
+            "expanded_count": len(selection.expanded),
+            "added_characters": selection.added_characters,
+            "temporal_span_seconds": selection.temporal_span_seconds,
         },
     }

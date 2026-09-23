@@ -111,7 +111,8 @@
 - [x] Develop Q&A abstention safety only on new development evidence; never tune on frozen validation
 - [x] Freeze and run one new two-source, 30-question validation with manual claim/citation review
 - [x] Record Decision D after correctness and structured-category gates fail despite passing safety gates
-- [ ] Develop structured-question evidence handling only on new sources; keep both Q&A validations frozen
+- [x] Develop and freeze structured-question evidence handling on new sources; reject it after safety and structured-quality gates fail
+- [x] Keep all three observed Q&A validations frozen and Ask Video disabled
 
 ## Future work — not active v1.0 tasks
 

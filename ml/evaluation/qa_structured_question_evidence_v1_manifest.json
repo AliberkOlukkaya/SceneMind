@@ -1,0 +1,1559 @@
+{
+  "schema_version": 1,
+  "suite_id": "qa-structured-question-evidence-v1",
+  "construction": "All questions and human-verifiable intervals were authored from full local Whisper transcript review before any structured Q&A run. Prior Grounded Video Q&A and Q&A Abstention Safety sources/questions are excluded.",
+  "predeclared_development_candidates": [
+    {
+      "id": "A",
+      "max_list_additions": 2,
+      "temporal_neighbor_count": 1
+    },
+    {
+      "id": "B",
+      "max_list_additions": 3,
+      "temporal_neighbor_count": 2
+    }
+  ],
+  "frozen_configuration": {
+    "retrieval": "unchanged deterministic 45-second/900-character overlapping chunks and BM25 Top-5",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "generation_parameters": "Responses API defaults; strict JSON schema; store=false",
+    "question_rules": "deterministic list/count and before/after/following/prior-to/then/next/previously/later detection",
+    "structured_limits": {
+      "max_total_evidence": 8,
+      "max_added_chunks": 3,
+      "max_characters": 6000,
+      "max_temporal_seconds": 90,
+      "temporal_neighbor_chunks": 2
+    },
+    "answerability_rule": "Direct and complete support; exact explicit list count; verified temporal anchor, target, direction and citations; otherwise abstain.",
+    "prompt_version": "qa-structured-question-evidence-v1",
+    "prompt_sha256": "54e1ef84cd285fe02613f7ba4f93b5460847063ac71ba88555b7d0f61a9eeec4",
+    "implementation_sha256": "9e04656b27681ac37dd3640fadee5464a8a9fa6d0d8d60afbb737ffca5ca316e"
+  },
+  "development": {
+    "sources": [
+      {
+        "source_id": "good-sources-explainer",
+        "title": "Explainer Video - Using good sources on Wikipedia",
+        "url": "https://commons.wikimedia.org/wiki/File:Explainer_Video_-_Using_good_sources_on_wikipedia.webm",
+        "license": "CC BY-SA 4.0",
+        "sha256": "84ce8c9c0fcc2b9da8870d6cd73c8d83707f9b5d6741537fb8e5507e25b97a17",
+        "duration_seconds": 130.96
+      },
+      {
+        "source_id": "blended-learning-explainer",
+        "title": "Blended learning",
+        "url": "https://commons.wikimedia.org/wiki/File:Blended-learning.webm",
+        "license": "CC BY-SA 4.0",
+        "sha256": "ee1f33f4fa9eb27e8c660f443b6804fabe648801535e848f1ce59d92bfe752cf",
+        "duration_seconds": 386.5
+      }
+    ],
+    "questions": [
+      {
+        "id": "dev-wiki-01",
+        "source_id": "good-sources-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why are Wikipedia articles written from a neutral point of view?",
+        "key_facts": [
+          "Many people hold conflicting opinions, especially on political and religious topics."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            24,
+            37
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-02",
+        "source_id": "good-sources-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "How does John let readers verify where his knowledge comes from?",
+        "key_facts": [
+          "He cites and links to his sources."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            56,
+            64
+          ],
+          [
+            104,
+            115
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-03",
+        "source_id": "good-sources-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why does John avoid citing Anna's personal blog?",
+        "key_facts": [
+          "It may not report events from a neutral point of view."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            86,
+            95
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-04",
+        "source_id": "good-sources-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Which fact does the video give as an example that does not require a citation?",
+        "key_facts": [
+          "The Earth is round, more precisely an oblate spheroid."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            115,
+            126
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-05",
+        "source_id": "good-sources-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What is John trying to write about?",
+        "key_facts": [
+          "The beginning of the universe."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            5,
+            13
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-06",
+        "source_id": "good-sources-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three kinds of good sources does the video name?",
+        "key_facts": [
+          "Technical books.",
+          "Academic publications.",
+          "Well-researched press articles."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            71,
+            79
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-07",
+        "source_id": "good-sources-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two things does John do to make his sourcing transparent to readers?",
+        "key_facts": [
+          "He shows where his knowledge comes from.",
+          "He links to the sources so readers can inspect them."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            56,
+            64
+          ],
+          [
+            104,
+            115
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-08",
+        "source_id": "good-sources-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two types of topics are said to often lead to conflict?",
+        "key_facts": [
+          "Political topics.",
+          "Religious topics."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            24,
+            30
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-09",
+        "source_id": "good-sources-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two source types does John reject for his own article?",
+        "key_facts": [
+          "Anna's personal blog.",
+          "Other Wikipedia articles."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            86,
+            104
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-10",
+        "source_id": "good-sources-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does John do after listing various theories about the beginning of the universe?",
+        "key_facts": [
+          "He does not say which theories he believes or rejects."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          37,
+          45
+        ],
+        "target_interval": [
+          45,
+          51
+        ],
+        "expected_evidence_intervals": [
+          [
+            37,
+            51
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-11",
+        "source_id": "good-sources-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does the video explain after saying that John's claim about Anna needs a good source?",
+        "key_facts": [
+          "It names technical books, academic publications and well-researched press articles as good sources."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          64,
+          71
+        ],
+        "target_interval": [
+          71,
+          79
+        ],
+        "expected_evidence_intervals": [
+          [
+            64,
+            79
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-12",
+        "source_id": "good-sources-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What is discussed before the video says that John links to his sources?",
+        "key_facts": [
+          "John avoids citing other Wikipedia articles because that would create a vicious circle."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          104,
+          110
+        ],
+        "target_interval": [
+          95,
+          104
+        ],
+        "expected_evidence_intervals": [
+          [
+            95,
+            110
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-13",
+        "source_id": "good-sources-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What happens after the narrator says online sources can also be used?",
+        "key_facts": [
+          "The narrator warns that online sources must be trustworthy and explains why John rejects Anna's personal blog."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          79,
+          86
+        ],
+        "target_interval": [
+          86,
+          95
+        ],
+        "expected_evidence_intervals": [
+          [
+            79,
+            95
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-wiki-14",
+        "source_id": "good-sources-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What two peer-review scores does the video assign to technical books and press articles?",
+        "key_facts": [],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The source types are named but no scores are given."
+      },
+      {
+        "id": "dev-wiki-15",
+        "source_id": "good-sources-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What happened after Anna returned from the moon?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": [
+          64,
+          71
+        ],
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "Anna is only a hypothetical sourcing example."
+      },
+      {
+        "id": "dev-wiki-16",
+        "source_id": "good-sources-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Which university published the academic source John uses?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No specific publication or university is named."
+      },
+      {
+        "id": "dev-wiki-17",
+        "source_id": "good-sources-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What three political theories does John ultimately reject?",
+        "key_facts": [],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The theories are not named and John stays neutral."
+      },
+      {
+        "id": "dev-wiki-18",
+        "source_id": "good-sources-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Why does Wikipedia ban all online sources?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The video says trustworthy online sources may be used."
+      },
+      {
+        "id": "dev-blend-01",
+        "source_id": "blended-learning-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What is blended learning?",
+        "key_facts": [
+          "Teaching that combines online resources with in-person instruction to create a more personalized environment."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            3,
+            14
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-02",
+        "source_id": "blended-learning-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why do teachers often lecture to the mythical middle?",
+        "key_facts": [
+          "They have limited information about individual knowledge levels and must estimate the audience level."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            45,
+            71
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-03",
+        "source_id": "blended-learning-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "How does mastery-based learning decide when a student moves forward?",
+        "key_facts": [
+          "The student moves forward after demonstrating confident application of the material."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            230,
+            260
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-04",
+        "source_id": "blended-learning-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why can moving group work into class help?",
+        "key_facts": [
+          "It simplifies meeting logistics and lets the instructor observe and facilitate groups."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            139,
+            161
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-05",
+        "source_id": "blended-learning-explainer",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What does the video mean by changing the teacher from a sage on the stage to a guide on the side?",
+        "key_facts": [
+          "The teacher shifts from passive lecturing to active one-on-one guidance."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            184,
+            201
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-06",
+        "source_id": "blended-learning-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three things can less-familiar students do with online material to help them understand it?",
+        "key_facts": [
+          "Pause to take notes.",
+          "Rewatch it.",
+          "Use other resources."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            81,
+            91
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-07",
+        "source_id": "blended-learning-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three qualities must technical resources have for blended learning?",
+        "key_facts": [
+          "Affordable.",
+          "Reliable.",
+          "Easy to use for students and teachers."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            260,
+            275
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-08",
+        "source_id": "blended-learning-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two problems arise when a lecture is pitched at the wrong level?",
+        "key_facts": [
+          "Students are lost if it is too difficult.",
+          "Students are bored if it is too easy."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            45,
+            64
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-09",
+        "source_id": "blended-learning-explainer",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two ways can instructors encourage students to consume online materials and arrive prepared?",
+        "key_facts": [
+          "Tie in-class assignments closely to online content.",
+          "Track consumption with learning platforms."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            283,
+            302
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-10",
+        "source_id": "blended-learning-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What benefit is described after the video explains that students can pause, rewatch, or use other resources?",
+        "key_facts": [
+          "Students can engage when they are most alert, whether early birds or night owls."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          81,
+          91
+        ],
+        "target_interval": [
+          91,
+          105
+        ],
+        "expected_evidence_intervals": [
+          [
+            81,
+            105
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-11",
+        "source_id": "blended-learning-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does the narrator explain after describing the frustration of applying a concept at home?",
+        "key_facts": [
+          "Research supports active work over passive listening, and teachers can help during in-class assignments."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          116,
+          125
+        ],
+        "target_interval": [
+          125,
+          139
+        ],
+        "expected_evidence_intervals": [
+          [
+            116,
+            139
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-12",
+        "source_id": "blended-learning-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What is explained before the video introduces the mastery-based model?",
+        "key_facts": [
+          "Traditional classes move everyone at the same pace and advance despite differing performance or knowledge gaps."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          230,
+          235
+        ],
+        "target_interval": [
+          210,
+          230
+        ],
+        "expected_evidence_intervals": [
+          [
+            210,
+            235
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-13",
+        "source_id": "blended-learning-explainer",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What challenge is introduced after the video says technical resources must be affordable, reliable, and easy to use?",
+        "key_facts": [
+          "People unfamiliar with classroom technology may face a learning curve."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          266,
+          275
+        ],
+        "target_interval": [
+          275,
+          283
+        ],
+        "expected_evidence_intervals": [
+          [
+            266,
+            283
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "dev-blend-14",
+        "source_id": "blended-learning-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What three learning platforms does the narrator recommend?",
+        "key_facts": [],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "Platforms are mentioned generically; none are named."
+      },
+      {
+        "id": "dev-blend-15",
+        "source_id": "blended-learning-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What happens after every student receives a laptop from the school?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No laptop distribution occurs in the video."
+      },
+      {
+        "id": "dev-blend-16",
+        "source_id": "blended-learning-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Which study found that flipped classrooms improve exam scores by 25 percent?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No study or percentage is supplied."
+      },
+      {
+        "id": "dev-blend-17",
+        "source_id": "blended-learning-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What two disabilities does the video say benefit most from blended learning?",
+        "key_facts": [],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "Students with disabilities are mentioned without named disabilities or ranking."
+      },
+      {
+        "id": "dev-blend-18",
+        "source_id": "blended-learning-explainer",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Why does blended learning eliminate face-to-face interaction?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The video explicitly says it does not eliminate face-to-face interaction."
+      }
+    ]
+  },
+  "validation": {
+    "sources": [
+      {
+        "source_id": "homemade-pasta-instruction",
+        "title": "Cooking with Laura: Homemade Pasta",
+        "url": "https://commons.wikimedia.org/wiki/File:Cooking_with_Laura_Homemade_Pasta.webm",
+        "license": "CC BY 3.0",
+        "sha256": "dc2830bf5ac94dc7ba7d723d4375eb419849e724162185099b5acadcef786dc4",
+        "duration_seconds": 669.55
+      },
+      {
+        "source_id": "internet-language-talk",
+        "title": "Let's change the default language of the Internet",
+        "url": "https://media.ccc.de/v/37c3-lightningtalks-58030-let-s-change-the-default-language-of-the-internet",
+        "license": "CC BY 4.0",
+        "sha256": "3dacb9b11f86e84bb95c33d27a51c8db6eca5dfd8e59c09c3821b69153db9211",
+        "duration_seconds": 307.84
+      }
+    ],
+    "questions": [
+      {
+        "id": "val-pasta-01",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What two flours are mixed to make the pasta dough?",
+        "key_facts": [
+          "All-purpose flour and pasta flour/semolina flour are mixed in equal parts."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            19,
+            51
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-02",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why should water be added a little at a time?",
+        "key_facts": [
+          "It is better to add too little than too much while forming the dough."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            123,
+            136
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-03",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "How can you tell when the pasta is ready in the boiling water?",
+        "key_facts": [
+          "It floats to the top."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            602,
+            612
+          ],
+          [
+            626,
+            632
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-04",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why are the sliced leeks placed in water?",
+        "key_facts": [
+          "Dirt falls out from between their layers and settles on the bottom."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            302,
+            348
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-05",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why are butter and olive oil used together in the pan?",
+        "key_facts": [
+          "Butter adds flavor and olive oil keeps the butter from burning."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            482,
+            519
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-06",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three actions does Laura use to knead the dough?",
+        "key_facts": [
+          "Push down.",
+          "Fold or lift it over/up.",
+          "Twist it."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            149,
+            165
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-07",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three ingredients finish the sauce after the leeks have softened?",
+        "key_facts": [
+          "Garlic and thyme.",
+          "Salt and pepper.",
+          "Lemon juice and chicken stock."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            519,
+            560
+          ]
+        ],
+        "notes": "Each requested item is a distinct addition step; paired ingredients are introduced together."
+      },
+      {
+        "id": "val-pasta-08",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two things can you do to get more juice from a lemon?",
+        "key_facts": [
+          "Roll it on the counter.",
+          "Microwave it briefly."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            468,
+            481
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-09",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two final ingredients are added to finish the sauce while the pasta is almost done?",
+        "key_facts": [
+          "Cream.",
+          "Parmesan cheese."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            612,
+            625
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-10",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does Laura do after making a well in the flour?",
+        "key_facts": [
+          "She adds about three quarters of a cup of cold water and begins mixing with a fork."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          68,
+          82
+        ],
+        "target_interval": [
+          82,
+          100
+        ],
+        "expected_evidence_intervals": [
+          [
+            68,
+            100
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-11",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What happens after the dough is kneaded until smooth and elastic?",
+        "key_facts": [
+          "It is wrapped in plastic and rests for about half an hour."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          149,
+          172
+        ],
+        "target_interval": [
+          172,
+          183
+        ],
+        "expected_evidence_intervals": [
+          [
+            149,
+            183
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-12",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does Laura prepare before she starts cooking the sauce?",
+        "key_facts": [
+          "She prepares leeks, garlic, thyme and lemon juice."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          482,
+          487
+        ],
+        "target_interval": [
+          297,
+          481
+        ],
+        "expected_evidence_intervals": [
+          [
+            297,
+            481
+          ]
+        ],
+        "notes": "Long preparation sequence immediately precedes cooking; expected evidence may require nearby list expansion."
+      },
+      {
+        "id": "val-pasta-13",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What is added after the sauce receives lemon juice and chicken stock?",
+        "key_facts": [
+          "Frozen peas."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          535,
+          560
+        ],
+        "target_interval": [
+          560,
+          574
+        ],
+        "expected_evidence_intervals": [
+          [
+            535,
+            574
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-pasta-14",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What three eggs does Laura add to the pasta dough?",
+        "key_facts": [],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The recipe explicitly contains no eggs."
+      },
+      {
+        "id": "val-pasta-15",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What happens after the pasta maker rolls the dough into sheets?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No pasta maker is used; the shape is formed by hand."
+      },
+      {
+        "id": "val-pasta-16",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Which wine does Laura pair with the finished dish?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No wine is discussed."
+      },
+      {
+        "id": "val-pasta-17",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What two meats are added to the sauce?",
+        "key_facts": [],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No meat is added."
+      },
+      {
+        "id": "val-pasta-18",
+        "source_id": "homemade-pasta-instruction",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Why does Laura boil the pasta for twenty minutes?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The stated cooking time is seven to eight minutes."
+      },
+      {
+        "id": "val-lang-01",
+        "source_id": "internet-language-talk",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What do the first and second pieces of the language tag represent?",
+        "key_facts": [
+          "The first is a language code and the second is a country code."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            72,
+            96
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-02",
+        "source_id": "internet-language-talk",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "Why does asking for English often return American English?",
+        "key_facts": [
+          "English is normalized to American English because of historical and other reasons."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            113,
+            144
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-03",
+        "source_id": "internet-language-talk",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What is European English used for in CLDR?",
+        "key_facts": [
+          "It is a usable language and parent locale for European English variants."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            201,
+            231
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-04",
+        "source_id": "internet-language-talk",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What does the code 001 represent?",
+        "key_facts": [
+          "The whole world."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            254,
+            271
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-05",
+        "source_id": "internet-language-talk",
+        "question_type": "ORDINARY",
+        "answerable": true,
+        "question": "What does the speaker recommend people request and use?",
+        "key_facts": [
+          "International English, EN-001."
+        ],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            269,
+            298
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-06",
+        "source_id": "internet-language-talk",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two common pieces make up the language tag shown by the speaker?",
+        "key_facts": [
+          "A language code.",
+          "A country code."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            80,
+            96
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-07",
+        "source_id": "internet-language-talk",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What three kinds of software does the speaker say obtain locale data from the common Unicode repository?",
+        "key_facts": [
+          "Operating systems.",
+          "Browsers.",
+          "Other software or systems."
+        ],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            172,
+            197
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-08",
+        "source_id": "internet-language-talk",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two reasons does the speaker give for international English existing?",
+        "key_facts": [
+          "It exists partly by accident because systems rely on one locale-data system.",
+          "It exists partly because it is presented as the best English for worldwide use."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            271,
+            293
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-09",
+        "source_id": "internet-language-talk",
+        "question_type": "LIST_COUNT",
+        "answerable": true,
+        "question": "What two actions does the speaker suggest if someone wants to fix the European English date format?",
+        "key_facts": [
+          "Find the CLDR issue tracker and file an issue.",
+          "Make a comment."
+        ],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [
+          [
+            234,
+            254
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-10",
+        "source_id": "internet-language-talk",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does the speaker discuss after explaining that DE usually normalizes to German German?",
+        "key_facts": [
+          "Other German variants, including Austrian German."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          50,
+          64
+        ],
+        "target_interval": [
+          64,
+          71
+        ],
+        "expected_evidence_intervals": [
+          [
+            50,
+            71
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-11",
+        "source_id": "internet-language-talk",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does the speaker explain after introducing the two common pieces of a language tag?",
+        "key_facts": [
+          "The first piece is the language code and the second is the country code."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          80,
+          86
+        ],
+        "target_interval": [
+          86,
+          96
+        ],
+        "expected_evidence_intervals": [
+          [
+            80,
+            96
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-12",
+        "source_id": "internet-language-talk",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What is introduced after the speaker discusses deduplicating locale data for variants such as Belgian and Finnish English?",
+        "key_facts": [
+          "European English is introduced as a parent language for European English variants."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          197,
+          216
+        ],
+        "target_interval": [
+          216,
+          231
+        ],
+        "expected_evidence_intervals": [
+          [
+            197,
+            231
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-13",
+        "source_id": "internet-language-talk",
+        "question_type": "TEMPORAL",
+        "answerable": true,
+        "question": "What does the speaker mention before introducing international English?",
+        "key_facts": [
+          "EN-150 is identified as the UN M49 area code for Europe."
+        ],
+        "requested_count": null,
+        "anchor_interval": [
+          269,
+          271
+        ],
+        "target_interval": [
+          254,
+          269
+        ],
+        "expected_evidence_intervals": [
+          [
+            254,
+            271
+          ]
+        ],
+        "notes": ""
+      },
+      {
+        "id": "val-lang-14",
+        "source_id": "internet-language-talk",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What three browsers fail to support European English?",
+        "key_facts": [],
+        "requested_count": 3,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No browsers or support failures are named."
+      },
+      {
+        "id": "val-lang-15",
+        "source_id": "internet-language-talk",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What happened after Mozilla officially adopted the speaker?s proposal?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The speaker says this is not an official Mozilla position and reports no adoption."
+      },
+      {
+        "id": "val-lang-16",
+        "source_id": "internet-language-talk",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Which country legally requires EN-001 on government websites?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No legal requirement is discussed."
+      },
+      {
+        "id": "val-lang-17",
+        "source_id": "internet-language-talk",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "What two benchmark results prove international English is easier to understand?",
+        "key_facts": [],
+        "requested_count": 2,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "No comprehension benchmark is presented."
+      },
+      {
+        "id": "val-lang-18",
+        "source_id": "internet-language-talk",
+        "question_type": "HARD_NEGATIVE",
+        "answerable": false,
+        "question": "Why was European English removed from CLDR in 2024?",
+        "key_facts": [],
+        "requested_count": null,
+        "anchor_interval": null,
+        "target_interval": null,
+        "expected_evidence_intervals": [],
+        "notes": "The video says it was introduced in 2019 and does not describe removal."
+      }
+    ]
+  },
+  "development_selection": {
+    "selected_candidate": "B",
+    "reason": "Both candidates reached 100% structured evidence recall; B preserved the complete post-anchor explanation in the provider development run while A omitted the second target segment for one temporal answer.",
+    "selected_limits": {
+      "max_list_additions": 3,
+      "temporal_neighbor_count": 2,
+      "max_total_evidence": 8,
+      "max_characters": 6000,
+      "max_temporal_seconds": 90
+    },
+    "selected_development_automatic": {
+      "base_evidence_recall": 1.0,
+      "expanded_evidence_recall": 1.0,
+      "structured_base_evidence_recall": 1.0,
+      "structured_expanded_evidence_recall": 1.0,
+      "list_evidence_completeness": 1.0,
+      "temporal_anchor_recall": 1.0,
+      "temporal_target_recall": 1.0,
+      "temporal_pair_recall": 1.0,
+      "mean_initial_evidence_count": 4.5,
+      "mean_expanded_evidence_count": 5.777777777777778,
+      "mean_added_characters": 408.6111111111111,
+      "input_tokens": 42249,
+      "output_tokens": 4168,
+      "latency_ms": {
+        "retrieval": {
+          "median": 0.3629000020737294,
+          "p95": 0.4792499967152253
+        },
+        "expansion": {
+          "median": 0.07399999958579428,
+          "p95": 3.829549999863957
+        },
+        "generation": {
+          "median": 1666.9249999977183,
+          "p95": 3300.296174997129
+        },
+        "total": {
+          "median": 1668.8625999995566,
+          "p95": 3301.0095250010636
+        }
+      },
+      "correct_answerability_rate": 1.0,
+      "correct_abstention_rate": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.0
+    }
+  }
+}

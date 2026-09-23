@@ -14,13 +14,17 @@ from app.database import Segment, Transcript, engine, migrate
 from app.main import app
 from app.qa import (
     ABSTENTION,
+    MAX_ADDITIONAL_EVIDENCE,
+    MAX_STRUCTURED_CHARACTERS,
     QA_INSTRUCTIONS,
+    QA_STRUCTURED_INSTRUCTIONS,
     EvidenceChunk,
     GeneratedAnswer,
     GeneratedClaim,
     OpenAIAnswerGenerator,
     analyze_question,
     chunk_segments,
+    expand_structured_evidence,
     resolve_answer,
     retrieve_evidence,
 )
@@ -77,7 +81,16 @@ def _evidence():
     return [EvidenceChunk("E001", VIDEO_ID, 10, 19, "RAG grounds answers.", (1, 2))]
 
 
-def _generated(*, answerable=True, answer="Claim", evidence_ids=None, claims=None, missing=None):
+def _generated(
+    *,
+    answerable=True,
+    answer="Claim",
+    evidence_ids=None,
+    claims=None,
+    missing=None,
+    anchor_ids=None,
+    target_ids=None,
+):
     evidence_ids = ["E001"] if evidence_ids is None else evidence_ids
     claims = [GeneratedClaim(text="Claim", evidence_ids=evidence_ids)] if claims is None else claims
     return GeneratedAnswer(
@@ -86,6 +99,8 @@ def _generated(*, answerable=True, answer="Claim", evidence_ids=None, claims=Non
         evidence_ids=evidence_ids,
         claims=claims,
         unsupported_or_missing=[] if missing is None else missing,
+        temporal_anchor_ids=[] if anchor_ids is None else anchor_ids,
+        temporal_target_ids=[] if target_ids is None else target_ids,
     )
 
 
@@ -249,7 +264,7 @@ def test_provider_payload_sends_only_question_and_selected_evidence():
     assert payload["store"] is False
     assert payload["text"]["format"]["type"] == "json_schema"
     assert payload["text"]["format"]["strict"] is True
-    assert "E001: RAG grounds answers." in payload["input"]
+    assert "E001 [RELEVANT]: RAG grounds answers." in payload["input"]
     assert VIDEO_ID not in payload["input"]
     assert "start_seconds" not in payload["input"]
     assert payload["text"]["format"]["schema"]["required"] == [
@@ -258,13 +273,16 @@ def test_provider_payload_sends_only_question_and_selected_evidence():
         "evidence_ids",
         "claims",
         "unsupported_or_missing",
+        "temporal_anchor_ids",
+        "temporal_target_ids",
     ]
 
 
 def test_question_constraints_extract_count_temporal_and_relation():
     constraints = analyze_question("What three reasons are given after the comparison?")
     assert constraints.requested_count == 3
-    assert constraints.temporal_relation == "after"
+    assert constraints.temporal_relation == "AFTER"
+    assert constraints.temporal_anchor == "the comparison"
     assert set(constraints.relation_types) == {"cause_or_reason", "comparison", "list", "temporal"}
 
 
@@ -303,6 +321,174 @@ def test_partial_or_wrong_list_count_fails_safely():
     assert result["answerable"] is False
 
 
+def _structured_chunks():
+    return [
+        EvidenceChunk("E001", VIDEO_ID, 0, 10, "Opening context and first point.", (1,)),
+        EvidenceChunk("E002", VIDEO_ID, 10, 20, "DNS resolution is introduced here.", (2,)),
+        EvidenceChunk("E003", VIDEO_ID, 21, 30, "The browser next checks its cache.", (3,)),
+        EvidenceChunk("E004", VIDEO_ID, 31, 40, "Then it opens a network connection.", (4,)),
+        EvidenceChunk("E005", VIDEO_ID, 41, 50, "Closing summary.", (5,)),
+    ]
+
+
+def test_list_evidence_expansion_is_bounded_deduplicated_and_local():
+    chunks = _structured_chunks()
+    base = [chunks[1], chunks[3]]
+    selection = expand_structured_evidence("What three points are listed?", chunks, base)
+    ids = [item.evidence_id for item in selection.expanded]
+    assert len(ids) == len(set(ids))
+    assert selection.added_count <= MAX_ADDITIONAL_EVIDENCE
+    assert sum(len(item.text) for item in selection.expanded) <= MAX_STRUCTURED_CHARACTERS
+    assert ids[:2] == ["E002", "E004"]
+
+
+def test_ordinary_question_keeps_existing_evidence_path_unchanged():
+    chunks = _structured_chunks()
+    base = [chunks[2], chunks[0]]
+    selection = expand_structured_evidence("How does the browser work?", chunks, base)
+    assert selection.expanded == tuple(base)
+    assert selection.added_count == 0
+
+
+def test_after_relation_localizes_anchor_and_expands_forward_only():
+    chunks = _structured_chunks()
+    base = retrieve_evidence("What happens after DNS resolution?", chunks)
+    selection = expand_structured_evidence("What happens after DNS resolution?", chunks, base)
+    anchors = [item for item in selection.expanded if item.role == "TEMPORAL_ANCHOR"]
+    targets = [item for item in selection.expanded if item.role == "TEMPORAL_TARGET"]
+    assert [item.evidence_id for item in anchors] == ["E002"]
+    assert targets
+    assert all(item.start_seconds > anchors[0].start_seconds for item in targets)
+
+
+def test_before_relation_localizes_anchor_and_expands_backward_only():
+    chunks = _structured_chunks()
+    base = retrieve_evidence("What happens before DNS resolution?", chunks)
+    selection = expand_structured_evidence("What happens before DNS resolution?", chunks, base)
+    anchors = [item for item in selection.expanded if item.role == "TEMPORAL_ANCHOR"]
+    targets = [item for item in selection.expanded if item.role == "TEMPORAL_TARGET"]
+    assert [item.evidence_id for item in anchors] == ["E002"]
+    assert [item.evidence_id for item in targets] == ["E001"]
+
+
+def test_temporal_expansion_uses_local_segments_for_repeated_anchor_mentions():
+    segments = [
+        SimpleNamespace(id=1, start=0, end=5, text="DNS resolution is introduced."),
+        SimpleNamespace(id=2, start=5, end=10, text="The browser checks its cache."),
+        SimpleNamespace(id=3, start=40, end=45, text="DNS resolution is introduced."),
+        SimpleNamespace(id=4, start=45, end=50, text="A later recap follows."),
+    ]
+    chunks = chunk_segments(VIDEO_ID, segments)
+    base = retrieve_evidence("What happens after DNS resolution is introduced?", chunks)
+    selection = expand_structured_evidence(
+        "What happens after DNS resolution is introduced?",
+        chunks,
+        base,
+        segments=segments,
+        temporal_neighbor_count=1,
+    )
+    anchors = [item for item in selection.expanded if item.role == "TEMPORAL_ANCHOR"]
+    targets = [item for item in selection.expanded if item.role == "TEMPORAL_TARGET"]
+    assert [item.evidence_id for item in anchors] == ["T0001"]
+    assert [item.evidence_id for item in targets] == ["T0002"]
+    assert selection.temporal_span_seconds == 10
+
+
+def test_temporal_contract_rejects_wrong_direction_and_orders_citations():
+    chunks = _structured_chunks()
+    evidence = [
+        EvidenceChunk(**{**chunks[1].__dict__, "role": "TEMPORAL_ANCHOR"}),
+        EvidenceChunk(**{**chunks[2].__dict__, "role": "TEMPORAL_TARGET"}),
+    ]
+    claims = [
+        GeneratedClaim(text="DNS is introduced.", evidence_ids=["E002"]),
+        GeneratedClaim(text="The browser checks its cache next.", evidence_ids=["E003"]),
+    ]
+    valid = _generated(
+        answer="The browser checks its cache.",
+        evidence_ids=["E003"],
+        claims=claims,
+        anchor_ids=["E002"],
+        target_ids=["E003"],
+    )
+    resolved = resolve_answer(valid, evidence, "What happens after DNS resolution?")
+    assert [item["evidence_id"] for item in resolved["citations"]][:2] == ["E002", "E003"]
+    assert (
+        resolve_answer(valid, evidence, "What happens before DNS resolution?")["answerable"]
+        is False
+    )
+
+
+def test_temporal_contract_rejects_ids_without_structured_roles():
+    chunks = _structured_chunks()
+    claims = [GeneratedClaim(text="The browser checks its cache.", evidence_ids=["E003"])]
+    generated = _generated(
+        answer="The browser checks its cache.",
+        evidence_ids=["E003"],
+        claims=claims,
+        anchor_ids=["E002"],
+        target_ids=["E003"],
+    )
+    assert (
+        resolve_answer(generated, [chunks[1], chunks[2]], "What happens after DNS resolution?")[
+            "answerable"
+        ]
+        is False
+    )
+
+
+def test_structured_qa_manifest_is_balanced_annotated_and_source_disjoint():
+    manifest_path = ROOT / "ml/evaluation/qa_structured_question_evidence_v1_manifest.json"
+    manifest_bytes = manifest_path.read_bytes()
+    manifest = json.loads(manifest_bytes)
+    expected_checksum = (
+        (ROOT / "ml/evaluation/qa_structured_question_evidence_v1_manifest.sha256")
+        .read_text(encoding="ascii")
+        .split()[0]
+    )
+    assert hashlib.sha256(manifest_bytes).hexdigest() == expected_checksum
+    assert (
+        manifest["frozen_configuration"]["prompt_sha256"]
+        == hashlib.sha256(QA_STRUCTURED_INSTRUCTIONS.encode()).hexdigest()
+    )
+    assert (
+        manifest["frozen_configuration"]["implementation_sha256"]
+        == hashlib.sha256((ROOT / "backend/app/qa.py").read_bytes()).hexdigest()
+    )
+    development_sources = {item["source_id"] for item in manifest["development"]["sources"]}
+    validation_sources = {item["source_id"] for item in manifest["validation"]["sources"]}
+    historical_sources = {
+        "machine-learning-models-introduction",
+        "how-the-internet-really-works",
+        "oceans-explainer",
+        "design-free-software-talk",
+        "rewiring-video-editor-talk",
+        "ui-frameworks-talk",
+    }
+    assert development_sources.isdisjoint(validation_sources)
+    assert (development_sources | validation_sources).isdisjoint(historical_sources)
+    for split in ("development", "validation"):
+        questions = manifest[split]["questions"]
+        counts = {
+            category: sum(item["question_type"] == category for item in questions)
+            for category in ("ORDINARY", "LIST_COUNT", "TEMPORAL", "HARD_NEGATIVE")
+        }
+        assert counts == {
+            "ORDINARY": 10,
+            "LIST_COUNT": 8,
+            "TEMPORAL": 8,
+            "HARD_NEGATIVE": 10,
+        }
+        for item in questions:
+            assert item["source_id"] in {
+                source["source_id"] for source in manifest[split]["sources"]
+            }
+            if item["question_type"] == "LIST_COUNT":
+                assert item["requested_count"] is not None
+            if item["question_type"] == "TEMPORAL":
+                assert item["anchor_interval"] and item["target_interval"]
+
+
 def test_claim_citations_must_match_answer_citations():
     generated = _generated(
         evidence_ids=["E001"], claims=[GeneratedClaim(text="Claim", evidence_ids=["E002"])]
@@ -335,6 +521,8 @@ def test_answer_and_citation_resolution_for_upload_and_url_video(
                         )
                     ],
                     unsupported_or_missing=[],
+                    temporal_anchor_ids=[],
+                    temporal_target_ids=[],
                 ),
                 {"provider": "fake", "model": "test", "input_tokens": 20, "output_tokens": 10},
             )
