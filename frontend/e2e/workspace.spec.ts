@@ -381,6 +381,44 @@ test("Ask Video explains missing provider configuration", async ({ page }) => {
   });
 });
 
+test("Ask Video explains bounded scope without exposing internal labels", async ({
+  page,
+}) => {
+  await page.route("**/videos/*/ask/status", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ enabled: true, configured: true }),
+    }),
+  );
+  await page.route("**/videos/*/ask", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        answerable: false,
+        answer:
+          "I can't answer that type of question reliably yet. Try asking about a specific fact or explanation spoken in the video.",
+        citations: [],
+        scope: { supported: false, category: "TEMPORAL_ORDERING" },
+      }),
+    }),
+  );
+  await page.goto("/");
+  await page
+    .getByLabel("Choose video", { exact: true })
+    .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
+  await expect(page.getByLabel("Ask something about this video")).toBeVisible({
+    timeout: 30_000,
+  });
+  await page
+    .getByLabel("Ask something about this video")
+    .fill("What happens after the introduction?");
+  await page.getByRole("button", { name: "Ask", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Question not supported yet" }),
+  ).toBeVisible();
+  await expect(page.getByText("TEMPORAL_ORDERING")).toHaveCount(0);
+});
+
 test("real model search seeks to the matching scene", async ({ page }) => {
   test.skip(
     !process.env.SCENEMIND_MODEL_E2E,

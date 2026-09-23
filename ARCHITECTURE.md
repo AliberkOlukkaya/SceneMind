@@ -4,7 +4,7 @@ SceneMind is a single-operator, local-first video search application. Its produc
 core is frozen at five-second frame sampling, CLIP/FAISS Visual retrieval, Whisper/BM25 Speech
 retrieval and uncapped RRF60 Hybrid ranking.
 
-Ask Video remains disabled. Its rejected Structured-Question Evidence V1 branch preserves the existing 45-second/900-character BM25 Top-5 base. Ordinary questions use that list unchanged. Explicit list/count questions may add at most three deduplicated adjacent chunks. Temporal questions localize a lexical anchor over one- or two-segment windows and add at most two transcript segments strictly before or after it. Total evidence is bounded to eight units, 6,000 characters and a 90-second local window. The backend validates evidence roles, timestamp direction, exact explicit list count, distinct claims and server-resolved citations. Frozen validation showed that these structural checks do not validate semantic premise or type compatibility, so the branch is not production architecture and the feature flag stays off.
+Ask Video remains disabled after Final Core Acceptance Decision B. Its candidate path uses a deterministic scope gate followed by the existing 45-second/900-character BM25 Top-5, strict structured generation, claim-level evidence IDs and server-resolved citations. Explicit list/count, temporal-ordering, long-range, visual-only and OCR-dependent questions return a concise capability response before generation. The failed structured neighbor/temporal expansion remains historical evaluation code and is not called by the candidate path. Frozen acceptance reached 100% Evidence Recall@5 and safety but only 83.33% answer correctness/core user success, so the feature flag stays off.
 
 ## End-to-end data flow
 

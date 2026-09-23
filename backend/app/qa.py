@@ -19,6 +19,14 @@ from app.video import folder_for, read_manifest
 
 router = APIRouter(prefix="/videos", tags=["grounded video Q&A"])
 ABSTENTION = "I couldn't find enough evidence in this video to answer that reliably."
+OUT_OF_SCOPE = (
+    "I can't answer that type of question reliably yet. Try asking about a specific "
+    "fact or explanation spoken in the video."
+)
+VISUAL_OUT_OF_SCOPE = (
+    "I can't reliably answer visual-only questions yet. Ask about something spoken "
+    "in the video."
+)
 QA_INSTRUCTIONS = (
     "Decide whether the supplied video transcript evidence directly and completely answers "
     "the actual question. Topical similarity is not sufficient. Do not use outside knowledge "
@@ -75,14 +83,23 @@ class AskRequest(BaseModel):
     question: str = Field(min_length=1, max_length=500)
 
 
+@dataclass(frozen=True)
+class ScopeDecision:
+    supported: bool
+    category: str
+    response: str | None = None
+
+
 class GeneratedAnswer(BaseModel):
     answerable: bool
     answer: str = Field(max_length=2000)
     evidence_ids: list[str] = Field(max_length=5)
     claims: list["GeneratedClaim"] = Field(max_length=8)
     unsupported_or_missing: list[str] = Field(max_length=8)
-    temporal_anchor_ids: list[str] = Field(max_length=3)
-    temporal_target_ids: list[str] = Field(max_length=3)
+    # Optional only so frozen historical structured-evidence artifacts remain readable.
+    # The production core neither requests nor accepts temporal answers.
+    temporal_anchor_ids: list[str] = Field(default_factory=list, max_length=3)
+    temporal_target_ids: list[str] = Field(default_factory=list, max_length=3)
 
 
 class GeneratedClaim(BaseModel):
@@ -108,6 +125,44 @@ _NUMBER_WORDS = {
     "seven": 7,
     "eight": 8,
 }
+
+
+def classify_question_scope(question: str) -> ScopeDecision:
+    """Reject capabilities outside the deliberately narrow spoken-Q&A core."""
+    lowered = " ".join(question.casefold().split())
+    constraints = analyze_question(question)
+    if constraints.requested_count is not None or re.search(
+        r"\b(?:list|enumerate)\b", lowered
+    ):
+        return ScopeDecision(False, "EXPLICIT_LIST_COUNT", OUT_OF_SCOPE)
+    if (
+        constraints.temporal_relation
+        and re.search(r"^(?:what|which|who|where|when)\b", lowered)
+    ) or re.search(r"\b(?:first|last)\s+(?:thing|step|event)\b", lowered):
+        return ScopeDecision(False, "TEMPORAL_ORDERING", OUT_OF_SCOPE)
+    if re.search(
+        r"\b(?:entire|whole)\s+video\b|\bthroughout\s+the\s+video\b|"
+        r"\b(?:compare|connect)\b.*\b(?:beginning|start)\b.*\b(?:end|ending)\b|"
+        r"\b(?:all|every)\s+(?:argument|topic|point|claim)s?\b",
+        lowered,
+    ):
+        return ScopeDecision(False, "LONG_RANGE_COMPOSITIONAL", OUT_OF_SCOPE)
+    if re.search(
+        r"\b(?:what does|what do)\b.*\b(?:slide|screen|caption|label|button|"
+        r"error message|code)\b.*\b(?:say|read|show)\b|"
+        r"\btext on (?:the )?screen\b|"
+        r"\b(?:read|transcribe)\s+(?:the\s+)?(?:slide|screen|caption)\b",
+        lowered,
+    ):
+        return ScopeDecision(False, "OCR_DEPENDENT", VISUAL_OUT_OF_SCOPE)
+    if re.search(
+        r"\b(?:what|which)\s+(?:color|colour)\b|\bwhat (?:is|are) (?:visible|shown)\b|"
+        r"\b(?:wearing|look like|on screen|in the image|in the frame|in the diagram|"
+        r"visual object)\b",
+        lowered,
+    ):
+        return ScopeDecision(False, "VISUAL_ONLY", VISUAL_OUT_OF_SCOPE)
+    return ScopeDecision(True, "SUPPORTED_CORE")
 
 
 def analyze_question(question: str) -> QuestionConstraints:
@@ -441,9 +496,7 @@ class OpenAIAnswerGenerator(AnswerGenerator):
         self.api_key = api_key if api_key is not None else settings.openai_api_key
 
     def _payload(self, question: str, evidence: list[EvidenceChunk]) -> dict:
-        evidence_text = "\n\n".join(
-            f"{item.evidence_id} [{item.role}]: {item.text}" for item in evidence
-        )
+        evidence_text = "\n\n".join(f"{item.evidence_id}: {item.text}" for item in evidence)
         constraints = analyze_question(question)
         constraint_text = json.dumps(asdict(constraints), separators=(",", ":"))
         claim_schema = {
@@ -476,16 +529,6 @@ class OpenAIAnswerGenerator(AnswerGenerator):
                     "items": {"type": "string"},
                     "maxItems": 8,
                 },
-                "temporal_anchor_ids": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "maxItems": 3,
-                },
-                "temporal_target_ids": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "maxItems": 3,
-                },
             },
             "required": [
                 "answerable",
@@ -493,15 +536,13 @@ class OpenAIAnswerGenerator(AnswerGenerator):
                 "evidence_ids",
                 "claims",
                 "unsupported_or_missing",
-                "temporal_anchor_ids",
-                "temporal_target_ids",
             ],
             "additionalProperties": False,
         }
         return {
             "model": settings.qa_model,
             "store": False,
-            "instructions": QA_STRUCTURED_INSTRUCTIONS,
+            "instructions": QA_INSTRUCTIONS,
             "input": (
                 f"Question: {question}\n"
                 f"Deterministic question constraints: {constraint_text}\n\n"
@@ -575,28 +616,19 @@ def resolve_answer(
 ) -> dict:
     lookup = {item.evidence_id: item for item in evidence}
     claim_ids = [item for claim in generated.claims for item in claim.evidence_ids]
-    structured_ids = [*generated.temporal_anchor_ids, *generated.temporal_target_ids]
-    unknown = [
-        item
-        for item in [*generated.evidence_ids, *claim_ids, *structured_ids]
-        if item not in lookup
-    ]
+    unknown = [item for item in [*generated.evidence_ids, *claim_ids] if item not in lookup]
     if unknown:
         raise HTTPException(502, "The answer provider returned an invalid evidence citation.")
     if not generated.answerable:
         return {"answerable": False, "answer": ABSTENTION, "citations": []}
     citation_ids = list(dict.fromkeys(claim_ids))
     constraints = analyze_question(question)
-    claim_citation_ids = list(dict.fromkeys(claim_ids))
     contract_invalid = (
         not citation_ids
         or not generated.answer.strip()
         or not generated.claims
         or bool(generated.unsupported_or_missing)
-        or (
-            not constraints.temporal_relation
-            and not set(generated.evidence_ids).issubset(set(claim_citation_ids))
-        )
+        or set(generated.evidence_ids) != set(citation_ids)
         or (
             constraints.requested_count is not None
             and len(generated.claims) != constraints.requested_count
@@ -604,38 +636,10 @@ def resolve_answer(
         or len({claim.text.strip().casefold() for claim in generated.claims})
         != len(generated.claims)
     )
-    if constraints.temporal_relation:
-        anchors = [lookup[item] for item in generated.temporal_anchor_ids]
-        targets = [lookup[item] for item in generated.temporal_target_ids]
-        roles_valid = all(item.role == "TEMPORAL_ANCHOR" for item in anchors) and all(
-            item.role == "TEMPORAL_TARGET" for item in targets
-        )
-        if constraints.temporal_relation == "AFTER":
-            ordered = any(
-                target.start_seconds > anchor.start_seconds
-                and target.end_seconds > anchor.end_seconds
-                for anchor in anchors
-                for target in targets
-            )
-        else:
-            ordered = any(
-                target.start_seconds < anchor.start_seconds
-                and target.end_seconds < anchor.end_seconds
-                for anchor in anchors
-                for target in targets
-            )
-        contract_invalid = contract_invalid or not anchors or not targets or not ordered
-        contract_invalid = contract_invalid or not roles_valid
-    elif structured_ids:
+    if constraints.temporal_relation or generated.temporal_anchor_ids or generated.temporal_target_ids:
         contract_invalid = True
     if contract_invalid:
         return {"answerable": False, "answer": ABSTENTION, "citations": []}
-    if constraints.temporal_relation:
-        citation_ids = list(
-            dict.fromkeys(
-                [*generated.temporal_anchor_ids, *generated.temporal_target_ids, *citation_ids]
-            )
-        )
     return {
         "answerable": True,
         "answer": generated.answer.strip(),
@@ -655,6 +659,7 @@ def ask_status(video_id: str):
         "configured": settings.qa_enabled and bool(settings.openai_api_key),
         "provider": "openai",
         "model": settings.qa_model,
+        "scope": "spoken_facts_explanations_and_localized_summaries",
     }
 
 
@@ -670,6 +675,21 @@ def ask_video(video_id: str, request: AskRequest):
     question = request.question.strip()
     if not question:
         raise HTTPException(422, "Question cannot be empty.")
+    scope = classify_question_scope(question)
+    if not scope.supported:
+        return {
+            "answerable": False,
+            "answer": scope.response,
+            "citations": [],
+            "evidence": [],
+            "scope": asdict(scope),
+            "usage": {"provider": "none", "model": None, "input_tokens": 0, "output_tokens": 0},
+            "latency_ms": {
+                "retrieval": 0,
+                "generation": 0,
+                "total": (time.perf_counter() - started) * 1000,
+            },
+        }
     with Session(engine()) as session:
         transcript = session.get(Transcript, folder.name)
         if transcript is None or transcript.status != "ready":
@@ -683,8 +703,7 @@ def ask_video(video_id: str, request: AskRequest):
     chunks = chunk_segments(folder.name, segments)
     base_evidence = retrieve_evidence(question, chunks)
     retrieval_ms = (time.perf_counter() - retrieval_started) * 1000
-    selection = expand_structured_evidence(question, chunks, base_evidence, segments=list(segments))
-    evidence = list(selection.expanded)
+    evidence = base_evidence
     if not evidence:
         return {
             "answerable": False,
@@ -694,7 +713,6 @@ def ask_video(video_id: str, request: AskRequest):
             "usage": {"provider": "none", "model": None, "input_tokens": 0, "output_tokens": 0},
             "latency_ms": {
                 "retrieval": retrieval_ms,
-                "expansion": selection.expansion_ms,
                 "generation": 0,
                 "total": (time.perf_counter() - started) * 1000,
             },
@@ -709,14 +727,8 @@ def ask_video(video_id: str, request: AskRequest):
         "usage": usage,
         "latency_ms": {
             "retrieval": retrieval_ms,
-            "expansion": selection.expansion_ms,
             "generation": generation_ms,
             "total": (time.perf_counter() - started) * 1000,
         },
-        "evidence_budget": {
-            "initial_count": len(selection.base),
-            "expanded_count": len(selection.expanded),
-            "added_characters": selection.added_characters,
-            "temporal_span_seconds": selection.temporal_span_seconds,
-        },
+        "scope": asdict(scope),
     }

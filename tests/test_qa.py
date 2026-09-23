@@ -16,6 +16,7 @@ from app.qa import (
     ABSTENTION,
     MAX_ADDITIONAL_EVIDENCE,
     MAX_STRUCTURED_CHARACTERS,
+    OUT_OF_SCOPE,
     QA_INSTRUCTIONS,
     QA_STRUCTURED_INSTRUCTIONS,
     EvidenceChunk,
@@ -24,6 +25,7 @@ from app.qa import (
     OpenAIAnswerGenerator,
     analyze_question,
     chunk_segments,
+    classify_question_scope,
     expand_structured_evidence,
     resolve_answer,
     retrieve_evidence,
@@ -264,7 +266,7 @@ def test_provider_payload_sends_only_question_and_selected_evidence():
     assert payload["store"] is False
     assert payload["text"]["format"]["type"] == "json_schema"
     assert payload["text"]["format"]["strict"] is True
-    assert "E001 [RELEVANT]: RAG grounds answers." in payload["input"]
+    assert "E001: RAG grounds answers." in payload["input"]
     assert VIDEO_ID not in payload["input"]
     assert "start_seconds" not in payload["input"]
     assert payload["text"]["format"]["schema"]["required"] == [
@@ -273,9 +275,52 @@ def test_provider_payload_sends_only_question_and_selected_evidence():
         "evidence_ids",
         "claims",
         "unsupported_or_missing",
-        "temporal_anchor_ids",
-        "temporal_target_ids",
     ]
+
+
+@pytest.mark.parametrize(
+    ("question", "category"),
+    [
+        ("List three reasons the speaker gives.", "EXPLICIT_LIST_COUNT"),
+        ("What happens after the DNS lookup?", "TEMPORAL_ORDERING"),
+        ("Compare the beginning of the video with the ending.", "LONG_RANGE_COMPOSITIONAL"),
+        ("What color is the presenter wearing?", "VISUAL_ONLY"),
+        ("What does the error message on screen say?", "OCR_DEPENDENT"),
+    ],
+)
+def test_scope_gate_rejects_unsupported_capabilities(question, category):
+    decision = classify_question_scope(question)
+    assert decision.supported is False
+    assert decision.category == category
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "What is WebM?",
+        "Why does the speaker recommend this approach?",
+        "What reasons does the speaker give for using open standards?",
+        "Summarize the explanation of browser extensions.",
+        "Why should the schedule leave time after initial feedback?",
+        "Does the license expire after ten years?",
+    ],
+)
+def test_scope_gate_accepts_supported_core_without_over_rejecting_plurals(question):
+    assert classify_question_scope(question).supported is True
+
+
+def test_scope_rejection_happens_before_retrieval_or_generation(qa_client, monkeypatch):
+    monkeypatch.setattr(
+        "app.qa.answer_generator", lambda: (_ for _ in ()).throw(AssertionError("must not call"))
+    )
+    response = qa_client.post(
+        f"/videos/{VIDEO_ID}/ask", json={"question": "List three recommendations."}
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["answer"] == OUT_OF_SCOPE
+    assert body["scope"]["category"] == "EXPLICIT_LIST_COUNT"
+    assert body["usage"]["provider"] == "none"
 
 
 def test_question_constraints_extract_count_temporal_and_relation():
@@ -394,7 +439,7 @@ def test_temporal_expansion_uses_local_segments_for_repeated_anchor_mentions():
     assert selection.temporal_span_seconds == 10
 
 
-def test_temporal_contract_rejects_wrong_direction_and_orders_citations():
+def test_temporal_contract_is_rejected_by_core_resolver():
     chunks = _structured_chunks()
     evidence = [
         EvidenceChunk(**{**chunks[1].__dict__, "role": "TEMPORAL_ANCHOR"}),
@@ -411,12 +456,8 @@ def test_temporal_contract_rejects_wrong_direction_and_orders_citations():
         anchor_ids=["E002"],
         target_ids=["E003"],
     )
-    resolved = resolve_answer(valid, evidence, "What happens after DNS resolution?")
-    assert [item["evidence_id"] for item in resolved["citations"]][:2] == ["E002", "E003"]
-    assert (
-        resolve_answer(valid, evidence, "What happens before DNS resolution?")["answerable"]
-        is False
-    )
+    assert resolve_answer(valid, evidence, "What happens after DNS resolution?")["answerable"] is False
+    assert resolve_answer(valid, evidence, "What happens before DNS resolution?")["answerable"] is False
 
 
 def test_temporal_contract_rejects_ids_without_structured_roles():
@@ -451,9 +492,8 @@ def test_structured_qa_manifest_is_balanced_annotated_and_source_disjoint():
         manifest["frozen_configuration"]["prompt_sha256"]
         == hashlib.sha256(QA_STRUCTURED_INSTRUCTIONS.encode()).hexdigest()
     )
-    assert (
-        manifest["frozen_configuration"]["implementation_sha256"]
-        == hashlib.sha256((ROOT / "backend/app/qa.py").read_bytes()).hexdigest()
+    assert manifest["frozen_configuration"]["implementation_sha256"] == (
+        "9e04656b27681ac37dd3640fadee5464a8a9fa6d0d8d60afbb737ffca5ca316e"
     )
     development_sources = {item["source_id"] for item in manifest["development"]["sources"]}
     validation_sources = {item["source_id"] for item in manifest["validation"]["sources"]}
@@ -487,6 +527,39 @@ def test_structured_qa_manifest_is_balanced_annotated_and_source_disjoint():
                 assert item["requested_count"] is not None
             if item["question_type"] == "TEMPORAL":
                 assert item["anchor_interval"] and item["target_interval"]
+
+
+def test_final_core_acceptance_manifest_is_frozen_balanced_and_source_disjoint():
+    path = ROOT / "ml/evaluation/final_ask_video_core_acceptance_v1_manifest.json"
+    expected = path.with_suffix(".sha256").read_text(encoding="ascii").split()[0]
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == expected
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    questions = manifest["questions"]
+    assert len(manifest["sources"]) == 4
+    assert len(questions) == 60
+    assert sum(row["supported_scope"] and row["answerable_from_transcript"] for row in questions) == 36
+    assert sum(row["supported_scope"] and not row["answerable_from_transcript"] for row in questions) == 12
+    assert sum(not row["supported_scope"] for row in questions) == 12
+    assert manifest["frozen_configuration"]["scope_gate_implementation_sha256"] == hashlib.sha256(
+        (ROOT / "backend/app/qa.py").read_bytes()
+    ).hexdigest()
+    historical = {
+        "machine-learning-models-introduction",
+        "how-the-internet-really-works",
+        "oceans-explainer",
+        "design-free-software-talk",
+        "rewiring-video-editor-talk",
+        "ui-frameworks-talk",
+        "good-sources-explainer",
+        "blended-learning-explainer",
+        "homemade-pasta-instruction",
+        "internet-language-talk",
+    }
+    assert {source["source_id"] for source in manifest["sources"]}.isdisjoint(historical)
+    assert all(
+        classify_question_scope(row["question"]).supported == row["supported_scope"]
+        for row in questions
+    )
 
 
 def test_claim_citations_must_match_answer_citations():

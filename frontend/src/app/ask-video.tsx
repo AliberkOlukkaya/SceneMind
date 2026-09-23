@@ -14,6 +14,7 @@ type Answer = {
   answerable: boolean;
   answer: string;
   citations: Citation[];
+  scope?: { supported: boolean; category: string };
 };
 
 const timestamp = (value: number) =>
@@ -98,8 +99,8 @@ export default function AskVideo({
         <span>Transcript evidence only</span>
       </div>
       <p>
-        Ask about what is said. Every substantive answer must cite the video
-        moments that support it.
+        Ask about facts or explanations spoken in this video. Every substantive
+        answer must cite the moments that support it.
       </p>
       {enabled === false && (
         <p role="status" className="configuration-note">
@@ -121,7 +122,7 @@ export default function AskVideo({
             maxLength={500}
             value={question}
             onChange={(event) => setQuestion(event.target.value)}
-            placeholder="What are the speaker's main recommendations?"
+            placeholder="Why does the speaker recommend this approach?"
           />
         </label>
         <button
@@ -138,7 +139,13 @@ export default function AskVideo({
       )}
       {answer && (
         <div className="qa-answer" aria-live="polite">
-          <h4>{answer.answerable ? "Answer" : "Not enough evidence"}</h4>
+          <h4>
+            {answer.answerable
+              ? "Answer"
+              : answer.scope?.supported === false
+                ? "Question not supported yet"
+                : "Not enough evidence"}
+          </h4>
           <p>{answer.answer}</p>
           {answer.citations.length > 0 && (
             <>

@@ -16,11 +16,11 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Q&A Structured-Question Evidence V1 is complete with Decision D — safety regression. Bounded list neighbors and segment-level temporal anchors were developed on 36 new questions, then run once on 36 questions from two source-disjoint videos. Overall correctness was 72.22%, list and temporal correctness were each 62.50%, and three of ten hard negatives received false answers. Ask Video remains disabled, production search is unchanged, and all three observed Q&A validations are frozen evaluation-only. Any future Q&A safety work requires new sources and a predeclared semantic premise/anchor design; Final Ask Video Acceptance is not eligible.
+Final Ask Video Core Acceptance V1 is complete with Decision B. Four new licensed spoken sources and 60 frozen questions produced 100% scope rejection/recall, Evidence Recall@5, grounding, citation precision, unsupported-claim safety and hard-negative abstention. Answer Correctness and Core User Success were 83.33%, and Citation Recall was 88.89%; all missed fixed gates. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and incremental prompt/BM25/neighbor/rule tweaks are closed. Any future Q&A work must first choose and pre-register a different architecture, beginning with semantic transcript retrieval and hierarchical evidence.
 
 SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Grounded Video Q&A V1 is implemented but remains disabled after frozen abstention-safety gates failed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
 
-URL ingestion is complete without reopening search-core ML research. The structured Q&A expansion failed both utility and protected safety gates, so it is rejected. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
+URL ingestion is complete without reopening search-core ML research. Final Ask Video acceptance also closes incremental Q&A work. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
 
 ## Future work
 

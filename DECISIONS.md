@@ -1,5 +1,11 @@
 # Decisions
 
+## 043 - Keep Ask Video disabled after Final Core Acceptance
+
+Restore the safest Abstention Safety V1 production candidate: deterministic 45-second/900-character transcript chunks, unchanged BM25 Top-5, strict claim-level evidence IDs, backend-resolved citations, safe abstention and `gpt-5.4-mini-2026-03-17`. Remove failed structured expansion from the candidate call path. Add a deterministic pre-generation scope gate for explicit list/count, temporal ordering, long-range composition, visual-only and OCR-dependent questions while preserving factual, definition, explanation and localized-summary questions.
+
+Freeze four new licensed English spoken sources and 60 human-grounded questions at SHA-256 `6f11c5212db5a52fe8a5d41016952d81c4804a1bd47f018e2c27d6f8d337961c`, then run once. Scope metrics, Evidence Recall@5, Grounded Answer Rate, Citation Precision, Unsupported Claim safety and hard-negative abstention are all 100%. Four false abstentions and two incomplete answers leave Answer Correctness/Core User Success at 83.33% and Citation Recall at 88.89%. Choose Decision B — Core Answer Quality Failed. Keep `SCENEMIND_QA_ENABLED=false`; do not prepare v1.1 or rerun/tune the set. Stop incremental prompt, BM25, neighbor-expansion and rule work. A future milestone must select a fundamentally different architecture, beginning with measured semantic transcript retrieval and hierarchical evidence.
+
 ## 042 - Reject structured evidence expansion after safety regression
 
 Keep global BM25 Top-5 and general transcript chunking frozen. On two new development sources, compare two predeclared bounded expansions and select at most three deduplicated list neighbors plus two direction-specific temporal segments, capped at eight evidence units, 6,000 characters and 90 seconds. Freeze 36 questions over two further source-disjoint videos at manifest SHA-256 `27e43fb83b7d039abe160828d3d0f19f9e2b56a2ef223a78e6bde7f4f8c85d9f` and run validation once with `gpt-5.4-mini-2026-03-17`.

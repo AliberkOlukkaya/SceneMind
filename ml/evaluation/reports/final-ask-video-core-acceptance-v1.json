@@ -1,0 +1,873 @@
+{
+  "schema_version": "1.0.0",
+  "milestone": "FINAL ASK VIDEO CORE ACCEPTANCE V1",
+  "manifest_sha256": "6f11c5212db5a52fe8a5d41016952d81c4804a1bd47f018e2c27d6f8d337961c",
+  "single_frozen_run": true,
+  "data": {
+    "videos": 4,
+    "questions": 60,
+    "supported_answerable": 36,
+    "unanswerable": 12,
+    "out_of_scope": 12,
+    "source_independent_from_prior_qa": true
+  },
+  "metrics": {
+    "scope_gate": {
+      "supported_question_recall": 1.0,
+      "supported_question_precision": 1.0,
+      "false_scope_rejection_rate": 0.0,
+      "out_of_scope_rejection_rate": 1.0,
+      "unsafe_generation_rate": 0.0
+    },
+    "core_qa": {
+      "evidence_recall_at_5": 1.0,
+      "answer_correctness": 0.8333333333333334,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.8888888888888888,
+      "unsupported_claim_rate": 0.0,
+      "core_user_success_rate": 0.8333333333333334,
+      "false_abstention_rate": 0.1111111111111111
+    },
+    "unanswerable": {
+      "correct_abstention_rate": 1.0,
+      "false_answer_rate": 0.0
+    }
+  },
+  "performance": {
+    "input_tokens": 40277,
+    "output_tokens": 4397,
+    "generation_median_ms": 1541.5536999971664,
+    "generation_p95_ms": 2635.80212000088,
+    "total_median_ms": 1404.7375000009197,
+    "total_p95_ms": 2511.918520001927,
+    "total_api_cost_usd": 0.04999425,
+    "cost_per_generated_answer_usd": 0.001041546875,
+    "product_flow_input_tokens": 1869,
+    "product_flow_output_tokens": 155,
+    "product_flow_api_cost_usd": 0.00209925,
+    "full_milestone_api_cost_usd": 0.052093499999999994
+  },
+  "product_flow": {
+    "youtube": {
+      "ingress": "youtube",
+      "video_id": "64aa17cc-6ac4-44ab-b01a-43e2a3e179d7",
+      "question": "What does copyright enable creators to decide?",
+      "http_status": 200,
+      "elapsed_ms": 1605.234800001199,
+      "answerable": true,
+      "answer": "Copyright enables creators to decide who can share and reuse their creations.",
+      "citations": [
+        {
+          "evidence_id": "E001",
+          "video_id": "64aa17cc-6ac4-44ab-b01a-43e2a3e179d7",
+          "start_seconds": 0.0,
+          "end_seconds": 42.4,
+          "text": "Have you ever wondered how to download and share digital content legally? How do you let people know that you want them to reuse your own work? Creative Commons licenses can help you do both. We'll show you how. Our world's exploded with digital opportunities. Now we can communicate, share, and work together using the exceptional distribution network that is the internet. Information and content can fly between us in exciting new ways. But it's important to know that when something is created, say a photo or document or a music track, it's automatically protected by copyright. Copyright enables people to say who can share and reuse their creations.",
+          "segment_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "role": "RELEVANT"
+        },
+        {
+          "evidence_id": "E002",
+          "video_id": "64aa17cc-6ac4-44ab-b01a-43e2a3e179d7",
+          "start_seconds": 37.6,
+          "end_seconds": 76.5,
+          "text": "Copyright enables people to say who can share and reuse their creations. You must always obtain someone's permission before sharing or reusing their work, even when it's posted online. But what if a creator wants everyone to use their work without the hassle of granting permission over and over? This is where creative Commons can help. Creative Commons provides licensing tools that are free to use. You can apply a license to your work, which refines your copyright and streamlines how you give permission. Zach here downloads a photo called CC Kiwi that he wants to use in his science project.",
+          "segment_ids": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "role": "RELEVANT"
+        }
+      ],
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 874,
+        "output_tokens": 77
+      }
+    },
+    "upload": {
+      "ingress": "upload",
+      "video_id": "86924152-362b-41db-bd40-af6b0d513139",
+      "question": "What is the intended outcome for viewers of the tutorial?",
+      "http_status": 200,
+      "elapsed_ms": 1543.2300999964355,
+      "answerable": true,
+      "answer": "As the result, viewers/users will learn how to make a video tutorial.",
+      "citations": [
+        {
+          "evidence_id": "E002",
+          "video_id": "86924152-362b-41db-bd40-af6b0d513139",
+          "start_seconds": 38.02,
+          "end_seconds": 81.02,
+          "text": "performance support tools such as video. At the analysis stage, research the topic that you will make a video tutorial for. Who is the audience and what are their characteristics? For example, this video is for beginners. Identify the outcome for the audience. For example, as the result users will learn how to make a video tutorial. What is the timeline for project completion? Plan to send your video for the initial feedback and to have enough time left to resolve the issues before posting. At the design phase, write a script. You can use this template. I will share it in the link below the video. Design the user interface and user experience. Colors, music, no music.",
+          "segment_ids": [
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375
+          ],
+          "role": "RELEVANT"
+        }
+      ],
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 995,
+        "output_tokens": 78
+      }
+    },
+    "production_default_remained_disabled": true,
+    "isolated_runtime_enabled_for_endpoint_verification": true,
+    "ask_ui": "passed on desktop and mobile",
+    "citation_click_to_seek": "passed on desktop and mobile",
+    "mobile_behavior": "passed"
+  },
+  "validation": {
+    "pytest": "248 passed, 1 skipped",
+    "ruff": "passed",
+    "eslint": "passed",
+    "typescript": "passed",
+    "production_build": "passed",
+    "playwright": "16 passed, 2 opt-in real-model skipped",
+    "frozen_retrieval_regressions": "75 passed"
+  },
+  "failures": {
+    "total": 6,
+    "taxonomy": {
+      "FALSE_ABSTENTION": 4,
+      "GENERATION_ERROR": 2
+    }
+  },
+  "per_video": {
+    "creative-commons-licenses-explained": {
+      "supported_answerable": 9,
+      "core_success": 7,
+      "failures": 2,
+      "core_user_success_rate": 0.7777777777777778
+    },
+    "webm-codec-explainer": {
+      "supported_answerable": 9,
+      "core_success": 8,
+      "failures": 1,
+      "core_user_success_rate": 0.8888888888888888
+    },
+    "human-software-extensions-talk": {
+      "supported_answerable": 9,
+      "core_success": 8,
+      "failures": 1,
+      "core_user_success_rate": 0.8888888888888888
+    },
+    "demo-video-production-tutorial": {
+      "supported_answerable": 9,
+      "core_success": 7,
+      "failures": 2,
+      "core_user_success_rate": 0.7777777777777778
+    }
+  },
+  "catastrophic_source_failure": false,
+  "gates": {
+    "passed": false,
+    "failed": [
+      "answer_correctness",
+      "citation_recall",
+      "core_user_success_rate"
+    ]
+  },
+  "decision": {
+    "code": "B",
+    "label": "CORE ANSWER QUALITY FAILED",
+    "ask_video_enabled": false,
+    "reason": "Retrieval and safety passed, but four false abstentions and two incomplete answers left correctness, citation recall, and core user success below fixed gates.",
+    "next_milestone": "Choose a fundamentally different architecture; begin with a measured semantic transcript retrieval and hierarchical evidence design, not another prompt, BM25, neighbor-expansion, or rule tweak."
+  },
+  "reviews": [
+    {
+      "question_id": "creative-commons-licenses-explained-s01",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s02",
+      "answer_correct": false,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "FALSE_ABSTENTION",
+      "note": "The retrieved evidence directly says Kerry granted permission with a Creative Commons license."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s03",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s04",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s05",
+      "answer_correct": false,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "FALSE_ABSTENTION",
+      "note": "The retrieved evidence directly explains that no derivatives withholds permission to change the photo."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s06",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s07",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s08",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s09",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s01",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s02",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s03",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s04",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s05",
+      "answer_correct": false,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "FALSE_ABSTENTION",
+      "note": "The retrieved evidence directly says the server must send and manage one thousand streams."
+    },
+    {
+      "question_id": "webm-codec-explainer-s06",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s07",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s08",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s09",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-u01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-u02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-u03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-o01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-o02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "webm-codec-explainer-o03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s01",
+      "answer_correct": false,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "GENERATION_ERROR",
+      "note": "The answer omits bodies, senses, cognition, and the plug-in/discard aspect of the frozen definition."
+    },
+    {
+      "question_id": "human-software-extensions-talk-s02",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s03",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s04",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s05",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s06",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s07",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s08",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s09",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-u01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-u02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-u03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-o01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-o02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-o03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s01",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s02",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s03",
+      "answer_correct": false,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "FALSE_ABSTENTION",
+      "note": "The retrieved evidence directly says time is needed to resolve issues before posting."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s04",
+      "answer_correct": false,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": false,
+      "failure": "GENERATION_ERROR",
+      "note": "The answer gives audience characteristics but omits who the audience is and the intended outcome."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s05",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s06",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 2,
+      "citation_count": 2,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s07",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s08",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s09",
+      "answer_correct": true,
+      "grounded": true,
+      "valid_citations": 1,
+      "citation_count": 1,
+      "unsupported_material_claims": 0,
+      "core_user_success": true,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o01",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o02",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o03",
+      "answer_correct": true,
+      "grounded": null,
+      "valid_citations": 0,
+      "citation_count": 0,
+      "unsupported_material_claims": 0,
+      "core_user_success": null,
+      "failure": null,
+      "note": null
+    }
+  ]
+}

@@ -113,6 +113,13 @@
 - [x] Record Decision D after correctness and structured-category gates fail despite passing safety gates
 - [x] Develop and freeze structured-question evidence handling on new sources; reject it after safety and structured-quality gates fail
 - [x] Keep all three observed Q&A validations frozen and Ask Video disabled
+- [x] Define and test a deterministic bounded Ask Video core scope gate without over-rejecting natural plurals
+- [x] Remove failed structured expansion from the candidate production path and restore safe BM25 Top-5 evidence
+- [x] Freeze four new licensed sources and 60 human-grounded Final Core Acceptance questions
+- [x] Run Final Ask Video Core Acceptance once through real provider generation and human review
+- [x] Verify public YouTube URL and local upload through ingest, transcript, index and real Ask endpoint flows
+- [x] Record Decision B after correctness, citation-recall and core-user-success gates fail
+- [x] Stop incremental Q&A prompt, BM25, neighbor-expansion and rule tuning
 
 ## Future work — not active v1.0 tasks
 

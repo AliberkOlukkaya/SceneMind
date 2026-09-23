@@ -8,8 +8,10 @@ then click a ranked result to jump directly to its timestamp. SceneMind v1.0 RC 
 models for inference; it does not train CLIP or Whisper and does not require a paid API.
 
 An evaluation-gated **Ask Video** path can produce transcript-grounded answers with clickable
-timestamp citations through a configured OpenAI provider. It is disabled by default because its
-frozen real-provider validation failed abstention safety; Find Moments remains fully local.
+timestamp citations through a configured OpenAI provider. It is disabled by default: Final Core
+Acceptance reached 100% retrieval, grounding, citation precision, hard-negative abstention and
+scope rejection, but only 83.33% answer correctness and core user success. Find Moments remains
+fully local.
 
 > **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
 > demonstration and engineering review. It is not presented as a universal video-understanding
@@ -32,6 +34,11 @@ demonstrates the interface and click-to-seek workflow, not real-world search acc
 5. Returns possible timestamped moments; clicking a result seeks the video player.
 6. When explicitly enabled, retrieves bounded transcript evidence before asking an answer provider
    and resolves cited evidence IDs to trusted timestamps.
+
+Ask Video's candidate V1 scope is deliberately narrow: facts, definitions, direct explanations and
+localized summaries from spoken transcript evidence. Explicit list/count aggregation, temporal
+ordering, long-range synthesis, visual-only and OCR-dependent questions are rejected before the
+provider. The final acceptance failure means this capability is documented but not enabled.
 
 Processing states come from the real pipeline: waiting, frame extraction, transcription, visual
 indexing, ready or failed. SceneMind does not fabricate percentage progress.

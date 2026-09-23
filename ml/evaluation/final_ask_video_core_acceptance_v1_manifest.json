@@ -1,0 +1,1000 @@
+{
+  "schema_version": "1.0.0",
+  "milestone": "FINAL ASK VIDEO CORE ACCEPTANCE V1",
+  "ground_truth_authorship": "Human-authored from source viewing and transcripts before SceneMind question execution; no retrieval result used.",
+  "source_independence": "No source appears in Grounded Video Q&A V1, Q&A Abstention Safety V1, Structured Question Evidence V1, or historical Q&A replay.",
+  "sources": [
+    {
+      "source_id": "creative-commons-licenses-explained",
+      "domain": "educational explainer",
+      "title": "Creative Commons licences explained",
+      "license": "CC BY 3.0 NZ",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/nz/",
+      "license_evidence_url": "https://oercollective.caul.edu.au/caul-open-educational-resources-professional-development-program/open/download?type=print_pdf",
+      "attribution": "Process Arts",
+      "ingress": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=4ZvJGV6YF6Y",
+      "video_id": "64aa17cc-6ac4-44ab-b01a-43e2a3e179d7",
+      "duration_seconds": 332.76,
+      "media_sha256": "e7c8af3be36c9a0821836f99533e7321a9de5d2c1cf27af51126c88099cd9821",
+      "media_bytes": 23052418,
+      "transcript_sha256": "5310d8754fe2ca4ba14ab28593d03cda73e5e97022b9064944648da61829d6b5"
+    },
+    {
+      "source_id": "webm-codec-explainer",
+      "domain": "technical explainer",
+      "title": "WebM: A Video Codec for the Web",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_evidence_url": "https://commons.wikimedia.org/wiki/File:WebM-_A_Video_Codec_for_the_Web.webm",
+      "attribution": "Lou Quillio",
+      "ingress": "upload",
+      "video_id": "0d0943a5-8332-4d78-8bc8-4e1951d5ded9",
+      "duration_seconds": 125.95916666666666,
+      "media_sha256": "899ead68880a3cbde8aef6cd14f634a0a244651f2551e576a4276cf37023cdeb",
+      "media_bytes": 32998819,
+      "transcript_sha256": "2dc4943768cc50af86cd09df289c94b5d9fc6989e0b4ccbc2f3a7d9bee49fb35"
+    },
+    {
+      "source_id": "human-software-extensions-talk",
+      "domain": "art and technology presentation",
+      "title": "Humans as Software Extensions: Will You Be My Plugin?",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_evidence_url": "https://media.ccc.de/v/34c3-9077-humans_as_software_extensions",
+      "attribution": "Sebastian Schmieg; 34C3 / c3voc",
+      "ingress": "upload",
+      "video_id": "96f38275-d32d-4518-b481-a9a41584e9e9",
+      "duration_seconds": 1589.28,
+      "media_sha256": "2bc604a1ad04d1ca5537eb3348d691a3e1e2a845c114c49d97ccd923e8d880dc",
+      "media_bytes": 51800049,
+      "transcript_sha256": "965a0e6549e05eca6f4df9dedd841e8a40534a068adf6b21bb50e4fb5bc972b2"
+    },
+    {
+      "source_id": "demo-video-production-tutorial",
+      "domain": "software tutorial",
+      "title": "Demo Video Tutorial",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_evidence_url": "https://commons.wikimedia.org/wiki/File:Demo_Video_Tutorial.webm",
+      "attribution": "Alexandra Shagzhina",
+      "ingress": "upload",
+      "video_id": "86924152-362b-41db-bd40-af6b0d513139",
+      "duration_seconds": 199.8997,
+      "media_sha256": "25a857b6896551f21c7d6c50181ad4451a903b53580fd5563af2c2a6bc2ae40f",
+      "media_bytes": 51463448,
+      "transcript_sha256": "699ec7b34860ba46e0edceeca681779b900828beb409285836b688d00d7a1c0d"
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "creative-commons-licenses-explained-s01",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What automatically protects a newly created photo, document, or music track?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Copyright automatically protects newly created work."
+      ],
+      "expected_evidence_intervals": [
+        [
+          28.4,
+          37.6
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s02",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Why can Zach use Kerry's CC Kiwi photo without asking her first?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Kerry already granted permission through a Creative Commons license."
+      ],
+      "expected_evidence_intervals": [
+        [
+          70.5,
+          89.8
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s03",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What does attribution require Zach to do?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "He must acknowledge Kerry when publishing the project containing her photo."
+      ],
+      "expected_evidence_intervals": [
+        [
+          108.2,
+          117.5
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s04",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What does the non-commercial element mean for CC Kiwi?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Only Kerry may make money from the photo; others may not sell uses such as T-shirts."
+      ],
+      "expected_evidence_intervals": [
+        [
+          117.5,
+          133.1
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s05",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Why would Kate need to ask Kerry before retouching the photo?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "The no-derivatives element does not grant permission to change the photo."
+      ],
+      "expected_evidence_intervals": [
+        [
+          133.1,
+          148.26
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s06",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What does share alike require of a remix?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "A new creation must use the same license terms."
+      ],
+      "expected_evidence_intervals": [
+        [
+          148.26,
+          164.06
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s07",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "How does a Creative Commons license streamline permission?",
+      "category": "LOCALIZED_SUMMARY",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It refines copyright so permission can be granted in advance with understandable rules."
+      ],
+      "expected_evidence_intervals": [
+        [
+          49.0,
+          70.5
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s08",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Which Creative Commons element is included in every license?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Attribution is included in every Creative Commons license."
+      ],
+      "expected_evidence_intervals": [
+        [
+          164.06,
+          177.96
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-s09",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Where does the video suggest searching for Creative Commons licensed music?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "The video suggests Jamendo for music."
+      ],
+      "expected_evidence_intervals": [
+        [
+          249.36,
+          266.96
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u01",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Does the video say Creative Commons licenses expire after ten years?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No license-expiry duration is stated."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u02",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Who founded Creative Commons?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "The founders are not discussed."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-u03",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Does the video give the legal penalty for violating attribution?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No penalty is specified."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o01",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "Which three websites are recommended for finding reusable work?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Explicit count aggregation."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o02",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What is explained immediately after the attribution symbol?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Temporal ordering."
+    },
+    {
+      "question_id": "creative-commons-licenses-explained-o03",
+      "source_id": "creative-commons-licenses-explained",
+      "question": "What does the license chart on screen say?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "OCR-dependent."
+    },
+    {
+      "question_id": "webm-codec-explainer-s01",
+      "source_id": "webm-codec-explainer",
+      "question": "Why was WebM created?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "The web needed a codec optimized for the internet and how users watch web video."
+      ],
+      "expected_evidence_intervals": [
+        [
+          15.06,
+          25.06
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s02",
+      "source_id": "webm-codec-explainer",
+      "question": "What were early codecs primarily developed for?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Teleconferencing and broadcast television."
+      ],
+      "expected_evidence_intervals": [
+        [
+          25.06,
+          31.06
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s03",
+      "source_id": "webm-codec-explainer",
+      "question": "How does broadcast television deliver video?",
+      "category": "LOCALIZED_SUMMARY",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It casts one stream widely over air or cable, and viewers tune in."
+      ],
+      "expected_evidence_intervals": [
+        [
+          44.06,
+          60.06
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s04",
+      "source_id": "webm-codec-explainer",
+      "question": "What does it mean that the web is a unicast system?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "A viewer requests video from a server and receives an individual stream."
+      ],
+      "expected_evidence_intervals": [
+        [
+          60.06,
+          80.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s05",
+      "source_id": "webm-codec-explainer",
+      "question": "What must a server do when a thousand people request the same video?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It must send and manage a thousand streams."
+      ],
+      "expected_evidence_intervals": [
+        [
+          75.06,
+          86.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s06",
+      "source_id": "webm-codec-explainer",
+      "question": "Why is continuously broadcasting every catalog video impractical for a website?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Only a few people may want a given video, while web delivery creates requested streams."
+      ],
+      "expected_evidence_intervals": [
+        [
+          63.06,
+          80.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s07",
+      "source_id": "webm-codec-explainer",
+      "question": "Why must web video adapt for each user?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Users differ in player software, browser, screen resolution, and connection speed."
+      ],
+      "expected_evidence_intervals": [
+        [
+          86.57,
+          104.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s08",
+      "source_id": "webm-codec-explainer",
+      "question": "What is the goal of the WebM project?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "To create the best video technologies for the web."
+      ],
+      "expected_evidence_intervals": [
+        [
+          104.57,
+          115.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-s09",
+      "source_id": "webm-codec-explainer",
+      "question": "How is the WebM project made available to contributors?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It is 100% open source and invites involvement."
+      ],
+      "expected_evidence_intervals": [
+        [
+          109.57,
+          121.57
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "webm-codec-explainer-u01",
+      "source_id": "webm-codec-explainer",
+      "question": "Which company operates the WebM streaming servers described in the video?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No server operator is named."
+    },
+    {
+      "question_id": "webm-codec-explainer-u02",
+      "source_id": "webm-codec-explainer",
+      "question": "What bitrate does WebM use for a 1080p stream?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No bitrate is given."
+    },
+    {
+      "question_id": "webm-codec-explainer-u03",
+      "source_id": "webm-codec-explainer",
+      "question": "Does the speaker say WebM requires a paid patent license?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Patent licensing is not discussed."
+    },
+    {
+      "question_id": "webm-codec-explainer-o01",
+      "source_id": "webm-codec-explainer",
+      "question": "Combine all arguments made throughout the video into one complete case for WebM.",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Long-range compositional synthesis."
+    },
+    {
+      "question_id": "webm-codec-explainer-o02",
+      "source_id": "webm-codec-explainer",
+      "question": "What color is the television shown in the animation?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Visual-only evidence."
+    },
+    {
+      "question_id": "webm-codec-explainer-o03",
+      "source_id": "webm-codec-explainer",
+      "question": "List four user conditions that web video must adapt to.",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Explicit list/count aggregation."
+    },
+    {
+      "question_id": "human-software-extensions-talk-s01",
+      "source_id": "human-software-extensions-talk",
+      "question": "How does the speaker define humans as software extensions?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "People extend computational systems by offering their bodies, senses, and cognition and can be plugged in and discarded."
+      ],
+      "expected_evidence_intervals": [
+        [
+          127.0,
+          150.3
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s02",
+      "source_id": "human-software-extensions-talk",
+      "question": "What is the stack in the speaker's description?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "A planetary-scale computational totality with layers from minerals and data centers to bots and people."
+      ],
+      "expected_evidence_intervals": [
+        [
+          158.7,
+          188.8
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s03",
+      "source_id": "human-software-extensions-talk",
+      "question": "How did Upwork let the speaker monitor freelancers?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It recorded keystrokes and regularly took screenshots."
+      ],
+      "expected_evidence_intervals": [
+        [
+          352.0,
+          385.9
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s04",
+      "source_id": "human-software-extensions-talk",
+      "question": "How does Amazon Key illustrate remote management of workers?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It lets users grant apartment access remotely and watch otherwise invisible workers through a camera lock and app."
+      ],
+      "expected_evidence_intervals": [
+        [
+          427.7,
+          483.2
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s05",
+      "source_id": "human-software-extensions-talk",
+      "question": "How did Fiverr originally price a gig?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Each gig cost exactly five dollars and the platform kept one dollar."
+      ],
+      "expected_evidence_intervals": [
+        [
+          538.2,
+          548.3
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s06",
+      "source_id": "human-software-extensions-talk",
+      "question": "What does the speaker mean by survival creativity?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Coming up with whatever it takes to survive on a hyper-competitive platform."
+      ],
+      "expected_evidence_intervals": [
+        [
+          695.7,
+          721.9
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s07",
+      "source_id": "human-software-extensions-talk",
+      "question": "Why does the speaker say AI can make labor invisible?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "AI fragments work into tasks performed anywhere around the clock and hides the care and maintenance labor behind automation."
+      ],
+      "expected_evidence_intervals": [
+        [
+          810.9,
+          889.7
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s08",
+      "source_id": "human-software-extensions-talk",
+      "question": "How does fragmenting a transcription job create the appearance that nobody worked?",
+      "category": "LOCALIZED_SUMMARY",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "The job is divided into tiny unpaid pieces until it is completed while each contribution appears too small to count as paid work."
+      ],
+      "expected_evidence_intervals": [
+        [
+          1016.1,
+          1075.5
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-s09",
+      "source_id": "human-software-extensions-talk",
+      "question": "What possibility does the speaker see in being plugged into software systems?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "People can manipulate the systems and data from within and create weird, slow, inefficient alternatives."
+      ],
+      "expected_evidence_intervals": [
+        [
+          1371.2,
+          1412.3
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "human-software-extensions-talk-u01",
+      "source_id": "human-software-extensions-talk",
+      "question": "What hourly wage did the Sri Lankan freelancers receive?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No hourly wage is stated."
+    },
+    {
+      "question_id": "human-software-extensions-talk-u02",
+      "source_id": "human-software-extensions-talk",
+      "question": "Which programming language was used to build Upwork?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Implementation technology is not discussed."
+    },
+    {
+      "question_id": "human-software-extensions-talk-u03",
+      "source_id": "human-software-extensions-talk",
+      "question": "How many Amazon Key users cancelled the service?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No cancellation count is given."
+    },
+    {
+      "question_id": "human-software-extensions-talk-o01",
+      "source_id": "human-software-extensions-talk",
+      "question": "What does the speaker discuss after the Sleep Dealer example?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Temporal ordering."
+    },
+    {
+      "question_id": "human-software-extensions-talk-o02",
+      "source_id": "human-software-extensions-talk",
+      "question": "Compare the speaker's argument at the beginning with the conclusion at the end.",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Long-range compositional synthesis."
+    },
+    {
+      "question_id": "human-software-extensions-talk-o03",
+      "source_id": "human-software-extensions-talk",
+      "question": "What does the title on the projected slide say?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "OCR-dependent."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s01",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Who is the tutorial intended for?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It is intended for beginners."
+      ],
+      "expected_evidence_intervals": [
+        [
+          13.02,
+          22.02
+        ],
+        [
+          47.02,
+          53.02
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s02",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What is the ADDIE model used for?",
+      "category": "DEFINITION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It is a flexible process used by instructional designers and training developers to build effective training and performance-support tools."
+      ],
+      "expected_evidence_intervals": [
+        [
+          22.02,
+          41.02
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s03",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Why should the project schedule leave time after initial feedback?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "So issues can be resolved before posting the video."
+      ],
+      "expected_evidence_intervals": [
+        [
+          60.02,
+          70.02
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s04",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What should be identified about the audience during analysis?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Who the audience is, its characteristics, and the intended outcome."
+      ],
+      "expected_evidence_intervals": [
+        [
+          41.02,
+          60.02
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s05",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What recording environment does the tutorial recommend?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "A quiet room with a professional background, along with a laptop and microphone."
+      ],
+      "expected_evidence_intervals": [
+        [
+          95.62,
+          106.62
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s06",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What qualities should free screen-recording software have?",
+      "category": "LOCALIZED_SUMMARY",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "It should avoid watermarks and recording limits and provide good quality."
+      ],
+      "expected_evidence_intervals": [
+        [
+          108.62,
+          128.62
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s07",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Why does the tutorial emphasize sound quality?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Sound is important for visually impaired audiences, and bad sections should be rerecorded."
+      ],
+      "expected_evidence_intervals": [
+        [
+          128.62,
+          144.62
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s08",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Why are SRT caption files preferred?",
+      "category": "EXPLANATION",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "They are used across platforms such as Facebook and YouTube and can be made translatable."
+      ],
+      "expected_evidence_intervals": [
+        [
+          148.62,
+          172.62
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-s09",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What feedback practice does the exercise recommend?",
+      "category": "FACTUAL",
+      "supported_scope": true,
+      "answerable_from_transcript": true,
+      "key_answer_facts": [
+        "Share the tutorial with three to five people for feedback before publishing."
+      ],
+      "expected_evidence_intervals": [
+        [
+          181.73,
+          196.13
+        ]
+      ],
+      "reason": null
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u01",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Which microphone brand does the tutorial recommend?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No microphone brand is named."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u02",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What budget should a beginner set for video production?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "No budget is given."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-u03",
+      "source_id": "demo-video-production-tutorial",
+      "question": "Does the tutorial recommend publishing on TikTok?",
+      "category": "UNANSWERABLE",
+      "supported_scope": true,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "TikTok is not mentioned."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o01",
+      "source_id": "demo-video-production-tutorial",
+      "question": "List the five phases of the ADDIE model.",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Explicit list/count aggregation."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o02",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What should the creator do after receiving feedback?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Temporal ordering."
+    },
+    {
+      "question_id": "demo-video-production-tutorial-o03",
+      "source_id": "demo-video-production-tutorial",
+      "question": "What color is the background in the recording example?",
+      "category": "OUT_OF_SCOPE",
+      "supported_scope": false,
+      "answerable_from_transcript": false,
+      "key_answer_facts": [],
+      "expected_evidence_intervals": [],
+      "reason": "Visual-only evidence."
+    }
+  ],
+  "frozen_configuration": {
+    "scope_gate_implementation_sha256": "413660bd7e2011fa53a60893baf5019f5076b0c7e6330f60e72b956b921d264c",
+    "prompt_sha256": "5d00c3f2a75ef745440de79ec6b3b640d670315f85661a61a835a9580a35c762",
+    "model": "gpt-5.4-mini-2026-03-17",
+    "retrieval": "BM25 Top-5 over unchanged 45-second/900-character overlapping transcript chunks",
+    "generation": "Responses API defaults; strict JSON schema; store=false",
+    "abstention": "claim-level evidence, exact evidence IDs, backend citation validation, no outside knowledge",
+    "pricing_usd_per_million_tokens": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini"
+  }
+}
