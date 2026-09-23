@@ -1,0 +1,1000 @@
+{
+  "schema_version": "1.0.0",
+  "milestone": "SEMANTIC TRANSCRIPT RETRIEVAL + HIERARCHICAL EVIDENCE SELECTION V1",
+  "manifest_sha256": "e99fecc0c0c941afe830eb1d8ff8072212b18226096ead0bcd0b54343d068ba1",
+  "single_frozen_validation_run": true,
+  "data": {
+    "development_videos": 3,
+    "development_questions": 45,
+    "development_answerable": 33,
+    "development_unanswerable": 12,
+    "validation_videos": 3,
+    "validation_questions": 45,
+    "validation_answerable": 33,
+    "validation_unanswerable": 12,
+    "source_disjoint": true
+  },
+  "model": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "embedding_license": "Apache-2.0",
+    "embedding_dimension": 384,
+    "fine_units": "greedy non-overlapping adjacent segments; max 30 seconds or 600 characters",
+    "context_units": "non-overlapping groups of three consecutive fine units",
+    "semantic_candidate_k": 10,
+    "context_candidate_k": 5,
+    "selector": "rank-only semantic fine + semantic context membership + 0.5x BM25 fine contribution; five-unit chronological package",
+    "evidence_max_units": 5,
+    "evidence_max_characters": 3600,
+    "generator_model": "gpt-5.4-mini-2026-03-17",
+    "generator_prompt_sha256": "5d00c3f2a75ef745440de79ec6b3b640d670315f85661a61a835a9580a35c762",
+    "generation": "existing strict structured output and claim/citation resolver; defaults; store=false",
+    "abstention": "unchanged safe contract",
+    "pricing_usd_per_million_tokens": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "semantic_implementation_sha256": "098d696af1db1e5746b2d3d1076794a68a6fb80250bd8bf5afcb00bbf76b6830"
+  },
+  "development": {
+    "bm25": {
+      "recall": {
+        "1": 0.45454545454545453,
+        "3": 0.7575757575757576,
+        "5": 0.8787878787878788,
+        "10": 0.9696969696969697
+      },
+      "minimum_sufficient": {
+        "1": 0.45454545454545453,
+        "3": 0.7575757575757576,
+        "5": 0.8787878787878788,
+        "10": 0.9696969696969697
+      }
+    },
+    "semantic": {
+      "recall": {
+        "1": 0.42424242424242425,
+        "3": 0.8181818181818182,
+        "5": 0.9393939393939394,
+        "10": 1.0
+      },
+      "minimum_sufficient": {
+        "1": 0.42424242424242425,
+        "3": 0.7878787878787878,
+        "5": 0.8787878787878788,
+        "10": 0.9696969696969697
+      }
+    },
+    "hybrid": {
+      "recall": {
+        "1": 0.5454545454545454,
+        "3": 0.8484848484848485,
+        "5": 0.9696969696969697,
+        "10": 0.9696969696969697
+      },
+      "minimum_sufficient": {
+        "1": 0.5454545454545454,
+        "3": 0.8484848484848485,
+        "5": 0.9393939393939394,
+        "10": 0.9696969696969697
+      }
+    },
+    "selector": {
+      "mean_completeness": 0.9545454545454546,
+      "fully_complete": 0.9393939393939394,
+      "any_recall": 0.9696969696969697,
+      "mean_units": 5,
+      "mean_chars": 1732.4
+    }
+  },
+  "retrieval": {
+    "bm25": {
+      "recall_at_1": 0.6666666666666666,
+      "minimum_sufficient_at_1": 0.6060606060606061,
+      "recall_at_3": 0.7878787878787878,
+      "minimum_sufficient_at_3": 0.7575757575757576,
+      "recall_at_5": 0.8181818181818182,
+      "minimum_sufficient_at_5": 0.7878787878787878,
+      "recall_at_10": 0.9393939393939394,
+      "minimum_sufficient_at_10": 0.9090909090909091
+    },
+    "semantic": {
+      "recall_at_1": 0.5454545454545454,
+      "minimum_sufficient_at_1": 0.45454545454545453,
+      "recall_at_3": 0.8181818181818182,
+      "minimum_sufficient_at_3": 0.7878787878787878,
+      "recall_at_5": 0.8787878787878788,
+      "minimum_sufficient_at_5": 0.8484848484848485,
+      "recall_at_10": 0.9393939393939394,
+      "minimum_sufficient_at_10": 0.9090909090909091
+    },
+    "hybrid": {
+      "recall_at_1": 0.5757575757575758,
+      "minimum_sufficient_at_1": 0.5151515151515151,
+      "recall_at_3": 0.7575757575757576,
+      "minimum_sufficient_at_3": 0.7575757575757576,
+      "recall_at_5": 0.9090909090909091,
+      "minimum_sufficient_at_5": 0.8787878787878788,
+      "recall_at_10": 0.9696969696969697,
+      "minimum_sufficient_at_10": 0.9696969696969697
+    }
+  },
+  "evidence_packages": {
+    "baseline": {
+      "evidence_recall_at_5": 0.8181818181818182,
+      "minimum_sufficient_evidence_recall": 0.7878787878787878,
+      "mean_evidence_package_completeness": 0.803030303030303,
+      "fully_complete_evidence_rate": 0.7878787878787878
+    },
+    "candidate": {
+      "evidence_recall_at_5": 0.9090909090909091,
+      "minimum_sufficient_evidence_recall": 0.8787878787878788,
+      "mean_evidence_package_completeness": 0.8939393939393939,
+      "fully_complete_evidence_rate": 0.8787878787878788
+    }
+  },
+  "qa": {
+    "baseline": {
+      "answer_correctness": 0.696969696969697,
+      "core_user_success": 0.696969696969697,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.8787878787878788,
+      "unsupported_claim_rate": 0.0,
+      "correct_abstention": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.12121212121212122
+    },
+    "candidate": {
+      "answer_correctness": 0.6363636363636364,
+      "core_user_success": 0.6363636363636364,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.9393939393939394,
+      "unsupported_claim_rate": 0.0,
+      "correct_abstention": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.06060606060606061
+    }
+  },
+  "paired_change_percentage_points": {
+    "answer_correctness": -6.060606060606066,
+    "core_user_success": -6.060606060606066,
+    "mean_evidence_completeness": 9.090909090909093,
+    "false_abstention": -6.0606060606060606,
+    "unsupported_claim": 0.0,
+    "false_answer": 0.0,
+    "citation_precision": 0.0,
+    "correct_abstention": 0.0
+  },
+  "performance": {
+    "index": {
+      "encoder_load_seconds": 5.6666831000038655,
+      "sources": [
+        {
+          "source_id": "wiki-education-foundation",
+          "duration_seconds": 2658.0333333333333,
+          "fine_units": 93,
+          "context_units": 31,
+          "build_seconds": 2.0513302000035765,
+          "index_bytes": 307082
+        },
+        {
+          "source_id": "one-lib-one-ref",
+          "duration_seconds": 516.6333333333333,
+          "fine_units": 20,
+          "context_units": 7,
+          "build_seconds": 0.32604300000093644,
+          "index_bytes": 64641
+        },
+        {
+          "source_id": "truenas-raidz",
+          "duration_seconds": 519.1675925347981,
+          "fine_units": 18,
+          "context_units": 6,
+          "build_seconds": 0.42955929999880027,
+          "index_bytes": 67080
+        }
+      ],
+      "total_build_seconds": 2.806932500003313,
+      "total_index_bytes": 438803,
+      "added_peak_rss_bytes": 542101504
+    },
+    "bm25_retrieval_median_ms": 1.1961999989580363,
+    "bm25_retrieval_p95_ms": 4.32297999941511,
+    "semantic_retrieval_median_ms": 11.99579999956768,
+    "semantic_retrieval_p95_ms": 15.607219998491928,
+    "selector_median_ms": 0.8651000025565736,
+    "selector_p95_ms": 2.980260003823787,
+    "baseline": {
+      "input_tokens": 46829,
+      "output_tokens": 4711,
+      "generation_median_ms": 1896.217000001343,
+      "generation_p95_ms": 2900.1934399988386,
+      "total_median_ms": 1897.3898999975063,
+      "total_p95_ms": 2901.8383399990853,
+      "cost_usd": 0.05632125,
+      "cost_per_answer_usd": 0.0012515833333333335
+    },
+    "candidate": {
+      "input_tokens": 37622,
+      "output_tokens": 4899,
+      "generation_median_ms": 1762.3855999991065,
+      "generation_p95_ms": 4235.940680000928,
+      "total_median_ms": 1775.889599994116,
+      "total_p95_ms": 4248.434400004041,
+      "cost_usd": 0.050262,
+      "cost_per_answer_usd": 0.0011169333333333334
+    },
+    "mean_candidate_evidence_units": 5,
+    "mean_candidate_evidence_characters": 2201.8
+  },
+  "cost": {
+    "validation_input_tokens": 84451,
+    "validation_output_tokens": 9610,
+    "validation_cost_usd": 0.10658325,
+    "historical_valid_input_tokens": 4430,
+    "historical_valid_output_tokens": 667,
+    "invalid_diagnostic_input_tokens": 4385,
+    "invalid_diagnostic_output_tokens": 701,
+    "historical_replay_cost_including_invalid_attempt_usd": 0.01276725,
+    "full_milestone_api_cost_usd": 0.1193505
+  },
+  "historical_replay": {
+    "previous_false_abstentions_recovered": 2,
+    "previous_false_abstentions_total": 4,
+    "previous_incomplete_answers_recovered": 1,
+    "previous_incomplete_answers_total": 2,
+    "all_candidate_packages_hit_expected_interval": true
+  },
+  "validation": {
+    "pytest": "258 passed, 1 skipped",
+    "ruff": "passed",
+    "eslint": "passed",
+    "typescript": "passed",
+    "production_build": "passed",
+    "playwright": "16 passed, 2 opt-in real-model skipped",
+    "frozen_retrieval_regressions": "99 passed"
+  },
+  "per_video": {
+    "baseline": {
+      "truenas-raidz": {
+        "questions": 11,
+        "correct": 9,
+        "success_rate": 0.8181818181818182
+      },
+      "one-lib-one-ref": {
+        "questions": 11,
+        "correct": 9,
+        "success_rate": 0.8181818181818182
+      },
+      "wiki-education-foundation": {
+        "questions": 11,
+        "correct": 5,
+        "success_rate": 0.45454545454545453
+      }
+    },
+    "candidate": {
+      "truenas-raidz": {
+        "questions": 11,
+        "correct": 7,
+        "success_rate": 0.6363636363636364
+      },
+      "one-lib-one-ref": {
+        "questions": 11,
+        "correct": 10,
+        "success_rate": 0.9090909090909091
+      },
+      "wiki-education-foundation": {
+        "questions": 11,
+        "correct": 4,
+        "success_rate": 0.36363636363636365
+      }
+    }
+  },
+  "failure_taxonomy": {
+    "baseline": {
+      "FALSE_ABSTENTION": 4,
+      "INCOMPLETE_ANSWER": 4,
+      "WRONG_EVIDENCE": 2
+    },
+    "candidate": {
+      "FALSE_ABSTENTION": 2,
+      "WRONG_EVIDENCE": 4,
+      "INCOMPLETE_ANSWER": 6
+    }
+  },
+  "gates": {
+    "passed": false,
+    "checks": {
+      "evidence_recall_at_5": false,
+      "minimum_sufficient_evidence_recall": false,
+      "fully_complete_evidence_rate": false,
+      "answer_correctness": false,
+      "core_user_success": false,
+      "grounded_answer_rate": true,
+      "citation_precision": true,
+      "citation_recall": true,
+      "unsupported_claim_rate": true,
+      "correct_abstention": true,
+      "false_answer_rate": true,
+      "false_abstention_rate": true,
+      "no_catastrophic_per_video_failure": false
+    }
+  },
+  "decision": {
+    "code": "B",
+    "label": "SEMANTIC RETRIEVAL HELPS, SELECTOR FAILS",
+    "reason": "The candidate improves frozen evidence-package recall and completeness by 9.09 points and halves historical false abstentions, but answer correctness and user success fall 6.06 points below BM25, five absolute quality gates fail, and the 44-minute source has a catastrophic 36.36% success rate.",
+    "production_changed": false,
+    "ask_video_enabled": false,
+    "next_milestone": "Stop and review whether to change the embedding architecture, add multimodal evidence, move to hierarchical summarization, or postpone Ask Video; do not automatically start another retrieval experiment."
+  },
+  "reviews": {
+    "baseline": [
+      {
+        "question_id": "truenas-raidz-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "truenas-raidz-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "truenas-raidz-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 4,
+        "citation_count": 4,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v05",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "one-lib-one-ref-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "one-lib-one-ref-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v05",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      },
+      {
+        "question_id": "wiki-education-foundation-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v07",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      },
+      {
+        "question_id": "wiki-education-foundation-v08",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "wiki-education-foundation-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      }
+    ],
+    "candidate": [
+      {
+        "question_id": "truenas-raidz-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "truenas-raidz-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 3,
+        "citation_count": 3,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      },
+      {
+        "question_id": "truenas-raidz-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 3,
+        "citation_count": 3,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v05",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "truenas-raidz-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 3,
+        "citation_count": 3,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "valid_citations": 0,
+        "citation_count": 0,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "truenas-raidz-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "truenas-raidz-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 3,
+        "citation_count": 3,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "one-lib-one-ref-v10",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "one-lib-one-ref-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v07",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      },
+      {
+        "question_id": "wiki-education-foundation-v08",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      },
+      {
+        "question_id": "wiki-education-foundation-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 1,
+        "citation_count": 1,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_ANSWER"
+      },
+      {
+        "question_id": "wiki-education-foundation-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "wiki-education-foundation-v11",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "valid_citations": 2,
+        "citation_count": 2,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_EVIDENCE"
+      }
+    ]
+  }
+}

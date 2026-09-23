@@ -13,6 +13,10 @@ Acceptance reached 100% retrieval, grounding, citation precision, hard-negative 
 scope rejection, but only 83.33% answer correctness and core user success. Find Moments remains
 fully local.
 
+A later source-disjoint semantic/hierarchical experiment improved evidence completeness but reduced
+answer correctness to 63.64% and failed on a 44-minute talk. That branch was rejected and remains
+isolated from the product; Ask Video still uses no semantic index and stays disabled.
+
 > **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
 > demonstration and engineering review. It is not presented as a universal video-understanding
 > system or a public multi-tenant service.

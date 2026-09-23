@@ -16,11 +16,11 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Final Ask Video Core Acceptance V1 is complete with Decision B. Four new licensed spoken sources and 60 frozen questions produced 100% scope rejection/recall, Evidence Recall@5, grounding, citation precision, unsupported-claim safety and hard-negative abstention. Answer Correctness and Core User Success were 83.33%, and Citation Recall was 88.89%; all missed fixed gates. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and incremental prompt/BM25/neighbor/rule tweaks are closed. Any future Q&A work must first choose and pre-register a different architecture, beginning with semantic transcript retrieval and hierarchical evidence.
+Semantic Transcript Retrieval + Hierarchical Evidence Selection V1 is complete with Decision B. The source-disjoint frozen candidate improved evidence completeness and false abstention while preserving safety, but reduced Answer Correctness and Core User Success from 69.70% to 63.64% and failed catastrophically on the 44-minute source. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and production BM25 remains intact.
 
-SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Grounded Video Q&A V1 is implemented but remains disabled after frozen abstention-safety gates failed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
+The required next step is a product-level decision among changing embedding architecture, adding multimodal evidence, hierarchical summarization, or postponing Ask Video. No retrieval follow-up starts automatically. All Q&A validation and acceptance sets remain frozen observed evidence and are unavailable for tuning.
 
-URL ingestion is complete without reopening search-core ML research. Final Ask Video acceptance also closes incremental Q&A work. Frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
+SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
 
 ## Future work
 

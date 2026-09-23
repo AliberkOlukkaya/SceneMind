@@ -6,6 +6,8 @@ retrieval and uncapped RRF60 Hybrid ranking.
 
 Ask Video remains disabled after Final Core Acceptance Decision B. Its candidate path uses a deterministic scope gate followed by the existing 45-second/900-character BM25 Top-5, strict structured generation, claim-level evidence IDs and server-resolved citations. Explicit list/count, temporal-ordering, long-range, visual-only and OCR-dependent questions return a concise capability response before generation. The failed structured neighbor/temporal expansion remains historical evaluation code and is not called by the candidate path. Frozen acceptance reached 100% Evidence Recall@5 and safety but only 83.33% answer correctness/core user success, so the feature flag stays off.
 
+The isolated semantic/hierarchical experiment in `semantic_qa.py` is not wired to the API. It builds non-overlapping fine transcript units and three-unit context sections, encodes both with pinned local MiniLM, persists local FAISS indexes plus timestamp metadata, and selects at most five chronological fine units. Frozen Decision B rejects integration because improved evidence coverage did not improve answers and long-video section selection failed.
+
 ## End-to-end data flow
 
 ```mermaid
@@ -159,6 +161,13 @@ local provider key. `GET /videos/{id}/ask/status` exposes only enabled/configure
 name. Upload and URL provenance do not alter this path. The feature is disabled by default after
 Decision D; structured validation failed correctness, grounding, citation, abstention and
 hard-negative safety gates. Find Moments, BM25 Top-5 and general transcript chunking are unchanged.
+
+The semantic experiment deliberately keeps discovery units separate from citation units. Context
+sections may nominate a region, but generator evidence and citations contain only 30-second/600-
+character fine units with original segment IDs and timestamps. The encoder is local
+`sentence-transformers/all-MiniLM-L6-v2` revision
+`1110a243fdf4706b3f48f1d95db1a4f5529b4d41`; stored vectors are 384-dimensional normalized
+float32 values. Validation rejected this path, so indexes are experimental local artifacts only.
 
 ## Failure handling
 

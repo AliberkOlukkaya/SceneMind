@@ -1,0 +1,2181 @@
+{
+  "schema_version": "1.0.0",
+  "suite_id": "semantic-hierarchical-qa-v1",
+  "created_utc": "2026-09-23",
+  "sources": [
+    {
+      "split": "development",
+      "source_id": "html-basics",
+      "title": "File:HTML Explained (Learn HTML basics in less then 10 minutes!).webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:HTML_Explained_(Learn_HTML_basics_in_less_then_10_minutes!).webm",
+      "license": "CC BY 3.0",
+      "api_license": "CC BY 3.0",
+      "commons_sha1": "fdc9fd786ff2128c7e8e327f9934cd880d4b0cf1",
+      "video_id": "c1f0574d-1fcc-56bc-afd6-9bf59128aa18",
+      "media_sha256": "31368c1c589fbbfd4be0a5adeb92474fefe07f641301e80a144de65c99e509e4",
+      "transcode": "240p.vp9.webm",
+      "bytes": 9509736,
+      "duration_seconds": 510.24306666666666,
+      "language": "en",
+      "segment_count": 142,
+      "download_seconds": 2.135695000004489,
+      "transcribe_seconds": 28.962196100001165
+    },
+    {
+      "split": "development",
+      "source_id": "amyloidosis",
+      "title": "File:Amyloidosis.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Amyloidosis.webm",
+      "license": "CC BY-SA 4.0",
+      "api_license": "CC BY-SA 4.0",
+      "commons_sha1": "064d6c353b1448994b6041f9f70b75c2232573b1",
+      "video_id": "9c361a97-ede6-5720-bd31-9d1214c01f8f",
+      "media_sha256": "3106eba6db1af7fe18cd7a066875809fd671298a68d0991064d3281aae56bcb9",
+      "transcode": "240p.vp9.webm",
+      "bytes": 9309428,
+      "duration_seconds": 627.4666666666667,
+      "language": "en",
+      "segment_count": 67,
+      "download_seconds": 5.254574600003252,
+      "transcribe_seconds": 28.991232300002594
+    },
+    {
+      "split": "development",
+      "source_id": "free-media-reuse",
+      "title": "File:WCC module 5 - 23 - re-using freely-licensed media.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:WCC_module_5_-_23_-_re-using_freely-licensed_media.webm",
+      "license": "CC BY-SA 4.0",
+      "api_license": "CC BY-SA 4.0",
+      "commons_sha1": "33b4b7213db10fb2a9125dfc0f01659f626c345c",
+      "video_id": "a07a2ae8-1a02-582c-a243-3319d294db2f",
+      "media_sha256": "b2ea4b7356885e53b90d83396f3c6d42b05653ff28f127435f0ff2a93616c028",
+      "transcode": "240p.vp9.webm",
+      "bytes": 8002171,
+      "duration_seconds": 587.625,
+      "language": "en",
+      "segment_count": 81,
+      "download_seconds": 1.8718616000041948,
+      "transcribe_seconds": 25.208872600000177
+    },
+    {
+      "split": "validation",
+      "source_id": "truenas-raidz",
+      "title": "File:TrueNAS Tutorial- Expanding Your ZFS RAIDz VDEV with a Single Drive.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:TrueNAS_Tutorial-_Expanding_Your_ZFS_RAIDz_VDEV_with_a_Single_Drive.webm",
+      "license": "CC BY 3.0",
+      "api_license": "CC BY 3.0",
+      "commons_sha1": "12de8744e98eaf5e89c64f6f2b3d8bda6e09d981",
+      "video_id": "b46dd9c9-73ec-561b-97f1-78ed2f9c0632",
+      "media_sha256": "d1804a0ffea249cc083c7e105a27e5bc235ef349ec481186029d87b6d79ab8f8",
+      "transcode": "240p.vp9.webm",
+      "bytes": 12351506,
+      "duration_seconds": 519.1675925347981,
+      "language": "en",
+      "segment_count": 150,
+      "download_seconds": 2.2959141000028467,
+      "transcribe_seconds": 32.26108219999878
+    },
+    {
+      "split": "validation",
+      "source_id": "one-lib-one-ref",
+      "title": "File:WikiSalon WIkipedia 1Lib1Ref.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:WikiSalon_WIkipedia_1Lib1Ref.webm",
+      "license": "CC BY-SA 4.0",
+      "api_license": "CC BY-SA 4.0",
+      "commons_sha1": "be9dc0922d95036e4bb8386192d351dcbd893346",
+      "video_id": "5f95ed3a-f01d-51e7-9d48-ca9b38402bfa",
+      "media_sha256": "4362c89ccbfa8adb124c78592006dbd3ab1d59eeb7cabe42c00439abf64f7bcb",
+      "transcode": "240p.vp9.webm",
+      "bytes": 6902435,
+      "duration_seconds": 516.6333333333333,
+      "language": "en",
+      "segment_count": 71,
+      "download_seconds": 1.6371963000055985,
+      "transcribe_seconds": 21.14326599999913
+    },
+    {
+      "split": "validation",
+      "source_id": "wiki-education-foundation",
+      "title": "File:The Wiki Education Foundation in a Flash at WikiConference USA 2015.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:The_Wiki_Education_Foundation_in_a_Flash_at_WikiConference_USA_2015.webm",
+      "license": "Public domain",
+      "api_license": "Public domain",
+      "commons_sha1": "492d979e7fb540a584ab3420db228f91b285763e",
+      "video_id": "2ceabb12-5c9e-5f78-b06b-3964de3534be",
+      "media_sha256": "93b74e87f4039a9a3752ad8fa4a6c908bf788ee7cf997498c0313f34a2e09c8f",
+      "transcode": "240p.vp9.webm",
+      "bytes": 55922605,
+      "duration_seconds": 2658.0333333333333,
+      "language": "en",
+      "segment_count": 499,
+      "download_seconds": 5.644448499995633,
+      "transcribe_seconds": 115.96939389999898
+    }
+  ],
+  "development": {
+    "questions": [
+      {
+        "question_id": "html-basics-d01",
+        "source_id": "html-basics",
+        "question": "Which core concepts does the tutorial use to explain HTML?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Syntax, tags, attributes, and structure."
+        ],
+        "expected_evidence_intervals": [
+          [
+            30.27,
+            41.07
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              30.27,
+              41.07
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d02",
+        "source_id": "html-basics",
+        "question": "How does the tutorial define syntax?",
+        "category": "DEFINITION",
+        "answerable": true,
+        "key_answer_facts": [
+          "The letters and symbols used to write a language or code."
+        ],
+        "expected_evidence_intervals": [
+          [
+            41.07,
+            48.51
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              41.07,
+              48.51
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d03",
+        "source_id": "html-basics",
+        "question": "What does the letter A mean in an HTML link tag?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It stands for anchor because the word is attached or linked to another site or page location."
+        ],
+        "expected_evidence_intervals": [
+          [
+            86.78,
+            104.22
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              86.78,
+              104.22
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d04",
+        "source_id": "html-basics",
+        "question": "What are HTML tags according to the tutorial?",
+        "category": "DEFINITION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Repeated symbols combined with letters that identify the type of content to display."
+        ],
+        "expected_evidence_intervals": [
+          [
+            109.46,
+            124.86
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              109.46,
+              124.86
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d05",
+        "source_id": "html-basics",
+        "question": "Why is the doctype declaration placed on the first line?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It tells the browser that the document is an HTML web page."
+        ],
+        "expected_evidence_intervals": [
+          [
+            157.18,
+            172.34
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              157.18,
+              172.34
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d06",
+        "source_id": "html-basics",
+        "question": "How is a closing tag distinguished from an opening tag?",
+        "category": "COMPARISON",
+        "answerable": true,
+        "key_answer_facts": [
+          "A forward slash follows the less-than symbol in the closing tag."
+        ],
+        "expected_evidence_intervals": [
+          [
+            176.1,
+            190.1
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              176.1,
+              190.1
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d07",
+        "source_id": "html-basics",
+        "question": "Where should visible page content be placed?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "Inside the body tag."
+        ],
+        "expected_evidence_intervals": [
+          [
+            202.62,
+            216.38
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              202.62,
+              216.38
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d08",
+        "source_id": "html-basics",
+        "question": "How are attributes related to tags?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Attributes describe content and are attached to and placed inside tags."
+        ],
+        "expected_evidence_intervals": [
+          [
+            294.02,
+            346.46
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              294.02,
+              346.46
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d09",
+        "source_id": "html-basics",
+        "question": "How does the tutorial compare a website structure to a person?",
+        "category": "COMPARISON",
+        "answerable": true,
+        "key_answer_facts": [
+          "A website has a head, body, and footer like a person has a head, body, and feet."
+        ],
+        "expected_evidence_intervals": [
+          [
+            356.62,
+            382.86
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              356.62,
+              382.86
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d10",
+        "source_id": "html-basics",
+        "question": "What roles do the head, body, and footer serve?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "The head describes what the site is about.",
+          "The body contains what visitors see.",
+          "The footer often summarizes the site content."
+        ],
+        "expected_evidence_intervals": [
+          [
+            400.3,
+            406.22
+          ],
+          [
+            406.22,
+            410.94
+          ],
+          [
+            410.94,
+            418.38
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              400.3,
+              406.22
+            ]
+          ],
+          [
+            [
+              406.22,
+              410.94
+            ]
+          ],
+          [
+            [
+              410.94,
+              418.38
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-d11",
+        "source_id": "html-basics",
+        "question": "Why does HTML structure make coding easier?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It organizes code into manageable sections and prevents overwhelm."
+        ],
+        "expected_evidence_intervals": [
+          [
+            418.38,
+            433.74
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              418.38,
+              433.74
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "html-basics-u01",
+        "source_id": "html-basics",
+        "question": "Which JavaScript framework does the tutorial recommend?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No JavaScript framework is mentioned."
+      },
+      {
+        "question_id": "html-basics-u02",
+        "source_id": "html-basics",
+        "question": "What web hosting provider does the tutorial use?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No hosting provider is named."
+      },
+      {
+        "question_id": "html-basics-u03",
+        "source_id": "html-basics",
+        "question": "Does the tutorial prefer Chrome over Safari?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "Browsers are examples; no preference is stated."
+      },
+      {
+        "question_id": "html-basics-u04",
+        "source_id": "html-basics",
+        "question": "What CSS grid settings are recommended?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "CSS grid is not discussed."
+      },
+      {
+        "question_id": "amyloidosis-d01",
+        "source_id": "amyloidosis",
+        "question": "What is amyloidosis?",
+        "category": "DEFINITION",
+        "answerable": true,
+        "key_answer_facts": [
+          "A disease caused by tissue damage from deposits of abnormally folded proteins."
+        ],
+        "expected_evidence_intervals": [
+          [
+            17.67,
+            35.68
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              17.67,
+              35.68
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d02",
+        "source_id": "amyloidosis",
+        "question": "How does the body normally handle an incorrectly folded protein?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Proteases identify and chop it into small pieces."
+        ],
+        "expected_evidence_intervals": [
+          [
+            35.68,
+            54.68
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              35.68,
+              54.68
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d03",
+        "source_id": "amyloidosis",
+        "question": "How can protein production lead to amyloid buildup?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Normal proteins may be overproduced so some misfold.",
+          "Abnormal proteins with incorrect amino-acid sequences may be produced and misfold."
+        ],
+        "expected_evidence_intervals": [
+          [
+            61.38,
+            77.38
+          ],
+          [
+            68.38,
+            82.38
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              61.38,
+              77.38
+            ]
+          ],
+          [
+            [
+              68.38,
+              82.38
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d04",
+        "source_id": "amyloidosis",
+        "question": "What structure forms when amyloid proteins clump outside the cell?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "A rigid insoluble beta sheet that deposits in extracellular tissue."
+        ],
+        "expected_evidence_intervals": [
+          [
+            96.38,
+            114.77
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              96.38,
+              114.77
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d05",
+        "source_id": "amyloidosis",
+        "question": "What distinguishes systemic from localized amyloidosis?",
+        "category": "COMPARISON",
+        "answerable": true,
+        "key_answer_facts": [
+          "Systemic deposits occur across multiple organ systems.",
+          "Localized deposits occur in one organ."
+        ],
+        "expected_evidence_intervals": [
+          [
+            125.77,
+            136.77
+          ],
+          [
+            125.77,
+            136.77
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              125.77,
+              136.77
+            ]
+          ],
+          [
+            [
+              125.77,
+              136.77
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d06",
+        "source_id": "amyloidosis",
+        "question": "Which protein is misfolded in AL amyloidosis?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "Immunoglobulin light chains."
+        ],
+        "expected_evidence_intervals": [
+          [
+            163.48,
+            188.48
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              163.48,
+              188.48
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d07",
+        "source_id": "amyloidosis",
+        "question": "Why can prolonged inflammation cause AA amyloidosis?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "The liver releases much serum amyloid A during inflammation.",
+          "A portion misfolds and accumulates in tissues."
+        ],
+        "expected_evidence_intervals": [
+          [
+            207.68,
+            234.68
+          ],
+          [
+            235.68,
+            244.68
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              207.68,
+              234.68
+            ]
+          ],
+          [
+            [
+              235.68,
+              244.68
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d08",
+        "source_id": "amyloidosis",
+        "question": "How can kidney amyloid deposits eventually cause edema?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Podocyte damage lets albumin spill into urine.",
+          "Lower blood protein reduces oncotic pressure and moves water into tissues."
+        ],
+        "expected_evidence_intervals": [
+          [
+            244.68,
+            274.75
+          ],
+          [
+            274.75,
+            284.75
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              244.68,
+              274.75
+            ]
+          ],
+          [
+            [
+              274.75,
+              284.75
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d09",
+        "source_id": "amyloidosis",
+        "question": "How can amyloid damage the heart?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "It can stiffen the heart walls and cause restrictive cardiomyopathy.",
+          "It can disrupt electrical conduction and cause arrhythmias."
+        ],
+        "expected_evidence_intervals": [
+          [
+            306.57,
+            322.57
+          ],
+          [
+            322.57,
+            330.57
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              306.57,
+              322.57
+            ]
+          ],
+          [
+            [
+              322.57,
+              330.57
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d10",
+        "source_id": "amyloidosis",
+        "question": "How do amyloid plaques harm the brain in Alzheimer disease?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "They interfere with neuron signaling.",
+          "They weaken blood-vessel walls and can trigger inflammation that damages neurons."
+        ],
+        "expected_evidence_intervals": [
+          [
+            383.86,
+            396.86
+          ],
+          [
+            396.86,
+            421.22
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              383.86,
+              396.86
+            ]
+          ],
+          [
+            [
+              396.86,
+              421.22
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-d11",
+        "source_id": "amyloidosis",
+        "question": "How does biopsy staining identify amyloid?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Congo red makes amyloid pink.",
+          "Under polarized light it appears apple green."
+        ],
+        "expected_evidence_intervals": [
+          [
+            540.39,
+            560.27
+          ],
+          [
+            560.27,
+            565.27
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              540.39,
+              560.27
+            ]
+          ],
+          [
+            [
+              560.27,
+              565.27
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "amyloidosis-u01",
+        "source_id": "amyloidosis",
+        "question": "Which medication removes amyloid deposits?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "The transcript says no effective removal method and names no medication."
+      },
+      {
+        "question_id": "amyloidosis-u02",
+        "source_id": "amyloidosis",
+        "question": "What is the five-year survival rate for AL amyloidosis?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No survival statistic is given."
+      },
+      {
+        "question_id": "amyloidosis-u03",
+        "source_id": "amyloidosis",
+        "question": "Which genetic test confirms amyloidosis?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No genetic test is described."
+      },
+      {
+        "question_id": "amyloidosis-u04",
+        "source_id": "amyloidosis",
+        "question": "Which diet prevents amyloid deposits?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No preventive diet is discussed."
+      },
+      {
+        "question_id": "free-media-reuse-d01",
+        "source_id": "free-media-reuse",
+        "question": "Why can freely licensed media not simply be reused without conditions?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "The license grants specific permission whose terms must be respected."
+        ],
+        "expected_evidence_intervals": [
+          [
+            28.43,
+            67.21
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              28.43,
+              67.21
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d02",
+        "source_id": "free-media-reuse",
+        "question": "Why is crediting only Wikipedia or Wikimedia Commons incorrect?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "The individual creator made the work and deserves credit."
+        ],
+        "expected_evidence_intervals": [
+          [
+            79.42,
+            126.35
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              79.42,
+              126.35
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d03",
+        "source_id": "free-media-reuse",
+        "question": "What must a reuser check for each media file?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "The requested attribution and the specific license."
+        ],
+        "expected_evidence_intervals": [
+          [
+            126.35,
+            175.73
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              126.35,
+              175.73
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d04",
+        "source_id": "free-media-reuse",
+        "question": "Why can Google help locate Wiki Loves Africa photographs?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Google indexes Commons, where the competition photographs are freely licensed."
+        ],
+        "expected_evidence_intervals": [
+          [
+            184.84,
+            221.65
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              184.84,
+              221.65
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d05",
+        "source_id": "free-media-reuse",
+        "question": "What information does the Commons file page provide for the example photograph?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "A description, the creator credit, and the license."
+        ],
+        "expected_evidence_intervals": [
+          [
+            265.65,
+            303.65
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              265.65,
+              303.65
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d06",
+        "source_id": "free-media-reuse",
+        "question": "What is the minimum attribution required for the example photograph?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "Name the author and the precise license including its version."
+        ],
+        "expected_evidence_intervals": [
+          [
+            310.65,
+            358.06
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              310.65,
+              358.06
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d07",
+        "source_id": "free-media-reuse",
+        "question": "Why should an attribution mention the license?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It tells others they may reuse the work under the same terms."
+        ],
+        "expected_evidence_intervals": [
+          [
+            358.06,
+            376.06
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              358.06,
+              376.06
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d08",
+        "source_id": "free-media-reuse",
+        "question": "How do hyperlinks improve an attribution?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "They can lead readers to Commons and to the Creative Commons license explanation."
+        ],
+        "expected_evidence_intervals": [
+          [
+            382.06,
+            437.06
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              382.06,
+              437.06
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d09",
+        "source_id": "free-media-reuse",
+        "question": "What does the ideal attribution include?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "The author.",
+          "A linked license with version.",
+          "A link to the exact Commons file page."
+        ],
+        "expected_evidence_intervals": [
+          [
+            444.06,
+            458.06
+          ],
+          [
+            458.06,
+            470.06
+          ],
+          [
+            470.06,
+            481.06
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              444.06,
+              458.06
+            ]
+          ],
+          [
+            [
+              458.06,
+              470.06
+            ]
+          ],
+          [
+            [
+              470.06,
+              481.06
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d10",
+        "source_id": "free-media-reuse",
+        "question": "Why is linking the exact Commons file useful?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It lets readers find and download the exact high-resolution source for reuse or modification."
+        ],
+        "expected_evidence_intervals": [
+          [
+            481.06,
+            539.06
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              481.06,
+              539.06
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-d11",
+        "source_id": "free-media-reuse",
+        "question": "What is the consequence of using a freely licensed photo without attribution?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "It violates copyright and breaks the law."
+        ],
+        "expected_evidence_intervals": [
+          [
+            549.06,
+            586.56
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              549.06,
+              586.56
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "free-media-reuse-u01",
+        "source_id": "free-media-reuse",
+        "question": "How much does Wikimedia charge to download a photograph?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No download fee is discussed."
+      },
+      {
+        "question_id": "free-media-reuse-u02",
+        "source_id": "free-media-reuse",
+        "question": "When does a Creative Commons license expire?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No expiration term is given."
+      },
+      {
+        "question_id": "free-media-reuse-u03",
+        "source_id": "free-media-reuse",
+        "question": "Which country has the strictest attribution law?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No country comparison is made."
+      },
+      {
+        "question_id": "free-media-reuse-u04",
+        "source_id": "free-media-reuse",
+        "question": "Does fair use eliminate every attribution requirement?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "Fair use is not discussed."
+      }
+    ]
+  },
+  "validation": {
+    "questions": [
+      {
+        "question_id": "truenas-raidz-v01",
+        "source_id": "truenas-raidz",
+        "question": "What new RAIDZ capability does the tutorial demonstrate?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "Expanding an existing RAIDZ vdev by adding one disk."
+        ],
+        "expected_evidence_intervals": [
+          [
+            4.76,
+            32.04
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              4.76,
+              32.04
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v02",
+        "source_id": "truenas-raidz",
+        "question": "What size must a disk have to be eligible for RAIDZ expansion?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "It must be the same size as or larger than the existing drives."
+        ],
+        "expected_evidence_intervals": [
+          [
+            96.54,
+            115.74
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              96.54,
+              115.74
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v03",
+        "source_id": "truenas-raidz",
+        "question": "Why does a larger added disk not immediately provide its extra capacity?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "RAIDZ drives conform to the size of the smallest drive so the layout remains symmetrical."
+        ],
+        "expected_evidence_intervals": [
+          [
+            115.74,
+            143.3
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              115.74,
+              143.3
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v04",
+        "source_id": "truenas-raidz",
+        "question": "Can adding disks change a RAIDZ1 vdev into RAIDZ2?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "No; expansion widens the vdev but its RAIDZ type remains fixed from creation."
+        ],
+        "expected_evidence_intervals": [
+          [
+            164.7,
+            184.86
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              164.7,
+              184.86
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v05",
+        "source_id": "truenas-raidz",
+        "question": "How does the interface start a RAIDZ expansion?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Open Manage Devices, select the RAIDZ vdev, click Extend, and select an eligible disk."
+        ],
+        "expected_evidence_intervals": [
+          [
+            187.18,
+            219.38
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              187.18,
+              219.38
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v06",
+        "source_id": "truenas-raidz",
+        "question": "Why must the system write to a newly added drive?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It must create parity on the new drive while leaving existing data in place."
+        ],
+        "expected_evidence_intervals": [
+          [
+            219.38,
+            259.43
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              219.38,
+              259.43
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v07",
+        "source_id": "truenas-raidz",
+        "question": "How does expansion affect the stripe width of old and new data?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Old data retains its original three-drive stripe width.",
+          "New data is written with a four-drive stripe width."
+        ],
+        "expected_evidence_intervals": [
+          [
+            267.75,
+            279.99
+          ],
+          [
+            279.99,
+            303.07
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              267.75,
+              279.99
+            ]
+          ],
+          [
+            [
+              279.99,
+              303.07
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v08",
+        "source_id": "truenas-raidz",
+        "question": "How does the ZFS in-place rebalancing script redistribute data?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It copies files, creates another copy, and copies them back so data is refreshed across the expanded drives."
+        ],
+        "expected_evidence_intervals": [
+          [
+            304.07,
+            343.11
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              304.07,
+              343.11
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v09",
+        "source_id": "truenas-raidz",
+        "question": "Why can a later expansion take time?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "It is CPU intensive because parity must be recalculated.",
+          "Duration depends on how much data is present."
+        ],
+        "expected_evidence_intervals": [
+          [
+            366.89,
+            385.13
+          ],
+          [
+            376.05,
+            386.13
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              366.89,
+              385.13
+            ]
+          ],
+          [
+            [
+              376.05,
+              386.13
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v10",
+        "source_id": "truenas-raidz",
+        "question": "Why can an extremely wide vdev be difficult to maintain?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Resilvering a failed drive requires pulling data across all of the drives."
+        ],
+        "expected_evidence_intervals": [
+          [
+            400.57,
+            427.33
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              400.57,
+              427.33
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-v11",
+        "source_id": "truenas-raidz",
+        "question": "Can the demonstrated feature convert a mirror into RAIDZ?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "No, mirror-to-RAIDZ conversion is not available."
+        ],
+        "expected_evidence_intervals": [
+          [
+            442.81,
+            462.65
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              442.81,
+              462.65
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "truenas-raidz-u01",
+        "source_id": "truenas-raidz",
+        "question": "Which SSD brand does the presenter recommend?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No drive brand is recommended."
+      },
+      {
+        "question_id": "truenas-raidz-u02",
+        "source_id": "truenas-raidz",
+        "question": "How much electrical power does expansion consume?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "Power consumption is not stated."
+      },
+      {
+        "question_id": "truenas-raidz-u03",
+        "source_id": "truenas-raidz",
+        "question": "What warranty does TrueNAS provide for expanded pools?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No warranty is discussed."
+      },
+      {
+        "question_id": "truenas-raidz-u04",
+        "source_id": "truenas-raidz",
+        "question": "Which backup service should be used for RAIDZ expansion?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No backup service is named."
+      },
+      {
+        "question_id": "one-lib-one-ref-v01",
+        "source_id": "one-lib-one-ref",
+        "question": "What is the purpose of the 1Lib1Ref campaign?",
+        "category": "DEFINITION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It encourages librarians, archivists, and information professionals to learn Wikipedia editing and add a reference to improve article quality."
+        ],
+        "expected_evidence_intervals": [
+          [
+            17.2,
+            37.84
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              17.2,
+              37.84
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v02",
+        "source_id": "one-lib-one-ref",
+        "question": "Why are information professionals suited to improve Wikipedia references?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "They have access to quality sources such as books, journals, periodicals, and newspapers."
+        ],
+        "expected_evidence_intervals": [
+          [
+            46.24,
+            76.96
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              46.24,
+              76.96
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v03",
+        "source_id": "one-lib-one-ref",
+        "question": "How can a contributor find an article needing a citation?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Browse for unsourced statements, use problem-article lists, or use Citation Hunt."
+        ],
+        "expected_evidence_intervals": [
+          [
+            105.36,
+            162.96
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              105.36,
+              162.96
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v04",
+        "source_id": "one-lib-one-ref",
+        "question": "What should a contributor put in the edit summary?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "The 1Lib1Ref project hashtag so the project receives credit."
+        ],
+        "expected_evidence_intervals": [
+          [
+            162.96,
+            173.12
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              162.96,
+              173.12
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v05",
+        "source_id": "one-lib-one-ref",
+        "question": "How does Citation Hunt choose content to show?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "It randomly selects an article carrying a citation-needed flag."
+        ],
+        "expected_evidence_intervals": [
+          [
+            174.64,
+            196.0
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              174.64,
+              196.0
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v06",
+        "source_id": "one-lib-one-ref",
+        "question": "How can the editing interface generate a citation from a source URL?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Paste the URL into the automatic citation generator and insert the generated citation."
+        ],
+        "expected_evidence_intervals": [
+          [
+            228.16,
+            264.0
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              228.16,
+              264.0
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v07",
+        "source_id": "one-lib-one-ref",
+        "question": "What event format can an institution host for the campaign?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "An in-person, online, or hybrid drop-in editathon."
+        ],
+        "expected_evidence_intervals": [
+          [
+            280.8,
+            296.8
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              280.8,
+              296.8
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v08",
+        "source_id": "one-lib-one-ref",
+        "question": "How can an institution make a citation event easier to attend?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Pair it with a familiar break or part of the workday, such as coffee or lunch."
+        ],
+        "expected_evidence_intervals": [
+          [
+            296.8,
+            324.24
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              296.8,
+              324.24
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v09",
+        "source_id": "one-lib-one-ref",
+        "question": "How can an institution use its own collections during an event?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Use unique collections, archives, finding aids, or guides as citation sources and pair them with curated article lists."
+        ],
+        "expected_evidence_intervals": [
+          [
+            324.24,
+            349.04
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              324.24,
+              349.04
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v10",
+        "source_id": "one-lib-one-ref",
+        "question": "How can the campaign help reduce gender bias in references?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Add citations authored by women and use curated Citation Hunt lists focused on gender topics."
+        ],
+        "expected_evidence_intervals": [
+          [
+            402.96,
+            440.4
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              402.96,
+              440.4
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-v11",
+        "source_id": "one-lib-one-ref",
+        "question": "What tool tracks institutional participation in greater detail?",
+        "category": "FACTUAL",
+        "answerable": true,
+        "key_answer_facts": [
+          "The Wikimedia Foundation Labs dashboard."
+        ],
+        "expected_evidence_intervals": [
+          [
+            356.32,
+            369.36
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              356.32,
+              369.36
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "one-lib-one-ref-u01",
+        "source_id": "one-lib-one-ref",
+        "question": "How much funding does an institution receive for hosting an event?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No funding amount is stated."
+      },
+      {
+        "question_id": "one-lib-one-ref-u02",
+        "source_id": "one-lib-one-ref",
+        "question": "Which citation style is mandatory for every campaign edit?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No single citation style is mandated."
+      },
+      {
+        "question_id": "one-lib-one-ref-u03",
+        "source_id": "one-lib-one-ref",
+        "question": "How many edits did the campaign receive last year?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No annual edit total is given."
+      },
+      {
+        "question_id": "one-lib-one-ref-u04",
+        "source_id": "one-lib-one-ref",
+        "question": "Does Citation Hunt verify that every source is academically peer reviewed?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "That capability is not described."
+      },
+      {
+        "question_id": "wiki-education-foundation-v01",
+        "source_id": "wiki-education-foundation",
+        "question": "What did the student work on the Women in Government article demonstrate?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Students improved a high-traffic article whose US section had focused mostly on politicians as babies."
+        ],
+        "expected_evidence_intervals": [
+          [
+            269.49,
+            301.49
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              269.49,
+              301.49
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v02",
+        "source_id": "wiki-education-foundation",
+        "question": "Why was the National Women Studies Association a good partner?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Its mission promotes knowledge about women and gender and accurate public scholarship, aligning with Wikipedia work."
+        ],
+        "expected_evidence_intervals": [
+          [
+            301.49,
+            338.49
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              301.49,
+              338.49
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v03",
+        "source_id": "wiki-education-foundation",
+        "question": "What impact did the spring 2015 women studies courses have?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Five courses involved about 200 students.",
+          "They improved about 100 articles that received 4.4 million views."
+        ],
+        "expected_evidence_intervals": [
+          [
+            365.34,
+            376.34
+          ],
+          [
+            369.34,
+            385.34
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              365.34,
+              376.34
+            ]
+          ],
+          [
+            [
+              369.34,
+              385.34
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v04",
+        "source_id": "wiki-education-foundation",
+        "question": "Why does the program flag classes with more than fifty students?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Instructors may struggle to train the students and monitor all their Wikipedia work."
+        ],
+        "expected_evidence_intervals": [
+          [
+            477.99,
+            507.78
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              477.99,
+              507.78
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v05",
+        "source_id": "wiki-education-foundation",
+        "question": "How much time should significant Wikipedia assignments receive?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "At least six weeks because students need several weeks to learn and become comfortable editing."
+        ],
+        "expected_evidence_intervals": [
+          [
+            577.08,
+            591.08
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              577.08,
+              591.08
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v06",
+        "source_id": "wiki-education-foundation",
+        "question": "How does the dashboard explain a student editor's course context to other editors?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "It automatically adds a course template to the student user page.",
+          "It updates course and article talk pages from dashboard actions."
+        ],
+        "expected_evidence_intervals": [
+          [
+            741.33,
+            776.33
+          ],
+          [
+            779.33,
+            803.33
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              741.33,
+              776.33
+            ]
+          ],
+          [
+            [
+              779.33,
+              803.33
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v07",
+        "source_id": "wiki-education-foundation",
+        "question": "What recurring learning sequence did the successful behavioral ecology course use?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Students read about a skill, practice it, and then deploy it."
+        ],
+        "expected_evidence_intervals": [
+          [
+            995.51,
+            1013.51
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              995.51,
+              1013.51
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v08",
+        "source_id": "wiki-education-foundation",
+        "question": "Why was the expert editing pilot judged a poor return?",
+        "category": "EXPLANATION",
+        "answerable": true,
+        "key_answer_facts": [
+          "Participants produced only five and three-quarter printed pages after sixty hours of staff time."
+        ],
+        "expected_evidence_intervals": [
+          [
+            1185.75,
+            1226.32
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              1185.75,
+              1226.32
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v09",
+        "source_id": "wiki-education-foundation",
+        "question": "What did the high-achieving student pilot learn about voluntary editing?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Only two of forty-four students made good contributions.",
+          "Most students were too busy to edit outside class despite enthusiasm."
+        ],
+        "expected_evidence_intervals": [
+          [
+            1364.73,
+            1379.73
+          ],
+          [
+            1420.73,
+            1446.73
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              1364.73,
+              1379.73
+            ]
+          ],
+          [
+            [
+              1420.73,
+              1446.73
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v10",
+        "source_id": "wiki-education-foundation",
+        "question": "How does the Visiting Scholars program benefit editors and libraries?",
+        "category": "MULTI_FACT",
+        "answerable": true,
+        "key_answer_facts": [
+          "Editors receive remote access to high-quality research materials.",
+          "Libraries increase the impact of their collections while contributing to public knowledge."
+        ],
+        "expected_evidence_intervals": [
+          [
+            1546.43,
+            1558.43
+          ],
+          [
+            1558.43,
+            1566.43
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              1546.43,
+              1558.43
+            ]
+          ],
+          [
+            [
+              1558.43,
+              1566.43
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-v11",
+        "source_id": "wiki-education-foundation",
+        "question": "What kinds of assignments are described as Wikipedia policy problems?",
+        "category": "LOCALIZED_SUMMARY",
+        "answerable": true,
+        "key_answer_facts": [
+          "Assignments using original research, group accounts, or substantial off-wiki work."
+        ],
+        "expected_evidence_intervals": [
+          [
+            555.08,
+            576.08
+          ]
+        ],
+        "minimum_sufficient_evidence": [
+          [
+            [
+              555.08,
+              576.08
+            ]
+          ]
+        ]
+      },
+      {
+        "question_id": "wiki-education-foundation-u01",
+        "source_id": "wiki-education-foundation",
+        "question": "What annual salary does a Wikipedia content expert receive?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No salaries are stated."
+      },
+      {
+        "question_id": "wiki-education-foundation-u02",
+        "source_id": "wiki-education-foundation",
+        "question": "Which learning management system integrates with the dashboard?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No learning management system is named."
+      },
+      {
+        "question_id": "wiki-education-foundation-u03",
+        "source_id": "wiki-education-foundation",
+        "question": "What percentage of student edits survive for five years?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No five-year retention statistic is given."
+      },
+      {
+        "question_id": "wiki-education-foundation-u04",
+        "source_id": "wiki-education-foundation",
+        "question": "Which university paid the most for the Visiting Scholars program?",
+        "category": "HARD_NEGATIVE",
+        "answerable": false,
+        "key_answer_facts": [],
+        "expected_evidence_intervals": [],
+        "minimum_sufficient_evidence": [],
+        "reason": "No payment comparison is discussed."
+      }
+    ]
+  },
+  "frozen_configuration": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "embedding_license": "Apache-2.0",
+    "embedding_dimension": 384,
+    "fine_units": "greedy non-overlapping adjacent segments; max 30 seconds or 600 characters",
+    "context_units": "non-overlapping groups of three consecutive fine units",
+    "semantic_candidate_k": 10,
+    "context_candidate_k": 5,
+    "selector": "rank-only semantic fine + semantic context membership + 0.5x BM25 fine contribution; five-unit chronological package",
+    "evidence_max_units": 5,
+    "evidence_max_characters": 3600,
+    "generator_model": "gpt-5.4-mini-2026-03-17",
+    "generator_prompt_sha256": "5d00c3f2a75ef745440de79ec6b3b640d670315f85661a61a835a9580a35c762",
+    "generation": "existing strict structured output and claim/citation resolver; defaults; store=false",
+    "abstention": "unchanged safe contract",
+    "pricing_usd_per_million_tokens": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+    "semantic_implementation_sha256": "098d696af1db1e5746b2d3d1076794a68a6fb80250bd8bf5afcb00bbf76b6830"
+  }
+}

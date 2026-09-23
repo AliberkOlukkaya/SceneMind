@@ -1,5 +1,11 @@
 # Decisions
 
+## 044 - Reject semantic/hierarchical Q&A integration
+
+Build a genuine alternative Q&A evidence architecture on six new licensed English videos: pinned Apache-2.0 `sentence-transformers/all-MiniLM-L6-v2`, non-overlapping fine and context transcript levels, local FAISS indexes, and a deterministic five-unit hierarchical selector. Select 30-second/600-character fine units using only the 45-question development split, then freeze 45 source-disjoint validation questions and the full configuration at SHA-256 `e99fecc0c0c941afe830eb1d8ff8072212b18226096ead0bcd0b54343d068ba1`.
+
+Choose Decision B — semantic retrieval helps, selector fails. Candidate Evidence Recall@5, minimum-sufficient recall, mean completeness, and full completeness improve from 81.82/78.79/80.30/78.79% to 90.91/87.88/89.39/87.88%. False abstention improves from 12.12% to 6.06%, while correct abstention remains 100%, false answers 0%, citation precision 100%, and unsupported claims 0%. Answer Correctness and Core User Success decline from 69.70% to 63.64%, however, and candidate success on the 44-minute source is only 36.36%. Keep production BM25, keep Ask Video disabled, and do not launch another retrieval experiment automatically. Product review must choose whether to change embeddings, add multimodal evidence, use hierarchical summarization, or postpone Ask Video.
+
 ## 043 - Keep Ask Video disabled after Final Core Acceptance
 
 Restore the safest Abstention Safety V1 production candidate: deterministic 45-second/900-character transcript chunks, unchanged BM25 Top-5, strict claim-level evidence IDs, backend-resolved citations, safe abstention and `gpt-5.4-mini-2026-03-17`. Remove failed structured expansion from the candidate call path. Add a deterministic pre-generation scope gate for explicit list/count, temporal ordering, long-range composition, visual-only and OCR-dependent questions while preserving factual, definition, explanation and localized-summary questions.

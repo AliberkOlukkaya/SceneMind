@@ -120,6 +120,13 @@
 - [x] Verify public YouTube URL and local upload through ingest, transcript, index and real Ask endpoint flows
 - [x] Record Decision B after correctness, citation-recall and core-user-success gates fail
 - [x] Stop incremental Q&A prompt, BM25, neighbor-expansion and rule tuning
+- [x] Build six new licensed source-disjoint videos with 90 annotated semantic-Q&A questions
+- [x] Implement and test pinned local MiniLM fine/context transcript indexes and persistence
+- [x] Select one bounded hierarchical evidence candidate on development data only
+- [x] Freeze and run the 45-question paired BM25/candidate validation exactly once
+- [x] Preserve safety but reject promotion after correctness and long-video gates fail
+- [x] Replay the six historical failures only after the frozen Decision B
+- [ ] Decide whether to change embeddings, add multimodal evidence, summarize hierarchically, or postpone Ask Video
 
 ## Future work — not active v1.0 tasks
 
