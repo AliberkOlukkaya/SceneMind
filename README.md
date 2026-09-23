@@ -7,6 +7,10 @@ Upload a video or import a supported public video URL, build local visual and sp
 then click a ranked result to jump directly to its timestamp. SceneMind v1.0 RC uses pretrained
 models for inference; it does not train CLIP or Whisper and does not require a paid API.
 
+An evaluation-gated **Ask Video** path can produce transcript-grounded answers with clickable
+timestamp citations through a configured OpenAI provider. It is disabled by default because its
+frozen real-provider validation failed abstention safety; Find Moments remains fully local.
+
 > **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
 > demonstration and engineering review. It is not presented as a universal video-understanding
 > system or a public multi-tenant service.
@@ -26,6 +30,8 @@ demonstrates the interface and click-to-seek workflow, not real-world search acc
 3. Optionally transcribes speech with Whisper and builds a CLIP/FAISS visual index.
 4. Searches with one of three explicit product modes.
 5. Returns possible timestamped moments; clicking a result seeks the video player.
+6. When explicitly enabled, retrieves bounded transcript evidence before asking an answer provider
+   and resolves cited evidence IDs to trusted timestamps.
 
 Processing states come from the real pipeline: waiting, frame extraction, transcription, visual
 indexing, ready or failed. SceneMind does not fabricate percentage progress.
@@ -68,6 +74,10 @@ flowchart TD
 
 The detailed data flow, failure behavior and resource boundaries are in
 [ARCHITECTURE.md](ARCHITECTURE.md).
+
+Ask Video sends only the question and selected transcript evidence to the configured provider.
+See [Transcript-grounded Video Q&A](docs/GROUNDED_VIDEO_QA.md) for its privacy boundary,
+configuration, abstention behavior and evaluation status.
 
 ## AI and retrieval components
 
@@ -208,6 +218,9 @@ need overrides. Important defaults:
 | `SCENEMIND_MAX_DURATION` | `3600` | Duration limit in seconds |
 | `SCENEMIND_AUTH_TOKEN` | empty | Optional local operator password |
 | `NEXT_PUBLIC_API_URL` | `http://localhost:8000` | Browser API origin |
+| `SCENEMIND_QA_ENABLED` | `false` | Evaluation gate for transcript-grounded Ask Video |
+| `SCENEMIND_QA_MODEL` | `gpt-5.4-mini` | Configured OpenAI Responses API model |
+| `OPENAI_API_KEY` | unset | Local `.env.local` secret; never commit it |
 
 ## Tests
 

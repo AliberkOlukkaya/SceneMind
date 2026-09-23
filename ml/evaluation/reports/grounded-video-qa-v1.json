@@ -1,0 +1,2495 @@
+{
+  "schema_version": 1,
+  "suite_id": "grounded-video-qa-v1",
+  "run_date": "2026-09-23",
+  "manifest_sha256": "ac103e3318f9f46664867c6619daf60d65d99cd5447db236e6efd6b29cadb3a4",
+  "provider": "openai",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "segment_count": 576,
+  "chunk_count": 45,
+  "validation_run_count": 1,
+  "metrics": {
+    "evidence_recall_at_1": 0.7777777777777778,
+    "evidence_recall_at_3": 1.0,
+    "evidence_recall_at_5": 1.0,
+    "latency_ms": {
+      "retrieval": {
+        "median": 1.7408999992767349,
+        "p95": 2.0956299995305017
+      },
+      "generation": {
+        "median": 1490.6975000003513,
+        "p95": 2217.641904999709
+      },
+      "total": {
+        "median": 1492.4689999998009,
+        "p95": 2219.5015449999114
+      }
+    },
+    "input_tokens": 10371,
+    "output_tokens": 825,
+    "answer_correctness": 0.8888888888888888,
+    "grounded_answer_rate": 0.8,
+    "citation_precision": 0.9444444444444444,
+    "citation_recall": 0.9130434782608695,
+    "unsupported_claim_rate": 0.08695652173913043,
+    "correct_abstention_rate": 0.6666666666666666,
+    "false_answer_rate": 0.3333333333333333,
+    "estimated_cost_usd": 0.01149075
+  },
+  "pricing": {
+    "input_per_million_usd": 0.75,
+    "output_per_million_usd": 4.5,
+    "source": "Official OpenAI GPT-5.4 Mini model page checked 2026-09-23"
+  },
+  "gate_results": {
+    "evidence_recall_at_5": true,
+    "answer_correctness": false,
+    "grounded_answer_rate": false,
+    "citation_precision": false,
+    "unsupported_claim_rate": false,
+    "correct_abstention_rate": false,
+    "false_answer_rate": false
+  },
+  "failure_counts": {
+    "retrieval_misses_at_5": 0,
+    "generation_errors": 0,
+    "answers_with_unsupported_claims": 2,
+    "citation_failure_answers": 2,
+    "abstention_failures": 1
+  },
+  "decision": {
+    "code": "D",
+    "label": "ABSTENTION SAFETY FAILED",
+    "reason": "Evidence Recall@5 passed, but one of three unanswerable questions received a substantive response; correctness, grounding, citation precision, unsupported-claim and abstention gates failed.",
+    "ask_video_promoted": false,
+    "next_milestone": "Q&A ABSTENTION SAFETY V1 ON NEW DEVELOPMENT EVIDENCE; KEEP THIS VALIDATION SET FROZEN AND EVALUATION-ONLY"
+  },
+  "human_review_method": "Manual comparison of each generated answer and cited transcript text against the checksum-frozen key facts and evidence intervals; no LLM judge.",
+  "results": [
+    {
+      "id": "val-01",
+      "category": "SUMMARY",
+      "answerable": true,
+      "question": "What does the speaker want beginners to take away from the talk?",
+      "key_facts": [
+        "Understand home networks enough to experiment",
+        "Reduce fear of computer networks"
+      ],
+      "expected_intervals": [
+        [
+          43,
+          103
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E026",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1019.78,
+          "end_seconds": 1062.78,
+          "text": "you access it via HTTP or HTTPS. If you access it via HTTP, you have HTTP is the hypertext transfer protocol, which is the protocol that you are using to transfer web pages. In there, if you use HTTPS, you have TLS, which is an encryption protocol, which then contains HTTP, and then you get your web page. And one of the really important things that I want to take away, you take away from this is that what you do in networking, a lot is that you just layer levels of abstraction on top of each other. So we have the local network here, which contains the internet protocol message, which contains the actual information that you are interested in receiving.",
+          "segment_ids": [
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334
+          ]
+        },
+        {
+          "evidence_id": "E002",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 52.09,
+          "end_seconds": 97.09,
+          "text": "I hope that I'm going to be able to convey some of the core concepts and abstractions that are used in computer networks in general, and in the internet specifically, and I also want to take away some of the fears of computer networks. I feel like some people are like afraid to approach computer networks, thinking that they are quite complicated, and I think that if you understand some of the building blocks, they're actually quite simple to figure out, and when you understand the building blocks, it's easy to understand how some things might work and what's happening on your network, and I also want to give you some pointers on how to experiment with computer networks. If you're interested in this after this,",
+          "segment_ids": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "evidence_id": "E003",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 95.09,
+          "end_seconds": 140.09,
+          "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+          "segment_ids": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "evidence_id": "E044",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1737.16,
+          "end_seconds": 1782.16,
+          "text": "yourself switches and routers together and do stuff like that. And if you want to play with BGP, you can, for example, there are networks that people play with BGP where you use VPNs to connect yourself together. And then you can set up on your Raspberry Pi if you have one at home. You can set up a BGP network and be like, I have this address home that you get allocated and talk to other people and see how you configure that. See all of the messages that I exchange, play around with having several, or how you do it, so that if one link fails, it automatically fails over and all kinds of stuff. And so in essence, if you interest at any of this, I just want to encourage you to play with computer networks. It's not that complicated, it's a lot of fun. If you want to see what's going on on your network, they are software for that.",
+          "segment_ids": [
+            548,
+            549,
+            550,
+            551,
+            552,
+            553,
+            554,
+            555,
+            556,
+            557,
+            558,
+            559,
+            560,
+            561,
+            562,
+            563,
+            564
+          ]
+        },
+        {
+          "evidence_id": "E016",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 613.78,
+          "end_seconds": 658.78,
+          "text": "or ethernet address somewhere, so this is Mac OS on the left side, called a Mac address, and the Linux command line interface where it's called an ethernet address on the right side. And at this point of time, I want to talk a little bit about a piece of software that is called via shark. So let's say that you are interested in network and wants to see how this happens at your home network. Via shark is a piece of software that you can install. No matter what operating system you have at works and Linux, Mac OS, Windows, and when you start it up, it looks something like this. This might look a little bit overwhelming, but it's rather easy. It shows you the network interfaces that you have in your computer. And the squiggly line that you see",
+          "segment_ids": [
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": false,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "The speaker wants beginners to understand the core building blocks and abstractions of computer networks, feel less afraid of the topic, and see that networking can be understood and experimented with because it’s not as complicated as it seems.",
+        "citations": [
+          {
+            "evidence_id": "E002",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 52.09,
+            "end_seconds": 97.09,
+            "text": "I hope that I'm going to be able to convey some of the core concepts and abstractions that are used in computer networks in general, and in the internet specifically, and I also want to take away some of the fears of computer networks. I feel like some people are like afraid to approach computer networks, thinking that they are quite complicated, and I think that if you understand some of the building blocks, they're actually quite simple to figure out, and when you understand the building blocks, it's easy to understand how some things might work and what's happening on your network, and I also want to give you some pointers on how to experiment with computer networks. If you're interested in this after this,",
+            "segment_ids": [
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ]
+          },
+          {
+            "evidence_id": "E026",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1019.78,
+            "end_seconds": 1062.78,
+            "text": "you access it via HTTP or HTTPS. If you access it via HTTP, you have HTTP is the hypertext transfer protocol, which is the protocol that you are using to transfer web pages. In there, if you use HTTPS, you have TLS, which is an encryption protocol, which then contains HTTP, and then you get your web page. And one of the really important things that I want to take away, you take away from this is that what you do in networking, a lot is that you just layer levels of abstraction on top of each other. So we have the local network here, which contains the internet protocol message, which contains the actual information that you are interested in receiving.",
+            "segment_ids": [
+              324,
+              325,
+              326,
+              327,
+              328,
+              329,
+              330,
+              331,
+              332,
+              333,
+              334
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 904,
+        "output_tokens": 73
+      },
+      "latency_ms": {
+        "retrieval": 2.016899999944144,
+        "generation": 2408.7464999993244,
+        "total": 2410.7794999999896
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 3,
+        "supported_claims": 3,
+        "citations": 2,
+        "supporting_citations": 2,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-02",
+      "category": "FACTUAL",
+      "answerable": true,
+      "question": "What does a browser receive to display a website?",
+      "key_facts": [
+        "The browser receives the website's HTML source code"
+      ],
+      "expected_intervals": [
+        [
+          123,
+          150
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E004",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 138.09,
+          "end_seconds": 179.78,
+          "text": "what text is on the website, what images are going to be downloaded and embedded, and that's what you get, what your browser gets from your internet to show you the website. In principle, how this works is fairly simple in some ways. So how you can imagine this is that you have small postcards. So the start of me writing a small postcard that is like, for me, to imfcam.org, website please. Then imfcam.org answers and gives me the website. And this really is a little bit like postcards in",
+          "segment_ids": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "evidence_id": "E003",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 95.09,
+          "end_seconds": 140.09,
+          "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+          "segment_ids": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "evidence_id": "E009",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 333.78,
+          "end_seconds": 376.78,
+          "text": "The teacher has no idea what student is behind which pneumatic tube because everyone showed up for the first time. So assume that we have two students in the class. One is called Alice and the other one is called Lair. And Alice knows that Lair is in their class and wants to send a message to Lair. And the teacher will gladly forward this. So what Alice does, Alice just has a one pneumatic tube. Alice can just say, I have a message to Lair and send it out. When the teacher gets that message, the teacher sees, oh, this is a message from Alice. So the teacher can go and label the pneumatic tube that they receive the message from Alice. Alice is behind this tube. And then the message is from Foblair.",
+          "segment_ids": [
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101
+          ]
+        },
+        {
+          "evidence_id": "E006",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 216.78,
+          "end_seconds": 259.78,
+          "text": "In networks, you typically call them packets. And no matter what you do on a computer network, your information will always be split up, and that's one of the important core concepts. Like even if you have something that looks like you have a connection that just flows, like you have are talking to someone over a phone over the internet, or you're having a video conference of the internet. It still means that all of the data that you are sending and receiving is split up into little blocks of 1,500 characters that you send and receive to the internet. And it's not just the internet that works like that, even if you connect a monitor via this play port.",
+          "segment_ids": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "evidence_id": "E033",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1298.16,
+          "end_seconds": 1340.16,
+          "text": "on the internet during configuration, or you are automatically tells you the name of your internet address, of the DNS server. When Alice connects to the network, and gets the IP address via DHCP, Casey also tells them, hey, if you want to know the domain name of a server, just send the message with the request of what the domain name, or what the IP address, what the main name is to me. So if Alice wants to know the domain name for EMF content.org, they send a message to Casey that is like, what is the domain name of EMF content.org? Casey is like, okay, I know the address of a DNS server",
+          "segment_ids": [
+            415,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "A browser receives the website’s HTML source code, including what text is on the website and information about images to be downloaded and embedded.",
+        "citations": [
+          {
+            "evidence_id": "E003",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 95.09,
+            "end_seconds": 140.09,
+            "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+            "segment_ids": [
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          },
+          {
+            "evidence_id": "E004",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 138.09,
+            "end_seconds": 179.78,
+            "text": "what text is on the website, what images are going to be downloaded and embedded, and that's what you get, what your browser gets from your internet to show you the website. In principle, how this works is fairly simple in some ways. So how you can imagine this is that you have small postcards. So the start of me writing a small postcard that is like, for me, to imfcam.org, website please. Then imfcam.org answers and gives me the website. And this really is a little bit like postcards in",
+            "segment_ids": [
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 813,
+        "output_tokens": 62
+      },
+      "latency_ms": {
+        "retrieval": 1.7067999997379957,
+        "generation": 2061.2836000000243,
+        "total": 2063.001399999848
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 2,
+        "supporting_citations": 2,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-03",
+      "category": "EXPLANATION",
+      "answerable": true,
+      "question": "Why is Internet data split into packets?",
+      "key_facts": [
+        "The network has a bounded message size",
+        "Data is divided into small blocks for transmission"
+      ],
+      "expected_intervals": [
+        [
+          158,
+          251
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E006",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 216.78,
+          "end_seconds": 259.78,
+          "text": "In networks, you typically call them packets. And no matter what you do on a computer network, your information will always be split up, and that's one of the important core concepts. Like even if you have something that looks like you have a connection that just flows, like you have are talking to someone over a phone over the internet, or you're having a video conference of the internet. It still means that all of the data that you are sending and receiving is split up into little blocks of 1,500 characters that you send and receive to the internet. And it's not just the internet that works like that, even if you connect a monitor via this play port.",
+          "segment_ids": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "evidence_id": "E005",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 176.78,
+          "end_seconds": 219.78,
+          "text": "And this really is a little bit like postcards in that the amount of information that you can send at one go to your network and get from your network as a rather limited. So on a postcard you have limited space and like to get a full webpage back, you need to split up the information across several different cards because you cannot fit it on one. And this also is the case on the internet, on the internet, the typical message size that you can send is about 1,500 bytes or 1,500 characters. If you are sending a message that's more than 1,500 bytes, it has to be split up across several of those postcards. In networks, you typically call them packets.",
+          "segment_ids": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+          ]
+        },
+        {
+          "evidence_id": "E036",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1416.16,
+          "end_seconds": 1460.16,
+          "text": "And then I clicked on the line where the request for EMF content.org is. And you can see that here, which says, queries, EMF content.org, A, which is a query for an IP address, doesn't really matter why. And then a couple of packets down when you click. You see an answer to this, which is, EMF content.org is at IP address, 37, 27, 24, 111. One really interesting thing about this is, when you internet doesn't work, when you type in a name. You can try figuring out if the font is the NS, which it often is, or if it's somewhere else. And one of the ways that you can do that is that you can send a message",
+          "segment_ids": [
+            451,
+            452,
+            453,
+            454,
+            455,
+            456,
+            457,
+            458,
+            459,
+            460,
+            461,
+            462,
+            463
+          ]
+        },
+        {
+          "evidence_id": "E019",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 736.78,
+          "end_seconds": 778.78,
+          "text": "we introduce a small layer of abstraction on top. So assume that instead of just being a class, we have a whole school. In a class, students might just show up randomly and sit at a random place, and you have to figure out where they are. But if you are building a school, you probably know exactly which classrooms you have, where the classrooms, how the classrooms are connected, and where the pneumatic tubes or the cables are connected different classrooms. So if you have someone that wants to send a message from class 1 to class 5, as you put a lot of energy into building up your school and building up the connections, you know what the optimal path is",
+          "segment_ids": [
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249
+          ]
+        },
+        {
+          "evidence_id": "E001",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 15.09,
+          "end_seconds": 60.09,
+          "text": "So this is an intro level talk, so if you already know all of this, you might be a bit bored. I'm going to tell you how the internet works. If you go to computer science at a university, typically this is like a full semester, so half a year of typically around 70 hours of courses, and the total duration of time you spend on this is given as 180 hours. So I'm not going to be able to go in total depth of how everything works, but that being said, I have a couple of goals, and why I don't expect you to remember everything that I'm going to talk about today. I hope that I'm going to be able to convey some of the core concepts and abstractions that are used in computer networks in general,",
+          "segment_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "Internet data is split into packets because networks can only send limited amounts of information at a time—about 1,500 bytes/characters—so larger messages have to be broken into smaller blocks and sent separately.",
+        "citations": [
+          {
+            "evidence_id": "E005",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 176.78,
+            "end_seconds": 219.78,
+            "text": "And this really is a little bit like postcards in that the amount of information that you can send at one go to your network and get from your network as a rather limited. So on a postcard you have limited space and like to get a full webpage back, you need to split up the information across several different cards because you cannot fit it on one. And this also is the case on the internet, on the internet, the typical message size that you can send is about 1,500 bytes or 1,500 characters. If you are sending a message that's more than 1,500 bytes, it has to be split up across several of those postcards. In networks, you typically call them packets.",
+            "segment_ids": [
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ]
+          },
+          {
+            "evidence_id": "E006",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 216.78,
+            "end_seconds": 259.78,
+            "text": "In networks, you typically call them packets. And no matter what you do on a computer network, your information will always be split up, and that's one of the important core concepts. Like even if you have something that looks like you have a connection that just flows, like you have are talking to someone over a phone over the internet, or you're having a video conference of the internet. It still means that all of the data that you are sending and receiving is split up into little blocks of 1,500 characters that you send and receive to the internet. And it's not just the internet that works like that, even if you connect a monitor via this play port.",
+            "segment_ids": [
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 867,
+        "output_tokens": 71
+      },
+      "latency_ms": {
+        "retrieval": 1.6923000002861954,
+        "generation": 2028.8242999995418,
+        "total": 2030.5296999995335
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 2,
+        "supporting_citations": 2,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-04",
+      "category": "EXPLANATION",
+      "answerable": true,
+      "question": "How does a network switch learn where devices are?",
+      "key_facts": [
+        "It observes the source of devices' first messages and remembers their ports"
+      ],
+      "expected_intervals": [
+        [
+          341,
+          442
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E011",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 413.78,
+          "end_seconds": 456.78,
+          "text": "they can also label the tube for Blair. And this is how a lot of your home network works. So if you have a switch on your home network, so like a device where you plug in like several computers, this is exactly how a switch on your home network forwards messages between the connected computers or other devices, it just learns where everything is on the first message that it receives. How does this work on a slightly different class? So let's say that we have a class where there are more students and there are so many students that the teacher doesn't monitor with all of the pneumatic tubes. Instead, there is like a hierarchy where some students",
+          "segment_ids": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ]
+        },
+        {
+          "evidence_id": "E028",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1096.78,
+          "end_seconds": 1139.78,
+          "text": "That's all they just forward messages in the local network. There's another device that, as called routers, at your internet provider, they might look something like that. And they are the devices that are responsible for figuring out which direction an internet protocol packet has to go to reach its destination. At home, you typically have something like this. So what kind of device is this? If you turn it around the labeling of the ports, give it a little bit, you might not be able to read it. In this case, the yellow ports say LAN, on them, which means local area network, and the blue ports is LAN, which means wide area network. And an essence between the yellow ports is something like a switch,",
+          "segment_ids": [
+            344,
+            345,
+            346,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            356
+          ]
+        },
+        {
+          "evidence_id": "E013",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 492.78,
+          "end_seconds": 537.78,
+          "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+          "segment_ids": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        {
+          "evidence_id": "E029",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1135.78,
+          "end_seconds": 1180.78,
+          "text": "And an essence between the yellow ports is something like a switch, that just forward stuff in your local network, and between the yellow ports and the blue ports is a router. So this is kind of a device that's a little bit of both. So, but how do we talk to the internet? So let's say that you are someone either, you are a person that shows up to class for the first time. And your teacher is connected to the internet. Your teacher needs an internet protocol message, an IP address to be able to talk to the internet. They get this from the internet provider in a way that I'm not going to mention because there are several ways that this works, but they have an IP address. So if you show up to the network, you have a name,",
+          "segment_ids": [
+            356,
+            357,
+            358,
+            359,
+            360,
+            361,
+            362,
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369
+          ]
+        },
+        {
+          "evidence_id": "E014",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 533.78,
+          "end_seconds": 576.78,
+          "text": "devices that are part of the networks are identified by an address that looks like this. This address can either be called a Mac address, a hardware address, an ethernet address, a device address, depending on who you care as, it doesn't really matter. What's interesting about it is that each computer and each network card that you have in your computer has one of these addresses. And the address is programmed or burned in on the time that your computer is produced. So each network interface on every computer in the world that does WiFi or that connects from internet",
+          "segment_ids": [
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "A network switch learns where devices are by using the first message it receives from each device, which tells it where that device is on the network. It then uses that information to forward messages between connected devices.",
+        "citations": [
+          {
+            "evidence_id": "E011",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 413.78,
+            "end_seconds": 456.78,
+            "text": "they can also label the tube for Blair. And this is how a lot of your home network works. So if you have a switch on your home network, so like a device where you plug in like several computers, this is exactly how a switch on your home network forwards messages between the connected computers or other devices, it just learns where everything is on the first message that it receives. How does this work on a slightly different class? So let's say that we have a class where there are more students and there are so many students that the teacher doesn't monitor with all of the pneumatic tubes. Instead, there is like a hierarchy where some students",
+            "segment_ids": [
+              115,
+              116,
+              117,
+              118,
+              119,
+              120,
+              121,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 820,
+        "output_tokens": 67
+      },
+      "latency_ms": {
+        "retrieval": 1.7441999989387114,
+        "generation": 1425.418400000126,
+        "total": 1427.1730000000389
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 1,
+        "supporting_citations": 1,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-05",
+      "category": "FACTUAL",
+      "answerable": true,
+      "question": "How are wired Ethernet and Wi-Fi related in this explanation?",
+      "key_facts": [
+        "They work similarly at the link-layer level used in the explanation"
+      ],
+      "expected_intervals": [
+        [
+          498,
+          529
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E007",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 256.78,
+          "end_seconds": 299.78,
+          "text": "even if you connect a monitor via this play port. It also uses like these kind of small packets that it sends around it. For the rest of my talk, I mostly go to talk about home networks. So if you use your internet at home, you typically connect to something like this that you have standing around somewhere. So you have this device connects to your internet provider at the one side and you either plug in a network cable or probably use Wi-Fi nowadays to connect to the internet through it. And to explain how this works, let's start as a little bit of an abstraction. And imagine that you are in a school class.",
+          "segment_ids": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ]
+        },
+        {
+          "evidence_id": "E013",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 492.78,
+          "end_seconds": 537.78,
+          "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+          "segment_ids": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        {
+          "evidence_id": "E031",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1218.78,
+          "end_seconds": 1262.16,
+          "text": "Typically assigned to you in your local network. So if you go back to the Linux command line and type IPA, you see your IP address in the IP lane, in Mac OS, on the network settings, you also see your IP address. And this is exactly how your computer figures out what the address is on the local network. This is exactly how it works at EMF. Once your computer joins the EMF Wi-Fi, it just sends a message or what's my IP address, and it gets an answer from another computer EMF that will tell it. This is your unique address. Go continue. So, but I was talking about this scenario. So when we go to www.emfcam.org, we put in an address. We do not put in an IP address.",
+          "segment_ids": [
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400,
+            401,
+            402,
+            403
+          ]
+        },
+        {
+          "evidence_id": "E016",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 613.78,
+          "end_seconds": 658.78,
+          "text": "or ethernet address somewhere, so this is Mac OS on the left side, called a Mac address, and the Linux command line interface where it's called an ethernet address on the right side. And at this point of time, I want to talk a little bit about a piece of software that is called via shark. So let's say that you are interested in network and wants to see how this happens at your home network. Via shark is a piece of software that you can install. No matter what operating system you have at works and Linux, Mac OS, Windows, and when you start it up, it looks something like this. This might look a little bit overwhelming, but it's rather easy. It shows you the network interfaces that you have in your computer. And the squiggly line that you see",
+          "segment_ids": [
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        },
+        {
+          "evidence_id": "E030",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1177.78,
+          "end_seconds": 1220.78,
+          "text": "So if you show up to the network, you have a name, because that's burned in. So you are Alice, and the first thing that you do is, you ask, what is my IP address? And then the case here applies to your IP address, it's 1, 2, 1, 6, 8, 0, 2. So that moment you have an IP address. This also shows why you need a name, too, because if you didn't have a name, you couldn't ask for an IP address, because you can't just, you need something so that information can be sent back to you. Some kind of identifier. So you need the two levels. You need the lower level. The Ethernet level to be able to ask for an IP address in the first step. And this is exactly how IP address is. Typically assigned to you in your local network.",
+          "segment_ids": [
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            384,
+            385,
+            386
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": false,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "In the explanation, wired Ethernet and Wi‑Fi are both described as home network substandards of the same IEEE 802 group, and it says they work the same from a functional perspective—one is the cable network and the other is the wireless network.",
+        "citations": [
+          {
+            "evidence_id": "E013",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 492.78,
+            "end_seconds": 537.78,
+            "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+            "segment_ids": [
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 906,
+        "output_tokens": 78
+      },
+      "latency_ms": {
+        "retrieval": 1.7520000001240987,
+        "generation": 1133.7885999982973,
+        "total": 1135.5550000007497
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 1,
+        "supporting_citations": 1,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-06",
+      "category": "EXPLANATION",
+      "answerable": true,
+      "question": "Why do MAC addresses need to be globally unique?",
+      "key_facts": [
+        "Devices on a network need unambiguous lower-level addresses"
+      ],
+      "expected_intervals": [
+        [
+          538,
+          603
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E015",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 572.78,
+          "end_seconds": 615.78,
+          "text": "that does WiFi or that connects from internet has a globally unique address, which is really important because like, assume that we have a class where you have two addresses. Humans are really good at figuring out well one of them is Alice A and one of them is Alice B. Humans are really good. Computers are not good at dealing with non-unique names. So it's really important that names are globally unique. And if you show up to a new network, no one else will ever have the same name as you. If you go to your network settings on your computer and click on this, you typically can find the Mac address or ethernet address somewhere,",
+          "segment_ids": [
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180
+          ]
+        },
+        {
+          "evidence_id": "E030",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1177.78,
+          "end_seconds": 1220.78,
+          "text": "So if you show up to the network, you have a name, because that's burned in. So you are Alice, and the first thing that you do is, you ask, what is my IP address? And then the case here applies to your IP address, it's 1, 2, 1, 6, 8, 0, 2. So that moment you have an IP address. This also shows why you need a name, too, because if you didn't have a name, you couldn't ask for an IP address, because you can't just, you need something so that information can be sent back to you. Some kind of identifier. So you need the two levels. You need the lower level. The Ethernet level to be able to ask for an IP address in the first step. And this is exactly how IP address is. Typically assigned to you in your local network.",
+          "segment_ids": [
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            384,
+            385,
+            386
+          ]
+        },
+        {
+          "evidence_id": "E039",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1533.16,
+          "end_seconds": 1576.16,
+          "text": "So, each of the clouds here is a network on the internet. The top left one is EMF camp. And the other ones are just other networks on the internet. And to be able to participate like on the internet as a network, then send messages directly to the internet, which you internet provided to the providers. You need a unique identifier that identifies you network on the internet. And each network that participates on the internet is known as an AS, which stands for Autonomous System, and has a unique number that you can request from a registration agency. And EMF camp is AS 60,079, for example.",
+          "segment_ids": [
+            489,
+            490,
+            491,
+            492,
+            493,
+            494,
+            495,
+            496,
+            497,
+            498,
+            499
+          ]
+        },
+        {
+          "evidence_id": "E031",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1218.78,
+          "end_seconds": 1262.16,
+          "text": "Typically assigned to you in your local network. So if you go back to the Linux command line and type IPA, you see your IP address in the IP lane, in Mac OS, on the network settings, you also see your IP address. And this is exactly how your computer figures out what the address is on the local network. This is exactly how it works at EMF. Once your computer joins the EMF Wi-Fi, it just sends a message or what's my IP address, and it gets an answer from another computer EMF that will tell it. This is your unique address. Go continue. So, but I was talking about this scenario. So when we go to www.emfcam.org, we put in an address. We do not put in an IP address.",
+          "segment_ids": [
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400,
+            401,
+            402,
+            403
+          ]
+        },
+        {
+          "evidence_id": "E014",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 533.78,
+          "end_seconds": 576.78,
+          "text": "devices that are part of the networks are identified by an address that looks like this. This address can either be called a Mac address, a hardware address, an ethernet address, a device address, depending on who you care as, it doesn't really matter. What's interesting about it is that each computer and each network card that you have in your computer has one of these addresses. And the address is programmed or burned in on the time that your computer is produced. So each network interface on every computer in the world that does WiFi or that connects from internet",
+          "segment_ids": [
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "MAC addresses need to be globally unique because computers are not good at dealing with non-unique names, and each network interface needs a unique identifier so it can be identified on a network and receive information back to it.",
+        "citations": [
+          {
+            "evidence_id": "E015",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 572.78,
+            "end_seconds": 615.78,
+            "text": "that does WiFi or that connects from internet has a globally unique address, which is really important because like, assume that we have a class where you have two addresses. Humans are really good at figuring out well one of them is Alice A and one of them is Alice B. Humans are really good. Computers are not good at dealing with non-unique names. So it's really important that names are globally unique. And if you show up to a new network, no one else will ever have the same name as you. If you go to your network settings on your computer and click on this, you typically can find the Mac address or ethernet address somewhere,",
+            "segment_ids": [
+              166,
+              167,
+              168,
+              169,
+              170,
+              171,
+              172,
+              173,
+              174,
+              175,
+              176,
+              177,
+              178,
+              179,
+              180
+            ]
+          },
+          {
+            "evidence_id": "E030",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1177.78,
+            "end_seconds": 1220.78,
+            "text": "So if you show up to the network, you have a name, because that's burned in. So you are Alice, and the first thing that you do is, you ask, what is my IP address? And then the case here applies to your IP address, it's 1, 2, 1, 6, 8, 0, 2. So that moment you have an IP address. This also shows why you need a name, too, because if you didn't have a name, you couldn't ask for an IP address, because you can't just, you need something so that information can be sent back to you. Some kind of identifier. So you need the two levels. You need the lower level. The Ethernet level to be able to ask for an IP address in the first step. And this is exactly how IP address is. Typically assigned to you in your local network.",
+            "segment_ids": [
+              369,
+              370,
+              371,
+              372,
+              373,
+              374,
+              375,
+              376,
+              377,
+              378,
+              379,
+              380,
+              381,
+              382,
+              383,
+              384,
+              385,
+              386
+            ]
+          },
+          {
+            "evidence_id": "E014",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 533.78,
+            "end_seconds": 576.78,
+            "text": "devices that are part of the networks are identified by an address that looks like this. This address can either be called a Mac address, a hardware address, an ethernet address, a device address, depending on who you care as, it doesn't really matter. What's interesting about it is that each computer and each network card that you have in your computer has one of these addresses. And the address is programmed or burned in on the time that your computer is produced. So each network interface on every computer in the world that does WiFi or that connects from internet",
+            "segment_ids": [
+              154,
+              155,
+              156,
+              157,
+              158,
+              159,
+              160,
+              161,
+              162,
+              163,
+              164,
+              165,
+              166
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 852,
+        "output_tokens": 75
+      },
+      "latency_ms": {
+        "retrieval": 2.039199998762342,
+        "generation": 1213.8708000002225,
+        "total": 1215.9221999991132
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 3,
+        "supporting_citations": 3,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-07",
+      "category": "EXPLANATION",
+      "answerable": true,
+      "question": "Why does a device need a lower-level address before it can obtain an IP address?",
+      "key_facts": [
+        "It must communicate on the local Ethernet network to request an IP address"
+      ],
+      "expected_intervals": [
+        [
+          1177,
+          1218
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E030",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1177.78,
+          "end_seconds": 1220.78,
+          "text": "So if you show up to the network, you have a name, because that's burned in. So you are Alice, and the first thing that you do is, you ask, what is my IP address? And then the case here applies to your IP address, it's 1, 2, 1, 6, 8, 0, 2. So that moment you have an IP address. This also shows why you need a name, too, because if you didn't have a name, you couldn't ask for an IP address, because you can't just, you need something so that information can be sent back to you. Some kind of identifier. So you need the two levels. You need the lower level. The Ethernet level to be able to ask for an IP address in the first step. And this is exactly how IP address is. Typically assigned to you in your local network.",
+          "segment_ids": [
+            369,
+            370,
+            371,
+            372,
+            373,
+            374,
+            375,
+            376,
+            377,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            384,
+            385,
+            386
+          ]
+        },
+        {
+          "evidence_id": "E036",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1416.16,
+          "end_seconds": 1460.16,
+          "text": "And then I clicked on the line where the request for EMF content.org is. And you can see that here, which says, queries, EMF content.org, A, which is a query for an IP address, doesn't really matter why. And then a couple of packets down when you click. You see an answer to this, which is, EMF content.org is at IP address, 37, 27, 24, 111. One really interesting thing about this is, when you internet doesn't work, when you type in a name. You can try figuring out if the font is the NS, which it often is, or if it's somewhere else. And one of the ways that you can do that is that you can send a message",
+          "segment_ids": [
+            451,
+            452,
+            453,
+            454,
+            455,
+            456,
+            457,
+            458,
+            459,
+            460,
+            461,
+            462,
+            463
+          ]
+        },
+        {
+          "evidence_id": "E034",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1336.16,
+          "end_seconds": 1378.16,
+          "text": "Casey is like, okay, I know the address of a DNS server on the internet and sends the question onto the internet. The DNS server on the internet, either randomly already knows what the address of EMF content.org is and can just reply it's this IP address. Or if they do not know, they do this in a similar way. There is a hard coded list of IP addresses of like top-level responsible servers on the internet that you can ask, who is responsible for all addresses in Orgy? And then you go to that and ask, okay, who do I ask for addresses in Orgy? And then you go to send a message to the Orgy name servers, and I like who is EMF content.org.",
+          "segment_ids": [
+            427,
+            428,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            436,
+            437,
+            438
+          ]
+        },
+        {
+          "evidence_id": "E038",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1494.16,
+          "end_seconds": 1538.16,
+          "text": "then DNS is broken and you can change your DNS server, for example, or you can complain to every is running your DNS server. If this doesn't work, then something else is lower level is down. And you do not have any internet protocol connectivity to your provider and probably you link it down. So, but how do packets on the internet go to the right place? I just talked about the example of this big school, where you just build things up and you know which direction you have to send things. But the internet is obviously not like this, because the internet is like lots and lots of networks connected together and you have to know which direction to send stuff. So, this looks something like this. So, each of the clouds here is a network on the internet.",
+          "segment_ids": [
+            477,
+            478,
+            479,
+            480,
+            481,
+            482,
+            483,
+            484,
+            485,
+            486,
+            487,
+            488,
+            489
+          ]
+        },
+        {
+          "evidence_id": "E021",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 816.78,
+          "end_seconds": 858.78,
+          "text": "In principle, they work very similarly. I believe six addresses just look more intimidating because they are longer, because you are more likely to encounter before. I am mostly going to talk about version 4 addresses, which look like this. And if you break them up in components, they are quite easy. In essence, there are two parts to it. The font, free numbers, all numbers go from 0 to 255. Identify the network and the last number. Identifies the host, so the computer or device on your network. Typically. So if you go back to our school example, how this looks like, is we have all of our classes.",
+          "segment_ids": [
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "A device needs a lower-level identifier first so the network has something to send the IP-address reply back to; without that name/ethernet-level identifier, it couldn’t ask for an IP address in the first place.",
+        "citations": [
+          {
+            "evidence_id": "E030",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1177.78,
+            "end_seconds": 1220.78,
+            "text": "So if you show up to the network, you have a name, because that's burned in. So you are Alice, and the first thing that you do is, you ask, what is my IP address? And then the case here applies to your IP address, it's 1, 2, 1, 6, 8, 0, 2. So that moment you have an IP address. This also shows why you need a name, too, because if you didn't have a name, you couldn't ask for an IP address, because you can't just, you need something so that information can be sent back to you. Some kind of identifier. So you need the two levels. You need the lower level. The Ethernet level to be able to ask for an IP address in the first step. And this is exactly how IP address is. Typically assigned to you in your local network.",
+            "segment_ids": [
+              369,
+              370,
+              371,
+              372,
+              373,
+              374,
+              375,
+              376,
+              377,
+              378,
+              379,
+              380,
+              381,
+              382,
+              383,
+              384,
+              385,
+              386
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 925,
+        "output_tokens": 70
+      },
+      "latency_ms": {
+        "retrieval": 1.7767999997886363,
+        "generation": 1555.9766000005766,
+        "total": 1557.7649999995629
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 2,
+        "citations": 1,
+        "supporting_citations": 1,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-08",
+      "category": "EXPLANATION",
+      "answerable": true,
+      "question": "How can pinging 9.9.9.9 help diagnose a DNS problem?",
+      "key_facts": [
+        "A successful numeric-IP ping shows network connectivity works without name resolution",
+        "That isolates DNS as the likely problem"
+      ],
+      "expected_intervals": [
+        [
+          1443,
+          1510
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E037",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1455.16,
+          "end_seconds": 1497.16,
+          "text": "And one of the ways that you can do that is that you can send a message to an IP address using the app address. There's a tool that's called Ping, that's available on Windows, Linux everywhere, that you can use in the command line. And if you type Ping, IP address, it will just send a short message to an IP address. And if the IP address replies, you will get a Pongback. And it will tell you that you got 64 bytes back. And if you know an IP address on the internet, that is likely to always be up 9, 9, 9, 9 is one of those. You can just ping 9, 9, 9, 9. If you internet doesn't work, but if this works, then DNS is broken and you can change your DNS server,",
+          "segment_ids": [
+            463,
+            464,
+            465,
+            466,
+            467,
+            468,
+            469,
+            470,
+            471,
+            472,
+            473,
+            474,
+            475,
+            476,
+            477
+          ]
+        },
+        {
+          "evidence_id": "E038",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1494.16,
+          "end_seconds": 1538.16,
+          "text": "then DNS is broken and you can change your DNS server, for example, or you can complain to every is running your DNS server. If this doesn't work, then something else is lower level is down. And you do not have any internet protocol connectivity to your provider and probably you link it down. So, but how do packets on the internet go to the right place? I just talked about the example of this big school, where you just build things up and you know which direction you have to send things. But the internet is obviously not like this, because the internet is like lots and lots of networks connected together and you have to know which direction to send stuff. So, this looks something like this. So, each of the clouds here is a network on the internet.",
+          "segment_ids": [
+            477,
+            478,
+            479,
+            480,
+            481,
+            482,
+            483,
+            484,
+            485,
+            486,
+            487,
+            488,
+            489
+          ]
+        },
+        {
+          "evidence_id": "E045",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1781.16,
+          "end_seconds": 1813.16,
+          "text": "they are software for that. You can just install and then directly do that. If you want to run some services for fun, use Linux, install some network services. You can run DNS servers, the HTTP servers, web servers, at home and just figure out how they look like. And then look at the network traffic. You can play with expensive hardware by just using simulators. You can become parts of like virtual networks where you can practice how it works like to be an ISP. And if you have any questions about this, I will be at the Q&A 10 just outside there on the right for the next 15 minutes or so.",
+          "segment_ids": [
+            564,
+            565,
+            566,
+            567,
+            568,
+            569,
+            570,
+            571,
+            572,
+            573,
+            574,
+            575,
+            576
+          ]
+        },
+        {
+          "evidence_id": "E032",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1260.16,
+          "end_seconds": 1301.16,
+          "text": "We do not put in an IP address. So how does this work? And the answer is that there is an additional system that is called DNS, which is the domain name system, which means domain names. Like EMF content.org is a domain name to IP addresses. And how does this work? So if you go back to the example that we just had, we have Casey, who is connected to the internet, while it's internet provider. And when Casey connects to the internet, they either manually have to type in the address of a DNS server on the internet during configuration,",
+          "segment_ids": [
+            403,
+            404,
+            405,
+            406,
+            407,
+            408,
+            409,
+            410,
+            411,
+            412,
+            413,
+            414,
+            415
+          ]
+        },
+        {
+          "evidence_id": "E034",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1336.16,
+          "end_seconds": 1378.16,
+          "text": "Casey is like, okay, I know the address of a DNS server on the internet and sends the question onto the internet. The DNS server on the internet, either randomly already knows what the address of EMF content.org is and can just reply it's this IP address. Or if they do not know, they do this in a similar way. There is a hard coded list of IP addresses of like top-level responsible servers on the internet that you can ask, who is responsible for all addresses in Orgy? And then you go to that and ask, okay, who do I ask for addresses in Orgy? And then you go to send a message to the Orgy name servers, and I like who is EMF content.org.",
+          "segment_ids": [
+            427,
+            428,
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435,
+            436,
+            437,
+            438
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "Pinging 9.9.9.9 checks whether you can reach a known IP address directly. If the ping works but the internet still “doesn’t work,” that suggests DNS is broken, so you can change your DNS server. If the ping does not work, then the problem is lower-level connectivity, not DNS.",
+        "citations": [
+          {
+            "evidence_id": "E037",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1455.16,
+            "end_seconds": 1497.16,
+            "text": "And one of the ways that you can do that is that you can send a message to an IP address using the app address. There's a tool that's called Ping, that's available on Windows, Linux everywhere, that you can use in the command line. And if you type Ping, IP address, it will just send a short message to an IP address. And if the IP address replies, you will get a Pongback. And it will tell you that you got 64 bytes back. And if you know an IP address on the internet, that is likely to always be up 9, 9, 9, 9 is one of those. You can just ping 9, 9, 9, 9. If you internet doesn't work, but if this works, then DNS is broken and you can change your DNS server,",
+            "segment_ids": [
+              463,
+              464,
+              465,
+              466,
+              467,
+              468,
+              469,
+              470,
+              471,
+              472,
+              473,
+              474,
+              475,
+              476,
+              477
+            ]
+          },
+          {
+            "evidence_id": "E038",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1494.16,
+            "end_seconds": 1538.16,
+            "text": "then DNS is broken and you can change your DNS server, for example, or you can complain to every is running your DNS server. If this doesn't work, then something else is lower level is down. And you do not have any internet protocol connectivity to your provider and probably you link it down. So, but how do packets on the internet go to the right place? I just talked about the example of this big school, where you just build things up and you know which direction you have to send things. But the internet is obviously not like this, because the internet is like lots and lots of networks connected together and you have to know which direction to send stuff. So, this looks something like this. So, each of the clouds here is a network on the internet.",
+            "segment_ids": [
+              477,
+              478,
+              479,
+              480,
+              481,
+              482,
+              483,
+              484,
+              485,
+              486,
+              487,
+              488,
+              489
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 876,
+        "output_tokens": 96
+      },
+      "latency_ms": {
+        "retrieval": 1.7215000007126946,
+        "generation": 1344.031399999949,
+        "total": 1345.7638999989285
+      },
+      "human_review": {
+        "answer_correct": true,
+        "fully_supported": true,
+        "citation_correct": true,
+        "citation_complete": true,
+        "unsupported_claim": false,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 3,
+        "supported_claims": 3,
+        "citations": 2,
+        "supporting_citations": 2,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-09",
+      "category": "TEMPORAL_CONTENT",
+      "answerable": true,
+      "question": "What does the speaker discuss after explaining DHCP address assignment?",
+      "key_facts": [
+        "She moves on to DNS and how domain names become IP addresses"
+      ],
+      "expected_intervals": [
+        [
+          1264,
+          1399
+        ]
+      ],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E033",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1298.16,
+          "end_seconds": 1340.16,
+          "text": "on the internet during configuration, or you are automatically tells you the name of your internet address, of the DNS server. When Alice connects to the network, and gets the IP address via DHCP, Casey also tells them, hey, if you want to know the domain name of a server, just send the message with the request of what the domain name, or what the IP address, what the main name is to me. So if Alice wants to know the domain name for EMF content.org, they send a message to Casey that is like, what is the domain name of EMF content.org? Casey is like, okay, I know the address of a DNS server",
+          "segment_ids": [
+            415,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427
+          ]
+        },
+        {
+          "evidence_id": "E003",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 95.09,
+          "end_seconds": 140.09,
+          "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+          "segment_ids": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "evidence_id": "E010",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 373.78,
+          "end_seconds": 416.78,
+          "text": "And then the message is from Foblair. The teacher doesn't know where Blair is. So what do they do? They go and are like, okay, if I just copy the message and send it to everyone, Alice, it will Blair will get it because they are somewhere. So the teacher copies the message, send it to everyone. And then it's Blair wants to reply. They can send the message back to Alice. And since the teacher knows where Alice is sitting, they can send the message directly back to Alice, without having to send it to everyone or try to figure out where Alice is. Because they already have the label on the tube. And after they get the message from Blair, they can also label the tube for Blair.",
+          "segment_ids": [
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115
+          ]
+        },
+        {
+          "evidence_id": "E002",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 52.09,
+          "end_seconds": 97.09,
+          "text": "I hope that I'm going to be able to convey some of the core concepts and abstractions that are used in computer networks in general, and in the internet specifically, and I also want to take away some of the fears of computer networks. I feel like some people are like afraid to approach computer networks, thinking that they are quite complicated, and I think that if you understand some of the building blocks, they're actually quite simple to figure out, and when you understand the building blocks, it's easy to understand how some things might work and what's happening on your network, and I also want to give you some pointers on how to experiment with computer networks. If you're interested in this after this,",
+          "segment_ids": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "evidence_id": "E018",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 696.78,
+          "end_seconds": 741.78,
+          "text": "that are talked about. So they are in essence the names of the computer and the message is sent between those two addresses. So after hearing this, you might or you should probably ask yourself, so how does this scale? Because if at a home network, it's quite clear how this works, but assume you want to talk to EMFCAM.org or to Google. You cannot just send out a message, randomly and hope that everyone sends it on until it hits the first computer of EMFCAM and that everyone remembers how to send it back to you. And the way that this works is that we introduce a small layer of abstraction on top.",
+          "segment_ids": [
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": true,
+        "3": true,
+        "5": true
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "After explaining DHCP address assignment, the speaker discusses DNS: how a client can ask for a server’s domain name and how the address of a DNS server is provided. The speaker then moves into what happens when you enter an internet address in a browser and hit enter.",
+        "citations": [
+          {
+            "evidence_id": "E033",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1298.16,
+            "end_seconds": 1340.16,
+            "text": "on the internet during configuration, or you are automatically tells you the name of your internet address, of the DNS server. When Alice connects to the network, and gets the IP address via DHCP, Casey also tells them, hey, if you want to know the domain name of a server, just send the message with the request of what the domain name, or what the IP address, what the main name is to me. So if Alice wants to know the domain name for EMF content.org, they send a message to Casey that is like, what is the domain name of EMF content.org? Casey is like, okay, I know the address of a DNS server",
+            "segment_ids": [
+              415,
+              416,
+              417,
+              418,
+              419,
+              420,
+              421,
+              422,
+              423,
+              424,
+              425,
+              426,
+              427
+            ]
+          },
+          {
+            "evidence_id": "E003",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 95.09,
+            "end_seconds": 140.09,
+            "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+            "segment_ids": [
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 831,
+        "output_tokens": 82
+      },
+      "latency_ms": {
+        "retrieval": 1.7232999998668674,
+        "generation": 1389.9820999995427,
+        "total": 1391.7168999996647
+      },
+      "human_review": {
+        "answer_correct": false,
+        "fully_supported": false,
+        "citation_correct": false,
+        "citation_complete": false,
+        "unsupported_claim": true,
+        "appropriate_abstention": null,
+        "false_answer": false,
+        "material_claims": 2,
+        "supported_claims": 1,
+        "citations": 2,
+        "supporting_citations": 1,
+        "failure_categories": [
+          "TEMPORAL_FRAGMENTATION",
+          "UNSUPPORTED_CLAIM",
+          "BAD_CITATION"
+        ]
+      }
+    },
+    {
+      "id": "val-10",
+      "category": "UNANSWERABLE",
+      "answerable": false,
+      "question": "How does she compare TCP with UDP?",
+      "key_facts": [],
+      "expected_intervals": [],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E044",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1737.16,
+          "end_seconds": 1782.16,
+          "text": "yourself switches and routers together and do stuff like that. And if you want to play with BGP, you can, for example, there are networks that people play with BGP where you use VPNs to connect yourself together. And then you can set up on your Raspberry Pi if you have one at home. You can set up a BGP network and be like, I have this address home that you get allocated and talk to other people and see how you configure that. See all of the messages that I exchange, play around with having several, or how you do it, so that if one link fails, it automatically fails over and all kinds of stuff. And so in essence, if you interest at any of this, I just want to encourage you to play with computer networks. It's not that complicated, it's a lot of fun. If you want to see what's going on on your network, they are software for that.",
+          "segment_ids": [
+            548,
+            549,
+            550,
+            551,
+            552,
+            553,
+            554,
+            555,
+            556,
+            557,
+            558,
+            559,
+            560,
+            561,
+            562,
+            563,
+            564
+          ]
+        },
+        {
+          "evidence_id": "E011",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 413.78,
+          "end_seconds": 456.78,
+          "text": "they can also label the tube for Blair. And this is how a lot of your home network works. So if you have a switch on your home network, so like a device where you plug in like several computers, this is exactly how a switch on your home network forwards messages between the connected computers or other devices, it just learns where everything is on the first message that it receives. How does this work on a slightly different class? So let's say that we have a class where there are more students and there are so many students that the teacher doesn't monitor with all of the pneumatic tubes. Instead, there is like a hierarchy where some students",
+          "segment_ids": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127
+          ]
+        },
+        {
+          "evidence_id": "E043",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1696.16,
+          "end_seconds": 1741.16,
+          "text": "their programs like this one is called My Traceout on Linux that you are just like, how do messages go from me to EMF camp.org. And you can see on the left a list of ASs, so autonomous systems that you message go through. And if you're interested, you can look up who that message goes through. If you want to play with things like this more, there's cool things like network simulators. There are two big ones that I'm going to mention there, more are GNS3. And container-lab GNS3 is more based on graphics, but you can just click together on network. And experiment with really extensive hardware that is just launched inside of your computer and click yourself switches and routers together and do stuff like that.",
+          "segment_ids": [
+            535,
+            536,
+            537,
+            538,
+            539,
+            540,
+            541,
+            542,
+            543,
+            544,
+            545,
+            546,
+            547,
+            548
+          ]
+        },
+        {
+          "evidence_id": "E003",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 95.09,
+          "end_seconds": 140.09,
+          "text": "If you're interested in this after this, and how to debug common problems that you might encounter in your networks at home. So typically when you interact with the internet nowadays, you're probably going to do a browser either on your computer or on your phone. And my talk most is about what happens when you enter an internet address like www.mfcam.org and hit enter. So the first thing that I want to mention is what gets transferred over the network. So if you go to your browser and hit view source, you see something like this, which is the HTML source code of the website, which says how it looks like, what text is on the website,",
+          "segment_ids": [
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "evidence_id": "E045",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1781.16,
+          "end_seconds": 1813.16,
+          "text": "they are software for that. You can just install and then directly do that. If you want to run some services for fun, use Linux, install some network services. You can run DNS servers, the HTTP servers, web servers, at home and just figure out how they look like. And then look at the network traffic. You can play with expensive hardware by just using simulators. You can become parts of like virtual networks where you can practice how it works like to be an ISP. And if you have any questions about this, I will be at the Q&A 10 just outside there on the right for the next 15 minutes or so.",
+          "segment_ids": [
+            564,
+            565,
+            566,
+            567,
+            568,
+            569,
+            570,
+            571,
+            572,
+            573,
+            574,
+            575,
+            576
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": false,
+        "3": false,
+        "5": false
+      },
+      "generated": {
+        "answerable": false,
+        "answer": "I couldn't find enough evidence in this video to answer that reliably.",
+        "citations": []
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 877,
+        "output_tokens": 23
+      },
+      "latency_ms": {
+        "retrieval": 2.1646000004693633,
+        "generation": 1945.7564999993338,
+        "total": 1947.9276000001846
+      },
+      "human_review": {
+        "answer_correct": null,
+        "fully_supported": null,
+        "citation_correct": null,
+        "citation_complete": null,
+        "unsupported_claim": false,
+        "appropriate_abstention": true,
+        "false_answer": false,
+        "material_claims": 0,
+        "supported_claims": 0,
+        "citations": 0,
+        "supporting_citations": 0,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-11",
+      "category": "UNANSWERABLE",
+      "answerable": false,
+      "question": "What does she say about undersea Internet cable routes?",
+      "key_facts": [],
+      "expected_intervals": [],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E023",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 894.78,
+          "end_seconds": 938.78,
+          "text": "you can use the IP addresses to figure out where the message is supposed to go, because once it has yet teacher, you teach and knows, oh, this is best in class 5. By the IP address, then it can go to the school coordinator, who knows, oh, this goes to class 5. He can send on to the teacher at class 5, who then can try to figure out which student it has to go to. So to talk about how this looks like on the network cable, in your network, let's make this a tiny bit easier, and say that you just have a small class, free students, a teacher, and the teacher is directly connected to the internet. And I'll say someone from the internet wants to send a message to Blair in this case.",
+          "segment_ids": [
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297
+          ]
+        },
+        {
+          "evidence_id": "E007",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 256.78,
+          "end_seconds": 299.78,
+          "text": "even if you connect a monitor via this play port. It also uses like these kind of small packets that it sends around it. For the rest of my talk, I mostly go to talk about home networks. So if you use your internet at home, you typically connect to something like this that you have standing around somewhere. So you have this device connects to your internet provider at the one side and you either plug in a network cable or probably use Wi-Fi nowadays to connect to the internet through it. And to explain how this works, let's start as a little bit of an abstraction. And imagine that you are in a school class.",
+          "segment_ids": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ]
+        },
+        {
+          "evidence_id": "E013",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 492.78,
+          "end_seconds": 537.78,
+          "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+          "segment_ids": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        {
+          "evidence_id": "E016",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 613.78,
+          "end_seconds": 658.78,
+          "text": "or ethernet address somewhere, so this is Mac OS on the left side, called a Mac address, and the Linux command line interface where it's called an ethernet address on the right side. And at this point of time, I want to talk a little bit about a piece of software that is called via shark. So let's say that you are interested in network and wants to see how this happens at your home network. Via shark is a piece of software that you can install. No matter what operating system you have at works and Linux, Mac OS, Windows, and when you start it up, it looks something like this. This might look a little bit overwhelming, but it's rather easy. It shows you the network interfaces that you have in your computer. And the squiggly line that you see",
+          "segment_ids": [
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199
+          ]
+        },
+        {
+          "evidence_id": "E028",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1096.78,
+          "end_seconds": 1139.78,
+          "text": "That's all they just forward messages in the local network. There's another device that, as called routers, at your internet provider, they might look something like that. And they are the devices that are responsible for figuring out which direction an internet protocol packet has to go to reach its destination. At home, you typically have something like this. So what kind of device is this? If you turn it around the labeling of the ports, give it a little bit, you might not be able to read it. In this case, the yellow ports say LAN, on them, which means local area network, and the blue ports is LAN, which means wide area network. And an essence between the yellow ports is something like a switch,",
+          "segment_ids": [
+            344,
+            345,
+            346,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            356
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": false,
+        "3": false,
+        "5": false
+      },
+      "generated": {
+        "answerable": false,
+        "answer": "I couldn't find enough evidence in this video to answer that reliably.",
+        "citations": []
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 872,
+        "output_tokens": 23
+      },
+      "latency_ms": {
+        "retrieval": 1.7213000010087853,
+        "generation": 1288.762799998949,
+        "total": 1290.4908999989857
+      },
+      "human_review": {
+        "answer_correct": null,
+        "fully_supported": null,
+        "citation_correct": null,
+        "citation_complete": null,
+        "unsupported_claim": false,
+        "appropriate_abstention": true,
+        "false_answer": false,
+        "material_claims": 0,
+        "supported_claims": 0,
+        "citations": 0,
+        "supporting_citations": 0,
+        "failure_categories": []
+      }
+    },
+    {
+      "id": "val-12",
+      "category": "UNANSWERABLE",
+      "answerable": false,
+      "question": "How does mobile data differ from Wi-Fi?",
+      "key_facts": [],
+      "expected_intervals": [],
+      "retrieved_evidence": [
+        {
+          "evidence_id": "E031",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 1218.78,
+          "end_seconds": 1262.16,
+          "text": "Typically assigned to you in your local network. So if you go back to the Linux command line and type IPA, you see your IP address in the IP lane, in Mac OS, on the network settings, you also see your IP address. And this is exactly how your computer figures out what the address is on the local network. This is exactly how it works at EMF. Once your computer joins the EMF Wi-Fi, it just sends a message or what's my IP address, and it gets an answer from another computer EMF that will tell it. This is your unique address. Go continue. So, but I was talking about this scenario. So when we go to www.emfcam.org, we put in an address. We do not put in an IP address.",
+          "segment_ids": [
+            386,
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393,
+            394,
+            395,
+            396,
+            397,
+            398,
+            399,
+            400,
+            401,
+            402,
+            403
+          ]
+        },
+        {
+          "evidence_id": "E007",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 256.78,
+          "end_seconds": 299.78,
+          "text": "even if you connect a monitor via this play port. It also uses like these kind of small packets that it sends around it. For the rest of my talk, I mostly go to talk about home networks. So if you use your internet at home, you typically connect to something like this that you have standing around somewhere. So you have this device connects to your internet provider at the one side and you either plug in a network cable or probably use Wi-Fi nowadays to connect to the internet through it. And to explain how this works, let's start as a little bit of an abstraction. And imagine that you are in a school class.",
+          "segment_ids": [
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ]
+        },
+        {
+          "evidence_id": "E006",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 216.78,
+          "end_seconds": 259.78,
+          "text": "In networks, you typically call them packets. And no matter what you do on a computer network, your information will always be split up, and that's one of the important core concepts. Like even if you have something that looks like you have a connection that just flows, like you have are talking to someone over a phone over the internet, or you're having a video conference of the internet. It still means that all of the data that you are sending and receiving is split up into little blocks of 1,500 characters that you send and receive to the internet. And it's not just the internet that works like that, even if you connect a monitor via this play port.",
+          "segment_ids": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ]
+        },
+        {
+          "evidence_id": "E013",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 492.78,
+          "end_seconds": 537.78,
+          "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+          "segment_ids": [
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154
+          ]
+        },
+        {
+          "evidence_id": "E024",
+          "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+          "start_seconds": 936.78,
+          "end_seconds": 979.78,
+          "text": "to Blair in this case. And what happens is that the message arrives from the internet, from your internet provider in this case, and arrives at the teacher at Casey, because Casey is the only person that is connected to the internet. And Casey gets the message and sees that it's an internet protocol message and it's meant for Blair and sends it on. And how this looks like on your network is, if you break this up in steps. So you still have your network message, and we learned earlier that on network messages are in essence address between individual people. So in this case, on your local, in your classroom, the message still comes from your teacher.",
+          "segment_ids": [
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310
+          ]
+        }
+      ],
+      "evidence_recall_hit": {
+        "1": false,
+        "3": false,
+        "5": false
+      },
+      "generated": {
+        "answerable": true,
+        "answer": "The transcript says Wi‑Fi is one type of wireless network, while mobile data isn’t described directly. The key difference given is that Wi‑Fi is a local network connection that your device joins, where it gets an address on that local network; the transcript also says wired and wireless networks work the same functionally. It does not provide enough evidence to explain mobile data specifically.",
+        "citations": [
+          {
+            "evidence_id": "E031",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 1218.78,
+            "end_seconds": 1262.16,
+            "text": "Typically assigned to you in your local network. So if you go back to the Linux command line and type IPA, you see your IP address in the IP lane, in Mac OS, on the network settings, you also see your IP address. And this is exactly how your computer figures out what the address is on the local network. This is exactly how it works at EMF. Once your computer joins the EMF Wi-Fi, it just sends a message or what's my IP address, and it gets an answer from another computer EMF that will tell it. This is your unique address. Go continue. So, but I was talking about this scenario. So when we go to www.emfcam.org, we put in an address. We do not put in an IP address.",
+            "segment_ids": [
+              386,
+              387,
+              388,
+              389,
+              390,
+              391,
+              392,
+              393,
+              394,
+              395,
+              396,
+              397,
+              398,
+              399,
+              400,
+              401,
+              402,
+              403
+            ]
+          },
+          {
+            "evidence_id": "E013",
+            "video_id": "3acd98bb-e026-4efb-a627-e1f26894e624",
+            "start_seconds": 492.78,
+            "end_seconds": 537.78,
+            "text": "on the pneumatic tube that they got the message from Alice from. So how do computers do that? Because computers obviously networks do this because networks don't use names. So the network that you are most likely to have at home is either ethernet or WiFi network. So ethernet for cable network and WiFi obviously for WiFi. And both of these substandards of the same standard group, which is IEEE 802. It doesn't really matter what it stands for. What's important is they, from a functional perspective, for us, wired and wireless networks work exactly the same. And in these kind of networks, devices that are part of the networks are identified",
+            "segment_ids": [
+              141,
+              142,
+              143,
+              144,
+              145,
+              146,
+              147,
+              148,
+              149,
+              150,
+              151,
+              152,
+              153,
+              154
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 828,
+        "output_tokens": 105
+      },
+      "latency_ms": {
+        "retrieval": 1.7375999996147584,
+        "generation": 1652.874299999894,
+        "total": 1654.6176000010746
+      },
+      "human_review": {
+        "answer_correct": null,
+        "fully_supported": false,
+        "citation_correct": true,
+        "citation_complete": false,
+        "unsupported_claim": true,
+        "appropriate_abstention": false,
+        "false_answer": true,
+        "material_claims": 3,
+        "supported_claims": 2,
+        "citations": 2,
+        "supporting_citations": 2,
+        "failure_categories": [
+          "MISSED_ABSTENTION",
+          "INSUFFICIENT_CONTEXT",
+          "UNSUPPORTED_CLAIM"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "pytest": "219 passed, 1 opt-in real-network skipped, 2 upstream warnings",
+    "ruff_lint": "passed",
+    "ruff_format_changed_files": "passed",
+    "ruff_format_repository": "failed on 96 pre-existing unformatted files",
+    "eslint": "passed",
+    "typescript": "passed",
+    "production_build": "passed",
+    "playwright": "14 passed, 2 opt-in real-model skipped",
+    "frozen_retrieval_regressions": "passed within full pytest"
+  }
+}

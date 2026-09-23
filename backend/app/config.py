@@ -1,11 +1,13 @@
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_prefix="SCENEMIND_", env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_prefix="SCENEMIND_", env_file=(".env", ".env.local"), extra="ignore"
+    )
     calibration_path: Path | None = None
     durable_jobs: bool = False
     auth_token: str = ""
@@ -37,6 +39,18 @@ class Settings(BaseSettings):
     visual_revision: str = "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
     auto_routing_enabled: bool = True
     embedding_batch_size: int = Field(default=8, ge=1, le=64)
+    qa_model: str = "gpt-5.4-mini"
+    qa_enabled: bool = False
+    openai_api_key: str = Field(
+        default="",
+        validation_alias=AliasChoices("OPENAI_API_KEY", "SCENEMIND_OPENAI_API_KEY"),
+        repr=False,
+    )
+    qa_timeout: float = Field(default=45, gt=0, le=180)
+    qa_retries: int = Field(default=1, ge=0, le=3)
+    qa_top_k: int = Field(default=5, ge=1, le=8)
+    qa_chunk_seconds: float = Field(default=45, ge=10, le=120)
+    qa_chunk_characters: int = Field(default=900, ge=200, le=3000)
 
 
 settings = Settings()

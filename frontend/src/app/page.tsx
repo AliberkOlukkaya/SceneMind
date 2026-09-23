@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Transcript from "./transcript";
 import Search from "./search";
+import AskVideo from "./ask-video";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 type Video = {
@@ -173,8 +174,8 @@ export default function Home() {
           <p className="eyebrow">YOUR WORKSPACE</p>
           <h1>Video library</h1>
           <p>
-            {videos.length} {videos.length === 1 ? "video" : "videos"} ·
-            Upload, process, and search by meaning or spoken words.
+            {videos.length} {videos.length === 1 ? "video" : "videos"} · Upload,
+            process, and search by meaning or spoken words.
           </p>
         </div>
         <div>
@@ -343,6 +344,15 @@ export default function Home() {
                   <>
                     <Search
                       key={`search-${selected.id}`}
+                      videoId={selected.id}
+                      api={API}
+                      seek={(seconds) => {
+                        if (player.current)
+                          player.current.currentTime = seconds;
+                      }}
+                    />
+                    <AskVideo
+                      key={`ask-${selected.id}`}
                       videoId={selected.id}
                       api={API}
                       seek={(seconds) => {

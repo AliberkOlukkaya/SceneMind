@@ -1,5 +1,11 @@
 # Decisions
 
+## 040 - Keep transcript-grounded Ask Video evaluation-gated after abstention failure
+
+Add a Q&A-specific evidence layer without changing production search: deterministic 45-second/900-character transcript chunks with one-segment overlap, existing BM25 Top-5 retrieval, an extensible `AnswerGenerator`, strict OpenAI Responses JSON schema, pre-provider abstention on no lexical evidence, and server-side evidence-ID-to-timestamp resolution. Reject unknown evidence IDs and answerable responses without citations. Send only the question and selected transcript text with `store: false`; never send video bytes, full transcripts, source metadata, paths, or secrets.
+
+Choose decision D. The one checksum-frozen real-provider run reaches 100% Evidence Recall@5, but one of three unanswerable questions receives a substantive response. Answer Correctness is 88.89%, Grounded Answer 80.00%, Citation Precision 94.44%, Unsupported Claim 8.70%, Correct Abstention 66.67% and false-answer 33.33%; all miss their gates. Keep `SCENEMIND_QA_ENABLED=false`, do not promote Ask Video, preserve Find Moments unchanged, and develop abstention safety only on new development evidence. Never tune or rerun against this frozen validation set.
+
 ## 039 - Promote bounded URL ingestion through the existing local pipeline
 
 Add `URLIngestProvider` with Direct Media and YouTube implementations. Accept only HTTP(S), reject embedded credentials and every non-global resolved IPv4/IPv6 address, revalidate redirects and DNS address sets, stream direct media with authoritative byte counting, and wrap pinned yt-dlp in a monitored subprocess with a 720p ceiling. Queue acquisition as a bounded durable job, retain provenance in the existing atomic video manifest, classify retryability in migration 003, and hand validated local media to the unchanged ingest, Whisper, CLIP/FAISS, BM25 and RRF60 paths. Exact provider plus external-ID duplicates return the existing video.

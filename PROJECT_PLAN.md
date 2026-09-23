@@ -16,9 +16,11 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate** and now has URL Ingestion V1 for a possible v1.1. Direct media and public YouTube acquisition share one provider boundary, durable queue and the existing local processing/search pipeline. Real URL-versus-upload equivalence passed, including nine identical frozen Top-5 lists. Search remains Smart Search → uncapped RRF60 Hybrid, Spoken Content → Speech, and Visual Content → Visual. AUTO is compatibility-only.
+Grounded Video Q&A V1 is complete but remains evaluation-gated after Decision D. Deterministic transcript chunks and BM25 Top-5 retrieved sufficient evidence for all nine answerable validation questions, but one of three unanswerable questions received a substantive response and one temporal answer added an unsupported ordering claim. The next bounded milestone is Q&A Abstention Safety V1 on new development evidence; this validation set remains frozen and evaluation-only.
 
-URL ingestion is complete without reopening search-core ML research. Cap 1.50×, calibrated fusion, evidence-preserving quota fusion, verifier, reranker, detector, sampling and router alternatives remain documented rejections. Acceptance and holdout evidence stays frozen and is not a future tuning set. The next bounded milestone may design Grounded Video Q&A over existing local evidence.
+SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Grounded Video Q&A V1 is implemented but remains disabled after frozen abstention-safety gates failed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
+
+URL ingestion is complete without reopening search-core ML research. Q&A retrieval passed Evidence Recall@5, but generation safety failed; the next bounded milestone may use new development evidence for abstention safety only. The frozen Q&A validation, acceptance and ranking holdouts are not future tuning sets.
 
 ## Future work
 

@@ -8,6 +8,7 @@ from app.config import settings
 from app.database import migrate
 from app.hybrid import router as hybrid_router
 from app.jobs import router as jobs_router
+from app.qa import router as qa_router
 from app.speech import recover_speech
 from app.speech import router as speech_router
 from app.url_ingest import router as url_ingest_router
@@ -30,6 +31,7 @@ app = FastAPI(title="SceneMind", version="1.0.0-rc1", lifespan=lifespan)
 app.include_router(router)
 app.include_router(url_ingest_router)
 app.include_router(jobs_router)
+app.include_router(qa_router)
 app.add_middleware(AccessMiddleware)
 app.include_router(speech_router)
 app.include_router(visual_router)

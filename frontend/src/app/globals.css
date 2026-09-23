@@ -328,6 +328,73 @@ button:disabled {
   border-top: 1px solid #30352f;
   margin-top: 24px;
 }
+.ask-video {
+  border-top: 1px solid #30352f;
+  margin-top: 30px;
+}
+.ask-video .timeline-heading h3,
+.ask-video .timeline-heading p {
+  margin: 0;
+}
+.ask-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.ask-form label {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  color: #a0a69d;
+  font-size: 13px;
+}
+.ask-form textarea {
+  min-height: 88px;
+  resize: vertical;
+  border: 1px solid #424b3c;
+  border-radius: 4px;
+  padding: 13px;
+  color: #eeeee8;
+  background: #191f17;
+  font: inherit;
+}
+.ask-form .button {
+  margin: 0;
+}
+.configuration-note {
+  padding: 12px 14px;
+  border-left: 2px solid #d7a55b;
+  background: #252117;
+}
+.qa-answer {
+  margin-top: 24px;
+  padding: 20px;
+  background: #191d19;
+  border: 1px solid #30352f;
+  border-radius: 5px;
+}
+.qa-answer h4:first-child {
+  margin-top: 0;
+}
+.qa-sources {
+  display: grid;
+  gap: 10px;
+}
+.qa-sources button {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px;
+  text-align: left;
+  color: #c7ccc4;
+  border: 1px solid #30352f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.qa-sources strong {
+  color: var(--accent);
+}
 .search-form {
   display: flex;
   gap: 12px;
@@ -428,5 +495,12 @@ button:disabled {
   .url-import > div {
     align-items: stretch;
     flex-direction: column;
+  }
+  .ask-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .qa-sources button {
+    grid-template-columns: 1fr;
   }
 }

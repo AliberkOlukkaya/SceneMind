@@ -111,9 +111,7 @@ test("search presents possible moments without false certainty", async ({
   await expect(
     page.getByText("Results are ranked by relevance", { exact: false }),
   ).toBeVisible();
-  await expect(
-    page.locator(".result-context"),
-  ).toContainText("Smart Search");
+  await expect(page.locator(".result-context")).toContainText("Smart Search");
   await expect(
     page.getByText("The speaker explains the project architecture."),
   ).toBeVisible();
@@ -146,10 +144,14 @@ test("product search modes map directly to existing retrieval modes", async ({
   ]);
   await selector.selectOption({ label: "Spoken Content" });
   await expect(selector).toHaveValue("speech");
-  await expect(page.getByText("Search what is said in the video.")).toBeVisible();
+  await expect(
+    page.getByText("Search what is said in the video."),
+  ).toBeVisible();
   await selector.selectOption({ label: "Visual Content" });
   await expect(selector).toHaveValue("visual");
-  await expect(page.getByText("Search what appears in the video.")).toBeVisible();
+  await expect(
+    page.getByText("Search what appears in the video."),
+  ).toBeVisible();
   await expect(selector.locator('option[value="auto"]')).toHaveCount(0);
 });
 
@@ -194,13 +196,23 @@ test("URL import joins the normal library, search, and seek flow", async ({
     });
     imported = true;
     polls = 0;
-    await route.fulfill({ status: 202, contentType: "application/json", body: JSON.stringify(queued) });
+    await route.fulfill({
+      status: 202,
+      contentType: "application/json",
+      body: JSON.stringify(queued),
+    });
   });
   await page.route(`**/videos/${id}/index`, (route) =>
-    route.fulfill({ contentType: "application/json", body: JSON.stringify({ status: "ready" }) }),
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ status: "ready" }),
+    }),
   );
   await page.route(`**/videos/${id}/transcript?*`, (route) =>
-    route.fulfill({ contentType: "application/json", body: JSON.stringify({ status: "ready", segments: [] }) }),
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ status: "ready", segments: [] }),
+    }),
   );
   const media = fs.readFileSync(path.resolve("../data/e2e-fixture.mp4"));
   await page.route(`**/videos/${id}/media`, (route) => {
@@ -209,12 +221,18 @@ test("URL import joins the normal library, search, and seek flow", async ({
       return route.fulfill({
         status: 200,
         contentType: "video/mp4",
-        headers: { "Content-Length": String(media.length), "Accept-Ranges": "bytes" },
+        headers: {
+          "Content-Length": String(media.length),
+          "Accept-Ranges": "bytes",
+        },
         body: media,
       });
     const match = /bytes=(\d+)-(\d*)/.exec(range);
     const start = Number(match?.[1] || 0);
-    const end = Math.min(Number(match?.[2] || media.length - 1), media.length - 1);
+    const end = Math.min(
+      Number(match?.[2] || media.length - 1),
+      media.length - 1,
+    );
     return route.fulfill({
       status: 206,
       contentType: "video/mp4",
@@ -251,18 +269,116 @@ test("URL import joins the normal library, search, and seek flow", async ({
   await page.getByLabel("Video URL").fill("https://media.example/test.mp4");
   await page.getByRole("button", { name: "Import video" }).click();
   await expect(page.getByRole("status")).toContainText("Fetching video");
-  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({
+    timeout: 10_000,
+  });
   await expect(page.getByRole("link", { name: "Open source" })).toHaveAttribute(
     "href",
     "https://media.example/test.mp4",
   );
   await page.getByLabel("Describe a moment").fill("public test moment");
   await page.getByRole("button", { name: "Search", exact: true }).click();
-  await expect.poll(() => page.locator("video").evaluate((video: HTMLVideoElement) => video.duration)).toBeGreaterThan(0);
+  await expect
+    .poll(() =>
+      page
+        .locator("video")
+        .evaluate((video: HTMLVideoElement) => video.duration),
+    )
+    .toBeGreaterThan(0);
   await page.locator(".result").click();
   await expect
-    .poll(() => page.locator("video").evaluate((video: HTMLVideoElement) => video.currentTime))
+    .poll(() =>
+      page
+        .locator("video")
+        .evaluate((video: HTMLVideoElement) => video.currentTime),
+    )
     .toBeCloseTo(5, 0);
+});
+
+test("Ask Video answers with timestamp evidence and supports abstention", async ({
+  page,
+}) => {
+  await page.route("**/videos/*/ask/status", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ enabled: true, configured: true }),
+    }),
+  );
+  let abstain = false;
+  await page.route("**/videos/*/ask", async (route) => {
+    const question = route.request().postDataJSON().question;
+    abstain = question.includes("World Cup");
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify(
+        abstain
+          ? {
+              answerable: false,
+              answer:
+                "I couldn't find enough evidence in this video to answer that reliably.",
+              citations: [],
+            }
+          : {
+              answerable: true,
+              answer:
+                "The speaker recommends retrieval for factual grounding [1].",
+              citations: [
+                {
+                  evidence_id: "E001",
+                  start_seconds: 5,
+                  end_seconds: 6,
+                  text: "Retrieval improves factual grounding.",
+                },
+              ],
+            },
+      ),
+    });
+  });
+  await page.goto("/");
+  await page
+    .getByLabel("Choose video", { exact: true })
+    .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
+  await expect(page.getByLabel("Seek to 0:05")).toBeVisible({
+    timeout: 30_000,
+  });
+  const question = page.getByLabel("Ask something about this video");
+  await question.fill("Why use retrieval?");
+  await page.getByRole("button", { name: "Ask", exact: true }).click();
+  await expect(
+    page.getByText("The speaker recommends retrieval", { exact: false }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Source 1, seek to 0:05" }).click();
+  await expect
+    .poll(() =>
+      page
+        .locator("video")
+        .evaluate((video: HTMLVideoElement) => video.currentTime),
+    )
+    .toBeCloseTo(5, 0);
+  await question.fill("Who won the World Cup?");
+  await page.getByRole("button", { name: "Ask", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Not enough evidence" }),
+  ).toBeVisible();
+  expect(abstain).toBeTruthy();
+});
+
+test("Ask Video explains missing provider configuration", async ({ page }) => {
+  await page.route("**/videos/*/ask/status", (route) =>
+    route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({ enabled: true, configured: false }),
+    }),
+  );
+  await page.goto("/");
+  await page
+    .getByLabel("Choose video", { exact: true })
+    .setInputFiles(path.resolve("../data/e2e-fixture.mp4"));
+  await expect(
+    page.getByText("Ask Video is not configured", { exact: false }),
+  ).toBeVisible({
+    timeout: 30_000,
+  });
 });
 
 test("real model search seeks to the matching scene", async ({ page }) => {

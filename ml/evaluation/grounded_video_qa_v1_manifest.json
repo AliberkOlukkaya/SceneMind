@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "suite_id": "grounded-video-qa-v1",
+  "frozen_date": "2026-09-23",
+  "construction": "Questions and intervals were adapted before Q&A execution from independent full-video human review artifacts created for Final English Acceptance V1/V2; they were not constructed from Q&A retrieval output.",
+  "development": {
+    "source": {
+      "title": "Evaluating and developing machine learning models — an introduction",
+      "url": "https://media.ccc.de/v/gpn24-673-evaluating-and-developing-machine-learning-models-an-introduction",
+      "license": "CC BY 4.0",
+      "sha256": "9b99a4eb2729772e71baa153b7f38f050a0291993c9eed513a72b6bb4e0b11de"
+    },
+    "questions": [
+      {"id":"dev-01","category":"FACTUAL","answerable":true,"question":"What does the speaker say must be available before evaluating a model?","key_facts":["The evaluation needs the data, model, baseline, optimizer and evaluation setup."],"expected_intervals":[]},
+      {"id":"dev-02","category":"EXPLANATION","answerable":true,"question":"Why does the speaker recommend reading papers together with their code repositories?","key_facts":["Repositories expose implementation details and possible differences from the paper."],"expected_intervals":[]},
+      {"id":"dev-03","category":"FACTUAL","answerable":true,"question":"What warning does the speaker give about FID implementations?","key_facts":["Different implementations can produce non-comparable values."],"expected_intervals":[]},
+      {"id":"dev-04","category":"EXPLANATION","answerable":true,"question":"Why does the speaker distrust Python FLOP counters?","key_facts":["The counters can omit or miscount operations and should be verified."],"expected_intervals":[]},
+      {"id":"dev-05","category":"LIST_MULTI_EVIDENCE","answerable":true,"question":"What information should be recorded for each machine-learning experiment?","key_facts":["Record the configuration and the resulting measurements."],"expected_intervals":[]},
+      {"id":"dev-06","category":"EXPLANATION","answerable":true,"question":"What advice does she give about positive and negative experiment results?","key_facts":["Record and learn from both positive and negative results."],"expected_intervals":[]},
+      {"id":"dev-07","category":"EXPLANATION","answerable":true,"question":"Why can a longer context window make time-series prediction worse?","key_facts":["Extra context can introduce irrelevant information and degrade prediction."],"expected_intervals":[]},
+      {"id":"dev-08","category":"FACTUAL","answerable":true,"question":"How does she recommend choosing activation functions?","key_facts":["Treat activation choice as an experimental design decision rather than assuming one universal best choice."],"expected_intervals":[]},
+      {"id":"dev-09","category":"SUMMARY","answerable":true,"question":"What is the speaker's main process for developing and evaluating a model?","key_facts":["Iterate through data, model, baseline, optimization, evaluation and recording."],"expected_intervals":[]},
+      {"id":"dev-10","category":"UNANSWERABLE","answerable":false,"question":"How does she deploy models with Kubernetes?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-11","category":"UNANSWERABLE","answerable":false,"question":"What learning rate does she use in a live Jupyter training demo?","key_facts":[],"expected_intervals":[]},
+      {"id":"dev-12","category":"UNANSWERABLE","answerable":false,"question":"How does multi-head attention work?","key_facts":[],"expected_intervals":[]}
+    ]
+  },
+  "validation": {
+    "source": {
+      "title": "So — how does the Internet really work",
+      "url": "https://media.ccc.de/v/emf2026-98-1-so-how-does-the-internet-really-work",
+      "license": "CC BY-SA 4.0",
+      "sha256": "addb005d02cde7bc6b277e938bc10190709e278088caa23354e1323477f0000c",
+      "duration_seconds": 1829.08
+    },
+    "questions": [
+      {"id":"val-01","category":"SUMMARY","answerable":true,"question":"What does the speaker want beginners to take away from the talk?","key_facts":["Understand home networks enough to experiment","Reduce fear of computer networks"],"expected_intervals":[[43,103]]},
+      {"id":"val-02","category":"FACTUAL","answerable":true,"question":"What does a browser receive to display a website?","key_facts":["The browser receives the website's HTML source code"],"expected_intervals":[[123,150]]},
+      {"id":"val-03","category":"EXPLANATION","answerable":true,"question":"Why is Internet data split into packets?","key_facts":["The network has a bounded message size","Data is divided into small blocks for transmission"],"expected_intervals":[[158,251]]},
+      {"id":"val-04","category":"EXPLANATION","answerable":true,"question":"How does a network switch learn where devices are?","key_facts":["It observes the source of devices' first messages and remembers their ports"],"expected_intervals":[[341,442]]},
+      {"id":"val-05","category":"FACTUAL","answerable":true,"question":"How are wired Ethernet and Wi-Fi related in this explanation?","key_facts":["They work similarly at the link-layer level used in the explanation"],"expected_intervals":[[498,529]]},
+      {"id":"val-06","category":"EXPLANATION","answerable":true,"question":"Why do MAC addresses need to be globally unique?","key_facts":["Devices on a network need unambiguous lower-level addresses"],"expected_intervals":[[538,603]]},
+      {"id":"val-07","category":"EXPLANATION","answerable":true,"question":"Why does a device need a lower-level address before it can obtain an IP address?","key_facts":["It must communicate on the local Ethernet network to request an IP address"],"expected_intervals":[[1177,1218]]},
+      {"id":"val-08","category":"EXPLANATION","answerable":true,"question":"How can pinging 9.9.9.9 help diagnose a DNS problem?","key_facts":["A successful numeric-IP ping shows network connectivity works without name resolution","That isolates DNS as the likely problem"],"expected_intervals":[[1443,1510]]},
+      {"id":"val-09","category":"TEMPORAL_CONTENT","answerable":true,"question":"What does the speaker discuss after explaining DHCP address assignment?","key_facts":["She moves on to DNS and how domain names become IP addresses"],"expected_intervals":[[1264,1399]]},
+      {"id":"val-10","category":"UNANSWERABLE","answerable":false,"question":"How does she compare TCP with UDP?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-11","category":"UNANSWERABLE","answerable":false,"question":"What does she say about undersea Internet cable routes?","key_facts":[],"expected_intervals":[]},
+      {"id":"val-12","category":"UNANSWERABLE","answerable":false,"question":"How does mobile data differ from Wi-Fi?","key_facts":[],"expected_intervals":[]}
+    ]
+  }
+}

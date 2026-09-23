@@ -134,6 +134,25 @@ process timeout and live output-size monitoring. After acquisition the existing 
 and `ingest` job remain authoritative. Provenance lives in the atomic manifest; retryability lives
 on the normal durable job row through migration 003. Search modules never branch on source type.
 
+## Transcript-grounded Ask Video
+
+Ask Video is a separate Q&A evidence layer over the existing SQL transcript. It groups ordered
+Whisper segments into deterministic chunks bounded by 45 seconds and 900 characters with one
+segment of overlap. Each chunk carries a stable evidence ID, video ID, start/end timestamps, text,
+and underlying segment IDs. The existing BM25 implementation ranks chunks without changing
+production Speech Search.
+
+The `AnswerGenerator` boundary receives one question and at most five chunks. The OpenAI Responses
+implementation requests strict structured JSON and disables response storage. It accepts evidence
+IDs from the model, never timestamps. The backend rejects unknown IDs and answerable responses with
+no citation, then resolves IDs to original timestamps. No positive lexical evidence causes a
+pre-provider abstention.
+
+`POST /videos/{id}/ask` requires a ready video, ready non-empty transcript, the feature gate and a
+local provider key. `GET /videos/{id}/ask/status` exposes only enabled/configured state and model
+name. Upload and URL provenance do not alter this path. The feature is disabled by default after
+Decision D; Find Moments retrieval modules and expected values are unchanged.
+
 ## Failure handling
 
 Upload failures remove the partial UUID directory. Failed frame extraction removes staged and live

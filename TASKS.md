@@ -102,6 +102,13 @@
 - [x] Add responsive URL import UI to the normal library/player/search workflow
 - [x] Prove Direct URL/upload functional equivalence on real licensed media
 - [x] Validate one real public YouTube acquisition through frames, Whisper and visual search
+- [x] Add deterministic transcript evidence chunks and isolated BM25 Top-5 Q&A retrieval
+- [x] Add strict AnswerGenerator contract with backend-resolved timestamp citations and abstention
+- [x] Add evaluation-gated Ask Video UI for uploads and URL imports with citation click-to-seek
+- [x] Freeze source-disjoint Grounded Video Q&A development/validation questions and checksum
+- [x] Run the frozen real-provider Q&A validation exactly once with manual claim/evidence review
+- [x] Record Decision D after abstention, grounding and unsupported-claim gates fail
+- [ ] Develop Q&A abstention safety only on new development evidence; never tune on frozen validation
 
 ## Future work — not active v1.0 tasks
 
