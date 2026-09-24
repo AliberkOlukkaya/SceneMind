@@ -17,6 +17,11 @@ A later source-disjoint semantic/hierarchical experiment improved evidence compl
 answer correctness to 63.64% and failed on a 44-minute talk. That branch was rejected and remains
 isolated from the product; Ask Video still uses no semantic index and stays disabled.
 
+A subsequent persistent video-memory experiment reached 90.91% relevant-section R@3, but only
+84.85% evidence completeness and 57.58% Core User Success. Its extractive summaries were fully
+source-traceable and never used as evidence. Decision C rejected the branch after a 22-minute
+source fell to 27.27%; no production path changed.
+
 > **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
 > demonstration and engineering review. It is not presented as a universal video-understanding
 > system or a public multi-tenant service.

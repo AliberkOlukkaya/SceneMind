@@ -126,7 +126,12 @@
 - [x] Freeze and run the 45-question paired BM25/candidate validation exactly once
 - [x] Preserve safety but reject promotion after correctness and long-video gates fail
 - [x] Replay the six historical failures only after the frozen Decision B
-- [ ] Decide whether to change embeddings, add multimodal evidence, summarize hierarchically, or postpone Ask Video
+- [x] Build persistent provenance-preserving hierarchical video memory on six new licensed videos
+- [x] Select deterministic sectioning on development only and freeze 45 source-disjoint validation questions
+- [x] Compare BM25, frozen flat semantic and hierarchical navigation in one frozen validation run
+- [x] Reject hierarchy after evidence, answer-quality, false-abstention and per-video gates fail
+- [x] Replay prior failures and the 44-minute source only after frozen Decision C
+- [ ] Decide whether to redesign multi-section evidence/completeness on new data or postpone Ask Video
 
 ## Future work — not active v1.0 tasks
 

@@ -16,9 +16,9 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
-Semantic Transcript Retrieval + Hierarchical Evidence Selection V1 is complete with Decision B. The source-disjoint frozen candidate improved evidence completeness and false abstention while preserving safety, but reduced Answer Correctness and Core User Success from 69.70% to 63.64% and failed catastrophically on the 44-minute source. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and production BM25 remains intact.
+Hierarchical Video Memory V1 is complete with Decision C. Section navigation generalized to 90.91% R@3 and 100% on the new 40-minute source, but bounded local evidence fell to 84.85% completeness and final Core User Success to 57.58%. A 22-minute source reached only 27.27%, so the branch is rejected. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and production BM25 remains intact.
 
-The required next step is a product-level decision among changing embedding architecture, adding multimodal evidence, hierarchical summarization, or postponing Ask Video. No retrieval follow-up starts automatically. All Q&A validation and acceptance sets remain frozen observed evidence and are unavailable for tuning.
+The required next step is a product-level choice between a genuinely new multi-section evidence/completeness architecture on new sources and postponing Ask Video. No V2, prompt tweak, K/threshold adjustment, or retrieval follow-up starts automatically. All Q&A validation and acceptance sets remain frozen observed evidence and are unavailable for tuning.
 
 SceneMind remains based on the historical **v1.0.0-rc1 Portfolio Release Candidate**. URL Ingestion V1 passed. Search remains Smart Search to uncapped RRF60 Hybrid, Spoken Content to Speech, and Visual Content to Visual.
 

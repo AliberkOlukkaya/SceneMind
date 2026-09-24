@@ -8,6 +8,8 @@ Ask Video remains disabled after Final Core Acceptance Decision B. Its candidate
 
 The isolated semantic/hierarchical experiment in `semantic_qa.py` is not wired to the API. It builds non-overlapping fine transcript units and three-unit context sections, encodes both with pinned local MiniLM, persists local FAISS indexes plus timestamp metadata, and selects at most five chronological fine units. Frozen Decision B rejects integration because improved evidence coverage did not improve answers and long-video section selection failed.
 
+The later `video_memory.py` experiment is also isolated from the API. It groups contiguous L1 units with interpretable pause, adjacent-topic and 180-second boundaries, then persists extractive L3 navigation summaries, topics and complete L1/L0 provenance. Section memory selects at most three regions; semantic/BM25 local search can emit only original transcript units. Transcript and configuration fingerprints invalidate stale memory, and indexes reload after restart. Frozen Decision C rejects integration: Section R@3 reached 90.91%, but evidence completeness and Core User Success fell to 84.85% and 57.58%. Summaries never become evidence or citations.
+
 ## End-to-end data flow
 
 ```mermaid

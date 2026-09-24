@@ -1,0 +1,1352 @@
+{
+  "schema_version": "1.0.0",
+  "milestone": "HIERARCHICAL VIDEO MEMORY V1",
+  "manifest_sha256": "7bf8dd40e06c41c5c478e4828bd394a9ba0fdff6a703a6c5f595e47c7dd8b9d1",
+  "single_frozen_validation_run": true,
+  "data": {
+    "development_videos": 3,
+    "development_questions": 45,
+    "development_answerable": 33,
+    "development_unanswerable": 12,
+    "validation_videos": 3,
+    "validation_questions": 45,
+    "validation_answerable": 33,
+    "validation_unanswerable": 12,
+    "source_disjoint": true,
+    "durations": {
+      "presentation-tips": 2411.142066666667,
+      "python-expressions": 1199.7997997997998,
+      "wikipedia-education": 895.9583333333334,
+      "acip-opening": 2411.1087,
+      "gm-orion": 1330.4291,
+      "copyright-remedies": 902.9854166666667
+    }
+  },
+  "configuration": {
+    "section_algorithm": "contiguous L1 units; boundary after >=35s on >=3s pause or adjacent cosine <0.40; hard max 180s; merge sub-35s tail when possible",
+    "section_min_seconds": 35.0,
+    "section_max_seconds": 180.0,
+    "pause_seconds": 3.0,
+    "topic_similarity": 0.4,
+    "memory_method": "deterministic local extractive centroid summary (max 2 L1 units/420 chars) plus source-frequency topic terms",
+    "algorithm_version": "hierarchical-video-memory-v1-extractive-1",
+    "configuration_fingerprint": "fb341b8e25f35826a83486af6b4b67a5a1da19fadc301cd2cc50aaa1a7543091",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "embedding_license": "Apache-2.0",
+    "embedding_dimension": 384,
+    "section_retrieval_k": 3,
+    "local_retrieval": "semantic cosine over original L1 units within selected sections plus 0.10/rank positive BM25 bonus",
+    "flat_semantic": "frozen V1: semantic fine top-10 + fixed three-fine context top-5 + 0.5x BM25 rank; five original L1 units",
+    "evidence_max_units": 5,
+    "evidence_max_characters": 3600,
+    "generator_model": "gpt-5.4-mini-2026-03-17",
+    "generator_prompt_sha256": "5d00c3f2a75ef745440de79ec6b3b640d670315f85661a61a835a9580a35c762",
+    "generation": "existing strict structured output and claim/citation resolver; defaults; store=false",
+    "abstention": "unchanged safe contract",
+    "pricing_usd_per_million_tokens": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "preprocessing_api_cost_usd": 0.0,
+    "implementation_sha256": "31d061ec9fac1d79853e91b7c0b2cca44e28423ff664ed0963f0a62ebfffd05c",
+    "semantic_implementation_sha256": "098d696af1db1e5746b2d3d1076794a68a6fb80250bd8bf5afcb00bbf76b6830"
+  },
+  "development_grid": [
+    {
+      "configuration": {
+        "id": "balanced-240",
+        "min_seconds": 45.0,
+        "max_seconds": 240.0,
+        "pause_seconds": 3.5,
+        "topic_similarity": 0.35,
+        "section_k": 3
+      },
+      "section_counts": {
+        "presentation-tips": 20,
+        "python-expressions": 8,
+        "wikipedia-education": 7
+      },
+      "build_seconds": 3.137793900008546,
+      "section_recall_at_1": 0.6666666666666666,
+      "section_recall_at_3": 0.9090909090909091,
+      "wrong_section_rate": 0.09090909090909091,
+      "evidence_recall": 0.9090909090909091,
+      "minimum_sufficient": 0.9090909090909091,
+      "median_ms": 606.1743000027491
+    },
+    {
+      "configuration": {
+        "id": "compact-180",
+        "min_seconds": 35.0,
+        "max_seconds": 180.0,
+        "pause_seconds": 3.0,
+        "topic_similarity": 0.4,
+        "section_k": 3
+      },
+      "section_counts": {
+        "presentation-tips": 27,
+        "python-expressions": 12,
+        "wikipedia-education": 9
+      },
+      "build_seconds": 2.9311370000214083,
+      "section_recall_at_1": 0.6060606060606061,
+      "section_recall_at_3": 0.9393939393939394,
+      "wrong_section_rate": 0.06060606060606061,
+      "evidence_recall": 0.9393939393939394,
+      "minimum_sufficient": 0.9393939393939394,
+      "median_ms": 625.6664999964414
+    },
+    {
+      "configuration": {
+        "id": "broad-300",
+        "min_seconds": 60.0,
+        "max_seconds": 300.0,
+        "pause_seconds": 4.0,
+        "topic_similarity": 0.3,
+        "section_k": 2
+      },
+      "section_counts": {
+        "presentation-tips": 14,
+        "python-expressions": 5,
+        "wikipedia-education": 4
+      },
+      "build_seconds": 2.592247499997029,
+      "section_recall_at_1": 0.6363636363636364,
+      "section_recall_at_3": 0.8787878787878788,
+      "wrong_section_rate": 0.12121212121212122,
+      "evidence_recall": 0.8181818181818182,
+      "minimum_sufficient": 0.8181818181818182,
+      "median_ms": 623.6610999912955
+    }
+  ],
+  "memory": {
+    "mean_sections_per_validation_video": 15.333333333333334,
+    "mean_section_duration_seconds": 109.14601343101343,
+    "summary_faithfulness": {
+      "sections_reviewed": 46,
+      "factual_consistency": 1.0,
+      "unsupported_summary_statements": 0,
+      "topic_label_source_support": 1.0,
+      "method": "Every extractive summary was reconstructed from summary_fine_ids and every topic token was checked against its source section."
+    }
+  },
+  "section_navigation": {
+    "section_recall_at_1": 0.7575757575757576,
+    "section_recall_at_3": 0.9090909090909091,
+    "wrong_section_rate": 0.09090909090909091,
+    "long_video_source": "acip-opening",
+    "long_section_recall_at_1": 0.9090909090909091,
+    "long_section_recall_at_3": 1.0
+  },
+  "retrieval": {
+    "bm25": {
+      "evidence_recall_at_1": 0.8181818181818182,
+      "minimum_sufficient_at_1": 0.8181818181818182,
+      "evidence_recall_at_3": 0.9393939393939394,
+      "minimum_sufficient_at_3": 0.9393939393939394,
+      "evidence_recall_at_5": 0.9696969696969697,
+      "minimum_sufficient_at_5": 0.9696969696969697
+    },
+    "flat_semantic": {
+      "evidence_recall_at_1": 0.7272727272727273,
+      "minimum_sufficient_at_1": 0.7272727272727273,
+      "evidence_recall_at_3": 0.9090909090909091,
+      "minimum_sufficient_at_3": 0.9090909090909091,
+      "evidence_recall_at_5": 0.9393939393939394,
+      "minimum_sufficient_at_5": 0.9393939393939394
+    },
+    "hierarchical": {
+      "evidence_recall_at_1": 0.7272727272727273,
+      "minimum_sufficient_at_1": 0.7272727272727273,
+      "evidence_recall_at_3": 0.8484848484848485,
+      "minimum_sufficient_at_3": 0.8484848484848485,
+      "evidence_recall_at_5": 0.8484848484848485,
+      "minimum_sufficient_at_5": 0.8484848484848485
+    }
+  },
+  "evidence_packages": {
+    "bm25": {
+      "evidence_recall_at_5": 0.9696969696969697,
+      "minimum_sufficient_evidence_recall": 0.9696969696969697,
+      "mean_evidence_package_completeness": 0.9696969696969697,
+      "fully_complete_evidence_rate": 0.9696969696969697
+    },
+    "flat_semantic": {
+      "evidence_recall_at_5": 0.9393939393939394,
+      "minimum_sufficient_evidence_recall": 0.9393939393939394,
+      "mean_evidence_package_completeness": 0.9393939393939394,
+      "fully_complete_evidence_rate": 0.9393939393939394
+    },
+    "hierarchical": {
+      "evidence_recall_at_5": 0.8484848484848485,
+      "minimum_sufficient_evidence_recall": 0.8484848484848485,
+      "mean_evidence_package_completeness": 0.8484848484848485,
+      "fully_complete_evidence_rate": 0.8484848484848485
+    }
+  },
+  "qa": {
+    "bm25": {
+      "answer_correctness": 0.7878787878787878,
+      "core_user_success": 0.7878787878787878,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.8181818181818182,
+      "unsupported_claim_rate": 0.0,
+      "correct_abstention": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.18181818181818182
+    },
+    "flat_semantic": {
+      "answer_correctness": 0.5757575757575758,
+      "core_user_success": 0.5757575757575758,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.7575757575757576,
+      "unsupported_claim_rate": 0.0,
+      "correct_abstention": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.24242424242424243
+    },
+    "hierarchical": {
+      "answer_correctness": 0.5757575757575758,
+      "core_user_success": 0.5757575757575758,
+      "grounded_answer_rate": 1.0,
+      "citation_precision": 1.0,
+      "citation_recall": 0.696969696969697,
+      "unsupported_claim_rate": 0.0,
+      "correct_abstention": 1.0,
+      "false_answer_rate": 0.0,
+      "false_abstention_rate": 0.30303030303030304
+    }
+  },
+  "per_video": {
+    "bm25": {
+      "acip-opening": {
+        "answerable": 11,
+        "correct": 8,
+        "core_user_success": 0.7272727272727273,
+        "duration_seconds": 2411.1087
+      },
+      "gm-orion": {
+        "answerable": 11,
+        "correct": 8,
+        "core_user_success": 0.7272727272727273,
+        "duration_seconds": 1330.4291
+      },
+      "copyright-remedies": {
+        "answerable": 11,
+        "correct": 10,
+        "core_user_success": 0.9090909090909091,
+        "duration_seconds": 902.9854166666667
+      }
+    },
+    "flat_semantic": {
+      "acip-opening": {
+        "answerable": 11,
+        "correct": 7,
+        "core_user_success": 0.6363636363636364,
+        "duration_seconds": 2411.1087
+      },
+      "gm-orion": {
+        "answerable": 11,
+        "correct": 5,
+        "core_user_success": 0.45454545454545453,
+        "duration_seconds": 1330.4291
+      },
+      "copyright-remedies": {
+        "answerable": 11,
+        "correct": 7,
+        "core_user_success": 0.6363636363636364,
+        "duration_seconds": 902.9854166666667
+      }
+    },
+    "hierarchical": {
+      "acip-opening": {
+        "answerable": 11,
+        "correct": 8,
+        "core_user_success": 0.7272727272727273,
+        "duration_seconds": 2411.1087
+      },
+      "gm-orion": {
+        "answerable": 11,
+        "correct": 3,
+        "core_user_success": 0.2727272727272727,
+        "duration_seconds": 1330.4291
+      },
+      "copyright-remedies": {
+        "answerable": 11,
+        "correct": 8,
+        "core_user_success": 0.7272727272727273,
+        "duration_seconds": 902.9854166666667
+      }
+    }
+  },
+  "performance": {
+    "preprocessing": {
+      "encoder_load_seconds": 5.55256019999797,
+      "sources": [
+        {
+          "source_id": "acip-opening",
+          "duration_seconds": 2411.1087,
+          "fine_units": 94,
+          "sections": 26,
+          "mean_section_seconds": 92.10423076923077,
+          "median_section_seconds": 69.36,
+          "min_section_seconds": 37.0,
+          "max_section_seconds": 176.85000000000014,
+          "section_construction_seconds": 1.259241400010069,
+          "memory_embedding_index_seconds": 1.6917966000037268,
+          "persist_seconds": 0.007836699995095842,
+          "restart_reload_seconds": 0.05061259999638423,
+          "persistent_bytes": 362498
+        },
+        {
+          "source_id": "copyright-remedies",
+          "duration_seconds": 902.9854166666667,
+          "fine_units": 34,
+          "sections": 6,
+          "mean_section_seconds": 147.34666666666666,
+          "median_section_seconds": 167.37000000000003,
+          "min_section_seconds": 86.17,
+          "max_section_seconds": 177.72999999999996,
+          "section_construction_seconds": 0.41487120000238065,
+          "memory_embedding_index_seconds": 0.45191169998724945,
+          "persist_seconds": 0.006786600002669729,
+          "restart_reload_seconds": 0.04026080000039656,
+          "persistent_bytes": 122150
+        },
+        {
+          "source_id": "gm-orion",
+          "duration_seconds": 1330.4291,
+          "fine_units": 44,
+          "sections": 14,
+          "mean_section_seconds": 87.98714285714286,
+          "median_section_seconds": 66.79500000000004,
+          "min_section_seconds": 47.0,
+          "max_section_seconds": 171.69999999999993,
+          "section_construction_seconds": 0.5350964999961434,
+          "memory_embedding_index_seconds": 0.6944346000091173,
+          "persist_seconds": 0.007333600005949847,
+          "restart_reload_seconds": 0.03829110000515357,
+          "persistent_bytes": 178920
+        }
+      ],
+      "total_seconds": 5.069308900012402,
+      "persistent_bytes": 663568,
+      "added_peak_rss_bytes": 559001600,
+      "preprocessing_input_tokens": 0,
+      "preprocessing_output_tokens": 0,
+      "preprocessing_cost_usd": 0.0
+    },
+    "bm25": {
+      "retrieval_median_ms": 1.9863999914377928,
+      "retrieval_p95_ms": 4.063640005188062,
+      "generation_median_ms": 1839.1603000054602,
+      "generation_p95_ms": 3544.331820000661,
+      "total_median_ms": 1841.065600005095,
+      "total_p95_ms": 3546.269739992567
+    },
+    "flat_semantic": {
+      "retrieval_median_ms": 13.093100002151914,
+      "retrieval_p95_ms": 17.896719995769665,
+      "generation_median_ms": 1704.7294000076363,
+      "generation_p95_ms": 2555.157019998296,
+      "total_median_ms": 1716.9897999847308,
+      "total_p95_ms": 2569.294759997865
+    },
+    "hierarchical": {
+      "retrieval_median_ms": 6.2421999900834635,
+      "retrieval_p95_ms": 7.271080004284158,
+      "generation_median_ms": 1660.7195999968098,
+      "generation_p95_ms": 3597.3566200002083,
+      "total_median_ms": 1666.5207999903942,
+      "total_p95_ms": 3603.3186799992095,
+      "section_retrieval_median_ms": 5.663599993567914,
+      "section_retrieval_p95_ms": 6.64814000192564,
+      "local_selection_median_ms": 0.5149000062374398,
+      "local_selection_p95_ms": 0.8287000062409786
+    }
+  },
+  "cost": {
+    "preprocessing_input_tokens": 0,
+    "preprocessing_output_tokens": 0,
+    "preprocessing_cost_usd": 0.0,
+    "query_input_tokens": 104663,
+    "query_output_tokens": 13835,
+    "query_cost_usd": 0.14075475,
+    "cost_per_validation_video_hour_usd": 0.10909991755056109,
+    "cost_per_generated_query_usd": 0.001042627777777778
+  },
+  "historical_replay": {
+    "decision_frozen_before_replay": true,
+    "acceptance_failures_recovered": 3,
+    "acceptance_failures_total": 6,
+    "acceptance_recovered_ids": [
+      "creative-commons-licenses-explained-s02",
+      "human-software-extensions-talk-s01",
+      "webm-codec-explainer-s05"
+    ],
+    "acceptance_all_evidence_hit": 6,
+    "previous_44_minute_answer_correctness": 0.2727272727272727,
+    "previous_44_minute_core_user_success": 0.2727272727272727,
+    "previous_44_minute_evidence_hits": 5,
+    "previous_44_minute_answerable_questions": 11
+  },
+  "failure_taxonomy": {
+    "bm25": {
+      "FALSE_ABSTENTION": 5,
+      "GENERATION_ERROR": 1,
+      "INCOMPLETE_EVIDENCE": 1
+    },
+    "flat_semantic": {
+      "FALSE_ABSTENTION": 6,
+      "GENERATION_ERROR": 6,
+      "LOCAL_EVIDENCE_MISS": 2
+    },
+    "hierarchical": {
+      "FALSE_ABSTENTION": 6,
+      "GENERATION_ERROR": 3,
+      "SECTION_MISS": 2,
+      "WRONG_SECTION": 1,
+      "LOCAL_EVIDENCE_MISS": 2
+    }
+  },
+  "gates": {
+    "passed": false,
+    "checks": {
+      "evidence_recall_at_5": false,
+      "minimum_sufficient_evidence_recall": false,
+      "fully_complete_evidence_rate": false,
+      "answer_correctness": false,
+      "core_user_success": false,
+      "grounded_answer_rate": true,
+      "citation_precision": true,
+      "citation_recall": false,
+      "unsupported_claim_rate": true,
+      "correct_abstention": true,
+      "false_answer_rate": true,
+      "false_abstention_rate": false,
+      "no_catastrophic_per_video_failure": false,
+      "material_bm25_improvement": false
+    }
+  },
+  "reviews": {
+    "bm25": [
+      {
+        "question_id": "acip-opening-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v02",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "acip-opening-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v04",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "INCOMPLETE_EVIDENCE"
+      },
+      {
+        "question_id": "gm-orion-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v10",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "copyright-remedies-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      }
+    ],
+    "flat_semantic": [
+      {
+        "question_id": "acip-opening-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v02",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v05",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "acip-opening-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "LOCAL_EVIDENCE_MISS"
+      },
+      {
+        "question_id": "gm-orion-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v04",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "gm-orion-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "gm-orion-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v08",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "gm-orion-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v10",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v11",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "copyright-remedies-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "copyright-remedies-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "copyright-remedies-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "copyright-remedies-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v11",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "LOCAL_EVIDENCE_MISS"
+      }
+    ],
+    "hierarchical": [
+      {
+        "question_id": "acip-opening-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v02",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "acip-opening-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v06",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v09",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "acip-opening-v10",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "acip-opening-v11",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v01",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "SECTION_MISS"
+      },
+      {
+        "question_id": "gm-orion-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v03",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "SECTION_MISS"
+      },
+      {
+        "question_id": "gm-orion-v04",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "gm-orion-v05",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "WRONG_SECTION"
+      },
+      {
+        "question_id": "gm-orion-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v08",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "gm-orion-v10",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "gm-orion-v11",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": "GENERATION_ERROR"
+      },
+      {
+        "question_id": "copyright-remedies-v01",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v02",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v03",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v04",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v05",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v06",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "LOCAL_EVIDENCE_MISS"
+      },
+      {
+        "question_id": "copyright-remedies-v07",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v08",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v09",
+        "answer_correct": true,
+        "core_user_success": true,
+        "grounded": true,
+        "citation_precision": 1.0,
+        "unsupported_material_claims": 0,
+        "failure": null
+      },
+      {
+        "question_id": "copyright-remedies-v10",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "FALSE_ABSTENTION"
+      },
+      {
+        "question_id": "copyright-remedies-v11",
+        "answer_correct": false,
+        "core_user_success": false,
+        "grounded": null,
+        "citation_precision": null,
+        "unsupported_material_claims": 0,
+        "failure": "LOCAL_EVIDENCE_MISS"
+      }
+    ]
+  },
+  "validation": {
+    "focused": "67 passed",
+    "pytest": "268 passed, 1 skipped",
+    "ruff": "passed",
+    "eslint": "passed",
+    "typescript": "passed",
+    "production_build": "passed",
+    "playwright": "16 passed, 2 opt-in real-model skipped",
+    "frozen_retrieval_regressions": "92 passed"
+  },
+  "decision": {
+    "code": "C",
+    "label": "LOCAL EVIDENCE / ANSWERING STILL FAILS",
+    "reason": "Section navigation is useful, but the hierarchical package misses required evidence, answer quality falls below BM25, the 22-minute GM source is catastrophically low, and nine promotion checks fail while safety remains intact.",
+    "production_changed": false,
+    "ask_video_enabled": false,
+    "eligible_for_final_acceptance_v2": false,
+    "next_architecture_decision": "Stop. Decide separately whether to redesign local multi-section evidence assembly and generator completeness or postpone Ask Video; do not tune this frozen validation or start Hierarchical Memory V2 automatically."
+  }
+}

@@ -1,5 +1,11 @@
 # Decisions
 
+## 045 - Reject hierarchical video memory after local evidence and answer-quality failure
+
+Use three new licensed development videos to select a deterministic section policy, then freeze three source-disjoint validation videos and 45 questions before one run. L2 sections use pauses, adjacent pinned-MiniLM topic shifts and a hard duration limit. L3 memory is local extractive text plus source-attested topics with full L1/L0 provenance. It is navigation only; the existing safe generator receives and cites original transcript units. Persist both section and fine indexes with schema, configuration, embedding-revision and transcript fingerprints.
+
+Validation reached 75.76%/90.91% Section R@1/@3 and perfect R@3 on the 40-minute source, proving useful discourse navigation. The local package nevertheless reached only 84.85% evidence completeness versus 96.97% for BM25. Answer Correctness/Core User Success were 57.58%, false abstention was 30.30%, and the 22-minute GM source was catastrophic at 27.27%. Safety stayed intact. Decision C rejects integration, keeps Ask Video disabled and forbids automatic Hierarchical Memory V2 or tuning on this observed validation. The next decision must separately choose a new evidence/completeness architecture on new data or postponement.
+
 ## 044 - Reject semantic/hierarchical Q&A integration
 
 Build a genuine alternative Q&A evidence architecture on six new licensed English videos: pinned Apache-2.0 `sentence-transformers/all-MiniLM-L6-v2`, non-overlapping fine and context transcript levels, local FAISS indexes, and a deterministic five-unit hierarchical selector. Select 30-second/600-character fine units using only the 45-question development split, then freeze 45 source-disjoint validation questions and the full configuration at SHA-256 `e99fecc0c0c941afe830eb1d8ff8072212b18226096ead0bcd0b54343d068ba1`.
