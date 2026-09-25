@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_sha256": "a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14",
+  "reviewed_at": "2026-09-24",
+  "corrections": [
+    {
+      "target_id": "val-real-board",
+      "frozen_reference_text": "11:59 Salisbury",
+      "visually_verified_reference_text": "1st 11:56 Salisbury",
+      "reason": "Post-run visual audit found the frozen manual transcription was wrong; the 480px production JPEG and OCR output both show 1st 11:56 Salisbury."
+    }
+  ],
+  "effect": {
+    "frozen_character_accuracy": 0.8414481897627966,
+    "audited_character_accuracy": 0.8484472049689441,
+    "decision_changed": false
+  }
+}

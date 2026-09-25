@@ -1,5 +1,11 @@
 # Decisions
 
+## 046 - Keep OCR evidence out of production after recognition and retrieval failure
+
+Evaluate exactly two local/free CPU candidates on the existing five-second, 480-pixel JPEG contract. Select RapidOCR 3.9.2 with ONNX Runtime 1.30 on four development sources, then freeze four source-disjoint validation videos, 22 visible-text events, queries and audit frames at SHA-256 `a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14` before validation inference.
+
+Choose Decision B. Sampling coverage (95.45%), conditional-visible detection (90.48%), false text (8.75%), residual duplicates (0%), timestamp error (0 seconds on useful Top-1 hits), memory (356.8 MiB) and storage (2,906 bytes/source-minute) pass. Frozen-label character accuracy is 84.14%; a disclosed correction to one erroneous human label raises it to 84.84%, still below 85%. End-to-end Recall@1/3/5 is 59.09%/63.64%/63.64%, and CPU p95 is 2.304 seconds/frame. Keep the module evaluation-only, do not start Multimodal Evidence Index V1, and do not tune on the now-observed validation. Find Moments, Whisper, CLIP/RRF60, Q&A and Ask Video remain unchanged.
+
 ## 045 - Reject hierarchical video memory after local evidence and answer-quality failure
 
 Use three new licensed development videos to select a deterministic section policy, then freeze three source-disjoint validation videos and 45 questions before one run. L2 sections use pauses, adjacent pinned-MiniLM topic shifts and a hard duration limit. L3 memory is local extractive text plus source-attested topics with full L1/L0 provenance. It is navigation only; the existing safe generator receives and cites original transcript units. Persist both section and fine indexes with schema, configuration, embedding-revision and transcript fingerprints.

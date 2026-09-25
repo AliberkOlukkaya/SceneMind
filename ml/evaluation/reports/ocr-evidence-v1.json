@@ -1,0 +1,107 @@
+{
+  "manifest_sha256": "a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14",
+  "metrics": {
+    "engine": "rapidocr-3.9.2-onnxruntime-1.30",
+    "split": "validation",
+    "target_events": 22,
+    "visible_target_events": 21,
+    "sampling_coverage": 0.9545454545454546,
+    "text_detection_recall_conditional_visible": 0.9047619047619048,
+    "text_accuracy_conditional_visible": 0.8414481897627966,
+    "retrieval_recall_all_targets": {
+      "at_1": 0.5909090909090909,
+      "at_3": 0.6363636363636364,
+      "at_5": 0.6363636363636364
+    },
+    "retrieval_recall_conditional_visible": {
+      "at_1": 0.6190476190476191,
+      "at_3": 0.6666666666666666,
+      "at_5": 0.6666666666666666
+    },
+    "false_text_rate": 0.0875,
+    "raw_duplicate_rate": 0.4,
+    "residual_duplicate_rate": 0.0,
+    "median_timestamp_error_seconds": 0.0,
+    "latency_ms": {
+      "median": 520.5009000001155,
+      "p95": 2304.37350000102,
+      "total": 62867.35790000057
+    },
+    "peak_rss_delta_bytes": 374099968,
+    "index_bytes": 20671,
+    "index_bytes_per_source_minute": 2905.8591645833917,
+    "per_source": [
+      {
+        "source_id": "val-presentation",
+        "targets": 5,
+        "detected": 5,
+        "latency_ms": {
+          "median": 569.4192000009934,
+          "p95": 671.6329999999289,
+          "total": 14441.824100000304
+        },
+        "peak_rss_delta_bytes": 287997952,
+        "index_bytes": 767
+      },
+      {
+        "source_id": "val-coding",
+        "targets": 5,
+        "detected": 4,
+        "latency_ms": {
+          "median": 2369.601500000499,
+          "p95": 2972.2098000002006,
+          "total": 19501.29519999973
+        },
+        "peak_rss_delta_bytes": 303788032,
+        "index_bytes": 12102
+      },
+      {
+        "source_id": "val-ui",
+        "targets": 5,
+        "detected": 5,
+        "latency_ms": {
+          "median": 434.63279999923543,
+          "p95": 1629.581600000165,
+          "total": 11311.816999999792
+        },
+        "peak_rss_delta_bytes": 223703040,
+        "index_bytes": 5060
+      },
+      {
+        "source_id": "val-real",
+        "targets": 7,
+        "detected": 5,
+        "latency_ms": {
+          "median": 465.46520000083547,
+          "p95": 651.5169999984209,
+          "total": 17612.421600000744
+        },
+        "peak_rss_delta_bytes": 374099968,
+        "index_bytes": 2742
+      }
+    ],
+    "false_text_audit": {
+      "reviewed_lines": 160,
+      "false_lines": 14,
+      "predeclared_frames": 8,
+      "artifact": "ml/evaluation/OCR_EVIDENCE_V1_FALSE_TEXT_AUDIT.json"
+    },
+    "post_run_label_audit": {
+      "artifact": "ml/evaluation/OCR_EVIDENCE_V1_LABEL_AUDIT.json",
+      "audited_character_accuracy": 0.8484472049689441,
+      "decision_changed": false
+    }
+  },
+  "run_environment": {
+    "date": "2026-09-24",
+    "os": "Windows 11 10.0.26200",
+    "python": "3.13.5",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz",
+    "physical_cores": 6,
+    "logical_processors": 12,
+    "system_ram_bytes": 16905977856,
+    "rapidocr": "3.9.2",
+    "onnxruntime": "1.30.0",
+    "psutil": "7.0.0"
+  }
+}

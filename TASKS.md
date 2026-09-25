@@ -131,6 +131,10 @@
 - [x] Compare BM25, frozen flat semantic and hierarchical navigation in one frozen validation run
 - [x] Reject hierarchy after evidence, answer-quality, false-abstention and per-video gates fail
 - [x] Replay prior failures and the 44-minute source only after frozen Decision C
+- [x] Predeclare and compare two local/free OCR engines on four development sources
+- [x] Freeze 22 OCR events over four source-disjoint validation videos before inference
+- [x] Measure actual five-second visibility, conditional recognition, retrieval, duplicates, false text and CPU resources
+- [x] Record OCR Evidence V1 Decision B and keep all production search/Q&A paths unchanged
 - [ ] Decide whether to redesign multi-section evidence/completeness on new data or postpone Ask Video
 
 ## Future work — not active v1.0 tasks
@@ -138,3 +142,4 @@
 - [ ] New source-disjoint evidence before any ranking or multilingual experiment
 - [ ] Full public production deployment, tenant ownership and operational security
 - [ ] Advanced phases 7–9 only after a concrete use case and frozen evaluation plan
+- [ ] Revisit OCR only with new source-disjoint data and a predeclared high-resolution/retrieval design

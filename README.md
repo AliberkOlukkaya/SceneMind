@@ -22,6 +22,8 @@ A subsequent persistent video-memory experiment reached 90.91% relevant-section 
 source-traceable and never used as evidence. Decision C rejected the branch after a 22-minute
 source fell to 27.27%; no production path changed.
 
+OCR Evidence V1 also remains evaluation-only. On four source-disjoint videos, the existing five-second frames retained 95.45% of reviewed text events and RapidOCR detected 90.48% of visible targets, but audited character accuracy was 84.84%, end-to-end Recall@5 was 63.64%, and CPU p95 was 2.304 seconds/frame. OCR was not connected to ingestion, Find Moments or Ask Video. See [the measured OCR report](ml/evaluation/OCR_EVIDENCE_V1_RESULTS.md).
+
 > **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
 > demonstration and engineering review. It is not presented as a universal video-understanding
 > system or a public multi-tenant service.
@@ -159,7 +161,7 @@ engineering.
 - Five-second visual sampling can miss brief events and small objects.
 - Hybrid RRF60 can over-reward incidental agreement and displace strong single-modality evidence.
 - Whisper tiny can mistranscribe, while BM25 misses paraphrases absent from the transcript.
-- SceneMind has no general OCR, action understanding, facial identity recognition or Video RAG.
+- SceneMind has no production OCR, action understanding, facial identity recognition or Video RAG. The isolated OCR evaluation failed its promotion gates.
 - A 30–60 minute video can take several minutes to process on CPU; the measured worker peak was
   about 3.02 GB in the 45-minute stress run.
 - Public multi-user deployment, tenant isolation, quotas and high availability are outside v1.0.

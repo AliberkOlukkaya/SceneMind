@@ -16,6 +16,8 @@ V1 requires phases 0–6. Later phases are optional extensions, not prerequisite
 
 ## Current milestone
 
+OCR Evidence V1 is complete with Decision B. RapidOCR on unchanged five-second/480-pixel frames passed sampling, detection, false-text, duplicate, timestamp, memory and storage gates, but missed character accuracy, retrieval and CPU p95 gates. Presentation and large UI text worked; dense coding text and environmental signs did not. Production remains unchanged and Multimodal Evidence Index V1 does not start. Any later OCR work requires wholly new source-disjoint data and a predeclared high-resolution/retrieval experiment.
+
 Hierarchical Video Memory V1 is complete with Decision C. Section navigation generalized to 90.91% R@3 and 100% on the new 40-minute source, but bounded local evidence fell to 84.85% completeness and final Core User Success to 57.58%. A 22-minute source reached only 27.27%, so the branch is rejected. Ask Video remains disabled, `v1.0.0-rc1` is unchanged, and production BM25 remains intact.
 
 The required next step is a product-level choice between a genuinely new multi-section evidence/completeness architecture on new sources and postponing Ask Video. No V2, prompt tweak, K/threshold adjustment, or retrieval follow-up starts automatically. All Q&A validation and acceptance sets remain frozen observed evidence and are unavailable for tuning.

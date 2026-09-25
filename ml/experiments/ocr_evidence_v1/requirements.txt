@@ -1,0 +1,5 @@
+# Optional evaluation dependencies; not imported by production SceneMind paths.
+rapidocr==3.9.2
+onnxruntime==1.30.0
+easyocr==1.7.2
+psutil==7.0.0

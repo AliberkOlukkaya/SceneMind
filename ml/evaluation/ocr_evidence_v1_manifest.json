@@ -1,0 +1,1804 @@
+{
+  "schema_version": "1.0.0",
+  "status": "frozen_before_validation",
+  "frozen_at": "2026-09-24",
+  "sampling_interval_seconds": 5,
+  "frame_width_pixels": 480,
+  "candidates": [
+    "rapidocr-3.9.2-onnxruntime-1.30",
+    "easyocr-1.7.2-english-cpu"
+  ],
+  "selected_engine": "rapidocr-3.9.2-onnxruntime-1.30",
+  "selection_basis": "development detection recall, then text accuracy, then CPU p95 latency",
+  "sources": [
+    {
+      "source_id": "dev-presentation",
+      "split": "development",
+      "category": "presentation",
+      "title": "File:Wdo presentation.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Wdo_presentation.webm",
+      "media_sha256": "41060b86082e62879d56eb45745d84a8352152f962e6fd0aaa3cb329dcf3f417",
+      "duration_seconds": 90,
+      "provenance_clip_seconds": [
+        30,
+        90
+      ],
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/dev-presentation/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/dev-presentation/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/dev-presentation/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/dev-presentation/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/dev-presentation/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/dev-presentation/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.0,
+          "path": "frames-5s/dev-presentation/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.0,
+          "path": "frames-5s/dev-presentation/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.0,
+          "path": "frames-5s/dev-presentation/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.0,
+          "path": "frames-5s/dev-presentation/000010.jpg"
+        },
+        {
+          "frame_id": "000011",
+          "timestamp": 50.0,
+          "path": "frames-5s/dev-presentation/000011.jpg"
+        },
+        {
+          "frame_id": "000012",
+          "timestamp": 55.0,
+          "path": "frames-5s/dev-presentation/000012.jpg"
+        },
+        {
+          "frame_id": "000013",
+          "timestamp": 60.0,
+          "path": "frames-5s/dev-presentation/000013.jpg"
+        },
+        {
+          "frame_id": "000014",
+          "timestamp": 65.0,
+          "path": "frames-5s/dev-presentation/000014.jpg"
+        },
+        {
+          "frame_id": "000015",
+          "timestamp": 70.0,
+          "path": "frames-5s/dev-presentation/000015.jpg"
+        },
+        {
+          "frame_id": "000016",
+          "timestamp": 75.0,
+          "path": "frames-5s/dev-presentation/000016.jpg"
+        },
+        {
+          "frame_id": "000017",
+          "timestamp": 80.0,
+          "path": "frames-5s/dev-presentation/000017.jpg"
+        },
+        {
+          "frame_id": "000018",
+          "timestamp": 85.0,
+          "path": "frames-5s/dev-presentation/000018.jpg"
+        },
+        {
+          "frame_id": "000019",
+          "timestamp": 90.0,
+          "path": "frames-5s/dev-presentation/000019.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [],
+      "fully_annotated_frames": {
+        "000001": [
+          "The sum of human knowledge",
+          "More than 300 Wikipedia language editions"
+        ]
+      }
+    },
+    {
+      "source_id": "dev-coding",
+      "split": "development",
+      "category": "coding",
+      "title": "File:Npm for absolute beginners (Node.JS, Visual Studio Code).webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Npm_for_absolute_beginners_(Node.JS,_Visual_Studio_Code).webm",
+      "media_sha256": "0845cb91205e9328e0ffc342b3d474ad4cbbbd19b0f37523d3806d55bd51e213",
+      "duration_seconds": 90,
+      "provenance_clip_seconds": [
+        120,
+        90
+      ],
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/dev-coding/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/dev-coding/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/dev-coding/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/dev-coding/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/dev-coding/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/dev-coding/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.0,
+          "path": "frames-5s/dev-coding/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.0,
+          "path": "frames-5s/dev-coding/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.0,
+          "path": "frames-5s/dev-coding/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.0,
+          "path": "frames-5s/dev-coding/000010.jpg"
+        },
+        {
+          "frame_id": "000011",
+          "timestamp": 50.0,
+          "path": "frames-5s/dev-coding/000011.jpg"
+        },
+        {
+          "frame_id": "000012",
+          "timestamp": 55.0,
+          "path": "frames-5s/dev-coding/000012.jpg"
+        },
+        {
+          "frame_id": "000013",
+          "timestamp": 60.0,
+          "path": "frames-5s/dev-coding/000013.jpg"
+        },
+        {
+          "frame_id": "000014",
+          "timestamp": 65.0,
+          "path": "frames-5s/dev-coding/000014.jpg"
+        },
+        {
+          "frame_id": "000015",
+          "timestamp": 70.0,
+          "path": "frames-5s/dev-coding/000015.jpg"
+        },
+        {
+          "frame_id": "000016",
+          "timestamp": 75.0,
+          "path": "frames-5s/dev-coding/000016.jpg"
+        },
+        {
+          "frame_id": "000017",
+          "timestamp": 80.0,
+          "path": "frames-5s/dev-coding/000017.jpg"
+        },
+        {
+          "frame_id": "000018",
+          "timestamp": 85.0,
+          "path": "frames-5s/dev-coding/000018.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [],
+      "fully_annotated_frames": {
+        "000010": [
+          "Microsoft Windows [Version 10.0.22631.4037]",
+          "(c) Microsoft Corporation. All rights reserved.",
+          "C:\\Users\\kepow>cd desktop",
+          "C:\\Users\\kepow\\Desktop>cd ..",
+          "C:\\Users\\kepow>cd demos",
+          "The system cannot find the path specified.",
+          "C:\\Users\\kepow>"
+        ]
+      }
+    },
+    {
+      "source_id": "dev-ui",
+      "split": "development",
+      "category": "ui",
+      "title": "File:Example JWB screen recording.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Example_JWB_screen_recording.webm",
+      "media_sha256": "b0256640d48b04196323d78ffc2d363bfe014c7f8e228d83d465b491c403aae8",
+      "duration_seconds": 46.536,
+      "provenance_clip_seconds": null,
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.007,
+          "path": "frames-5s/dev-ui/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.007,
+          "path": "frames-5s/dev-ui/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.007,
+          "path": "frames-5s/dev-ui/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.007,
+          "path": "frames-5s/dev-ui/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.007,
+          "path": "frames-5s/dev-ui/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.007,
+          "path": "frames-5s/dev-ui/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.007,
+          "path": "frames-5s/dev-ui/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.04,
+          "path": "frames-5s/dev-ui/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.04,
+          "path": "frames-5s/dev-ui/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.04,
+          "path": "frames-5s/dev-ui/000010.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [],
+      "fully_annotated_frames": {
+        "000007": [
+          "Target list of pages:",
+          "Editing area. You are editing:",
+          "1944 Appalachians tornado outbreak",
+          "Setup",
+          "Edit",
+          "Skip",
+          "Preview",
+          "Save",
+          "Start",
+          "Stop",
+          "Meteorological history",
+          "Tornado outbreak",
+          "Duration",
+          "June 23, 1944",
+          "Tornadoes",
+          "Max. rating",
+          "Casualties",
+          "Areas affected"
+        ]
+      }
+    },
+    {
+      "source_id": "dev-real",
+      "split": "development",
+      "category": "real",
+      "title": "File:Split-flap display at German train station.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Split-flap_display_at_German_train_station.webm",
+      "media_sha256": "507377a007db680c94680faf01db2432d0412216b4922499e11b37b65b9c0bca",
+      "duration_seconds": 30,
+      "provenance_clip_seconds": null,
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/dev-real/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/dev-real/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/dev-real/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/dev-real/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/dev-real/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/dev-real/000006.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [],
+      "fully_annotated_frames": {
+        "000001": [
+          "Departure",
+          "Abfahrt",
+          "Depart",
+          "Zeit",
+          "Zuglauf",
+          "Ziel",
+          "Gleis",
+          "Hinweis",
+          "INGOLSTADT",
+          "GARMISCH-PARTENK",
+          "WEILSDORF",
+          "FIRENZE/FLORENZ",
+          "BAYRISCHZLENGGR",
+          "BUDAPEST/ZAGREB",
+          "LANDSHUT",
+          "DB"
+        ]
+      }
+    },
+    {
+      "source_id": "val-presentation",
+      "split": "validation",
+      "category": "presentation",
+      "title": "File:Diversity and sources.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Diversity_and_sources.webm",
+      "media_sha256": "5e39f07cef73cb7fd50a1e582ef179fc92da1c0ce892c9b2a2ec9557758eb76d",
+      "duration_seconds": 120,
+      "provenance_clip_seconds": [
+        240,
+        120
+      ],
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/val-presentation/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/val-presentation/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/val-presentation/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/val-presentation/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/val-presentation/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/val-presentation/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.0,
+          "path": "frames-5s/val-presentation/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.0,
+          "path": "frames-5s/val-presentation/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.0,
+          "path": "frames-5s/val-presentation/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.0,
+          "path": "frames-5s/val-presentation/000010.jpg"
+        },
+        {
+          "frame_id": "000011",
+          "timestamp": 50.0,
+          "path": "frames-5s/val-presentation/000011.jpg"
+        },
+        {
+          "frame_id": "000012",
+          "timestamp": 55.0,
+          "path": "frames-5s/val-presentation/000012.jpg"
+        },
+        {
+          "frame_id": "000013",
+          "timestamp": 60.0,
+          "path": "frames-5s/val-presentation/000013.jpg"
+        },
+        {
+          "frame_id": "000014",
+          "timestamp": 65.0,
+          "path": "frames-5s/val-presentation/000014.jpg"
+        },
+        {
+          "frame_id": "000015",
+          "timestamp": 70.0,
+          "path": "frames-5s/val-presentation/000015.jpg"
+        },
+        {
+          "frame_id": "000016",
+          "timestamp": 75.0,
+          "path": "frames-5s/val-presentation/000016.jpg"
+        },
+        {
+          "frame_id": "000017",
+          "timestamp": 80.0,
+          "path": "frames-5s/val-presentation/000017.jpg"
+        },
+        {
+          "frame_id": "000018",
+          "timestamp": 85.0,
+          "path": "frames-5s/val-presentation/000018.jpg"
+        },
+        {
+          "frame_id": "000019",
+          "timestamp": 90.0,
+          "path": "frames-5s/val-presentation/000019.jpg"
+        },
+        {
+          "frame_id": "000020",
+          "timestamp": 95.0,
+          "path": "frames-5s/val-presentation/000020.jpg"
+        },
+        {
+          "frame_id": "000021",
+          "timestamp": 100.0,
+          "path": "frames-5s/val-presentation/000021.jpg"
+        },
+        {
+          "frame_id": "000022",
+          "timestamp": 105.0,
+          "path": "frames-5s/val-presentation/000022.jpg"
+        },
+        {
+          "frame_id": "000023",
+          "timestamp": 110.0,
+          "path": "frames-5s/val-presentation/000023.jpg"
+        },
+        {
+          "frame_id": "000024",
+          "timestamp": 115.0,
+          "path": "frames-5s/val-presentation/000024.jpg"
+        },
+        {
+          "frame_id": "000025",
+          "timestamp": 120.067,
+          "path": "frames-5s/val-presentation/000025.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [
+        "000001",
+        "000022"
+      ]
+    },
+    {
+      "source_id": "val-coding",
+      "split": "validation",
+      "category": "coding",
+      "title": "File:Screen recording 2024-05-15 09.05.57.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Screen_recording_2024-05-15_09.05.57.webm",
+      "media_sha256": "37eedf888872d1a408ea8d4fdb0ee9cf202e08dd8c6d25ceca79d7586bcf4f5c",
+      "duration_seconds": 36.81352734375,
+      "provenance_clip_seconds": null,
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/val-coding/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.145,
+          "path": "frames-5s/val-coding/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.209,
+          "path": "frames-5s/val-coding/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.226,
+          "path": "frames-5s/val-coding/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.236,
+          "path": "frames-5s/val-coding/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.397,
+          "path": "frames-5s/val-coding/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.527,
+          "path": "frames-5s/val-coding/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.707,
+          "path": "frames-5s/val-coding/000008.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [
+        "000001",
+        "000005"
+      ]
+    },
+    {
+      "source_id": "val-ui",
+      "split": "validation",
+      "category": "ui",
+      "title": "File:Free AI Coding Assistant – Cline.AI Setup Guide.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Free_AI_Coding_Assistant_%E2%80%93_Cline.AI_Setup_Guide.webm",
+      "media_sha256": "95e802e2511ccbe976ece37cfc4baa24d8d93938c19b213910970020f1142521",
+      "duration_seconds": 90,
+      "provenance_clip_seconds": [
+        150,
+        90
+      ],
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/val-ui/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/val-ui/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/val-ui/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/val-ui/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/val-ui/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/val-ui/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.0,
+          "path": "frames-5s/val-ui/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.0,
+          "path": "frames-5s/val-ui/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.0,
+          "path": "frames-5s/val-ui/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.0,
+          "path": "frames-5s/val-ui/000010.jpg"
+        },
+        {
+          "frame_id": "000011",
+          "timestamp": 50.0,
+          "path": "frames-5s/val-ui/000011.jpg"
+        },
+        {
+          "frame_id": "000012",
+          "timestamp": 55.0,
+          "path": "frames-5s/val-ui/000012.jpg"
+        },
+        {
+          "frame_id": "000013",
+          "timestamp": 60.0,
+          "path": "frames-5s/val-ui/000013.jpg"
+        },
+        {
+          "frame_id": "000014",
+          "timestamp": 65.0,
+          "path": "frames-5s/val-ui/000014.jpg"
+        },
+        {
+          "frame_id": "000015",
+          "timestamp": 70.0,
+          "path": "frames-5s/val-ui/000015.jpg"
+        },
+        {
+          "frame_id": "000016",
+          "timestamp": 75.0,
+          "path": "frames-5s/val-ui/000016.jpg"
+        },
+        {
+          "frame_id": "000017",
+          "timestamp": 80.0,
+          "path": "frames-5s/val-ui/000017.jpg"
+        },
+        {
+          "frame_id": "000018",
+          "timestamp": 85.0,
+          "path": "frames-5s/val-ui/000018.jpg"
+        },
+        {
+          "frame_id": "000019",
+          "timestamp": 90.033,
+          "path": "frames-5s/val-ui/000019.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [
+        "000001",
+        "000007"
+      ]
+    },
+    {
+      "source_id": "val-real",
+      "split": "validation",
+      "category": "real",
+      "title": "File:A Station in Two Counties at Once.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:A_Station_in_Two_Counties_at_Once.webm",
+      "media_sha256": "7748dd0921143269aedaeddcc05a49c150896f868ba01177731afc06fe79dc25",
+      "duration_seconds": 180,
+      "provenance_clip_seconds": [
+        270,
+        180
+      ],
+      "production_frames": [
+        {
+          "frame_id": "000001",
+          "timestamp": 0.0,
+          "path": "frames-5s/val-real/000001.jpg"
+        },
+        {
+          "frame_id": "000002",
+          "timestamp": 5.0,
+          "path": "frames-5s/val-real/000002.jpg"
+        },
+        {
+          "frame_id": "000003",
+          "timestamp": 10.0,
+          "path": "frames-5s/val-real/000003.jpg"
+        },
+        {
+          "frame_id": "000004",
+          "timestamp": 15.0,
+          "path": "frames-5s/val-real/000004.jpg"
+        },
+        {
+          "frame_id": "000005",
+          "timestamp": 20.0,
+          "path": "frames-5s/val-real/000005.jpg"
+        },
+        {
+          "frame_id": "000006",
+          "timestamp": 25.0,
+          "path": "frames-5s/val-real/000006.jpg"
+        },
+        {
+          "frame_id": "000007",
+          "timestamp": 30.0,
+          "path": "frames-5s/val-real/000007.jpg"
+        },
+        {
+          "frame_id": "000008",
+          "timestamp": 35.0,
+          "path": "frames-5s/val-real/000008.jpg"
+        },
+        {
+          "frame_id": "000009",
+          "timestamp": 40.0,
+          "path": "frames-5s/val-real/000009.jpg"
+        },
+        {
+          "frame_id": "000010",
+          "timestamp": 45.0,
+          "path": "frames-5s/val-real/000010.jpg"
+        },
+        {
+          "frame_id": "000011",
+          "timestamp": 50.0,
+          "path": "frames-5s/val-real/000011.jpg"
+        },
+        {
+          "frame_id": "000012",
+          "timestamp": 55.0,
+          "path": "frames-5s/val-real/000012.jpg"
+        },
+        {
+          "frame_id": "000013",
+          "timestamp": 60.0,
+          "path": "frames-5s/val-real/000013.jpg"
+        },
+        {
+          "frame_id": "000014",
+          "timestamp": 65.0,
+          "path": "frames-5s/val-real/000014.jpg"
+        },
+        {
+          "frame_id": "000015",
+          "timestamp": 70.0,
+          "path": "frames-5s/val-real/000015.jpg"
+        },
+        {
+          "frame_id": "000016",
+          "timestamp": 75.0,
+          "path": "frames-5s/val-real/000016.jpg"
+        },
+        {
+          "frame_id": "000017",
+          "timestamp": 80.0,
+          "path": "frames-5s/val-real/000017.jpg"
+        },
+        {
+          "frame_id": "000018",
+          "timestamp": 85.0,
+          "path": "frames-5s/val-real/000018.jpg"
+        },
+        {
+          "frame_id": "000019",
+          "timestamp": 90.0,
+          "path": "frames-5s/val-real/000019.jpg"
+        },
+        {
+          "frame_id": "000020",
+          "timestamp": 95.0,
+          "path": "frames-5s/val-real/000020.jpg"
+        },
+        {
+          "frame_id": "000021",
+          "timestamp": 100.0,
+          "path": "frames-5s/val-real/000021.jpg"
+        },
+        {
+          "frame_id": "000022",
+          "timestamp": 105.0,
+          "path": "frames-5s/val-real/000022.jpg"
+        },
+        {
+          "frame_id": "000023",
+          "timestamp": 110.0,
+          "path": "frames-5s/val-real/000023.jpg"
+        },
+        {
+          "frame_id": "000024",
+          "timestamp": 115.0,
+          "path": "frames-5s/val-real/000024.jpg"
+        },
+        {
+          "frame_id": "000025",
+          "timestamp": 120.0,
+          "path": "frames-5s/val-real/000025.jpg"
+        },
+        {
+          "frame_id": "000026",
+          "timestamp": 125.0,
+          "path": "frames-5s/val-real/000026.jpg"
+        },
+        {
+          "frame_id": "000027",
+          "timestamp": 130.0,
+          "path": "frames-5s/val-real/000027.jpg"
+        },
+        {
+          "frame_id": "000028",
+          "timestamp": 135.0,
+          "path": "frames-5s/val-real/000028.jpg"
+        },
+        {
+          "frame_id": "000029",
+          "timestamp": 140.0,
+          "path": "frames-5s/val-real/000029.jpg"
+        },
+        {
+          "frame_id": "000030",
+          "timestamp": 145.0,
+          "path": "frames-5s/val-real/000030.jpg"
+        },
+        {
+          "frame_id": "000031",
+          "timestamp": 150.0,
+          "path": "frames-5s/val-real/000031.jpg"
+        },
+        {
+          "frame_id": "000032",
+          "timestamp": 155.0,
+          "path": "frames-5s/val-real/000032.jpg"
+        },
+        {
+          "frame_id": "000033",
+          "timestamp": 160.0,
+          "path": "frames-5s/val-real/000033.jpg"
+        },
+        {
+          "frame_id": "000034",
+          "timestamp": 165.0,
+          "path": "frames-5s/val-real/000034.jpg"
+        },
+        {
+          "frame_id": "000035",
+          "timestamp": 170.0,
+          "path": "frames-5s/val-real/000035.jpg"
+        },
+        {
+          "frame_id": "000036",
+          "timestamp": 175.0,
+          "path": "frames-5s/val-real/000036.jpg"
+        },
+        {
+          "frame_id": "000037",
+          "timestamp": 180.0,
+          "path": "frames-5s/val-real/000037.jpg"
+        }
+      ],
+      "false_text_audit_frame_ids": [
+        "000004",
+        "000013"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "dev-pres-title",
+      "source_id": "dev-presentation",
+      "query": "Where is the slide titled The sum of human knowledge?",
+      "reference_text": "The sum of human knowledge",
+      "sampled_frame_ids": [
+        "000001"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          4
+        ]
+      ],
+      "kind": "slide_title"
+    },
+    {
+      "target_id": "dev-pres-value",
+      "source_id": "dev-presentation",
+      "query": "Where does the slide show more than 300 Wikipedia language editions?",
+      "reference_text": "More than 300 Wikipedia language editions",
+      "sampled_frame_ids": [
+        "000001"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          4
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "dev-pres-diversity",
+      "source_id": "dev-presentation",
+      "query": "Find the slide saying content diversity is about representing and sharing concepts across language editions.",
+      "reference_text": "Content diversity is about representing and sharing concepts across language editions",
+      "sampled_frame_ids": [
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007"
+      ],
+      "visible_intervals_seconds": [
+        [
+          5,
+          34
+        ]
+      ],
+      "kind": "slide_title"
+    },
+    {
+      "target_id": "dev-pres-ccc",
+      "source_id": "dev-presentation",
+      "query": "Find the slide stating Local Content or CCC is on average 25% of the largest 40 Wikipedias.",
+      "reference_text": "Local Content or CCC (Cultural Context Content) is on avg. 25% of the largest 40 Wikipedias",
+      "sampled_frame_ids": [
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015"
+      ],
+      "visible_intervals_seconds": [
+        [
+          35,
+          74
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "dev-pres-gaps",
+      "source_id": "dev-presentation",
+      "query": "Where are Culture Gap, Gender Gap, Ethnicity Gap and Geography Gap shown?",
+      "reference_text": "Culture Gap Gender Gap Ethnicity Gap Geography Gap",
+      "sampled_frame_ids": [
+        "000016",
+        "000017",
+        "000018",
+        "000019"
+      ],
+      "visible_intervals_seconds": [
+        [
+          75,
+          90
+        ]
+      ],
+      "kind": "slide_text"
+    },
+    {
+      "target_id": "dev-code-version",
+      "source_id": "dev-coding",
+      "query": "Find the Windows version 10.0.22631.4037.",
+      "reference_text": "Microsoft Windows [Version 10.0.22631.4037]",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          90
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "dev-code-desktop",
+      "source_id": "dev-coding",
+      "query": "Where is the command cd desktop shown?",
+      "reference_text": "C:\\Users\\kepow>cd desktop",
+      "sampled_frame_ids": [
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018"
+      ],
+      "visible_intervals_seconds": [
+        [
+          20,
+          90
+        ]
+      ],
+      "kind": "command"
+    },
+    {
+      "target_id": "dev-code-error",
+      "source_id": "dev-coding",
+      "query": "Find the error The system cannot find the path specified.",
+      "reference_text": "The system cannot find the path specified.",
+      "sampled_frame_ids": [
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018"
+      ],
+      "visible_intervals_seconds": [
+        [
+          45,
+          90
+        ]
+      ],
+      "kind": "error_message"
+    },
+    {
+      "target_id": "dev-code-demos",
+      "source_id": "dev-coding",
+      "query": "Where is the command cd desktop/demos shown?",
+      "reference_text": "C:\\Users\\kepow>cd desktop/demos",
+      "sampled_frame_ids": [
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018"
+      ],
+      "visible_intervals_seconds": [
+        [
+          50,
+          90
+        ]
+      ],
+      "kind": "command"
+    },
+    {
+      "target_id": "dev-code-prompt",
+      "source_id": "dev-coding",
+      "query": "Find the Desktop demos command prompt.",
+      "reference_text": "C:\\Users\\kepow\\Desktop\\demos>",
+      "sampled_frame_ids": [
+        "000012",
+        "000013",
+        "000014",
+        "000015"
+      ],
+      "visible_intervals_seconds": [
+        [
+          55,
+          74
+        ]
+      ],
+      "kind": "command"
+    },
+    {
+      "target_id": "dev-ui-target",
+      "source_id": "dev-ui",
+      "query": "Find the Target list of pages label.",
+      "reference_text": "Target list of pages:",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          47
+        ]
+      ],
+      "kind": "ui_label"
+    },
+    {
+      "target_id": "dev-ui-editing",
+      "source_id": "dev-ui",
+      "query": "Find the Editing area You are editing label.",
+      "reference_text": "Editing area. You are editing:",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          47
+        ]
+      ],
+      "kind": "ui_label"
+    },
+    {
+      "target_id": "dev-ui-outbreak",
+      "source_id": "dev-ui",
+      "query": "Where is 1944 Appalachians tornado outbreak displayed?",
+      "reference_text": "1944 Appalachians tornado outbreak",
+      "sampled_frame_ids": [
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010"
+      ],
+      "visible_intervals_seconds": [
+        [
+          5,
+          47
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "dev-ui-meteorological",
+      "source_id": "dev-ui",
+      "query": "Find the Meteorological history heading.",
+      "reference_text": "Meteorological history",
+      "sampled_frame_ids": [
+        "000007",
+        "000008"
+      ],
+      "visible_intervals_seconds": [
+        [
+          30,
+          39
+        ]
+      ],
+      "kind": "ui_heading"
+    },
+    {
+      "target_id": "dev-ui-links",
+      "source_id": "dev-ui",
+      "query": "Find the External links heading.",
+      "reference_text": "External links",
+      "sampled_frame_ids": [
+        "000009"
+      ],
+      "visible_intervals_seconds": [
+        [
+          40,
+          44
+        ]
+      ],
+      "kind": "ui_heading"
+    },
+    {
+      "target_id": "dev-real-departure",
+      "source_id": "dev-real",
+      "query": "Where is the Departure label shown?",
+      "reference_text": "Departure",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          30
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "dev-real-abfahrt",
+      "source_id": "dev-real",
+      "query": "Where is Abfahrt shown on the station board?",
+      "reference_text": "Abfahrt",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          30
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "dev-real-depart",
+      "source_id": "dev-real",
+      "query": "Find the Depart label.",
+      "reference_text": "Depart",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          30
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "dev-real-gleis",
+      "source_id": "dev-real",
+      "query": "Find the Gleis platform label.",
+      "reference_text": "Gleis",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          30
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "dev-real-landshut",
+      "source_id": "dev-real",
+      "query": "Where is Landshut listed as a destination?",
+      "reference_text": "LANDSHUT",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          24
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "val-pres-experience",
+      "source_id": "val-presentation",
+      "query": "What question asks about experience with collaborative projects?",
+      "reference_text": "What are your experience with collaborative projects between Wikimedia chapters and other institutions?",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018",
+        "000019",
+        "000020",
+        "000021"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          104
+        ]
+      ],
+      "kind": "slide_title"
+    },
+    {
+      "target_id": "val-pres-glam",
+      "source_id": "val-presentation",
+      "query": "What initiative name is shown on the slide?",
+      "reference_text": "GLAM-Wiki initiative?",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018",
+        "000019",
+        "000020",
+        "000021"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          104
+        ]
+      ],
+      "kind": "library_or_initiative_name"
+    },
+    {
+      "target_id": "val-pres-dream",
+      "source_id": "val-presentation",
+      "query": "What does the slide ask about a dream collaboration?",
+      "reference_text": "How would a dream collaboration look like to you?",
+      "sampled_frame_ids": [
+        "000022",
+        "000023",
+        "000024",
+        "000025"
+      ],
+      "visible_intervals_seconds": [
+        [
+          105,
+          120
+        ]
+      ],
+      "kind": "slide_title"
+    },
+    {
+      "target_id": "val-pres-who",
+      "source_id": "val-presentation",
+      "query": "Who would you collaborate with?",
+      "reference_text": "Who would you collaborate with?",
+      "sampled_frame_ids": [
+        "000022",
+        "000023",
+        "000024",
+        "000025"
+      ],
+      "visible_intervals_seconds": [
+        [
+          105,
+          120
+        ]
+      ],
+      "kind": "slide_text"
+    },
+    {
+      "target_id": "val-pres-topic",
+      "source_id": "val-presentation",
+      "query": "What would the topic be?",
+      "reference_text": "What would the topic be?",
+      "sampled_frame_ids": [
+        "000022",
+        "000023",
+        "000024",
+        "000025"
+      ],
+      "visible_intervals_seconds": [
+        [
+          105,
+          120
+        ]
+      ],
+      "kind": "slide_text"
+    },
+    {
+      "target_id": "val-code-title",
+      "source_id": "val-coding",
+      "query": "What page title is shown?",
+      "reference_text": "Wikipedia:WikiProject Editor Retention/Members",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          36
+        ]
+      ],
+      "kind": "ui_title"
+    },
+    {
+      "target_id": "val-code-list",
+      "source_id": "val-coding",
+      "query": "What list description is shown?",
+      "reference_text": "The following is a full list of all editors who have joined",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000003"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          14
+        ]
+      ],
+      "kind": "code_or_document_text"
+    },
+    {
+      "target_id": "val-code-member",
+      "source_id": "val-coding",
+      "query": "What sentence explains joining as a member?",
+      "reference_text": "Joining as a member doesn't obligate you in any way, but allows you to be notified occasionally",
+      "sampled_frame_ids": [
+        "000003"
+      ],
+      "visible_intervals_seconds": [
+        [
+          10,
+          14
+        ]
+      ],
+      "kind": "code_or_document_text"
+    },
+    {
+      "target_id": "val-code-publish",
+      "source_id": "val-coding",
+      "query": "What button is shown for saving edits?",
+      "reference_text": "Publish changes...",
+      "sampled_frame_ids": [
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008"
+      ],
+      "visible_intervals_seconds": [
+        [
+          15,
+          36
+        ]
+      ],
+      "kind": "ui_label"
+    },
+    {
+      "target_id": "val-code-edited",
+      "source_id": "val-coding",
+      "query": "What last-edited value is displayed?",
+      "reference_text": "This page was last edited on May 13, 2024, at 17:15 (UTC).",
+      "sampled_frame_ids": [
+        "000005",
+        "000006",
+        "000007",
+        "000008"
+      ],
+      "visible_intervals_seconds": [
+        [
+          20,
+          36
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "val-ui-task",
+      "source_id": "val-ui",
+      "query": "What task is shown in Cline?",
+      "reference_text": "let's examine the app and see if we can refactor code",
+      "sampled_frame_ids": [
+        "000001",
+        "000002"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          9
+        ]
+      ],
+      "kind": "ui_text"
+    },
+    {
+      "target_id": "val-ui-cline",
+      "source_id": "val-ui",
+      "query": "What extension name and ranking are shown?",
+      "reference_text": "Cline - #1 on OpenRouter",
+      "sampled_frame_ids": [
+        "000001",
+        "000002",
+        "000004",
+        "000005",
+        "000006",
+        "000007",
+        "000008",
+        "000009",
+        "000010",
+        "000011",
+        "000012",
+        "000013",
+        "000014",
+        "000015",
+        "000016",
+        "000017",
+        "000018",
+        "000019"
+      ],
+      "visible_intervals_seconds": [
+        [
+          0,
+          9
+        ],
+        [
+          15,
+          90
+        ]
+      ],
+      "kind": "library_name"
+    },
+    {
+      "target_id": "val-ui-interface",
+      "source_id": "val-ui",
+      "query": "What description is shown on the OpenRouter page?",
+      "reference_text": "A unified interface for LLMs",
+      "sampled_frame_ids": [
+        "000003",
+        "000004"
+      ],
+      "visible_intervals_seconds": [
+        [
+          10,
+          19
+        ]
+      ],
+      "kind": "ui_heading"
+    },
+    {
+      "target_id": "val-ui-auto",
+      "source_id": "val-ui",
+      "query": "What permissions are listed for auto-approve?",
+      "reference_text": "Auto-approve: Read, Edit, Commands, Browser, MCP",
+      "sampled_frame_ids": [
+        "000007"
+      ],
+      "visible_intervals_seconds": [
+        [
+          30,
+          34
+        ]
+      ],
+      "kind": "ui_label"
+    },
+    {
+      "target_id": "val-ui-request",
+      "source_id": "val-ui",
+      "query": "What request label appears in the coding assistant?",
+      "reference_text": "API Request...",
+      "sampled_frame_ids": [
+        "000007"
+      ],
+      "visible_intervals_seconds": [
+        [
+          30,
+          34
+        ]
+      ],
+      "kind": "ui_label"
+    },
+    {
+      "target_id": "val-real-dunbridge",
+      "source_id": "val-real",
+      "query": "What place name and instruction are on the roadside sign?",
+      "reference_text": "DUNBRIDGE Please drive carefully",
+      "sampled_frame_ids": [
+        "000004"
+      ],
+      "visible_intervals_seconds": [
+        [
+          14,
+          17
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "val-real-long",
+      "source_id": "val-real",
+      "query": "What instruction is shown for drivers of long low vehicles?",
+      "reference_text": "DRIVERS OF LONG LOW VEHICLES phone before crossing",
+      "sampled_frame_ids": [],
+      "visible_intervals_seconds": [
+        [
+          28,
+          30
+        ]
+      ],
+      "kind": "sign_text",
+      "diagnostic_1s_frame_ids": [
+        "000029",
+        "000030"
+      ]
+    },
+    {
+      "target_id": "val-real-bus",
+      "source_id": "val-real",
+      "query": "What bus service number appears on the important information notice?",
+      "reference_text": "Important Information 36 Romsey Bus Service",
+      "sampled_frame_ids": [
+        "000008"
+      ],
+      "visible_intervals_seconds": [
+        [
+          34,
+          39
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "val-real-pub",
+      "source_id": "val-real",
+      "query": "What pub name is displayed?",
+      "reference_text": "MILL ARMS",
+      "sampled_frame_ids": [
+        "000007",
+        "000010",
+        "000011"
+      ],
+      "visible_intervals_seconds": [
+        [
+          29,
+          33
+        ],
+        [
+          44,
+          52
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "val-real-station",
+      "source_id": "val-real",
+      "query": "What station name is shown?",
+      "reference_text": "Mottisfont & Dunbridge",
+      "sampled_frame_ids": [
+        "000012"
+      ],
+      "visible_intervals_seconds": [
+        [
+          54,
+          58
+        ]
+      ],
+      "kind": "sign_text"
+    },
+    {
+      "target_id": "val-real-board",
+      "source_id": "val-real",
+      "query": "What destination and time are shown on the departure board?",
+      "reference_text": "11:59 Salisbury",
+      "sampled_frame_ids": [
+        "000013"
+      ],
+      "visible_intervals_seconds": [
+        [
+          59,
+          63
+        ]
+      ],
+      "kind": "displayed_value"
+    },
+    {
+      "target_id": "val-real-salisbury",
+      "source_id": "val-real",
+      "query": "What station name appears on the platform sign?",
+      "reference_text": "Salisbury",
+      "sampled_frame_ids": [
+        "000032",
+        "000036"
+      ],
+      "visible_intervals_seconds": [
+        [
+          154,
+          158
+        ],
+        [
+          174,
+          178
+        ]
+      ],
+      "kind": "sign_text"
+    }
+  ]
+}

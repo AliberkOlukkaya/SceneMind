@@ -1,0 +1,1128 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_sha256": "a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14",
+  "review_method": "Manual visual comparison against every OCR line on two predeclared 480px production JPEGs per validation source. A line is false only when it has no meaningful displayed-text basis; inaccurate recognition of visible text is retained as supported and is reflected in character accuracy.",
+  "reviewed_at": "2026-09-24",
+  "rows": [
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000001",
+      "line_index": 0,
+      "ocr_text": "2) What are your experience with colaborative",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000001",
+      "line_index": 1,
+      "ocr_text": "projects between Wikimedia chapters and other",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000001",
+      "line_index": 2,
+      "ocr_text": "institutions?",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000001",
+      "line_index": 3,
+      "ocr_text": "GLAM-Wiki initiative?",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000022",
+      "line_index": 0,
+      "ocr_text": "3) How would a dream collaboration lok lke toyou",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000022",
+      "line_index": 1,
+      "ocr_text": "→ Who would you collaborate with?",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-presentation",
+      "frame_id": "000022",
+      "line_index": 2,
+      "ocr_text": "→ What would the topic be?",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 0,
+      "ocr_text": "I",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 1,
+      "ocr_text": "a",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 2,
+      "ocr_text": "☆",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 3,
+      "ocr_text": " orgwindex.php/titie-Wikipeda3AWikProgect_Edtor_Retienton/k2rMemberslivnaction-edts",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 4,
+      "ocr_text": "WIKIPEDIA",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 5,
+      "ocr_text": "Q Search Wipedia",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 6,
+      "ocr_text": "Search",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 7,
+      "ocr_text": "Cocobbl",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 8,
+      "ocr_text": "Wikipedia:WikiProject Editor Retention/Members",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 9,
+      "ocr_text": "RA And languages",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 10,
+      "ocr_text": "Edit source View hitoryTooln",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 11,
+      "ocr_text": "Project page",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 12,
+      "ocr_text": "Talk",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 13,
+      "ocr_text": "Read",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 14,
+      "ocr_text": "A∞ C 三Ω",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 15,
+      "ocr_text": "Paragraph",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 16,
+      "ocr_text": "1",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 17,
+      "ocr_text": "The fallowng ss a fall list o all editors who have jacned [Mkinndiakicsiest Editor RetetionwckiPrapect",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 18,
+      "ocr_text": "Editer Retention]]. These editors are willing to Lend a helping hand. Just ask.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 19,
+      "ocr_text": "\"Jedning as a menber doesn\"t obligete you in any way, but allows you to be notified occandonally when there are",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 20,
+      "ocr_text": "important sssues being diacussed that are central to the cause, either here or at other venues.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 21,
+      "ocr_text": "   ....2..... #   , # 0  p ",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 22,
+      "ocr_text": "[http://en.wikipedia.org/w/index.php7title-wikipedia:wikiPropect_Editor_Retention/Membersdactionmedit here].</sob-",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 23,
+      "ocr_text": "<+ . -ADO YOUR NAME TO THE BOTTOM OF THE LIST-.>",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 24,
+      "ocr_text": "[eecialconriutans/Denia Bmmalacpyi/sall]  Founded  s504, 1 Jey 2az (uc/s> (inactive)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 25,
+      "ocr_text": "................",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 26,
+      "ocr_text": "Izza<nal1-Mewie me1/snal1>]] -Jened 38:10, 2 Je0y 2002 (u)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 27,
+      "ocr_text": "sr:Laagat: Particslar2y incarested in mupporting nw contrituters",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 28,
+      "ocr_text": "<1--#[[0ser:Johe carterjJohn carter]] (1[user talk:Jotn carter[talx]]) 21:5i, 2 July 2012 (urc) - Partscular intereen",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 29,
+      "ocr_text": "in in maybe finding wwys to bring editors who have left back- .»",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 30,
+      "ocr_text": "\"[[Maer:Rr.BlofaldDr. nlefele]]",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000001",
+      "line_index": 31,
+      "ocr_text": "anr:Thüse Aetime Penhine Awtique Penl]",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 0,
+      "ocr_text": "☆00Δ",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 1,
+      "ocr_text": "en wikipedia.org/w/index php?title-Wkipeda%SAWiiProject_Editor_Rertention/\\2rMembersdiveaction-edtsouroeisafemode-1",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 2,
+      "ocr_text": "?",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 3,
+      "ocr_text": "ParagaphA∞ CtiΩ",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 4,
+      "ocr_text": "Publsh changes.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 5,
+      "ocr_text": "muunmgrm",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 6,
+      "ocr_text": "Maar talk:EahemeralParnntaalal stylefont: snal1-capo 12p tims: colorso0oooo>talk</b]</p> 01:39. 13",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 7,
+      "ocr_text": "January 2824 (UTE)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 8,
+      "ocr_text": "= I Sove wikipedia and woudd love to see it replace conpudsory state schooling-eo teaching. just Mortimer a Adlers",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 9,
+      "ocr_text": "<>ssisted Learning/, Janos Ael (a acdenie erphan). [uaanasabaiJanesatel]] (E[aar",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 10,
+      "ocr_text": "talk:lashel(talk]]) 12:s, 5 Apri1 2024 (uc)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 11,
+      "ocr_text": "s s     p a m s      . ",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 12,
+      "ocr_text": "08:49, 9 Apr11 202e (uc)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 13,
+      "ocr_text": " ctenlacestyles srcaTplatectolor/stylss.c\" capan clsaotap-clor\" styleocoloreesao>. r",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 14,
+      "ocr_text": "cdonall|pan stylecolor:ss0>myer</ipas]]\" aall-he/they/small- * [aer.talk:Smor-cdanelllpan",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 15,
+      "ocr_text": "stylacolar:020»talk</spa1]=/span 18:27, 13 Apr11 2024 (uT)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 16,
+      "ocr_text": "pry te belp if I ean! Eacapan styleccolarporplecoce/spaspan",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 17,
+      "ocr_text": "21:15, 13 may 202e (utc)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 18,
+      "ocr_text": "ton't",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 19,
+      "ocr_text": "Thes page wns lant edte on May 33, 2004, at L7 15 (LUTC)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 20,
+      "ocr_text": "Tent is avaate ude   C A L   na  y y      r  e To e an  y    re d e W",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 21,
+      "ocr_text": "Founsation, INc., a non prot orgalsation",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-coding",
+      "frame_id": "000005",
+      "line_index": 22,
+      "ocr_text": "Pev y Aeol wpea Domrs Cintt ea Code oCodt Devies Sts Coe same Mole vee",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 0,
+      "ocr_text": "x +",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 1,
+      "ocr_text": "Cline - Al Autonomous Codi-",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 2,
+      "ocr_text": "Cline - Vimual Studio Market: X",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 3,
+      "ocr_text": "Visual Studlio Code - Code : x",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 4,
+      "ocr_text": "OpenRouter",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 5,
+      "ocr_text": "0",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 6,
+      "ocr_text": "C",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 7,
+      "ocr_text": "openrouter.al",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 8,
+      "ocr_text": "a",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 9,
+      "ocr_text": "OpenRouter",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 10,
+      "ocr_text": "BrandKitty (3)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 11,
+      "ocr_text": "CLINE",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 12,
+      "ocr_text": "dZone.tex",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 13,
+      "ocr_text": "T3 index.ts",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 14,
+      "ocr_text": "D",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 15,
+      "ocr_text": "Cline",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 16,
+      "ocr_text": "Task",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 17,
+      "ocr_text": "n's eiamine the app and see if we can refactor code",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 18,
+      "ocr_text": "CieCin",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 19,
+      "ocr_text": "80",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 20,
+      "ocr_text": "Tokems: + 149.0k  3.1k",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 21,
+      "ocr_text": "Context Window: 30.7k",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 22,
+      "ocr_text": "200.0k",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 23,
+      "ocr_text": "Autonomous",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 24,
+      "ocr_text": "API Cost: $0.1586",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 25,
+      "ocr_text": "100 46",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 26,
+      "ocr_text": "8",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 27,
+      "ocr_text": "Disable",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 28,
+      "ocr_text": "• Update imports",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 29,
+      "ocr_text": "wrences",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 30,
+      "ocr_text": "DETALS",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 31,
+      "ocr_text": "FEATURES",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 32,
+      "ocr_text": "CHANGELOG",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 33,
+      "ocr_text": "3. Enhance Type System",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 34,
+      "ocr_text": "• Expand type definitions in types,ts",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 35,
+      "ocr_text": "English ↓spaolDeutach日本中",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 36,
+      "ocr_text": "• Add more comprehensive TypeSicript interfaces",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 37,
+      "ocr_text": "Ensure consistent typing across the application",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 38,
+      "ocr_text": "甲",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 39,
+      "ocr_text": "Cline - #1 on OpenR",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 40,
+      "ocr_text": "4. Improve Code Reusability",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 41,
+      "ocr_text": "Extract repeated patterns into custom hooks",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 42,
+      "ocr_text": "Consider implementing a proper state management pattenn if it",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 43,
+      "ocr_text": "me s ds pe",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 44,
+      "ocr_text": "5. Performance Optimizations",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 45,
+      "ocr_text": "• Identify and optimize potential performance bottienecks m SVG",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 46,
+      "ocr_text": "processing",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 47,
+      "ocr_text": "PROBLEMS",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 48,
+      "ocr_text": "OUTPUT",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 49,
+      "ocr_text": "DERUG CONSOLE",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 50,
+      "ocr_text": "TERM",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 51,
+      "ocr_text": "Implement memoization for expensive calculations",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 52,
+      "ocr_text": "C -    n",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000001",
+      "line_index": 53,
+      "ocr_text": "dreskiig192 BrandKitty (3)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 0,
+      "ocr_text": "5. Performance Uptimizations",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 1,
+      "ocr_text": "•Identity and optimize potential performance bottienecks in SVG",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 2,
+      "ocr_text": "processing",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 3,
+      "ocr_text": "Implement memoization for expensive calculations",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 4,
+      "ocr_text": "     n",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 5,
+      "ocr_text": "6. Code Cleanup",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 6,
+      "ocr_text": "Remove unused code and dead imports",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 7,
+      "ocr_text": "Standardize coding style and patterns",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 8,
+      "ocr_text": "PROBLEMS",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 9,
+      "ocr_text": "• Add or improve documentation",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 10,
+      "ocr_text": "OUTPUT",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 11,
+      "ocr_text": "DEBUG CONSOLE",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 12,
+      "ocr_text": "Would you like me to focus on any specific area from this plan? Or",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 13,
+      "ocr_text": "drewskiigt92 BrandKitty (3) ",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 14,
+      "ocr_text": "would you prefer to tackle allof these issues systematically?",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 15,
+      "ocr_text": "API Request...",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 16,
+      "ocr_text": "Auto-approve: Read, Edit, Commands, Browser, MCP ",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 17,
+      "ocr_text": "Cancel",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 18,
+      "ocr_text": "⑧",
+      "verdict": "false_non_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 19,
+      "ocr_text": "apmpcaate-37-sone",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 20,
+      "ocr_text": "Pan",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 21,
+      "ocr_text": "Cline",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 22,
+      "ocr_text": "Autonomous coding agent right in your IDE",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 23,
+      "ocr_text": "C",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 24,
+      "ocr_text": "Roo Code",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 25,
+      "ocr_text": "2.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 26,
+      "ocr_text": "A wncie dev team off Al agents in your editor",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 27,
+      "ocr_text": "SillyTavern>",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 28,
+      "ocr_text": "3.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 29,
+      "ocr_text": "LLM frortend for power users",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 30,
+      "ocr_text": "shapes inc",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 31,
+      "ocr_text": "4.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 32,
+      "ocr_text": "tquabe jmoos esodand (Ralue)",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 33,
+      "ocr_text": "liteLLM",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 34,
+      "ocr_text": "5.",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-ui",
+      "frame_id": "000007",
+      "line_index": 35,
+      "ocr_text": "Se W Agduas os Auerqi #canos-ued0",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000004",
+      "line_index": 0,
+      "ocr_text": "DUNBRIDGE",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000004",
+      "line_index": 1,
+      "ocr_text": "Please drive carefully",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 0,
+      "ocr_text": "1st 11:56 Salisbury",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 1,
+      "ocr_text": "Calling at: Dean (12:02) & Salisbury (12:14).",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 2,
+      "ocr_text": "2nd 12:56 Salisbury",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 3,
+      "ocr_text": "On time",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 4,
+      "ocr_text": "11:39:09",
+      "verdict": "supported_by_visible_text"
+    },
+    {
+      "source_id": "val-real",
+      "frame_id": "000013",
+      "line_index": 5,
+      "ocr_text": "On time",
+      "verdict": "supported_by_visible_text"
+    }
+  ]
+}
