@@ -1,0 +1,2010 @@
+{
+  "protocol_version": 1,
+  "annotation_basis": "Independent publisher captions and reviewed source-video contact sheets; never SceneMind retrieval",
+  "interval_rule": "A hit is relevant when its returned timestamp is within any closed acceptable interval.",
+  "catastrophic_video_rule": "R@5 < 0.60 for videos with at least eight positives.",
+  "promotion_targets": {
+    "overall_r1": 0.75,
+    "overall_r3": 0.85,
+    "overall_r5": 0.9,
+    "speech_r5": 0.9,
+    "visual_r5": 0.85,
+    "hybrid_r5": 0.9,
+    "long_video_r5": 0.85
+  },
+  "sources": [
+    {
+      "source_id": "social-media-talk",
+      "category": "lecture",
+      "title": "File:Social Media on Straight Talk Africa.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Social_Media_on_Straight_Talk_Africa.webm",
+      "license": "Public domain",
+      "duration_seconds": 725.221,
+      "source_size_bytes": 44071541,
+      "media_sha256": "0a6f8e1cb264c3761dddb76b0a40a1caf62bfb5ac5a9c95640ed1d6470bf7b6b"
+    },
+    {
+      "source_id": "openrefine-tutorial",
+      "category": "tutorial",
+      "title": "File:Wikidata Editing with OpenRefine - Part 1.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Wikidata_Editing_with_OpenRefine_-_Part_1.webm",
+      "license": "CC BY 4.0",
+      "duration_seconds": 318.944,
+      "source_size_bytes": 77582914,
+      "media_sha256": "493afd37c076175db0253c14a9f91d3e6d36d89d703b5862586a4169a5846393"
+    },
+    {
+      "source_id": "ppe-tutorial",
+      "category": "tutorial",
+      "title": "File:Demonstration of Donning (Putting On) Personal Protective Equipment (PPE).webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Demonstration_of_Donning_(Putting_On)_Personal_Protective_Equipment_(PPE).webm",
+      "license": "Public domain",
+      "duration_seconds": 255.125,
+      "source_size_bytes": 36659680,
+      "media_sha256": "b79423e4ea8cecf4a49207194417c205ec5bdc85c7a61398c4931f41a73f0c28"
+    },
+    {
+      "source_id": "manchester-street",
+      "category": "real_world",
+      "title": "File:Manchester Street Scene (1901).webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Manchester_Street_Scene_(1901).webm",
+      "license": "Public domain",
+      "duration_seconds": 121.56,
+      "source_size_bytes": 8745211,
+      "media_sha256": "6183d49769b611adac7d6d64fdd580cc175e1400c68aad0136247d2a8c82587d"
+    },
+    {
+      "source_id": "aikido-demonstration",
+      "category": "real_world",
+      "title": "File:Ueshiba Mitsuteru (Nippon Budokan, 2017).webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Ueshiba_Mitsuteru_(Nippon_Budokan,_2017).webm",
+      "license": "CC BY-SA 4.0",
+      "duration_seconds": 273.79,
+      "source_size_bytes": 72804647,
+      "media_sha256": "756c1a28cce7ff2592ccdd4299c7b04e35fa2f50e07d93cb4a590650197bdf1c"
+    },
+    {
+      "source_id": "museum-accessibility",
+      "category": "mixed",
+      "title": "File:The Debrief Behind the Museum – Accessibility.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:The_Debrief_Behind_the_Museum_%E2%80%93_Accessibility.webm",
+      "license": "Public domain",
+      "duration_seconds": 183.721,
+      "source_size_bytes": 28906684,
+      "media_sha256": "6c7e6b7aaad3619746d36bc65f6feea00d32345a523a2e5a148f8826ac59424f"
+    },
+    {
+      "source_id": "heritage-museum",
+      "category": "mixed",
+      "title": "File:Vietnamese Heritage Museum raises funds to expand operations.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Vietnamese_Heritage_Museum_raises_funds_to_expand_operations.webm",
+      "license": "Public domain",
+      "duration_seconds": 204.40800000000002,
+      "source_size_bytes": 33645316,
+      "media_sha256": "587985a58d5b7c5b9ecd5c25ce940509acc6e7296ffc34112b089d9daa1dc9e8"
+    },
+    {
+      "source_id": "parliament-lecture",
+      "category": "lecture",
+      "title": "File:UK Parliament Open Lecture - An insider's guide to the House of Commons.webm",
+      "page_url": "https://commons.wikimedia.org/wiki/File:UK_Parliament_Open_Lecture_-_An_insider%27s_guide_to_the_House_of_Commons.webm",
+      "license": "CC BY 3.0",
+      "duration_seconds": 2422.741,
+      "source_size_bytes": 161925608,
+      "media_sha256": "e210730acb1e7c974c33c0bde3b1fbe29bf1ddacfc9f191fb85c13dcbe8f9333"
+    }
+  ],
+  "queries": [
+    {
+      "id": "F001",
+      "video_id": "parliament-lecture",
+      "query": "Where does the speaker tell the George Bernard Shaw address joke?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          35,
+          63
+        ]
+      ],
+      "annotation_note": "Publisher caption: Shaw gives his address."
+    },
+    {
+      "id": "F002",
+      "video_id": "parliament-lecture",
+      "query": "When does the speaker say there will be no death by PowerPoint?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          62,
+          88
+        ]
+      ],
+      "annotation_note": "Publisher caption: no death by PowerPoint."
+    },
+    {
+      "id": "F003",
+      "video_id": "parliament-lecture",
+      "query": "Find the part about the open lecture series and engaging with Parliament.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          90,
+          118
+        ]
+      ],
+      "annotation_note": "Publisher caption: outreach and engagement."
+    },
+    {
+      "id": "F004",
+      "video_id": "parliament-lecture",
+      "query": "Where does he say he is the 49th Clerk of the House of Commons?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          175,
+          215
+        ]
+      ],
+      "annotation_note": "Publisher caption: 49th clerk since 1363."
+    },
+    {
+      "id": "F005",
+      "video_id": "parliament-lecture",
+      "query": "When is the House of Commons budget of 220 million pounds mentioned?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          260,
+          299
+        ]
+      ],
+      "annotation_note": "Publisher caption: next financial year budget."
+    },
+    {
+      "id": "F006",
+      "video_id": "parliament-lecture",
+      "query": "Where does he discuss chefs, researchers, and specialist work in the House service?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          355,
+          415
+        ]
+      ],
+      "annotation_note": "Publisher caption: range of service expertise."
+    },
+    {
+      "id": "F007",
+      "video_id": "parliament-lecture",
+      "query": "Find his explanation of rigorous political impartiality.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          445,
+          492
+        ]
+      ],
+      "annotation_note": "Publisher caption: serving all sides."
+    },
+    {
+      "id": "F008",
+      "video_id": "parliament-lecture",
+      "query": "When does he describe an opposition ambush planned against the government?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          540,
+          586
+        ]
+      ],
+      "annotation_note": "Publisher caption: table office procedural advice example."
+    },
+    {
+      "id": "F009",
+      "video_id": "parliament-lecture",
+      "query": "Where does he joke that he is the one who gets sued if someone falls down stairs?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          625,
+          665
+        ]
+      ],
+      "annotation_note": "Publisher caption: corporate officer liability."
+    },
+    {
+      "id": "F010",
+      "video_id": "parliament-lecture",
+      "query": "Find the explanation of the clerk recording what the House decided.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          720,
+          775
+        ]
+      ],
+      "annotation_note": "Publisher caption: ancient clerk function."
+    },
+    {
+      "id": "F011",
+      "video_id": "parliament-lecture",
+      "query": "When does he describe the unpredictable work of advising the chair during a sitting?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          805,
+          849
+        ]
+      ],
+      "annotation_note": "Publisher caption: points of order and advice."
+    },
+    {
+      "id": "F012",
+      "video_id": "parliament-lecture",
+      "query": "Where are Lords amendments and amendments in lieu discussed?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          895,
+          944
+        ]
+      ],
+      "annotation_note": "Publisher caption: complex House business."
+    },
+    {
+      "id": "F013",
+      "video_id": "parliament-lecture",
+      "query": "Find the description of Parliament as a Gothic wedding cake by the Thames.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          985,
+          1035
+        ]
+      ],
+      "annotation_note": "Publisher caption: building design."
+    },
+    {
+      "id": "F014",
+      "video_id": "parliament-lecture",
+      "query": "When is the Central Lobby contrasted with a rabbit warren of rooms?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          1074,
+          1114
+        ]
+      ],
+      "annotation_note": "Publisher caption: constrained interior space."
+    },
+    {
+      "id": "F015",
+      "video_id": "parliament-lecture",
+      "query": "Where does the speaker discuss the old and new in Parliament?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          1165,
+          1212
+        ]
+      ],
+      "annotation_note": "Publisher caption: ancient building and modern work."
+    },
+    {
+      "id": "F016",
+      "video_id": "parliament-lecture",
+      "query": "Find the section about a bill appearing on a shared drive between two public bill offices.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          1250,
+          1294
+        ]
+      ],
+      "annotation_note": "Publisher caption: modern text handling."
+    },
+    {
+      "id": "F017",
+      "video_id": "parliament-lecture",
+      "query": "When does he discuss MPs visiting their constituencies?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          1433,
+          1473
+        ]
+      ],
+      "annotation_note": "Publisher caption: management visiting constituencies."
+    },
+    {
+      "id": "F018",
+      "video_id": "parliament-lecture",
+      "query": "Where does he discuss approval ratings for a local MP?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          1518,
+          1569
+        ]
+      ],
+      "annotation_note": "Publisher caption: constituency approval."
+    },
+    {
+      "id": "F019",
+      "video_id": "parliament-lecture",
+      "query": "Find the discussion of the Prime Minister being questioned in public at PMQs.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          1787,
+          1844
+        ]
+      ],
+      "annotation_note": "Publisher caption: PMQs."
+    },
+    {
+      "id": "F020",
+      "video_id": "parliament-lecture",
+      "query": "When is Churchill quoted on a chamber designed for conversational debate?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          1880,
+          1935
+        ]
+      ],
+      "annotation_note": "Publisher caption: post-war chamber design."
+    },
+    {
+      "id": "F021",
+      "video_id": "parliament-lecture",
+      "query": "Where does he mention 227 new members in 2010?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          2058,
+          2107
+        ]
+      ],
+      "annotation_note": "Publisher caption: 2010 intake."
+    },
+    {
+      "id": "F022",
+      "video_id": "parliament-lecture",
+      "query": "Find the figures for Hansard pages and government bills.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          2240,
+          2295
+        ]
+      ],
+      "annotation_note": "Publisher caption: annual parliamentary output."
+    },
+    {
+      "id": "F023",
+      "video_id": "openrefine-tutorial",
+      "query": "Where does the narrator introduce OpenRefine for importing data into Wikidata?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          19
+        ]
+      ],
+      "annotation_note": "Publisher caption: tutorial introduction."
+    },
+    {
+      "id": "F024",
+      "video_id": "openrefine-tutorial",
+      "query": "When does the tutorial say OpenRefine is free software?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          28,
+          40
+        ]
+      ],
+      "annotation_note": "Publisher caption: download and browser operation."
+    },
+    {
+      "id": "F025",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the explanation of film shooting locations in Paris as the example dataset.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          39,
+          57
+        ]
+      ],
+      "annotation_note": "Publisher caption: Paris film-location dataset."
+    },
+    {
+      "id": "F026",
+      "video_id": "openrefine-tutorial",
+      "query": "Where does the narrator say to paste the CSV URL into OpenRefine?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          51,
+          65
+        ]
+      ],
+      "annotation_note": "Publisher caption: CSV URL import."
+    },
+    {
+      "id": "F027",
+      "video_id": "openrefine-tutorial",
+      "query": "When does the tutorial explain reconciling film names against Wikidata items?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          71,
+          92
+        ]
+      ],
+      "annotation_note": "Publisher caption: reconciliation service."
+    },
+    {
+      "id": "F028",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the explanation of using the director column to disambiguate films.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          110,
+          132
+        ]
+      ],
+      "annotation_note": "Publisher caption: Réalisateur property."
+    },
+    {
+      "id": "F029",
+      "video_id": "openrefine-tutorial",
+      "query": "Where does the narrator explain why some films do not match?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          146,
+          176
+        ]
+      ],
+      "annotation_note": "Publisher caption: director mismatch and unavailable director."
+    },
+    {
+      "id": "F030",
+      "video_id": "openrefine-tutorial",
+      "query": "When is the matching-status facet used to filter successful rows?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          179,
+          197
+        ]
+      ],
+      "annotation_note": "Publisher caption: matched status facet."
+    },
+    {
+      "id": "F031",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the part about comparing shooting dates with movie release dates.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          194,
+          220
+        ]
+      ],
+      "annotation_note": "Publisher caption: automated-match validation."
+    },
+    {
+      "id": "F032",
+      "video_id": "openrefine-tutorial",
+      "query": "Where does the narrator introduce the GREL expression language?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          235,
+          264
+        ]
+      ],
+      "annotation_note": "Publisher caption: new date-difference column."
+    },
+    {
+      "id": "F033",
+      "video_id": "openrefine-tutorial",
+      "query": "When are negative date differences and year precision explained?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          270,
+          303
+        ]
+      ],
+      "annotation_note": "Publisher caption: numeric facet and date precision."
+    },
+    {
+      "id": "F034",
+      "video_id": "museum-accessibility",
+      "query": "When does the narrator explain the CIA museum renovation for the 75th anniversary?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          18
+        ]
+      ],
+      "annotation_note": "Publisher caption: 2022 renovation and anniversary."
+    },
+    {
+      "id": "F035",
+      "video_id": "museum-accessibility",
+      "query": "Find the discussion of consulting blind, deaf, and mobility-impaired officers.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          29,
+          44
+        ]
+      ],
+      "annotation_note": "Publisher caption: accessibility input."
+    },
+    {
+      "id": "F036",
+      "video_id": "museum-accessibility",
+      "query": "Where are tactile maps at three museum locations described?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          45,
+          61
+        ]
+      ],
+      "annotation_note": "Publisher caption: 3D tactile maps."
+    },
+    {
+      "id": "F037",
+      "video_id": "museum-accessibility",
+      "query": "When does the narrator explain touch-triggered sound effects in tactile images?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          62,
+          84
+        ]
+      ],
+      "annotation_note": "Publisher caption: tactile-image sensors."
+    },
+    {
+      "id": "F038",
+      "video_id": "museum-accessibility",
+      "query": "Find the description of audio narration buttons under the tactile display.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          84,
+          105
+        ]
+      ],
+      "annotation_note": "Publisher caption: audio labels."
+    },
+    {
+      "id": "F039",
+      "video_id": "museum-accessibility",
+      "query": "Where are seven bronze replicas of artifacts mentioned?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          105,
+          120
+        ]
+      ],
+      "annotation_note": "Publisher caption: 3D bronze replicas."
+    },
+    {
+      "id": "F040",
+      "video_id": "museum-accessibility",
+      "query": "When are boots from an Afghanistan mission mentioned?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          116,
+          129
+        ]
+      ],
+      "annotation_note": "Publisher caption: boots and other artifacts."
+    },
+    {
+      "id": "F041",
+      "video_id": "museum-accessibility",
+      "query": "Find the mention of the Minox C spy camera and A-12 aircraft model.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          122,
+          136
+        ]
+      ],
+      "annotation_note": "Publisher caption: touch artifacts."
+    },
+    {
+      "id": "F042",
+      "video_id": "museum-accessibility",
+      "query": "Where does the narrator describe closed captioning and balanced volume?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          135,
+          147
+        ]
+      ],
+      "annotation_note": "Publisher caption: accessibility for deaf visitors."
+    },
+    {
+      "id": "F043",
+      "video_id": "museum-accessibility",
+      "query": "When is wheelchair access to touch screens discussed?",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          145,
+          161
+        ]
+      ],
+      "annotation_note": "Publisher caption: multiple screen heights."
+    },
+    {
+      "id": "F044",
+      "video_id": "museum-accessibility",
+      "query": "Find the museum mission to inform, instruct and inspire.",
+      "mode": "speech",
+      "category": "speech",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          162,
+          178
+        ]
+      ],
+      "annotation_note": "Publisher caption: closing museum mission."
+    },
+    {
+      "id": "F045",
+      "video_id": "social-media-talk",
+      "query": "Show the presenter in an orange sweater in the TV studio.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          35
+        ]
+      ],
+      "annotation_note": "Reviewed source frames at 0–30 s."
+    },
+    {
+      "id": "F046",
+      "video_id": "social-media-talk",
+      "query": "Find the screen showing a viewer question beside the host.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          25,
+          45
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 30 s."
+    },
+    {
+      "id": "F047",
+      "video_id": "social-media-talk",
+      "query": "Where does a Twitter or social-media page appear on screen?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          55,
+          90
+        ]
+      ],
+      "annotation_note": "Reviewed source frames at 60–80 s."
+    },
+    {
+      "id": "F048",
+      "video_id": "social-media-talk",
+      "query": "Find the studio guest seated across from the presenter.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          105,
+          155
+        ]
+      ],
+      "annotation_note": "Reviewed source frames at 110–150 s."
+    },
+    {
+      "id": "F049",
+      "video_id": "social-media-talk",
+      "query": "Show the wide studio shot with both speakers.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          160,
+          220
+        ]
+      ],
+      "annotation_note": "Reviewed second contact sheet; recurring studio composition."
+    },
+    {
+      "id": "F050",
+      "video_id": "openrefine-tutorial",
+      "query": "Show the OpenRefine opening title card.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          24
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 0–20 s."
+    },
+    {
+      "id": "F051",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the Paris open-data page showing film locations on a map.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          37,
+          56
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 40–50 s."
+    },
+    {
+      "id": "F052",
+      "video_id": "openrefine-tutorial",
+      "query": "Where is the OpenRefine project table with many rows?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          61,
+          83
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 60–80 s."
+    },
+    {
+      "id": "F053",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the Wikidata reconciliation dialog on the computer screen.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          88,
+          133
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 90–120 s."
+    },
+    {
+      "id": "F054",
+      "video_id": "openrefine-tutorial",
+      "query": "Show the date-difference numeric facet or distribution in OpenRefine.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          267,
+          305
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 270–300 s; small interface details."
+    },
+    {
+      "id": "F055",
+      "video_id": "ppe-tutorial",
+      "query": "Find the protective equipment laid out on a table.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          27,
+          37
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 30 s."
+    },
+    {
+      "id": "F056",
+      "video_id": "ppe-tutorial",
+      "query": "Show the worker putting on a yellow isolation gown.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          68,
+          96
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 70–90 s."
+    },
+    {
+      "id": "F057",
+      "video_id": "ppe-tutorial",
+      "query": "Find the demonstration of fitting a respirator around the face.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          101,
+          151
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 100–150 s."
+    },
+    {
+      "id": "F058",
+      "video_id": "ppe-tutorial",
+      "query": "Where does a clear face shield get put on?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          184,
+          204
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 190–200 s."
+    },
+    {
+      "id": "F059",
+      "video_id": "ppe-tutorial",
+      "query": "Find the worker wearing blue gloves with the full protective outfit.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          206,
+          239
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 210–230 s; gloves are small."
+    },
+    {
+      "id": "F060",
+      "video_id": "manchester-street",
+      "query": "Find the busy historic street full of horse-drawn traffic.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          18
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 0–10 s."
+    },
+    {
+      "id": "F061",
+      "video_id": "manchester-street",
+      "query": "Show the covered horse cart passing in front of the camera.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          8,
+          29
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 10–20 s."
+    },
+    {
+      "id": "F062",
+      "video_id": "manchester-street",
+      "query": "Where does an early street tram with an advertisement pass?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          37,
+          54
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 40 s."
+    },
+    {
+      "id": "F063",
+      "video_id": "manchester-street",
+      "query": "Find the children close to the camera in the street.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          61,
+          85
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 60–80 s."
+    },
+    {
+      "id": "F064",
+      "video_id": "manchester-street",
+      "query": "Show the dense mix of pedestrians and horse carts near the end.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          92,
+          116
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 90–110 s; multiple similar moments."
+    },
+    {
+      "id": "F065",
+      "video_id": "aikido-demonstration",
+      "query": "Show the martial artists kneeling on the training mat.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          12
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 0 s."
+    },
+    {
+      "id": "F066",
+      "video_id": "aikido-demonstration",
+      "query": "Find an aikido throw where one partner falls onto the mat.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          22,
+          42
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 20–40 s; throws recur."
+    },
+    {
+      "id": "F067",
+      "video_id": "aikido-demonstration",
+      "query": "Where does one partner pin the other on the floor?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          61,
+          84
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 70 s."
+    },
+    {
+      "id": "F068",
+      "video_id": "aikido-demonstration",
+      "query": "Find the martial artists standing and resetting between throws.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          113,
+          139
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 120–130 s; repeated resets."
+    },
+    {
+      "id": "F069",
+      "video_id": "aikido-demonstration",
+      "query": "Show the upside-down fall during a late aikido throw.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          212,
+          231
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 220 s; short event."
+    },
+    {
+      "id": "F070",
+      "video_id": "museum-accessibility",
+      "query": "Show the museum corridor with exhibits on the walls.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          23,
+          49
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 30–40 s."
+    },
+    {
+      "id": "F071",
+      "video_id": "museum-accessibility",
+      "query": "Find the tactile map console inside the museum.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          45,
+          61
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 50 s."
+    },
+    {
+      "id": "F072",
+      "video_id": "museum-accessibility",
+      "query": "Show a hand touching a raised interactive museum image.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          66,
+          105
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 70–100 s."
+    },
+    {
+      "id": "F073",
+      "video_id": "museum-accessibility",
+      "query": "Find the boots displayed as a touchable museum artifact.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          115,
+          130
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 120 s."
+    },
+    {
+      "id": "F074",
+      "video_id": "museum-accessibility",
+      "query": "Where is a Braille label next to a displayed object?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          127,
+          145
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 130 s; small text plate."
+    },
+    {
+      "id": "F075",
+      "video_id": "heritage-museum",
+      "query": "Find the Vietnamese Heritage Museum entrance signs.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          17
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 0 s."
+    },
+    {
+      "id": "F076",
+      "video_id": "heritage-museum",
+      "query": "Show a donation box at the museum event.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          8,
+          25
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 10 s."
+    },
+    {
+      "id": "F077",
+      "video_id": "heritage-museum",
+      "query": "Find the audience gathered around a stage.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          69,
+          89
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 70–80 s."
+    },
+    {
+      "id": "F078",
+      "video_id": "heritage-museum",
+      "query": "Where does the VHM museum sign appear?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          104,
+          120
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 110 s."
+    },
+    {
+      "id": "F079",
+      "video_id": "heritage-museum",
+      "query": "Show the display of portraits near the end of the report.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          161,
+          182
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 170 s."
+    },
+    {
+      "id": "F080",
+      "video_id": "parliament-lecture",
+      "query": "Find the wide shot of the lecturer addressing a seated audience.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          51,
+          71
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 60 s."
+    },
+    {
+      "id": "F081",
+      "video_id": "parliament-lecture",
+      "query": "Show the bearded lecturer holding his yellow spectacles.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          207,
+          253
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 210–240 s; glasses small."
+    },
+    {
+      "id": "F082",
+      "video_id": "parliament-lecture",
+      "query": "Find the lecturer speaking in front of a large Parliament image.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          476,
+          525
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 480–510 s."
+    },
+    {
+      "id": "F083",
+      "video_id": "parliament-lecture",
+      "query": "Where is the Parliament constitution poster visible behind the speaker?",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          835,
+          875
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 840–870 s; poster recurs."
+    },
+    {
+      "id": "F084",
+      "video_id": "parliament-lecture",
+      "query": "Show the audience applauding at the end of the lecture.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          2385,
+          2422
+        ]
+      ],
+      "annotation_note": "Reviewed source frame at 2400 s."
+    },
+    {
+      "id": "F085",
+      "video_id": "openrefine-tutorial",
+      "query": "When does the narrator introduce OpenRefine while its title card is on screen?",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          0,
+          20
+        ]
+      ],
+      "annotation_note": "Publisher caption 0–17 s plus reviewed title frames."
+    },
+    {
+      "id": "F086",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the Paris film-location map as the speaker describes the CSV dataset.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          39,
+          58
+        ]
+      ],
+      "annotation_note": "Publisher caption 40–55 s plus reviewed map frames."
+    },
+    {
+      "id": "F087",
+      "video_id": "openrefine-tutorial",
+      "query": "Show the CSV import screen while the narrator explains pasting its URL.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          51,
+          67
+        ]
+      ],
+      "annotation_note": "Publisher caption 55–66 s plus reviewed import frames."
+    },
+    {
+      "id": "F088",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the project table as the narrator begins matching film names.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          71,
+          88
+        ]
+      ],
+      "annotation_note": "Publisher caption 73–83 s plus reviewed table frames."
+    },
+    {
+      "id": "F089",
+      "video_id": "openrefine-tutorial",
+      "query": "Where is the reconciliation dialog while Wikidata matching is explained?",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          85,
+          108
+        ]
+      ],
+      "annotation_note": "Publisher caption 87–106 s plus reviewed dialog frames."
+    },
+    {
+      "id": "F090",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the director field on screen as the narrator explains disambiguation.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          111,
+          132
+        ]
+      ],
+      "annotation_note": "Publisher caption 116–129 s plus reviewed small UI fields."
+    },
+    {
+      "id": "F091",
+      "video_id": "openrefine-tutorial",
+      "query": "Show unmatched film rows while the narrator explains why matches fail.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          145,
+          177
+        ]
+      ],
+      "annotation_note": "Publisher caption 146–175 s plus reviewed row frames."
+    },
+    {
+      "id": "F092",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the facets in OpenRefine as the speaker describes matched status.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          179,
+          198
+        ]
+      ],
+      "annotation_note": "Publisher caption 180–190 s plus reviewed facet frames."
+    },
+    {
+      "id": "F093",
+      "video_id": "openrefine-tutorial",
+      "query": "Where does the speaker mention GREL while an expression editor is shown?",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          237,
+          263
+        ]
+      ],
+      "annotation_note": "Publisher caption 242–259 s plus reviewed editor frames."
+    },
+    {
+      "id": "F094",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the numeric facet as the narrator discusses negative date differences.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          270,
+          294
+        ]
+      ],
+      "annotation_note": "Publisher caption 271–292 s plus reviewed facet frames."
+    },
+    {
+      "id": "F095",
+      "video_id": "museum-accessibility",
+      "query": "Show the renovated museum as the narrator describes its anniversary redesign.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          6,
+          28
+        ]
+      ],
+      "annotation_note": "Publisher caption 6–21 s plus reviewed museum frames."
+    },
+    {
+      "id": "F096",
+      "video_id": "museum-accessibility",
+      "query": "Find the museum map while the narrator explains tactile guidance.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          45,
+          60
+        ]
+      ],
+      "annotation_note": "Publisher caption 46–57 s plus reviewed console frame."
+    },
+    {
+      "id": "F097",
+      "video_id": "museum-accessibility",
+      "query": "Show a visitor touching the raised image as the narration explains tactile pictures.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          64,
+          78
+        ]
+      ],
+      "annotation_note": "Publisher caption 63–74 s plus reviewed hand frames."
+    },
+    {
+      "id": "F098",
+      "video_id": "museum-accessibility",
+      "query": "Find a hand moving across the display as the narrator discusses audio sensors.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          75,
+          86
+        ]
+      ],
+      "annotation_note": "Publisher caption 74–82 s plus reviewed hand frames."
+    },
+    {
+      "id": "F099",
+      "video_id": "museum-accessibility",
+      "query": "Show the tactile image controls while audio narration buttons are discussed.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          85,
+          103
+        ]
+      ],
+      "annotation_note": "Publisher caption 85–100 s plus reviewed display frames."
+    },
+    {
+      "id": "F100",
+      "video_id": "museum-accessibility",
+      "query": "Find the artifact replicas while the narrator explains that visitors may touch them.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          107,
+          119
+        ]
+      ],
+      "annotation_note": "Publisher caption 107–115 s plus reviewed artifact frames."
+    },
+    {
+      "id": "F101",
+      "video_id": "museum-accessibility",
+      "query": "Show the displayed boots while their Afghanistan connection is mentioned.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          118,
+          127
+        ]
+      ],
+      "annotation_note": "Publisher caption 119–123 s plus reviewed boots frame."
+    },
+    {
+      "id": "F102",
+      "video_id": "museum-accessibility",
+      "query": "Find the Braille artifact label as the narrator describes it.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          129,
+          138
+        ]
+      ],
+      "annotation_note": "Publisher caption 132–136 s plus reviewed label frame."
+    },
+    {
+      "id": "F103",
+      "video_id": "museum-accessibility",
+      "query": "Show the exhibit touchscreen when accessible height levels are explained.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          145,
+          158
+        ]
+      ],
+      "annotation_note": "Publisher caption 150–154 s plus reviewed touchscreen frames."
+    },
+    {
+      "id": "F104",
+      "video_id": "museum-accessibility",
+      "query": "Find the final gallery view as the narrator says the museum is accessible to all.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          160,
+          180
+        ]
+      ],
+      "annotation_note": "Publisher caption 165–176 s plus reviewed final gallery frames."
+    },
+    {
+      "id": "F105",
+      "video_id": "parliament-lecture",
+      "query": "Find the lecturer speaking to the room as he introduces the open lecture series.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          88,
+          119
+        ]
+      ],
+      "annotation_note": "Publisher caption 90–117 s plus reviewed presenter frames."
+    },
+    {
+      "id": "F106",
+      "video_id": "parliament-lecture",
+      "query": "Show the lecturer with yellow glasses as he explains his role in the House.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          175,
+          218
+        ]
+      ],
+      "annotation_note": "Publisher caption 180–211 s plus reviewed presenter frames."
+    },
+    {
+      "id": "F107",
+      "video_id": "parliament-lecture",
+      "query": "Find the wide audience shot while the clerk describes recording House decisions.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          719,
+          779
+        ]
+      ],
+      "annotation_note": "Publisher caption 720–775 s plus reviewed lecture-room frames."
+    },
+    {
+      "id": "F108",
+      "video_id": "parliament-lecture",
+      "query": "Show the Parliament backdrop as he discusses the old and new in the institution.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          1161,
+          1215
+        ]
+      ],
+      "annotation_note": "Publisher caption 1170–1200 s plus reviewed Parliament image frames."
+    },
+    {
+      "id": "F109",
+      "video_id": "parliament-lecture",
+      "query": "Find the speaker in front of the House poster as he discusses MPs and constituencies.",
+      "mode": "hybrid",
+      "category": "hybrid",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          1435,
+          1475
+        ]
+      ],
+      "annotation_note": "Publisher caption 1440–1470 s plus reviewed presenter frames."
+    },
+    {
+      "id": "F110",
+      "video_id": "social-media-talk",
+      "query": "Find the full-screen question asking whether African leaders should extend their terms.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          27,
+          38
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 30 s; text-heavy brief card."
+    },
+    {
+      "id": "F111",
+      "video_id": "social-media-talk",
+      "query": "Show the two suited speakers at the studio desk with blue mugs.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          128,
+          145
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 130–140 s."
+    },
+    {
+      "id": "F112",
+      "video_id": "social-media-talk",
+      "query": "Find the split-screen interview with a remote guest in a grey suit.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          451,
+          477
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 450–470 s."
+    },
+    {
+      "id": "F113",
+      "video_id": "ppe-tutorial",
+      "query": "Show the worker applying hand sanitizer before putting on PPE.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          54,
+          69
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 60–70 s."
+    },
+    {
+      "id": "F114",
+      "video_id": "ppe-tutorial",
+      "query": "Find the medical worker adjusting a surgical mask.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          165,
+          187
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 170–180 s."
+    },
+    {
+      "id": "F115",
+      "video_id": "ppe-tutorial",
+      "query": "Show the CDC information screen at the end.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          243,
+          255
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 250 s; brief outro."
+    },
+    {
+      "id": "F116",
+      "video_id": "manchester-street",
+      "query": "Find a large draped load carried along the old street.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          16,
+          31
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 20 s; moving cart."
+    },
+    {
+      "id": "F117",
+      "video_id": "manchester-street",
+      "query": "Show a man walking among the children close to the camera.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          67,
+          88
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 70–80 s."
+    },
+    {
+      "id": "F118",
+      "video_id": "manchester-street",
+      "query": "Find another tram moving through the crowded street near the end.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          86,
+          105
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 90–100 s; similar earlier tram."
+    },
+    {
+      "id": "F119",
+      "video_id": "aikido-demonstration",
+      "query": "Find the pair practicing a standing arm lock.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          15,
+          28
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 20 s."
+    },
+    {
+      "id": "F120",
+      "video_id": "aikido-demonstration",
+      "query": "Show one partner lying on the mat after a later throw.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          121,
+          143
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 130 s; repeated falls."
+    },
+    {
+      "id": "F121",
+      "video_id": "aikido-demonstration",
+      "query": "Find three martial artists on the mat in front of the red and white backdrop.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          235,
+          253
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 240–250 s."
+    },
+    {
+      "id": "F122",
+      "video_id": "heritage-museum",
+      "query": "Find a woman in a green dress being interviewed beside the museum banner.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "easy",
+      "intervals": [
+        [
+          47,
+          66
+        ]
+      ],
+      "annotation_note": "Reviewed source frames 50–60 s."
+    },
+    {
+      "id": "F123",
+      "video_id": "heritage-museum",
+      "query": "Show the wall of names and portraits in the museum display.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "medium",
+      "intervals": [
+        [
+          115,
+          128
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 120 s."
+    },
+    {
+      "id": "F124",
+      "video_id": "heritage-museum",
+      "query": "Find people exchanging a paper at the museum event.",
+      "mode": "visual",
+      "category": "visual",
+      "difficulty": "hard",
+      "intervals": [
+        [
+          134,
+          150
+        ]
+      ],
+      "annotation_note": "Reviewed source frame 140 s; brief interaction."
+    }
+  ],
+  "negative_diagnostics": [
+    {
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "query": "Find the modern subway train arriving at the platform."
+    },
+    {
+      "video_id": "ppe-tutorial",
+      "mode": "hybrid",
+      "query": "Where does the surgeon explain a robotic operation beside a patient?"
+    },
+    {
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "query": "When does the narrator explain how to install Kubernetes?"
+    },
+    {
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "query": "Find the narrator describing a live lion in the gallery."
+    },
+    {
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "query": "Where does the speaker explain how to bake sourdough bread?"
+    }
+  ],
+  "production_config": {
+    "smart_mode": "hybrid",
+    "speech_mode": "speech",
+    "visual_mode": "visual",
+    "sampling_interval_seconds": 5,
+    "speech_model": "tiny",
+    "speech_compute_type": "int8",
+    "visual_model": "openai/clip-vit-base-patch32",
+    "visual_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "candidate_k_per_modality": 50,
+    "result_k": 5,
+    "rrf_constant": 60,
+    "qa_enabled": false,
+    "calibration_path": null
+  },
+  "frozen_code_sha256": {
+    "backend/app/hybrid.py": "3b027bc8f6f5e30467fa0b85f1896328dcb36de1d8bb7999d39216bcce28970e",
+    "backend/app/speech.py": "60c46371f8c89b8c47b027c80f0d6ea20ed78590d00296c18ec73ea26de97ad0",
+    "backend/app/visual.py": "19d61d881e0333f3e57398f7cb1bb32e894939d55a2c7c688a42665e570a2f27",
+    "backend/app/encoder.py": "b1489aaf3d3fe29b0da0d9cda88e14111ae074d8c39cd43099317b3169662d8d",
+    "backend/app/video.py": "e6f0969d95f569423c3a04227129563999a437bfb0cd408124516c3dc1fe3d9f",
+    "backend/app/routing.py": "d1def51def625bc1475ab80b190502cc77a532613a5eee63f4fe7128aa096012",
+    "scripts/final_deployment_acceptance.py": "292278a095af12f8f29940a786c155f0b0cd344a7b965a156998da9dc69e7edf"
+  }
+}
