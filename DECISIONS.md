@@ -1,5 +1,24 @@
 # Decisions
 
+## 047 - Withhold v1.0.0 after final deployment acceptance
+
+Freeze eight new source-disjoint licensed/public-domain videos, 124
+source-grounded positives, five absent-concept diagnostics, intervals,
+difficulties, production config and evaluator at SHA-256
+`d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196`.
+Run the unchanged upload/ingest/Whisper/CLIP/FAISS/BM25/uncapped-RRF60 paths
+once. Interval Recall@1/3/5 is 45.2/66.1/71.0% overall, Speech/Visual/Smart
+R@5 is 81.8/63.6/68.0%, and three videos fall below the frozen 60%
+catastrophic threshold. The 40-minute English lecture is classified as Welsh
+by Whisper tiny and reaches only 50.0% R@5. Post-run inspection also exposes
+incomplete alternate intervals for repeated scenes and no independent human
+annotation sign-off. Do not alter labels, tune retrieval or claim 71% verified
+user success. Choose **Decision C — not ready for deployment**. Keep
+`v1.0.0-rc1`; do not create `v1.0.0` or a GitHub Release. Correct the Docker
+dependency declaration, but note that the local Docker daemon was unavailable
+for a build. Local/YouTube flows and software tests pass; search reliability
+and benchmark quality remain release blockers.
+
 ## 046 - Keep OCR evidence out of production after recognition and retrieval failure
 
 Evaluate exactly two local/free CPU candidates on the existing five-second, 480-pixel JPEG contract. Select RapidOCR 3.9.2 with ONNX Runtime 1.30 on four development sources, then freeze four source-disjoint validation videos, 22 visible-text events, queries and audit frames at SHA-256 `a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14` before validation inference.

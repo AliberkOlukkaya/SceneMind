@@ -1,32 +1,21 @@
 # SceneMind
 
-SceneMind is a local-first multimodal video search engine that finds relevant moments in long
-videos from natural-language queries.
+SceneMind is a local-first multimodal video search engine for finding possible moments in long
+videos from natural-language queries. It is an engineering release candidate, **not a deployed
+v1.0.0 product**: final deployment acceptance found substantial retrieval failures.
 
 Upload a video or import a supported public video URL, build local visual and speech indexes, search for what appears or what is said,
-then click a ranked result to jump directly to its timestamp. SceneMind v1.0 RC uses pretrained
-models for inference; it does not train CLIP or Whisper and does not require a paid API.
+then click a ranked result to jump directly to its timestamp. It uses pretrained models for
+inference; it does not train CLIP or Whisper and does not require a paid API.
 
-An evaluation-gated **Ask Video** path can produce transcript-grounded answers with clickable
-timestamp citations through a configured OpenAI provider. It is disabled by default: Final Core
-Acceptance reached 100% retrieval, grounding, citation precision, hard-negative abstention and
-scope rejection, but only 83.33% answer correctness and core user success. Find Moments remains
-fully local.
+**Ask Video**, OCR, AUTO routing and alternative fusion/model branches are research artifacts,
+not shipped search features. Find Moments remains fully local. See
+[research and rejected experiments](#research-and-rejected-experiments).
 
-A later source-disjoint semantic/hierarchical experiment improved evidence completeness but reduced
-answer correctness to 63.64% and failed on a 44-minute talk. That branch was rejected and remains
-isolated from the product; Ask Video still uses no semantic index and stays disabled.
-
-A subsequent persistent video-memory experiment reached 90.91% relevant-section R@3, but only
-84.85% evidence completeness and 57.58% Core User Success. Its extractive summaries were fully
-source-traceable and never used as evidence. Decision C rejected the branch after a 22-minute
-source fell to 27.27%; no production path changed.
-
-OCR Evidence V1 also remains evaluation-only. On four source-disjoint videos, the existing five-second frames retained 95.45% of reviewed text events and RapidOCR detected 90.48% of visible targets, but audited character accuracy was 84.84%, end-to-end Recall@5 was 63.64%, and CPU p95 was 2.304 seconds/frame. OCR was not connected to ingestion, Find Moments or Ask Video. See [the measured OCR report](ml/evaluation/OCR_EVIDENCE_V1_RESULTS.md).
-
-> **Release status:** `1.0.0-rc1` portfolio release candidate. The product is suitable for local
-> demonstration and engineering review. It is not presented as a universal video-understanding
-> system or a public multi-tenant service.
+> **Release status:** `v1.0.0-rc1` remains the latest tag. Final deployment acceptance chose
+> **Decision C — not ready for deployment**. Eight new videos and 124 frozen positives produced
+> 45.2/66.1/71.0% interval Recall@1/3/5, including three catastrophic video failures. The
+> annotations also need independent human review. No `v1.0.0` tag or hosted deployment exists.
 
 ## Demo and screenshots
 
@@ -36,6 +25,8 @@ The screenshot is the real application running against generated red/blue fixtur
 demonstrates the interface and click-to-seek workflow, not real-world search accuracy.
 [Mobile view](docs/images/workspace-mobile.png).
 
+Hosted deployment: **not available** while release gates remain unmet.
+
 ## What it does
 
 1. Streams an upload or supported direct/YouTube URL into bounded local storage and validates its size, duration and video stream.
@@ -43,13 +34,7 @@ demonstrates the interface and click-to-seek workflow, not real-world search acc
 3. Optionally transcribes speech with Whisper and builds a CLIP/FAISS visual index.
 4. Searches with one of three explicit product modes.
 5. Returns possible timestamped moments; clicking a result seeks the video player.
-6. When explicitly enabled, retrieves bounded transcript evidence before asking an answer provider
-   and resolves cited evidence IDs to trusted timestamps.
-
-Ask Video's candidate V1 scope is deliberately narrow: facts, definitions, direct explanations and
-localized summaries from spoken transcript evidence. Explicit list/count aggregation, temporal
-ordering, long-range synthesis, visual-only and OCR-dependent questions are rejected before the
-provider. The final acceptance failure means this capability is documented but not enabled.
+6. Uses conservative result wording because ranking cannot certify that a match exists.
 
 Processing states come from the real pipeline: waiting, frame extraction, transcription, visual
 indexing, ready or failed. SceneMind does not fabricate percentage progress.
@@ -93,9 +78,8 @@ flowchart TD
 The detailed data flow, failure behavior and resource boundaries are in
 [ARCHITECTURE.md](ARCHITECTURE.md).
 
-Ask Video sends only the question and selected transcript evidence to the configured provider.
-See [Transcript-grounded Video Q&A](docs/GROUNDED_VIDEO_QA.md) for its privacy boundary,
-configuration, abstention behavior and evaluation status.
+Experimental Ask Video is disabled. Its independent privacy and failure analysis is in
+[Transcript-grounded Video Q&A](docs/GROUNDED_VIDEO_QA.md).
 
 ## AI and retrieval components
 
@@ -128,6 +112,25 @@ SceneMind uses source-disjoint media, frozen query manifests, development/holdou
 query-level failure review. Reported figures describe their named datasets; they are not general
 accuracy claims.
 
+The **one frozen deployment-acceptance diagnostic** (manifest SHA-256
+`d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196`)
+used eight new videos and 124 positive queries. These are interval-scored
+retrieval results, not independently verified user-success rates; repeated
+visual scenes were incompletely annotated and there was no independent human
+sign-off. See the [full final report](ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_RESULTS.md).
+
+| Mode | R@1 | R@3 | R@5 | MRR@5 |
+| --- | ---: | ---: | ---: | ---: |
+| Spoken Content (44) | 68.2% | 81.8% | 81.8% | 74.2% |
+| Visual Content (55) | 30.9% | 56.4% | 63.6% | 44.1% |
+| Smart Search (25) | 36.0% | 60.0% | 68.0% | 47.1% |
+| **Overall (124)** | **45.2%** | **66.1%** | **71.0%** | **55.4%** |
+
+The 40.38-minute lecture reached only 50.0% R@5; Whisper tiny misidentified
+its English speech as Welsh. The studio talk and aikido video also fell below
+the predeclared catastrophic threshold of 60% R@5. These shortcomings, along
+with annotation quality, block the final release.
+
 | Evaluation | Verified result | Interpretation |
 | --- | --- | --- |
 | Natural Video V2 | Raw held-out Visual R@5 **85.7%**, Speech R@5 **80.0%**, Hybrid R@5 **77.8%** | Useful diagnostic coverage on a small three-video held-out split; nearest-neighbor Visual still accepted every negative. |
@@ -140,7 +143,7 @@ See [Final Acceptance V2](ml/evaluation/FINAL_ENGLISH_ACCEPTANCE_V2_RESULTS.md),
 [long-video measurements](ml/evaluation/LONG_VIDEO_INGEST_RESULTS.md), and the
 [evaluation directory](ml/evaluation/).
 
-## Experiments we rejected
+## Research and rejected experiments
 
 Failed experiments remain tracked because knowing what *not* to ship is part of production ML
 engineering.
@@ -154,6 +157,13 @@ engineering.
 | Character n-gram AUTO router | Improve automatic mode selection | 60.0% human-grounded test accuracy; Visual/Speech recall 50/40% | Rejected; AUTO removed from UI |
 | Calibrated raw-score fusion | Distinguish strong evidence from weak cross-modal consensus | Both modality calibrators lost source-disjoint AUC and Brier versus rank-only | Stopped before fusion or protected holdout |
 
+Evidence-preserving fusion improved some held-out ranks but missed its quality
+gates; Grounded Q&A, semantic/hierarchical Q&A retrieval and video memory failed
+answer-utility gates; [OCR evidence](ml/evaluation/OCR_EVIDENCE_V1_RESULTS.md)
+failed character-accuracy and retrieval gates. These outcomes remain separate
+from the production Find Moments metrics. SceneMind does not promote an
+experiment when a frozen validation gate fails.
+
 ## Limitations
 
 - English-first. Turkish and multilingual research did not pass product gates.
@@ -161,6 +171,8 @@ engineering.
 - Five-second visual sampling can miss brief events and small objects.
 - Hybrid RRF60 can over-reward incidental agreement and displace strong single-modality evidence.
 - Whisper tiny can mistranscribe, while BM25 misses paraphrases absent from the transcript.
+- Final acceptance found English misclassified as Welsh in a 40-minute lecture,
+  with only 50.0% frozen interval R@5 for that source.
 - SceneMind has no production OCR, action understanding, facial identity recognition or Video RAG. The isolated OCR evaluation failed its promotion gates.
 - A 30–60 minute video can take several minutes to process on CPU; the measured worker peak was
   about 3.02 GB in the 45-minute stress run.
@@ -218,13 +230,14 @@ the same repository root:
 ```
 
 The API and worker must share configuration, database, data directory and model cache. See
-[long-video operations](docs/LONG_VIDEO_SUPPORT.md). Linux backend and disposable PostgreSQL
-validation exist through `scripts/validate_containers.py`. The provided Docker/Compose path is a
-backend validation foundation; its base image does not include the full ML stack or frontend.
+[deployment requirements](docs/DEPLOYMENT.md) and
+[long-video operations](docs/LONG_VIDEO_SUPPORT.md). The Docker image now declares Speech and
+Visual dependencies but could not be built in the final audit because the local Docker daemon was
+unavailable; Compose does not include the separate Next.js frontend.
 
 ## Configuration
 
-Copy `.env.example` to `.env` and `frontend/.env.example` to `frontend/.env.local` only when you
+Copy `.env.example` to ignored `.env.local` and `frontend/.env.example` to `frontend/.env.local` only when you
 need overrides. Important defaults:
 
 | Variable | Default | Purpose |
@@ -288,10 +301,12 @@ portfolio release candidate.
 
 ## Roadmap
 
-The v1.0 RC scope is complete: local ingestion, Visual/Speech/Smart Search, timestamp navigation,
-durable processing, conservative result UX and reproducible evaluation. Future work may revisit
-multimodal ranking, OCR, temporal/action understanding, Video RAG and stronger deployment only
-with new data and frozen gates. These are future possibilities, not current product claims.
+The search-core architecture is frozen for this acceptance. Decision C requires
+new development sources and a new independently reviewed holdout before another
+deployment claim. This final set must not become tuning data. Immediate blockers
+are long-video ASR language reliability, visual/repeated-moment retrieval and
+annotation quality. OCR, Q&A and further model features are not part of a
+v1.0.0 release.
 
 For a recruiter-oriented overview see the [portfolio case study](docs/PORTFOLIO_CASE_STUDY.md).
 For implementation decisions see [DECISIONS.md](DECISIONS.md).

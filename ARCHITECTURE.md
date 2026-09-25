@@ -1,5 +1,17 @@
 # SceneMind architecture
 
+Final deployment acceptance (2026-09-25) did not promote a new search path.
+Smart Search remains uncapped RRF60 Hybrid, Spoken Content remains BM25 over
+Whisper segments, and Visual Content remains CLIP/FAISS over five-second frames.
+The eight-source frozen interval diagnostic found 71.0% R@5 overall,
+63.6% Visual R@5 and 50.0% R@5 on a 40-minute lecture whose English audio was
+misclassified as Welsh. Repeated-scene interval annotations also lacked
+independent human sign-off. Decision C blocks public release; see
+`ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_RESULTS.md`. For the concrete
+API/worker/PostgreSQL/persistent-storage topology and resource assumptions,
+see `docs/DEPLOYMENT.md`. The Docker image declares Speech and Visual extras,
+while Next.js remains a separate service.
+
 SceneMind is a single-operator, local-first video search application. Its production search
 core is frozen at five-second frame sampling, CLIP/FAISS Visual retrieval, Whisper/BM25 Speech
 retrieval and uncapped RRF60 Hybrid ranking.

@@ -14,7 +14,8 @@ Content, and receives ranked moments. Clicking a result seeks the same video to 
 
 The interface says “Most relevant moments” and “Possible matches” because retrieval produces
 candidates, not verified answers. The v1.0 release candidate is English-first and intended for
-local use and portfolio demonstration.
+local engineering review. Final deployment acceptance chose Decision C, so no v1.0.0 release or
+hosted service is claimed.
 
 ## 3. Architecture
 
@@ -55,14 +56,27 @@ manifests then bound queries to reviewed time intervals. Later studies separated
 development, validation and protected holdout sources by checksum. Queries and gates were frozen
 before retrieval where the protocol required it.
 
-Reports record Top-1/3/5, MRR, negative behavior, latency, memory and query-level failures. A
-benchmark hit counts only when a normal user would find the click useful. Regression tests preserve
+Reports record Top-1/3/5, MRR, negative behavior, latency, memory and query-level failures. Some
+earlier studies used human-click usefulness; the final deployment diagnostic uses frozen timestamp
+intervals, and incomplete annotation of repeated scenes limits its user-success interpretation.
+Regression tests preserve
 frozen manifests and production output parity. Experimental code stays under `ml/experiments`
 until independent evidence supports promotion.
 
 The 30:29 Final English Acceptance V2 video reached useful Top-1/3/5 of
 76.9%/76.9%/84.6%. That was useful but failed the predeclared 85% Top-3 and 90% Top-5 gates, so the
 result is reported as a failed acceptance rather than rounded into a success claim.
+
+The eight-video, 124-positive final deployment diagnostic was frozen at
+`d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196` before one
+real-model run. Frozen interval Recall@1/3/5 was **45.2/66.1/71.0%**, MRR@5 **55.4%**.
+Speech/Visual/Smart R@5 was **81.8/63.6/68.0%**. A 40.38-minute lecture reached only
+50.0% R@5 after Whisper tiny classified English as Welsh. Two more sources were below the
+predeclared catastrophic threshold of 60%. The source-video contact sheets and publisher
+captions were reviewed independently of SceneMind outputs, but there was no independent human
+annotator and some repeated visual moments lacked alternate intervals. No labels were changed
+after observation. This is an **interval diagnostic**, not a defensible claim of 71% verified
+user success. [Full result](../ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_RESULTS.md).
 
 ## 6. What failed
 
@@ -81,6 +95,8 @@ Several plausible improvements did not transfer:
   Top-5. It was not promoted.
 - Raw-score calibration looked useful inside calibration sources but lost both AUC and Brier to
   rank-only references on new sources. The experiment stopped before constructing fusion.
+- Grounded Q&A, semantic/hierarchical retrieval and OCR each failed their separate frozen
+  utility or quality gates. They remain disabled and are not included in production Find Moments.
 
 The recurring lesson was that a larger model or denser candidate pool does not repair sampling,
 ranking and dataset mismatch automatically.
@@ -92,6 +108,12 @@ between five-second samples. Whisper tiny can mistranscribe and BM25 can miss pa
 can over-reward incidental cross-modal agreement. General OCR, action understanding, identity
 recognition and Video RAG are outside the release. CPU processing takes minutes for long videos;
 public multi-user deployment and high availability are not implemented.
+
+The final long lecture took 616.7 seconds for upload/ingest, local ASR and visual indexing,
+reached 3,338 MiB peak single-process RSS and used 164 MiB persistent source/index space.
+A live public YouTube URL was acquired, indexed and searched again during release checks.
+The Docker dependency list was corrected, but the local Docker daemon was unavailable for an
+image build. [Deployment layout and measured resource context](DEPLOYMENT.md).
 
 ## 8. What I learned
 

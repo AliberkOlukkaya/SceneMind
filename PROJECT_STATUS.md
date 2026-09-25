@@ -1,5 +1,25 @@
 # Project status
 
+**Latest milestone — Final Deployment Acceptance V1: Decision C, not ready for deployment.**
+One checksum-frozen run on eight new licensed/public-domain sources and 124
+agent-reviewed source-grounded positives measured interval Recall@1/3/5 of
+45.2/66.1/71.0% and MRR@5 of 55.4%. Speech/Visual/Smart R@5 was
+81.8/63.6/68.0%. The 40.38-minute lecture reached only 50.0% R@5 after
+Whisper tiny classified English audio as Welsh; the studio talk and aikido
+source also fell below the predeclared 60% catastrophic threshold. No
+independent human annotation sign-off occurred, and a post-run audit found
+repeated visual moments missing alternate acceptable intervals. Labels and
+retrieval remain frozen; the set is not usable for tuning. See
+`ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_RESULTS.md` and manifest SHA-256
+`d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196`.
+The current version/tag remains `v1.0.0-rc1`; no final tag or hosted deployment
+was created. Full pytest/Ruff/frontend checks and 18 desktop/mobile Playwright
+tests passed. A live YouTube URL again acquired, indexed and searched. Docker
+Compose config passed, but the Docker daemon was unavailable for image build.
+The image declaration now includes Speech/Visual dependencies. Public release
+requires a genuinely new, independently human-reviewed acceptance set and
+reliability improvement developed without this observed holdout.
+
 Current milestone: **OCR Evidence V1 completed with Decision B — detection works, recognition/retrieval are insufficient**. Four development and four source-disjoint validation videos tested the unchanged five-second, 480-pixel JPEGs. Validation sampling coverage was 95.45% and conditional-visible detection recall was 90.48%, but frozen-label/audited character accuracy was 84.14%/84.84% and end-to-end Recall@1/3/5 was only 59.09%/63.64%/63.64%. CPU median/p95 was 521/2,304 ms per frame, peak RSS delta was 356.8 MiB, false text was 8.75%, and evidence growth was 2,906 bytes/source-minute. The RapidOCR experiment remains isolated; production Find Moments, Whisper, CLIP/RRF60, Q&A and Ask Video are unchanged. Multimodal Evidence Index V1 is not authorized. See `ml/evaluation/OCR_EVIDENCE_V1_RESULTS.md`.
 
 The source-disjoint validation manifest is frozen at SHA-256 `a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14`. One post-run human-label correction is disclosed separately and still misses the accuracy gate. This observed set is unavailable for tuning.
@@ -89,7 +109,7 @@ Final English Acceptance V2: a new source-disjoint CC BY-SA 4.0, real continuous
 
 English router generalization: 450 independently authored queries across 15 source scenarios are balanced 150/150/150 Visual/Speech/Hybrid and split by source into 270 train, 90 validation and 90 frozen test. The unchanged 54-parameter router reaches 50.00% accuracy, with 13.33% Speech and 36.67% Hybrid recall. Validation selects a character 3–5 gram TF-IDF linear classifier; with its validation-selected Hybrid fallback it reaches 95.56% accuracy and 100.00%/90.00%/96.67% route recall at 2.7706/3.3677 ms median/p95. The 731,122-byte experimental artifact uses about 289 KB model/vocabulary memory. Fallback lowers frozen accuracy from 97.78% to 95.56%. The passing second run is deterministic and all 30 protected acceptance queries were checked with no exact overlap. Decision E keeps production unchanged because source cards were not verified against real video evidence. See `ml/evaluation/ENGLISH_ROUTER_GENERALIZATION_RESULTS.md`.
 
-Latest executed checks: 281 backend tests passed with one opt-in skip and two upstream deprecation warnings. Repository Ruff, frontend ESLint, TypeScript and the production build passed. The previous release run's sixteen desktop/mobile Playwright flows passed with two opt-in real-model flows skipped; OCR Evidence V1 did not change frontend behavior.
+Prior OCR milestone checks: 281 backend tests passed with one opt-in skip and two upstream deprecation warnings. Repository Ruff, frontend ESLint, TypeScript and the production build passed. The previous release run's sixteen desktop/mobile Playwright flows passed with two opt-in real-model flows skipped; OCR Evidence V1 did not change frontend behavior.
 
 Limits: one host/operator, no tenant ownership/RBAC, distributed workers, high availability or public deployment validation. API query inference remains in-process without a worker deadline. Delivery is at-least-once. A crash before enqueue may leave an unqueued upload asset; never silently delete user media. Inline mode preserves V1 limitations unless durable mode is enabled. Containerized real ML inference remains unverified. Natural V2 is a small diagnostic set, not a population estimate; pretraining overlap is unknown and timestamp boundaries have no tolerance. OpenCV VFR duration is approximate. Calibration remains opt-in and transfers poorly across the measured domains. The Q&A evaluation used a configured OpenAI API provider; no training, production OCR, action recognition or multimodal Video RAG was added.
 

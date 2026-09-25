@@ -1,0 +1,2287 @@
+{
+  "manifest_sha256": "d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196",
+  "started_utc": "2026-09-25T11:07:23Z",
+  "completed_utc": "2026-09-25T11:19:49Z",
+  "summary": {
+    "overall": {
+      "n": 124,
+      "r1": 0.45161290322580644,
+      "r3": 0.6612903225806451,
+      "r5": 0.7096774193548387,
+      "mrr5": 0.5538978494623656
+    },
+    "mode:hybrid": {
+      "n": 25,
+      "r1": 0.36,
+      "r3": 0.6,
+      "r5": 0.68,
+      "mrr5": 0.4713333333333333
+    },
+    "mode:speech": {
+      "n": 44,
+      "r1": 0.6818181818181818,
+      "r3": 0.8181818181818182,
+      "r5": 0.8181818181818182,
+      "mrr5": 0.7424242424242423
+    },
+    "mode:visual": {
+      "n": 55,
+      "r1": 0.3090909090909091,
+      "r3": 0.5636363636363636,
+      "r5": 0.6363636363636364,
+      "mrr5": 0.4406060606060606
+    },
+    "difficulty:easy": {
+      "n": 21,
+      "r1": 0.47619047619047616,
+      "r3": 0.6190476190476191,
+      "r5": 0.7142857142857143,
+      "mrr5": 0.569047619047619
+    },
+    "difficulty:hard": {
+      "n": 42,
+      "r1": 0.4523809523809524,
+      "r3": 0.6666666666666666,
+      "r5": 0.7619047619047619,
+      "mrr5": 0.5650793650793651
+    },
+    "difficulty:medium": {
+      "n": 61,
+      "r1": 0.4426229508196721,
+      "r3": 0.6721311475409836,
+      "r5": 0.6721311475409836,
+      "mrr5": 0.5409836065573771
+    },
+    "video_id:aikido-demonstration": {
+      "n": 8,
+      "r1": 0.0,
+      "r3": 0.25,
+      "r5": 0.375,
+      "mrr5": 0.13541666666666666
+    },
+    "video_id:heritage-museum": {
+      "n": 8,
+      "r1": 0.5,
+      "r3": 0.75,
+      "r5": 0.875,
+      "mrr5": 0.65
+    },
+    "video_id:manchester-street": {
+      "n": 8,
+      "r1": 0.5,
+      "r3": 0.875,
+      "r5": 1.0,
+      "mrr5": 0.6979166666666666
+    },
+    "video_id:museum-accessibility": {
+      "n": 26,
+      "r1": 0.6538461538461539,
+      "r3": 0.8846153846153846,
+      "r5": 0.9615384615384616,
+      "mrr5": 0.7737179487179487
+    },
+    "video_id:openrefine-tutorial": {
+      "n": 26,
+      "r1": 0.5384615384615384,
+      "r3": 0.7692307692307693,
+      "r5": 0.7692307692307693,
+      "mrr5": 0.6346153846153846
+    },
+    "video_id:parliament-lecture": {
+      "n": 32,
+      "r1": 0.375,
+      "r3": 0.5,
+      "r5": 0.5,
+      "mrr5": 0.4322916666666667
+    },
+    "video_id:ppe-tutorial": {
+      "n": 8,
+      "r1": 0.5,
+      "r3": 0.625,
+      "r5": 0.75,
+      "mrr5": 0.5875
+    },
+    "video_id:social-media-talk": {
+      "n": 8,
+      "r1": 0.125,
+      "r3": 0.375,
+      "r5": 0.375,
+      "mrr5": 0.20833333333333331
+    }
+  },
+  "videos": {
+    "social-media-talk": {
+      "duration_seconds": 725.2245,
+      "ingest_seconds": 8.345461299999442,
+      "speech_seconds": null,
+      "visual_seconds": 22.213581300000442,
+      "frame_count": 145,
+      "transcript_segment_count": null,
+      "peak_process_tree_rss_bytes": 901709824,
+      "persistent_disk_bytes": 47631373
+    },
+    "openrefine-tutorial": {
+      "duration_seconds": 318.943625,
+      "ingest_seconds": 4.090200599999662,
+      "speech_seconds": 15.98395040000105,
+      "visual_seconds": 3.2836673999991035,
+      "frame_count": 64,
+      "transcript_segment_count": 46,
+      "peak_process_tree_rss_bytes": 1257762816,
+      "persistent_disk_bytes": 79103874
+    },
+    "ppe-tutorial": {
+      "duration_seconds": 255.12153333333333,
+      "ingest_seconds": 8.737002400001074,
+      "speech_seconds": null,
+      "visual_seconds": 2.7640167999998084,
+      "frame_count": 51,
+      "transcript_segment_count": null,
+      "peak_process_tree_rss_bytes": 1230381056,
+      "persistent_disk_bytes": 37350382
+    },
+    "manchester-street": {
+      "duration_seconds": 121.56,
+      "ingest_seconds": 1.955279799998607,
+      "speech_seconds": null,
+      "visual_seconds": 1.6993526000005659,
+      "frame_count": 25,
+      "transcript_segment_count": null,
+      "peak_process_tree_rss_bytes": 1170579456,
+      "persistent_disk_bytes": 9314795
+    },
+    "aikido-demonstration": {
+      "duration_seconds": 273.77377377377377,
+      "ingest_seconds": 8.524558200000683,
+      "speech_seconds": null,
+      "visual_seconds": 4.873385400000188,
+      "frame_count": 55,
+      "transcript_segment_count": null,
+      "peak_process_tree_rss_bytes": 1251475456,
+      "persistent_disk_bytes": 73944572
+    },
+    "museum-accessibility": {
+      "duration_seconds": 183.7252083333333,
+      "ingest_seconds": 9.923549099999946,
+      "speech_seconds": 12.16579929999898,
+      "visual_seconds": 3.273557599999549,
+      "frame_count": 37,
+      "transcript_segment_count": 29,
+      "peak_process_tree_rss_bytes": 1431818240,
+      "persistent_disk_bytes": 29744703
+    },
+    "heritage-museum": {
+      "duration_seconds": 204.4042,
+      "ingest_seconds": 13.675150699998994,
+      "speech_seconds": null,
+      "visual_seconds": 3.1447529999986727,
+      "frame_count": 41,
+      "transcript_segment_count": null,
+      "peak_process_tree_rss_bytes": 1273384960,
+      "persistent_disk_bytes": 34865204
+    },
+    "parliament-lecture": {
+      "duration_seconds": 2422.76,
+      "ingest_seconds": 35.793490300000485,
+      "speech_seconds": 551.5437967999987,
+      "visual_seconds": 29.3891679999997,
+      "frame_count": 485,
+      "transcript_segment_count": 442,
+      "peak_process_tree_rss_bytes": 3500515328,
+      "persistent_disk_bytes": 171914439
+    }
+  },
+  "queries": [
+    {
+      "id": "F001",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 23.52679999967222,
+      "timestamps": [
+        1321.54,
+        787.42,
+        1198.34,
+        645.18,
+        1730.26
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F002",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 28.319200000623823,
+      "timestamps": [
+        769.1,
+        763.5,
+        833.1,
+        782.94,
+        1796.66
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F003",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 25.50870000050054,
+      "timestamps": [
+        2145.05,
+        629.7,
+        1776.9,
+        859.26,
+        1547.38
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F004",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 24.21440000034636,
+      "timestamps": [
+        769.1,
+        684.5,
+        1248.9,
+        778.22,
+        1026.38
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F005",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 21.32320000055188,
+      "timestamps": [
+        684.5,
+        1248.9,
+        1292.74,
+        2351.21,
+        2093.45
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F006",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 21.483499998794287,
+      "timestamps": [
+        1031.5,
+        1026.38,
+        958.62,
+        2291.53,
+        1989.37
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F007",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 11.322899999868241,
+      "timestamps": [
+        968.38,
+        963.26,
+        1026.38,
+        1522.1,
+        2344.73
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F008",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 15.130499999941094,
+      "timestamps": [
+        1893.38,
+        1038.46,
+        1031.5,
+        958.62,
+        2032.73
+      ],
+      "selected_route": "speech",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F009",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 22.17230000132986,
+      "timestamps": [
+        650.22,
+        664.34,
+        1038.46,
+        1499.22,
+        2156.73
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F010",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 18.7339999993128,
+      "timestamps": [
+        743.9,
+        963.26,
+        841.02,
+        778.22,
+        833.1
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F011",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 18.674199998713448,
+      "timestamps": [
+        847.02,
+        818.38,
+        1038.46,
+        1031.5,
+        1730.26
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F012",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.62300000054529,
+      "timestamps": [
+        918.86,
+        913.82,
+        909.1,
+        1221.3,
+        1248.9
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F013",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.15849999972852,
+      "timestamps": [
+        1006.06,
+        1694.26,
+        657.94,
+        1356.58,
+        2037.37
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F014",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 15.937800000756397,
+      "timestamps": [
+        1085.1,
+        1248.9,
+        1080.22,
+        1119.82,
+        1144.06
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F015",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 21.12420000048587,
+      "timestamps": [
+        1269.94,
+        1213.22,
+        1187.3,
+        1321.54,
+        2117.05
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F016",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.906500000113738,
+      "timestamps": [
+        1264.74,
+        1258.66,
+        934.3,
+        1213.22,
+        2250.81
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F017",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 15.202100001260987,
+      "timestamps": [
+        1038.46,
+        1450.66,
+        1031.5,
+        1396.98,
+        958.62
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F018",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.706400000766735,
+      "timestamps": [
+        1535.06,
+        1829.22,
+        1038.46,
+        1031.5,
+        958.62
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F019",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 18.98590000018885,
+      "timestamps": [
+        1822.98,
+        1763.14,
+        1757.14,
+        888.94,
+        679.46
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F020",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 19.192699999621254,
+      "timestamps": [
+        1905.86,
+        1899.3,
+        1013.02,
+        1763.14,
+        1744.98
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F021",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 20.491100000072038,
+      "timestamps": [
+        2072.89,
+        2117.05,
+        1038.46,
+        1031.5,
+        1784.02
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F022",
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 22.15809999870544,
+      "timestamps": [
+        2263.53,
+        2250.81,
+        749.1,
+        2269.05,
+        2032.73
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F023",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.091900000479654,
+      "timestamps": [
+        0.18,
+        147.52,
+        102.99,
+        10.02,
+        88.83
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F024",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.18499999998312,
+      "timestamps": [
+        28.82,
+        0.18,
+        308.06,
+        19.62,
+        24.42
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F025",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 7.349899999098852,
+      "timestamps": [
+        313.02,
+        42.1,
+        231.26,
+        173.2,
+        257.18
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F026",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 7.178899999416899,
+      "timestamps": [
+        53.22,
+        0.18,
+        147.52,
+        15.06,
+        88.83
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F027",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 6.4378999995824415,
+      "timestamps": [
+        76.19,
+        147.52,
+        128.59,
+        82.11,
+        94.75
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F028",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 3,
+      "latency_ms": 5.169600000954233,
+      "timestamps": [
+        159.6,
+        0.18,
+        116.59,
+        42.1,
+        238.94
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F029",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 6.880700000692741,
+      "timestamps": [
+        159.6,
+        154.32,
+        276.3,
+        199.2,
+        42.1
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F030",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 6.088800000725314,
+      "timestamps": [
+        184.88,
+        179.76,
+        238.94,
+        10.02,
+        191.84
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F031",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 2,
+      "latency_ms": 5.883400001039263,
+      "timestamps": [
+        231.26,
+        205.12,
+        283.84,
+        308.06,
+        313.02
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F032",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 4.826399999728892,
+      "timestamps": [
+        238.94,
+        251.18,
+        245.02
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F033",
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 11.039299999538343,
+      "timestamps": [
+        276.3,
+        290.08,
+        231.26,
+        283.84,
+        10.02
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F034",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 6.1397999998007435,
+      "timestamps": [
+        12.75,
+        169.55,
+        6.75,
+        165.55,
+        16.75
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F035",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 6.039500000042608,
+      "timestamps": [
+        25.75,
+        38.55,
+        34.55,
+        136.55,
+        52.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F036",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 4.940399998304201,
+      "timestamps": [
+        45.55,
+        85.55,
+        61.55,
+        6.75,
+        67.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F037",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.280400000629015,
+      "timestamps": [
+        67.55,
+        61.55,
+        74.55,
+        132.55,
+        85.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F038",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 4.747200000565499,
+      "timestamps": [
+        85.55,
+        99.55,
+        90.55,
+        61.55,
+        45.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F039",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.365200000596815,
+      "timestamps": [
+        106.55,
+        112.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F040",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.446599998322199,
+      "timestamps": [
+        118.55,
+        165.55,
+        150.55,
+        144.55,
+        94.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F041",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 6.304399999862653,
+      "timestamps": [
+        125.55,
+        58.55,
+        165.55,
+        90.55,
+        106.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F042",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 4.352100000687642,
+      "timestamps": [
+        136.55,
+        81.55,
+        58.55,
+        165.55,
+        90.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F043",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.000600000130362,
+      "timestamps": [
+        158.55,
+        150.55,
+        67.55,
+        112.55,
+        132.55
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F044",
+      "video_id": "museum-accessibility",
+      "mode": "speech",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 5.522299999938696,
+      "timestamps": [
+        165.55,
+        144.55,
+        94.55,
+        6.75,
+        0.75
+      ],
+      "selected_route": "speech"
+    },
+    {
+      "id": "F045",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 249.44850000065344,
+      "timestamps": [
+        675.689,
+        40.053,
+        435.449,
+        55.068,
+        60.074
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "ANNOTATION_ISSUE"
+    },
+    {
+      "id": "F046",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 30.270600000221748,
+      "timestamps": [
+        720.734,
+        710.723,
+        715.729,
+        665.678,
+        15.029
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "VISUAL_SEMANTIC_MISS"
+    },
+    {
+      "id": "F047",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 27.20740000040678,
+      "timestamps": [
+        710.723,
+        720.734,
+        70.083,
+        715.729,
+        90.103
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F048",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 22.642399999313056,
+      "timestamps": [
+        390.403,
+        505.518,
+        660.674,
+        420.434,
+        665.678
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F049",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 21.997099998770864,
+      "timestamps": [
+        710.723,
+        715.729,
+        705.719,
+        395.409,
+        685.699
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "ANNOTATION_ISSUE"
+    },
+    {
+      "id": "F050",
+      "video_id": "openrefine-tutorial",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 2,
+      "latency_ms": 32.88719999909517,
+      "timestamps": [
+        25.025,
+        20.02,
+        15.015,
+        10.01,
+        5.005
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F051",
+      "video_id": "openrefine-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 32.54509999896982,
+      "timestamps": [
+        50.05,
+        45.045,
+        55.055,
+        225.225,
+        195.195
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F052",
+      "video_id": "openrefine-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 26.63810000012745,
+      "timestamps": [
+        5.005,
+        0.0,
+        20.02,
+        15.015,
+        10.01
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "VISUAL_SEMANTIC_MISS"
+    },
+    {
+      "id": "F053",
+      "video_id": "openrefine-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 19.94639999975334,
+      "timestamps": [
+        160.16,
+        175.175,
+        180.18,
+        165.165,
+        275.275
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "VISUAL_SEMANTIC_MISS"
+    },
+    {
+      "id": "F054",
+      "video_id": "openrefine-tutorial",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 32.78159999899799,
+      "timestamps": [
+        245.245,
+        55.055,
+        25.025,
+        20.02,
+        15.015
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "SMALL_OBJECT"
+    },
+    {
+      "id": "F055",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 29.370900001595146,
+      "timestamps": [
+        30.044,
+        220.234,
+        10.024,
+        235.249,
+        50.064
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F056",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 5,
+      "latency_ms": 18.13430000038352,
+      "timestamps": [
+        220.234,
+        235.249,
+        225.239,
+        230.244,
+        70.084
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F057",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 27.017500000511063,
+      "timestamps": [
+        130.144,
+        135.149,
+        125.139,
+        150.164,
+        140.154
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F058",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 19.649899999421905,
+      "timestamps": [
+        40.054,
+        200.214,
+        100.114,
+        10.024,
+        160.174
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F059",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 31.380099999296363,
+      "timestamps": [
+        220.234,
+        235.249,
+        225.239,
+        10.024,
+        215.229
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F060",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 110.4282999986026,
+      "timestamps": [
+        5.0,
+        55.0,
+        20.0,
+        30.0,
+        110.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F061",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 20.833099999435944,
+      "timestamps": [
+        15.0,
+        5.0,
+        90.0,
+        55.0,
+        45.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F062",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 19.746199999644887,
+      "timestamps": [
+        45.0,
+        115.0,
+        95.0,
+        105.0,
+        55.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F063",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 27.814900000521448,
+      "timestamps": [
+        115.0,
+        80.0,
+        110.0,
+        10.0,
+        85.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F064",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 3,
+      "latency_ms": 24.882699999579927,
+      "timestamps": [
+        55.0,
+        5.0,
+        110.0,
+        115.0,
+        105.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F065",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 4,
+      "latency_ms": 36.08960000019579,
+      "timestamps": [
+        195.198,
+        180.183,
+        205.208,
+        5.008,
+        220.223
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F066",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 27.984500000457047,
+      "timestamps": [
+        130.133,
+        190.193,
+        35.038,
+        255.258,
+        220.223
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F067",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 27.305100000376115,
+      "timestamps": [
+        195.198,
+        180.183,
+        35.038,
+        230.233,
+        155.158
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F068",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 19.6538000000146,
+      "timestamps": [
+        180.183,
+        30.033,
+        90.093,
+        150.153,
+        55.058
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F069",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 2,
+      "latency_ms": 26.172400001087226,
+      "timestamps": [
+        255.258,
+        220.223,
+        130.133,
+        100.103,
+        225.228
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F070",
+      "video_id": "museum-accessibility",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 2,
+      "latency_ms": 31.406000000060885,
+      "timestamps": [
+        170.184,
+        45.059,
+        165.179,
+        160.174,
+        175.189
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F071",
+      "video_id": "museum-accessibility",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 23.34329999939655,
+      "timestamps": [
+        95.109,
+        55.069,
+        80.094,
+        50.064,
+        45.059
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F072",
+      "video_id": "museum-accessibility",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 23.586000001159846,
+      "timestamps": [
+        85.099,
+        80.094,
+        155.169,
+        45.059,
+        115.129
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F073",
+      "video_id": "museum-accessibility",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.068000000013853,
+      "timestamps": [
+        125.139,
+        10.024,
+        120.134,
+        170.184,
+        165.179
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F074",
+      "video_id": "museum-accessibility",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 23.210900000776746,
+      "timestamps": [
+        135.149,
+        100.114,
+        95.109,
+        55.069,
+        50.064
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F075",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 30.03539999917848,
+      "timestamps": [
+        115.122,
+        200.207,
+        25.032,
+        55.062,
+        35.042
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "VISUAL_SEMANTIC_MISS"
+    },
+    {
+      "id": "F076",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 22.613900000578724,
+      "timestamps": [
+        15.022,
+        115.122,
+        170.177,
+        180.187,
+        10.017
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F077",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 17.270800000915187,
+      "timestamps": [
+        185.192,
+        70.077,
+        150.157,
+        5.012,
+        80.087
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F078",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 24.137200000041048,
+      "timestamps": [
+        115.122,
+        40.047,
+        35.042,
+        195.202,
+        30.037
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F079",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 25.88370000012219,
+      "timestamps": [
+        175.182,
+        125.132,
+        45.052,
+        165.172,
+        180.187
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F080",
+      "video_id": "parliament-lecture",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 31.25220000038098,
+      "timestamps": [
+        2415.094,
+        2260.094,
+        1015.094,
+        1565.094,
+        1070.094
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "ANNOTATION_ISSUE"
+    },
+    {
+      "id": "F081",
+      "video_id": "parliament-lecture",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 22.53509999900416,
+      "timestamps": [
+        1645.094,
+        155.054,
+        2260.094,
+        1350.094,
+        1490.094
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "SMALL_OBJECT"
+    },
+    {
+      "id": "F082",
+      "video_id": "parliament-lecture",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 25.53790000092704,
+      "timestamps": [
+        1320.094,
+        1015.094,
+        1565.094,
+        75.054,
+        1170.094
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F083",
+      "video_id": "parliament-lecture",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 29.17879999949946,
+      "timestamps": [
+        910.094,
+        1250.094,
+        1420.094,
+        1550.094,
+        1585.094
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "ANNOTATION_ISSUE"
+    },
+    {
+      "id": "F084",
+      "video_id": "parliament-lecture",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 2,
+      "latency_ms": 26.115199998457683,
+      "timestamps": [
+        1220.094,
+        2410.094,
+        1915.094,
+        985.094,
+        1345.094
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F085",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "easy",
+      "first_relevant_rank": 1,
+      "latency_ms": 30.414400000154274,
+      "timestamps": [
+        0.18,
+        15.06,
+        88.83,
+        28.82,
+        108.83
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F086",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 43.60059999999066,
+      "timestamps": [
+        53.22,
+        48.1,
+        173.2,
+        159.6,
+        257.18
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F087",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 40.81749999932072,
+      "timestamps": [
+        173.2,
+        42.1,
+        53.22,
+        66.86,
+        265.265
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F088",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 34.48009999920032,
+      "timestamps": [
+        173.2,
+        199.2,
+        184.88,
+        257.18,
+        94.75
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F089",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 27.45409999988624,
+      "timestamps": [
+        88.83,
+        184.88,
+        159.6,
+        10.02,
+        19.62
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F090",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 37.96409999995376,
+      "timestamps": [
+        257.18,
+        173.2,
+        28.82,
+        179.76,
+        238.94
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "SMALL_OBJECT"
+    },
+    {
+      "id": "F091",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 33.568900000318536,
+      "timestamps": [
+        167.44,
+        94.75,
+        159.6,
+        108.83,
+        116.59
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F092",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 39.15670000060345,
+      "timestamps": [
+        264.38,
+        0.18,
+        15.06,
+        154.32,
+        159.6
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "HYBRID_RANKING_DISPLACEMENT"
+    },
+    {
+      "id": "F093",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 45.50369999924442,
+      "timestamps": [
+        238.94,
+        251.18,
+        245.245,
+        85.085,
+        60.06
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F094",
+      "video_id": "openrefine-tutorial",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 3,
+      "latency_ms": 34.71780000108993,
+      "timestamps": [
+        264.38,
+        257.18,
+        276.3,
+        173.2,
+        245.245
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F095",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "easy",
+      "first_relevant_rank": null,
+      "latency_ms": 25.461700000960263,
+      "timestamps": [
+        169.55,
+        165.55,
+        45.55,
+        38.55,
+        94.55
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "ANNOTATION_ISSUE"
+    },
+    {
+      "id": "F096",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 31.38790000048175,
+      "timestamps": [
+        45.55,
+        85.55,
+        25.75,
+        61.55,
+        67.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F097",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 30.247500000768923,
+      "timestamps": [
+        85.55,
+        81.55,
+        67.55,
+        94.55,
+        45.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F098",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 5,
+      "latency_ms": 31.934200000250712,
+      "timestamps": [
+        38.55,
+        94.55,
+        99.55,
+        74.55,
+        85.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F099",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 2,
+      "latency_ms": 31.01740000056452,
+      "timestamps": [
+        61.55,
+        99.55,
+        81.55,
+        85.55,
+        67.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F100",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 34.309599999687634,
+      "timestamps": [
+        112.55,
+        81.55,
+        132.55,
+        67.55,
+        45.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F101",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 24.126199999955134,
+      "timestamps": [
+        118.55,
+        112.55,
+        125.139,
+        100.114,
+        50.064
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F102",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 3,
+      "latency_ms": 26.898399999481626,
+      "timestamps": [
+        94.55,
+        58.55,
+        132.55,
+        38.55,
+        74.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F103",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 4,
+      "latency_ms": 26.363499999206397,
+      "timestamps": [
+        158.55,
+        58.55,
+        0.75,
+        150.55,
+        55.069
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F104",
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 32.15749999981199,
+      "timestamps": [
+        169.55,
+        45.55,
+        165.55,
+        38.55,
+        158.55
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F105",
+      "video_id": "parliament-lecture",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 53.34949999996752,
+      "timestamps": [
+        1013.02,
+        985.18,
+        924.46,
+        1579.78,
+        5.014
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F106",
+      "video_id": "parliament-lecture",
+      "mode": "hybrid",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 55.64000000049418,
+      "timestamps": [
+        2327.29,
+        1643.46,
+        836.86,
+        684.5,
+        805.02
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F107",
+      "video_id": "parliament-lecture",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": 2,
+      "latency_ms": 47.44389999905252,
+      "timestamps": [
+        1331.7,
+        753.26,
+        1893.38,
+        1351.7,
+        1850.5
+      ],
+      "selected_route": "hybrid"
+    },
+    {
+      "id": "F108",
+      "video_id": "parliament-lecture",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 67.67519999993965,
+      "timestamps": [
+        1013.02,
+        1547.38,
+        1643.46,
+        1707.3,
+        1038.46
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F109",
+      "video_id": "parliament-lecture",
+      "mode": "hybrid",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 59.68399999983376,
+      "timestamps": [
+        1321.54,
+        909.1,
+        1248.9,
+        2327.29,
+        1643.46
+      ],
+      "selected_route": "hybrid",
+      "diagnostic_failure_cause": "TRANSCRIPTION_ERROR"
+    },
+    {
+      "id": "F110",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 38.303999999698135,
+      "timestamps": [
+        30.044,
+        35.049,
+        90.103,
+        85.099,
+        80.094
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F111",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 3,
+      "latency_ms": 27.941599999394384,
+      "timestamps": [
+        180.194,
+        145.159,
+        140.154,
+        135.148,
+        205.219
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F112",
+      "video_id": "social-media-talk",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 41.38109999985318,
+      "timestamps": [
+        625.639,
+        630.643,
+        655.669,
+        145.159,
+        645.659
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F113",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 27.616499999567168,
+      "timestamps": [
+        220.234,
+        215.229,
+        235.249,
+        135.149,
+        225.239
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F114",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 29.0672999999515,
+      "timestamps": [
+        125.139,
+        220.234,
+        235.249,
+        155.169,
+        225.239
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F115",
+      "video_id": "ppe-tutorial",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 1,
+      "latency_ms": 20.28529999915918,
+      "timestamps": [
+        250.264,
+        25.039,
+        235.249,
+        190.204,
+        220.234
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F116",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 4,
+      "latency_ms": 21.29369999966002,
+      "timestamps": [
+        90.0,
+        15.0,
+        55.0,
+        25.0,
+        115.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F117",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 21.81849999942642,
+      "timestamps": [
+        70.0,
+        85.0,
+        80.0,
+        65.0,
+        40.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F118",
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 2,
+      "latency_ms": 24.65240000128688,
+      "timestamps": [
+        45.0,
+        95.0,
+        50.0,
+        105.0,
+        100.0
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F119",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 27.416099999754806,
+      "timestamps": [
+        195.198,
+        205.208,
+        210.213,
+        140.143,
+        215.218
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F120",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": null,
+      "latency_ms": 19.95360000000801,
+      "timestamps": [
+        230.233,
+        40.043,
+        35.038,
+        180.183,
+        195.198
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "MULTIPLE_SIMILAR_MOMENTS"
+    },
+    {
+      "id": "F121",
+      "video_id": "aikido-demonstration",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": null,
+      "latency_ms": 27.95029999833787,
+      "timestamps": [
+        220.223,
+        35.038,
+        190.193,
+        150.153,
+        40.043
+      ],
+      "selected_route": "visual",
+      "diagnostic_failure_cause": "VISUAL_SEMANTIC_MISS"
+    },
+    {
+      "id": "F122",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "easy",
+      "first_relevant_rank": 2,
+      "latency_ms": 28.268000000025495,
+      "timestamps": [
+        115.122,
+        55.062,
+        65.072,
+        5.012,
+        60.067
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F123",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "medium",
+      "first_relevant_rank": 1,
+      "latency_ms": 20.21229999991192,
+      "timestamps": [
+        125.132,
+        115.122,
+        175.182,
+        180.187,
+        165.172
+      ],
+      "selected_route": "visual"
+    },
+    {
+      "id": "F124",
+      "video_id": "heritage-museum",
+      "mode": "visual",
+      "difficulty": "hard",
+      "first_relevant_rank": 5,
+      "latency_ms": 23.6456000002363,
+      "timestamps": [
+        45.052,
+        10.017,
+        115.122,
+        185.192,
+        145.152
+      ],
+      "selected_route": "visual"
+    }
+  ],
+  "negative_diagnostics": [
+    {
+      "video_id": "manchester-street",
+      "mode": "visual",
+      "query": "Find the modern subway train arriving at the platform.",
+      "http_status": 200,
+      "timestamps": [
+        95.0,
+        100.0,
+        120.0,
+        105.0,
+        45.0
+      ]
+    },
+    {
+      "video_id": "ppe-tutorial",
+      "mode": "hybrid",
+      "query": "Where does the surgeon explain a robotic operation beside a patient?",
+      "http_status": 200,
+      "timestamps": [
+        60.074,
+        65.079,
+        210.224,
+        30.044,
+        50.064
+      ]
+    },
+    {
+      "video_id": "openrefine-tutorial",
+      "mode": "speech",
+      "query": "When does the narrator explain how to install Kubernetes?",
+      "http_status": 200,
+      "timestamps": [
+        313.02,
+        0.18,
+        66.86,
+        15.06,
+        88.83
+      ]
+    },
+    {
+      "video_id": "museum-accessibility",
+      "mode": "hybrid",
+      "query": "Find the narrator describing a live lion in the gallery.",
+      "http_status": 200,
+      "timestamps": [
+        110.124,
+        155.169,
+        40.054,
+        165.179,
+        175.189
+      ]
+    },
+    {
+      "video_id": "parliament-lecture",
+      "mode": "speech",
+      "query": "Where does the speaker explain how to bake sourdough bread?",
+      "http_status": 200,
+      "timestamps": [
+        1321.54,
+        2145.05,
+        763.5,
+        787.42,
+        952.14
+      ]
+    }
+  ],
+  "failure_counts": {
+    "TRANSCRIPTION_ERROR": 12,
+    "ANNOTATION_ISSUE": 5,
+    "MULTIPLE_SIMILAR_MOMENTS": 10,
+    "VISUAL_SEMANTIC_MISS": 5,
+    "SMALL_OBJECT": 3,
+    "HYBRID_RANKING_DISPLACEMENT": 1
+  },
+  "failure_taxonomy_note": "Post-run diagnostic classification from frozen ranks/source review; not an independent human adjudication; annotation flags were not used to alter labels or scores."
+}

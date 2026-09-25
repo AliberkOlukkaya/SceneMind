@@ -1,7 +1,7 @@
 FROM python:3.13-slim
 WORKDIR /app
 COPY backend backend
-RUN pip install --no-cache-dir -e './backend[dev,postgres]'
+RUN pip install --no-cache-dir -e './backend[dev,postgres,speech,visual]'
 COPY tests tests
 COPY ml ml
 COPY scripts scripts

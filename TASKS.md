@@ -1,5 +1,18 @@
 ﻿# Tasks
 
+## Final v1.0 deployment acceptance ? Decision C
+- [x] Verify frozen Smart=Hybrid RRF60, Spoken=Speech, Visual=CLIP paths
+- [x] Acquire eight new licensed/public-domain sources and freeze 124 positives plus five negatives before inference
+- [x] Run checksum-bound production API acceptance exactly once; report all modes/difficulties/videos and 36 misses
+- [x] Process a 40.38-minute video; measure 485 frames, 442 transcript segments, 616.7 seconds processing and resource peak
+- [x] Recheck local upload, public YouTube URL, search, media byte-range response and desktop/mobile click-to-seek
+- [x] Run full pytest, Ruff, ESLint, TypeScript, production build and 18 Playwright tests
+- [x] Correct Docker image ML dependencies and document realistic single-operator deployment
+- [x] Record Decision C; preserve production retrieval, Ask Video/OCR disabled, and `v1.0.0-rc1` tag
+- [ ] Obtain independent human review of a **new** source-disjoint acceptance set; do not relabel or tune this observed holdout
+- [ ] Develop and validate long-video ASR language reliability and repeated-moment retrieval only on new development sources
+- [ ] Build/test deployment image on a running Docker daemon and verify deployed browser/restart/backup before any public release
+
 ## Phase 0
 - [x] Initialize git and origin
 - [x] Create memory and configuration files
@@ -135,7 +148,7 @@
 - [x] Freeze 22 OCR events over four source-disjoint validation videos before inference
 - [x] Measure actual five-second visibility, conditional recognition, retrieval, duplicates, false text and CPU resources
 - [x] Record OCR Evidence V1 Decision B and keep all production search/Q&A paths unchanged
-- [ ] Decide whether to redesign multi-section evidence/completeness on new data or postpone Ask Video
+- [x] Postpone Ask Video after final release review; no new Q&A milestone or production enablement
 
 ## Future work — not active v1.0 tasks
 

@@ -18,6 +18,8 @@ services:
       SCENEMIND_DATABASE_URL: postgresql+psycopg://scenemind:${SCENEMIND_DB_PASSWORD}@postgres/scenemind
       SCENEMIND_AUTH_TOKEN: ${SCENEMIND_AUTH_TOKEN:?Set an operator password}
       SCENEMIND_DURABLE_JOBS: "true"
+      SCENEMIND_CORS_ORIGINS: ${SCENEMIND_CORS_ORIGINS:-["http://localhost:3000"]}
+      SCENEMIND_MODEL_DEVICE: ${SCENEMIND_MODEL_DEVICE:-cpu}
     volumes: ["media:/app/data"]
     depends_on:
       postgres: {condition: service_healthy}

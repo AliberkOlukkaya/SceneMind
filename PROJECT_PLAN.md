@@ -1,5 +1,14 @@
 # Roadmap and acceptance criteria
 
+Final release review (2026-09-25): Decision C, **do not ship v1.0.0**. The
+single frozen eight-video/124-positive deployment diagnostic measured 71.0%
+interval R@5, with three catastrophic videos and incomplete alternate-interval
+annotation for repeated moments. The 40-minute English lecture was transcribed
+as Welsh. Production retrieval remains frozen and this observed set is closed
+to tuning. New development sources, independently human-reviewed evaluation,
+Docker image validation and deployed browser/operations checks are prerequisites
+for revisiting release. See `ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_RESULTS.md`.
+
 0. Foundation: backend/frontend start, health responds, tests pass, setup and memory documents exist.
 1. Video core: bounded validated upload, safe storage, metadata, sampled frames, thumbnails, status and errors; integration tests.
 2. Speech: local transcription, persistent timestamp segments, retrieval and text search; mockable models.
