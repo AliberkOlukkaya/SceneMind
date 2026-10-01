@@ -1,5 +1,20 @@
 ﻿# Tasks
 
+## Temporal Video Retrieval Backbone V1 (active, not evaluated)
+
+- [x] Predeclare one pinned licensed temporal candidate and two window configurations
+- [x] Implement isolated feature persistence, full X-CLIP scoring and production baseline runner
+- [x] Verify cached scoring against native forward on synthetic input
+- [x] Acquire five legal development sources; review 66 queries before inference
+- [x] Audit wording, event boundaries and repeated occurrences using chronological frames
+- [x] Audit historical source URLs/aliases and decode media through their ends
+- [ ] Freeze development contract and execute exact baseline plus 4s/2s and 8s/4s candidate arms
+- [ ] Select one configuration using development only
+- [ ] Acquire five new validation sources with 60+ audited queries and a 30+ minute source
+- [ ] Commit/checksum final contract, execute once, diagnose every miss and decide A/B/C/D/E
+- [ ] Perform historical diagnostic replay only after decision, where practical
+- [ ] Complete reports, checks, stable push and clean-tree verification
+
 ## Final v1.0 deployment acceptance ? Decision C
 - [x] Verify frozen Smart=Hybrid RRF60, Spoken=Speech, Visual=CLIP paths
 - [x] Acquire eight new licensed/public-domain sources and freeze 124 positives plus five negatives before inference

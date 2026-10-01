@@ -1,5 +1,20 @@
 # Project status
 
+## Active V2 experiment: Temporal Video Retrieval Backbone V1
+
+The isolated X-CLIP candidate and checksum-bound comparison runner are implemented.
+Production remains the unchanged V1 CLIP/FAISS, Speech/BM25 and Smart/RRF60 paths;
+Ask Video remains disabled. This is not a release or promotion decision.
+Five new development sources (48.38 minutes, longest 24.43 minutes) and 66
+visual queries have chronological and dense event/boundary agent review.
+Independent human sign-off is absent. Before retrieval, source aliases were
+checked against historical media URLs; media were decoded through their ends.
+The parade container overstates duration by 0.149 seconds, so candidate windows
+use verified decoded duration. Both arms use identical source bytes, including
+a lossless cycling-video remux. Development freeze/run and the completely new
+validation set remain outstanding. No retrieval quality metrics exist yet.
+See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md`.
+
 **Latest milestone — Final Deployment Acceptance V1: Decision C, not ready for deployment.**
 One checksum-frozen run on eight new licensed/public-domain sources and 124
 agent-reviewed source-grounded positives measured interval Recall@1/3/5 of

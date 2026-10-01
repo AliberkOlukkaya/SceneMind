@@ -1,5 +1,17 @@
 # SceneMind architecture
 
+## Isolated temporal research candidate (not production)
+
+`ml/evaluation/temporal_retrieval.py` implements pinned X-CLIP temporal windows
+with eight RGB frames and normalized 512-dimensional clip features. Faithful
+X-CLIP similarity also requires 49 projected patch features per window and a
+video-conditioned text prompt generator. Its persistent NPZ feature archive
+therefore uses exhaustive conditioned scoring, not a single-query FAISS lookup.
+The benchmark runs the unchanged production baseline in separate local storage
+on identical media. It cannot load unaudited or checksum-mismatched manifests.
+Neither candidate module nor runner is imported by the application. Resource
+and quality feasibility are pending, and all production routes remain V1.
+
 Final deployment acceptance (2026-09-25) did not promote a new search path.
 Smart Search remains uncapped RRF60 Hybrid, Spoken Content remains BM25 over
 Whisper segments, and Visual Content remains CLIP/FAISS over five-second frames.

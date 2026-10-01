@@ -1,5 +1,17 @@
 # Decisions
 
+## 2026-10-01 ? Predeclare isolated temporal experiment; no promotion
+
+Use microsoft/xclip-base-patch32 revision
+`a2e27a78a2b5d802e894b8a1ef14f3a8ce490963` (MIT weights) with the mature
+Transformers implementation. Keep its video-conditioned text scoring intact.
+Test only 4-second/2-second-stride and 8-second/4-second-stride windows, eight
+frames each, CPU FP32/four threads. Select using new development only, then
+freeze new source-disjoint validation. V1 final acceptance is permanently
+excluded from selection. Synthetic native/cache equivalence establishes only
+implementation fidelity, not retrieval quality. Agent annotation review is
+explicitly distinct from independent human sign-off. No A/B/C/D/E decision yet.
+
 ## 047 - Withhold v1.0.0 after final deployment acceptance
 
 Freeze eight new source-disjoint licensed/public-domain videos, 124

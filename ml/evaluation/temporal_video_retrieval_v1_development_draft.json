@@ -1,0 +1,1717 @@
+{
+  "status": "DRAFT_NOT_FROZEN_NOT_ELIGIBLE_FOR_RETRIEVAL",
+  "reviewer": "Codex visual review; not independent human sign-off",
+  "review_stage": "Chronological source overview and dedicated wording/boundary/repeat audit completed for all five sources. Provenance registry and media/decode preflight remain before freezing. No retrieval results observed.",
+  "queries": [
+    {
+      "video_id": "one-week",
+      "category": "STATIC_OBJECT",
+      "query": "A bell inside a round decorative frame",
+      "intervals": [
+        [
+          14,
+          22
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-001",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "HUMAN_ACTION",
+      "query": "A bride and groom come down the front steps with wedding guests",
+      "intervals": [
+        [
+          23,
+          41
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-002",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "HUMAN_ACTION",
+      "query": "A man carries a piano above his head outdoors",
+      "intervals": [
+        [
+          405,
+          412
+        ],
+        [
+          414,
+          416
+        ],
+        [
+          429,
+          433
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-003",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man paints over the numbers on wooden crates",
+      "intervals": [
+        [
+          289,
+          300
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-004",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "OBJECT_INTERACTION",
+      "query": "A piano hangs from ropes inside the house while a man holds the rope",
+      "intervals": [
+        [
+          686,
+          695
+        ],
+        [
+          700,
+          702
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-005",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man uses two long poles to pull another man out of a hole in the roof",
+      "intervals": [
+        [
+          610,
+          621
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-006",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "HUMAN_ACTION",
+      "query": "A man kneels at the foot of the stairs and writes on a doormat",
+      "intervals": [
+        [
+          804,
+          813
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-007",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "TEMPORAL_EVENT",
+      "query": "The entire wooden house spins around in a storm",
+      "intervals": [
+        [
+          1022,
+          1033
+        ],
+        [
+          1036,
+          1037
+        ],
+        [
+          1047,
+          1058
+        ],
+        [
+          1063,
+          1068
+        ],
+        [
+          1101,
+          1122
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-008",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "TEMPORAL_EVENT",
+      "query": "A train crashes into the wooden house and smashes it",
+      "intervals": [
+        [
+          1438,
+          1442
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-009",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "TEMPORAL_EVENT",
+      "query": "A man drops through the chimney and lands in the bathtub",
+      "intervals": [
+        [
+          883,
+          892
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-010",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "SCENE",
+      "query": "Guests sit around a dining table inside the house",
+      "intervals": [
+        [
+          920,
+          942
+        ],
+        [
+          988,
+          994
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-011",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "SCENE",
+      "query": "A couple stands beside the wreckage of a collapsed wooden house",
+      "intervals": [
+        [
+          1449,
+          1464
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-012",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A small paintbrush touches a numbered wooden packing crate",
+      "intervals": [
+        [
+          289,
+          300
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-013",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "A close view of the tear-off wall calendar",
+      "intervals": [
+        [
+          203,
+          207
+        ],
+        [
+          336,
+          341
+        ],
+        [
+          722,
+          726
+        ],
+        [
+          913,
+          917
+        ],
+        [
+          1164,
+          1170
+        ],
+        [
+          1289,
+          1294
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-014",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "STATIC_OBJECT",
+      "query": "An open umbrella inside the house",
+      "intervals": [
+        [
+          985,
+          995
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-015",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "one-week",
+      "category": "HUMAN_ACTION",
+      "query": "A man sits on the ground while a woman stands beside him near the unfinished house",
+      "intervals": [
+        [
+          269,
+          273
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-016",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "SCENE",
+      "query": "Green fields and wooded hills surrounding a distant village",
+      "intervals": [
+        [
+          37,
+          57
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-017",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "STATIC_OBJECT",
+      "query": "A tall pointed church steeple above village houses",
+      "intervals": [
+        [
+          58,
+          63
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-018",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "HUMAN_ACTION",
+      "query": "A man carries a dark basket across a paved courtyard",
+      "intervals": [
+        [
+          145,
+          152
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-019",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "Women lift decorated ceramic jugs out of a vaulted kiln",
+      "intervals": [
+        [
+          172,
+          225
+        ],
+        [
+          238,
+          254
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-020",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "STATIC_OBJECT",
+      "query": "A wheelbarrow full of pale narrow pieces",
+      "intervals": [
+        [
+          147,
+          149
+        ],
+        [
+          153,
+          171
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-021",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "SCENE",
+      "query": "Many finished blue and brown ceramic jugs arranged on the floor",
+      "intervals": [
+        [
+          269,
+          304
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-022",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman attaches a curved clay handle to a jug",
+      "intervals": [
+        [
+          337,
+          344
+        ],
+        [
+          354,
+          367
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-023",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "TEMPORAL_EVENT",
+      "query": "A potter turns a low lump of spinning clay into a tall narrow vessel",
+      "intervals": [
+        [
+          393,
+          422
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-024",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "A potter shapes a rounded jug on the spinning pottery wheel",
+      "intervals": [
+        [
+          433,
+          461
+        ],
+        [
+          465,
+          492
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-025",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "HUMAN_ACTION",
+      "query": "A woman shapes a lump of clay between her palms at a wooden workbench",
+      "intervals": [
+        [
+          531,
+          536
+        ],
+        [
+          552,
+          554
+        ],
+        [
+          564,
+          566
+        ],
+        [
+          588,
+          591
+        ],
+        [
+          626,
+          628
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-026",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman presses clay into a small oval decorative mould",
+      "intervals": [
+        [
+          538,
+          549
+        ],
+        [
+          593,
+          618
+        ],
+        [
+          630,
+          645
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-027",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman applies a bearded face decoration to a clay jug",
+      "intervals": [
+        [
+          755,
+          764
+        ],
+        [
+          770,
+          778
+        ],
+        [
+          793,
+          804
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-028",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A sponge smooths the edge of a face decoration on a jug",
+      "intervals": [
+        [
+          770,
+          776
+        ],
+        [
+          809,
+          818
+        ],
+        [
+          823,
+          827
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-029",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "A close view of a bearded face embossed on a ceramic jug",
+      "intervals": [
+        [
+          300,
+          308
+        ],
+        [
+          770,
+          778
+        ],
+        [
+          793,
+          818
+        ],
+        [
+          848,
+          854
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-030",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "STATIC_OBJECT",
+      "query": "A row of unglazed jugs with handles on the workshop floor",
+      "intervals": [
+        [
+          323,
+          336
+        ],
+        [
+          345,
+          353
+        ],
+        [
+          831,
+          847
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-031",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "pottery",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man removes bricks from the opening of the kiln",
+      "intervals": [
+        [
+          95,
+          118
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-032",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "HUMAN_ACTION",
+      "query": "Two riders take their horses out through a wide metal gate",
+      "intervals": [
+        [
+          42,
+          55
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-033",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "STATIC_OBJECT",
+      "query": "A brown dog walks around the courtyard near horses",
+      "intervals": [
+        [
+          42,
+          49
+        ],
+        [
+          56,
+          58
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-034",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "SCENE",
+      "query": "An aerial view of a crowded street march beside a long red roof",
+      "intervals": [
+        [
+          65,
+          74
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-035",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "STATIC_OBJECT",
+      "query": "Large colorful puppet heads with oversized eyes and teeth",
+      "intervals": [
+        [
+          79,
+          84
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-036",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "HUMAN_ACTION",
+      "query": "A juggler in a pointed orange hat performs in the street",
+      "intervals": [
+        [
+          89,
+          93
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-037",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "OBJECT_INTERACTION",
+      "query": "People in white coveralls move paint rollers over a model of a city",
+      "intervals": [
+        [
+          110,
+          123
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-038",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "TEMPORAL_EVENT",
+      "query": "Red smoke pours from a flare standing on the steps",
+      "intervals": [
+        [
+          167,
+          170
+        ],
+        [
+          173,
+          178
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-039",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "HUMAN_ACTION",
+      "query": "A person in a purple and yellow hat juggles white balls",
+      "intervals": [
+        [
+          188,
+          192
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-040",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A person puts a small sticker on a blue pedestrian sign",
+      "intervals": [
+        [
+          223,
+          225
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-041",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "OBJECT_INTERACTION",
+      "query": "A person spins a hoop around their waist behind a parked bicycle",
+      "intervals": [
+        [
+          152,
+          153
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-042",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "SCENE",
+      "query": "Water falls from a fountain with people gathered behind it",
+      "intervals": [
+        [
+          155,
+          157
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-043",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "parade",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "A crowd walks through the city carrying a wide white banner decorated with stars",
+      "intervals": [
+        [
+          60,
+          61
+        ],
+        [
+          67,
+          67
+        ],
+        [
+          85,
+          87
+        ],
+        [
+          198,
+          202
+        ],
+        [
+          206,
+          214
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds.",
+      "id": "tdev-044",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: full chronological overview plus ordered 1-second event/boundary frames reviewed before retrieval, with 2-second additional pottery repeat audit. Agent review, not independent human sign-off; boundary precision approximately 1-2 seconds."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "SCENE",
+      "query": "Spectators crowd around a bar counter",
+      "intervals": [
+        [
+          36,
+          39
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-045",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "STATIC_OBJECT",
+      "query": "Caravans parked inside a large hall",
+      "intervals": [
+        [
+          48,
+          53
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-046",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "OBJECT_INTERACTION",
+      "query": "A cyclist receives a massage on his bare leg",
+      "intervals": [
+        [
+          43,
+          46
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-047",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "HUMAN_ACTION",
+      "query": "Men lift glasses and drink at a crowded bar",
+      "intervals": [
+        [
+          36,
+          39
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-048",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A close view of a man's striped eyeglasses as he watches the race",
+      "intervals": [
+        [
+          34,
+          35
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-049",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "Groups of cyclists race around the curved indoor track",
+      "intervals": [
+        [
+          2,
+          10
+        ],
+        [
+          14,
+          24
+        ],
+        [
+          40,
+          42
+        ],
+        [
+          56,
+          58
+        ],
+        [
+          60,
+          64
+        ],
+        [
+          72,
+          83
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-050",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "STATIC_OBJECT",
+      "query": "Long bright rows of lights along an arched indoor ceiling",
+      "intervals": [
+        [
+          14,
+          15
+        ],
+        [
+          47,
+          49
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-051",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "cycling",
+      "category": "SCENE",
+      "query": "An overhead view showing the whole oval cycling track",
+      "intervals": [
+        [
+          72,
+          83
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-052",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "SCENE",
+      "query": "An aerial view of straight rows of crops in a field",
+      "intervals": [
+        [
+          12,
+          14
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-053",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "STATIC_OBJECT",
+      "query": "Craft supplies and ingredients laid out beside a pizza box",
+      "intervals": [
+        [
+          25,
+          37
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-054",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "The girl cuts a flap into a cardboard pizza box with blue scissors",
+      "intervals": [
+        [
+          41,
+          57
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-055",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "The girl attaches aluminum foil to the cardboard lid",
+      "intervals": [
+        [
+          65,
+          75
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-056",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "The girl lines the bottom of the box with shiny foil",
+      "intervals": [
+        [
+          87,
+          91
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-057",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "The girl places a sheet of dark paper inside the foil-lined box",
+      "intervals": [
+        [
+          92,
+          98
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-058",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "HUMAN_ACTION",
+      "query": "The girl walks up to an outdoor picnic table carrying the box",
+      "intervals": [
+        [
+          121,
+          123
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-059",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "Marshmallows are placed on crackers inside the box",
+      "intervals": [
+        [
+          133,
+          136
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-060",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "TEMPORAL_EVENT",
+      "query": "An animation shows white marshmallows flattening as they heat up",
+      "intervals": [
+        [
+          144,
+          150
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-061",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "Small pieces of chocolate melt on marshmallows under clear plastic",
+      "intervals": [
+        [
+          172,
+          175
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-062",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "OBJECT_INTERACTION",
+      "query": "A ruler holds the reflective lid of the solar oven upright",
+      "intervals": [
+        [
+          141,
+          143
+        ],
+        [
+          151,
+          155
+        ],
+        [
+          169,
+          175
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-063",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "HUMAN_ACTION",
+      "query": "The girl takes a bite of the finished s'more outdoors",
+      "intervals": [
+        [
+          189,
+          190
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-064",
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "STATIC_OBJECT",
+      "query": "A glowing orange sun against a black background",
+      "intervals": [
+        [
+          9,
+          11
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-065",
+      "difficulty": "easy",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    },
+    {
+      "video_id": "solar-oven",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "The girl opens the transparent cover of the solar oven outdoors",
+      "intervals": [
+        [
+          125,
+          127
+        ],
+        [
+          159,
+          162
+        ],
+        [
+          179,
+          182
+        ]
+      ],
+      "dense_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision.",
+      "id": "tdev-066",
+      "difficulty": "hard",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex visual review; not independent human sign-off",
+        "evidence_review": "2026-10-01 Codex: chronological overview and ordered 1-second event/boundary frames reviewed before retrieval; repeated occurrences audited. Agent visual review, not independent human sign-off; boundaries have approximately one-second precision."
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "development_frozen_not_run",
+  "decision": null,
+  "production_changed": false,
+  "candidate": "microsoft/xclip-base-patch32",
+  "revision": "a2e27a78a2b5d802e894b8a1ef14f3a8ce490963",
+  "development": {
+    "videos": 5,
+    "queries": 66,
+    "annotation_review": "Codex chronological and dense frames; no independent human sign-off",
+    "metrics": null,
+    "manifest_sha256": "c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006"
+  },
+  "validation": null,
+  "historical_replay": null,
+  "limitations": [
+    "No real-video retrieval run yet",
+    "Validation sources and truth not yet created"
+  ],
+  "engineering_smoke": {
+    "model": "microsoft/xclip-base-patch32",
+    "revision": "a2e27a78a2b5d802e894b8a1ef14f3a8ce490963",
+    "torch": "2.14.0+cpu",
+    "transformers": "4.57.6",
+    "device": "cpu",
+    "threads": 4,
+    "parameters": 196585729,
+    "load_seconds": 2.3642713999997795,
+    "synthetic_video_seconds": 0.4701835000014398,
+    "one_window_query_seconds": 0.06911690000015369,
+    "rss_bytes": 1088618496,
+    "windows_peak_wset_bytes": 1110564864,
+    "vector_shape": [
+      1,
+      512
+    ],
+    "patch_shape": [
+      1,
+      49,
+      512
+    ],
+    "native_cosine": [
+      0.22685125470161438
+    ],
+    "cached_cosine": [
+      0.22685125470161438
+    ],
+    "max_absolute_error": 0.0,
+    "passed": true,
+    "quality_measurement": false
+  },
+  "checks": {
+    "pytest_passed": 300,
+    "pytest_skipped": 1,
+    "ruff": "passed",
+    "frontend": "untouched; not run"
+  }
+}
