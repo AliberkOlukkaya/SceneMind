@@ -1,5 +1,14 @@
 # Decisions
 
+## 2026-10-01 ? Freeze temporal development selection
+
+Both predeclared X-CLIP settings regress against exact production CLIP on the
+new 66-query development set: R@5 30.30% (4s) and 24.24% (8s), versus 66.67%.
+The fixed development rule selects 4s/2s/eight frames. Selection checksum:
+`f153155c82d968c97cf2a9502b52ec23d6d2a272a1740288f3cb51c0f8c06f23`.
+No extra models, settings or label changes are permitted. Final A/B/C/D/E
+requires the new frozen validation; no production promotion is justified.
+
 ## 2026-10-01 ? Predeclare isolated temporal experiment; no promotion
 
 Use microsoft/xclip-base-patch32 revision

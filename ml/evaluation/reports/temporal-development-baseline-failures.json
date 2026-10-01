@@ -1,0 +1,226 @@
+{
+  "manifest_sha256": "c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006",
+  "review_scope": "All 22 raw Top5 misses; no label or ranking changes",
+  "failures": [
+    {
+      "id": "tdev-005",
+      "video_id": "one-week",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 690.69,
+      "review_note": "Suspended piano and rope-holder visibly present; top results show rope handling without piano.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "253c372387f4adc05537d3ed960ef5b5e84c35ddab66be238df41a109e92cb25"
+    },
+    {
+      "id": "tdev-008",
+      "video_id": "one-week",
+      "primary": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 1026.025,
+      "review_note": "Rotating house has multiple sampled views; static damaged-house views outrank the event.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "69b1d086dc4f2f8cf2a749c95d81698da9a4e86d2310ea6d49b09627335b9850"
+    },
+    {
+      "id": "tdev-009",
+      "video_id": "one-week",
+      "primary": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 1441.44,
+      "review_note": "Train passing shattered house is visible, but precise impact falls between samples; partial event evidence present.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "1c8b66e622dbf2b8ddd75cc508d482fb48d977730d74a3737b371cd362fda103"
+    },
+    {
+      "id": "tdev-016",
+      "video_id": "one-week",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 270.27,
+      "review_note": "Seated man and standing woman visible; rankings reverse who is seated in another scene.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "10cf7771ac691e42de09fcbeceecfb08d3ec59554b2ad500094728db32631048"
+    },
+    {
+      "id": "tdev-020",
+      "video_id": "pottery",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 195.054,
+      "review_note": "Jug lifting in kiln visible; unrelated workshop jug handling outranks it.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "7d19997f10e92710a7bc2c07a401a2d209427b6132de63b5f34bd9806e514038"
+    },
+    {
+      "id": "tdev-022",
+      "video_id": "pottery",
+      "primary": "STATIC_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 290.054,
+      "review_note": "Finished colored jugs visible; unglazed rows rank higher.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "77da0d317b6381fec0a31e92712f8fa14191b1cb170b6dd8dfd6b1592e4a0c54"
+    },
+    {
+      "id": "tdev-024",
+      "video_id": "pottery",
+      "primary": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 410.054,
+      "review_note": "Low-to-tall stages visible across sampled frames; isolated later pottery moments outrank them.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "31834190c2fe87b6ddbf1bc948ec5146290ef7d21b3ea7446f5675be4ebcbf49"
+    },
+    {
+      "id": "tdev-025",
+      "video_id": "pottery",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 450.054,
+      "review_note": "Wheel shaping visible; decoration and clay preparation outrank shaping.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "fd74af44373a3b33e7892e01a95b2f7e0220d1bd0093d1bfd1f28a418048bed0"
+    },
+    {
+      "id": "tdev-026",
+      "video_id": "pottery",
+      "primary": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 535.094,
+      "review_note": "Clay between palms visible; mold handling outranks it.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "87ff85b41a32ada9f8fb5871c2a1868bde656c2a3d34789e304b523d8e2e7629"
+    },
+    {
+      "id": "tdev-027",
+      "video_id": "pottery",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 545.094,
+      "review_note": "Pressing mold visible; applying decoration and dipping hand rank higher.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "cce9d85f40bf4140b0b89445ddd82d11b8a0035189a0481564b1e1bc8dde6049"
+    },
+    {
+      "id": "tdev-041",
+      "video_id": "parade",
+      "primary": "ANNOTATION_ISSUE",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 225.051,
+      "review_note": "Useful top1 sticker contact is 0.051s outside frozen integer endpoint. Do not count as sampling or semantic miss; labels unchanged.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "17b6171b5dde1854e49ccc7a9dc297857fc31aa56dcd7080d1314a029b80159a"
+    },
+    {
+      "id": "tdev-042",
+      "video_id": "parade",
+      "primary": "SAMPLING_MISS",
+      "sampled_evidence_present": false,
+      "evidence_timestamp": null,
+      "review_note": "150.051 shows bicycles/crowd and 155.051 fountain; brief hoop action absent.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "456cb65de8220129fa82e4a76213130c7d130cdb4a146b80eea2101974b44078"
+    },
+    {
+      "id": "tdev-045",
+      "video_id": "cycling",
+      "primary": "SAMPLING_MISS",
+      "sampled_evidence_present": false,
+      "evidence_timestamp": null,
+      "review_note": "35s spectator close-up and 40s cycling omit bar scene.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "94a49ef571ce32598893e43b82311d255cef3e222c3903e479e7b28e2e80842b"
+    },
+    {
+      "id": "tdev-048",
+      "video_id": "cycling",
+      "primary": "SAMPLING_MISS",
+      "sampled_evidence_present": false,
+      "evidence_timestamp": null,
+      "review_note": "Same omitted 36-39s bar scene; no drinking evidence in neighboring sampled frames.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "f3ca065a29b374cf7ffb7b9ec81043a8bb07e3c9dcf5ba64204d37cd11b59c1e"
+    },
+    {
+      "id": "tdev-052",
+      "video_id": "cycling",
+      "primary": "STATIC_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 75,
+      "review_note": "Whole oval present at 75/80s; partial oval curves rank higher.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "89fabc454a8e7729f1cf96d51fe61e4a5b4cd59680f661e326862293360f7458"
+    },
+    {
+      "id": "tdev-053",
+      "video_id": "solar-oven",
+      "primary": "SAMPLING_MISS",
+      "sampled_evidence_present": false,
+      "evidence_timestamp": null,
+      "review_note": "10.024 sun and 15.029 presenter omit brief crop-field shot.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "f5f1408656ce7f99255fef33413a0cae99cb23dac2831d8fcaf718f013d2165e"
+    },
+    {
+      "id": "tdev-055",
+      "video_id": "solar-oven",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 45.059,
+      "review_note": "Scissors cutting box visible; other construction stages outrank it.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "7ef4e0f0292c322c2d7cd8a676b6bfb9b4afcec34804252073b00f5bfd604968"
+    },
+    {
+      "id": "tdev-056",
+      "video_id": "solar-oven",
+      "primary": "OBJECT_RELATION_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 70.084,
+      "review_note": "Foil attachment visible from back of lid; completed reflective box outranks it.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "1923cca613e380743d030ea0434439c803a0aaaf443c017c3489bf7766271e01"
+    },
+    {
+      "id": "tdev-059",
+      "video_id": "solar-oven",
+      "primary": "SAMPLING_MISS",
+      "sampled_evidence_present": false,
+      "evidence_timestamp": null,
+      "review_note": "120.134 trees and 125.139 box already on table omit carrying approach.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "acf723d47026ae416c905b46690a0afaa0287f033f31b6e8ebc0a9e2d0dd5f94"
+    },
+    {
+      "id": "tdev-061",
+      "video_id": "solar-oven",
+      "primary": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 145.159,
+      "review_note": "Animated marshmallows and flattening endstate sampled; live-action construction outranks animation.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "757b95875bed32b9e0ffe6a7385bfb9ff2267cee950d30f3d7d48b64842c8002"
+    },
+    {
+      "id": "tdev-062",
+      "video_id": "solar-oven",
+      "primary": "ANNOTATION_ISSUE",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 175.189,
+      "review_note": "Useful top2 chocolate under cover is 0.189s beyond integer endpoint; frozen score retained.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "2e5c1130b4daf99f4925bc4712a436e21f226a554bb7a8375298f9e63caf1695"
+    },
+    {
+      "id": "tdev-064",
+      "video_id": "solar-oven",
+      "primary": "ANNOTATION_ISSUE",
+      "sampled_evidence_present": true,
+      "evidence_timestamp": 190.204,
+      "review_note": "Useful top1 bite is 0.204s beyond integer endpoint; frozen score retained.",
+      "reviewer": "Codex actual production JPEG visual review",
+      "sheet_sha256": "669175a5a7b516106f88a72059b3e947af3f0d543162454e5d0af3f27fb891b6"
+    }
+  ]
+}

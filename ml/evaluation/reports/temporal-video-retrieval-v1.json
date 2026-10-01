@@ -1,5 +1,5 @@
 {
-  "status": "development_frozen_not_run",
+  "status": "development_complete_validation_preparation",
   "decision": null,
   "production_changed": false,
   "candidate": "microsoft/xclip-base-patch32",
@@ -9,13 +9,628 @@
     "queries": 66,
     "annotation_review": "Codex chronological and dense frames; no independent human sign-off",
     "metrics": null,
-    "manifest_sha256": "c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006"
+    "manifest_sha256": "c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006",
+    "baseline": {
+      "metrics": {
+        "overall": {
+          "n": 66,
+          "r1": 0.48484848484848486,
+          "r3": 0.6363636363636364,
+          "r5": 0.6666666666666666,
+          "r10": 0.7575757575757576,
+          "mrr5": 0.5598484848484849
+        },
+        "category:HUMAN_ACTION": {
+          "n": 12,
+          "r1": 0.4166666666666667,
+          "r3": 0.5833333333333334,
+          "r5": 0.5833333333333334,
+          "r10": 0.5833333333333334,
+          "mrr5": 0.5
+        },
+        "category:MULTIPLE_SIMILAR_MOMENTS": {
+          "n": 5,
+          "r1": 1.0,
+          "r3": 1.0,
+          "r5": 1.0,
+          "r10": 1.0,
+          "mrr5": 1.0
+        },
+        "category:OBJECT_INTERACTION": {
+          "n": 18,
+          "r1": 0.2777777777777778,
+          "r3": 0.5,
+          "r5": 0.6111111111111112,
+          "r10": 0.7777777777777778,
+          "mrr5": 0.39537037037037037
+        },
+        "category:SCENE": {
+          "n": 9,
+          "r1": 0.4444444444444444,
+          "r3": 0.5555555555555556,
+          "r5": 0.5555555555555556,
+          "r10": 0.7777777777777778,
+          "mrr5": 0.48148148148148145
+        },
+        "category:SMALL_OBJECT_DETAIL": {
+          "n": 5,
+          "r1": 0.6,
+          "r3": 0.6,
+          "r5": 0.6,
+          "r10": 0.6,
+          "mrr5": 0.6
+        },
+        "category:STATIC_OBJECT": {
+          "n": 11,
+          "r1": 0.8181818181818182,
+          "r3": 1.0,
+          "r5": 1.0,
+          "r10": 1.0,
+          "mrr5": 0.9090909090909091
+        },
+        "category:TEMPORAL_EVENT": {
+          "n": 6,
+          "r1": 0.16666666666666666,
+          "r3": 0.3333333333333333,
+          "r5": 0.3333333333333333,
+          "r10": 0.5,
+          "mrr5": 0.25
+        },
+        "video_id:cycling": {
+          "n": 8,
+          "r1": 0.5,
+          "r3": 0.625,
+          "r5": 0.625,
+          "r10": 0.75,
+          "mrr5": 0.5625
+        },
+        "video_id:one-week": {
+          "n": 16,
+          "r1": 0.5625,
+          "r3": 0.75,
+          "r5": 0.75,
+          "r10": 0.8125,
+          "mrr5": 0.65625
+        },
+        "video_id:parade": {
+          "n": 12,
+          "r1": 0.6666666666666666,
+          "r3": 0.8333333333333334,
+          "r5": 0.8333333333333334,
+          "r10": 0.8333333333333334,
+          "mrr5": 0.7361111111111112
+        },
+        "video_id:pottery": {
+          "n": 16,
+          "r1": 0.5,
+          "r3": 0.5625,
+          "r5": 0.625,
+          "r10": 0.8125,
+          "mrr5": 0.54375
+        },
+        "video_id:solar-oven": {
+          "n": 14,
+          "r1": 0.21428571428571427,
+          "r3": 0.42857142857142855,
+          "r5": 0.5,
+          "r10": 0.5714285714285714,
+          "mrr5": 0.3154761904761905
+        },
+        "difficulty:easy": {
+          "n": 20,
+          "r1": 0.65,
+          "r3": 0.8,
+          "r5": 0.8,
+          "r10": 0.9,
+          "mrr5": 0.7166666666666667
+        },
+        "difficulty:hard": {
+          "n": 16,
+          "r1": 0.5625,
+          "r3": 0.625,
+          "r5": 0.625,
+          "r10": 0.6875,
+          "mrr5": 0.59375
+        },
+        "difficulty:medium": {
+          "n": 30,
+          "r1": 0.3333333333333333,
+          "r3": 0.5333333333333333,
+          "r5": 0.6,
+          "r10": 0.7,
+          "mrr5": 0.43722222222222223
+        },
+        "combined_temporal": {
+          "n": 36,
+          "r1": 0.3055555555555556,
+          "r3": 0.5,
+          "r5": 0.5555555555555556,
+          "r10": 0.6666666666666666,
+          "mrr5": 0.40601851851851856
+        },
+        "combined_static": {
+          "n": 20,
+          "r1": 0.65,
+          "r3": 0.8,
+          "r5": 0.8,
+          "r10": 0.9,
+          "mrr5": 0.7166666666666667
+        }
+      },
+      "performance": {
+        "source_minutes": 48.38363458333334,
+        "preprocessing_seconds_per_minute": 1.0055460553754934,
+        "indexing_seconds_per_minute": 1.9785290175983536,
+        "embedding_frames_per_second": 12.362868781269071,
+        "processed_frames": 582,
+        "frames_per_minute": 12.028860688371703,
+        "clips_per_minute": 0.0,
+        "index_bytes_per_minute": 24648.334302913354,
+        "model_load_seconds": 15.562545299999783,
+        "process_tree_peak_rss_bytes": 1243295744,
+        "query_latency_seconds": {
+          "median": 0.031843200000139404,
+          "p95": 0.10421620000033727
+        }
+      },
+      "videos": {
+        "one-week": {
+          "duration_seconds": 1465.5973666666669,
+          "preprocess_seconds": 19.61214080000036,
+          "embedding_seconds": 18.475685599999906,
+          "indexing_seconds": 38.08782640000027,
+          "frames": 293,
+          "index_bytes": 600192,
+          "indexing_peak_rss_bytes": 962301952,
+          "video_id": "d55a63c1-7fc5-44cb-b2dd-8211fc9228f3"
+        },
+        "pottery": {
+          "duration_seconds": 878.494,
+          "preprocess_seconds": 13.825270499999988,
+          "embedding_seconds": 15.645363599999655,
+          "indexing_seconds": 29.470634099999643,
+          "frames": 176,
+          "index_bytes": 360576,
+          "indexing_peak_rss_bytes": 1207009280,
+          "video_id": "79d5d413-d119-418f-b154-031bc37728c0"
+        },
+        "parade": {
+          "duration_seconds": 269.93100000000004,
+          "preprocess_seconds": 11.936706299999969,
+          "embedding_seconds": 6.533882700000049,
+          "indexing_seconds": 18.470589000000018,
+          "frames": 54,
+          "index_bytes": 110720,
+          "indexing_peak_rss_bytes": 1243295744,
+          "video_id": "5b63b1bd-44e2-40de-b7bb-9e527d55dc27"
+        },
+        "cycling": {
+          "duration_seconds": 85.32000000000001,
+          "preprocess_seconds": 0.32640760000003866,
+          "embedding_seconds": 1.8236771000001681,
+          "indexing_seconds": 2.150084700000207,
+          "frames": 18,
+          "index_bytes": 36992,
+          "indexing_peak_rss_bytes": 1200041984,
+          "video_id": "1fab7e73-725d-4784-985e-6a23d3d3c4c1"
+        },
+        "solar-oven": {
+          "duration_seconds": 203.67570833333332,
+          "preprocess_seconds": 2.9514476999997896,
+          "embedding_seconds": 4.597843100000318,
+          "indexing_seconds": 7.549290800000108,
+          "frames": 41,
+          "index_bytes": 84096,
+          "indexing_peak_rss_bytes": 1232326656,
+          "video_id": "59200950-087e-4651-abcf-029d5b650a66"
+        }
+      }
+    },
+    "baseline_failure_review": {
+      "raw_top5_misses": 22,
+      "sampling_misses": 5,
+      "evidence_present_semantic_misses": 14,
+      "annotation_boundary_issues": 3,
+      "labels_changed": false
+    },
+    "candidate_4": {
+      "config": {
+        "length": 4,
+        "stride": 2,
+        "frames": 8
+      },
+      "metrics": {
+        "overall": {
+          "n": 66,
+          "r1": 0.13636363636363635,
+          "r3": 0.25757575757575757,
+          "r5": 0.30303030303030304,
+          "r10": 0.3939393939393939,
+          "mrr5": 0.19595959595959597
+        },
+        "category:HUMAN_ACTION": {
+          "n": 12,
+          "r1": 0.08333333333333333,
+          "r3": 0.25,
+          "r5": 0.25,
+          "r10": 0.3333333333333333,
+          "mrr5": 0.13888888888888887
+        },
+        "category:MULTIPLE_SIMILAR_MOMENTS": {
+          "n": 5,
+          "r1": 0.2,
+          "r3": 0.6,
+          "r5": 0.6,
+          "r10": 0.8,
+          "mrr5": 0.36666666666666664
+        },
+        "category:OBJECT_INTERACTION": {
+          "n": 18,
+          "r1": 0.1111111111111111,
+          "r3": 0.2777777777777778,
+          "r5": 0.3888888888888889,
+          "r10": 0.4444444444444444,
+          "mrr5": 0.2074074074074074
+        },
+        "category:SCENE": {
+          "n": 9,
+          "r1": 0.2222222222222222,
+          "r3": 0.2222222222222222,
+          "r5": 0.2222222222222222,
+          "r10": 0.2222222222222222,
+          "mrr5": 0.2222222222222222
+        },
+        "category:SMALL_OBJECT_DETAIL": {
+          "n": 5,
+          "r1": 0.2,
+          "r3": 0.2,
+          "r5": 0.2,
+          "r10": 0.6,
+          "mrr5": 0.2
+        },
+        "category:STATIC_OBJECT": {
+          "n": 11,
+          "r1": 0.09090909090909091,
+          "r3": 0.18181818181818182,
+          "r5": 0.18181818181818182,
+          "r10": 0.18181818181818182,
+          "mrr5": 0.13636363636363635
+        },
+        "category:TEMPORAL_EVENT": {
+          "n": 6,
+          "r1": 0.16666666666666666,
+          "r3": 0.16666666666666666,
+          "r5": 0.3333333333333333,
+          "r10": 0.5,
+          "mrr5": 0.19999999999999998
+        },
+        "video_id:cycling": {
+          "n": 8,
+          "r1": 0.25,
+          "r3": 0.375,
+          "r5": 0.375,
+          "r10": 0.375,
+          "mrr5": 0.3125
+        },
+        "video_id:one-week": {
+          "n": 16,
+          "r1": 0.0,
+          "r3": 0.0625,
+          "r5": 0.125,
+          "r10": 0.25,
+          "mrr5": 0.03333333333333333
+        },
+        "video_id:parade": {
+          "n": 12,
+          "r1": 0.16666666666666666,
+          "r3": 0.3333333333333333,
+          "r5": 0.3333333333333333,
+          "r10": 0.5,
+          "mrr5": 0.23611111111111113
+        },
+        "video_id:pottery": {
+          "n": 16,
+          "r1": 0.1875,
+          "r3": 0.3125,
+          "r5": 0.3125,
+          "r10": 0.375,
+          "mrr5": 0.23958333333333334
+        },
+        "video_id:solar-oven": {
+          "n": 14,
+          "r1": 0.14285714285714285,
+          "r3": 0.2857142857142857,
+          "r5": 0.42857142857142855,
+          "r10": 0.5,
+          "mrr5": 0.23095238095238096
+        },
+        "difficulty:easy": {
+          "n": 20,
+          "r1": 0.15,
+          "r3": 0.2,
+          "r5": 0.2,
+          "r10": 0.2,
+          "mrr5": 0.175
+        },
+        "difficulty:hard": {
+          "n": 16,
+          "r1": 0.1875,
+          "r3": 0.3125,
+          "r5": 0.375,
+          "r10": 0.625,
+          "mrr5": 0.2520833333333333
+        },
+        "difficulty:medium": {
+          "n": 30,
+          "r1": 0.1,
+          "r3": 0.26666666666666666,
+          "r5": 0.3333333333333333,
+          "r10": 0.4,
+          "mrr5": 0.18000000000000002
+        },
+        "combined_temporal": {
+          "n": 36,
+          "r1": 0.1111111111111111,
+          "r3": 0.25,
+          "r5": 0.3333333333333333,
+          "r10": 0.4166666666666667,
+          "mrr5": 0.18333333333333332
+        },
+        "combined_static": {
+          "n": 20,
+          "r1": 0.15,
+          "r3": 0.2,
+          "r5": 0.2,
+          "r10": 0.2,
+          "mrr5": 0.175
+        }
+      },
+      "performance": {
+        "source_minutes": 48.38363458333334,
+        "preprocessing_seconds_per_minute": 23.72973755873021,
+        "indexing_seconds_per_minute": 42.54654560220057,
+        "embedding_frames_per_second": 12.732647368140974,
+        "processed_frames": 11584,
+        "frames_per_minute": 239.41979761872474,
+        "clips_per_minute": 29.927474702340593,
+        "index_bytes_per_minute": 3087036.9141604463,
+        "model_load_seconds": 10.830265500000223,
+        "process_tree_peak_rss_bytes": 1239293952,
+        "query_latency_seconds": {
+          "median": 0.3122103999999126,
+          "p95": 1.098609775000341
+        }
+      },
+      "videos": {
+        "one-week": {
+          "duration_seconds": 1465.5973666666669,
+          "preprocess_seconds": 508.6934040000042,
+          "embedding_seconds": 456.82385360000126,
+          "indexing_seconds": 965.8139022,
+          "temporal_clips": 732,
+          "processed_frames": 5856,
+          "index_bytes": 75519698,
+          "indexing_peak_rss_bytes": 1118969856
+        },
+        "pottery": {
+          "duration_seconds": 878.494,
+          "preprocess_seconds": 365.0120280999936,
+          "embedding_seconds": 281.756526500003,
+          "indexing_seconds": 646.9238028,
+          "temporal_clips": 439,
+          "processed_frames": 3512,
+          "index_bytes": 45268034,
+          "indexing_peak_rss_bytes": 1239293952
+        },
+        "parade": {
+          "duration_seconds": 269.93100000000004,
+          "preprocess_seconds": 196.7707355000075,
+          "embedding_seconds": 83.15149479999764,
+          "indexing_seconds": 279.99918009999965,
+          "temporal_clips": 134,
+          "processed_frames": 1072,
+          "index_bytes": 13828822,
+          "indexing_peak_rss_bytes": 1179217920
+        },
+        "cycling": {
+          "duration_seconds": 85.32000000000001,
+          "preprocess_seconds": 3.7795479999995223,
+          "embedding_seconds": 25.02605919999951,
+          "indexing_seconds": 28.87009510000007,
+          "temporal_clips": 42,
+          "processed_frames": 336,
+          "index_bytes": 4330202,
+          "indexing_peak_rss_bytes": 1148088320
+        },
+        "solar-oven": {
+          "duration_seconds": 203.67570833333332,
+          "preprocess_seconds": 73.87523519999831,
+          "embedding_seconds": 63.02929749999839,
+          "indexing_seconds": 136.94953500000065,
+          "temporal_clips": 101,
+          "processed_frames": 808,
+          "index_bytes": 10415310,
+          "indexing_peak_rss_bytes": 1180086272
+        }
+      }
+    },
+    "selected_config": {
+      "length": 4,
+      "stride": 2,
+      "frames": 8
+    },
+    "selection_sha256": "f153155c82d968c97cf2a9502b52ec23d6d2a272a1740288f3cb51c0f8c06f23",
+    "candidate_8": {
+      "metrics": {
+        "overall": {
+          "n": 66,
+          "r1": 0.09090909090909091,
+          "r3": 0.15151515151515152,
+          "r5": 0.24242424242424243,
+          "r10": 0.3939393939393939,
+          "mrr5": 0.13813131313131313
+        },
+        "category:HUMAN_ACTION": {
+          "n": 12,
+          "r1": 0.08333333333333333,
+          "r3": 0.08333333333333333,
+          "r5": 0.25,
+          "r10": 0.4166666666666667,
+          "mrr5": 0.12083333333333333
+        },
+        "category:MULTIPLE_SIMILAR_MOMENTS": {
+          "n": 5,
+          "r1": 0.2,
+          "r3": 0.4,
+          "r5": 0.4,
+          "r10": 0.8,
+          "mrr5": 0.3
+        },
+        "category:OBJECT_INTERACTION": {
+          "n": 18,
+          "r1": 0.1111111111111111,
+          "r3": 0.1111111111111111,
+          "r5": 0.2222222222222222,
+          "r10": 0.4444444444444444,
+          "mrr5": 0.1388888888888889
+        },
+        "category:SCENE": {
+          "n": 9,
+          "r1": 0.0,
+          "r3": 0.2222222222222222,
+          "r5": 0.2222222222222222,
+          "r10": 0.2222222222222222,
+          "mrr5": 0.09259259259259259
+        },
+        "category:SMALL_OBJECT_DETAIL": {
+          "n": 5,
+          "r1": 0.0,
+          "r3": 0.2,
+          "r5": 0.4,
+          "r10": 0.4,
+          "mrr5": 0.11666666666666665
+        },
+        "category:STATIC_OBJECT": {
+          "n": 11,
+          "r1": 0.09090909090909091,
+          "r3": 0.09090909090909091,
+          "r5": 0.18181818181818182,
+          "r10": 0.2727272727272727,
+          "mrr5": 0.11363636363636363
+        },
+        "category:TEMPORAL_EVENT": {
+          "n": 6,
+          "r1": 0.16666666666666666,
+          "r3": 0.16666666666666666,
+          "r5": 0.16666666666666666,
+          "r10": 0.3333333333333333,
+          "mrr5": 0.16666666666666666
+        },
+        "video_id:cycling": {
+          "n": 8,
+          "r1": 0.125,
+          "r3": 0.125,
+          "r5": 0.25,
+          "r10": 0.5,
+          "mrr5": 0.15625
+        },
+        "video_id:one-week": {
+          "n": 16,
+          "r1": 0.0,
+          "r3": 0.0,
+          "r5": 0.125,
+          "r10": 0.25,
+          "mrr5": 0.028125
+        },
+        "video_id:parade": {
+          "n": 12,
+          "r1": 0.16666666666666666,
+          "r3": 0.25,
+          "r5": 0.4166666666666667,
+          "r10": 0.75,
+          "mrr5": 0.23611111111111113
+        },
+        "video_id:pottery": {
+          "n": 16,
+          "r1": 0.125,
+          "r3": 0.25,
+          "r5": 0.25,
+          "r10": 0.3125,
+          "mrr5": 0.17708333333333334
+        },
+        "video_id:solar-oven": {
+          "n": 14,
+          "r1": 0.07142857142857142,
+          "r3": 0.14285714285714285,
+          "r5": 0.21428571428571427,
+          "r10": 0.2857142857142857,
+          "mrr5": 0.125
+        },
+        "difficulty:easy": {
+          "n": 20,
+          "r1": 0.05,
+          "r3": 0.15,
+          "r5": 0.2,
+          "r10": 0.25,
+          "mrr5": 0.10416666666666667
+        },
+        "difficulty:hard": {
+          "n": 16,
+          "r1": 0.125,
+          "r3": 0.25,
+          "r5": 0.3125,
+          "r10": 0.5,
+          "mrr5": 0.19270833333333334
+        },
+        "difficulty:medium": {
+          "n": 30,
+          "r1": 0.1,
+          "r3": 0.1,
+          "r5": 0.23333333333333334,
+          "r10": 0.43333333333333335,
+          "mrr5": 0.13166666666666668
+        },
+        "combined_temporal": {
+          "n": 36,
+          "r1": 0.1111111111111111,
+          "r3": 0.1111111111111111,
+          "r5": 0.2222222222222222,
+          "r10": 0.4166666666666667,
+          "mrr5": 0.1375
+        },
+        "combined_static": {
+          "n": 20,
+          "r1": 0.05,
+          "r3": 0.15,
+          "r5": 0.2,
+          "r10": 0.25,
+          "mrr5": 0.10416666666666667
+        }
+      },
+      "performance": {
+        "source_minutes": 48.38363458333334,
+        "preprocessing_seconds_per_minute": 7.367525010673537,
+        "indexing_seconds_per_minute": 14.208885978086682,
+        "embedding_frames_per_second": 17.48750026421529,
+        "processed_frames": 5784,
+        "frames_per_minute": 119.54455364526105,
+        "clips_per_minute": 14.94306920565763,
+        "index_bytes_per_minute": 1540882.7931600113,
+        "model_load_seconds": 25.8494359000033,
+        "process_tree_peak_rss_bytes": 1197776896,
+        "query_latency_seconds": {
+          "median": 0.16892714999994496,
+          "p95": 0.35409449999951903
+        }
+      }
+    }
   },
   "validation": null,
   "historical_replay": null,
   "limitations": [
-    "No real-video retrieval run yet",
-    "Validation sources and truth not yet created"
+    "Frozen validation has not run",
+    "Development baseline has three disclosed boundary annotation issues; labels unchanged",
+    "No independent human sign-off"
   ],
   "engineering_smoke": {
     "model": "microsoft/xclip-base-patch32",
@@ -50,7 +665,7 @@
     "quality_measurement": false
   },
   "checks": {
-    "pytest_passed": 300,
+    "pytest_passed": 303,
     "pytest_skipped": 1,
     "ruff": "passed",
     "frontend": "untouched; not run"

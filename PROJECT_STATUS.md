@@ -11,8 +11,14 @@ Independent human sign-off is absent. Before retrieval, source aliases were
 checked against historical media URLs; media were decoded through their ends.
 The parade container overstates duration by 0.149 seconds, so candidate windows
 use verified decoded duration. Both arms use identical source bytes, including
-a lossless cycling-video remux. Development freeze/run and the completely new
-validation set remain outstanding. No retrieval quality metrics exist yet.
+a lossless cycling-video remux. Development is complete: production CLIP R@5
+66.67%, X-CLIP 4s/2s 30.30%, X-CLIP 8s/4s 24.24%. The predeclared selection
+rule freezes 4s/2s/eight frames. The large regression is development evidence,
+not the final architecture decision. Three CLIP raw misses have disclosed
+subsecond annotation-endpoint issues; frozen labels are unchanged. New
+validation preparation is active; an initially nominated pasta video was
+excluded because its source appeared in historical evaluation records.
+Full checks: 303 passed, 1 skipped; Ruff passed. Production remains unchanged.
 See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md`.
 
 **Latest milestone — Final Deployment Acceptance V1: Decision C, not ready for deployment.**

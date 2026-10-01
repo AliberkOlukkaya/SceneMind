@@ -1,9 +1,27 @@
 # Temporal Video Retrieval V1 — work in progress
 
-No development retrieval, frozen validation, architectural decision or historical
-replay has run. R@1/3/5/10, MRR@5, category deltas and long-video performance
-are **not measured**. The current work is infrastructure and source annotation.
-It is not Decision A, B, C, D or E.
+Development is complete. The fixed selection rule chose 4s/2s/eight frames. Frozen validation,
+architecture decision and historical replay have not run. These results do not
+support production promotion or a final A/B/C/D/E decision.
+
+| Development, 66 queries | R@1 | R@3 | R@5 | R@10 | MRR@5 |
+|---|---:|---:|---:|---:|---:|
+| Production CLIP | 48.48% | 63.64% | 66.67% | 75.76% | 55.98% |
+| X-CLIP 4s / stride 2s | 13.64% | 25.76% | 30.30% | 39.39% | 19.60% |
+| X-CLIP 8s / stride 4s | 9.09% | 15.15% | 24.24% | 39.39% | 13.81% |
+
+The 4-second candidate regresses R@5 by 36.36 percentage points. Combined
+action/interaction/event R@5 is 33.33%, versus CLIP's 55.56%; combined static
+R@5 is 20%, versus 80%. Its cost is 42.55 indexing seconds/source-minute versus
+1.98 for CLIP, 3,087,037 versus 24,648 index bytes/source-minute, and query
+median/p95 0.312/1.099 seconds versus 0.032/0.104 seconds. Absolute process-tree
+peak RSS is 1,239,293,952 versus 1,243,295,744 bytes. Model loads are 10.83 versus
+15.56 seconds, including local cache/library overhead. These are host measurements,
+not a validated 4-vCPU deployment. Raw per-source/category details are in the JSON.
+
+Three CLIP raw misses are useful results just outside coarse integer ground-truth
+endpoints. Labels and metrics remain frozen; see the failure report. This cannot
+explain the large observed candidate regression, but limits small-delta inference.
 
 One candidate was predeclared before retrieval: MIT X-CLIP base/patch32, revision
 `a2e27a78a2b5d802e894b8a1ef14f3a8ce490963`. Native video-conditioned text scoring
@@ -44,14 +62,13 @@ the same file. No visual source was transcoded for the candidate.
 
 Development manifest SHA-256:
 `c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006`.
-Validation sources have not been selected or acquired. Development execution
-has not started at this checkpoint.
+Validation sources have not been selected or acquired. All three arms completed once. Selection checksum is recorded in
+`reports/temporal-development-selection.sha256`.
 
-Full regression including all 18 temporal tests: **300 passed, 1 skipped**.
+Full regression including all 18 temporal tests: **303 passed, 1 skipped**.
 Ruff passed. A focused test invocation without a local basetemp encountered a
 Windows Temp-directory permission error; subsequent checks use ignored local
 basetemp directories. Frontend untouched; no frontend rebuild claimed.
 
-Next: commit development freeze, run both temporal settings and the exact
-production Visual path, then collect a new validation set. No promotion or
+Next: acquire and audit a completely new validation set before its freeze. No promotion or
 model-quality recommendation is supported yet.

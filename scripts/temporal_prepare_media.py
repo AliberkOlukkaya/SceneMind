@@ -29,13 +29,14 @@ DEVELOPMENT = {
 }
 
 
-def acquire_development():
-    research = json.loads((DATA / "development-source-research.json").read_text(encoding="utf8"))
+def acquire(split="development", catalog=None):
+    catalog = DEVELOPMENT if catalog is None else catalog
+    research = json.loads((DATA / f"{split}-source-research.json").read_text(encoding="utf8"))
     pages = {v["title"]: v for v in research["query"]["pages"].values()}
     session = requests.Session()
     session.headers["User-Agent"] = "SceneMindResearch/1.0 local educational video evaluation"
     sources = []
-    for source_id, title in DEVELOPMENT.items():
+    for source_id, title in catalog.items():
         page = pages[title]
         info = page["videoinfo"][0]
         meta = info["extmetadata"]
@@ -68,11 +69,11 @@ def acquire_development():
                       fps=fps, bytes=path.stat().st_size)
         sources.append(source)
         print(json.dumps({k: source[k] for k in ("source_id", "duration_seconds", "bytes")}), flush=True)
-        (DATA / "development-sources.json").write_text(json.dumps(sources, indent=2) + "\n", encoding="utf8")
+        (DATA / f"{split}-sources.json").write_text(json.dumps(sources, indent=2) + "\n", encoding="utf8")
 
 
-def sheets(source_id, step, start, end):
-    sources = json.loads((DATA / "development-sources.json").read_text(encoding="utf8"))
+def sheets(source_id, step, start, end, sources_file=None):
+    sources = json.loads((sources_file or DATA / "development-sources.json").read_text(encoding="utf8"))
     source = next(s for s in sources if s["source_id"] == source_id)
     end = min(end if end is not None else source["duration_seconds"], source["duration_seconds"])
     if step <= 0 or start < 0 or end <= start:
@@ -109,11 +110,12 @@ def main():
     parser.add_argument("--step", type=float, default=5)
     parser.add_argument("--start", type=float, default=0)
     parser.add_argument("--end", type=float)
+    parser.add_argument("--sources-file", type=Path)
     args = parser.parse_args()
     if args.command == "acquire-development":
-        acquire_development()
+        acquire()
     else:
-        sheets(args.source, args.step, args.start, args.end)
+        sheets(args.source, args.step, args.start, args.end, args.sources_file)
 
 
 if __name__ == "__main__":

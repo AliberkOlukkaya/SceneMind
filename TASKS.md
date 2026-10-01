@@ -1,6 +1,6 @@
 ﻿# Tasks
 
-## Temporal Video Retrieval Backbone V1 (active, not evaluated)
+## Temporal Video Retrieval Backbone V1 (development complete, validation pending)
 
 - [x] Predeclare one pinned licensed temporal candidate and two window configurations
 - [x] Implement isolated feature persistence, full X-CLIP scoring and production baseline runner
@@ -8,8 +8,8 @@
 - [x] Acquire five legal development sources; review 66 queries before inference
 - [x] Audit wording, event boundaries and repeated occurrences using chronological frames
 - [x] Audit historical source URLs/aliases and decode media through their ends
-- [ ] Freeze development contract and execute exact baseline plus 4s/2s and 8s/4s candidate arms
-- [ ] Select one configuration using development only
+- [x] Freeze development contract and execute exact baseline plus 4s/2s and 8s/4s candidate arms
+- [x] Select one configuration using development only: 4s window / 2s stride / 8 frames
 - [ ] Acquire five new validation sources with 60+ audited queries and a 30+ minute source
 - [ ] Commit/checksum final contract, execute once, diagnose every miss and decide A/B/C/D/E
 - [ ] Perform historical diagnostic replay only after decision, where practical

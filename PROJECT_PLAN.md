@@ -7,8 +7,8 @@ candidate on new development and then new frozen validation sources. Only two
 window settings are permitted. Annotation review precedes any retrieval.
 No production integration, speech fix, fusion change, Q&A or OCR work belongs
 to this phase. B/C/D stops model experimentation; A authorizes only a later
-integration proposal. Current state: infrastructure and development annotation
-audit prepared; quality experiment and validation remain pending.
+integration proposal. Current state: development comparison completed; 4s/2s selected. New validation
+preparation is active; final evidence and architecture decision remain pending.
 
 Final release review (2026-09-25): Decision C, **do not ship v1.0.0**. The
 single frozen eight-video/124-positive deployment diagnostic measured 71.0%
