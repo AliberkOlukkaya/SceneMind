@@ -10,7 +10,7 @@
 - [x] Audit historical source URLs/aliases and decode media through their ends
 - [x] Freeze development contract and execute exact baseline plus 4s/2s and 8s/4s candidate arms
 - [x] Select one configuration using development only: 4s window / 2s stride / 8 frames
-- [ ] Acquire five new validation sources with 60+ audited queries and a 30+ minute source
+- [x] Acquire five new validation sources with 66 audited queries and a 31.93-minute source
 - [ ] Commit/checksum final contract, execute once, diagnose every miss and decide A/B/C/D/E
 - [ ] Perform historical diagnostic replay only after decision, where practical
 - [ ] Complete reports, checks, stable push and clean-tree verification

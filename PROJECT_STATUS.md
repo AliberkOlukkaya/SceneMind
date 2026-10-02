@@ -16,8 +16,12 @@ a lossless cycling-video remux. Development is complete: production CLIP R@5
 rule freezes 4s/2s/eight frames. The large regression is development evidence,
 not the final architecture decision. Three CLIP raw misses have disclosed
 subsecond annotation-endpoint issues; frozen labels are unchanged. New
-validation preparation is active; an initially nominated pasta video was
-excluded because its source appeared in historical evaluation records.
+validation is frozen before retrieval: five new sources, 70.03 minutes,
+66 queries, including a 31.93-minute source. 191 chronological/targeted
+contact sheets were reviewed by the agent; independent human sign-off is
+absent. Manifest SHA-256: `54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e`.
+An initially nominated pasta video was excluded for historical source overlap.
+Final baseline and selected-candidate execution are next; no validation scores exist.
 Full checks: 303 passed, 1 skipped; Ruff passed. Production remains unchanged.
 See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md`.
 

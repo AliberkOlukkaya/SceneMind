@@ -1,0 +1,2792 @@
+{
+  "schema": 1,
+  "split": "validation",
+  "status": "FROZEN_BEFORE_VALIDATION",
+  "created": "2026-10-02",
+  "selected_config": {
+    "length": 4,
+    "stride": 2,
+    "frames": 8
+  },
+  "selection_sha256": "f153155c82d968c97cf2a9502b52ec23d6d2a272a1740288f3cb51c0f8c06f23",
+  "sources": [
+    {
+      "source_id": "river",
+      "title": "File:The River (1938).webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_River_(1938).webm",
+      "commons_page_id": 67681174,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e8/The_River_%281938%29.webm/The_River_%281938%29.webm.480p.vp9.webm",
+      "attribution": "<a href=\"//commons.wikimedia.org/wiki/Category:Pare_Lorentz\" title=\"Category:Pare Lorentz\">Pare Lorentz</a>",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=fpz0XI6U97U\">YouTube</a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=fpz0XI6U97U\">archive.org</a></bdi>",
+      "license": "Public domain",
+      "license_url": null,
+      "media_path": "data/temporal-v1/media/river.webm",
+      "media_sha256": "56d7667ce9d7c419ff23f36bc0aaa065995198fde1d014373f899988f663adca",
+      "duration_seconds": 1915.8583666666668,
+      "fps": 29.97002997002997,
+      "bytes": 143001691,
+      "container_duration_seconds": 1915.8806333333334,
+      "decode_preflight": {
+        "decoded_frames": 57418,
+        "last_pts": 1915.825,
+        "fps": 29.97002997002997
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=fpz0XI6U97U",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=fpz0XI6U97U"
+      ],
+      "provenance_review": "Commons attribution, source license and original-credit aliases reviewed; checked against historical and development source registry.",
+      "full_timeline_review": "Codex agent chronological contact sheets over complete decoded duration: river/dumplings 5s, wedding 2s, log-stool/fitness 1s; per-query boundary/interior audit; supplementary 0.1-3s event and repetition review. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "dumplings",
+      "title": "File:Homemade Dumplings, 3 Ways - Jiaozi, Pancit Molo, Xiaolongbao ｜ It's Elementary - CookWithUs.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Homemade_Dumplings,_3_Ways_-_Jiaozi,_Pancit_Molo,_Xiaolongbao_%EF%BD%9C_It%27s_Elementary_-_CookWithUs.webm",
+      "commons_page_id": 162787267,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b2/Homemade_Dumplings%2C_3_Ways_-_Jiaozi%2C_Pancit_Molo%2C_Xiaolongbao_%EF%BD%9C_It%27s_Elementary_-_CookWithUs.webm/Homemade_Dumplings%2C_3_Ways_-_Jiaozi%2C_Pancit_Molo%2C_Xiaolongbao_%EF%BD%9C_It%27s_Elementary_-_CookWithUs.webm.480p.vp9.webm",
+      "attribution": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCO2UaBiDJsFzjaK7666wydQ\">The Spruce Eats</a>",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=FxVIorqtXm8\"><bdi lang=\"\">Homemade Dumplings, 3 Ways: Jiaozi, Pancit Molo, Xiaolongbao | It's Elementary #CookWithUs</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=FxVIorqtXm8\">archive.org</a></bdi>",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "media_path": "data/temporal-v1/media/dumplings.webm",
+      "media_sha256": "03362077492d047bb300abf6dd6c35d30a91399f182433c7589d15bbff0b040d",
+      "duration_seconds": 1410.3737083333335,
+      "fps": 23.976023976023978,
+      "bytes": 113364354,
+      "container_duration_seconds": 1410.3672916666665,
+      "decode_preflight": {
+        "decoded_frames": 33815,
+        "last_pts": 1410.332,
+        "fps": 23.976023976023978
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=FxVIorqtXm8",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=FxVIorqtXm8"
+      ],
+      "provenance_review": "Commons attribution, source license and original-credit aliases reviewed; checked against historical and development source registry.",
+      "full_timeline_review": "Codex agent chronological contact sheets over complete decoded duration: river/dumplings 5s, wedding 2s, log-stool/fitness 1s; per-query boundary/interior audit; supplementary 0.1-3s event and repetition review. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "log-stool",
+      "title": "File:Video of making of log furniture cutting a bar stool from a log.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Video_of_making_of_log_furniture_cutting_a_bar_stool_from_a_log.webm",
+      "commons_page_id": 116707710,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d5/Video_of_making_of_log_furniture_cutting_a_bar_stool_from_a_log.webm/Video_of_making_of_log_furniture_cutting_a_bar_stool_from_a_log.webm.480p.vp9.webm",
+      "attribution": "<a href=\"//commons.wikimedia.org/wiki/User:Sillerkiil\" title=\"User:Sillerkiil\">Sillerkiil</a>",
+      "credit": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "media_path": "data/temporal-v1/media/log-stool.webm",
+      "media_sha256": "09de77f7027fbd48a7d1a0eac98b1cf0b0e3fd340948497e285517592e2cc87d",
+      "duration_seconds": 176.451,
+      "fps": 25.0,
+      "bytes": 29631156,
+      "container_duration_seconds": 176.44,
+      "decode_preflight": {
+        "decoded_frames": 4411,
+        "last_pts": 176.411,
+        "fps": 25.0
+      },
+      "source_aliases": [],
+      "provenance_review": "Commons attribution, source license and original-credit aliases reviewed; checked against historical and development source registry.",
+      "full_timeline_review": "Codex agent chronological contact sheets over complete decoded duration: river/dumplings 5s, wedding 2s, log-stool/fitness 1s; per-query boundary/interior audit; supplementary 0.1-3s event and repetition review. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "wedding",
+      "title": "File:Bandhan.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bandhan.webm",
+      "commons_page_id": 77376063,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fd/Bandhan.webm/Bandhan.webm.480p.vp9.webm",
+      "attribution": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/user/Indiandiplomacy\">Indian Diplomacy</a>",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=Woh-C5uWdKo\"><bdi lang=\"\">Bandhan</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=Woh-C5uWdKo\">archive.org</a></bdi>",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "media_path": "data/temporal-v1/media/wedding.webm",
+      "media_sha256": "6073dad8cd020f138fdd4c4eae38a50b2bebce7066087a421e3cb67b73bac3a4",
+      "duration_seconds": 585.654,
+      "fps": 25.0,
+      "bytes": 50742026,
+      "container_duration_seconds": 585.72,
+      "decode_preflight": {
+        "decoded_frames": 14641,
+        "last_pts": 585.614,
+        "fps": 25.0
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=Woh-C5uWdKo",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=Woh-C5uWdKo"
+      ],
+      "provenance_review": "Commons attribution, source license and original-credit aliases reviewed; checked against historical and development source registry.",
+      "full_timeline_review": "Codex agent chronological contact sheets over complete decoded duration: river/dumplings 5s, wedding 2s, log-stool/fitness 1s; per-query boundary/interior audit; supplementary 0.1-3s event and repetition review. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "fitness",
+      "title": "File:Santé et Bien-être réalisé par Bouba Kam's.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sant%C3%A9_et_Bien-%C3%AAtre_r%C3%A9alis%C3%A9_par_Bouba_Kam%27s.webm",
+      "commons_page_id": 104135574,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/47/Sant%C3%A9_et_Bien-%C3%AAtre_r%C3%A9alis%C3%A9_par_Bouba_Kam%27s.webm/Sant%C3%A9_et_Bien-%C3%AAtre_r%C3%A9alis%C3%A9_par_Bouba_Kam%27s.webm.480p.vp9.webm",
+      "attribution": "<a href=\"//commons.wikimedia.org/wiki/User:Kamboo19\" title=\"User:Kamboo19\">Bouba Kam's</a>",
+      "credit": "Video: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/channel/UCekaYASnqGtaZtSjlNdng-Q/about\">Bouba Kam's</a>",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "media_path": "data/temporal-v1/media/fitness.webm",
+      "media_sha256": "eeadf0faeff676a81a4452b48e241996f438efa73addddb23e9dbb60f92fe4cf",
+      "duration_seconds": 113.57400000000001,
+      "fps": 25.0,
+      "bytes": 10082144,
+      "container_duration_seconds": 113.56,
+      "decode_preflight": {
+        "decoded_frames": 2839,
+        "last_pts": 113.534,
+        "fps": 25.0
+      },
+      "source_aliases": [],
+      "provenance_review": "Commons attribution, source license and original-credit aliases reviewed; checked against historical and development source registry.",
+      "full_timeline_review": "Codex agent chronological contact sheets over complete decoded duration: river/dumplings 5s, wedding 2s, log-stool/fitness 1s; per-query boundary/interior audit; supplementary 0.1-3s event and repetition review. No continuous playback or independent human sign-off."
+    }
+  ],
+  "queries": [
+    {
+      "id": "tval-001",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "Workers roll large cotton bales along the boat ramp.",
+      "intervals": [
+        [
+          333,
+          358
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Extend endpoint review through 361; inspect earlier loading 305-321 for repeated matches. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-002",
+      "video_id": "river",
+      "category": "TEMPORAL_EVENT",
+      "query": "A tall tree falls down in the forest.",
+      "intervals": [
+        [
+          549.1,
+          551
+        ],
+        [
+          553.5,
+          564.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Review 547-565 at 0.5 seconds to separate sawing from actual falling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-003",
+      "video_id": "river",
+      "category": "TEMPORAL_EVENT",
+      "query": "Logs rush down a water-filled wooden chute.",
+      "intervals": [
+        [
+          565.5,
+          597.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Chute visible from 565.5; cut to log pile at 598. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-004",
+      "video_id": "river",
+      "category": "SCENE",
+      "query": "Bare hillsides and dead tree stumps after deforestation.",
+      "intervals": [
+        [
+          819,
+          894.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Extend final boundary through 896; roots/stumps still visible at 890 overview. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-005",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A lantern beside a vertical water-level measuring scale.",
+      "intervals": [
+        [
+          1056,
+          1061
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Narrow to lantern and scale jointly visible; scoreboard begins after blackout. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-006",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "People row an open boat crowded with flood survivors.",
+      "intervals": [
+        [
+          1148.8,
+          1151.3
+        ],
+        [
+          1154.3,
+          1158.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Separate intervening shore cutaway; inspect four transitions at 0.25 seconds. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-007",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A cat walks on the roof of a flooded building.",
+      "intervals": [
+        [
+          1199.3,
+          1201.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Correct animal from close pixels; inspect transitions at 0.25 seconds. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-008",
+      "video_id": "river",
+      "category": "SCENE",
+      "query": "An aerial view of a town inundated by floodwater.",
+      "intervals": [
+        [
+          1217.25,
+          1249.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Town aerial begins in dissolve; last river-only shot less useful, inspect 1241-1252. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-009",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "An overturned car lies beside a house.",
+      "intervals": [
+        [
+          1289.4,
+          1292.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude prior tilted building and next house; quarter-second boundary review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-010",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "Farm workers pick cotton in a field.",
+      "intervals": [
+        [
+          278.3,
+          282.2
+        ],
+        [
+          294.4,
+          298.8
+        ],
+        [
+          1373.5,
+          1436.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Remove sack restriction because close-ups also valid; inspect main sequence beginning 1370-1380. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-011",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A person slices a loaf of bread with a knife.",
+      "intervals": [
+        [
+          1442.25,
+          1448.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Correct action: clearly slicing loaf, not kneading dough. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-012",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "Children eat at the family dining table.",
+      "intervals": [
+        [
+          1470.8,
+          1482.75
+        ],
+        [
+          1486.75,
+          1493.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. First clip already present at 1472; verify onset from 1470. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-013",
+      "video_id": "river",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A young child holds a metal cup.",
+      "intervals": [
+        [
+          1436.75,
+          1442.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Child rather than baby; verify onset near 1436.5. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-014",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman tends to a baby lying in a cradle.",
+      "intervals": [
+        [
+          1519.4,
+          1525.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Bed approach is not tending; close-up begins 1519.5. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-015",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A map shows branching rivers across the United States.",
+      "intervals": [
+        [
+          1554.75,
+          1645.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Dissolves: state approximate half-second boundary precision. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-016",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A construction worker operates a jackhammer.",
+      "intervals": [
+        [
+          1694.8,
+          1696.8
+        ],
+        [
+          1698.4,
+          1700
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude intervening explosion and following distant construction view; dense review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-017",
+      "video_id": "river",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "Views of completed concrete dam spillways.",
+      "intervals": [
+        [
+          1705.5,
+          1710.5
+        ],
+        [
+          1811.7,
+          1825.5
+        ],
+        [
+          1840.7,
+          1856
+        ],
+        [
+          1882.7,
+          1901.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Early spillway is DRY: remove flowing-water condition. Extend source-only boundary review to all four shots. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-018",
+      "video_id": "river",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A hand turns a circular machine speed control.",
+      "intervals": [
+        [
+          1829.5,
+          1831
+        ],
+        [
+          1832,
+          1835.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude gauges and distant operator; dense transitions needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-019",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook rolls dough into long ropes with his palms.",
+      "intervals": [
+        [
+          270,
+          299.5
+        ],
+        [
+          301.2,
+          303.2
+        ],
+        [
+          307.5,
+          320.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Pause for explanation near 300 and end before rope cutting; dense review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-020",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook cuts a rope of dough into small pieces.",
+      "intervals": [
+        [
+          326.5,
+          329
+        ],
+        [
+          332,
+          341.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Include first short cutting segment from prior sheet; exclude explanation/scale. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-021",
+      "video_id": "dumplings",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A small piece of dough sits on a digital kitchen scale.",
+      "intervals": [
+        [
+          343.5,
+          351.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Include wide view where dough remains on scale, before closeup. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-022",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook rolls a round dumpling wrapper with a wooden rolling pin.",
+      "intervals": [
+        [
+          388,
+          407.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Palm flattening before rolling excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-023",
+      "video_id": "dumplings",
+      "category": "TEMPORAL_EVENT",
+      "query": "Water is poured into the hot frying pan and steam rises.",
+      "intervals": [
+        [
+          499.3,
+          500.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Pouring itself only; inspect quarters through 501. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-024",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook lifts the lid from the steaming red frying pan.",
+      "intervals": [
+        [
+          521.3,
+          523.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude later explanation and tongs. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Intro 36.3-37.5 lowers the lid, so it is not a repeat of lifting."
+      }
+    },
+    {
+      "id": "tval-025",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook transfers fried dumplings from the pan to a plate with tongs.",
+      "intervals": [
+        [
+          536.5,
+          537.8
+        ],
+        [
+          552.5,
+          555.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude cutting/tasting on plate. Review opening montage 33-39 for repeated transfer. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-026",
+      "video_id": "dumplings",
+      "category": "HUMAN_ACTION",
+      "query": "The cook tastes dumpling soup from a blue bowl with a spoon.",
+      "intervals": [
+        [
+          0,
+          4.3
+        ],
+        [
+          919.5,
+          922.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Second tasting starts after presentation shot; check intro end 4-6. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-027",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "Cooked broth is poured through a sieve into another container.",
+      "intervals": [
+        [
+          685.5,
+          696.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Pour already starts before initial guess; verify 684-687. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-028",
+      "video_id": "dumplings",
+      "category": "STATIC_OBJECT",
+      "query": "A square yellow dumpling wrapper is held up to the camera.",
+      "intervals": [
+        [
+          771.8,
+          776.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Square wrapper shown on plate then held singly; exclude folding afterward. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-029",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook folds yellow wonton wrappers around meat filling.",
+      "intervals": [
+        [
+          792.5,
+          810.7
+        ],
+        [
+          813.8,
+          823.7
+        ],
+        [
+          825,
+          836.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Repeated folding separated from presentation; review pauses around 811-815 and 824-825. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-030",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook ladles hot soup into a blue serving bowl.",
+      "intervals": [
+        [
+          896.8,
+          901.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Actual ladling begins after scooping; exclude garnish. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-031",
+      "video_id": "dumplings",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "The cook holds a dried mushroom close to the camera.",
+      "intervals": [
+        [
+          1003.7,
+          1004.7
+        ],
+        [
+          1010,
+          1011.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Close-up condition excludes distant talking shots. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-032",
+      "video_id": "dumplings",
+      "category": "TEMPORAL_EVENT",
+      "query": "The cook puts a metal tray into the refrigerator.",
+      "intervals": [
+        [
+          1058.2,
+          1061.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Refrigerator insertion and closing; exclude prior pouring. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-033",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook cuts a sheet of set jelly in a metal tray.",
+      "intervals": [
+        [
+          1158.3,
+          1168
+        ],
+        [
+          1174,
+          1180.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude jelly demonstration/pauses; dense transitions required. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-034",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook lines a bamboo steamer with cabbage leaves.",
+      "intervals": [
+        [
+          1251.5,
+          1257.8
+        ],
+        [
+          1267.8,
+          1270.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Later 1282-1288 is placing dumplings, not cabbage; excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-035",
+      "video_id": "dumplings",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "A dumpling rests in a white soup spoon held beside chopsticks.",
+      "intervals": [
+        [
+          28.4,
+          30.2
+        ],
+        [
+          1350.7,
+          1360.5
+        ],
+        [
+          1388.5,
+          1390.1
+        ],
+        [
+          1396.2,
+          1397.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Need final triptych 1397-1402 repeated occurrence check. Spoon must contain dumpling and chopsticks jointly visible. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Final 1398-1401 triptych shows chopsticks/steamer rather than clearly visible spoon; excluded."
+      }
+    },
+    {
+      "id": "tval-036",
+      "video_id": "dumplings",
+      "category": "SCENE",
+      "query": "An overhead view of a tray lined with rows of yellow folded dumplings.",
+      "intervals": [
+        [
+          818.8,
+          831.5
+        ],
+        [
+          836.6,
+          840.6
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Overhead only; exclude close-up of folding and oblique tray display. Check earlier/later overhead shots for tray. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Includes close tray display; later mostly empty tray at 856-859 lacks rows."
+      }
+    },
+    {
+      "id": "tval-037",
+      "video_id": "wedding",
+      "category": "SCENE",
+      "query": "The decorated building entrance has red carpeted steps.",
+      "intervals": [
+        [
+          31.5,
+          36.3
+        ],
+        [
+          388.5,
+          391.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Entrance daylight steps; check night entrance repeat. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-038",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "A man hangs orange flower garlands on a white wall.",
+      "intervals": [
+        [
+          46.3,
+          54.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Garland hanging excludes subsequent title. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-039",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "Two women in green and blue dresses dance together.",
+      "intervals": [
+        [
+          229.3,
+          238.7
+        ],
+        [
+          550.5,
+          552.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Includes end-credit dance replay; refine first onset. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-040",
+      "video_id": "wedding",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman draws henna patterns on another woman's hand.",
+      "intervals": [
+        [
+          238.8,
+          241.6
+        ],
+        [
+          257.6,
+          268.7
+        ],
+        [
+          547.3,
+          550.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Henna drawing excludes cone preparation and dance; end-credit replay included. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-041",
+      "video_id": "wedding",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "Hands fill and fold a small cone for applying henna.",
+      "intervals": [
+        [
+          249.3,
+          257.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Exclude mixing bowl before actual cone filling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-042",
+      "video_id": "wedding",
+      "category": "TEMPORAL_EVENT",
+      "query": "A dancing couple turns beneath their joined raised hands in blue light.",
+      "intervals": [
+        [
+          364.3,
+          366.5
+        ],
+        [
+          371.5,
+          372.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Two distinct turns; surrounding slow dance not itself a twirl; refine edges. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-043",
+      "video_id": "wedding",
+      "category": "STATIC_OBJECT",
+      "query": "An ornate dome canopy with hanging beads covers the wedding ceremony.",
+      "intervals": [
+        [
+          418.4,
+          424.8
+        ],
+        [
+          440.8,
+          445.6
+        ],
+        [
+          578.7,
+          580.1
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Object is decorated canopy, not reliably an electric chandelier. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-044",
+      "video_id": "wedding",
+      "category": "SCENE",
+      "query": "A wedding couple sits beside a bright ceremonial fire.",
+      "intervals": [
+        [
+          436.7,
+          440.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Close fire shot; prior wider ceremony has no bright flame. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-045",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "The bride embraces a man wearing a pink turban.",
+      "intervals": [
+        [
+          469.2,
+          472.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Embrace begins when arms rise, excludes earlier conversation. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-046",
+      "video_id": "wedding",
+      "category": "STATIC_OBJECT",
+      "query": "A white wedding car is decorated with flowers and ribbons.",
+      "intervals": [
+        [
+          478.3,
+          491.8
+        ],
+        [
+          581.2,
+          582.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Decorated car clear overhead; subsequent distant rear too small for ribbons. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-047",
+      "video_id": "wedding",
+      "category": "TEMPORAL_EVENT",
+      "query": "The wedding car drives away from the guests at night.",
+      "intervals": [
+        [
+          491.9,
+          500.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Rear car drives away in background behind walking guests; verify earlier movement. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-048",
+      "video_id": "wedding",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "Women smear yellow paste on the bride's cheeks.",
+      "intervals": [
+        [
+          175.3,
+          185.9
+        ],
+        [
+          537.2,
+          540.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Paste application includes credit replay, not later men applying paste. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-049",
+      "video_id": "log-stool",
+      "category": "SCENE",
+      "query": "A person and a carved log stand in a snowy forest.",
+      "intervals": [
+        [
+          0.8,
+          175.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Scene query includes final seated view; excludes white/black transition. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-050",
+      "video_id": "log-stool",
+      "category": "OBJECT_INTERACTION",
+      "query": "The woodworker splits a cut section away from the log with an axe.",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Axe splits slab; excludes subsequent carrying slab. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-051",
+      "video_id": "log-stool",
+      "category": "TEMPORAL_EVENT",
+      "query": "The woodworker tips the carved log from upright onto its side.",
+      "intervals": [
+        [
+          122.95,
+          123.25
+        ],
+        [
+          135.35,
+          135.85
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Rapid tipping events only; subsequent cutting not tipping. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-052",
+      "video_id": "log-stool",
+      "category": "HUMAN_ACTION",
+      "query": "The woodworker sits down on the finished wooden stool.",
+      "intervals": [
+        [
+          165.1,
+          167.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Sit-down motion ends before static seated pose. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-053",
+      "video_id": "log-stool",
+      "category": "STATIC_OBJECT",
+      "query": "A chainsaw lies on the snow while the worker uses an axe.",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Chainsaw in foreground during axe work. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-054",
+      "video_id": "log-stool",
+      "category": "OBJECT_INTERACTION",
+      "query": "The woodworker cuts the end of a log lying on its side.",
+      "intervals": [
+        [
+          123.5,
+          130.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Chainsaw cuts end of horizontal log, excludes upright transition. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-055",
+      "video_id": "log-stool",
+      "category": "HUMAN_ACTION",
+      "query": "The woodworker kneels or crouches low in the snow beside the upright log.",
+      "intervals": [
+        [
+          42.8,
+          58.9
+        ],
+        [
+          65.85,
+          66.15
+        ],
+        [
+          66.75,
+          66.85
+        ],
+        [
+          87.85,
+          88.35
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Short crouches include jump-cut repeats; standing bent forward excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-056",
+      "video_id": "log-stool",
+      "category": "TEMPORAL_EVENT",
+      "query": "The woodworker lifts the carved stool from its side into an upright position.",
+      "intervals": [
+        [
+          130.95,
+          131.25
+        ],
+        [
+          141.4,
+          143.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Only lifting upright; later repositioning already upright excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-057",
+      "video_id": "fitness",
+      "category": "TEMPORAL_EVENT",
+      "query": "A man wakes up in bed and reaches for his phone.",
+      "intervals": [
+        [
+          13.7,
+          15.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Wake/reach sequence excludes later phone use. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-058",
+      "video_id": "fitness",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A smartphone lies on the bed beside a sleeping man.",
+      "intervals": [
+        [
+          7.4,
+          13.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Phone beside sleeping man, excludes awake phone handling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-059",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A runner stretches one leg on a metal railing.",
+      "intervals": [
+        [
+          25,
+          30.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Wide and close leg stretch; excludes face-only shot. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-060",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A man runs up the stairs to a pedestrian bridge.",
+      "intervals": [
+        [
+          33.2,
+          34.55
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Stair run only, not level bridge. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-061",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A man jumps rope outdoors.",
+      "intervals": [
+        [
+          38.9,
+          46.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Continuous jumping-rope montage, including hands/feet detail. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-062",
+      "video_id": "fitness",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man drinks water from a clear bottle outdoors.",
+      "intervals": [
+        [
+          57.2,
+          59.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Drinking contact, not subsequent face-only recovery. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-063",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A shirtless man does abdominal crunches on a park bench.",
+      "intervals": [
+        [
+          60.8,
+          65.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Crunch sequence includes wide, close and overhead angles. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-064",
+      "video_id": "fitness",
+      "category": "STATIC_OBJECT",
+      "query": "A green and white bus passes through the street.",
+      "intervals": [
+        [
+          52.3,
+          55.4
+        ],
+        [
+          65.8,
+          68.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Two bus views; excludes flag/building cutaways. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-065",
+      "video_id": "fitness",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man picks an orange from a fruit stall.",
+      "intervals": [
+        [
+          84.2,
+          85.6
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Orange selection only; excludes earlier apple and subsequent eating. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    },
+    {
+      "id": "tval-066",
+      "video_id": "fitness",
+      "category": "TEMPORAL_EVENT",
+      "query": "Three people clink glasses of orange-colored juice together.",
+      "intervals": [
+        [
+          93.1,
+          94.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Do not infer friendship or precise fruit from visual evidence; ends before drinking. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      }
+    }
+  ],
+  "review_status": "Agent audit complete before any validation retrieval; independent human sign-off absent",
+  "candidate": {
+    "model": "microsoft/xclip-base-patch32",
+    "revision": "a2e27a78a2b5d802e894b8a1ef14f3a8ce490963"
+  },
+  "baseline": {
+    "model": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "sampling_seconds": 5,
+    "jpeg_width": 480,
+    "route": "production Visual API"
+  },
+  "normalization": "L2 video and video-conditioned text",
+  "index": "exact exhaustive native conditioned cosine; NPZ vectors and patch features",
+  "top_k": 10,
+  "metric": "timestamp in any reviewed interval; no overlap-only credit or tolerance",
+  "configs": [
+    {
+      "length": 4,
+      "stride": 2,
+      "frames": 8
+    }
+  ],
+  "excluded_sources": [
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:1_Me_and_my_phone.webm",
+      "seen_in": [
+        "ml/experiments/lightweight_pair_scorer/calibration_v2.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:4_-_1_-_Lecture_2.1_Expressions_(19_59",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_Station_in_Two_Counties_at_Once.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Amyloidosis.webm",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Base_jump.webm",
+      "seen_in": [
+        "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blended-learning.webm",
+      "seen_in": [
+        "ml/evaluation/qa_structured_question_evidence_v1_manifest.json",
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cesur_ol,_Wikipedist_ol!.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cooking_with_Laura_Homemade_Pasta.webm",
+      "seen_in": [
+        "ml/evaluation/qa_structured_question_evidence_v1_manifest.json",
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Couple_holding_hands.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Course_Overview_(6.002x",
+      "seen_in": [
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Demo_Video_Tutorial.webm",
+      "seen_in": [
+        "ml/evaluation/final_ask_video_core_acceptance_v1_manifest.json",
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Demonstration_of_Donning_(Putting_On",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dirt_jump_biking.webm",
+      "seen_in": [
+        "ml/evaluation/SMALL_OBJECT_ABLATION_RESULTS.md",
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Diversity_and_sources.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dog_seen_from_a_GoPro.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Example_JWB_screen_recording.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Explainer_Video_-_Using_good_sources_on_wikipedia.webm",
+      "seen_in": [
+        "ml/evaluation/qa_structured_question_evidence_v1_manifest.json",
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Find_link_-_lightning_talk.webm",
+      "seen_in": [
+        "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Food_Preparation.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Free_AI_Coding_Assistant_%E2%80%93_Cline.AI_Setup_Guide.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gameplay_of_Send_Me_To_Heaven.webm",
+      "seen_in": [
+        "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:HTML_Explained_(Learn_HTML_basics_in_less_then_10_minutes!",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jimmy_Wales_interview_for_WikipediaDay_2019.webm",
+      "seen_in": [
+        "ml/evaluation/holdout/hybrid_fusion_holdout_v1.json",
+        "ml/evaluation/reports/hybrid-fusion-holdout-v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:June_2013_ACIP_Meeting_-_Opening_Remarks.webm",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Latte_salute.webm",
+      "seen_in": [
+        "ml/experiments/lightweight_pair_scorer/calibration_v2.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Manchester_Street_Scene_(1901",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Npm_for_absolute_beginners_(Node.JS,_Visual_Studio_Code",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pantemaskin.webm",
+      "seen_in": [
+        "ml/evaluation/SMALL_OBJECT_ABLATION_RESULTS.md",
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:President_Reagan",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:RUN.webm",
+      "seen_in": [
+        "ml/evaluation/holdout/hybrid_fusion_holdout_v1.json",
+        "ml/evaluation/reports/hybrid-fusion-holdout-v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Role_of_Wikipedia_in_education.webm",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Screen_recording_2024-05-15_09.05.57.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Social_Media_on_Straight_Talk_Africa.webm",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Split-flap_display_at_German_train_station.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Street_traffic.webm",
+      "seen_in": [
+        "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Debrief_Behind_the_Museum_%E2%80%93_Accessibility.webm",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Oceans.webm",
+      "seen_in": [
+        "ml/evaluation/qa_abstention_safety_v1_manifest.json",
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Wiki_Education_Foundation_in_a_Flash_at_WikiConference_USA_2015.webm",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Throwball.webm",
+      "seen_in": [
+        "ml/evaluation/SMALL_OBJECT_ABLATION_RESULTS.md",
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Throwing-slowmotion-man2013-stabilized.webm",
+      "seen_in": [
+        "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Timeless_Tips_For_Effective_Presentations.webm",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:TrueNAS_Tutorial-_Expanding_Your_ZFS_RAIDz_VDEV_with_a_Single_Drive.webm",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:UK_Parliament_Open_Lecture_-_An_insider%27s_guide_to_the_House_of_Commons.webm",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ueshiba_Mitsuteru_(Nippon_Budokan,_2017",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Video_tutorial.webm",
+      "seen_in": [
+        "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vietnamese_Heritage_Museum_raises_funds_to_expand_operations.webm",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_%C3%87eviri_(video_10",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_(video_9",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:WCC_module_5_-_23_-_re-using_freely-licensed_media.webm",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wdo_presentation.webm",
+      "seen_in": [
+        "ml/evaluation/ocr_evidence_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:WebM-_A_Video_Codec_for_the_Web.webm",
+      "seen_in": [
+        "ml/evaluation/final_ask_video_core_acceptance_v1_manifest.json",
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:WikiSalon_WIkipedia_1Lib1Ref.webm",
+      "seen_in": [
+        "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wikidata_Editing_with_OpenRefine_-_Part_1.webm",
+      "seen_in": [
+        "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/File:William_Fisher_CopyrightX_Lecture_12_1.webm",
+      "seen_in": [
+        "ml/evaluation/hierarchical_video_memory_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-POTUS",
+      "seen_in": [
+        "ml/experiments/lightweight_pair_scorer/calibration_v2.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Couple_holding_hands.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Throwing-slowmotion-man2013-stabilized.webm",
+      "seen_in": [
+        "ml/evaluation/natural_v2.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Find_link_-_lightning_talk.webm",
+      "seen_in": [
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/url-ingestion-v1.json",
+        "ml/evaluation/run_url_ingestion_v1.py",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Course_Overview_%286.002x%29.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seen_in": [
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Cesur_ol%2C_Wikipedist_ol%21.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Gameplay_of_Send_Me_To_Heaven.webm",
+      "seen_in": [
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Base_jump.webm",
+      "seen_in": [
+        "ml/evaluation/natural_v2.json",
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Pantemaskin.webm",
+      "seen_in": [
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Blended-learning.webm",
+      "seen_in": [
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Throwball.webm",
+      "seen_in": [
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Street_traffic.webm",
+      "seen_in": [
+        "ml/evaluation/natural_v2.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Video_tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seen_in": [
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Dog_seen_from_a_GoPro.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Explainer_Video_-_Using_good_sources_on_wikipedia.webm",
+      "seen_in": [
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/1_Me_and_my_phone.webm",
+      "seen_in": [
+        "ml/experiments/lightweight_pair_scorer/calibration_v2.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Latte_salute.webm",
+      "seen_in": [
+        "ml/experiments/lightweight_pair_scorer/calibration_v2.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Dirt_jump_biking.webm",
+      "seen_in": [
+        "ml/experiments/small_object_ablation/visibility_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Food_Preparation.webm",
+      "seen_in": [
+        "ml/experiments/image_text_verifier/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Vikipedi_101_-_%C3%87eviri_%28video_10%29.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cooking_with_Laura_Homemade_Pasta.webm",
+      "seen_in": [
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/WIKITONGUES-_Ela_speaking_Turkish.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Vikipedi_101_-_Wikimedia_Commons%27a_medya_y%C3%BCkleme_%28video_9%29.webm",
+      "seen_in": [
+        "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "ml/experiments/turkish_compatibility/build_manifest.py",
+        "ml/experiments/turkish_compatibility/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/WebM-_A_Video_Codec_for_the_Web.webm",
+      "seen_in": [
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Demo_Video_Tutorial.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seen_in": [
+        "ml/evaluation/reports/query-routing-v1.json",
+        "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "ml/experiments/query_routing/calibration_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/The_Oceans.webm",
+      "seen_in": [
+        "ml/evaluation/reports/human-grounded-router-v1.json",
+        "ml/experiments/human_grounded_router/sources_v1.json"
+      ]
+    },
+    {
+      "source_url": "https://www.youtube.com/watch?v=4ZvJGV6YF6Y",
+      "seen_in": [
+        "ml/evaluation/final_ask_video_core_acceptance_v1_manifest.json"
+      ]
+    },
+    {
+      "source_url": "https://www.youtube.com/watch?v=4ZvJGV6YF6Y`",
+      "seen_in": [
+        "ml/evaluation/FINAL_ASK_VIDEO_CORE_ACCEPTANCE_V1_RESULTS.md"
+      ]
+    },
+    {
+      "source_url": "https://www.youtube.com/watch?v=abcdefghijk",
+      "seen_in": [
+        "tests/test_url_ingestion.py"
+      ]
+    },
+    {
+      "source_url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+      "seen_in": [
+        "ml/evaluation/reports/url-ingestion-v1.json"
+      ]
+    },
+    {
+      "source_url": "https://youtu.be/abcdefghijk",
+      "seen_in": [
+        "tests/test_url_ingestion.py"
+      ]
+    },
+    {
+      "source_id": "one-week",
+      "title": "File:One Week (1920).webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:One_Week_(1920).webm",
+      "commons_page_id": 109086442,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f0/One_Week_%281920%29.webm/One_Week_%281920%29.webm.480p.vp9.webm",
+      "attribution": "Edward F. Cline, Buster Keaton",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=1nb2Lwv1ut8\">YouTube</a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=1nb2Lwv1ut8\">archive.org</a></bdi>",
+      "license": "Public domain",
+      "license_url": null,
+      "media_path": "data/temporal-v1/media/one-week.webm",
+      "media_sha256": "5c14360d5421c864143e9d94aaaa6cc88ebb5f6ba60b0e41eb211d59d8254549",
+      "duration_seconds": 1465.5973666666669,
+      "fps": 29.97002997002997,
+      "bytes": 103909467,
+      "container_duration_seconds": 1465.5974666666666,
+      "decode_preflight": {
+        "decoded_frames": 43924,
+        "last_pts": 1465.564,
+        "fps": 29.97002997002997,
+        "duration_from_last_pts": 1465.5973666666669,
+        "nominal_duration": 1465.5974666666666,
+        "seconds": 21.366973700000017
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=1nb2Lwv1ut8",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=1nb2Lwv1ut8"
+      ],
+      "provenance_review": "Commons license, attribution and original credit aliases reviewed against historical repository media URLs; original creators differ across sources.",
+      "full_timeline_review": "Codex chronological contact sheets: 5-second one-week/pottery, 2-second parade, 1-second cycling/solar-oven; dedicated 1-second event/boundary audit and 2-second supplementary pottery repeats. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "pottery",
+      "title": "File:Der Bartmannskrug.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Der_Bartmannskrug.webm",
+      "commons_page_id": 105377705,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/15/Der_Bartmannskrug.webm/Der_Bartmannskrug.webm.480p.vp9.webm",
+      "attribution": "Konrad Grunsky-Peper, Gabriel Simons; Schnitt/Kommentar: Ayten Fadel / LVR-Institut für Landeskunde und Regionalgeschichte",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=2ut0IY3Xn8k\"><bdi lang=\"\">Der Bartmannskrug</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=2ut0IY3Xn8k\">archive.org</a></bdi>",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "media_path": "data/temporal-v1/media/pottery.webm",
+      "media_sha256": "60153e8dcb7d48480b97f2a30beaf4f2b6ee2509672d51d475af54c0fc3ec768",
+      "duration_seconds": 878.494,
+      "fps": 25.0,
+      "bytes": 55496251,
+      "container_duration_seconds": 878.48,
+      "decode_preflight": {
+        "decoded_frames": 21962,
+        "last_pts": 878.4540000000001,
+        "fps": 25.0,
+        "duration_from_last_pts": 878.494,
+        "nominal_duration": 878.48,
+        "seconds": 9.63271020000002
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=2ut0IY3Xn8k",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=2ut0IY3Xn8k"
+      ],
+      "provenance_review": "Commons license, attribution and original credit aliases reviewed against historical repository media URLs; original creators differ across sources.",
+      "full_timeline_review": "Codex chronological contact sheets: 5-second one-week/pottery, 2-second parade, 1-second cycling/solar-oven; dedicated 1-second event/boundary audit and 2-second supplementary pottery repeats. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "parade",
+      "title": "File:Youth Parade for an Unlimited Period of Use of Tovarna Rog.webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Youth_Parade_for_an_Unlimited_Period_of_Use_of_Tovarna_Rog.webm",
+      "commons_page_id": 49499146,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2a/Youth_Parade_for_an_Unlimited_Period_of_Use_of_Tovarna_Rog.webm/Youth_Parade_for_an_Unlimited_Period_of_Use_of_Tovarna_Rog.webm.480p.vp9.webm",
+      "attribution": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/user/15oMedia\">Komunal</a>",
+      "credit": "<bdi lang=\"en\" dir=\"ltr\"><a href=\"//commons.wikimedia.org/wiki/Commons:YouTube_files\" title=\"Commons:YouTube files\">YouTube</a>: <a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/watch?v=FcV7O9KX17o\"><bdi lang=\"\">Youth Parade for an Unlimited Period of Use of Tovarna Rog</bdi></a> – View/save archived versions on <a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/*/https://www.youtube.com/watch?v=FcV7O9KX17o\">archive.org</a></bdi>",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "media_path": "data/temporal-v1/media/parade.webm",
+      "media_sha256": "5dd2b9e256839d5dd9e4c9184ed1878166d6a194c95c01c07afaa70eddacb6df",
+      "duration_seconds": 269.93100000000004,
+      "fps": 25.0,
+      "bytes": 45110291,
+      "container_duration_seconds": 270.08,
+      "decode_preflight": {
+        "decoded_frames": 6748,
+        "last_pts": 269.891,
+        "fps": 25.0,
+        "duration_from_last_pts": 269.93100000000004,
+        "nominal_duration": 270.08,
+        "seconds": 5.462340300000051
+      },
+      "source_aliases": [
+        "https://www.youtube.com/watch?v=FcV7O9KX17o",
+        "https://web.archive.org/web/*/https://www.youtube.com/watch?v=FcV7O9KX17o"
+      ],
+      "provenance_review": "Commons license, attribution and original credit aliases reviewed against historical repository media URLs; original creators differ across sources.",
+      "full_timeline_review": "Codex chronological contact sheets: 5-second one-week/pottery, 2-second parade, 1-second cycling/solar-oven; dedicated 1-second event/boundary audit and 2-second supplementary pottery repeats. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "cycling",
+      "title": "File:Zesdaagse Weeknummer 69-51 - Open Beelden - 12443.ogv",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Zesdaagse_Weeknummer_69-51_-_Open_Beelden_-_12443.ogv",
+      "commons_page_id": 12107984,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Zesdaagse_Weeknummer_69-51_-_Open_Beelden_-_12443.ogv?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "attribution": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.openbeelden.nl/users/beeldengeluid\">Nederlands Instituut voor Beeld en Geluid</a>",
+      "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.openbeelden.nl/media/12443/\">WEEKNUMMER695-HRE0000E875 at Open Beelden</a>",
+      "license": "CC BY-SA 3.0 nl",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+      "media_path": "data/temporal-v1/media/cycling.mkv",
+      "media_sha256": "50c865edf6de5e6d579a951029300c7a8d94942c0f817dc211354ae1fb2adcb3",
+      "duration_seconds": 85.32000000000001,
+      "fps": 25.0,
+      "bytes": 7056282,
+      "original_media_path": "data/temporal-v1/media/cycling.ogv",
+      "original_media_sha256": "ed970498c8bbd0a6c32bd7c132e99b04548fd40956cfe20e6af1850607f779c7",
+      "preparation": "Lossless video stream remux to MKV; shared identical file for both arms.",
+      "container_duration_seconds": 85.32,
+      "decode_preflight": {
+        "decoded_frames": 2133,
+        "last_pts": 85.28,
+        "fps": 25.0,
+        "duration_from_last_pts": 85.32000000000001,
+        "nominal_duration": 85.32,
+        "seconds": 0.15416720000030182
+      },
+      "source_aliases": [
+        "https://www.openbeelden.nl/media/12443/"
+      ],
+      "provenance_review": "Commons license, attribution and original credit aliases reviewed against historical repository media URLs; original creators differ across sources.",
+      "full_timeline_review": "Codex chronological contact sheets: 5-second one-week/pottery, 2-second parade, 1-second cycling/solar-oven; dedicated 1-second event/boundary audit and 2-second supplementary pottery repeats. No continuous playback or independent human sign-off."
+    },
+    {
+      "source_id": "solar-oven",
+      "title": "File:How to Make Solar Oven S’mores (SVS14643).webm",
+      "source_url": "https://commons.wikimedia.org/wiki/File:How_to_Make_Solar_Oven_S%E2%80%99mores_(SVS14643).webm",
+      "commons_page_id": 151385943,
+      "media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/19/How_to_Make_Solar_Oven_S%E2%80%99mores_%28SVS14643%29.webm/How_to_Make_Solar_Oven_S%E2%80%99mores_%28SVS14643%29.webm.480p.vp9.webm",
+      "attribution": "NASA's Scientific Visualization Studio - KBR Wyle Services, LLC/Beth Anthony",
+      "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://svs.gsfc.nasa.gov/14643\">How to Make Solar Oven S’mores</a>",
+      "license": "Public domain",
+      "license_url": null,
+      "media_path": "data/temporal-v1/media/solar-oven.webm",
+      "media_sha256": "344a3c5323b7f0885b196d936801d6d6df8e50f82b7ce508207581f1cd76b4ae",
+      "duration_seconds": 203.67570833333332,
+      "fps": 23.976023976023978,
+      "bytes": 18171431,
+      "container_duration_seconds": 203.7035,
+      "decode_preflight": {
+        "decoded_frames": 4883,
+        "last_pts": 203.634,
+        "fps": 23.976023976023978,
+        "duration_from_last_pts": 203.67570833333332,
+        "nominal_duration": 203.7035,
+        "seconds": 2.402984999999717
+      },
+      "source_aliases": [],
+      "provenance_review": "Commons license, attribution and original credit aliases reviewed against historical repository media URLs; original creators differ across sources.",
+      "full_timeline_review": "Codex chronological contact sheets: 5-second one-week/pottery, 2-second parade, 1-second cycling/solar-oven; dedicated 1-second event/boundary audit and 2-second supplementary pottery repeats. No continuous playback or independent human sign-off."
+    }
+  ],
+  "exclusion_audit": {
+    "method": "Tracked historical ml/tests/docs/scripts media URLs, original credit aliases and source review; shared hosting does not imply shared creator",
+    "files": [
+      {
+        "path": "docs/DEPLOYMENT.md",
+        "sha256": "639506f29d4fe09548e81760bde4d42b1e36ec62a51f61ab8b78fbae193f0c6a"
+      },
+      {
+        "path": "docs/URL_INGESTION.md",
+        "sha256": "bd696c44c4385b8b8ab8aa788d369a75fcb3c58c7bda8efbc000160c1916156b"
+      },
+      {
+        "path": "docs/learning/02-speech-transcription.md",
+        "sha256": "50d8e9bc13cc2e687e03b9400aea8e48187bebab9819501a17dfe7e05741450e"
+      },
+      {
+        "path": "docs/learning/03-clip-and-multimodal-embeddings.md",
+        "sha256": "c007370507eaa026aaf7ed9d40517efc30777d49e4b5e00865a805c4f1e1b666"
+      },
+      {
+        "path": "docs/learning/06-calibration-and-durable-workers.md",
+        "sha256": "f148e3464387e1da24b06c3f043a5e24c4a92f195648c82a20b2455af5200d79"
+      },
+      {
+        "path": "docs/learning/10-ocr-evidence.md",
+        "sha256": "eb71eb4fbe1f84e01f991fc51f591d6c8fc6db0bfa135c61c5887ae274e6c1d8"
+      },
+      {
+        "path": "ml/evaluation/FINAL_ASK_VIDEO_CORE_ACCEPTANCE_V1_RESULTS.md",
+        "sha256": "9e933ef1cac54b279dd37549dd6657423b4c781c40719491c55c57699e8ab563"
+      },
+      {
+        "path": "ml/evaluation/FINAL_DEPLOYMENT_ACCEPTANCE_V1_MANIFEST.json",
+        "sha256": "d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196"
+      },
+      {
+        "path": "ml/evaluation/NATURAL_V2_PROTOCOL.md",
+        "sha256": "359c340c5c215cf070f9db998bdd84f9e03754dbb8932d8b4a41ea863d35d190"
+      },
+      {
+        "path": "ml/evaluation/OCR_EVIDENCE_V1_FALSE_TEXT_AUDIT.json",
+        "sha256": "a276c4d3648f1e9c18bc2e0eccf057f8a68c63858906007430807d01c98e998b"
+      },
+      {
+        "path": "ml/evaluation/SMALL_OBJECT_ABLATION_RESULTS.md",
+        "sha256": "e7c729fce989f29c948b552e53f55d76566c2ad18767307abf74c3bffd2761fc"
+      },
+      {
+        "path": "ml/evaluation/bunny.json",
+        "sha256": "0d2071ae81cb15bb7d852c9647d487cbd7e1f9af7d6c6be20843aaa4b78d54c2"
+      },
+      {
+        "path": "ml/evaluation/development/hybrid_fusion_queries_v1.json",
+        "sha256": "79020ae3af85e69f88be2a460a5d04273b09a5596ccd12d390da1b7e00f791be"
+      },
+      {
+        "path": "ml/evaluation/final_ask_video_core_acceptance_v1_manifest.json",
+        "sha256": "6f11c5212db5a52fe8a5d41016952d81c4804a1bd47f018e2c27d6f8d337961c"
+      },
+      {
+        "path": "ml/evaluation/final_english_acceptance_v2_manifest.json",
+        "sha256": "1d26b7cdac1310fad567f78fbb9bc341f10f2b56dbe6d6de7b4e3d3decf1470d"
+      },
+      {
+        "path": "ml/evaluation/grounded_video_qa_v1_manifest.json",
+        "sha256": "ac103e3318f9f46664867c6619daf60d65d99cd5447db236e6efd6b29cadb3a4"
+      },
+      {
+        "path": "ml/evaluation/hierarchical_video_memory_v1_manifest.json",
+        "sha256": "7bf8dd40e06c41c5c478e4828bd394a9ba0fdff6a703a6c5f595e47c7dd8b9d1"
+      },
+      {
+        "path": "ml/evaluation/holdout/hybrid_fusion_holdout_v1.json",
+        "sha256": "dcddffb0495cb7c397249ccd13d5818967127b6c62d01173944d0235030b64b5"
+      },
+      {
+        "path": "ml/evaluation/natural_v2.json",
+        "sha256": "3203fc545ced1ad2cfd9a335322af6b52101eb3a38408776ff94c172268088fd"
+      },
+      {
+        "path": "ml/evaluation/ocr_evidence_v1_manifest.json",
+        "sha256": "a16b95c58ef3539bb8679cd6b50b0e228018a993ffb07ec61a234cf38bdb7d14"
+      },
+      {
+        "path": "ml/evaluation/qa_abstention_safety_v1_manifest.json",
+        "sha256": "26646d2bf977981950e68888898522e348e6019cc39acac417a8a28acca34255"
+      },
+      {
+        "path": "ml/evaluation/qa_structured_question_evidence_v1_manifest.json",
+        "sha256": "27e43fb83b7d039abe160828d3d0f19f9e2b56a2ef223a78e6bde7f4f8c85d9f"
+      },
+      {
+        "path": "ml/evaluation/reports/bunny-v1.json",
+        "sha256": "088240e3c1266a790abeca1979ce36f88ded2d13da87c8a1be999ca2fee5ec1d"
+      },
+      {
+        "path": "ml/evaluation/reports/final-english-acceptance-v1.json",
+        "sha256": "9cc5568501b442da4844ac68f77c18ae53cb6e4f2c7e4d9ba6cf73aa795a1f80"
+      },
+      {
+        "path": "ml/evaluation/reports/human-grounded-router-v1.json",
+        "sha256": "38ec5d4206e1dd43576a843d6dd8420b55d003e79eb79a058bf3e42f61bcfe83"
+      },
+      {
+        "path": "ml/evaluation/reports/hybrid-fusion-diagnostics.json",
+        "sha256": "bdf1fd860102a59e952e1648dd91c29a8032a3f5955a8e9f479cca96d32611ec"
+      },
+      {
+        "path": "ml/evaluation/reports/hybrid-fusion-holdout-v1.json",
+        "sha256": "353258c5ac42e399c25cb5eae8ba08687f80af7101ecb5cb4f282d370aa36def"
+      },
+      {
+        "path": "ml/evaluation/reports/path-aware-no-match-v1.json",
+        "sha256": "a9f8860cfc90bdba5e9f8f7b7f3ed630e570189da45eb6e78730ef805f0ac32a"
+      },
+      {
+        "path": "ml/evaluation/reports/query-routing-v1.json",
+        "sha256": "953e8a257ef92c652013889cd5c2625750224e5c2831787c53bb5791bfef35d9"
+      },
+      {
+        "path": "ml/evaluation/reports/semantic-hierarchical-qa-v1.json",
+        "sha256": "c3f8df2e3f3687e011a8ff697f2935fb04e1cb4d51bd8a39bef12a4072ffed32"
+      },
+      {
+        "path": "ml/evaluation/reports/turkish-compatibility-v1.json",
+        "sha256": "b1a81b4062b5cc74b364b9e9a6605294c93dd06c0e86644c68980fd3e55d589e"
+      },
+      {
+        "path": "ml/evaluation/reports/url-ingestion-v1.json",
+        "sha256": "2a80ddd7799e40ac2239ed3b810cd07f388c31f58cca1200a854548aa421fc6f"
+      },
+      {
+        "path": "ml/evaluation/run_hybrid_fusion_diagnostics.py",
+        "sha256": "cd6fcaf85bbc513beb00a22eef8e5d37f1b82ba0c64a0e30f310e3c02be55dbb"
+      },
+      {
+        "path": "ml/evaluation/run_hybrid_fusion_holdout_v1.py",
+        "sha256": "3c96af65951028f8896de090d604047cac1d0ef7f51f52250b3042356f166cd4"
+      },
+      {
+        "path": "ml/evaluation/run_url_ingestion_v1.py",
+        "sha256": "66e4f05916b82f0ea111fb8a5ff62985c1f128618502abee7a643cf8888346aa"
+      },
+      {
+        "path": "ml/evaluation/semantic_hierarchical_qa_v1_manifest.json",
+        "sha256": "e99fecc0c0c941afe830eb1d8ff8072212b18226096ead0bcd0b54343d068ba1"
+      },
+      {
+        "path": "ml/experiments/human_grounded_router/sources_v1.json",
+        "sha256": "122d2d041b7b3fd3d2e400049f89aec99a7f4edae5d55738b325622c55fee086"
+      },
+      {
+        "path": "ml/experiments/image_text_verifier/calibration_v1.json",
+        "sha256": "b5c43f977be3e51427f25143294d8edfb79e51f761eb26a6f1e415736af64c4c"
+      },
+      {
+        "path": "ml/experiments/lightweight_pair_scorer/MODEL_SHORTLIST.md",
+        "sha256": "02fb000ca7c4d27502474de01925bb9e9fba6707b4363efaa1cfddbf604f4bb2"
+      },
+      {
+        "path": "ml/experiments/lightweight_pair_scorer/calibration_v2.json",
+        "sha256": "a6a3e74e05f1bf76a711e6e31d67ccd0f024e865f4efd00ff83b7997bf27fc92"
+      },
+      {
+        "path": "ml/experiments/lightweight_pair_scorer/prepare.py",
+        "sha256": "761bd909d6a8bc49850bfba431dd89837c88012d7a1bc43ed757e02f5b0bd072"
+      },
+      {
+        "path": "ml/experiments/object_detector_branch/MODEL_SHORTLIST.md",
+        "sha256": "e13e1f8720bca874d29924dbd1f67f88fac876ed2f0e15d0458131c9da5e8d20"
+      },
+      {
+        "path": "ml/experiments/path_aware_no_match/manifest_v1.json",
+        "sha256": "93e2bd28604e00dd217c8a7790aa07de7fa0e2ecf0dadd3a5afb27078621f95a"
+      },
+      {
+        "path": "ml/experiments/query_routing/calibration_v1.json",
+        "sha256": "8d6f17df2ba8615a63180bc6a030a57b95fe0fc32101dfd810ff6c93fd19f110"
+      },
+      {
+        "path": "ml/experiments/small_object_ablation/visibility_v1.json",
+        "sha256": "4f8fd84a190142583485f9d8188433011f900801c884b901042334b53d1b36b1"
+      },
+      {
+        "path": "ml/experiments/turkish_compatibility/build_manifest.py",
+        "sha256": "978049587aea582f3d6ec5abd3a827950470d0c7f9a6246839f3bd9a9048da5c"
+      },
+      {
+        "path": "ml/experiments/turkish_compatibility/calibration_v1.json",
+        "sha256": "1ed38941cb8cf6c33e86726f8ba1ecd545b8237faba852642ee27f2b9fd7e3bd"
+      },
+      {
+        "path": "scripts/lock_environment.py",
+        "sha256": "dac06eaeba47823ca7090af851fe8ba719a34126c1ff70a973f41f135fd826c2"
+      },
+      {
+        "path": "scripts/prepare_benchmark.py",
+        "sha256": "31ac7110bcbee7b5ce89874ac8ddad57a8afe026cf0e48fc75f9a6a1cdafe91d"
+      },
+      {
+        "path": "scripts/validate_long_video.py",
+        "sha256": "0a4f764b9e9a87b8a0a4e84c51d96e241807f1fdbb2e840aed6ea1e4f1a87ee3"
+      },
+      {
+        "path": "tests/test_hardening.py",
+        "sha256": "b752bfa6e7f3f2c3cd05f808a2c80a05609923d1870fef13c69cec3fb3c0f0d9"
+      },
+      {
+        "path": "tests/test_url_ingestion.py",
+        "sha256": "529bc361a33342e6fe7eca02015b1bfe1a5d175b696e02230bda0de79223735b"
+      }
+    ],
+    "additional_exclusion": "All five frozen temporal development sources, hashes and aliases; nominated pasta source rejected before acquisition for historical overlap."
+  },
+  "dependencies": {
+    "torch": "2.14.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.3",
+    "opencv-python-headless": "5.0.0.93",
+    "faiss-cpu": "1.15.0"
+  },
+  "annotation_limitations": [
+    "Agent annotation and audit; no independent human review or sign-off.",
+    "Full-source overview sampling up to 5s can miss very short unobserved repeats.",
+    "Dense checks use actual frames at 0.1-3s spacing; boundaries remain estimates, not frame-exact adjudication.",
+    "Queries target visible events/objects, not transcript or textual interpretation; no ranked validation output informed labels."
+  ],
+  "media_preflight": "All five sources sequentially decoded through end; duration=last PTS+frame period; both arms identical source bytes.",
+  "freeze_parent_commit": "b15dad009650632144d54facfd5706f6d71a4539",
+  "frozen_code_sha256": {
+    "backend/app/config.py": "f153cbb18d9104c091982b1cc2aaff54cc594777c668220934a17ef7e0202dc4",
+    "backend/app/encoder.py": "b1489aaf3d3fe29b0da0d9cda88e14111ae074d8c39cd43099317b3169662d8d",
+    "backend/app/main.py": "6bd61bfebaa0ddef6cf4cfe06da1eae430e5f8d5ca51a290a246b25e4d2a4790",
+    "backend/app/video.py": "e6f0969d95f569423c3a04227129563999a437bfb0cd408124516c3dc1fe3d9f",
+    "backend/app/visual.py": "19d61d881e0333f3e57398f7cb1bb32e894939d55a2c7c688a42665e570a2f27",
+    "ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md": "2fb1e81c05ed73aba1e88e5dd47184f26cabb5e7747dc3196302153332fbd12f",
+    "ml/evaluation/reports/temporal-development-selection.json": "f153155c82d968c97cf2a9502b52ec23d6d2a272a1740288f3cb51c0f8c06f23",
+    "ml/evaluation/temporal_decision.py": "207cbd26cbc51bd665d48c48fda6a3e8cd95777f698f52e0901673082d656f5c",
+    "ml/evaluation/temporal_protocol.py": "76718a422e638c33eada9a164e6283ce186c53c35a3124a20a84bca83d69f5cc",
+    "ml/evaluation/temporal_retrieval.py": "7d90f3f874f0658db4fe81c34a82b1103d4f5b18e679b158fc6d4367184dd380",
+    "scripts/temporal_benchmark.py": "0e1d64b0317269b86940098b082c05ab70631478ec8d925fcbe10671cb036fc4"
+  },
+  "review_evidence": {
+    "sheet_count": 191,
+    "sheet_inventory_sha256": "c04d8d2643123026cdc97d137f71022e5521a8f5e8e84f4d4349f1ffc9aa8064",
+    "inventory_path": "data/temporal-v1/validation-review-inventory.json",
+    "media_committed": false
+  }
+}
