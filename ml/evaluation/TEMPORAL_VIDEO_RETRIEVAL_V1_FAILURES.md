@@ -1,6 +1,7 @@
 # Temporal Video Retrieval V1 ? development failure record
 
-Final validation has not run. These are development diagnostics, not a decision.
+The development diagnostics below are retained unchanged. Validation baseline
+has now completed once; the candidate is still running. No final decision yet.
 The production CLIP baseline missed 22/66 under frozen timestamp labels.
 All 22 misses were reviewed against actual production JPEGs, including the
 frames around every annotated interval and top-ranked images:
@@ -29,3 +30,68 @@ length. Cycling was losslessly remuxed from OGV to shared MKV; neither arm uses
 a different visual transcode. No production implementation changed.
 
 The V1 observed acceptance remains frozen and has not been replayed.
+
+## Frozen validation: baseline pixel audit
+
+Production CLIP misses 26 of 66 queries at Top-5. All 26 were reviewed against
+the actual indexed JPEGs near the annotated occurrences and the top-ranked
+results. Twelve are **SAMPLING_MISS**, fourteen have sampled evidence present
+but a semantic/action/relation ranking miss. The latter comprise seven
+OBJECT_RELATION_MISS, four ACTION_SEMANTIC_MISS, two STATIC_SEMANTIC_MISS and
+one SMALL_OBJECT. These are agent judgments, not independent human labels.
+The two causes are both material; semantic failures slightly outnumber sampling.
+
+Examples of genuinely absent sampled actions: water poured into the frying pan,
+lifting its lid, tipping and lifting the wooden stool, stair ascent, drinking
+from a bottle and clinking glasses. A frame showing the state after an event
+does not establish that the action was sampled. Query tval-032 is especially
+important: the 1061.066-second JPEG falls inside its frozen interval, but the
+tray is already inside the refrigerator. Interval overlap would incorrectly
+classify that as visible insertion evidence. Its raw metric is not changed.
+
+Evidence-present misses include dough cutting, pouring broth through a sieve,
+lining a steamer with cabbage, the yellow square wrapper, and the bride's hug.
+Search commonly ranks another view of the same actor/object instead of the
+specified interaction. A tree-fall still provides weaker motion evidence than
+the reviewed sequence; visibility is not proof that an image encoder can infer
+the action. Baseline visibility refers to the indexed JPEG before native model
+preprocessing. Model cropping and representational limitations remain within
+the evidence-present failure group.
+
+Per-query observations, evidence timestamps and sheet checksums:
+`reports/temporal-validation-baseline-failures.json`. Frozen intervals, wording,
+categories and ranked outputs are unchanged. Near-event useful clicks can still
+fail the predeclared strict timestamp metric; no post-hoc tolerance is added.
+
+## Measurement incident
+
+During baseline model startup the outer process-tree RSS sampler terminated
+with Windows OSError 1455 (paging file too small). All five ingests and all 66
+queries completed and the durable run status is complete, but the shell reported
+exit 1 with that thread exception on stderr. The reported whole-run RSS
+maximum is **invalid/incomplete**, not a valid low-memory result. Per-video
+samplers continued; those observations are reported separately. The run was
+not repeated. Host RAM was shared with other workstation activity, so timing
+is a local observation, not a dedicated 4-vCPU/8-GB server certification.
+
+## Interrupted candidate process and bounded recovery
+
+On resumption the original candidate Python process and tool session were
+absent. Its last durable record contained river, dumplings and log-stool
+indexes plus all 44 queries for those sources. Wedding ingestion had logged
+200/292 clips but had not persisted its index or executed any wedding queries;
+fitness had not begun. The exact process-exit cause is unknown.
+
+`scripts/temporal_resume.py` verifies the original manifest/code/dependency/media
+freeze, snapshots `interrupted-run.json`, retains the original `started.json`,
+and creates an exclusive recovery marker. It refuses partially queried sources
+and completed runs. Only the two wholly unqueried sources are processed; the
+44 completed query records are preserved exactly. The new orchestration does
+not change the encoder, sampler, score, ground truth or primary metric.
+
+Unpersisted partial wedding ingestion was lost. Its cost and the first process's
+whole-run RSS cannot be recovered, so full-attempt ingestion cost and whole-run
+candidate RSS are N/A. Completed-source indexing times and resumed-stage memory
+observations remain separately reportable. This is an interrupted execution
+with disclosed checkpoint recovery, not an uninterrupted single-process run
+or a second pass over observed query outcomes. No query is selectively rerun.

@@ -21,7 +21,11 @@ validation is frozen before retrieval: five new sources, 70.03 minutes,
 contact sheets were reviewed by the agent; independent human sign-off is
 absent. Manifest SHA-256: `54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e`.
 An initially nominated pasta video was excluded for historical source overlap.
-Final baseline and selected-candidate execution are next; no validation scores exist.
+Baseline completed: 40/66 R@5 (60.61%). Its whole-run RSS sampler failed;
+that maximum is unavailable. Candidate process was interrupted after three
+completed sources / 44 queries; exact exit cause is unknown. Bounded recovery
+now preserves those records and processes only the two wholly unqueried sources.
+Original freeze is unchanged; final metrics and decision remain pending.
 Full checks: 303 passed, 1 skipped; Ruff passed. Production remains unchanged.
 See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md`.
 

@@ -1,5 +1,16 @@
 # Decisions
 
+## 2026-10-05 — Recover interrupted temporal execution without repeating queries
+
+Preserve the original 44 candidate query records and three complete indexes.
+The original process is absent; the exit cause is unknown. Recovery verifies
+the original freeze and runs only wedding and fitness, which had no query
+results. An exclusive recovery marker and immutable interrupted snapshot
+disclose the event. No encoder, sampling, scoring or annotation changes are
+allowed. Full-attempt elapsed cost and whole-run RSS are unavailable; partial
+ingestion work was lost. This is not a second evaluation of observed queries
+and does not establish a final quality decision. Five recovery tests pass.
+
 ## 2026-10-01 ? Freeze temporal development selection
 
 Both predeclared X-CLIP settings regress against exact production CLIP on the

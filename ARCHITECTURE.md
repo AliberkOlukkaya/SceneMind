@@ -12,6 +12,12 @@ on identical media. It cannot load unaudited or checksum-mismatched manifests.
 Neither candidate module nor runner is imported by the application. Resource
 and quality feasibility are pending, and all production routes remain V1.
 
+An evaluation-only recovery command verifies the original frozen contract,
+preserves an interrupted snapshot and refuses to repeat completed query rows.
+It can finish wholly unqueried sources after process loss; partial ingestion
+cost and whole-run resource peaks are disclosed as unavailable. This command
+is not part of production job recovery or an application import.
+
 Final deployment acceptance (2026-09-25) did not promote a new search path.
 Smart Search remains uncapped RRF60 Hybrid, Spoken Content remains BM25 over
 Whisper segments, and Visual Content remains CLIP/FAISS over five-second frames.

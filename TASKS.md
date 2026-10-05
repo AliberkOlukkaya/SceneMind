@@ -11,7 +11,9 @@
 - [x] Freeze development contract and execute exact baseline plus 4s/2s and 8s/4s candidate arms
 - [x] Select one configuration using development only: 4s window / 2s stride / 8 frames
 - [x] Acquire five new validation sources with 66 audited queries and a 31.93-minute source
-- [ ] Commit/checksum final contract, execute once, diagnose every miss and decide A/B/C/D/E
+- [x] Commit/checksum validation contract before retrieval
+- [x] Preserve interrupted candidate checkpoint and test recovery of wholly unqueried sources
+- [ ] Finish remaining queries, diagnose every miss and decide A/B/C/D/E
 - [ ] Perform historical diagnostic replay only after decision, where practical
 - [ ] Complete reports, checks, stable push and clean-tree verification
 

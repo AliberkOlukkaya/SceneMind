@@ -1,0 +1,611 @@
+{
+  "split": "validation",
+  "arm": "baseline",
+  "manifest_sha256": "54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e",
+  "raw_run_sha256": "5ad9171acaf2ade7229c97105f0d2fbdf12fe22814782c158b409b7c512ade59",
+  "reviewer": "Codex agent; actual production sampled JPEG contact sheets; no independent human sign-off",
+  "truth_changed": false,
+  "ranking_changed": false,
+  "n_misses": 26,
+  "failure_counts": {
+    "OBJECT_RELATION_MISS": 7,
+    "ACTION_SEMANTIC_MISS": 4,
+    "SAMPLING_MISS": 12,
+    "STATIC_SEMANTIC_MISS": 2,
+    "SMALL_OBJECT": 1
+  },
+  "sampling_misses": 12,
+  "semantic_misses_with_evidence": 14,
+  "queries": [
+    {
+      "id": "tval-001",
+      "video_id": "river",
+      "query": "Workers roll large cotton bales along the boat ramp.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          333,
+          358
+        ]
+      ],
+      "first_rank": 6,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        335.346,
+        340.351,
+        355.366
+      ],
+      "observation": "Workers and rolling bales are visible on the ramp; tractor/conveyor/other bales outrank the relevant frame (rank 6).",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-001-00.jpg",
+      "review_sheet_sha256": "a652f05c157551d15298e20cadd36209ffcc344afb695032f95ee561e61682ab"
+    },
+    {
+      "id": "tval-002",
+      "video_id": "river",
+      "query": "A tall tree falls down in the forest.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          549.1,
+          551
+        ],
+        [
+          553.5,
+          564.5
+        ]
+      ],
+      "first_rank": 10,
+      "failure_code": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        550.561,
+        555.566
+      ],
+      "observation": "Falling/leaning tree and branches are visible in the sampled sequence; upright tree/dead trunk/logs outrank it. A still alone is weaker motion evidence.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-002-00.jpg",
+      "review_sheet_sha256": "28d73d3a063b17dea549e30adeeea68b024883374891fb53cbeb9fd6459750a9"
+    },
+    {
+      "id": "tval-016",
+      "video_id": "river",
+      "query": "A construction worker operates a jackhammer.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          1694.8,
+          1696.8
+        ],
+        [
+          1698.4,
+          1700
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        1696.706
+      ],
+      "observation": "Worker operating the jackhammer is visible; other construction tools and workers rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-016-00.jpg",
+      "review_sheet_sha256": "c59c851f02f6dc35627f42431c5ab660e84bad7a7706eef6573fdb2b0e935ae6"
+    },
+    {
+      "id": "tval-018",
+      "video_id": "river",
+      "query": "A hand turns a circular machine speed control.",
+      "category": "SMALL_OBJECT_DETAIL",
+      "intervals": [
+        [
+          1829.5,
+          1831
+        ],
+        [
+          1832,
+          1835.3
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "1831.841 is a wide operator view and 1836.846 is after the close hand/control action; no sampled close circular-control manipulation.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-018-00.jpg",
+      "review_sheet_sha256": "3558738433e695b5bcf1e4bacf8100a9511048f9af76e3773bd2f79a7f97180a"
+    },
+    {
+      "id": "tval-020",
+      "video_id": "dumplings",
+      "query": "The cook cuts a rope of dough into small pieces.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          326.5,
+          329
+        ],
+        [
+          332,
+          341.4
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        335.341,
+        340.346
+      ],
+      "observation": "Cleaver cutting the dough rope is visible; kneading/rolling views outrank cutting.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-020-00.jpg",
+      "review_sheet_sha256": "4f379fdb546ad50591f652b5cbaf3c055702e66aac45498937ec4b7a7a245b43"
+    },
+    {
+      "id": "tval-023",
+      "video_id": "dumplings",
+      "query": "Water is poured into the hot frying pan and steam rises.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          499.3,
+          500.2
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "495.501 shows a displayed dumpling; 500.506 shows steam after pouring. The brief actual pour is between samples.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-023-00.jpg",
+      "review_sheet_sha256": "174481d4f40ade36a85a73088bac51448f132e9273d9243aa1b4a21c3ece23c1"
+    },
+    {
+      "id": "tval-024",
+      "video_id": "dumplings",
+      "query": "The cook lifts the lid from the steaming red frying pan.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          521.3,
+          523.4
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "520.526 has the lid closed; by 525.531 it is already on the bench. The lifting action is absent.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-024-00.jpg",
+      "review_sheet_sha256": "52e75a6ad523e304cf7d1e4ef01137f0012c75103aaf8d2f97eebc02578b0ee5"
+    },
+    {
+      "id": "tval-025",
+      "video_id": "dumplings",
+      "query": "The cook transfers fried dumplings from the pan to a plate with tongs.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          536.5,
+          537.8
+        ],
+        [
+          552.5,
+          555.8
+        ]
+      ],
+      "first_rank": 6,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        555.561
+      ],
+      "observation": "Tongs transferring food toward the plate are visible; finished food and placing uncooked dumplings rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-025-00.jpg",
+      "review_sheet_sha256": "d5997cda25d2a2d614a7dd6352193e622a9b25289a80f414442491adfcd604a4"
+    },
+    {
+      "id": "tval-027",
+      "video_id": "dumplings",
+      "query": "Cooked broth is poured through a sieve into another container.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          685.5,
+          696.8
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        685.691,
+        690.696,
+        695.701
+      ],
+      "observation": "Pouring through the sieve is visible; other pouring/whisking/soup scenes rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-027-00.jpg",
+      "review_sheet_sha256": "e19047cdcb2ccb68cd9668ab9a6d6de6106e8d9e9066704b559daa119ee599fa"
+    },
+    {
+      "id": "tval-028",
+      "video_id": "dumplings",
+      "query": "A square yellow dumpling wrapper is held up to the camera.",
+      "category": "STATIC_OBJECT",
+      "intervals": [
+        [
+          771.8,
+          776.4
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "STATIC_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        775.781
+      ],
+      "observation": "A flat yellow square wrapper is visible; completed/folded dumplings outrank it.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-028-00.jpg",
+      "review_sheet_sha256": "7c83aea34e5fb324b2fd7f85dd9e490e5bd14e228e4c4ab823144fec8ee2ec8b"
+    },
+    {
+      "id": "tval-030",
+      "video_id": "dumplings",
+      "query": "The cook ladles hot soup into a blue serving bowl.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          896.8,
+          901.7
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        900.906
+      ],
+      "observation": "Overhead ladle above the soup pot and blue receiving bowl are visible; eating/garnishing the bowl rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-030-00.jpg",
+      "review_sheet_sha256": "c98d5f3ca586c8261997d11a8204fe62730167cb3d60c82da82ee0b45aff8443"
+    },
+    {
+      "id": "tval-031",
+      "video_id": "dumplings",
+      "query": "The cook holds a dried mushroom close to the camera.",
+      "category": "SMALL_OBJECT_DETAIL",
+      "intervals": [
+        [
+          1003.7,
+          1004.7
+        ],
+        [
+          1010,
+          1011.5
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SMALL_OBJECT",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        1011.016
+      ],
+      "observation": "Hands hold the mushroom in close-up; other food held by the cook and steamers rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-031-00.jpg",
+      "review_sheet_sha256": "db13ab5d5608c2cd289497aa3b197f82502f79c96e92f8ee77f2657ee73ba709"
+    },
+    {
+      "id": "tval-032",
+      "video_id": "dumplings",
+      "query": "The cook puts a metal tray into the refrigerator.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          1058.2,
+          1061.3
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "1061.066 falls inside frozen truth but shows the refrigerator door after insertion, not the tray being put inside. This is a sampled-visibility miss despite interval overlap.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-032-00.jpg",
+      "review_sheet_sha256": "4e91b992a48b7abf51ea438fc4723ea02f77cd7035dfed21e363dcdd5160c0d7"
+    },
+    {
+      "id": "tval-034",
+      "video_id": "dumplings",
+      "query": "The cook lines a bamboo steamer with cabbage leaves.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          1251.5,
+          1257.8
+        ],
+        [
+          1267.8,
+          1270.5
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        1256.261
+      ],
+      "observation": "Hands line the bamboo basket with cabbage; cooking/finished steamer views rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-034-00.jpg",
+      "review_sheet_sha256": "0786bcd5ab8144d885c3c81310e2af9477acb72e50cf85069df282434e137136"
+    },
+    {
+      "id": "tval-036",
+      "video_id": "dumplings",
+      "query": "An overhead view of a tray lined with rows of yellow folded dumplings.",
+      "category": "SCENE",
+      "intervals": [
+        [
+          818.8,
+          831.5
+        ],
+        [
+          836.6,
+          840.6
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "STATIC_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        820.826,
+        825.831,
+        830.836
+      ],
+      "observation": "Overhead rows of yellow dumplings on a tray are visible; food close-ups and a non-overhead cook view rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-036-00.jpg",
+      "review_sheet_sha256": "803c08152aaf43bd0dafc7c4b5ccac174c7e4b9b90dcd1250aa420b4435f9547"
+    },
+    {
+      "id": "tval-050",
+      "video_id": "log-stool",
+      "query": "The woodworker splits a cut section away from the log with an axe.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "75.051 is before splitting and 80.051 is carrying the separated piece; no sampled axe-splitting action.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-050-00.jpg",
+      "review_sheet_sha256": "c287d5dcc4e4746bf5e0f34ef20a40e15dd120d83a135dd49a95de11fab85597"
+    },
+    {
+      "id": "tval-051",
+      "video_id": "log-stool",
+      "query": "The woodworker tips the carved log from upright onto its side.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          122.95,
+          123.25
+        ],
+        [
+          135.35,
+          135.85
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "120.051/135.051 show upright wood and 125.051/140.051 show it on its side; the brief tipping transitions are not sampled.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-051-00.jpg",
+      "review_sheet_sha256": "be83353e58c32948f80c2a780d9363c51f76a6f8c1eeb810e31ea506278221c2"
+    },
+    {
+      "id": "tval-052",
+      "video_id": "log-stool",
+      "query": "The woodworker sits down on the finished wooden stool.",
+      "category": "HUMAN_ACTION",
+      "intervals": [
+        [
+          165.1,
+          167.5
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "165.051 precedes sitting down; 170.051 shows already seated. The transition itself is between samples.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-052-00.jpg",
+      "review_sheet_sha256": "587cef0621a5b7b479e6c8f0e975055bc4e7c2c87faaa380dfcec4af178eda00"
+    },
+    {
+      "id": "tval-053",
+      "video_id": "log-stool",
+      "query": "A chainsaw lies on the snow while the worker uses an axe.",
+      "category": "STATIC_OBJECT",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "Chainsaw on snow is visible at 75.051, but the worker has not begun the axe action; 80.051 carries the separated wood. Required simultaneous relation is absent.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-053-00.jpg",
+      "review_sheet_sha256": "f95b032265fede15e3acc2f1c74a896b50c371d9d2bfce7c2c09b310c11d6cfd"
+    },
+    {
+      "id": "tval-055",
+      "video_id": "log-stool",
+      "query": "The woodworker kneels or crouches low in the snow beside the upright log.",
+      "category": "HUMAN_ACTION",
+      "intervals": [
+        [
+          42.8,
+          58.9
+        ],
+        [
+          65.85,
+          66.15
+        ],
+        [
+          66.75,
+          66.85
+        ],
+        [
+          87.85,
+          88.35
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        45.051,
+        50.051,
+        55.051
+      ],
+      "observation": "Deep crouching/kneeling is visible; bent-over standing chainsaw poses rank higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-055-00.jpg",
+      "review_sheet_sha256": "140fee0b2bcdf3db5ba040ccbbb6cad08be51aa93a184613ea15a57a707cf6f2"
+    },
+    {
+      "id": "tval-056",
+      "video_id": "log-stool",
+      "query": "The woodworker lifts the carved stool from its side into an upright position.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          130.95,
+          131.25
+        ],
+        [
+          141.4,
+          143.5
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "130.051/140.051 show the stool lying down; 135.051/145.051 show it upright. Lifting transitions are between samples.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-056-00.jpg",
+      "review_sheet_sha256": "77ad958e449819d4940be9ceb2b3aefa8fb2081d05f56f3c7a3ab4ff5854e3ac"
+    },
+    {
+      "id": "tval-045",
+      "video_id": "wedding",
+      "query": "The bride embraces a man wearing a pink turban.",
+      "category": "HUMAN_ACTION",
+      "intervals": [
+        [
+          469.2,
+          472.2
+        ]
+      ],
+      "first_rank": 9,
+      "failure_code": "ACTION_SEMANTIC_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        470.054
+      ],
+      "observation": "Bride embraces pink-turbaned man; standing and other ceremony scenes rank higher (relevant rank 9).",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-045-00.jpg",
+      "review_sheet_sha256": "ea39c540731b556e3a1e9e8531f7817f39508ee5dd104f560aa2c844e817a2bc"
+    },
+    {
+      "id": "tval-048",
+      "video_id": "wedding",
+      "query": "Women smear yellow paste on the bride's cheeks.",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "intervals": [
+        [
+          175.3,
+          185.9
+        ],
+        [
+          537.2,
+          540.3
+        ]
+      ],
+      "first_rank": 9,
+      "failure_code": "OBJECT_RELATION_MISS",
+      "sampled_evidence_visible": true,
+      "evidence_timestamps_seconds": [
+        180.054,
+        185.054,
+        540.094
+      ],
+      "observation": "Hands on cheeks/yellow paste ceremony is visible, including credit replay; a different wedding ritual ranks higher.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-048-00.jpg",
+      "review_sheet_sha256": "e93fe178fb4fcf82663de57ee2f30041140279a155e777c23b2690e9541dd353"
+    },
+    {
+      "id": "tval-060",
+      "video_id": "fitness",
+      "query": "A man runs up the stairs to a pedestrian bridge.",
+      "category": "HUMAN_ACTION",
+      "intervals": [
+        [
+          33.2,
+          34.55
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "30.054 shows stretching; 35.054 shows running on the bridge walkway after the stairs. Relevant stair ascent itself is absent even though top 1 is nearby.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-060-00.jpg",
+      "review_sheet_sha256": "a4b9022567c9fbf8994e078b9c3bcb58eec2157856e69c60298b7f14c8f0c0f7"
+    },
+    {
+      "id": "tval-062",
+      "video_id": "fitness",
+      "query": "A man drinks water from a clear bottle outdoors.",
+      "category": "OBJECT_INTERACTION",
+      "intervals": [
+        [
+          57.2,
+          59.3
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "55.054 shows a building, 60.054 a face after drinking; no sampled clear bottle at the mouth.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-062-00.jpg",
+      "review_sheet_sha256": "9d408a96e4f7577a88e26dbbacf69c3c1bb7cb48390d04c57b509eec28b370ea"
+    },
+    {
+      "id": "tval-066",
+      "video_id": "fitness",
+      "query": "Three people clink glasses of orange-colored juice together.",
+      "category": "TEMPORAL_EVENT",
+      "intervals": [
+        [
+          93.1,
+          94.2
+        ]
+      ],
+      "first_rank": null,
+      "failure_code": "SAMPLING_MISS",
+      "sampled_evidence_visible": false,
+      "evidence_timestamps_seconds": [],
+      "observation": "90.054 is a face and 95.054 is drinking after the toast; top 1 at 100.054 is a fist bump, not glasses clinking.",
+      "review_sheet": "data/temporal-v1/review/validation-baseline-misses/tval-066-00.jpg",
+      "review_sheet_sha256": "368a7e5f8bd2193194a3e4822c7bbb4a75a7a04260ce911697b6f80bea013e4f"
+    }
+  ]
+}
