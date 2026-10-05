@@ -1,0 +1,341 @@
+{
+  "status": "decision_frozen_before_historical_replay",
+  "decision": "C",
+  "recorded_at_utc": "2026-10-05T18:22:52.021458+00:00",
+  "validation_manifest_sha256": "54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e",
+  "run_sha256": {
+    "baseline": "5ad9171acaf2ade7229c97105f0d2fbdf12fe22814782c158b409b7c512ade59",
+    "candidate-4": "b2bf4658ac0fbec099188bcc484997775ef126371c6edfa893ca6a42dc2c8529"
+  },
+  "metrics": {
+    "baseline": {
+      "overall": {
+        "n": 66,
+        "r1": 0.36363636363636365,
+        "r3": 0.5151515151515151,
+        "r5": 0.6060606060606061,
+        "r10": 0.6818181818181818,
+        "mrr5": 0.45732323232323235
+      },
+      "category:HUMAN_ACTION": {
+        "n": 13,
+        "r1": 0.38461538461538464,
+        "r3": 0.6153846153846154,
+        "r5": 0.6923076923076923,
+        "r10": 0.7692307692307693,
+        "mrr5": 0.5192307692307693
+      },
+      "category:MULTIPLE_SIMILAR_MOMENTS": {
+        "n": 3,
+        "r1": 0.0,
+        "r3": 0.6666666666666666,
+        "r5": 0.6666666666666666,
+        "r10": 1.0,
+        "mrr5": 0.27777777777777773
+      },
+      "category:OBJECT_INTERACTION": {
+        "n": 19,
+        "r1": 0.21052631578947367,
+        "r3": 0.3157894736842105,
+        "r5": 0.47368421052631576,
+        "r10": 0.5789473684210527,
+        "mrr5": 0.2973684210526316
+      },
+      "category:SCENE": {
+        "n": 6,
+        "r1": 0.6666666666666666,
+        "r3": 0.8333333333333334,
+        "r5": 0.8333333333333334,
+        "r10": 0.8333333333333334,
+        "mrr5": 0.75
+      },
+      "category:SMALL_OBJECT_DETAIL": {
+        "n": 6,
+        "r1": 0.5,
+        "r3": 0.6666666666666666,
+        "r5": 0.6666666666666666,
+        "r10": 0.6666666666666666,
+        "mrr5": 0.5833333333333334
+      },
+      "category:STATIC_OBJECT": {
+        "n": 9,
+        "r1": 0.5555555555555556,
+        "r3": 0.6666666666666666,
+        "r5": 0.7777777777777778,
+        "r10": 0.7777777777777778,
+        "mrr5": 0.6333333333333333
+      },
+      "category:TEMPORAL_EVENT": {
+        "n": 10,
+        "r1": 0.3,
+        "r3": 0.3,
+        "r5": 0.4,
+        "r10": 0.5,
+        "mrr5": 0.325
+      },
+      "video_id:dumplings": {
+        "n": 18,
+        "r1": 0.2222222222222222,
+        "r3": 0.3333333333333333,
+        "r5": 0.3888888888888889,
+        "r10": 0.4444444444444444,
+        "mrr5": 0.2824074074074074
+      },
+      "video_id:fitness": {
+        "n": 10,
+        "r1": 0.2,
+        "r3": 0.6,
+        "r5": 0.7,
+        "r10": 0.7,
+        "mrr5": 0.42000000000000004
+      },
+      "video_id:log-stool": {
+        "n": 8,
+        "r1": 0.125,
+        "r3": 0.125,
+        "r5": 0.25,
+        "r10": 0.25,
+        "mrr5": 0.15
+      },
+      "video_id:river": {
+        "n": 18,
+        "r1": 0.5555555555555556,
+        "r3": 0.7222222222222222,
+        "r5": 0.7777777777777778,
+        "r10": 0.8888888888888888,
+        "mrr5": 0.6499999999999999
+      },
+      "video_id:wedding": {
+        "n": 12,
+        "r1": 0.5833333333333334,
+        "r3": 0.6666666666666666,
+        "r5": 0.8333333333333334,
+        "r10": 1.0,
+        "mrr5": 0.6666666666666666
+      },
+      "difficulty:medium": {
+        "n": 66,
+        "r1": 0.36363636363636365,
+        "r3": 0.5151515151515151,
+        "r5": 0.6060606060606061,
+        "r10": 0.6818181818181818,
+        "mrr5": 0.45732323232323235
+      },
+      "combined_temporal": {
+        "n": 42,
+        "r1": 0.2857142857142857,
+        "r3": 0.40476190476190477,
+        "r5": 0.5238095238095238,
+        "r10": 0.6190476190476191,
+        "mrr5": 0.3726190476190476
+      },
+      "combined_static": {
+        "n": 15,
+        "r1": 0.6,
+        "r3": 0.7333333333333333,
+        "r5": 0.8,
+        "r10": 0.8,
+        "mrr5": 0.6799999999999999
+      }
+    },
+    "candidate": {
+      "overall": {
+        "n": 66,
+        "r1": 0.13636363636363635,
+        "r3": 0.21212121212121213,
+        "r5": 0.25757575757575757,
+        "r10": 0.3787878787878788,
+        "mrr5": 0.17904040404040403
+      },
+      "category:HUMAN_ACTION": {
+        "n": 13,
+        "r1": 0.3076923076923077,
+        "r3": 0.46153846153846156,
+        "r5": 0.46153846153846156,
+        "r10": 0.5384615384615384,
+        "mrr5": 0.37179487179487175
+      },
+      "category:MULTIPLE_SIMILAR_MOMENTS": {
+        "n": 3,
+        "r1": 0.0,
+        "r3": 0.0,
+        "r5": 0.3333333333333333,
+        "r10": 0.3333333333333333,
+        "mrr5": 0.06666666666666667
+      },
+      "category:OBJECT_INTERACTION": {
+        "n": 19,
+        "r1": 0.05263157894736842,
+        "r3": 0.10526315789473684,
+        "r5": 0.15789473684210525,
+        "r10": 0.21052631578947367,
+        "mrr5": 0.08947368421052632
+      },
+      "category:SCENE": {
+        "n": 6,
+        "r1": 0.3333333333333333,
+        "r3": 0.3333333333333333,
+        "r5": 0.3333333333333333,
+        "r10": 0.8333333333333334,
+        "mrr5": 0.3333333333333333
+      },
+      "category:SMALL_OBJECT_DETAIL": {
+        "n": 6,
+        "r1": 0.16666666666666666,
+        "r3": 0.3333333333333333,
+        "r5": 0.5,
+        "r10": 0.5,
+        "mrr5": 0.2916666666666667
+      },
+      "category:STATIC_OBJECT": {
+        "n": 9,
+        "r1": 0.0,
+        "r3": 0.0,
+        "r5": 0.0,
+        "r10": 0.1111111111111111,
+        "mrr5": 0.0
+      },
+      "category:TEMPORAL_EVENT": {
+        "n": 10,
+        "r1": 0.1,
+        "r3": 0.2,
+        "r5": 0.2,
+        "r10": 0.4,
+        "mrr5": 0.13333333333333333
+      },
+      "video_id:dumplings": {
+        "n": 18,
+        "r1": 0.05555555555555555,
+        "r3": 0.16666666666666666,
+        "r5": 0.16666666666666666,
+        "r10": 0.2222222222222222,
+        "mrr5": 0.1111111111111111
+      },
+      "video_id:fitness": {
+        "n": 10,
+        "r1": 0.0,
+        "r3": 0.3,
+        "r5": 0.4,
+        "r10": 0.6,
+        "mrr5": 0.14166666666666666
+      },
+      "video_id:log-stool": {
+        "n": 8,
+        "r1": 0.25,
+        "r3": 0.25,
+        "r5": 0.375,
+        "r10": 0.5,
+        "mrr5": 0.275
+      },
+      "video_id:river": {
+        "n": 18,
+        "r1": 0.2777777777777778,
+        "r3": 0.2777777777777778,
+        "r5": 0.3333333333333333,
+        "r10": 0.5,
+        "mrr5": 0.2888888888888889
+      },
+      "video_id:wedding": {
+        "n": 12,
+        "r1": 0.08333333333333333,
+        "r3": 0.08333333333333333,
+        "r5": 0.08333333333333333,
+        "r10": 0.16666666666666666,
+        "mrr5": 0.08333333333333333
+      },
+      "difficulty:medium": {
+        "n": 66,
+        "r1": 0.13636363636363635,
+        "r3": 0.21212121212121213,
+        "r5": 0.25757575757575757,
+        "r10": 0.3787878787878788,
+        "mrr5": 0.17904040404040403
+      },
+      "combined_temporal": {
+        "n": 42,
+        "r1": 0.14285714285714285,
+        "r3": 0.23809523809523808,
+        "r5": 0.2619047619047619,
+        "r10": 0.35714285714285715,
+        "mrr5": 0.1873015873015873
+      },
+      "combined_static": {
+        "n": 15,
+        "r1": 0.13333333333333333,
+        "r3": 0.13333333333333333,
+        "r5": 0.13333333333333333,
+        "r10": 0.4,
+        "mrr5": 0.13333333333333333
+      }
+    }
+  },
+  "quality_gates": {
+    "overall_r5_at_least_80": false,
+    "overall_gain_at_least_10pp": false,
+    "temporal_r5_at_least_75": false,
+    "temporal_gain_at_least_10pp": false,
+    "static_regression_at_most_5pp": false,
+    "no_catastrophic_video": false,
+    "catastrophic_videos": [
+      "dumplings",
+      "fitness",
+      "log-stool",
+      "river",
+      "wedding"
+    ]
+  },
+  "resource_gates": {
+    "candidate_rss_at_most_6_gib": null,
+    "indexing_at_most_120_seconds_per_source_minute": null,
+    "long_video_query_p95_at_most_2_seconds": true
+  },
+  "resource_incidents": {
+    "baseline": [
+      {
+        "type": "OSError",
+        "winerror": 1455,
+        "component": "outer process-tree RSS sampler Thread-1",
+        "effect": "Thread terminated; reported whole-run peak is incomplete and must not be treated as valid maximum. Per-video samplers and retrieval completion must be assessed separately.",
+        "observed_host_available_bytes": 1241022464,
+        "observed_host_total_bytes": 16905977856,
+        "rerun": false
+      }
+    ],
+    "candidate": [
+      {
+        "type": "process_interruption",
+        "observed_on": "2026-10-04",
+        "completed_sources_preserved": [
+          "river",
+          "dumplings",
+          "log-stool"
+        ],
+        "completed_queries_preserved": 44,
+        "unfinished_sources": [
+          "wedding",
+          "fitness"
+        ],
+        "exact_exit_cause": "unknown; original process absent and tool session unavailable",
+        "effect": "Whole-run RSS and full elapsed ingestion cost unavailable. Unpersisted partial wedding ingestion lost; no wedding or fitness queries had executed. Completed source timings and scores retained unchanged.",
+        "recovery": "New orchestration verifies original freeze, snapshots interrupted run and executes only wholly unqueried sources. Original started marker retained; no query is repeated."
+      }
+    ],
+    "measurement_context": [
+      "Shared 16 GB Windows workstation with other applications; not an isolated dedicated CPU benchmark.",
+      "Agent generated baseline JPEG contact sheets (1.75 seconds) and reviewed images during candidate ingestion.",
+      "After river indexing and queries finished, lightweight OpenCV/PIL post-run river evidence sheets were generated while dumplings indexing continued; river timings unaffected, later timings potentially contended. No concurrent second ML model or test suite.",
+      "Completed-source candidate evidence decoding/contact-sheet generation also overlapped later short-video ingestion. These local timings may include this CPU/I/O contention and are not dedicated throughput claims."
+    ],
+    "host": {
+      "cpu": "11th Gen Intel Core i5-11400H @ 2.70GHz",
+      "physical_cores": 6,
+      "logical_processors": 12,
+      "total_ram_bytes": 16905977856,
+      "torch_threads": 4,
+      "gpu_measured": false
+    }
+  },
+  "production_changed": false,
+  "rationale": "The frozen candidate reaches 17/66 R@5 versus 40/66 for production CLIP, a 34.85 percentage-point regression. All five sources fail the 60% source floor; temporal/action and static gates also fail. No generalizable benefit is demonstrated. Stop this model branch and do not tune on observed validation.",
+  "historical_replay_started": false
+}

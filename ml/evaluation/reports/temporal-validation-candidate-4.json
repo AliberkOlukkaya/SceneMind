@@ -1,0 +1,6772 @@
+{
+  "status": "complete",
+  "arm": "candidate",
+  "manifest_sha256": "54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e",
+  "temporal_config": {
+    "length": 4,
+    "stride": 2,
+    "frames": 8
+  },
+  "videos": {
+    "river": {
+      "duration_seconds": 1915.8583666666668,
+      "preprocess_seconds": 454.8771273999664,
+      "embedding_seconds": 601.6909959999539,
+      "indexing_seconds": 1057.2356470000013,
+      "temporal_clips": 957,
+      "processed_frames": 7656,
+      "index_bytes": 98747922,
+      "indexing_peak_rss_bytes": 1174552576
+    },
+    "dumplings": {
+      "duration_seconds": 1410.3737083333335,
+      "preprocess_seconds": 442.2340416000152,
+      "embedding_seconds": 733.8364815999521,
+      "indexing_seconds": 1176.332344800001,
+      "temporal_clips": 705,
+      "processed_frames": 5640,
+      "index_bytes": 72733146,
+      "indexing_peak_rss_bytes": 1160728576
+    },
+    "log-stool": {
+      "duration_seconds": 176.451,
+      "preprocess_seconds": 125.38134630000422,
+      "embedding_seconds": 75.22333740004979,
+      "indexing_seconds": 200.67176189999736,
+      "temporal_clips": 88,
+      "processed_frames": 704,
+      "index_bytes": 9077174,
+      "indexing_peak_rss_bytes": 878309376
+    },
+    "wedding": {
+      "duration_seconds": 585.654,
+      "preprocess_seconds": 153.7593033000012,
+      "embedding_seconds": 188.28762660001667,
+      "indexing_seconds": 342.1403591999988,
+      "temporal_clips": 292,
+      "processed_frames": 2336,
+      "index_bytes": 30109954,
+      "indexing_peak_rss_bytes": 1011642368
+    },
+    "fitness": {
+      "duration_seconds": 113.57400000000001,
+      "preprocess_seconds": 19.740936400048668,
+      "embedding_seconds": 31.985707800020464,
+      "indexing_seconds": 51.76668740000605,
+      "temporal_clips": 56,
+      "processed_frames": 448,
+      "index_bytes": 5772950,
+      "indexing_peak_rss_bytes": 1163440128
+    }
+  },
+  "queries": [
+    {
+      "id": "tval-001",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "Workers roll large cotton bales along the boat ramp.",
+      "intervals": [
+        [
+          333,
+          358
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Extend endpoint review through 361; inspect earlier loading 305-321 for repeated matches. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 742,
+          "end": 746,
+          "timestamp": 744.0,
+          "score": 0.2881600856781006,
+          "index": 371
+        },
+        {
+          "start": 574,
+          "end": 578,
+          "timestamp": 576.0,
+          "score": 0.2864789366722107,
+          "index": 287
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.282540500164032,
+          "index": 289
+        },
+        {
+          "start": 746,
+          "end": 750,
+          "timestamp": 748.0,
+          "score": 0.28179723024368286,
+          "index": 373
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.279316246509552,
+          "index": 288
+        },
+        {
+          "start": 744,
+          "end": 748,
+          "timestamp": 746.0,
+          "score": 0.2786407470703125,
+          "index": 372
+        },
+        {
+          "start": 728,
+          "end": 732,
+          "timestamp": 730.0,
+          "score": 0.2752002477645874,
+          "index": 364
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2732827961444855,
+          "index": 573
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.27291494607925415,
+          "index": 574
+        },
+        {
+          "start": 736,
+          "end": 740,
+          "timestamp": 738.0,
+          "score": 0.27238667011260986,
+          "index": 368
+        }
+      ],
+      "latency_seconds": 1.7284835999962525,
+      "query_peak_rss_bytes": 1259388928,
+      "first_rank": null
+    },
+    {
+      "id": "tval-002",
+      "video_id": "river",
+      "category": "TEMPORAL_EVENT",
+      "query": "A tall tree falls down in the forest.",
+      "intervals": [
+        [
+          549.1,
+          551
+        ],
+        [
+          553.5,
+          564.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Review 547-565 at 0.5 seconds to separate sawing from actual falling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.27976393699645996,
+          "index": 289
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.27471598982810974,
+          "index": 513
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.27038881182670593,
+          "index": 76
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2700726091861725,
+          "index": 574
+        },
+        {
+          "start": 580,
+          "end": 584,
+          "timestamp": 582.0,
+          "score": 0.26287204027175903,
+          "index": 290
+        },
+        {
+          "start": 156,
+          "end": 160,
+          "timestamp": 158.0,
+          "score": 0.26230666041374207,
+          "index": 78
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.26012516021728516,
+          "index": 577
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.25916165113449097,
+          "index": 288
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.258998304605484,
+          "index": 245
+        },
+        {
+          "start": 496,
+          "end": 500,
+          "timestamp": 498.0,
+          "score": 0.2569434344768524,
+          "index": 248
+        }
+      ],
+      "latency_seconds": 1.0554398999956902,
+      "query_peak_rss_bytes": 1214287872,
+      "first_rank": null
+    },
+    {
+      "id": "tval-003",
+      "video_id": "river",
+      "category": "TEMPORAL_EVENT",
+      "query": "Logs rush down a water-filled wooden chute.",
+      "intervals": [
+        [
+          565.5,
+          597.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Chute visible from 565.5; cut to log pile at 598. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.29383787512779236,
+          "index": 289
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.2889453172683716,
+          "index": 513
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.2751328647136688,
+          "index": 288
+        },
+        {
+          "start": 1848,
+          "end": 1852,
+          "timestamp": 1850.0,
+          "score": 0.27309584617614746,
+          "index": 924
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2722049355506897,
+          "index": 512
+        },
+        {
+          "start": 574,
+          "end": 578,
+          "timestamp": 576.0,
+          "score": 0.27211716771125793,
+          "index": 287
+        },
+        {
+          "start": 1660,
+          "end": 1664,
+          "timestamp": 1662.0,
+          "score": 0.27201491594314575,
+          "index": 830
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.2684524655342102,
+          "index": 350
+        },
+        {
+          "start": 580,
+          "end": 584,
+          "timestamp": 582.0,
+          "score": 0.2665954828262329,
+          "index": 290
+        },
+        {
+          "start": 1028,
+          "end": 1032,
+          "timestamp": 1030.0,
+          "score": 0.264203280210495,
+          "index": 514
+        }
+      ],
+      "latency_seconds": 1.0562078000002657,
+      "query_peak_rss_bytes": 1187893248,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-004",
+      "video_id": "river",
+      "category": "SCENE",
+      "query": "Bare hillsides and dead tree stumps after deforestation.",
+      "intervals": [
+        [
+          819,
+          894.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Extend final boundary through 896; roots/stumps still visible at 890 overview. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 816,
+          "end": 820,
+          "timestamp": 818.0,
+          "score": 0.28154507279396057,
+          "index": 408
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.27561435103416443,
+          "index": 76
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2753686308860779,
+          "index": 289
+        },
+        {
+          "start": 814,
+          "end": 818,
+          "timestamp": 816.0,
+          "score": 0.2729484438896179,
+          "index": 407
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2709164321422577,
+          "index": 574
+        },
+        {
+          "start": 812,
+          "end": 816,
+          "timestamp": 814.0,
+          "score": 0.27066534757614136,
+          "index": 406
+        },
+        {
+          "start": 1780,
+          "end": 1784,
+          "timestamp": 1782.0,
+          "score": 0.2657066881656647,
+          "index": 890
+        },
+        {
+          "start": 818,
+          "end": 822,
+          "timestamp": 820.0,
+          "score": 0.2650148868560791,
+          "index": 409
+        },
+        {
+          "start": 156,
+          "end": 160,
+          "timestamp": 158.0,
+          "score": 0.26236116886138916,
+          "index": 78
+        },
+        {
+          "start": 150,
+          "end": 154,
+          "timestamp": 152.0,
+          "score": 0.2619584798812866,
+          "index": 75
+        }
+      ],
+      "latency_seconds": 1.319684199996118,
+      "query_peak_rss_bytes": 1191624704,
+      "first_rank": 8
+    },
+    {
+      "id": "tval-005",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A lantern beside a vertical water-level measuring scale.",
+      "intervals": [
+        [
+          1056,
+          1061
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Narrow to lantern and scale jointly visible; scoreboard begins after blackout. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 494,
+          "end": 498,
+          "timestamp": 496.0,
+          "score": 0.28012901544570923,
+          "index": 247
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.27939528226852417,
+          "index": 245
+        },
+        {
+          "start": 492,
+          "end": 496,
+          "timestamp": 494.0,
+          "score": 0.2760205566883087,
+          "index": 246
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.27475619316101074,
+          "index": 289
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.26606932282447815,
+          "index": 574
+        },
+        {
+          "start": 496,
+          "end": 500,
+          "timestamp": 498.0,
+          "score": 0.2621123194694519,
+          "index": 248
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.2605275511741638,
+          "index": 288
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2605248689651489,
+          "index": 577
+        },
+        {
+          "start": 950,
+          "end": 954,
+          "timestamp": 952.0,
+          "score": 0.25883495807647705,
+          "index": 475
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.2567352056503296,
+          "index": 513
+        }
+      ],
+      "latency_seconds": 1.4505003000012948,
+      "query_peak_rss_bytes": 1189765120,
+      "first_rank": null
+    },
+    {
+      "id": "tval-006",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "People row an open boat crowded with flood survivors.",
+      "intervals": [
+        [
+          1148.8,
+          1151.3
+        ],
+        [
+          1154.3,
+          1158.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Separate intervening shore cutaway; inspect four transitions at 0.25 seconds. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.3012832701206207,
+          "index": 574
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.29254016280174255,
+          "index": 573
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.29166287183761597,
+          "index": 577
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2910045087337494,
+          "index": 289
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.2805125117301941,
+          "index": 513
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.27640479803085327,
+          "index": 288
+        },
+        {
+          "start": 1156,
+          "end": 1160,
+          "timestamp": 1158.0,
+          "score": 0.27627062797546387,
+          "index": 578
+        },
+        {
+          "start": 574,
+          "end": 578,
+          "timestamp": 576.0,
+          "score": 0.27352041006088257,
+          "index": 287
+        },
+        {
+          "start": 1150,
+          "end": 1154,
+          "timestamp": 1152.0,
+          "score": 0.27296316623687744,
+          "index": 575
+        },
+        {
+          "start": 580,
+          "end": 584,
+          "timestamp": 582.0,
+          "score": 0.2729552984237671,
+          "index": 290
+        }
+      ],
+      "latency_seconds": 1.0876482999956352,
+      "query_peak_rss_bytes": 1189212160,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-007",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A cat walks on the roof of a flooded building.",
+      "intervals": [
+        [
+          1199.3,
+          1201.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Correct animal from close pixels; inspect transitions at 0.25 seconds. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.30723339319229126,
+          "index": 289
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.30284345149993896,
+          "index": 574
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2984260320663452,
+          "index": 573
+        },
+        {
+          "start": 580,
+          "end": 584,
+          "timestamp": 582.0,
+          "score": 0.2919837534427643,
+          "index": 290
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2913631498813629,
+          "index": 577
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.29109758138656616,
+          "index": 288
+        },
+        {
+          "start": 1020,
+          "end": 1024,
+          "timestamp": 1022.0,
+          "score": 0.2908007502555847,
+          "index": 510
+        },
+        {
+          "start": 574,
+          "end": 578,
+          "timestamp": 576.0,
+          "score": 0.29051733016967773,
+          "index": 287
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.2872273921966553,
+          "index": 513
+        },
+        {
+          "start": 728,
+          "end": 732,
+          "timestamp": 730.0,
+          "score": 0.2859690189361572,
+          "index": 364
+        }
+      ],
+      "latency_seconds": 0.9337874000048032,
+      "query_peak_rss_bytes": 1190592512,
+      "first_rank": null
+    },
+    {
+      "id": "tval-008",
+      "video_id": "river",
+      "category": "SCENE",
+      "query": "An aerial view of a town inundated by floodwater.",
+      "intervals": [
+        [
+          1217.25,
+          1249.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Town aerial begins in dissolve; last river-only shot less useful, inspect 1241-1252. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.292110413312912,
+          "index": 513
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2903529703617096,
+          "index": 574
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2873212695121765,
+          "index": 289
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2806765139102936,
+          "index": 573
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.28011876344680786,
+          "index": 288
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.27791768312454224,
+          "index": 245
+        },
+        {
+          "start": 344,
+          "end": 348,
+          "timestamp": 346.0,
+          "score": 0.2760339677333832,
+          "index": 172
+        },
+        {
+          "start": 1658,
+          "end": 1662,
+          "timestamp": 1660.0,
+          "score": 0.27506163716316223,
+          "index": 829
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2706634998321533,
+          "index": 577
+        },
+        {
+          "start": 1242,
+          "end": 1246,
+          "timestamp": 1244.0,
+          "score": 0.27047011256217957,
+          "index": 621
+        }
+      ],
+      "latency_seconds": 0.9308423000038601,
+      "query_peak_rss_bytes": 1190260736,
+      "first_rank": 10
+    },
+    {
+      "id": "tval-009",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "An overturned car lies beside a house.",
+      "intervals": [
+        [
+          1289.4,
+          1292.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude prior tilted building and next house; quarter-second boundary review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.28668659925460815,
+          "index": 513
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2825872004032135,
+          "index": 289
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.27032631635665894,
+          "index": 288
+        },
+        {
+          "start": 574,
+          "end": 578,
+          "timestamp": 576.0,
+          "score": 0.26975560188293457,
+          "index": 287
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.26931697130203247,
+          "index": 512
+        },
+        {
+          "start": 580,
+          "end": 584,
+          "timestamp": 582.0,
+          "score": 0.2676241099834442,
+          "index": 290
+        },
+        {
+          "start": 1788,
+          "end": 1792,
+          "timestamp": 1790.0,
+          "score": 0.26210856437683105,
+          "index": 894
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2616294026374817,
+          "index": 573
+        },
+        {
+          "start": 1790,
+          "end": 1794,
+          "timestamp": 1792.0,
+          "score": 0.2612408995628357,
+          "index": 895
+        },
+        {
+          "start": 1020,
+          "end": 1024,
+          "timestamp": 1022.0,
+          "score": 0.2606818675994873,
+          "index": 510
+        }
+      ],
+      "latency_seconds": 0.9717353000014555,
+      "query_peak_rss_bytes": 1190957056,
+      "first_rank": null
+    },
+    {
+      "id": "tval-010",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "Farm workers pick cotton in a field.",
+      "intervals": [
+        [
+          278.3,
+          282.2
+        ],
+        [
+          294.4,
+          298.8
+        ],
+        [
+          1373.5,
+          1436.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Remove sack restriction because close-ups also valid; inspect main sequence beginning 1370-1380. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1382,
+          "end": 1386,
+          "timestamp": 1384.0,
+          "score": 0.27510640025138855,
+          "index": 691
+        },
+        {
+          "start": 1380,
+          "end": 1384,
+          "timestamp": 1382.0,
+          "score": 0.26946699619293213,
+          "index": 690
+        },
+        {
+          "start": 1410,
+          "end": 1414,
+          "timestamp": 1412.0,
+          "score": 0.2617517113685608,
+          "index": 705
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2569390833377838,
+          "index": 574
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.255173921585083,
+          "index": 689
+        },
+        {
+          "start": 1434,
+          "end": 1438,
+          "timestamp": 1436.0,
+          "score": 0.2549836039543152,
+          "index": 717
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2543819546699524,
+          "index": 573
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2533235549926758,
+          "index": 289
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.24561753869056702,
+          "index": 687
+        },
+        {
+          "start": 1734,
+          "end": 1738,
+          "timestamp": 1736.0,
+          "score": 0.24399366974830627,
+          "index": 867
+        }
+      ],
+      "latency_seconds": 1.1141379000036977,
+      "query_peak_rss_bytes": 1190756352,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-011",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A person slices a loaf of bread with a knife.",
+      "intervals": [
+        [
+          1442.25,
+          1448.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Correct action: clearly slicing loaf, not kneading dough. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.257318377494812,
+          "index": 577
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.25462430715560913,
+          "index": 574
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.24873295426368713,
+          "index": 350
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.2461170256137848,
+          "index": 76
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.24595750868320465,
+          "index": 289
+        },
+        {
+          "start": 1150,
+          "end": 1154,
+          "timestamp": 1152.0,
+          "score": 0.24447660148143768,
+          "index": 575
+        },
+        {
+          "start": 1444,
+          "end": 1448,
+          "timestamp": 1446.0,
+          "score": 0.2439892292022705,
+          "index": 722
+        },
+        {
+          "start": 1152,
+          "end": 1156,
+          "timestamp": 1154.0,
+          "score": 0.2423645555973053,
+          "index": 576
+        },
+        {
+          "start": 1440,
+          "end": 1444,
+          "timestamp": 1442.0,
+          "score": 0.2403285801410675,
+          "index": 720
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.24030640721321106,
+          "index": 513
+        }
+      ],
+      "latency_seconds": 1.1227885999978753,
+      "query_peak_rss_bytes": 1212235776,
+      "first_rank": 7
+    },
+    {
+      "id": "tval-012",
+      "video_id": "river",
+      "category": "HUMAN_ACTION",
+      "query": "Children eat at the family dining table.",
+      "intervals": [
+        [
+          1470.8,
+          1482.75
+        ],
+        [
+          1486.75,
+          1493.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. First clip already present at 1472; verify onset from 1470. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1478,
+          "end": 1482,
+          "timestamp": 1480.0,
+          "score": 0.2661345601081848,
+          "index": 739
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.25934481620788574,
+          "index": 289
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.25934064388275146,
+          "index": 577
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2549172639846802,
+          "index": 574
+        },
+        {
+          "start": 1476,
+          "end": 1480,
+          "timestamp": 1478.0,
+          "score": 0.2542153000831604,
+          "index": 738
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.25299686193466187,
+          "index": 245
+        },
+        {
+          "start": 494,
+          "end": 498,
+          "timestamp": 496.0,
+          "score": 0.25288403034210205,
+          "index": 247
+        },
+        {
+          "start": 1470,
+          "end": 1474,
+          "timestamp": 1472.0,
+          "score": 0.2514374256134033,
+          "index": 735
+        },
+        {
+          "start": 1658,
+          "end": 1662,
+          "timestamp": 1660.0,
+          "score": 0.25090983510017395,
+          "index": 829
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.25039833784103394,
+          "index": 288
+        }
+      ],
+      "latency_seconds": 0.9423051000048872,
+      "query_peak_rss_bytes": 1214492672,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-013",
+      "video_id": "river",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A young child holds a metal cup.",
+      "intervals": [
+        [
+          1436.75,
+          1442.25
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Child rather than baby; verify onset near 1436.5. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1438,
+          "end": 1442,
+          "timestamp": 1440.0,
+          "score": 0.2552195191383362,
+          "index": 719
+        },
+        {
+          "start": 1658,
+          "end": 1662,
+          "timestamp": 1660.0,
+          "score": 0.25301241874694824,
+          "index": 829
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2499854862689972,
+          "index": 574
+        },
+        {
+          "start": 1436,
+          "end": 1440,
+          "timestamp": 1438.0,
+          "score": 0.24882356822490692,
+          "index": 718
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.23889100551605225,
+          "index": 577
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.23836860060691833,
+          "index": 289
+        },
+        {
+          "start": 1790,
+          "end": 1794,
+          "timestamp": 1792.0,
+          "score": 0.2381754219532013,
+          "index": 895
+        },
+        {
+          "start": 1150,
+          "end": 1154,
+          "timestamp": 1152.0,
+          "score": 0.23205149173736572,
+          "index": 575
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.23107698559761047,
+          "index": 513
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.23020973801612854,
+          "index": 350
+        }
+      ],
+      "latency_seconds": 0.9322481999988668,
+      "query_peak_rss_bytes": 1190617088,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-014",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman tends to a baby lying in a cradle.",
+      "intervals": [
+        [
+          1519.4,
+          1525.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Bed approach is not tending; close-up begins 1519.5. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1660,
+          "end": 1664,
+          "timestamp": 1662.0,
+          "score": 0.2711292505264282,
+          "index": 830
+        },
+        {
+          "start": 1658,
+          "end": 1662,
+          "timestamp": 1660.0,
+          "score": 0.26248812675476074,
+          "index": 829
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.26233166456222534,
+          "index": 350
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2562258243560791,
+          "index": 289
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.25498536229133606,
+          "index": 76
+        },
+        {
+          "start": 150,
+          "end": 154,
+          "timestamp": 152.0,
+          "score": 0.25192251801490784,
+          "index": 75
+        },
+        {
+          "start": 106,
+          "end": 110,
+          "timestamp": 108.0,
+          "score": 0.2513793408870697,
+          "index": 53
+        },
+        {
+          "start": 108,
+          "end": 112,
+          "timestamp": 110.0,
+          "score": 0.24962009489536285,
+          "index": 54
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.24909105896949768,
+          "index": 574
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.24875256419181824,
+          "index": 288
+        }
+      ],
+      "latency_seconds": 1.1010410000017146,
+      "query_peak_rss_bytes": 1190666240,
+      "first_rank": null
+    },
+    {
+      "id": "tval-015",
+      "video_id": "river",
+      "category": "STATIC_OBJECT",
+      "query": "A map shows branching rivers across the United States.",
+      "intervals": [
+        [
+          1554.75,
+          1645.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Dissolves: state approximate half-second boundary precision. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.27624061703681946,
+          "index": 574
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.2711940407752991,
+          "index": 289
+        },
+        {
+          "start": 150,
+          "end": 154,
+          "timestamp": 152.0,
+          "score": 0.26992762088775635,
+          "index": 75
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2675488293170929,
+          "index": 577
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.26611489057540894,
+          "index": 245
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2636014521121979,
+          "index": 573
+        },
+        {
+          "start": 496,
+          "end": 500,
+          "timestamp": 498.0,
+          "score": 0.26312461495399475,
+          "index": 248
+        },
+        {
+          "start": 494,
+          "end": 498,
+          "timestamp": 496.0,
+          "score": 0.26152047514915466,
+          "index": 247
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.2590275704860687,
+          "index": 76
+        },
+        {
+          "start": 492,
+          "end": 496,
+          "timestamp": 494.0,
+          "score": 0.25586745142936707,
+          "index": 246
+        }
+      ],
+      "latency_seconds": 1.0174466999960714,
+      "query_peak_rss_bytes": 1190735872,
+      "first_rank": null
+    },
+    {
+      "id": "tval-016",
+      "video_id": "river",
+      "category": "OBJECT_INTERACTION",
+      "query": "A construction worker operates a jackhammer.",
+      "intervals": [
+        [
+          1694.8,
+          1696.8
+        ],
+        [
+          1698.4,
+          1700
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude intervening explosion and following distant construction view; dense review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1790,
+          "end": 1794,
+          "timestamp": 1792.0,
+          "score": 0.27297690510749817,
+          "index": 895
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.27101123332977295,
+          "index": 289
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2619352340698242,
+          "index": 574
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.26128262281417847,
+          "index": 350
+        },
+        {
+          "start": 728,
+          "end": 732,
+          "timestamp": 730.0,
+          "score": 0.25925320386886597,
+          "index": 364
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.25891056656837463,
+          "index": 513
+        },
+        {
+          "start": 1660,
+          "end": 1664,
+          "timestamp": 1662.0,
+          "score": 0.25888895988464355,
+          "index": 830
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2569526135921478,
+          "index": 577
+        },
+        {
+          "start": 698,
+          "end": 702,
+          "timestamp": 700.0,
+          "score": 0.25639471411705017,
+          "index": 349
+        },
+        {
+          "start": 704,
+          "end": 708,
+          "timestamp": 706.0,
+          "score": 0.25543147325515747,
+          "index": 352
+        }
+      ],
+      "latency_seconds": 1.072835800005123,
+      "query_peak_rss_bytes": 1213161472,
+      "first_rank": null
+    },
+    {
+      "id": "tval-017",
+      "video_id": "river",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "Views of completed concrete dam spillways.",
+      "intervals": [
+        [
+          1705.5,
+          1710.5
+        ],
+        [
+          1811.7,
+          1825.5
+        ],
+        [
+          1840.7,
+          1856
+        ],
+        [
+          1882.7,
+          1901.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Early spillway is DRY: remove flowing-water condition. Extend source-only boundary review to all four shots. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.287351131439209,
+          "index": 574
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.28462475538253784,
+          "index": 289
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.27886709570884705,
+          "index": 76
+        },
+        {
+          "start": 1146,
+          "end": 1150,
+          "timestamp": 1148.0,
+          "score": 0.2778259813785553,
+          "index": 573
+        },
+        {
+          "start": 1812,
+          "end": 1816,
+          "timestamp": 1814.0,
+          "score": 0.2776782810688019,
+          "index": 906
+        },
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.27029693126678467,
+          "index": 577
+        },
+        {
+          "start": 150,
+          "end": 154,
+          "timestamp": 152.0,
+          "score": 0.2694428563117981,
+          "index": 75
+        },
+        {
+          "start": 1150,
+          "end": 1154,
+          "timestamp": 1152.0,
+          "score": 0.267217218875885,
+          "index": 575
+        },
+        {
+          "start": 1848,
+          "end": 1852,
+          "timestamp": 1850.0,
+          "score": 0.26546746492385864,
+          "index": 924
+        },
+        {
+          "start": 576,
+          "end": 580,
+          "timestamp": 578.0,
+          "score": 0.26314833760261536,
+          "index": 288
+        }
+      ],
+      "latency_seconds": 1.0421282999959658,
+      "query_peak_rss_bytes": 1190617088,
+      "first_rank": 5
+    },
+    {
+      "id": "tval-018",
+      "video_id": "river",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A hand turns a circular machine speed control.",
+      "intervals": [
+        [
+          1829.5,
+          1831
+        ],
+        [
+          1832,
+          1835.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Exclude gauges and distant operator; dense transitions needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1154,
+          "end": 1158,
+          "timestamp": 1156.0,
+          "score": 0.2594605088233948,
+          "index": 577
+        },
+        {
+          "start": 1148,
+          "end": 1152,
+          "timestamp": 1150.0,
+          "score": 0.2561500072479248,
+          "index": 574
+        },
+        {
+          "start": 700,
+          "end": 704,
+          "timestamp": 702.0,
+          "score": 0.2541639804840088,
+          "index": 350
+        },
+        {
+          "start": 152,
+          "end": 156,
+          "timestamp": 154.0,
+          "score": 0.2540656328201294,
+          "index": 76
+        },
+        {
+          "start": 1848,
+          "end": 1852,
+          "timestamp": 1850.0,
+          "score": 0.25173693895339966,
+          "index": 924
+        },
+        {
+          "start": 674,
+          "end": 678,
+          "timestamp": 676.0,
+          "score": 0.2500592768192291,
+          "index": 337
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.24874623119831085,
+          "index": 513
+        },
+        {
+          "start": 578,
+          "end": 582,
+          "timestamp": 580.0,
+          "score": 0.24720025062561035,
+          "index": 289
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.24551188945770264,
+          "index": 245
+        },
+        {
+          "start": 702,
+          "end": 706,
+          "timestamp": 704.0,
+          "score": 0.24426713585853577,
+          "index": 351
+        }
+      ],
+      "latency_seconds": 0.9605831999942893,
+      "query_peak_rss_bytes": 1190825984,
+      "first_rank": null
+    },
+    {
+      "id": "tval-019",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook rolls dough into long ropes with his palms.",
+      "intervals": [
+        [
+          270,
+          299.5
+        ],
+        [
+          301.2,
+          303.2
+        ],
+        [
+          307.5,
+          320.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Pause for explanation near 300 and end before rope cutting; dense review needed. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2789888381958008,
+          "index": 182
+        },
+        {
+          "start": 448,
+          "end": 452,
+          "timestamp": 450.0,
+          "score": 0.2675535976886749,
+          "index": 224
+        },
+        {
+          "start": 450,
+          "end": 454,
+          "timestamp": 452.0,
+          "score": 0.26565641164779663,
+          "index": 225
+        },
+        {
+          "start": 372,
+          "end": 376,
+          "timestamp": 374.0,
+          "score": 0.2605699300765991,
+          "index": 186
+        },
+        {
+          "start": 248,
+          "end": 252,
+          "timestamp": 250.0,
+          "score": 0.2599846124649048,
+          "index": 124
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.25920191407203674,
+          "index": 687
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.25908100605010986,
+          "index": 276
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.25886765122413635,
+          "index": 16
+        },
+        {
+          "start": 1078,
+          "end": 1082,
+          "timestamp": 1080.0,
+          "score": 0.2586901783943176,
+          "index": 539
+        },
+        {
+          "start": 492,
+          "end": 496,
+          "timestamp": 494.0,
+          "score": 0.2585698366165161,
+          "index": 246
+        }
+      ],
+      "latency_seconds": 1.2768281000026036,
+      "query_peak_rss_bytes": 973000704,
+      "first_rank": null
+    },
+    {
+      "id": "tval-020",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook cuts a rope of dough into small pieces.",
+      "intervals": [
+        [
+          326.5,
+          329
+        ],
+        [
+          332,
+          341.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted sheet pass reviewed. Include first short cutting segment from prior sheet; exclude explanation/scale. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.29287996888160706,
+          "index": 182
+        },
+        {
+          "start": 448,
+          "end": 452,
+          "timestamp": 450.0,
+          "score": 0.28493034839630127,
+          "index": 224
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.27764010429382324,
+          "index": 687
+        },
+        {
+          "start": 366,
+          "end": 370,
+          "timestamp": 368.0,
+          "score": 0.27630215883255005,
+          "index": 183
+        },
+        {
+          "start": 450,
+          "end": 454,
+          "timestamp": 452.0,
+          "score": 0.2762739956378937,
+          "index": 225
+        },
+        {
+          "start": 250,
+          "end": 254,
+          "timestamp": 252.0,
+          "score": 0.27191898226737976,
+          "index": 125
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.27159425616264343,
+          "index": 242
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.2710946798324585,
+          "index": 245
+        },
+        {
+          "start": 1078,
+          "end": 1082,
+          "timestamp": 1080.0,
+          "score": 0.2706369161605835,
+          "index": 539
+        },
+        {
+          "start": 248,
+          "end": 252,
+          "timestamp": 250.0,
+          "score": 0.270519495010376,
+          "index": 124
+        }
+      ],
+      "latency_seconds": 1.3072819000008167,
+      "query_peak_rss_bytes": 950611968,
+      "first_rank": null
+    },
+    {
+      "id": "tval-021",
+      "video_id": "dumplings",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A small piece of dough sits on a digital kitchen scale.",
+      "intervals": [
+        [
+          343.5,
+          351.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Include wide view where dough remains on scale, before closeup. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.29579538106918335,
+          "index": 182
+        },
+        {
+          "start": 348,
+          "end": 352,
+          "timestamp": 350.0,
+          "score": 0.29560941457748413,
+          "index": 174
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.29336434602737427,
+          "index": 276
+        },
+        {
+          "start": 448,
+          "end": 452,
+          "timestamp": 450.0,
+          "score": 0.28905797004699707,
+          "index": 224
+        },
+        {
+          "start": 450,
+          "end": 454,
+          "timestamp": 452.0,
+          "score": 0.28892406821250916,
+          "index": 225
+        },
+        {
+          "start": 1208,
+          "end": 1212,
+          "timestamp": 1210.0,
+          "score": 0.28068771958351135,
+          "index": 604
+        },
+        {
+          "start": 836,
+          "end": 840,
+          "timestamp": 838.0,
+          "score": 0.2801658809185028,
+          "index": 418
+        },
+        {
+          "start": 248,
+          "end": 252,
+          "timestamp": 250.0,
+          "score": 0.27960455417633057,
+          "index": 124
+        },
+        {
+          "start": 250,
+          "end": 254,
+          "timestamp": 252.0,
+          "score": 0.2793765068054199,
+          "index": 125
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.27802884578704834,
+          "index": 16
+        }
+      ],
+      "latency_seconds": 1.4855087000032654,
+      "query_peak_rss_bytes": 950603776,
+      "first_rank": 2
+    },
+    {
+      "id": "tval-022",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook rolls a round dumpling wrapper with a wooden rolling pin.",
+      "intervals": [
+        [
+          388,
+          407.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Palm flattening before rolling excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.3011819124221802,
+          "index": 182
+        },
+        {
+          "start": 366,
+          "end": 370,
+          "timestamp": 368.0,
+          "score": 0.2881038784980774,
+          "index": 183
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.28503355383872986,
+          "index": 242
+        },
+        {
+          "start": 374,
+          "end": 378,
+          "timestamp": 376.0,
+          "score": 0.28355005383491516,
+          "index": 187
+        },
+        {
+          "start": 372,
+          "end": 376,
+          "timestamp": 374.0,
+          "score": 0.28331661224365234,
+          "index": 186
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.28017503023147583,
+          "index": 276
+        },
+        {
+          "start": 1248,
+          "end": 1252,
+          "timestamp": 1250.0,
+          "score": 0.278018057346344,
+          "index": 624
+        },
+        {
+          "start": 306,
+          "end": 310,
+          "timestamp": 308.0,
+          "score": 0.27422356605529785,
+          "index": 153
+        },
+        {
+          "start": 1314,
+          "end": 1318,
+          "timestamp": 1316.0,
+          "score": 0.2721185088157654,
+          "index": 657
+        },
+        {
+          "start": 368,
+          "end": 372,
+          "timestamp": 370.0,
+          "score": 0.27172696590423584,
+          "index": 184
+        }
+      ],
+      "latency_seconds": 1.365042599994922,
+      "query_peak_rss_bytes": 951107584,
+      "first_rank": null
+    },
+    {
+      "id": "tval-023",
+      "video_id": "dumplings",
+      "category": "TEMPORAL_EVENT",
+      "query": "Water is poured into the hot frying pan and steam rises.",
+      "intervals": [
+        [
+          499.3,
+          500.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Pouring itself only; inspect quarters through 501. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 502,
+          "end": 506,
+          "timestamp": 504.0,
+          "score": 0.2988746166229248,
+          "index": 251
+        },
+        {
+          "start": 500,
+          "end": 504,
+          "timestamp": 502.0,
+          "score": 0.2965232729911804,
+          "index": 250
+        },
+        {
+          "start": 220,
+          "end": 224,
+          "timestamp": 222.0,
+          "score": 0.29405564069747925,
+          "index": 110
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.29263633489608765,
+          "index": 687
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.29145848751068115,
+          "index": 512
+        },
+        {
+          "start": 526,
+          "end": 530,
+          "timestamp": 528.0,
+          "score": 0.29046744108200073,
+          "index": 263
+        },
+        {
+          "start": 498,
+          "end": 502,
+          "timestamp": 500.0,
+          "score": 0.2845499515533447,
+          "index": 249
+        },
+        {
+          "start": 524,
+          "end": 528,
+          "timestamp": 526.0,
+          "score": 0.2833356261253357,
+          "index": 262
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.28268110752105713,
+          "index": 513
+        },
+        {
+          "start": 528,
+          "end": 532,
+          "timestamp": 530.0,
+          "score": 0.282517671585083,
+          "index": 264
+        }
+      ],
+      "latency_seconds": 1.3045898999989731,
+      "query_peak_rss_bytes": 951488512,
+      "first_rank": 7
+    },
+    {
+      "id": "tval-024",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook lifts the lid from the steaming red frying pan.",
+      "intervals": [
+        [
+          521.3,
+          523.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude later explanation and tongs. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Intro 36.3-37.5 lowers the lid, so it is not a repeat of lifting."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2853049039840698,
+          "index": 182
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2809782028198242,
+          "index": 512
+        },
+        {
+          "start": 502,
+          "end": 506,
+          "timestamp": 504.0,
+          "score": 0.28022199869155884,
+          "index": 251
+        },
+        {
+          "start": 500,
+          "end": 504,
+          "timestamp": 502.0,
+          "score": 0.2767011225223541,
+          "index": 250
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2754121720790863,
+          "index": 687
+        },
+        {
+          "start": 1036,
+          "end": 1040,
+          "timestamp": 1038.0,
+          "score": 0.27332958579063416,
+          "index": 518
+        },
+        {
+          "start": 220,
+          "end": 224,
+          "timestamp": 222.0,
+          "score": 0.27111923694610596,
+          "index": 110
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2701612412929535,
+          "index": 242
+        },
+        {
+          "start": 526,
+          "end": 530,
+          "timestamp": 528.0,
+          "score": 0.26847171783447266,
+          "index": 263
+        },
+        {
+          "start": 1038,
+          "end": 1042,
+          "timestamp": 1040.0,
+          "score": 0.26837509870529175,
+          "index": 519
+        }
+      ],
+      "latency_seconds": 1.4062329000007594,
+      "query_peak_rss_bytes": 895803392,
+      "first_rank": null
+    },
+    {
+      "id": "tval-025",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook transfers fried dumplings from the pan to a plate with tongs.",
+      "intervals": [
+        [
+          536.5,
+          537.8
+        ],
+        [
+          552.5,
+          555.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude cutting/tasting on plate. Review opening montage 33-39 for repeated transfer. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.302054762840271,
+          "index": 242
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2929716110229492,
+          "index": 276
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.2884383797645569,
+          "index": 275
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2850577235221863,
+          "index": 182
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.284575879573822,
+          "index": 245
+        },
+        {
+          "start": 486,
+          "end": 490,
+          "timestamp": 488.0,
+          "score": 0.27882620692253113,
+          "index": 243
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.2777314782142639,
+          "index": 689
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.27759695053100586,
+          "index": 16
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.27721738815307617,
+          "index": 687
+        },
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.27676233649253845,
+          "index": 17
+        }
+      ],
+      "latency_seconds": 1.291426899995713,
+      "query_peak_rss_bytes": 896040960,
+      "first_rank": 2
+    },
+    {
+      "id": "tval-026",
+      "video_id": "dumplings",
+      "category": "HUMAN_ACTION",
+      "query": "The cook tastes dumpling soup from a blue bowl with a spoon.",
+      "intervals": [
+        [
+          0,
+          4.3
+        ],
+        [
+          919.5,
+          922.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Second tasting starts after presentation shot; check intro end 4-6. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.28650861978530884,
+          "index": 182
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.28199005126953125,
+          "index": 275
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.27765366435050964,
+          "index": 687
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2770349979400635,
+          "index": 242
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.2761189341545105,
+          "index": 689
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2713325619697571,
+          "index": 276
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.2712551951408386,
+          "index": 688
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.26257556676864624,
+          "index": 16
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2615547180175781,
+          "index": 512
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.26013293862342834,
+          "index": 245
+        }
+      ],
+      "latency_seconds": 1.345082599997113,
+      "query_peak_rss_bytes": 896454656,
+      "first_rank": null
+    },
+    {
+      "id": "tval-027",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "Cooked broth is poured through a sieve into another container.",
+      "intervals": [
+        [
+          685.5,
+          696.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Pour already starts before initial guess; verify 684-687. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.28431954979896545,
+          "index": 687
+        },
+        {
+          "start": 502,
+          "end": 506,
+          "timestamp": 504.0,
+          "score": 0.277057409286499,
+          "index": 251
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.27539464831352234,
+          "index": 182
+        },
+        {
+          "start": 220,
+          "end": 224,
+          "timestamp": 222.0,
+          "score": 0.26888108253479004,
+          "index": 110
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.26745814085006714,
+          "index": 689
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2651680111885071,
+          "index": 512
+        },
+        {
+          "start": 500,
+          "end": 504,
+          "timestamp": 502.0,
+          "score": 0.2638143301010132,
+          "index": 250
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.26225942373275757,
+          "index": 688
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.26170217990875244,
+          "index": 275
+        },
+        {
+          "start": 1036,
+          "end": 1040,
+          "timestamp": 1038.0,
+          "score": 0.2601359784603119,
+          "index": 518
+        }
+      ],
+      "latency_seconds": 1.4794996999989962,
+      "query_peak_rss_bytes": 896843776,
+      "first_rank": null
+    },
+    {
+      "id": "tval-028",
+      "video_id": "dumplings",
+      "category": "STATIC_OBJECT",
+      "query": "A square yellow dumpling wrapper is held up to the camera.",
+      "intervals": [
+        [
+          771.8,
+          776.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Square wrapper shown on plate then held singly; exclude folding afterward. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2788349986076355,
+          "index": 276
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.278238981962204,
+          "index": 242
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.2738972306251526,
+          "index": 275
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2646637558937073,
+          "index": 182
+        },
+        {
+          "start": 486,
+          "end": 490,
+          "timestamp": 488.0,
+          "score": 0.26136648654937744,
+          "index": 243
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.2610973119735718,
+          "index": 245
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2589980363845825,
+          "index": 687
+        },
+        {
+          "start": 838,
+          "end": 842,
+          "timestamp": 840.0,
+          "score": 0.25849223136901855,
+          "index": 419
+        },
+        {
+          "start": 844,
+          "end": 848,
+          "timestamp": 846.0,
+          "score": 0.25721144676208496,
+          "index": 422
+        },
+        {
+          "start": 494,
+          "end": 498,
+          "timestamp": 496.0,
+          "score": 0.25711923837661743,
+          "index": 247
+        }
+      ],
+      "latency_seconds": 1.4079547000001185,
+      "query_peak_rss_bytes": 896061440,
+      "first_rank": null
+    },
+    {
+      "id": "tval-029",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook folds yellow wonton wrappers around meat filling.",
+      "intervals": [
+        [
+          792.5,
+          810.7
+        ],
+        [
+          813.8,
+          823.7
+        ],
+        [
+          825,
+          836.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Repeated folding separated from presentation; review pauses around 811-815 and 824-825. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2943814694881439,
+          "index": 242
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.29375961422920227,
+          "index": 687
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2890785038471222,
+          "index": 276
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.288662850856781,
+          "index": 182
+        },
+        {
+          "start": 838,
+          "end": 842,
+          "timestamp": 840.0,
+          "score": 0.2875274419784546,
+          "index": 419
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.287362277507782,
+          "index": 275
+        },
+        {
+          "start": 836,
+          "end": 840,
+          "timestamp": 838.0,
+          "score": 0.28366729617118835,
+          "index": 418
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.28307634592056274,
+          "index": 245
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.27886223793029785,
+          "index": 16
+        },
+        {
+          "start": 374,
+          "end": 378,
+          "timestamp": 376.0,
+          "score": 0.27817192673683167,
+          "index": 187
+        }
+      ],
+      "latency_seconds": 1.4471745999981067,
+      "query_peak_rss_bytes": 896716800,
+      "first_rank": null
+    },
+    {
+      "id": "tval-030",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook ladles hot soup into a blue serving bowl.",
+      "intervals": [
+        [
+          896.8,
+          901.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Actual ladling begins after scooping; exclude garnish. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.279568612575531,
+          "index": 687
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2793402671813965,
+          "index": 182
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.27447962760925293,
+          "index": 689
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2743033170700073,
+          "index": 512
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.273068368434906,
+          "index": 688
+        },
+        {
+          "start": 502,
+          "end": 506,
+          "timestamp": 504.0,
+          "score": 0.2727110981941223,
+          "index": 251
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.2698878049850464,
+          "index": 1
+        },
+        {
+          "start": 500,
+          "end": 504,
+          "timestamp": 502.0,
+          "score": 0.2689419388771057,
+          "index": 250
+        },
+        {
+          "start": 936,
+          "end": 940,
+          "timestamp": 938.0,
+          "score": 0.26627716422080994,
+          "index": 468
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.2636065185070038,
+          "index": 275
+        }
+      ],
+      "latency_seconds": 1.2870686000023852,
+      "query_peak_rss_bytes": 896774144,
+      "first_rank": null
+    },
+    {
+      "id": "tval-031",
+      "video_id": "dumplings",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "The cook holds a dried mushroom close to the camera.",
+      "intervals": [
+        [
+          1003.7,
+          1004.7
+        ],
+        [
+          1010,
+          1011.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Close-up condition excludes distant talking shots. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2766403555870056,
+          "index": 182
+        },
+        {
+          "start": 450,
+          "end": 454,
+          "timestamp": 452.0,
+          "score": 0.2678768038749695,
+          "index": 225
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2635635733604431,
+          "index": 242
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2631097137928009,
+          "index": 687
+        },
+        {
+          "start": 1134,
+          "end": 1138,
+          "timestamp": 1136.0,
+          "score": 0.26189836859703064,
+          "index": 567
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.2584698796272278,
+          "index": 689
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.2574811279773712,
+          "index": 16
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.2542077898979187,
+          "index": 688
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.2523103952407837,
+          "index": 275
+        },
+        {
+          "start": 362,
+          "end": 366,
+          "timestamp": 364.0,
+          "score": 0.24989935755729675,
+          "index": 181
+        }
+      ],
+      "latency_seconds": 1.4119808999967063,
+      "query_peak_rss_bytes": 896974848,
+      "first_rank": null
+    },
+    {
+      "id": "tval-032",
+      "video_id": "dumplings",
+      "category": "TEMPORAL_EVENT",
+      "query": "The cook puts a metal tray into the refrigerator.",
+      "intervals": [
+        [
+          1058.2,
+          1061.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Refrigerator insertion and closing; exclude prior pouring. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2994380593299866,
+          "index": 182
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.293457567691803,
+          "index": 275
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.29268431663513184,
+          "index": 687
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2887662649154663,
+          "index": 276
+        },
+        {
+          "start": 884,
+          "end": 888,
+          "timestamp": 886.0,
+          "score": 0.2859936058521271,
+          "index": 442
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.28548043966293335,
+          "index": 242
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.279166579246521,
+          "index": 512
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.27818232774734497,
+          "index": 16
+        },
+        {
+          "start": 366,
+          "end": 370,
+          "timestamp": 368.0,
+          "score": 0.2744290232658386,
+          "index": 183
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.2743304967880249,
+          "index": 245
+        }
+      ],
+      "latency_seconds": 1.3810176000042702,
+      "query_peak_rss_bytes": 896733184,
+      "first_rank": null
+    },
+    {
+      "id": "tval-033",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook cuts a sheet of set jelly in a metal tray.",
+      "intervals": [
+        [
+          1158.3,
+          1168
+        ],
+        [
+          1174,
+          1180.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Exclude jelly demonstration/pauses; dense transitions required. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2691410481929779,
+          "index": 512
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2644081115722656,
+          "index": 182
+        },
+        {
+          "start": 1026,
+          "end": 1030,
+          "timestamp": 1028.0,
+          "score": 0.26064687967300415,
+          "index": 513
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2602114975452423,
+          "index": 687
+        },
+        {
+          "start": 1054,
+          "end": 1058,
+          "timestamp": 1056.0,
+          "score": 0.2586444020271301,
+          "index": 527
+        },
+        {
+          "start": 770,
+          "end": 774,
+          "timestamp": 772.0,
+          "score": 0.25845956802368164,
+          "index": 385
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.2582884132862091,
+          "index": 276
+        },
+        {
+          "start": 1034,
+          "end": 1038,
+          "timestamp": 1036.0,
+          "score": 0.2575557231903076,
+          "index": 517
+        },
+        {
+          "start": 1036,
+          "end": 1040,
+          "timestamp": 1038.0,
+          "score": 0.2571287453174591,
+          "index": 518
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2568822503089905,
+          "index": 242
+        }
+      ],
+      "latency_seconds": 1.4992820999977994,
+      "query_peak_rss_bytes": 896548864,
+      "first_rank": null
+    },
+    {
+      "id": "tval-034",
+      "video_id": "dumplings",
+      "category": "OBJECT_INTERACTION",
+      "query": "The cook lines a bamboo steamer with cabbage leaves.",
+      "intervals": [
+        [
+          1251.5,
+          1257.8
+        ],
+        [
+          1267.8,
+          1270.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Later 1282-1288 is placing dumplings, not cabbage; excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 1314,
+          "end": 1318,
+          "timestamp": 1316.0,
+          "score": 0.27387291193008423,
+          "index": 657
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2689160108566284,
+          "index": 687
+        },
+        {
+          "start": 502,
+          "end": 506,
+          "timestamp": 504.0,
+          "score": 0.2681402266025543,
+          "index": 251
+        },
+        {
+          "start": 1024,
+          "end": 1028,
+          "timestamp": 1026.0,
+          "score": 0.2673296332359314,
+          "index": 512
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.2664501667022705,
+          "index": 689
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2660609483718872,
+          "index": 242
+        },
+        {
+          "start": 1296,
+          "end": 1300,
+          "timestamp": 1298.0,
+          "score": 0.26530906558036804,
+          "index": 648
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2631250023841858,
+          "index": 182
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.2627696096897125,
+          "index": 688
+        },
+        {
+          "start": 500,
+          "end": 504,
+          "timestamp": 502.0,
+          "score": 0.25996893644332886,
+          "index": 250
+        }
+      ],
+      "latency_seconds": 1.6936676000041189,
+      "query_peak_rss_bytes": 898142208,
+      "first_rank": null
+    },
+    {
+      "id": "tval-035",
+      "video_id": "dumplings",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "A dumpling rests in a white soup spoon held beside chopsticks.",
+      "intervals": [
+        [
+          28.4,
+          30.2
+        ],
+        [
+          1350.7,
+          1360.5
+        ],
+        [
+          1388.5,
+          1390.1
+        ],
+        [
+          1396.2,
+          1397.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Need final triptych 1397-1402 repeated occurrence check. Spoon must contain dumpling and chopsticks jointly visible. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Final 1398-1401 triptych shows chopsticks/steamer rather than clearly visible spoon; excluded."
+      },
+      "results": [
+        {
+          "start": 364,
+          "end": 368,
+          "timestamp": 366.0,
+          "score": 0.2865092158317566,
+          "index": 182
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.28643399477005005,
+          "index": 276
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.2855384647846222,
+          "index": 275
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2768721580505371,
+          "index": 242
+        },
+        {
+          "start": 1378,
+          "end": 1382,
+          "timestamp": 1380.0,
+          "score": 0.27166664600372314,
+          "index": 689
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2697927951812744,
+          "index": 687
+        },
+        {
+          "start": 374,
+          "end": 378,
+          "timestamp": 376.0,
+          "score": 0.2674584686756134,
+          "index": 187
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.26529455184936523,
+          "index": 245
+        },
+        {
+          "start": 1376,
+          "end": 1380,
+          "timestamp": 1378.0,
+          "score": 0.26497817039489746,
+          "index": 688
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "timestamp": 58.0,
+          "score": 0.2644599676132202,
+          "index": 28
+        }
+      ],
+      "latency_seconds": 1.495119799998065,
+      "query_peak_rss_bytes": 914796544,
+      "first_rank": null
+    },
+    {
+      "id": "tval-036",
+      "video_id": "dumplings",
+      "category": "SCENE",
+      "query": "An overhead view of a tray lined with rows of yellow folded dumplings.",
+      "intervals": [
+        [
+          818.8,
+          831.5
+        ],
+        [
+          836.6,
+          840.6
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "First targeted pass reviewed. Overhead only; exclude close-up of folding and oblique tray display. Check earlier/later overhead shots for tray. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication. Includes close tray display; later mostly empty tray at 856-859 lacks rows."
+      },
+      "results": [
+        {
+          "start": 838,
+          "end": 842,
+          "timestamp": 840.0,
+          "score": 0.2823941111564636,
+          "index": 419
+        },
+        {
+          "start": 552,
+          "end": 556,
+          "timestamp": 554.0,
+          "score": 0.28064194321632385,
+          "index": 276
+        },
+        {
+          "start": 550,
+          "end": 554,
+          "timestamp": 552.0,
+          "score": 0.27722328901290894,
+          "index": 275
+        },
+        {
+          "start": 484,
+          "end": 488,
+          "timestamp": 486.0,
+          "score": 0.2768498659133911,
+          "index": 242
+        },
+        {
+          "start": 1374,
+          "end": 1378,
+          "timestamp": 1376.0,
+          "score": 0.2756900191307068,
+          "index": 687
+        },
+        {
+          "start": 374,
+          "end": 378,
+          "timestamp": 376.0,
+          "score": 0.27414870262145996,
+          "index": 187
+        },
+        {
+          "start": 490,
+          "end": 494,
+          "timestamp": 492.0,
+          "score": 0.27057594060897827,
+          "index": 245
+        },
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.26894411444664,
+          "index": 17
+        },
+        {
+          "start": 770,
+          "end": 774,
+          "timestamp": 772.0,
+          "score": 0.26673614978790283,
+          "index": 385
+        },
+        {
+          "start": 892,
+          "end": 896,
+          "timestamp": 894.0,
+          "score": 0.26563364267349243,
+          "index": 446
+        }
+      ],
+      "latency_seconds": 1.3424678000010317,
+      "query_peak_rss_bytes": 898400256,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-049",
+      "video_id": "log-stool",
+      "category": "SCENE",
+      "query": "A person and a carved log stand in a snowy forest.",
+      "intervals": [
+        [
+          0.8,
+          175.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Scene query includes final seated view; excludes white/black transition. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.33125755190849304,
+          "index": 21
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.327592134475708,
+          "index": 22
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.32536742091178894,
+          "index": 12
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.3234163522720337,
+          "index": 38
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.32327041029930115,
+          "index": 11
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.32315564155578613,
+          "index": 24
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.323050856590271,
+          "index": 13
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.3228512406349182,
+          "index": 23
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.32247090339660645,
+          "index": 15
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.32219836115837097,
+          "index": 25
+        }
+      ],
+      "latency_seconds": 0.20295280000573257,
+      "query_peak_rss_bytes": 831090688,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-050",
+      "video_id": "log-stool",
+      "category": "OBJECT_INTERACTION",
+      "query": "The woodworker splits a cut section away from the log with an axe.",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Axe splits slab; excludes subsequent carrying slab. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.3102185130119324,
+          "index": 21
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.30721330642700195,
+          "index": 0
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.3063502609729767,
+          "index": 20
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.30415403842926025,
+          "index": 1
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.3034183979034424,
+          "index": 38
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.3032528758049011,
+          "index": 15
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.3029973804950714,
+          "index": 12
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.29999661445617676,
+          "index": 39
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.2995656728744507,
+          "index": 37
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "timestamp": 6.0,
+          "score": 0.29942911863327026,
+          "index": 2
+        }
+      ],
+      "latency_seconds": 0.1918364000011934,
+      "query_peak_rss_bytes": 824823808,
+      "first_rank": 5
+    },
+    {
+      "id": "tval-051",
+      "video_id": "log-stool",
+      "category": "TEMPORAL_EVENT",
+      "query": "The woodworker tips the carved log from upright onto its side.",
+      "intervals": [
+        [
+          122.95,
+          123.25
+        ],
+        [
+          135.35,
+          135.85
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Rapid tipping events only; subsequent cutting not tipping. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.2989685833454132,
+          "index": 1
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "timestamp": 6.0,
+          "score": 0.2955288589000702,
+          "index": 2
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.29441970586776733,
+          "index": 38
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2940438687801361,
+          "index": 21
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.29260075092315674,
+          "index": 20
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.29216670989990234,
+          "index": 22
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.2918510138988495,
+          "index": 0
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.29140979051589966,
+          "index": 39
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.29115691781044006,
+          "index": 37
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.28956395387649536,
+          "index": 31
+        }
+      ],
+      "latency_seconds": 0.17984859999705805,
+      "query_peak_rss_bytes": 825135104,
+      "first_rank": null
+    },
+    {
+      "id": "tval-052",
+      "video_id": "log-stool",
+      "category": "HUMAN_ACTION",
+      "query": "The woodworker sits down on the finished wooden stool.",
+      "intervals": [
+        [
+          165.1,
+          167.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Sit-down motion ends before static seated pose. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.27550631761550903,
+          "index": 0
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.2737387418746948,
+          "index": 1
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "timestamp": 6.0,
+          "score": 0.2697424590587616,
+          "index": 2
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.2680888772010803,
+          "index": 39
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2674850821495056,
+          "index": 21
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.2665455937385559,
+          "index": 38
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.26647132635116577,
+          "index": 37
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.26578307151794434,
+          "index": 15
+        },
+        {
+          "start": 68,
+          "end": 72,
+          "timestamp": 70.0,
+          "score": 0.2656499445438385,
+          "index": 34
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.2638578712940216,
+          "index": 20
+        }
+      ],
+      "latency_seconds": 0.18548290000035195,
+      "query_peak_rss_bytes": 825085952,
+      "first_rank": null
+    },
+    {
+      "id": "tval-053",
+      "video_id": "log-stool",
+      "category": "STATIC_OBJECT",
+      "query": "A chainsaw lies on the snow while the worker uses an axe.",
+      "intervals": [
+        [
+          75.2,
+          78.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Chainsaw in foreground during axe work. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.3362058401107788,
+          "index": 25
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.33616986870765686,
+          "index": 21
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.3339191675186157,
+          "index": 24
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.33019351959228516,
+          "index": 26
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.32895591855049133,
+          "index": 23
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.32806989550590515,
+          "index": 22
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.32689666748046875,
+          "index": 27
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.3266933560371399,
+          "index": 37
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.3259087800979614,
+          "index": 20
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.3248196244239807,
+          "index": 38
+        }
+      ],
+      "latency_seconds": 0.17633600000408478,
+      "query_peak_rss_bytes": 827801600,
+      "first_rank": 8
+    },
+    {
+      "id": "tval-054",
+      "video_id": "log-stool",
+      "category": "OBJECT_INTERACTION",
+      "query": "The woodworker cuts the end of a log lying on its side.",
+      "intervals": [
+        [
+          123.5,
+          130.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Chainsaw cuts end of horizontal log, excludes upright transition. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2970092296600342,
+          "index": 21
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.2949049174785614,
+          "index": 1
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.294746994972229,
+          "index": 38
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.29205888509750366,
+          "index": 20
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.29203739762306213,
+          "index": 0
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.28935492038726807,
+          "index": 15
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.288953572511673,
+          "index": 37
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "timestamp": 6.0,
+          "score": 0.2887212634086609,
+          "index": 2
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.28845351934432983,
+          "index": 22
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.287204384803772,
+          "index": 39
+        }
+      ],
+      "latency_seconds": 0.2093942000064999,
+      "query_peak_rss_bytes": 827854848,
+      "first_rank": null
+    },
+    {
+      "id": "tval-055",
+      "video_id": "log-stool",
+      "category": "HUMAN_ACTION",
+      "query": "The woodworker kneels or crouches low in the snow beside the upright log.",
+      "intervals": [
+        [
+          42.8,
+          58.9
+        ],
+        [
+          65.85,
+          66.15
+        ],
+        [
+          66.75,
+          66.85
+        ],
+        [
+          87.85,
+          88.35
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Short crouches include jump-cut repeats; standing bent forward excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.33596956729888916,
+          "index": 25
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.334195613861084,
+          "index": 24
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.3298466205596924,
+          "index": 23
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.32876211404800415,
+          "index": 26
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.32841044664382935,
+          "index": 22
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.32499581575393677,
+          "index": 27
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.3240436315536499,
+          "index": 21
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.32241782546043396,
+          "index": 1
+        },
+        {
+          "start": 4,
+          "end": 8,
+          "timestamp": 6.0,
+          "score": 0.3204819858074188,
+          "index": 2
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.3201274871826172,
+          "index": 0
+        }
+      ],
+      "latency_seconds": 0.2161774999985937,
+      "query_peak_rss_bytes": 828112896,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-056",
+      "video_id": "log-stool",
+      "category": "TEMPORAL_EVENT",
+      "query": "The woodworker lifts the carved stool from its side into an upright position.",
+      "intervals": [
+        [
+          130.95,
+          131.25
+        ],
+        [
+          141.4,
+          143.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Only lifting upright; later repositioning already upright excluded. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.2705684006214142,
+          "index": 22
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.27023425698280334,
+          "index": 37
+        },
+        {
+          "start": 0,
+          "end": 4,
+          "timestamp": 2.0,
+          "score": 0.27021077275276184,
+          "index": 0
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.26965469121932983,
+          "index": 21
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.26855212450027466,
+          "index": 13
+        },
+        {
+          "start": 2,
+          "end": 6,
+          "timestamp": 4.0,
+          "score": 0.2680482268333435,
+          "index": 1
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.2668286859989166,
+          "index": 12
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.26680153608322144,
+          "index": 39
+        },
+        {
+          "start": 72,
+          "end": 76,
+          "timestamp": 74.0,
+          "score": 0.26674050092697144,
+          "index": 36
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.26672840118408203,
+          "index": 38
+        }
+      ],
+      "latency_seconds": 0.21092679999856045,
+      "query_peak_rss_bytes": 827260928,
+      "first_rank": null
+    },
+    {
+      "id": "tval-037",
+      "video_id": "wedding",
+      "category": "SCENE",
+      "query": "The decorated building entrance has red carpeted steps.",
+      "intervals": [
+        [
+          31.5,
+          36.3
+        ],
+        [
+          388.5,
+          391.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Entrance daylight steps; check night entrance repeat. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2532449960708618,
+          "index": 176
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.238317608833313,
+          "index": 148
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.2361849546432495,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2329329252243042,
+          "index": 150
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2323085367679596,
+          "index": 147
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.23111146688461304,
+          "index": 146
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "timestamp": 290.0,
+          "score": 0.2296985238790512,
+          "index": 144
+        },
+        {
+          "start": 334,
+          "end": 338,
+          "timestamp": 336.0,
+          "score": 0.2286851704120636,
+          "index": 167
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.2257363498210907,
+          "index": 168
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.22167295217514038,
+          "index": 145
+        }
+      ],
+      "latency_seconds": 0.6489363000000594,
+      "query_peak_rss_bytes": 1156960256,
+      "first_rank": null
+    },
+    {
+      "id": "tval-038",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "A man hangs orange flower garlands on a white wall.",
+      "intervals": [
+        [
+          46.3,
+          54.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Garland hanging excludes subsequent title. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2466873675584793,
+          "index": 176
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2411881983280182,
+          "index": 146
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2406938076019287,
+          "index": 148
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.2392328530550003,
+          "index": 145
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.23893432319164276,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2377922236919403,
+          "index": 150
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "timestamp": 290.0,
+          "score": 0.23478372395038605,
+          "index": 144
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2340160608291626,
+          "index": 147
+        },
+        {
+          "start": 510,
+          "end": 514,
+          "timestamp": 512.0,
+          "score": 0.2226155400276184,
+          "index": 255
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.22033506631851196,
+          "index": 7
+        }
+      ],
+      "latency_seconds": 0.34956200000306126,
+      "query_peak_rss_bytes": 1152503808,
+      "first_rank": null
+    },
+    {
+      "id": "tval-039",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "Two women in green and blue dresses dance together.",
+      "intervals": [
+        [
+          229.3,
+          238.7
+        ],
+        [
+          550.5,
+          552.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Includes end-credit dance replay; refine first onset. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.28353554010391235,
+          "index": 176
+        },
+        {
+          "start": 334,
+          "end": 338,
+          "timestamp": 336.0,
+          "score": 0.2774854898452759,
+          "index": 167
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.27315646409988403,
+          "index": 146
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2691704034805298,
+          "index": 148
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.26818665862083435,
+          "index": 145
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.2680544853210449,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.26657557487487793,
+          "index": 150
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2647797465324402,
+          "index": 147
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "timestamp": 290.0,
+          "score": 0.2537488639354706,
+          "index": 144
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.25347018241882324,
+          "index": 168
+        }
+      ],
+      "latency_seconds": 0.3405045999970753,
+      "query_peak_rss_bytes": 1147748352,
+      "first_rank": null
+    },
+    {
+      "id": "tval-040",
+      "video_id": "wedding",
+      "category": "OBJECT_INTERACTION",
+      "query": "A woman draws henna patterns on another woman's hand.",
+      "intervals": [
+        [
+          238.8,
+          241.6
+        ],
+        [
+          257.6,
+          268.7
+        ],
+        [
+          547.3,
+          550.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Henna drawing excludes cone preparation and dance; end-credit replay included. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.3009994328022003,
+          "index": 131
+        },
+        {
+          "start": 264,
+          "end": 268,
+          "timestamp": 266.0,
+          "score": 0.29822736978530884,
+          "index": 132
+        },
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.28253409266471863,
+          "index": 130
+        },
+        {
+          "start": 266,
+          "end": 270,
+          "timestamp": 268.0,
+          "score": 0.27626699209213257,
+          "index": 133
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.27020499110221863,
+          "index": 150
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.26474136114120483,
+          "index": 149
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.26117822527885437,
+          "index": 146
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2607167363166809,
+          "index": 148
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.25477907061576843,
+          "index": 176
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2523189187049866,
+          "index": 147
+        }
+      ],
+      "latency_seconds": 0.29308339999988675,
+      "query_peak_rss_bytes": 1145847808,
+      "first_rank": 1
+    },
+    {
+      "id": "tval-041",
+      "video_id": "wedding",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "Hands fill and fold a small cone for applying henna.",
+      "intervals": [
+        [
+          249.3,
+          257.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Exclude mixing bowl before actual cone filling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.28116899728775024,
+          "index": 131
+        },
+        {
+          "start": 264,
+          "end": 268,
+          "timestamp": 266.0,
+          "score": 0.2784237861633301,
+          "index": 132
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.26467692852020264,
+          "index": 150
+        },
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.26271945238113403,
+          "index": 130
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.26094990968704224,
+          "index": 149
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.25745874643325806,
+          "index": 148
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2567850649356842,
+          "index": 176
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2546597123146057,
+          "index": 146
+        },
+        {
+          "start": 266,
+          "end": 270,
+          "timestamp": 268.0,
+          "score": 0.2536982297897339,
+          "index": 133
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.24788272380828857,
+          "index": 147
+        }
+      ],
+      "latency_seconds": 0.30696940000052564,
+      "query_peak_rss_bytes": 1146118144,
+      "first_rank": null
+    },
+    {
+      "id": "tval-042",
+      "video_id": "wedding",
+      "category": "TEMPORAL_EVENT",
+      "query": "A dancing couple turns beneath their joined raised hands in blue light.",
+      "intervals": [
+        [
+          364.3,
+          366.5
+        ],
+        [
+          371.5,
+          372.8
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Two distinct turns; surrounding slow dance not itself a twirl; refine edges. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2872835099697113,
+          "index": 176
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.2655733823776245,
+          "index": 145
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.26283615827560425,
+          "index": 146
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2622429132461548,
+          "index": 150
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "timestamp": 290.0,
+          "score": 0.260667085647583,
+          "index": 144
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.2578733265399933,
+          "index": 149
+        },
+        {
+          "start": 350,
+          "end": 354,
+          "timestamp": 352.0,
+          "score": 0.2575525641441345,
+          "index": 175
+        },
+        {
+          "start": 354,
+          "end": 358,
+          "timestamp": 356.0,
+          "score": 0.25694531202316284,
+          "index": 177
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.25619253516197205,
+          "index": 148
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2500981092453003,
+          "index": 147
+        }
+      ],
+      "latency_seconds": 0.3249943999981042,
+      "query_peak_rss_bytes": 1146462208,
+      "first_rank": null
+    },
+    {
+      "id": "tval-043",
+      "video_id": "wedding",
+      "category": "STATIC_OBJECT",
+      "query": "An ornate dome canopy with hanging beads covers the wedding ceremony.",
+      "intervals": [
+        [
+          418.4,
+          424.8
+        ],
+        [
+          440.8,
+          445.6
+        ],
+        [
+          578.7,
+          580.1
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Object is decorated canopy, not reliably an electric chandelier. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.27042895555496216,
+          "index": 148
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.27026620507240295,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2667185664176941,
+          "index": 150
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.26589030027389526,
+          "index": 146
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.26406726241111755,
+          "index": 147
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2623622417449951,
+          "index": 176
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.2485596388578415,
+          "index": 145
+        },
+        {
+          "start": 288,
+          "end": 292,
+          "timestamp": 290.0,
+          "score": 0.24602673947811127,
+          "index": 144
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.24104899168014526,
+          "index": 168
+        },
+        {
+          "start": 286,
+          "end": 290,
+          "timestamp": 288.0,
+          "score": 0.24023976922035217,
+          "index": 143
+        }
+      ],
+      "latency_seconds": 0.35538060000544647,
+      "query_peak_rss_bytes": 1146613760,
+      "first_rank": null
+    },
+    {
+      "id": "tval-044",
+      "video_id": "wedding",
+      "category": "SCENE",
+      "query": "A wedding couple sits beside a bright ceremonial fire.",
+      "intervals": [
+        [
+          436.7,
+          440.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Close fire shot; prior wider ceremony has no bright flame. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2676475942134857,
+          "index": 146
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.2674667537212372,
+          "index": 149
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2663053870201111,
+          "index": 148
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.26431119441986084,
+          "index": 150
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2599867880344391,
+          "index": 147
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.257183313369751,
+          "index": 176
+        },
+        {
+          "start": 438,
+          "end": 442,
+          "timestamp": 440.0,
+          "score": 0.25007444620132446,
+          "index": 219
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.24075445532798767,
+          "index": 145
+        },
+        {
+          "start": 510,
+          "end": 514,
+          "timestamp": 512.0,
+          "score": 0.23730450868606567,
+          "index": 255
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.23404069244861603,
+          "index": 168
+        }
+      ],
+      "latency_seconds": 0.30357289999665227,
+      "query_peak_rss_bytes": 1148157952,
+      "first_rank": 7
+    },
+    {
+      "id": "tval-045",
+      "video_id": "wedding",
+      "category": "HUMAN_ACTION",
+      "query": "The bride embraces a man wearing a pink turban.",
+      "intervals": [
+        [
+          469.2,
+          472.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Embrace begins when arms rise, excludes earlier conversation. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.27556899189949036,
+          "index": 176
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.27172034978866577,
+          "index": 148
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.2714441418647766,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.27071791887283325,
+          "index": 150
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2673092782497406,
+          "index": 146
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.2641867399215698,
+          "index": 147
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.25714972615242004,
+          "index": 168
+        },
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.2564672827720642,
+          "index": 131
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.25563323497772217,
+          "index": 145
+        },
+        {
+          "start": 278,
+          "end": 282,
+          "timestamp": 280.0,
+          "score": 0.25471049547195435,
+          "index": 139
+        }
+      ],
+      "latency_seconds": 0.33809349999501137,
+      "query_peak_rss_bytes": 1148211200,
+      "first_rank": null
+    },
+    {
+      "id": "tval-046",
+      "video_id": "wedding",
+      "category": "STATIC_OBJECT",
+      "query": "A white wedding car is decorated with flowers and ribbons.",
+      "intervals": [
+        [
+          478.3,
+          491.8
+        ],
+        [
+          581.2,
+          582.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Decorated car clear overhead; subsequent distant rear too small for ribbons. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2545129954814911,
+          "index": 148
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.254031240940094,
+          "index": 149
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.25073015689849854,
+          "index": 146
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.24997319281101227,
+          "index": 150
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.24794800579547882,
+          "index": 147
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.24572117626667023,
+          "index": 176
+        },
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.24088111519813538,
+          "index": 131
+        },
+        {
+          "start": 264,
+          "end": 268,
+          "timestamp": 266.0,
+          "score": 0.23763173818588257,
+          "index": 132
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.22989122569561005,
+          "index": 64
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.22941839694976807,
+          "index": 168
+        }
+      ],
+      "latency_seconds": 0.34284910000133095,
+      "query_peak_rss_bytes": 1148248064,
+      "first_rank": null
+    },
+    {
+      "id": "tval-047",
+      "video_id": "wedding",
+      "category": "TEMPORAL_EVENT",
+      "query": "The wedding car drives away from the guests at night.",
+      "intervals": [
+        [
+          491.9,
+          500.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Rear car drives away in background behind walking guests; verify earlier movement. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.2650717496871948,
+          "index": 176
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.26129090785980225,
+          "index": 149
+        },
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2611932158470154,
+          "index": 150
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2607762813568115,
+          "index": 146
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2589681148529053,
+          "index": 148
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.25274738669395447,
+          "index": 147
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.2382322996854782,
+          "index": 145
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.23648568987846375,
+          "index": 168
+        },
+        {
+          "start": 334,
+          "end": 338,
+          "timestamp": 336.0,
+          "score": 0.23346233367919922,
+          "index": 167
+        },
+        {
+          "start": 510,
+          "end": 514,
+          "timestamp": 512.0,
+          "score": 0.23051103949546814,
+          "index": 255
+        }
+      ],
+      "latency_seconds": 0.30487140000332147,
+      "query_peak_rss_bytes": 1148698624,
+      "first_rank": null
+    },
+    {
+      "id": "tval-048",
+      "video_id": "wedding",
+      "category": "MULTIPLE_SIMILAR_MOMENTS",
+      "query": "Women smear yellow paste on the bride's cheeks.",
+      "intervals": [
+        [
+          175.3,
+          185.9
+        ],
+        [
+          537.2,
+          540.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Paste application includes credit replay, not later men applying paste. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 300,
+          "end": 304,
+          "timestamp": 302.0,
+          "score": 0.2885446548461914,
+          "index": 150
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "timestamp": 300.0,
+          "score": 0.28837764263153076,
+          "index": 149
+        },
+        {
+          "start": 296,
+          "end": 300,
+          "timestamp": 298.0,
+          "score": 0.2866291403770447,
+          "index": 148
+        },
+        {
+          "start": 292,
+          "end": 296,
+          "timestamp": 294.0,
+          "score": 0.2853623628616333,
+          "index": 146
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "timestamp": 296.0,
+          "score": 0.27925243973731995,
+          "index": 147
+        },
+        {
+          "start": 352,
+          "end": 356,
+          "timestamp": 354.0,
+          "score": 0.271557480096817,
+          "index": 176
+        },
+        {
+          "start": 290,
+          "end": 294,
+          "timestamp": 292.0,
+          "score": 0.2629442512989044,
+          "index": 145
+        },
+        {
+          "start": 278,
+          "end": 282,
+          "timestamp": 280.0,
+          "score": 0.2621042728424072,
+          "index": 139
+        },
+        {
+          "start": 334,
+          "end": 338,
+          "timestamp": 336.0,
+          "score": 0.25947466492652893,
+          "index": 167
+        },
+        {
+          "start": 336,
+          "end": 340,
+          "timestamp": 338.0,
+          "score": 0.2543218731880188,
+          "index": 168
+        }
+      ],
+      "latency_seconds": 0.3049356999981683,
+      "query_peak_rss_bytes": 1148772352,
+      "first_rank": null
+    },
+    {
+      "id": "tval-057",
+      "video_id": "fitness",
+      "category": "TEMPORAL_EVENT",
+      "query": "A man wakes up in bed and reaches for his phone.",
+      "intervals": [
+        [
+          13.7,
+          15.5
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Wake/reach sequence excludes later phone use. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.25226891040802,
+          "index": 8
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.2332543134689331,
+          "index": 7
+        },
+        {
+          "start": 12,
+          "end": 16,
+          "timestamp": 14.0,
+          "score": 0.22168242931365967,
+          "index": 6
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "timestamp": 12.0,
+          "score": 0.20682790875434875,
+          "index": 5
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "timestamp": 10.0,
+          "score": 0.1981797218322754,
+          "index": 4
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.19786933064460754,
+          "index": 3
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.19373100996017456,
+          "index": 48
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.19355392456054688,
+          "index": 50
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18530946969985962,
+          "index": 47
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.18191519379615784,
+          "index": 49
+        }
+      ],
+      "latency_seconds": 0.1350317999967956,
+      "query_peak_rss_bytes": 1124405248,
+      "first_rank": 3
+    },
+    {
+      "id": "tval-058",
+      "video_id": "fitness",
+      "category": "SMALL_OBJECT_DETAIL",
+      "query": "A smartphone lies on the bed beside a sleeping man.",
+      "intervals": [
+        [
+          7.4,
+          13.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Phone beside sleeping man, excludes awake phone handling. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.2633466422557831,
+          "index": 8
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.24538207054138184,
+          "index": 7
+        },
+        {
+          "start": 12,
+          "end": 16,
+          "timestamp": 14.0,
+          "score": 0.23619583249092102,
+          "index": 6
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "timestamp": 12.0,
+          "score": 0.2201150357723236,
+          "index": 5
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.2072192132472992,
+          "index": 3
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "timestamp": 10.0,
+          "score": 0.2063954472541809,
+          "index": 4
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.19505318999290466,
+          "index": 11
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.193979412317276,
+          "index": 48
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.19125545024871826,
+          "index": 47
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.18977218866348267,
+          "index": 50
+        }
+      ],
+      "latency_seconds": 0.09461970000120346,
+      "query_peak_rss_bytes": 1124896768,
+      "first_rank": 4
+    },
+    {
+      "id": "tval-059",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A runner stretches one leg on a metal railing.",
+      "intervals": [
+        [
+          25,
+          30.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Wide and close leg stretch; excludes face-only shot. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.21067500114440918,
+          "index": 50
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.2004089057445526,
+          "index": 47
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.19630789756774902,
+          "index": 48
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.19495105743408203,
+          "index": 8
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.19340333342552185,
+          "index": 49
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.18475963175296783,
+          "index": 12
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.1837349534034729,
+          "index": 7
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.18274831771850586,
+          "index": 13
+        },
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.1805926263332367,
+          "index": 17
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.17970365285873413,
+          "index": 3
+        }
+      ],
+      "latency_seconds": 0.12166280000383267,
+      "query_peak_rss_bytes": 1124950016,
+      "first_rank": 6
+    },
+    {
+      "id": "tval-060",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A man runs up the stairs to a pedestrian bridge.",
+      "intervals": [
+        [
+          33.2,
+          34.55
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Stair run only, not level bridge. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.20397257804870605,
+          "index": 17
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.19844244420528412,
+          "index": 50
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.1921471655368805,
+          "index": 16
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.19064010679721832,
+          "index": 18
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18868982791900635,
+          "index": 47
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.18206343054771423,
+          "index": 49
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.17892803251743317,
+          "index": 48
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.1767914891242981,
+          "index": 3
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.17625322937965393,
+          "index": 7
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.17591647803783417,
+          "index": 8
+        }
+      ],
+      "latency_seconds": 0.12674150000384543,
+      "query_peak_rss_bytes": 1124982784,
+      "first_rank": 3
+    },
+    {
+      "id": "tval-061",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A man jumps rope outdoors.",
+      "intervals": [
+        [
+          38.9,
+          46.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Continuous jumping-rope montage, including hands/feet detail. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.20009323954582214,
+          "index": 50
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.18279246985912323,
+          "index": 48
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.18019326031208038,
+          "index": 3
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.1800403743982315,
+          "index": 47
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.17983320355415344,
+          "index": 49
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.17780853807926178,
+          "index": 11
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.172162264585495,
+          "index": 12
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "timestamp": 10.0,
+          "score": 0.1702958643436432,
+          "index": 4
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "timestamp": 12.0,
+          "score": 0.16897809505462646,
+          "index": 5
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.16808593273162842,
+          "index": 18
+        }
+      ],
+      "latency_seconds": 0.12714389999746345,
+      "query_peak_rss_bytes": 1125056512,
+      "first_rank": null
+    },
+    {
+      "id": "tval-062",
+      "video_id": "fitness",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man drinks water from a clear bottle outdoors.",
+      "intervals": [
+        [
+          57.2,
+          59.3
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Drinking contact, not subsequent face-only recovery. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.2476014494895935,
+          "index": 50
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.22794704139232635,
+          "index": 49
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.22365453839302063,
+          "index": 48
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.21981476247310638,
+          "index": 47
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.18461453914642334,
+          "index": 11
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.18332083523273468,
+          "index": 31
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.16939860582351685,
+          "index": 8
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "timestamp": 94.0,
+          "score": 0.1684482991695404,
+          "index": 46
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.16835956275463104,
+          "index": 51
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.16801898181438446,
+          "index": 18
+        }
+      ],
+      "latency_seconds": 0.180253200000152,
+      "query_peak_rss_bytes": 1125441536,
+      "first_rank": null
+    },
+    {
+      "id": "tval-063",
+      "video_id": "fitness",
+      "category": "HUMAN_ACTION",
+      "query": "A shirtless man does abdominal crunches on a park bench.",
+      "intervals": [
+        [
+          60.8,
+          65.7
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Crunch sequence includes wide, close and overhead angles. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.2077113538980484,
+          "index": 50
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.19418957829475403,
+          "index": 31
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.1926356852054596,
+          "index": 48
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.19136866927146912,
+          "index": 8
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.18916910886764526,
+          "index": 49
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18707086145877838,
+          "index": 47
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.18692463636398315,
+          "index": 7
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.17773127555847168,
+          "index": 3
+        },
+        {
+          "start": 12,
+          "end": 16,
+          "timestamp": 14.0,
+          "score": 0.1761585772037506,
+          "index": 6
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "timestamp": 12.0,
+          "score": 0.1743091344833374,
+          "index": 5
+        }
+      ],
+      "latency_seconds": 0.12913819999812404,
+      "query_peak_rss_bytes": 1124433920,
+      "first_rank": 2
+    },
+    {
+      "id": "tval-064",
+      "video_id": "fitness",
+      "category": "STATIC_OBJECT",
+      "query": "A green and white bus passes through the street.",
+      "intervals": [
+        [
+          52.3,
+          55.4
+        ],
+        [
+          65.8,
+          68.4
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Two bus views; excludes flag/building cutaways. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.20057973265647888,
+          "index": 50
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.18367677927017212,
+          "index": 3
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18230733275413513,
+          "index": 47
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.18032529950141907,
+          "index": 39
+        },
+        {
+          "start": 8,
+          "end": 12,
+          "timestamp": 10.0,
+          "score": 0.18001887202262878,
+          "index": 4
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.179823100566864,
+          "index": 48
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.17911195755004883,
+          "index": 49
+        },
+        {
+          "start": 76,
+          "end": 80,
+          "timestamp": 78.0,
+          "score": 0.1766541600227356,
+          "index": 38
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "timestamp": 12.0,
+          "score": 0.17656895518302917,
+          "index": 5
+        },
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.17019756138324738,
+          "index": 41
+        }
+      ],
+      "latency_seconds": 0.11775429999397602,
+      "query_peak_rss_bytes": 1125126144,
+      "first_rank": null
+    },
+    {
+      "id": "tval-065",
+      "video_id": "fitness",
+      "category": "OBJECT_INTERACTION",
+      "query": "A man picks an orange from a fruit stall.",
+      "intervals": [
+        [
+          84.2,
+          85.6
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Orange selection only; excludes earlier apple and subsequent eating. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.20684030652046204,
+          "index": 41
+        },
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.20259645581245422,
+          "index": 50
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.19592159986495972,
+          "index": 42
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "timestamp": 82.0,
+          "score": 0.19144651293754578,
+          "index": 40
+        },
+        {
+          "start": 78,
+          "end": 82,
+          "timestamp": 80.0,
+          "score": 0.18821853399276733,
+          "index": 39
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.187877357006073,
+          "index": 49
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.18443214893341064,
+          "index": 48
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18327604234218597,
+          "index": 47
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.1676395833492279,
+          "index": 11
+        },
+        {
+          "start": 6,
+          "end": 10,
+          "timestamp": 8.0,
+          "score": 0.16070261597633362,
+          "index": 3
+        }
+      ],
+      "latency_seconds": 0.12641330000042217,
+      "query_peak_rss_bytes": 1125416960,
+      "first_rank": null
+    },
+    {
+      "id": "tval-066",
+      "video_id": "fitness",
+      "category": "TEMPORAL_EVENT",
+      "query": "Three people clink glasses of orange-colored juice together.",
+      "intervals": [
+        [
+          93.1,
+          94.2
+        ]
+      ],
+      "difficulty": "medium",
+      "audit": {
+        "wording": true,
+        "boundaries": true,
+        "all_occurrences": true,
+        "ambiguity": true,
+        "visual_grounding": true,
+        "reviewer": "Codex agent; no independent human sign-off",
+        "evidence_review": "Chronological overview and targeted first-pass sheets reviewed. Do not infer friendship or precise fruit from visual evidence; ends before drinking. Dedicated pre-ranking review completed: chronological source sheets, all original query event/boundary sheets, and supplementary dense/repetition sheets where uncertain. Intervals are visual estimates, not frame-exact human adjudication."
+      },
+      "results": [
+        {
+          "start": 100,
+          "end": 104,
+          "timestamp": 102.0,
+          "score": 0.29202598333358765,
+          "index": 50
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.26884013414382935,
+          "index": 49
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.2574637532234192,
+          "index": 48
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.25033825635910034,
+          "index": 47
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.19135019183158875,
+          "index": 51
+        },
+        {
+          "start": 22,
+          "end": 26,
+          "timestamp": 24.0,
+          "score": 0.18779897689819336,
+          "index": 11
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "timestamp": 94.0,
+          "score": 0.18266424536705017,
+          "index": 46
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.17159488797187805,
+          "index": 18
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.1708446741104126,
+          "index": 12
+        },
+        {
+          "start": 16,
+          "end": 20,
+          "timestamp": 18.0,
+          "score": 0.16493824124336243,
+          "index": 8
+        }
+      ],
+      "latency_seconds": 0.11370819999865489,
+      "query_peak_rss_bytes": 1125486592,
+      "first_rank": 7
+    }
+  ],
+  "model_load_seconds": 10.241238599999633,
+  "recovery": {
+    "original_run_sha256": "a09d643a42e3d76f9c5d014d06acbdb2de4fe91e3d48b9812bab0b2a1a280fe0",
+    "manifest_sha256": "54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e",
+    "recovery_code_sha256": "ce1ab2983060f6c43a6ce1994abb19ad5556a6d639ca69043b3eee54e84e4756",
+    "completed_queries_preserved": 44,
+    "sources_to_finish": [
+      "wedding",
+      "fitness"
+    ],
+    "reason": "Original process absent after workstation/session interruption; exact exit cause unknown",
+    "lost_unpersisted_ingestion_cost_seconds": null,
+    "additional_model_load_seconds": 31.99891249999928,
+    "resumed_process_tree_peak_rss_bytes": 1163309056
+  },
+  "process_tree_peak_rss_bytes": null,
+  "metrics": {
+    "overall": {
+      "n": 66,
+      "r1": 0.13636363636363635,
+      "r3": 0.21212121212121213,
+      "r5": 0.25757575757575757,
+      "r10": 0.3787878787878788,
+      "mrr5": 0.17904040404040403
+    },
+    "category:HUMAN_ACTION": {
+      "n": 13,
+      "r1": 0.3076923076923077,
+      "r3": 0.46153846153846156,
+      "r5": 0.46153846153846156,
+      "r10": 0.5384615384615384,
+      "mrr5": 0.37179487179487175
+    },
+    "category:MULTIPLE_SIMILAR_MOMENTS": {
+      "n": 3,
+      "r1": 0.0,
+      "r3": 0.0,
+      "r5": 0.3333333333333333,
+      "r10": 0.3333333333333333,
+      "mrr5": 0.06666666666666667
+    },
+    "category:OBJECT_INTERACTION": {
+      "n": 19,
+      "r1": 0.05263157894736842,
+      "r3": 0.10526315789473684,
+      "r5": 0.15789473684210525,
+      "r10": 0.21052631578947367,
+      "mrr5": 0.08947368421052632
+    },
+    "category:SCENE": {
+      "n": 6,
+      "r1": 0.3333333333333333,
+      "r3": 0.3333333333333333,
+      "r5": 0.3333333333333333,
+      "r10": 0.8333333333333334,
+      "mrr5": 0.3333333333333333
+    },
+    "category:SMALL_OBJECT_DETAIL": {
+      "n": 6,
+      "r1": 0.16666666666666666,
+      "r3": 0.3333333333333333,
+      "r5": 0.5,
+      "r10": 0.5,
+      "mrr5": 0.2916666666666667
+    },
+    "category:STATIC_OBJECT": {
+      "n": 9,
+      "r1": 0.0,
+      "r3": 0.0,
+      "r5": 0.0,
+      "r10": 0.1111111111111111,
+      "mrr5": 0.0
+    },
+    "category:TEMPORAL_EVENT": {
+      "n": 10,
+      "r1": 0.1,
+      "r3": 0.2,
+      "r5": 0.2,
+      "r10": 0.4,
+      "mrr5": 0.13333333333333333
+    },
+    "video_id:dumplings": {
+      "n": 18,
+      "r1": 0.05555555555555555,
+      "r3": 0.16666666666666666,
+      "r5": 0.16666666666666666,
+      "r10": 0.2222222222222222,
+      "mrr5": 0.1111111111111111
+    },
+    "video_id:fitness": {
+      "n": 10,
+      "r1": 0.0,
+      "r3": 0.3,
+      "r5": 0.4,
+      "r10": 0.6,
+      "mrr5": 0.14166666666666666
+    },
+    "video_id:log-stool": {
+      "n": 8,
+      "r1": 0.25,
+      "r3": 0.25,
+      "r5": 0.375,
+      "r10": 0.5,
+      "mrr5": 0.275
+    },
+    "video_id:river": {
+      "n": 18,
+      "r1": 0.2777777777777778,
+      "r3": 0.2777777777777778,
+      "r5": 0.3333333333333333,
+      "r10": 0.5,
+      "mrr5": 0.2888888888888889
+    },
+    "video_id:wedding": {
+      "n": 12,
+      "r1": 0.08333333333333333,
+      "r3": 0.08333333333333333,
+      "r5": 0.08333333333333333,
+      "r10": 0.16666666666666666,
+      "mrr5": 0.08333333333333333
+    },
+    "difficulty:medium": {
+      "n": 66,
+      "r1": 0.13636363636363635,
+      "r3": 0.21212121212121213,
+      "r5": 0.25757575757575757,
+      "r10": 0.3787878787878788,
+      "mrr5": 0.17904040404040403
+    },
+    "combined_temporal": {
+      "n": 42,
+      "r1": 0.14285714285714285,
+      "r3": 0.23809523809523808,
+      "r5": 0.2619047619047619,
+      "r10": 0.35714285714285715,
+      "mrr5": 0.1873015873015873
+    },
+    "combined_static": {
+      "n": 15,
+      "r1": 0.13333333333333333,
+      "r3": 0.13333333333333333,
+      "r5": 0.13333333333333333,
+      "r10": 0.4,
+      "mrr5": 0.13333333333333333
+    }
+  },
+  "query_latency_seconds": {
+    "median": 0.9380462500048452,
+    "p95": 1.492717024999365
+  }
+}
