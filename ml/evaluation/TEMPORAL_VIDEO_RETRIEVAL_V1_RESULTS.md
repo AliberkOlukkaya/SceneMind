@@ -50,7 +50,7 @@ Candidate catastrophic sources (at least eight queries, R@5 below 60%): dumpling
 |---|---:|---:|
 | Model load, seconds | 31.766 | 10.241 |
 | Preprocessing, seconds/source-minute | 0.848 | 17.078 |
-| Total indexing, seconds/source-minute | 1.578 | 40.384 |
+| Completed-stage indexing, seconds/source-minute | 1.578 | 40.384 |
 | Embedding-stage frames/second | 16.462 | 10.290 |
 | Processed frames | 842.000 | 16,784.000 |
 | Processed frames/source-minute | 12.023 | 239.662 |
@@ -58,7 +58,7 @@ Candidate catastrophic sources (at least eight queries, R@5 below 60%): dumpling
 | Persisted index bytes/source-minute | 24,632.449 | 3,090,610.089 |
 | Query median, seconds | 0.025 | 0.938 |
 | Query p95, seconds | 0.047 | 1.493 |
-| Whole-run process-tree peak RSS, bytes | N/A — sampler failed | N/A — sampler failed |
+| Whole-run process-tree peak RSS, bytes | N/A — sampler failed | N/A — interrupted process |
 
 The longest source is **river, 31.931 minutes**.
 CLIP indexes 383 JPEGs in 50.046s, storing 784,512 feature bytes; X-CLIP indexes 957 clips / 7,656 processed frames in 1057.236s, storing 98,747,922 bytes.
@@ -80,7 +80,7 @@ indexes were preserved; only the two wholly unqueried sources were finished
 after verifying the unchanged freeze. Partial unpersisted wedding ingestion
 was lost. Full-attempt candidate ingestion cost and whole-run RSS are N/A;
 table indexing throughput sums completed stages only and excludes that
-unknown lost work. Additional recovery model load is recorded in JSON.
+unknown lost work. Additional recovery model load was 31.999s, on top of the original 10.241s.
 Lightweight evidence-sheet decoding overlapped later ingestion stages;
 these shared-workstation times may include CPU/I/O contention.
 
@@ -93,6 +93,14 @@ preprocessing includes production ingest and JPEG extraction. Index sizes
 exclude media/JPEGs: baseline embeddings.npy versus the complete candidate
 NPZ vectors, prompt patches and metadata. Processed candidate frames count
 overlap repeats, not unique source frames.
+
+The candidate persists 2,098 clips (216,441,146 feature bytes total)
+versus 842 baseline frames (1,725,056 feature bytes total), and processes 19.93 times as many frames
+(counting overlap). Its feature archive is 125.47 times larger, and measured
+completed-stage indexing is 25.58 times slower. Whole-run deployment feasibility
+is **not certified**; observed CPU execution is possible but quality is rejected.
+A secondary window-overlap-only diagnostic reaches 31.82% R@5, still far below
+the baseline. This is not the primary timestamp metric and changes no labels.
 
 ## Promotion gates
 
@@ -193,4 +201,43 @@ sampling-versus-ranking diagnosis. Decision is frozen separately in
 `reports/temporal-validation-decision.json` before any historical replay.
 Historical results are diagnostic only and cannot change this decision.
 
-Historical replay and final checks are pending; no completion claim yet.
+The **post-decision historical diagnostic** selected all six V1 visual sources
+at most six minutes long (42 frozen queries), before ranking. It excluded the
+12-minute studio talk and 40-minute lecture for bounded cost. The old V1
+report's full 55-query Visual R@5 was 63.64%, but the **paired 42-query
+subset** was 73.81% (31/42); X-CLIP was 35.71% (15/42), a **38.10 pp
+regression on this subset**. Do not compare the candidate subset directly to
+the full V1 55-query rate. The old report stored Top-5 only, so paired CLIP
+R@10 is unavailable. Paired R@1/3/5 and MRR@5 were 38.10/64.29/73.81/52.54%
+for CLIP and 16.67/26.19/35.71/22.90% for X-CLIP.
+
+| Historical source | n | V1 CLIP R@5 | X-CLIP R@5 |
+|---|---:|---:|---:|
+| OpenRefine tutorial | 5 | 40.00% | 20.00% |
+| PPE tutorial | 8 | 75.00% | 37.50% |
+| Manchester street | 8 | 100.00% | 37.50% |
+| Aikido demonstration | 8 | 37.50% | 12.50% |
+| Museum accessibility | 5 | 100.00% | 80.00% |
+| Heritage museum | 8 | 87.50% | 37.50% |
+
+Aikido has sampled throws and floor pins, but ranks a 166–169s floor pin
+for many different prompts. Manchester similarly repeatedly ranks the 28–31s
+horse/tram passage, missing children and the later tram. The OpenRefine facet
+partly leaves the 224-pixel center crop. PPE confuses putting on a gown with
+later gloves and a respirator with a surgical mask. Some broad or repeated
+Aikido/Manchester prompts may reasonably accept another occurrence outside
+the old sole interval; these labels were already known to lack complete
+alternatives. Selective pixel notes are in the failure report and per-query
+rankings in `reports/temporal-historical-diagnostic.json`. No old label,
+configuration, threshold or model was changed. This replay cannot reopen the
+frozen Decision C.
+
+## Verification and disposition
+
+Full backend pytest: **313 passed, 1 skipped**; Ruff passed for backend,
+tests, scripts and ML. Frozen source/code/dependency hashes and the original
+44 checkpoint query rows were reverified; all 66 validation IDs are unique.
+Production backend/frontend search routes did not change. Whole-run RSS and
+full-attempt ingestion resources remain unavailable because of the disclosed
+execution incidents. No second frozen run or production promotion follows,
+since all quality gates failed.

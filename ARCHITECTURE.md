@@ -10,13 +10,23 @@ therefore uses exhaustive conditioned scoring, not a single-query FAISS lookup.
 The benchmark runs the unchanged production baseline in separate local storage
 on identical media. It cannot load unaudited or checksum-mismatched manifests.
 Neither candidate module nor runner is imported by the application. Resource
-and quality feasibility are pending, and all production routes remain V1.
+and quality measurements now reject integration: frozen validation R@5 is
+25.76% versus CLIP 60.61% (Decision C). All production routes remain V1.
+Native conditioned scoring is about 125 times larger in persisted bytes per
+minute; denser temporal pixels do not compensate for worse ranking. Whole-run
+resource certification is unavailable because of disclosed execution incidents.
 
 An evaluation-only recovery command verifies the original frozen contract,
 preserves an interrupted snapshot and refuses to repeat completed query rows.
 It can finish wholly unqueried sources after process loss; partial ingestion
 cost and whole-run resource peaks are disclosed as unavailable. This command
-is not part of production job recovery or an application import.
+is not part of production job recovery or an application import. A separate
+historical diagnostic command requires the immutable completed decision and
+protected historical manifest hashes. It selects only visual queries from
+sources at most six minutes long before replay; results cannot reopen tuning. The bounded six-source historical replay confirms
+a paired Top-5 regression (31/42 CLIP versus 15/42 X-CLIP), with old repeated
+interval annotation limitations. This diagnostic is never called by product
+search and does not alter Decision C.
 
 Final deployment acceptance (2026-09-25) did not promote a new search path.
 Smart Search remains uncapped RRF60 Hybrid, Spoken Content remains BM25 over

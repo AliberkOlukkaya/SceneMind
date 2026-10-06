@@ -8,7 +8,6 @@
     "videos": 5,
     "queries": 66,
     "annotation_review": "Codex chronological and dense frames; no independent human sign-off",
-    "metrics": null,
     "manifest_sha256": "c4e3e79ad3fa72e0c07f7ddec2bbadc8a0b8627d691be1d237d6eec954308006",
     "baseline": {
       "metrics": {
@@ -1666,9 +1665,8 @@
           "STATIC_SEMANTIC_MISS": 8,
           "BACKGROUND_BIAS": 1,
           "OBJECT_RELATION_MISS": 23,
-          "SMALL_OBJECT": 2,
-          "TEMPORAL_COVERAGE_MISS": 2,
-          "SMALL_OBJECT_MISS": 1
+          "SMALL_OBJECT": 3,
+          "TEMPORAL_COVERAGE_MISS": 2
         },
         "temporal_coverage_misses": 2,
         "evidence_present_raw_timestamp_misses": 49,
@@ -3319,7 +3317,7 @@
               ]
             ],
             "first_rank": null,
-            "failure_code": "SMALL_OBJECT_MISS",
+            "failure_code": "SMALL_OBJECT",
             "sampled_evidence_visible": true,
             "crop_evidence_visible": "partial; small distant car",
             "evidence_window_index": 249,
@@ -3816,11 +3814,108 @@
     "no_eligible_midpoint_queries": [
       "tval-051",
       "tval-065"
-    ]
+    ],
+    "growth_ratios": {
+      "processed_frames": 19.93349168646081,
+      "index_bytes_per_minute": 125.46905491763746,
+      "indexing_seconds_per_minute": 25.583913400891205,
+      "caveat": "Completed-stage indexing only; full-attempt cost unavailable. Candidate processed frames include overlapping repeats."
+    },
+    "deployment_feasibility": "CPU runnable, quality rejected; full-attempt ingestion and whole-run RSS unavailable, not certified for 4-vCPU/8-GB deployment.",
+    "protected_contract_reverified_after_recovery": true,
+    "original_44_query_rows_preserved_exactly": true
   },
   "historical_replay": {
-    "status": "not_started",
-    "requires_prior_frozen_decision": true
+    "status": "diagnostic_complete_after_frozen_decision",
+    "model_or_config_selected_from_historical": false,
+    "decision_sha256": "83616a9b2951f6942d6c5a6811abb383efac525f5c7fc6357bfa93692df07918",
+    "decision_commit": "6796df1",
+    "protected_manifest_sha256": "d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196",
+    "historical_baseline_report_sha256": "e32a8e282ab1916e90f79465421dabcc36d7ad8e7701efe263338c4b22e73238",
+    "replay_raw_sha256": "c38a5b23b156ab255143d34c696dbf3a7fb4bed4b20559903b584c085f97f746",
+    "selection_rule": "All visual sources with duration <= 360 seconds; fixed before replay",
+    "excluded_long_sources": [
+      "social-media-talk",
+      "parliament-lecture"
+    ],
+    "n_sources": 6,
+    "n_queries": 42,
+    "old_full_visual_r5_context_only": 0.6363636363636364,
+    "paired_subset_baseline": {
+      "n": 42,
+      "r1": 0.38095238095238093,
+      "r3": 0.6428571428571429,
+      "r5": 0.7380952380952381,
+      "r10": null,
+      "mrr5": 0.5253968253968254
+    },
+    "paired_subset_candidate": {
+      "n": 42,
+      "r1": 0.16666666666666666,
+      "r3": 0.2619047619047619,
+      "r5": 0.35714285714285715,
+      "r10": 0.5714285714285714,
+      "mrr5": 0.228968253968254
+    },
+    "paired_r5_delta_percentage_points": -38.0952380952381,
+    "sources": {
+      "openrefine-tutorial": {
+        "n": 5,
+        "minutes": 5.315733333333333,
+        "old_v1_r5": 0.4,
+        "candidate_r5": 0.2,
+        "candidate_clips": 159,
+        "candidate_index_seconds": 127.18784659999801
+      },
+      "ppe-tutorial": {
+        "n": 8,
+        "minutes": 4.252083333333333,
+        "old_v1_r5": 0.75,
+        "candidate_r5": 0.375,
+        "candidate_clips": 127,
+        "candidate_index_seconds": 193.96739450000314
+      },
+      "manchester-street": {
+        "n": 8,
+        "minutes": 2.0260000000000002,
+        "old_v1_r5": 1.0,
+        "candidate_r5": 0.375,
+        "candidate_clips": 60,
+        "candidate_index_seconds": 51.60271510000166
+      },
+      "aikido-demonstration": {
+        "n": 8,
+        "minutes": 4.563166666666667,
+        "old_v1_r5": 0.375,
+        "candidate_r5": 0.125,
+        "candidate_clips": 136,
+        "candidate_index_seconds": 125.50880270000198
+      },
+      "museum-accessibility": {
+        "n": 5,
+        "minutes": 3.0620166666666666,
+        "old_v1_r5": 1.0,
+        "candidate_r5": 0.8,
+        "candidate_clips": 91,
+        "candidate_index_seconds": 132.76481250000506
+      },
+      "heritage-museum": {
+        "n": 8,
+        "minutes": 3.4068,
+        "old_v1_r5": 0.875,
+        "candidate_r5": 0.375,
+        "candidate_clips": 102,
+        "candidate_index_seconds": 154.86620299999777
+      }
+    },
+    "limitations": [
+      "Observed V1 labels are frozen and have incomplete alternative intervals for repeated moments.",
+      "Six sources at most six minutes; no long-video historical candidate replay.",
+      "Pixel review is selective, agent-only, and not continuous playback.",
+      "Historical benchmark cannot influence model, configuration, thresholds, or promotion decision.",
+      "Historical V1 report stored Top-5 only, so its Recall@10 is unavailable."
+    ],
+    "per_query_report": "ml/evaluation/reports/temporal-historical-diagnostic.json"
   },
   "limitations": [
     "Frozen validation has not run",

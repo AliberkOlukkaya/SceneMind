@@ -1,0 +1,3831 @@
+{
+  "status": "diagnostic_complete_after_frozen_decision",
+  "model_or_config_selected_from_historical": false,
+  "decision_sha256": "83616a9b2951f6942d6c5a6811abb383efac525f5c7fc6357bfa93692df07918",
+  "decision_commit": "6796df1",
+  "protected_manifest_sha256": "d563d6b6292ccf624f9db1cf7de2a3db797efd2b513e1cb4076a50209a96f196",
+  "historical_baseline_report_sha256": "e32a8e282ab1916e90f79465421dabcc36d7ad8e7701efe263338c4b22e73238",
+  "replay_raw_sha256": "c38a5b23b156ab255143d34c696dbf3a7fb4bed4b20559903b584c085f97f746",
+  "selection_rule": "All visual sources with duration <= 360 seconds; fixed before replay",
+  "excluded_long_sources": [
+    "social-media-talk",
+    "parliament-lecture"
+  ],
+  "n_sources": 6,
+  "n_queries": 42,
+  "old_full_visual_r5_context_only": 0.6363636363636364,
+  "paired_subset_baseline": {
+    "n": 42,
+    "r1": 0.38095238095238093,
+    "r3": 0.6428571428571429,
+    "r5": 0.7380952380952381,
+    "r10": null,
+    "mrr5": 0.5253968253968254
+  },
+  "paired_subset_candidate": {
+    "n": 42,
+    "r1": 0.16666666666666666,
+    "r3": 0.2619047619047619,
+    "r5": 0.35714285714285715,
+    "r10": 0.5714285714285714,
+    "mrr5": 0.228968253968254
+  },
+  "paired_r5_delta_percentage_points": -38.0952380952381,
+  "sources": {
+    "openrefine-tutorial": {
+      "n": 5,
+      "minutes": 5.315733333333333,
+      "old_v1_r5": 0.4,
+      "candidate_r5": 0.2,
+      "candidate_clips": 159,
+      "candidate_index_seconds": 127.18784659999801
+    },
+    "ppe-tutorial": {
+      "n": 8,
+      "minutes": 4.252083333333333,
+      "old_v1_r5": 0.75,
+      "candidate_r5": 0.375,
+      "candidate_clips": 127,
+      "candidate_index_seconds": 193.96739450000314
+    },
+    "manchester-street": {
+      "n": 8,
+      "minutes": 2.0260000000000002,
+      "old_v1_r5": 1.0,
+      "candidate_r5": 0.375,
+      "candidate_clips": 60,
+      "candidate_index_seconds": 51.60271510000166
+    },
+    "aikido-demonstration": {
+      "n": 8,
+      "minutes": 4.563166666666667,
+      "old_v1_r5": 0.375,
+      "candidate_r5": 0.125,
+      "candidate_clips": 136,
+      "candidate_index_seconds": 125.50880270000198
+    },
+    "museum-accessibility": {
+      "n": 5,
+      "minutes": 3.0620166666666666,
+      "old_v1_r5": 1.0,
+      "candidate_r5": 0.8,
+      "candidate_clips": 91,
+      "candidate_index_seconds": 132.76481250000506
+    },
+    "heritage-museum": {
+      "n": 8,
+      "minutes": 3.4068,
+      "old_v1_r5": 0.875,
+      "candidate_r5": 0.375,
+      "candidate_clips": 102,
+      "candidate_index_seconds": 154.86620299999777
+    }
+  },
+  "queries": [
+    {
+      "id": "F050",
+      "video_id": "openrefine-tutorial",
+      "query": "Show the OpenRefine opening title card.",
+      "frozen_intervals": [
+        [
+          0,
+          24
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.19847598671913147,
+          "index": 19
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.19691011309623718,
+          "index": 21
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.19562005996704102,
+          "index": 22
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.19391295313835144,
+          "index": 20
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "timestamp": 260.0,
+          "score": 0.1896447241306305,
+          "index": 129
+        },
+        {
+          "start": 256,
+          "end": 260,
+          "timestamp": 258.0,
+          "score": 0.1892610490322113,
+          "index": 128
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.1890842616558075,
+          "index": 23
+        },
+        {
+          "start": 254,
+          "end": 258,
+          "timestamp": 256.0,
+          "score": 0.18905535340309143,
+          "index": 127
+        },
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.18894247710704803,
+          "index": 130
+        },
+        {
+          "start": 252,
+          "end": 256,
+          "timestamp": 254.0,
+          "score": 0.18769440054893494,
+          "index": 126
+        }
+      ],
+      "review_observation": "The opening card is sampled and retains the OpenRefine words/logo in the center crop, although the line starts at the crop edge. Top 1 is a browser/map transition, not the opening card. Static/title ranking regression.",
+      "review_sheet_sha256": "8b8bcd0f5ff1e6235bea4b0b89148f2ee57c26cf2853bbe12fe16326d3a1b624"
+    },
+    {
+      "id": "F051",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the Paris open-data page showing film locations on a map.",
+      "frozen_intervals": [
+        [
+          37,
+          56
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.2814783453941345,
+          "index": 22
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2769169807434082,
+          "index": 21
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.2738863527774811,
+          "index": 23
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.26875051856040955,
+          "index": 20
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.26026302576065063,
+          "index": 24
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.2528923749923706,
+          "index": 19
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.24725495278835297,
+          "index": 25
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.23246419429779053,
+          "index": 27
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.2317613959312439,
+          "index": 26
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "timestamp": 58.0,
+          "score": 0.2224457561969757,
+          "index": 28
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F052",
+      "video_id": "openrefine-tutorial",
+      "query": "Where is the OpenRefine project table with many rows?",
+      "frozen_intervals": [
+        [
+          61,
+          83
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": 9,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.2593386769294739,
+          "index": 130
+        },
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.2591196298599243,
+          "index": 131
+        },
+        {
+          "start": 264,
+          "end": 268,
+          "timestamp": 266.0,
+          "score": 0.25713592767715454,
+          "index": 132
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.25650569796562195,
+          "index": 19
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "timestamp": 260.0,
+          "score": 0.2560293972492218,
+          "index": 129
+        },
+        {
+          "start": 254,
+          "end": 258,
+          "timestamp": 256.0,
+          "score": 0.2551036775112152,
+          "index": 127
+        },
+        {
+          "start": 256,
+          "end": 260,
+          "timestamp": 258.0,
+          "score": 0.25508981943130493,
+          "index": 128
+        },
+        {
+          "start": 266,
+          "end": 270,
+          "timestamp": 268.0,
+          "score": 0.25506794452667236,
+          "index": 133
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.254397988319397,
+          "index": 30
+        },
+        {
+          "start": 252,
+          "end": 256,
+          "timestamp": 254.0,
+          "score": 0.25383689999580383,
+          "index": 126
+        }
+      ],
+      "review_observation": "The reviewed 70.237-73.740s sequence includes the project table, a loading transition, then many table rows. Top 1 at 262s shows a later add-column expression dialog. Repeated similar screens and broad wording also limit the old interval labels; no alternate intervals are added.",
+      "review_sheet_sha256": "f44b14d787d815ee1408f17aacbc614dcb616e715dc976d13fb408137400b2ba"
+    },
+    {
+      "id": "F053",
+      "video_id": "openrefine-tutorial",
+      "query": "Find the Wikidata reconciliation dialog on the computer screen.",
+      "frozen_intervals": [
+        [
+          88,
+          133
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 58,
+          "end": 62,
+          "timestamp": 60.0,
+          "score": 0.276003897190094,
+          "index": 29
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.27349355816841125,
+          "index": 19
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "timestamp": 58.0,
+          "score": 0.2717253565788269,
+          "index": 28
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "timestamp": 260.0,
+          "score": 0.271470308303833,
+          "index": 129
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.2714177370071411,
+          "index": 30
+        },
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.27016347646713257,
+          "index": 130
+        },
+        {
+          "start": 256,
+          "end": 260,
+          "timestamp": 258.0,
+          "score": 0.27006983757019043,
+          "index": 128
+        },
+        {
+          "start": 68,
+          "end": 72,
+          "timestamp": 70.0,
+          "score": 0.2694326341152191,
+          "index": 34
+        },
+        {
+          "start": 70,
+          "end": 74,
+          "timestamp": 72.0,
+          "score": 0.2694259285926819,
+          "index": 35
+        },
+        {
+          "start": 254,
+          "end": 258,
+          "timestamp": 256.0,
+          "score": 0.2688599228858948,
+          "index": 127
+        }
+      ],
+      "review_observation": "The reconciliation dialog is visible throughout 108.233-111.736s. Top 1 shows an earlier import/create-project screen. Text-specific UI semantics remain unsupported by this representation; this is not missing temporal pixels.",
+      "review_sheet_sha256": "16e09117f2ad98356900c4b23a0e3e8254332e3195e8c5b6f839b88a426215a8"
+    },
+    {
+      "id": "F054",
+      "video_id": "openrefine-tutorial",
+      "query": "Show the date-difference numeric facet or distribution in OpenRefine.",
+      "frozen_intervals": [
+        [
+          267,
+          305
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 260,
+          "end": 264,
+          "timestamp": 262.0,
+          "score": 0.2818681597709656,
+          "index": 130
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "timestamp": 260.0,
+          "score": 0.2806863784790039,
+          "index": 129
+        },
+        {
+          "start": 262,
+          "end": 266,
+          "timestamp": 264.0,
+          "score": 0.28018951416015625,
+          "index": 131
+        },
+        {
+          "start": 256,
+          "end": 260,
+          "timestamp": 258.0,
+          "score": 0.28018319606781006,
+          "index": 128
+        },
+        {
+          "start": 254,
+          "end": 258,
+          "timestamp": 256.0,
+          "score": 0.28012919425964355,
+          "index": 127
+        },
+        {
+          "start": 252,
+          "end": 256,
+          "timestamp": 254.0,
+          "score": 0.2781293988227844,
+          "index": 126
+        },
+        {
+          "start": 264,
+          "end": 268,
+          "timestamp": 266.0,
+          "score": 0.27809780836105347,
+          "index": 132
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.27585697174072266,
+          "index": 19
+        },
+        {
+          "start": 250,
+          "end": 254,
+          "timestamp": 252.0,
+          "score": 0.2755126357078552,
+          "index": 125
+        },
+        {
+          "start": 248,
+          "end": 252,
+          "timestamp": 250.0,
+          "score": 0.2731819152832031,
+          "index": 124
+        }
+      ],
+      "review_observation": "The 284.242-287.746s raw screen has a left-side facet alongside the table; square center cropping removes much of that side panel. Top 1 is the earlier expression dialog. This remains a small UI/text/crop limitation, not evidence that motion modeling solves it.",
+      "review_sheet_sha256": "88714fe7687facb3e953872309e8cf37b30d89b4650d2724f6f3838d052ca8c2"
+    },
+    {
+      "id": "F055",
+      "video_id": "ppe-tutorial",
+      "query": "Find the protective equipment laid out on a table.",
+      "frozen_intervals": [
+        [
+          27,
+          37
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 4,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.23344501852989197,
+          "index": 101
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.2274935245513916,
+          "index": 25
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.22704079747200012,
+          "index": 85
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.2257319986820221,
+          "index": 15
+        },
+        {
+          "start": 210,
+          "end": 214,
+          "timestamp": 212.0,
+          "score": 0.22453077137470245,
+          "index": 105
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.22372028231620789,
+          "index": 48
+        },
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.21904197335243225,
+          "index": 102
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.21827946603298187,
+          "index": 16
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.21817547082901,
+          "index": 18
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.21805432438850403,
+          "index": 26
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F056",
+      "video_id": "ppe-tutorial",
+      "query": "Show the worker putting on a yellow isolation gown.",
+      "frozen_intervals": [
+        [
+          68,
+          96
+        ]
+      ],
+      "old_v1_first_rank": 5,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 210,
+          "end": 214,
+          "timestamp": 212.0,
+          "score": 0.2487562596797943,
+          "index": 105
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.24772483110427856,
+          "index": 85
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.22459766268730164,
+          "index": 51
+        },
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.223495751619339,
+          "index": 92
+        },
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.22265252470970154,
+          "index": 101
+        },
+        {
+          "start": 212,
+          "end": 216,
+          "timestamp": 214.0,
+          "score": 0.22220471501350403,
+          "index": 106
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2217179834842682,
+          "index": 86
+        },
+        {
+          "start": 114,
+          "end": 118,
+          "timestamp": 116.0,
+          "score": 0.2145049273967743,
+          "index": 57
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.21252082288265228,
+          "index": 87
+        },
+        {
+          "start": 120,
+          "end": 124,
+          "timestamp": 122.0,
+          "score": 0.2101154625415802,
+          "index": 60
+        }
+      ],
+      "review_observation": "Putting arms into the yellow gown is clearly sampled at 80.261-83.764s, including after center cropping. Top 1 is the later Gloves title/card and sleeve close-up. Action ranking regresses despite visible evidence.",
+      "review_sheet_sha256": "87f78d49905cb0c08edb2fbaef2f865d0515c7ebf7e42bed03c7ac2ebf1dae3a"
+    },
+    {
+      "id": "F057",
+      "video_id": "ppe-tutorial",
+      "query": "Find the demonstration of fitting a respirator around the face.",
+      "frozen_intervals": [
+        [
+          101,
+          151
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 6,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.2305866926908493,
+          "index": 92
+        },
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.23053976893424988,
+          "index": 101
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.22859996557235718,
+          "index": 85
+        },
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.22801467776298523,
+          "index": 102
+        },
+        {
+          "start": 176,
+          "end": 180,
+          "timestamp": 178.0,
+          "score": 0.22767214477062225,
+          "index": 88
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.22520512342453003,
+          "index": 51
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.2211589217185974,
+          "index": 87
+        },
+        {
+          "start": 238,
+          "end": 242,
+          "timestamp": 240.0,
+          "score": 0.21961179375648499,
+          "index": 119
+        },
+        {
+          "start": 182,
+          "end": 186,
+          "timestamp": 184.0,
+          "score": 0.21692615747451782,
+          "index": 91
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.21589139103889465,
+          "index": 90
+        }
+      ],
+      "review_observation": "Respirator fitting and straps are clear at 124.271-127.775s. Top 1 shows a surgical mask and subsequent face-shield title instead. The correct interval first ranks sixth: related equipment is confused.",
+      "review_sheet_sha256": "9cac2f4e05c68cf9d228e3138daf1605fece11de373adea8456797b3002cc7c7"
+    },
+    {
+      "id": "F058",
+      "video_id": "ppe-tutorial",
+      "query": "Where does a clear face shield get put on?",
+      "frozen_intervals": [
+        [
+          184,
+          204
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": 2,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.252327024936676,
+          "index": 85
+        },
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.24300673604011536,
+          "index": 92
+        },
+        {
+          "start": 186,
+          "end": 190,
+          "timestamp": 188.0,
+          "score": 0.23047466576099396,
+          "index": 93
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.22982007265090942,
+          "index": 86
+        },
+        {
+          "start": 176,
+          "end": 180,
+          "timestamp": 178.0,
+          "score": 0.2294253706932068,
+          "index": 88
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.22573211789131165,
+          "index": 87
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.21987800300121307,
+          "index": 51
+        },
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.21671095490455627,
+          "index": 102
+        },
+        {
+          "start": 188,
+          "end": 192,
+          "timestamp": 190.0,
+          "score": 0.21645669639110565,
+          "index": 94
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.21345147490501404,
+          "index": 90
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F059",
+      "video_id": "ppe-tutorial",
+      "query": "Find the worker wearing blue gloves with the full protective outfit.",
+      "frozen_intervals": [
+        [
+          206,
+          239
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 9,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.23125387728214264,
+          "index": 101
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.221743643283844,
+          "index": 85
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.21934854984283447,
+          "index": 26
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.21788617968559265,
+          "index": 51
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.21743106842041016,
+          "index": 25
+        },
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.21485799551010132,
+          "index": 92
+        },
+        {
+          "start": 238,
+          "end": 242,
+          "timestamp": 240.0,
+          "score": 0.21473366022109985,
+          "index": 119
+        },
+        {
+          "start": 200,
+          "end": 204,
+          "timestamp": 202.0,
+          "score": 0.21420082449913025,
+          "index": 100
+        },
+        {
+          "start": 210,
+          "end": 214,
+          "timestamp": 212.0,
+          "score": 0.21404340863227844,
+          "index": 105
+        },
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.20856499671936035,
+          "index": 102
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F113",
+      "video_id": "ppe-tutorial",
+      "query": "Show the worker applying hand sanitizer before putting on PPE.",
+      "frozen_intervals": [
+        [
+          54,
+          69
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.2494804859161377,
+          "index": 101
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.23638057708740234,
+          "index": 85
+        },
+        {
+          "start": 238,
+          "end": 242,
+          "timestamp": 240.0,
+          "score": 0.22983497381210327,
+          "index": 119
+        },
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.22942477464675903,
+          "index": 102
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.22536037862300873,
+          "index": 51
+        },
+        {
+          "start": 210,
+          "end": 214,
+          "timestamp": 212.0,
+          "score": 0.22476890683174133,
+          "index": 105
+        },
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.2193184345960617,
+          "index": 92
+        },
+        {
+          "start": 240,
+          "end": 244,
+          "timestamp": 242.0,
+          "score": 0.21557551622390747,
+          "index": 120
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2153540402650833,
+          "index": 86
+        },
+        {
+          "start": 242,
+          "end": 246,
+          "timestamp": 244.0,
+          "score": 0.21499228477478027,
+          "index": 121
+        }
+      ],
+      "review_observation": "Hand sanitizing before the gown is visible at 60.274-63.778s. Top 1 at 204s shows a repeated Hand Hygiene title and sanitizer use while already wearing the gown. The before-PPE condition is not respected; a similar action alone does not satisfy the full query.",
+      "review_sheet_sha256": "d1bc9b56a5c16de5b3d7ec397d017583dfe86ca8e0bbd9189848a0887d54662c"
+    },
+    {
+      "id": "F114",
+      "video_id": "ppe-tutorial",
+      "query": "Find the medical worker adjusting a surgical mask.",
+      "frozen_intervals": [
+        [
+          165,
+          187
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.23676800727844238,
+          "index": 85
+        },
+        {
+          "start": 184,
+          "end": 188,
+          "timestamp": 186.0,
+          "score": 0.2342088520526886,
+          "index": 92
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.2325395792722702,
+          "index": 51
+        },
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.22731244564056396,
+          "index": 101
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2231532484292984,
+          "index": 86
+        },
+        {
+          "start": 176,
+          "end": 180,
+          "timestamp": 178.0,
+          "score": 0.22010105848312378,
+          "index": 88
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.2192850410938263,
+          "index": 48
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.2191004455089569,
+          "index": 52
+        },
+        {
+          "start": 238,
+          "end": 242,
+          "timestamp": 240.0,
+          "score": 0.21892306208610535,
+          "index": 119
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.2180311381816864,
+          "index": 87
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F115",
+      "video_id": "ppe-tutorial",
+      "query": "Show the CDC information screen at the end.",
+      "frozen_intervals": [
+        [
+          243,
+          255
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 8,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 204,
+          "end": 208,
+          "timestamp": 206.0,
+          "score": 0.20922055840492249,
+          "index": 102
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.20883075892925262,
+          "index": 85
+        },
+        {
+          "start": 238,
+          "end": 242,
+          "timestamp": 240.0,
+          "score": 0.20379212498664856,
+          "index": 119
+        },
+        {
+          "start": 202,
+          "end": 206,
+          "timestamp": 204.0,
+          "score": 0.198466956615448,
+          "index": 101
+        },
+        {
+          "start": 240,
+          "end": 244,
+          "timestamp": 242.0,
+          "score": 0.198062926530838,
+          "index": 120
+        },
+        {
+          "start": 102,
+          "end": 106,
+          "timestamp": 104.0,
+          "score": 0.19795677065849304,
+          "index": 51
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.1979542076587677,
+          "index": 86
+        },
+        {
+          "start": 242,
+          "end": 246,
+          "timestamp": 244.0,
+          "score": 0.19764292240142822,
+          "index": 121
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.19533702731132507,
+          "index": 52
+        },
+        {
+          "start": 106,
+          "end": 110,
+          "timestamp": 108.0,
+          "score": 0.1925993263721466,
+          "index": 53
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F060",
+      "video_id": "manchester-street",
+      "query": "Find the busy historic street full of horse-drawn traffic.",
+      "frozen_intervals": [
+        [
+          0,
+          18
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.2532879710197449,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.25207215547561646,
+          "index": 14
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.22280432283878326,
+          "index": 15
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2161889672279358,
+          "index": 21
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.21249642968177795,
+          "index": 12
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.21098071336746216,
+          "index": 22
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.21047012507915497,
+          "index": 56
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.2102947235107422,
+          "index": 48
+        },
+        {
+          "start": 38,
+          "end": 42,
+          "timestamp": 40.0,
+          "score": 0.21010252833366394,
+          "index": 19
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.20868104696273804,
+          "index": 52
+        }
+      ],
+      "review_observation": "The annotated opening sequence has dense horse-drawn traffic. Top 1 at 28s also appears to show a busy street with horse-drawn traffic; broad wording makes the frozen sole interval likely incomplete. Keep the raw miss, do not claim a clear semantic error.",
+      "review_sheet_sha256": "50478354123e5ba8e4960e3b56f586db1ada2eae18099fac027273c5b4eb2b37"
+    },
+    {
+      "id": "F061",
+      "video_id": "manchester-street",
+      "query": "Show the covered horse cart passing in front of the camera.",
+      "frozen_intervals": [
+        [
+          8,
+          29
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.24555225670337677,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.24398431181907654,
+          "index": 14
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.21953266859054565,
+          "index": 15
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.21005189418792725,
+          "index": 12
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.2092437446117401,
+          "index": 56
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.20909738540649414,
+          "index": 21
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20677760243415833,
+          "index": 22
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.2064756155014038,
+          "index": 48
+        },
+        {
+          "start": 114,
+          "end": 118,
+          "timestamp": 116.0,
+          "score": 0.20578515529632568,
+          "index": 57
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.2046392858028412,
+          "index": 16
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F062",
+      "video_id": "manchester-street",
+      "query": "Where does an early street tram with an advertisement pass?",
+      "frozen_intervals": [
+        [
+          37,
+          54
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 6,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.23524817824363708,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.2246427685022354,
+          "index": 14
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.2120262086391449,
+          "index": 12
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.20607608556747437,
+          "index": 56
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.20473942160606384,
+          "index": 47
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.20450830459594727,
+          "index": 21
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20419591665267944,
+          "index": 22
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.20053675770759583,
+          "index": 48
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.1956632435321808,
+          "index": 52
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.19469618797302246,
+          "index": 15
+        }
+      ],
+      "review_observation": "The OGDENS CIGARETTES advertised tram passes in the frozen 44.240-47.760s sample. Top 1 at 28s shows a different passing tram with signage. The exact advertisement/occurrence is not distinguished; repeated-tram labels limit interpretation.",
+      "review_sheet_sha256": "2427d9a81a1d21e66a512faf4ee740c326ff6d427bb8beac63f94baa60853a77"
+    },
+    {
+      "id": "F063",
+      "video_id": "manchester-street",
+      "query": "Find the children close to the camera in the street.",
+      "frozen_intervals": [
+        [
+          61,
+          85
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.22424077987670898,
+          "index": 14
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.21781207621097565,
+          "index": 13
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.20232170820236206,
+          "index": 56
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.19197170436382294,
+          "index": 15
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.18769888579845428,
+          "index": 52
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.18682247400283813,
+          "index": 21
+        },
+        {
+          "start": 114,
+          "end": 118,
+          "timestamp": 116.0,
+          "score": 0.18677198886871338,
+          "index": 57
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.18653970956802368,
+          "index": 47
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.18529146909713745,
+          "index": 22
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.18482133746147156,
+          "index": 16
+        }
+      ],
+      "review_observation": "Children very close to the camera are clear at 70.240-73.760s. Top 1 shows horse-cart traffic at 28-31s, not the children.",
+      "review_sheet_sha256": "c266405cca539abe31a9d5fbd165c50b3f324280e73351abdc405be4b0746730"
+    },
+    {
+      "id": "F064",
+      "video_id": "manchester-street",
+      "query": "Show the dense mix of pedestrians and horse carts near the end.",
+      "frozen_intervals": [
+        [
+          92,
+          116
+        ]
+      ],
+      "old_v1_first_rank": 3,
+      "candidate_first_rank": 3,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.2556224465370178,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.2548666000366211,
+          "index": 14
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.22733834385871887,
+          "index": 56
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.22509852051734924,
+          "index": 21
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.2249927818775177,
+          "index": 12
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.22228758037090302,
+          "index": 52
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.22132283449172974,
+          "index": 15
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.21962837874889374,
+          "index": 22
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.21940180659294128,
+          "index": 47
+        },
+        {
+          "start": 114,
+          "end": 118,
+          "timestamp": 116.0,
+          "score": 0.2189696729183197,
+          "index": 57
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F116",
+      "video_id": "manchester-street",
+      "query": "Find a large draped load carried along the old street.",
+      "frozen_intervals": [
+        [
+          16,
+          31
+        ]
+      ],
+      "old_v1_first_rank": 4,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.2383606731891632,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.2371252328157425,
+          "index": 14
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.2100725769996643,
+          "index": 56
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.20068107545375824,
+          "index": 15
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20010143518447876,
+          "index": 22
+        },
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.1993795931339264,
+          "index": 17
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.1983930766582489,
+          "index": 48
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.19838614761829376,
+          "index": 47
+        },
+        {
+          "start": 88,
+          "end": 92,
+          "timestamp": 90.0,
+          "score": 0.19804605841636658,
+          "index": 44
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.19703371822834015,
+          "index": 21
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F117",
+      "video_id": "manchester-street",
+      "query": "Show a man walking among the children close to the camera.",
+      "frozen_intervals": [
+        [
+          67,
+          88
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.23520886898040771,
+          "index": 14
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.22368836402893066,
+          "index": 13
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.20863492786884308,
+          "index": 56
+        },
+        {
+          "start": 114,
+          "end": 118,
+          "timestamp": 116.0,
+          "score": 0.2046232372522354,
+          "index": 57
+        },
+        {
+          "start": 34,
+          "end": 38,
+          "timestamp": 36.0,
+          "score": 0.2024213820695877,
+          "index": 17
+        },
+        {
+          "start": 32,
+          "end": 36,
+          "timestamp": 34.0,
+          "score": 0.20177772641181946,
+          "index": 16
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.20043781399726868,
+          "index": 15
+        },
+        {
+          "start": 36,
+          "end": 40,
+          "timestamp": 38.0,
+          "score": 0.1980789601802826,
+          "index": 18
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.1965586245059967,
+          "index": 52
+        },
+        {
+          "start": 116,
+          "end": 120,
+          "timestamp": 118.0,
+          "score": 0.19567005336284637,
+          "index": 58
+        }
+      ],
+      "review_observation": "A child and adjacent walking adults are in the 76.240-79.760s sampled sequence. Top 1 shows horse-cart traffic at 28-31s, not the specified people.",
+      "review_sheet_sha256": "97b87cff552b00fef700890178e4c87775778d3fca8245285feec94c56ceb3ce"
+    },
+    {
+      "id": "F118",
+      "video_id": "manchester-street",
+      "query": "Find another tram moving through the crowded street near the end.",
+      "frozen_intervals": [
+        [
+          86,
+          105
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": 7,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.24771752953529358,
+          "index": 13
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.23791120946407318,
+          "index": 14
+        },
+        {
+          "start": 24,
+          "end": 28,
+          "timestamp": 26.0,
+          "score": 0.22034597396850586,
+          "index": 12
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.21589353680610657,
+          "index": 56
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2121250033378601,
+          "index": 21
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20960932970046997,
+          "index": 22
+        },
+        {
+          "start": 94,
+          "end": 98,
+          "timestamp": 96.0,
+          "score": 0.20486682653427124,
+          "index": 47
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.203222393989563,
+          "index": 15
+        },
+        {
+          "start": 110,
+          "end": 114,
+          "timestamp": 112.0,
+          "score": 0.1993873417377472,
+          "index": 55
+        },
+        {
+          "start": 104,
+          "end": 108,
+          "timestamp": 106.0,
+          "score": 0.19792333245277405,
+          "index": 52
+        }
+      ],
+      "review_observation": "A late tram and crowd are sampled at 94.240-97.760s. Top 1 shows the earlier tram at 28s; the temporal location near the end is ignored.",
+      "review_sheet_sha256": "76a48460dc3d1066c18bc5273f163a9d4aff11fb066ae2ddc542c77932b0bc7c"
+    },
+    {
+      "id": "F065",
+      "video_id": "aikido-demonstration",
+      "query": "Show the martial artists kneeling on the training mat.",
+      "frozen_intervals": [
+        [
+          0,
+          12
+        ]
+      ],
+      "old_v1_first_rank": 4,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.30002668499946594,
+          "index": 82
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.29480260610580444,
+          "index": 83
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.292397141456604,
+          "index": 14
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.28568345308303833,
+          "index": 86
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.2848064601421356,
+          "index": 24
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.2830890417098999,
+          "index": 85
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.282284140586853,
+          "index": 13
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.2818939983844757,
+          "index": 25
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.28173527121543884,
+          "index": 31
+        },
+        {
+          "start": 30,
+          "end": 34,
+          "timestamp": 32.0,
+          "score": 0.28116512298583984,
+          "index": 15
+        }
+      ],
+      "review_observation": "Kneeling at the annotated start is sampled at 4.238-7.741s. Top 1 at 166-169s also contains kneeling figures pinning a partner, so wording may admit an unannotated alternative. The raw miss is kept.",
+      "review_sheet_sha256": "2c68c5fb38cd9c4d45530d7d41c2ea209ffd99e60db4cdda86a051dc3bb09ce6"
+    },
+    {
+      "id": "F066",
+      "video_id": "aikido-demonstration",
+      "query": "Find an aikido throw where one partner falls onto the mat.",
+      "frozen_intervals": [
+        [
+          22,
+          42
+        ]
+      ],
+      "old_v1_first_rank": 3,
+      "candidate_first_rank": 4,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.31979402899742126,
+          "index": 82
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.3158912658691406,
+          "index": 24
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.31393560767173767,
+          "index": 83
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.31113189458847046,
+          "index": 14
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.30598384141921997,
+          "index": 48
+        },
+        {
+          "start": 162,
+          "end": 166,
+          "timestamp": 164.0,
+          "score": 0.30581963062286377,
+          "index": 81
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.30494028329849243,
+          "index": 86
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.3035396933555603,
+          "index": 49
+        },
+        {
+          "start": 66,
+          "end": 70,
+          "timestamp": 68.0,
+          "score": 0.3034263253211975,
+          "index": 33
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.30177071690559387,
+          "index": 23
+        }
+      ],
+      "review_observation": "The annotated throw and fall are visible at 30.264-33.734s. A matching window appears at rank four, one historical candidate success.",
+      "review_sheet_sha256": "5984db819aa9d35827dee5264b3e480de5f5ea7258ec61ffd5993d29158f4591"
+    },
+    {
+      "id": "F067",
+      "video_id": "aikido-demonstration",
+      "query": "Where does one partner pin the other on the floor?",
+      "frozen_intervals": [
+        [
+          61,
+          84
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.2833232283592224,
+          "index": 83
+        },
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.28157201409339905,
+          "index": 82
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.27082425355911255,
+          "index": 90
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.26873868703842163,
+          "index": 66
+        },
+        {
+          "start": 178,
+          "end": 182,
+          "timestamp": 180.0,
+          "score": 0.26502513885498047,
+          "index": 89
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.2647557258605957,
+          "index": 24
+        },
+        {
+          "start": 162,
+          "end": 166,
+          "timestamp": 164.0,
+          "score": 0.2641655504703522,
+          "index": 81
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2633111774921417,
+          "index": 86
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.2631935477256775,
+          "index": 13
+        },
+        {
+          "start": 182,
+          "end": 186,
+          "timestamp": 184.0,
+          "score": 0.25935453176498413,
+          "index": 91
+        }
+      ],
+      "review_observation": "The annotated floor pin is visible at 70.237-73.740s. Top 1 at 166-169s also appears to pin a partner on the floor; repeated action makes the original sole interval ambiguous. Raw miss unchanged.",
+      "review_sheet_sha256": "e0ef9a6dbbcd855a71aae63d6c5ee32757c40c2abc065271a82af42af417ae30"
+    },
+    {
+      "id": "F068",
+      "video_id": "aikido-demonstration",
+      "query": "Find the martial artists standing and resetting between throws.",
+      "frozen_intervals": [
+        [
+          113,
+          139
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.2868990898132324,
+          "index": 82
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.2809460163116455,
+          "index": 83
+        },
+        {
+          "start": 258,
+          "end": 262,
+          "timestamp": 260.0,
+          "score": 0.2778477370738983,
+          "index": 129
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.27682071924209595,
+          "index": 24
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.27558186650276184,
+          "index": 14
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.2742787003517151,
+          "index": 25
+        },
+        {
+          "start": 64,
+          "end": 68,
+          "timestamp": 66.0,
+          "score": 0.2721221148967743,
+          "index": 32
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.2719085216522217,
+          "index": 31
+        },
+        {
+          "start": 236,
+          "end": 240,
+          "timestamp": 238.0,
+          "score": 0.27189773321151733,
+          "index": 118
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.27187037467956543,
+          "index": 48
+        }
+      ],
+      "review_observation": "Standing/resetting between throws is visible within 124.258-127.761s. Top 1 at 166s is a floor pin instead.",
+      "review_sheet_sha256": "0d46f02a41d77082cd9a6634af87a560bb9f1f07add9861aca855655996a3990"
+    },
+    {
+      "id": "F069",
+      "video_id": "aikido-demonstration",
+      "query": "Show the upside-down fall during a late aikido throw.",
+      "frozen_intervals": [
+        [
+          212,
+          231
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.31327924132347107,
+          "index": 82
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.3105798363685608,
+          "index": 24
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.31041404604911804,
+          "index": 83
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.30524635314941406,
+          "index": 14
+        },
+        {
+          "start": 58,
+          "end": 62,
+          "timestamp": 60.0,
+          "score": 0.3029714822769165,
+          "index": 29
+        },
+        {
+          "start": 64,
+          "end": 68,
+          "timestamp": 66.0,
+          "score": 0.30018162727355957,
+          "index": 32
+        },
+        {
+          "start": 66,
+          "end": 70,
+          "timestamp": 68.0,
+          "score": 0.29966655373573303,
+          "index": 33
+        },
+        {
+          "start": 96,
+          "end": 100,
+          "timestamp": 98.0,
+          "score": 0.29913753271102905,
+          "index": 48
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "timestamp": 48.0,
+          "score": 0.29909804463386536,
+          "index": 23
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.298626184463501,
+          "index": 49
+        }
+      ],
+      "review_observation": "The inspected 220.254-223.757s sequence has a fall and reset but does not clearly establish an upside-down fall. Other moments within the frozen 212-231s interval were not exhaustively reviewed. Do not assert sampled upside-down evidence; raw miss unchanged.",
+      "review_sheet_sha256": "7d27cf2b5a0e4b8836ac2c9c2b41e7d62038dbca4d56c538ee594bccf0b086fc"
+    },
+    {
+      "id": "F119",
+      "video_id": "aikido-demonstration",
+      "query": "Find the pair practicing a standing arm lock.",
+      "frozen_intervals": [
+        [
+          15,
+          28
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": 7,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.2747439444065094,
+          "index": 82
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.2731478810310364,
+          "index": 83
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.25337833166122437,
+          "index": 86
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.2518737018108368,
+          "index": 66
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.24999935925006866,
+          "index": 25
+        },
+        {
+          "start": 66,
+          "end": 70,
+          "timestamp": 68.0,
+          "score": 0.24969005584716797,
+          "index": 33
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "timestamp": 28.0,
+          "score": 0.2491384595632553,
+          "index": 13
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.24780479073524475,
+          "index": 90
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.24780242145061493,
+          "index": 14
+        },
+        {
+          "start": 162,
+          "end": 166,
+          "timestamp": 164.0,
+          "score": 0.2474997341632843,
+          "index": 81
+        }
+      ],
+      "review_observation": "A standing hold followed by a throw is visible at 20.254-23.757s; the specific arm-lock technique cannot be verified confidently from contact sheets. The valid interval first ranks seventh.",
+      "review_sheet_sha256": "cee8470e1f04279b8c58df401003794d73975b97603be003f0aecf1c38f287a1"
+    },
+    {
+      "id": "F120",
+      "video_id": "aikido-demonstration",
+      "query": "Show one partner lying on the mat after a later throw.",
+      "frozen_intervals": [
+        [
+          121,
+          143
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.29828476905822754,
+          "index": 82
+        },
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.2953253984451294,
+          "index": 83
+        },
+        {
+          "start": 162,
+          "end": 166,
+          "timestamp": 164.0,
+          "score": 0.2893555760383606,
+          "index": 81
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.28736913204193115,
+          "index": 24
+        },
+        {
+          "start": 98,
+          "end": 102,
+          "timestamp": 100.0,
+          "score": 0.2820187211036682,
+          "index": 49
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2815566658973694,
+          "index": 86
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.2813691198825836,
+          "index": 90
+        },
+        {
+          "start": 160,
+          "end": 164,
+          "timestamp": 162.0,
+          "score": 0.28122037649154663,
+          "index": 80
+        },
+        {
+          "start": 178,
+          "end": 182,
+          "timestamp": 180.0,
+          "score": 0.28079405426979065,
+          "index": 89
+        },
+        {
+          "start": 66,
+          "end": 70,
+          "timestamp": 68.0,
+          "score": 0.2788781523704529,
+          "index": 33
+        }
+      ],
+      "review_observation": "A partner lying on the mat is sampled at 130.264-133.734s. Top 1 at 164-169s also has a partner lying on the mat after another throw; repeated-event alternate interval appears missing. Raw miss unchanged.",
+      "review_sheet_sha256": "81fb007c0b957f0b3b252e5cc928092623b6152f2d1199292d7b4ad9beeae64e"
+    },
+    {
+      "id": "F121",
+      "video_id": "aikido-demonstration",
+      "query": "Find three martial artists on the mat in front of the red and white backdrop.",
+      "frozen_intervals": [
+        [
+          235,
+          253
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 166,
+          "end": 170,
+          "timestamp": 168.0,
+          "score": 0.29990848898887634,
+          "index": 83
+        },
+        {
+          "start": 164,
+          "end": 168,
+          "timestamp": 166.0,
+          "score": 0.2979404330253601,
+          "index": 82
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.2943247854709625,
+          "index": 66
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2880302667617798,
+          "index": 86
+        },
+        {
+          "start": 180,
+          "end": 184,
+          "timestamp": 182.0,
+          "score": 0.2876702547073364,
+          "index": 90
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.2875434160232544,
+          "index": 24
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.2872135639190674,
+          "index": 85
+        },
+        {
+          "start": 14,
+          "end": 18,
+          "timestamp": 16.0,
+          "score": 0.28252947330474854,
+          "index": 7
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "timestamp": 30.0,
+          "score": 0.2824796438217163,
+          "index": 14
+        },
+        {
+          "start": 162,
+          "end": 166,
+          "timestamp": 164.0,
+          "score": 0.2812468707561493,
+          "index": 81
+        }
+      ],
+      "review_observation": "Three active martial artists on the mat before the red/white backdrop are visible at 242.242-245.746s. Top 1 at 166-169s shows only two active artists, one down; requested group count is not met.",
+      "review_sheet_sha256": "30321645aa418034b7c07ce1e74034ba2ca0e53bc7b661ec47169fb92c87f3ac"
+    },
+    {
+      "id": "F070",
+      "video_id": "museum-accessibility",
+      "query": "Show the museum corridor with exhibits on the walls.",
+      "frozen_intervals": [
+        [
+          23,
+          49
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.2233051359653473,
+          "index": 20
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.22196058928966522,
+          "index": 26
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.21337255835533142,
+          "index": 42
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.2132975310087204,
+          "index": 22
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.21127599477767944,
+          "index": 65
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.2103838324546814,
+          "index": 25
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.20933303236961365,
+          "index": 21
+        },
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.20927554368972778,
+          "index": 41
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.2023143768310547,
+          "index": 27
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.1979828178882599,
+          "index": 66
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F071",
+      "video_id": "museum-accessibility",
+      "query": "Find the tactile map console inside the museum.",
+      "frozen_intervals": [
+        [
+          45,
+          61
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.23736445605754852,
+          "index": 26
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.23676781356334686,
+          "index": 42
+        },
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.23166604340076447,
+          "index": 41
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "timestamp": 82.0,
+          "score": 0.22320057451725006,
+          "index": 40
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.22192281484603882,
+          "index": 27
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.21565261483192444,
+          "index": 25
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.20973911881446838,
+          "index": 64
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.20920424163341522,
+          "index": 65
+        },
+        {
+          "start": 72,
+          "end": 76,
+          "timestamp": 74.0,
+          "score": 0.20770561695098877,
+          "index": 36
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.20511843264102936,
+          "index": 20
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F072",
+      "video_id": "museum-accessibility",
+      "query": "Show a hand touching a raised interactive museum image.",
+      "frozen_intervals": [
+        [
+          66,
+          105
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 1,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.24611209332942963,
+          "index": 41
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.23415020108222961,
+          "index": 42
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "timestamp": 82.0,
+          "score": 0.23256519436836243,
+          "index": 40
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.22456404566764832,
+          "index": 26
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.21447205543518066,
+          "index": 27
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.208009734749794,
+          "index": 25
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.20722362399101257,
+          "index": 20
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.2069341540336609,
+          "index": 65
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.19776225090026855,
+          "index": 66
+        },
+        {
+          "start": 72,
+          "end": 76,
+          "timestamp": 74.0,
+          "score": 0.19721560180187225,
+          "index": 36
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F073",
+      "video_id": "museum-accessibility",
+      "query": "Find the boots displayed as a touchable museum artifact.",
+      "frozen_intervals": [
+        [
+          115,
+          130
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 6,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.24131232500076294,
+          "index": 26
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.22603283822536469,
+          "index": 25
+        },
+        {
+          "start": 40,
+          "end": 44,
+          "timestamp": 42.0,
+          "score": 0.22488829493522644,
+          "index": 20
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.22024500370025635,
+          "index": 27
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.21980196237564087,
+          "index": 65
+        },
+        {
+          "start": 122,
+          "end": 126,
+          "timestamp": 124.0,
+          "score": 0.21566064655780792,
+          "index": 61
+        },
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.21552687883377075,
+          "index": 41
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.21207720041275024,
+          "index": 42
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.20957337319850922,
+          "index": 66
+        },
+        {
+          "start": 118,
+          "end": 122,
+          "timestamp": 120.0,
+          "score": 0.20922189950942993,
+          "index": 59
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F074",
+      "video_id": "museum-accessibility",
+      "query": "Where is a Braille label next to a displayed object?",
+      "frozen_intervals": [
+        [
+          127,
+          145
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 3,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.24824441969394684,
+          "index": 26
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.23780123889446259,
+          "index": 27
+        },
+        {
+          "start": 132,
+          "end": 136,
+          "timestamp": 134.0,
+          "score": 0.2240953892469406,
+          "index": 66
+        },
+        {
+          "start": 134,
+          "end": 138,
+          "timestamp": 136.0,
+          "score": 0.22076775133609772,
+          "index": 67
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.22076240181922913,
+          "index": 25
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.22056269645690918,
+          "index": 65
+        },
+        {
+          "start": 82,
+          "end": 86,
+          "timestamp": 84.0,
+          "score": 0.2182070016860962,
+          "index": 41
+        },
+        {
+          "start": 80,
+          "end": 84,
+          "timestamp": 82.0,
+          "score": 0.2177727222442627,
+          "index": 40
+        },
+        {
+          "start": 84,
+          "end": 88,
+          "timestamp": 86.0,
+          "score": 0.2128492146730423,
+          "index": 42
+        },
+        {
+          "start": 48,
+          "end": 52,
+          "timestamp": 50.0,
+          "score": 0.20718221366405487,
+          "index": 24
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F075",
+      "video_id": "heritage-museum",
+      "query": "Find the Vietnamese Heritage Museum entrance signs.",
+      "frozen_intervals": [
+        [
+          0,
+          17
+        ]
+      ],
+      "old_v1_first_rank": null,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": false,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.21808631718158722,
+          "index": 86
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.21651838719844818,
+          "index": 85
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.2149885892868042,
+          "index": 87
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.214380145072937,
+          "index": 65
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.21156913042068481,
+          "index": 64
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.20690584182739258,
+          "index": 26
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.2055819034576416,
+          "index": 27
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.20219741761684418,
+          "index": 25
+        },
+        {
+          "start": 176,
+          "end": 180,
+          "timestamp": 178.0,
+          "score": 0.20215268433094025,
+          "index": 88
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.19992396235466003,
+          "index": 56
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F076",
+      "video_id": "heritage-museum",
+      "query": "Show a donation box at the museum event.",
+      "frozen_intervals": [
+        [
+          8,
+          25
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.23539847135543823,
+          "index": 87
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.22518303990364075,
+          "index": 86
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.2243078500032425,
+          "index": 64
+        },
+        {
+          "start": 126,
+          "end": 130,
+          "timestamp": 128.0,
+          "score": 0.22365665435791016,
+          "index": 63
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.22129301726818085,
+          "index": 65
+        },
+        {
+          "start": 176,
+          "end": 180,
+          "timestamp": 178.0,
+          "score": 0.20859640836715698,
+          "index": 88
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.20218297839164734,
+          "index": 85
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.1949910670518875,
+          "index": 26
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.1932736337184906,
+          "index": 21
+        },
+        {
+          "start": 178,
+          "end": 182,
+          "timestamp": 180.0,
+          "score": 0.19309276342391968,
+          "index": 89
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F077",
+      "video_id": "heritage-museum",
+      "query": "Find the audience gathered around a stage.",
+      "frozen_intervals": [
+        [
+          69,
+          89
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.21649065613746643,
+          "index": 21
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.21231089532375336,
+          "index": 65
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.20816507935523987,
+          "index": 64
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "timestamp": 126.0,
+          "score": 0.19713300466537476,
+          "index": 62
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.19265979528427124,
+          "index": 87
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.19245916604995728,
+          "index": 25
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.19244743883609772,
+          "index": 30
+        },
+        {
+          "start": 126,
+          "end": 130,
+          "timestamp": 128.0,
+          "score": 0.1908327043056488,
+          "index": 63
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.18987491726875305,
+          "index": 22
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.18952763080596924,
+          "index": 26
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F078",
+      "video_id": "heritage-museum",
+      "query": "Where does the VHM museum sign appear?",
+      "frozen_intervals": [
+        [
+          104,
+          120
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 6,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.2324623018503189,
+          "index": 64
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.22940942645072937,
+          "index": 65
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.22285959124565125,
+          "index": 86
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.2184678316116333,
+          "index": 85
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.21406230330467224,
+          "index": 87
+        },
+        {
+          "start": 112,
+          "end": 116,
+          "timestamp": 114.0,
+          "score": 0.21234166622161865,
+          "index": 56
+        },
+        {
+          "start": 126,
+          "end": 130,
+          "timestamp": 128.0,
+          "score": 0.21208377182483673,
+          "index": 63
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "timestamp": 126.0,
+          "score": 0.20652803778648376,
+          "index": 62
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.19882072508335114,
+          "index": 30
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.1947254240512848,
+          "index": 27
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F079",
+      "video_id": "heritage-museum",
+      "query": "Show the display of portraits near the end of the report.",
+      "frozen_intervals": [
+        [
+          161,
+          182
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 2,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.23595497012138367,
+          "index": 21
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.23265939950942993,
+          "index": 87
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.23227491974830627,
+          "index": 22
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.22678719460964203,
+          "index": 65
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.22460715472698212,
+          "index": 25
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.22351722419261932,
+          "index": 64
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.22259199619293213,
+          "index": 26
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "timestamp": 126.0,
+          "score": 0.21477137506008148,
+          "index": 62
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.21402472257614136,
+          "index": 30
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.21109645068645477,
+          "index": 86
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F122",
+      "video_id": "heritage-museum",
+      "query": "Find a woman in a green dress being interviewed beside the museum banner.",
+      "frozen_intervals": [
+        [
+          47,
+          66
+        ]
+      ],
+      "old_v1_first_rank": 2,
+      "candidate_first_rank": 5,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.24203719198703766,
+          "index": 65
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.2399022877216339,
+          "index": 86
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.23721754550933838,
+          "index": 87
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.2350282371044159,
+          "index": 64
+        },
+        {
+          "start": 60,
+          "end": 64,
+          "timestamp": 62.0,
+          "score": 0.22351627051830292,
+          "index": 30
+        },
+        {
+          "start": 62,
+          "end": 66,
+          "timestamp": 64.0,
+          "score": 0.21924489736557007,
+          "index": 31
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.21730223298072815,
+          "index": 21
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.21530674397945404,
+          "index": 25
+        },
+        {
+          "start": 170,
+          "end": 174,
+          "timestamp": 172.0,
+          "score": 0.21436600387096405,
+          "index": 85
+        },
+        {
+          "start": 58,
+          "end": 62,
+          "timestamp": 60.0,
+          "score": 0.21283987164497375,
+          "index": 29
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F123",
+      "video_id": "heritage-museum",
+      "query": "Show the wall of names and portraits in the museum display.",
+      "frozen_intervals": [
+        [
+          115,
+          128
+        ]
+      ],
+      "old_v1_first_rank": 1,
+      "candidate_first_rank": 4,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": true,
+      "candidate_results": [
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.22926105558872223,
+          "index": 87
+        },
+        {
+          "start": 172,
+          "end": 176,
+          "timestamp": 174.0,
+          "score": 0.22800113260746002,
+          "index": 86
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.22249820828437805,
+          "index": 64
+        },
+        {
+          "start": 126,
+          "end": 130,
+          "timestamp": 128.0,
+          "score": 0.2213706225156784,
+          "index": 63
+        },
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.22129115462303162,
+          "index": 65
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.2178700566291809,
+          "index": 21
+        },
+        {
+          "start": 124,
+          "end": 128,
+          "timestamp": 126.0,
+          "score": 0.21693335473537445,
+          "index": 62
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.21446329355239868,
+          "index": 25
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.2133791744709015,
+          "index": 26
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20895805954933167,
+          "index": 22
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    },
+    {
+      "id": "F124",
+      "video_id": "heritage-museum",
+      "query": "Find people exchanging a paper at the museum event.",
+      "frozen_intervals": [
+        [
+          134,
+          150
+        ]
+      ],
+      "old_v1_first_rank": 5,
+      "candidate_first_rank": null,
+      "old_v1_top5_hit": true,
+      "candidate_top5_hit": false,
+      "candidate_results": [
+        {
+          "start": 130,
+          "end": 134,
+          "timestamp": 132.0,
+          "score": 0.23102246224880219,
+          "index": 65
+        },
+        {
+          "start": 128,
+          "end": 132,
+          "timestamp": 130.0,
+          "score": 0.22562429308891296,
+          "index": 64
+        },
+        {
+          "start": 42,
+          "end": 46,
+          "timestamp": 44.0,
+          "score": 0.22225195169448853,
+          "index": 21
+        },
+        {
+          "start": 174,
+          "end": 178,
+          "timestamp": 176.0,
+          "score": 0.21489879488945007,
+          "index": 87
+        },
+        {
+          "start": 52,
+          "end": 56,
+          "timestamp": 54.0,
+          "score": 0.21427053213119507,
+          "index": 26
+        },
+        {
+          "start": 126,
+          "end": 130,
+          "timestamp": 128.0,
+          "score": 0.2116377055644989,
+          "index": 63
+        },
+        {
+          "start": 54,
+          "end": 58,
+          "timestamp": 56.0,
+          "score": 0.20591005682945251,
+          "index": 27
+        },
+        {
+          "start": 50,
+          "end": 54,
+          "timestamp": 52.0,
+          "score": 0.20512530207633972,
+          "index": 25
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "timestamp": 46.0,
+          "score": 0.20367902517318726,
+          "index": 22
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "timestamp": 76.0,
+          "score": 0.20127063989639282,
+          "index": 37
+        }
+      ],
+      "review_observation": null,
+      "review_sheet_sha256": null
+    }
+  ],
+  "limitations": [
+    "Observed V1 labels are frozen and have incomplete alternative intervals for repeated moments.",
+    "Six sources at most six minutes; no long-video historical candidate replay.",
+    "Pixel review is selective, agent-only, and not continuous playback.",
+    "Historical benchmark cannot influence model, configuration, thresholds, or promotion decision.",
+    "Historical V1 report stored Top-5 only, so its Recall@10 is unavailable."
+  ]
+}

@@ -1,5 +1,31 @@
 # Decisions
 
+## 2026-10-05 — Reject temporal backbone integration (Decision C)
+
+New frozen validation yields CLIP 40/66 versus X-CLIP 17/66 R@5. Every quality
+gate fails; all five candidate sources are catastrophic. Denser eight-frame
+windows preserve most missed-event pixels, but do not rank them usefully.
+Keep production V1 unchanged and Ask Video disabled. Stop additional temporal
+models, settings and tuning; no Temporal V2 or integration milestone follows.
+The decision JSON was committed in `6796df1` before any historical replay:
+`83616a9b2951f6942d6c5a6811abb383efac525f5c7fc6357bfa93692df07918`.
+Historical replay is explicitly diagnostic, with immutable old labels and no
+configuration changes. Validation uses agent review, not independent human
+sign-off. Whole-run memory and full-attempt ingestion cost remain unavailable;
+quality failure alone decisively rejects promotion.
+
+
+## 2026-10-06 — Historical temporal diagnostic confirms rejection direction
+
+After the separate new-validation Decision C was frozen in `6796df1`, replay
+used the unchanged 4s/2s/eight-frame X-CLIP on all six old visual sources at
+most six minutes. The paired 42-query V1 CLIP subset reached 31/42 R@5;
+X-CLIP reached 15/42. The original full Visual score (35/55) is context only,
+not the denominator of this comparison. Aikido and Manchester expose repeated
+scene ranking and incomplete old alternate intervals; their raw metrics are
+not calibrated user-success estimates. No parameter, annotation or production
+change follows. The decision remains C.
+
 ## 2026-10-05 — Recover interrupted temporal execution without repeating queries
 
 Preserve the original 44 candidate query records and three complete indexes.

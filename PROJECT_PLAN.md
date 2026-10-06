@@ -1,15 +1,14 @@
 # Roadmap and acceptance criteria
 
-## Authorized V2 research phase ? temporal visual retrieval
+## Temporal visual retrieval research — closed with Decision C
 
-Compare the untouched production Visual path against one pretrained X-CLIP
-candidate on new development and then new frozen validation sources. Only two
-window settings are permitted. Annotation review precedes any retrieval.
-No production integration, speech fix, fusion change, Q&A or OCR work belongs
-to this phase. B/C/D stops model experimentation; A authorizes only a later
-integration proposal. Current state: development comparison completed; 4s/2s selected. New validation
-execution is active, with disclosed recovery after an interrupted candidate
-process. Completed queries are not repeated; final decision remains pending.
+One pinned X-CLIP candidate, two development configurations and a new frozen
+validation set are complete. The selected 4s/2s/eight-frame configuration reaches
+25.76% R@5 versus unchanged CLIP 60.61%, failing every quality gate. Do not
+replace production Visual Search, start Temporal V2, try another model or tune
+this observed holdout. Historical replay is diagnostic only after decision
+freeze. A later product/architecture direction requires a separate explicit
+scope and genuinely new evidence; no integration milestone is authorized.
 
 Final release review (2026-09-25): Decision C, **do not ship v1.0.0**. The
 single frozen eight-video/124-positive deployment diagnostic measured 71.0%

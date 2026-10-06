@@ -1,33 +1,37 @@
 # Project status
 
-## Active V2 experiment: Temporal Video Retrieval Backbone V1
+## Temporal Video Retrieval Backbone V1 — Decision C (2026-10-05)
 
-The isolated X-CLIP candidate and checksum-bound comparison runner are implemented.
-Production remains the unchanged V1 CLIP/FAISS, Speech/BM25 and Smart/RRF60 paths;
-Ask Video remains disabled. This is not a release or promotion decision.
-Five new development sources (48.38 minutes, longest 24.43 minutes) and 66
-visual queries have chronological and dense event/boundary agent review.
-Independent human sign-off is absent. Before retrieval, source aliases were
-checked against historical media URLs; media were decoded through their ends.
-The parade container overstates duration by 0.149 seconds, so candidate windows
-use verified decoded duration. Both arms use identical source bytes, including
-a lossless cycling-video remux. Development is complete: production CLIP R@5
-66.67%, X-CLIP 4s/2s 30.30%, X-CLIP 8s/4s 24.24%. The predeclared selection
-rule freezes 4s/2s/eight frames. The large regression is development evidence,
-not the final architecture decision. Three CLIP raw misses have disclosed
-subsecond annotation-endpoint issues; frozen labels are unchanged. New
-validation is frozen before retrieval: five new sources, 70.03 minutes,
-66 queries, including a 31.93-minute source. 191 chronological/targeted
-contact sheets were reviewed by the agent; independent human sign-off is
-absent. Manifest SHA-256: `54f006a26f23e50a4e213182ab3b6bb1402baa6da5e1457c187ff74c6b7f462e`.
-An initially nominated pasta video was excluded for historical source overlap.
-Baseline completed: 40/66 R@5 (60.61%). Its whole-run RSS sampler failed;
-that maximum is unavailable. Candidate process was interrupted after three
-completed sources / 44 queries; exact exit cause is unknown. Bounded recovery
-now preserves those records and processes only the two wholly unqueried sources.
-Original freeze is unchanged; final metrics and decision remain pending.
-Full checks: 303 passed, 1 skipped; Ruff passed. Production remains unchanged.
-See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_PROTOCOL.md`.
+Frozen validation is complete: five new sources, 70.03 minutes, 66 queries,
+including a 31.93-minute source. Production CLIP R@5 is **60.61% (40/66)**;
+X-CLIP 4s/2s/eight frames reaches **25.76% (17/66)**, a **34.85 pp regression**.
+All five candidate sources fall below the 60% floor. Combined action/interaction/
+temporal R@5 is 26.19% versus CLIP 52.38%; static/scene is 13.33% versus 80%.
+Decision C was committed and pushed in `6796df1` before historical diagnostics.
+Stop this model branch; do not start Temporal V2 or integrate it into production.
+
+Development used five different sources, 48.38 minutes and 66 queries. The two
+predeclared settings scored 30.30% (4s/2s) and 24.24% (8s/4s), versus CLIP
+66.67%; the development-only rule selected 4s. New validation was frozen in
+`b729546` before inference. All 26 baseline and 49 candidate validation misses
+received pixel review. Baseline has 12 sampling / 14 ranking misses; candidate
+has 2 midpoint-coverage, 46 ranking/localization and 1 ambiguity case. No labels
+were repaired. Annotation is agent-reviewed, not independently human-certified.
+
+Candidate completed-stage indexing costs 40.38 seconds/source-minute versus
+1.58 for CLIP; feature storage is 3.09 MB/min versus 24.63 KB/min. Query p95 is
+1.493s versus 0.047s. Whole-run RSS is unavailable (baseline sampler failure,
+candidate interruption); lost partial ingestion makes full-attempt candidate
+cost unavailable. Recovery preserved 44 completed query rows and finished only
+the two wholly unqueried sources. This is not an 8-GB deployment certification.
+
+Production CLIP/FAISS, Whisper/BM25, uncapped RRF60, URL ingestion and Q&A are
+unchanged; Ask Video stays disabled. Historical diagnostic replay completed after the frozen decision on six short
+old sources / 42 visual queries: paired CLIP 73.81% versus X-CLIP 35.71% R@5.
+Old repeated-moment labels have known incomplete alternate intervals, so this
+is diagnostic only. Full backend pytest: 313 passed, 1 skipped; Ruff passed.
+The research branch remains isolated and release status is unchanged.
+See `ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_RESULTS.md` and its failure report.
 
 **Latest milestone — Final Deployment Acceptance V1: Decision C, not ready for deployment.**
 One checksum-frozen run on eight new licensed/public-domain sources and 124

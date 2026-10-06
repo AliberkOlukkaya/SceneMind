@@ -15,9 +15,8 @@
     "STATIC_SEMANTIC_MISS": 8,
     "BACKGROUND_BIAS": 1,
     "OBJECT_RELATION_MISS": 23,
-    "SMALL_OBJECT": 2,
-    "TEMPORAL_COVERAGE_MISS": 2,
-    "SMALL_OBJECT_MISS": 1
+    "SMALL_OBJECT": 3,
+    "TEMPORAL_COVERAGE_MISS": 2
   },
   "temporal_coverage_misses": 2,
   "evidence_present_raw_timestamp_misses": 49,
@@ -1668,7 +1667,7 @@
         ]
       ],
       "first_rank": null,
-      "failure_code": "SMALL_OBJECT_MISS",
+      "failure_code": "SMALL_OBJECT",
       "sampled_evidence_visible": true,
       "crop_evidence_visible": "partial; small distant car",
       "evidence_window_index": 249,

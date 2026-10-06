@@ -1,6 +1,6 @@
 ﻿# Tasks
 
-## Temporal Video Retrieval Backbone V1 (development complete, validation pending)
+## Temporal Video Retrieval Backbone V1 — Decision C
 
 - [x] Predeclare one pinned licensed temporal candidate and two window configurations
 - [x] Implement isolated feature persistence, full X-CLIP scoring and production baseline runner
@@ -13,9 +13,9 @@
 - [x] Acquire five new validation sources with 66 audited queries and a 31.93-minute source
 - [x] Commit/checksum validation contract before retrieval
 - [x] Preserve interrupted candidate checkpoint and test recovery of wholly unqueried sources
-- [ ] Finish remaining queries, diagnose every miss and decide A/B/C/D/E
-- [ ] Perform historical diagnostic replay only after decision, where practical
-- [ ] Complete reports, checks, stable push and clean-tree verification
+- [x] Finish all 66 validation queries, diagnose every miss and freeze Decision C in 6796df1
+- [x] Replay 42 old visual queries on six short sources after Decision C; inspect Aikido/Manchester and label limitations
+- [x] Complete reports, full checks, stable push and clean-tree verification
 
 ## Final v1.0 deployment acceptance ? Decision C
 - [x] Verify frozen Smart=Hybrid RRF60, Spoken=Speech, Visual=CLIP paths

@@ -17,6 +17,11 @@ not shipped search features. Find Moments remains fully local. See
 > 45.2/66.1/71.0% interval Recall@1/3/5, including three catastrophic video failures. The
 > annotations also need independent human review. No `v1.0.0` tag or hosted deployment exists.
 
+The isolated temporal-backbone experiment also ended with **Decision C**:
+on 66 new frozen visual queries, X-CLIP achieved 25.76% R@5 versus the existing
+CLIP path's 60.61%. Production search is unchanged; this candidate is not enabled.
+See the [temporal evaluation](ml/evaluation/TEMPORAL_VIDEO_RETRIEVAL_V1_RESULTS.md).
+
 ## Demo and screenshots
 
 ![SceneMind desktop workspace](docs/images/workspace-desktop.png)
